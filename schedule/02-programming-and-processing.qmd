@@ -1,5 +1,6 @@
 ---
-title: "How Will We Work in This Course? Programming and Processing"
+title: "Programming and Processing"
+subtitle: "How Will We Work in This Course?" 
 toc: true
 date: 2026-01-22
 ---

@@ -282,6 +282,30 @@
     ]
   },
   {
+    "objectID": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assigned-materials",
+    "href": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assigned-materials",
+    "title": "Responsible Computing of Culture & Contextualizing Social Knowledge",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\n“Mission.” Responsible Datasets in Context (blog), n.d. https://www.responsible-datasets-in-context.com/mission.html and discuss final projects\nLiao, Zhehui, Maria Antoniak, Inyoung Cheong, et al. “LLMs as Research Tools: A Large Scale Survey of Researchers’ Usage and Perceptions.” arXiv:2411.05025. Preprint, arXiv, October 30, 2024. https://arxiv.org/html/2411.05025v1.\n\nSalvaggio, Eryk. 2024. “Challenging The Myths of Generative AI” Tech Policy Press, August 29. https://techpolicy.press/challenging-the-myths-of-generative-ai.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 27: What does it mean to work with culture as data responsibly?"
+    ]
+  },
+  {
+    "objectID": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assignments",
+    "href": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assignments",
+    "title": "Responsible Computing of Culture & Contextualizing Social Knowledge",
+    "section": "Assignments",
+    "text": "Assignments\n\nComplete Initial Interest Survey (link available on Canvas) due by January 21 at midnight.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 27: What does it mean to work with culture as data responsibly?"
+    ]
+  },
+  {
     "objectID": "schedule/index.html",
     "href": "schedule/index.html",
     "title": "Schedule & Assignments Overview",
@@ -297,7 +321,7 @@
     "href": "schedule/index.html#weekly-schedule",
     "title": "Schedule & Assignments Overview",
     "section": "Weekly Schedule",
-    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture &amp; Contextualizing Social Knowledge",
+    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 Forthcoming",
     "crumbs": [
       "Schedule",
       "Schedule Overview"
@@ -317,73 +341,73 @@
   {
     "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
     "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
-    "title": "Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data",
+    "title": "Introducing Computing in the Humanities & Culture As Data",
     "section": "",
     "text": "Introductions and goals for the course\nOverview and review the syllabus, slides available here\nDiscuss and define “What is computing in the humanities?” versus “What is culture as data?”\n\nVisit What is Digital Humanities? and refresh a few times\nAlso visit Open Syllabus Project\n\nStart survey for group assignments (time permitting) available on Canvas\nStart lesson on Course Tools",
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 20: Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data"
+      "Jan 20: Why Represent Culture As Data?"
     ]
   },
   {
     "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html#in-class-agenda",
     "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html#in-class-agenda",
-    "title": "Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data",
+    "title": "Introducing Computing in the Humanities & Culture As Data",
     "section": "",
     "text": "Introductions and goals for the course\nOverview and review the syllabus, slides available here\nDiscuss and define “What is computing in the humanities?” versus “What is culture as data?”\n\nVisit What is Digital Humanities? and refresh a few times\nAlso visit Open Syllabus Project\n\nStart survey for group assignments (time permitting) available on Canvas\nStart lesson on Course Tools",
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 20: Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data"
+      "Jan 20: Why Represent Culture As Data?"
     ]
   },
   {
     "objectID": "schedule/02-programming-and-processing.html",
     "href": "schedule/02-programming-and-processing.html",
-    "title": "How Will We Work in This Course? Programming and Processing",
+    "title": "Programming and Processing",
     "section": "",
     "text": "Discuss the assigned readings.\nAnswer any questions about the Introduction to Course Tools.\nStart Introduction to the Command Line & Prompt Engineering and Introduction to Versioning & Git (if not completed in-class, these will become homework).",
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 22: How Will We Work in this Course? Programming & Processing"
+      "Jan 22: How Will We Work in this Course?"
     ]
   },
   {
     "objectID": "schedule/02-programming-and-processing.html#in-class-agenda",
     "href": "schedule/02-programming-and-processing.html#in-class-agenda",
-    "title": "How Will We Work in This Course? Programming and Processing",
+    "title": "Programming and Processing",
     "section": "",
     "text": "Discuss the assigned readings.\nAnswer any questions about the Introduction to Course Tools.\nStart Introduction to the Command Line & Prompt Engineering and Introduction to Versioning & Git (if not completed in-class, these will become homework).",
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 22: How Will We Work in this Course? Programming & Processing"
+      "Jan 22: How Will We Work in this Course?"
     ]
   },
   {
     "objectID": "schedule/02-programming-and-processing.html#assigned-materials-complete-prior-to-class",
     "href": "schedule/02-programming-and-processing.html#assigned-materials-complete-prior-to-class",
-    "title": "How Will We Work in This Course? Programming and Processing",
+    "title": "Programming and Processing",
     "section": "Assigned Materials (Complete Prior to Class)",
     "text": "Assigned Materials (Complete Prior to Class)\nNo Hypothesis Annotations Required for This Week\n\nBuschek, Christo, and Jer Thorp. “Models All The Way Down.” Knowing Machines. https://knowingmachines.org/models-all-the-way\nVincent, Nick, and Hanlin Li. “GitHub Copilot and the Exploitation of ‘Data Labor’: A Wake-Up Call for the Tech Industry.” PSA Group (blog), July 8, 2021. https://www.psagroup.org/blogposts/101.\nComplete Introduction to Course Tools.",
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 22: How Will We Work in this Course? Programming & Processing"
+      "Jan 22: How Will We Work in this Course?"
     ]
   },
   {
     "objectID": "schedule/02-programming-and-processing.html#additional-materials-not-required-reading",
     "href": "schedule/02-programming-and-processing.html#additional-materials-not-required-reading",
-    "title": "How Will We Work in This Course? Programming and Processing",
+    "title": "Programming and Processing",
     "section": "Additional Materials (Not Required Reading)",
     "text": "Additional Materials (Not Required Reading)\n\nChiang, Ted. “ChatGPT Is a Blurry JPEG of the Web.” The New Yorker, February 9, 2023. https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web.\nSchaul, Kevin, Szu Yu Chen, and Nitasha Tiku. “Inside the Secret List of Websites That Make AI like ChatGPT Sound Smart.” Washington Post, April 19, 2023. https://www.washingtonpost.com/technology/interactive/2023/ai-chatbot-learning/",
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 22: How Will We Work in this Course? Programming & Processing"
+      "Jan 22: How Will We Work in this Course?"
     ]
   },
   {
@@ -1173,6 +1197,13 @@
     "title": "Introductions & Installations",
     "section": "The Bottom Line",
     "text": "The Bottom Line\nAI should make you more capable, not less thoughtful.\n\nIt should amplify your learning, not replace it.\n\n\nIf you can’t explain what your code does or why your essay makes certain arguments, stop and reassess."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#example-citation",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#example-citation",
+    "title": "Introductions & Installations",
+    "section": "Example Citation?",
+    "text": "Example Citation?\nWhen using AI tools like Claude Code, cite them as you would software:\n\nAnthropic. (2026). Claude Code (Version 4.5) [AI coding assistant]. https://claude.ai/claude-code\n\nOr in prose: “These slides were created with assistance from Claude Code (Anthropic, 2026), an AI coding assistant used for formatting Quarto/Reveal.js syntax.”"
   },
   {
     "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions-3",

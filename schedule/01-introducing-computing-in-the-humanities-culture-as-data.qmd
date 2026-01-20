@@ -1,5 +1,6 @@
 ---
-title: "Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data"
+title: "Introducing Computing in the Humanities & Culture As Data"
+subtitle: "Why Represent Culture As Data?"
 toc: true
 date: 2026-01-20
 ---

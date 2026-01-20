@@ -1,8 +1,8 @@
 ---
-title: "What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge"
+title: "Responsible Computing of Culture & Contextualizing Social Knowledge"
+subtitle: "What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries?"
 toc: true
 date: 2026-01-27
-draft: true
 ---
 
 ## In-Class Agenda TBD
@@ -15,4 +15,4 @@ draft: true
 
 ## Assignments
 
-- Complete Initial Interest Survey (link available on Canvas) due by January 21 at midnight
+- Complete Initial Interest Survey (link available on Canvas) due by January 21 at midnight.
