@@ -1,6 +1,7 @@
 ---
 title: "Late Join Guidelines"
 toc: true
+draft: true
 ---
 
 Last updated: 2024-08-29

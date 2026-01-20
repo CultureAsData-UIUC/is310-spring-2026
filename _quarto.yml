@@ -5,6 +5,7 @@ project:
 website:
   title: "IS310 - Culture As Data Spring 2026"
   reader-mode: true
+  favicon: images/favicon.ico
 
   navbar:
     left:
@@ -16,8 +17,8 @@ website:
         href: policies.qmd
       - text: "Resources"
         href: materials/introducing-humanities-computing/01-course-tools.qmd
-      - text: "Joining Late?"
-        href: late-join.qmd
+      # - text: "Joining Late?"
+      #   href: late-join.qmd
 
   sidebar:
     - id: materials
