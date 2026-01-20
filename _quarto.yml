@@ -77,10 +77,12 @@ website:
           href: schedule/index.qmd
         - section: "January"
           contents:
-            - text: "Jan 20: Why Represent Culture As Data? Introducing Computing in the Humanities"
+            - text: "Jan 20: Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data"
               href: schedule/01-introducing-computing-in-the-humanities-culture-as-data.qmd
-            - text: "Jan 22: How Will We Work in this Course? Programming and Processing"
+            - text: "Jan 22: How Will We Work in this Course? Programming & Processing"
               href: schedule/02-programming-and-processing.qmd
+            - text: "Jan 27: What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge"
+              href: schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.qmd
         # - section: "September"
         #   contents:
         #     - text: "Sep 3: Histories of Culture & Computing"

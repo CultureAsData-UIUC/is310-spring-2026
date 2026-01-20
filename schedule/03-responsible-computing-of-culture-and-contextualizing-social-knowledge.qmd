@@ -1,0 +1,18 @@
+---
+title: "What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge"
+toc: true
+date: 2026-01-27
+draft: true
+---
+
+## In-Class Agenda TBD
+
+## Assigned Materials
+
+- “Mission.” *Responsible Datasets in Context *(blog), n.d. [https://www.responsible-datasets-in-context.com/mission.html](https://www.responsible-datasets-in-context.com/mission.html) and discuss final projects
+- Liao, Zhehui, Maria Antoniak, Inyoung Cheong, et al. “LLMs as Research Tools: A Large Scale Survey of Researchers’ Usage and Perceptions.” arXiv:2411.05025. Preprint, arXiv, October 30, 2024. [https://arxiv.org/html/2411.05025v1](https://arxiv.org/html/2411.05025v1).  
+- Salvaggio, Eryk. 2024. “Challenging The Myths of Generative AI” *Tech Policy Press*, August 29. [https://techpolicy.press/challenging-the-myths-of-generative-ai](https://techpolicy.press/challenging-the-myths-of-generative-ai). 
+
+## Assignments
+
+- Complete Initial Interest Survey (link available on Canvas) due by January 21 at midnight

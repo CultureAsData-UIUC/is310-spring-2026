@@ -216,39 +216,6 @@
     ]
   },
   {
-    "objectID": "schedule/index.html",
-    "href": "schedule/index.html",
-    "title": "Schedule & Assignments Overview",
-    "section": "",
-    "text": "Note\n\n\n\nThis schedule is subject to change depending on our collective progress this semester, so please treat this as a general guideline that is not set in stone. I will add assignments as we progress below, but you should generally expect to have both assigned materials and assignments each week.",
-    "crumbs": [
-      "Schedule",
-      "Schedule Overview"
-    ]
-  },
-  {
-    "objectID": "schedule/index.html#weekly-schedule",
-    "href": "schedule/index.html#weekly-schedule",
-    "title": "Schedule & Assignments Overview",
-    "section": "Weekly Schedule",
-    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing",
-    "crumbs": [
-      "Schedule",
-      "Schedule Overview"
-    ]
-  },
-  {
-    "objectID": "schedule/index.html#assignment-schedule",
-    "href": "schedule/index.html#assignment-schedule",
-    "title": "Schedule & Assignments Overview",
-    "section": "Assignment Schedule",
-    "text": "Assignment Schedule\nAssignments will be added throughout the semester depending on how much material we get through.\n\nIndividual Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nInitial Interest Survey (Link Available on Canvas)\nDue by Midnight CT on January 21\n\n\n\n\n\nGroup Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)",
-    "crumbs": [
-      "Schedule",
-      "Schedule Overview"
-    ]
-  },
-  {
     "objectID": "assessments/03-semester-project.html",
     "href": "assessments/03-semester-project.html",
     "title": "Semester Long Project 50%",
@@ -315,6 +282,39 @@
     ]
   },
   {
+    "objectID": "schedule/index.html",
+    "href": "schedule/index.html",
+    "title": "Schedule & Assignments Overview",
+    "section": "",
+    "text": "Note\n\n\n\nThis schedule is subject to change depending on our collective progress this semester, so please treat this as a general guideline that is not set in stone. I will add assignments as we progress below, but you should generally expect to have both assigned materials and assignments each week.",
+    "crumbs": [
+      "Schedule",
+      "Schedule Overview"
+    ]
+  },
+  {
+    "objectID": "schedule/index.html#weekly-schedule",
+    "href": "schedule/index.html#weekly-schedule",
+    "title": "Schedule & Assignments Overview",
+    "section": "Weekly Schedule",
+    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture &amp; Contextualizing Social Knowledge",
+    "crumbs": [
+      "Schedule",
+      "Schedule Overview"
+    ]
+  },
+  {
+    "objectID": "schedule/index.html#assignment-schedule",
+    "href": "schedule/index.html#assignment-schedule",
+    "title": "Schedule & Assignments Overview",
+    "section": "Assignment Schedule",
+    "text": "Assignment Schedule\nAssignments will be added throughout the semester depending on how much material we get through.\n\nIndividual Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nInitial Interest Survey (Link Available on Canvas)\nDue by Midnight CT on January 21\n\n\n\n\n\nGroup Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)",
+    "crumbs": [
+      "Schedule",
+      "Schedule Overview"
+    ]
+  },
+  {
     "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
     "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
     "title": "Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data",
@@ -323,7 +323,7 @@
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 20: Why Represent Culture As Data? Introducing Computing in the Humanities"
+      "Jan 20: Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data"
     ]
   },
   {
@@ -335,7 +335,7 @@
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 20: Why Represent Culture As Data? Introducing Computing in the Humanities"
+      "Jan 20: Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data"
     ]
   },
   {
@@ -347,7 +347,7 @@
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 22: How Will We Work in this Course? Programming and Processing"
+      "Jan 22: How Will We Work in this Course? Programming & Processing"
     ]
   },
   {
@@ -359,7 +359,7 @@
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 22: How Will We Work in this Course? Programming and Processing"
+      "Jan 22: How Will We Work in this Course? Programming & Processing"
     ]
   },
   {
@@ -371,7 +371,7 @@
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 22: How Will We Work in this Course? Programming and Processing"
+      "Jan 22: How Will We Work in this Course? Programming & Processing"
     ]
   },
   {
@@ -383,7 +383,7 @@
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 22: How Will We Work in this Course? Programming and Processing"
+      "Jan 22: How Will We Work in this Course? Programming & Processing"
     ]
   },
   {

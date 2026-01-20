@@ -14,6 +14,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | Tuesday Topics (Explorations)  | Thursday Topics (Experimentations) |
 | -----------------: | --------------: |
 | [January 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data](01-introducing-computing-in-the-humanities-culture-as-data.qmd) | [January 22 - How Will We Work in This Course? Programming & Processing](02-programming-and-processing.qmd) |
+| [January 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge](03-responsible-computing-of-culture-and-contextualizing-social-knowledge.qmd) | |
 
 ## Assignment Schedule
 
@@ -23,7 +24,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 
 | Assignment | Due Date (Subject to Change) |
 | -----------------: | --------------: |
-| Initial Interest Survey (Link Available on Canvas) | [Due by Midnight CT on January 21](03-histories-of-culture-and-computing.qmd) | 
+| Initial Interest Survey (Link Available on Canvas) | [Due by Midnight CT on January 21](03-responsible-computing-of-culture-and-contextualizing-social-knowledge.qmd) | 
 
 
 ### Group Assignments
