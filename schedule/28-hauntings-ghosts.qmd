@@ -1,0 +1,14 @@
+---
+title: "Hauntings & Ghosts"
+toc: true
+date: 2024-12-05
+draft: true
+---
+
+## In-Class Agenda
+
+- [ ] Answer any remaining questions about assignments or project.
+- [ ] Discuss potential improvements for future iterations of the course [https://github.com/CultureAsData-UIUC/is310-fall-2024/issues/12](https://github.com/CultureAsData-UIUC/is310-fall-2024/issues/12).
+- [ ] Work on final projects.
+
+## Additional Materials

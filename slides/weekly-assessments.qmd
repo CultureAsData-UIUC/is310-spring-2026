@@ -1,0 +1,257 @@
+---
+title: "Weekly Assessments"
+subtitle: "50% of Your Final Grade"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+---
+
+## Overview
+
+Your performance in weekly assessments constitutes **half of your final grade**.
+
+These assessments include:
+
+- In-class discussions
+- Asynchronous annotations
+- Weekly coding assignments
+
+. . .
+
+**Graded as pass/fail** — but engagement, creativity, and growth matter!
+
+---
+
+## Weekly Participation (25%)
+
+Two components:
+
+1. **Individual engagement** with course materials
+2. **Collaborative group presentations**
+
+Both ensure you're deepening your own understanding AND learning from peers.
+
+---
+
+## Seminar Discussion & Annotations (15%)
+
+Before each class, engage with assigned materials:
+
+- Book chapters or articles
+- Data visualizations
+- Documentation
+
+These lay the groundwork for class discussions and your semester project.
+
+---
+
+## Questions to Consider
+
+When engaging with weekly materials, ask yourself:
+
+- What is the main argument? Is there one?
+- How does the author support their argument?
+- What evidence or data did they use?
+- What is the likely audience?
+
+---
+
+## More Questions to Consider
+
+- What connections or tensions exist across materials?
+- What was confusing or unclear?
+- How does this connect to previous weeks?
+
+. . .
+
+**Goal:** Summarize central points in a few lines, not detail everything!
+
+---
+
+## Demonstrating Engagement
+
+### Option 1: Seminar Discussions
+
+- Ask questions about complex concepts
+- Share connections across materials
+- Respond thoughtfully to peers
+
+. . .
+
+**Goal:** Create a thoughtful and respectful intellectual community
+
+---
+
+## Demonstrating Engagement
+
+### Option 2: Asynchronous Annotations
+
+Using **Hypothesis** annotation platform:
+
+- Share thoughts on weekly materials
+- Engage with peers' annotations
+- May be asked to expand during discussions
+
+Sign up: [hypothes.is/signup](https://hypothes.is/signup)
+
+---
+
+## Grading: Seminar Discussions
+
+To receive full credit:
+
+- **Be present** in person
+- **Actively participate** in discussion or activities
+
+. . .
+
+Simply attending class is **not enough**!
+
+---
+
+## Grading: Annotations
+
+- Submit via Hypothesis by **midnight the day before class**
+- Tag appropriately in our Hypothesis group
+- Demonstrate **thoughtful engagement**:
+  - Summarize key points
+  - Raise questions
+  - Make connections
+
+---
+
+## Group Presentations (10%)
+
+Groups assigned in first two weeks based on:
+
+- Student interests
+- Backgrounds (music, literature, social media, gaming, etc.)
+
+---
+
+## Group Work Structure
+
+**Weekly Prompts and Activities:**
+
+- Find digital objects
+- Explore datasets
+- Apply concepts from readings
+
+---
+
+## In-Class Presentations
+
+- Not every group presents every week
+- Even if not presenting:
+  - Submit work to GitHub
+  - Be prepared to discuss
+
+. . .
+
+Presentations should be **clear, concise**, and demonstrate understanding.
+
+---
+
+## Documentation Requirements
+
+All group work must be documented on GitHub:
+
+- Summary of activities
+- How labor was divided
+- Reflections on the process
+
+. . .
+
+**Clear documentation is crucial** for grading and project progress!
+
+---
+
+## Grading: Group Work
+
+Based on:
+
+- Active participation in presentations
+- Quality of contributions
+- Effectiveness of collaboration
+
+. . .
+
+Grade not impacted if a member is absent (but group must pivot).
+
+---
+
+## Group Work Deadlines
+
+Submit to GitHub by **midnight before class**.
+
+- **Late submissions:** Half credit (with explanation)
+- **Repeated late submissions:** Meeting with Instructor
+
+---
+
+## Weekly Coding Assignments (25%)
+
+- Complete and share via GitHub
+- **Pair programming encouraged!**
+
+. . .
+
+Work together, but make sure you **understand the concepts** — they build quickly!
+
+---
+
+## Grading: Coding Assignments
+
+- Due: **Midnight before class**
+- Late submissions: **Half credit** (if before final class)
+
+. . .
+
+Questions encouraged — in person and online!
+
+---
+
+## Required Texts & Resources
+
+**Good news:** Almost all materials available free online!
+
+- Course website
+- Canvas
+
+. . .
+
+No required purchases for software or books.
+
+---
+
+## Computer Access
+
+You will need access to a computer.
+
+. . .
+
+If this is an issue, **let me know early** — we'll find solutions!
+
+---
+
+## Summary
+
+| Component | Weight |
+|-----------|--------|
+| Seminar Discussion & Annotations | 15% |
+| Group Presentations | 10% |
+| Weekly Coding Assignments | 25% |
+| **Total** | **50%** |
+
+---
+
+## Questions?
+
+Remember:
+
+- Engage thoughtfully
+- Collaborate with peers
+- Ask questions early and often!

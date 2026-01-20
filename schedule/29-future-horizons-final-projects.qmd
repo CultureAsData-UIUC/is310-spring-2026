@@ -1,0 +1,14 @@
+---
+title: "Future Horizons & Final Projects"
+toc: true
+date: 2024-12-10
+draft: true
+---
+
+## In-Class Agenda
+
+- [ ] Demo Day for Final Projects
+- [ ] Presentation of group projects
+- [ ] Discuss future directions and reflections
+
+## Additional Materials

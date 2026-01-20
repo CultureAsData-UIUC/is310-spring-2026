@@ -1,0 +1,10 @@
+---
+title: "Course Slides"
+toc: false
+---
+
+Slides from class lectures and presentations.
+
+## Available Slides
+
+- [Weekly Assessments](weekly-assessments.qmd) - Overview of how assessments work in this course

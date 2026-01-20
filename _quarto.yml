@@ -1,0 +1,170 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "IS310 - Culture As Data Spring 2026"
+  reader-mode: true
+
+  navbar:
+    left:
+      - text: "Schedule"
+        href: schedule/index.qmd
+      - text: "Assessments"
+        href: assessments/index.qmd
+      - text: "Policies"
+        href: policies.qmd
+      - text: "Resources"
+        href: materials/introducing-humanities-computing/01-course-tools.qmd
+      - text: "Joining Late?"
+        href: late-join.qmd
+
+  sidebar:
+    - id: materials
+      title: "Course Materials"
+      style: "floating"
+      contents:
+        - section: "Introductions & Installations"
+          contents:
+            - text: "Course Software & Tools"
+              href: materials/introducing-humanities-computing/01-course-tools.qmd
+            - text: "Command Line & Prompt Engineering"
+              href: materials/introducing-humanities-computing/02-intro-cli-prompt-engineering.qmd
+        #     - text: "Introduction to Versioning & Git"
+        #       href: materials/introducing-humanities-computing/03-intro-versioning.qmd
+        #     - text: "Command Line Cheatsheet"
+        #       href: materials/introducing-humanities-computing/04-command-line-cheatsheet.qmd
+        #     - text: "Advanced Git and GitHub"
+        #       href: materials/introducing-humanities-computing/05-advanced-git-github.qmd
+        #     - text: "Introduction to File Formats & Text"
+        #       href: materials/introducing-humanities-computing/06-intro-file-formats.qmd
+        #     - text: "Introduction to Markup & Styling Web Documents"
+        #       href: materials/introducing-humanities-computing/07-intro-html.qmd
+        #     - text: "Introduction to The Web & Servers"
+        #       href: materials/introducing-humanities-computing/08-intro-web.qmd
+        # - section: "Collections & Curations"
+        #   contents:
+        #     - text: "Python Refresher: Foundations"
+        #       href: materials/creating-curating-humanities-data/01-python-refresher-foundations.qmd
+        #     - text: "Python Refresher II: Advanced Python"
+        #       href: materials/creating-curating-humanities-data/02-python-refresher-advanced.qmd
+        #     - text: "Complex Python: Classes & Comments"
+        #       href: materials/creating-curating-humanities-data/03-complex-python.qmd
+        #     - text: "Python Virtual Environments & Packages"
+        #       href: materials/creating-curating-humanities-data/04-virtual-environments.qmd
+        #     - text: "Web Scraping with Python"
+        #       href: materials/creating-curating-humanities-data/05-web-scraping.qmd
+        #     - text: "Getting Cultural Data From APIs"
+        #       href: materials/creating-curating-humanities-data/06-getting-data-apis.qmd
+        # - section: "Interpretations & Communications"
+        #   contents:
+        #     - text: "(Re)Introduction to Jupyter Notebooks & Pandas"
+        #       href: materials/interpreting-communicating-humanities-data/01-intro-notebooks.qmd
+        #     - text: "EDA & Data Visualization"
+        #       href: materials/interpreting-communicating-humanities-data/02-eda-data-viz.qmd
+        #     - text: "Introduction to Structuring Data"
+        #       href: materials/interpreting-communicating-humanities-data/03-intro-structuring-data.qmd
+        #     - text: "Exploring Computational Methods for Cultural Data"
+        #       href: materials/interpreting-communicating-humanities-data/04-advanced-computational-methods.qmd
+
+    - id: schedule
+      title: "Course Schedule"
+      style: "floating"
+      contents:
+        - text: "Schedule Overview"
+          href: schedule/index.qmd
+        - section: "January"
+          contents:
+            - text: "Jan 20: Why Represent Culture As Data? Introducing Computing in the Humanities"
+              href: schedule/01-introducing-computing-in-the-humanities-culture-as-data.qmd
+            - text: "Jan 22: How Will We Work in this Course? Programming and Processing"
+              href: schedule/02-programming-and-processing.qmd
+        # - section: "September"
+        #   contents:
+        #     - text: "Sep 3: Histories of Culture & Computing"
+        #       href: schedule/03-histories-of-culture-and-computing.qmd
+        #     - text: "Sep 5: Version & File Histories"
+        #       href: schedule/04-version-file-histories.qmd
+        #     - text: "Sep 10: Digital Objects & Obsolescence"
+        #       href: schedule/05-digital-objects-and-obsolescence.qmd
+        #     - text: "Sep 12: Markup & Markdown"
+        #       href: schedule/06-markup-and-markdown.qmd
+        #     - text: "Sep 17: Data Feminism & Culture As Data"
+        #       href: schedule/07-data-feminism-and-culture-as-data.qmd
+        #     - text: "Sep 19: Servers & Web Standards"
+        #       href: schedule/08-servers-web-standards.qmd
+        #     - text: "Sep 24: Standardizing Culture & Data Archeology"
+        #       href: schedule/09-standardizing-culture-data-archeology.qmd
+        #     - text: "Sep 26: Scripts & Types"
+        #       href: schedule/10-scripts-types.qmd
+        # - section: "October"
+        #   contents:
+        #     - text: "Oct 1: Classes & Comments"
+        #       href: schedule/11-classes-comments.qmd
+        #     - text: "Oct 3: Projects & Proposals"
+        #       href: schedule/12-projects-proposals.qmd
+        #     - text: "Oct 8: Documentation & Definitions"
+        #       href: schedule/13-documentation-definitions.qmd
+        #     - text: "Oct 10: Scrape On & Off"
+        #       href: schedule/14-scrapes-on-off.qmd
+        #     - text: "Oct 15: Curating vs. Cleaning"
+        #       href: schedule/15-curating-vs-cleaning.qmd
+        #     - text: "Oct 17: GETting Culture"
+        #       href: schedule/16-getting-culture.qmd
+        #     - text: "Oct 22: Arguments & Algorithms"
+        #       href: schedule/17-arguments-algorithms.qmd
+        #     - text: "Oct 24: Notes & Points"
+        #       href: schedule/18-notes-and-points.qmd
+        #     - text: "Oct 29: Making A Point"
+        #       href: schedule/19-making-a-point.qmd
+        #     - text: "Oct 31: Patterns & Outliers"
+        #       href: schedule/20-patterns-outliers.qmd
+        # - section: "November"
+        #   contents:
+        #     - text: "Nov 5: Modeling Culture (Election Day)"
+        #       href: schedule/21-modeling-culture.qmd
+        #     - text: "Nov 7: Structuring Data"
+        #       href: schedule/22-structuring-data.qmd
+        #     - text: "Nov 12: Algorithmic Failures"
+        #       href: schedule/23-algorithmic-failures.qmd
+        #     - text: "Nov 14: Augmentation & AI"
+        #       href: schedule/24-augmentation-ai.qmd
+        #     - text: "Nov 19: Reproducibility & Responsibility"
+        #       href: schedule/25-reproducibility-responsibility.qmd
+        #     - text: "Nov 21: Preservation & Publics"
+        #       href: schedule/26-preservation-publics.qmd
+        # - section: "December"
+        #   contents:
+        #     - text: "Dec 3: I Dream of Data"
+        #       href: schedule/27-i-dream-of-data.qmd
+        #     - text: "Dec 5: Hauntings & Ghosts"
+        #       href: schedule/28-hauntings-ghosts.qmd
+        #     - text: "Dec 10: Future Horizons & Final Projects"
+        #       href: schedule/29-future-horizons-final-projects.qmd
+
+    - id: assessments
+      title: "Assessments"
+      style: "floating"
+      contents:
+        - text: "Overview"
+          href: assessments/index.qmd
+        - text: "Weekly Assignments"
+          href: assessments/02-weekly-assessments.qmd
+        - text: "Semester Long Project"
+          href: assessments/03-semester-project.qmd
+        - text: "Assigned Project Groups"
+          href: assessments/04-groups.qmd
+        - text: "GitHub Style Guide"
+          href: assessments/05-github-style-guide.qmd
+
+  page-footer:
+    center: "IS310 Culture As Data - Spring 2026"
+
+format:
+  html:
+    theme:
+      light: litera
+      dark: vapor
+    css: styles.css
+    toc: true
+    toc-depth: 3

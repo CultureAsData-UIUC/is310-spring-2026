@@ -1,0 +1,27 @@
+---
+title: "Making A Point"
+toc: true
+date: 2024-10-29
+draft: true
+---
+
+## In-Class Agenda
+
+- [ ] Review the [GETing Culture Across APIs Homework](../materials/creating-curating-humanities-data/06-getting-data-apis/index.qmd#getting-culture-across-apis-homework).
+- [ ] Continue refresher to [Notebooks and Pandas](../materials/interpreting-communicating-humanities-data/01-intro-notebooks/index.qmd).
+- [ ] Start introduction to [EDA and Data Visualization](../materials/interpreting-communicating-humanities-data/02-eda-data-viz/index.qmd).
+
+## Additional Materials
+
+- Davis, Erin. "What physical traits are most tied to gender in literature? Eye roll: Women are all soft thighs and red lips." *The Pudding*, July 2020. [https://pudding.cool/2020/07/gendered-descriptions/](https://pudding.cool/2020/07/gendered-descriptions/).
+- Wu, Shirley. "An Interactive Visualization of Every Line in Hamilton." *The Pudding*, March 2017. [https://pudding.cool/2017/03/hamilton/index.html](https://pudding.cool/2017/03/hamilton/index.html).
+
+## Assignments
+
+### Individual
+
+- [ ] Complete the [GETing Culture Across APIs Homework](../materials/creating-curating-humanities-data/06-getting-data-apis/index.qmd#getting-culture-across-apis-homework) by the next class.
+
+### Group
+
+- [ ] [Mid-Semester Dataset and Documentation Update](../assessments/03-semester-project/index.qmd#mid-semester-dataset-and-documentation-update-15).

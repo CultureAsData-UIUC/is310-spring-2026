@@ -1,0 +1,23 @@
+---
+title: "Structuring Data"
+toc: true
+date: 2024-11-07
+draft: true
+---
+
+## In-Class Agenda
+
+- [ ] Review the [Exploring and Visualizing Culture Homework](../materials/interpreting-communicating-humanities-data/02-eda-data-viz/index.qmd#exploring-and-visualizing-culture-homework).
+- [ ] Start [introduction to unstructured data](../materials/interpreting-communicating-humanities-data/03-intro-structuring-data/index.qmd).
+
+## Assigned Materials
+
+- Read through [the lesson on EDA and data visualization](../materials/interpreting-communicating-humanities-data/02-eda-data-viz/index.qmd).
+
+## Additional Materials
+
+## Assignments
+
+### Individual
+
+- [ ] Complete the [Exploring and Visualizing Culture Homework](../materials/interpreting-communicating-humanities-data/02-eda-data-viz/index.qmd#exploring-and-visualizing-culture-homework).

@@ -1,0 +1,15 @@
+---
+title: "Algorithmic Failures"
+toc: true
+date: 2024-11-12
+draft: true
+---
+
+## In-Class Agenda
+
+- [ ] Start [Introduction to Structuring Data](../materials/interpreting-communicating-humanities-data/03-intro-structuring-data/index.qmd) and [Exploring Computational Methods](../materials/interpreting-communicating-humanities-data/04-advanced-computational-methods/index.qmd).
+- [ ] Time permitting: work on group presentations for [Computing Cultural Data Assignment](../computing-cultural-data/index.qmd).
+
+## Additional Materials
+
+- Rettberg, Jill Walker. "Algorithmic Failure as a Humanities Methodology: Machine Learning's Mispredictions Identify Rich Cases for Qualitative Analysis." *Big Data & Society* 9, no. 2 (July 1, 2022): 20539517221131290. [https://doi.org/10.1177/20539517221131290](https://doi.org/10.1177/20539517221131290).

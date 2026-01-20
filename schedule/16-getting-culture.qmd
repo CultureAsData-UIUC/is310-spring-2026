@@ -1,0 +1,13 @@
+---
+title: "GETting Culture"
+toc: true
+date: 2024-10-17
+draft: true
+---
+
+## In-Class Agenda
+
+- [ ] Complete group presentations for the [Proprietary & Perspectival Data Creation Assignment](../proprietary-perspectival-dataset-creation/index.qmd).
+- [ ] Start [introduction to APIs and cultural data](../materials/creating-curating-humanities-data/06-getting-data-apis/index.qmd).
+
+## Additional Materials

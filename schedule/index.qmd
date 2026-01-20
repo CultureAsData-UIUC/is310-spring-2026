@@ -1,0 +1,33 @@
+---
+title: 'Schedule & Assignments Overview'
+toc: true
+---
+
+::: {.callout-note}
+This schedule is subject to change depending on our collective progress this semester, so please treat this as a general guideline that is not set in stone. I will add assignments as we progress below, but you should generally expect to have both assigned materials and assignments each week.
+:::
+
+## Weekly Schedule
+
+This overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.
+
+| Tuesday Topics (Explorations)  | Thursday Topics (Experimentations) |
+| -----------------: | --------------: |
+| [January 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data](01-introducing-computing-in-the-humanities-culture-as-data.qmd) | [January 22 - How Will We Work in This Course? Programming & Processing](02-programming-and-processing.qmd) |
+
+## Assignment Schedule
+
+*Assignments will be added throughout the semester depending on how much material we get through.*
+
+### Individual Assignments
+
+| Assignment | Due Date (Subject to Change) |
+| -----------------: | --------------: |
+| Initial Interest Survey (Link Available on Canvas) | [Due by Midnight CT on January 21](03-histories-of-culture-and-computing.qmd) | 
+
+
+### Group Assignments
+
+| Assignment | Due Date (Subject to Change) |
+| -----------------: | --------------: |
+| | |

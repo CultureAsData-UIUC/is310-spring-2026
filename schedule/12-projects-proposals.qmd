@@ -1,0 +1,11 @@
+---
+title: "Projects & Proposals"
+toc: true
+date: 2024-10-03
+draft: true
+---
+
+## In-Class Agenda
+
+- [ ] Review feedback on project proposal.
+- [ ] Work in groups on project, updating Project Manager and Project Board, planning next steps.
