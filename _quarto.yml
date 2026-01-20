@@ -5,9 +5,10 @@ project:
 website:
   title: "IS310 - Culture As Data Spring 2026"
   reader-mode: true
-  favicon: images/favicon.ico
+  favicon: assets/images/favicon.ico
 
   navbar:
+    logo: assets/images/favicon.ico
     left:
       - text: "Schedule"
         href: schedule/index.qmd
