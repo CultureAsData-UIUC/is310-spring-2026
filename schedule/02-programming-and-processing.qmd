@@ -8,8 +8,8 @@ date: 2026-01-22
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings.
-- [ ] Answer any questions about the Introduction to [Course Tools](../materials/introducing-humanities-computing/01-course-tools/index.qmd).
-- [ ] Start [Introduction to the Command Line & Prompt Engineering](../materials/introducing-humanities-computing/02-intro-cli-prompt-engineering/index.qmd) and [Introduction to Versioning & Git](../materials/introducing-humanities-computing/03-intro-versioning-git/index.qmd) (if not completed in-class, these will become homework).
+- [ ] Answer any questions about the Introduction to [Course Tools](../materials/introducing-humanities-computing/01-course-tools.qmd).
+- [ ] Start [Introduction to the Command Line & Prompt Engineering](../materials/introducing-humanities-computing/02-intro-cli-prompt-engineering.qmd) and [Introduction to Versioning & Git](../materials/introducing-humanities-computing/03-intro-versioning-git.qmd) (if not completed in-class, these will become homework).
 
 ## Assigned Materials (Complete Prior to Class)
 
@@ -17,7 +17,7 @@ date: 2026-01-22
 
 - Buschek, Christo, and Jer Thorp. “Models All The Way Down.” *Knowing Machines*. [https://knowingmachines.org/models-all-the-way](https://knowingmachines.org/models-all-the-way)
 - Vincent, Nick, and Hanlin Li. "GitHub Copilot and the Exploitation of 'Data Labor': A Wake-Up Call for the Tech Industry." *PSA Group* (blog), July 8, 2021. [https://www.psagroup.org/blogposts/101](https://www.psagroup.org/blogposts/101).
-- Complete Introduction to [Course Tools](../materials/introducing-humanities-computing/01-course-tools/index.qmd).
+- Complete Introduction to [Course Tools](../materials/introducing-humanities-computing/01-course-tools.qmd).
 
 ## Additional Materials (Not Required Reading)
 
