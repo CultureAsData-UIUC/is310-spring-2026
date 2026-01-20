@@ -13,6 +13,24 @@ format:
 
 ![](../assets/images/IS310_welcome.png){fig-alt="Welcome to IS310"}
 
+## Who are your instructors?
+
+Lead Instructor: Dr. Zoe LeBlanc
+
+Email: zleblanc@illinois.edu
+
+Website: [zoeleblanc.com](https://zoeleblanc.com){target="_blank"}
+
+*Contact me via Slack please*
+
+## Who are your instructors?
+
+Teaching Assistant: Jessica Frye
+
+Email: jrfrye2@illinois.edu
+
+![](../assets/images/frye_pic.jpeg)
+
 ## Course Description
 
 Currently the iSchool catalogue lists this following course description:
@@ -133,6 +151,14 @@ However, students should have some previous experience equivalent to a semester 
 . . .
 
 Relevant courses include **IS205** and **IS107**.
+
+## How much coding experience?
+
+I get this question every semester and there is no one answer. Part of the reason it depends is because AI is revolutionizing how we code. So even if you have limited experience, you might actually get further than you expect.
+
+. . .
+
+However, I would say that if you have limited interest in coding, you might consider switching to Dr. Roland's section of IS310 (Section A). Happy to assist if you decide that's what is best for you!
 
 ## Questions?
 
