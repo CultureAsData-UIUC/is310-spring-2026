@@ -645,6 +645,15 @@ Remember:
 
 **More details throughout the semester!** Though requirements are subject to change depending on speed and AI-usage.
 
+## General Note on Grading
+
+I tend to use GitHub to have as much transparency when it comes to grading and feedback. 
+
+. . .
+
+Generally, as far as I'm concerned you are all A+ humans. It's just about ensuring that effort, creativity, labor, and other core principles are correctly evaluated. If you have concerns over grades, I am always happy to discuss them. 
+
+
 # Course Policies
 
 Also available in the course syllabus and on the [course website](../policies.qmd){target="_blank"}
