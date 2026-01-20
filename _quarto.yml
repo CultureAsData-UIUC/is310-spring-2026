@@ -32,8 +32,8 @@ website:
               href: materials/introducing-humanities-computing/01-course-tools.qmd
             - text: "Command Line & Prompt Engineering"
               href: materials/introducing-humanities-computing/02-intro-cli-prompt-engineering.qmd
-        #     - text: "Introduction to Versioning & Git"
-        #       href: materials/introducing-humanities-computing/03-intro-versioning.qmd
+            - text: "Introduction to Versioning & Git"
+              href: materials/introducing-humanities-computing/03-intro-versioning.qmd
         #     - text: "Command Line Cheatsheet"
         #       href: materials/introducing-humanities-computing/04-command-line-cheatsheet.qmd
         #     - text: "Advanced Git and GitHub"

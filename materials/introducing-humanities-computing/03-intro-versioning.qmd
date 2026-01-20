@@ -1,7 +1,6 @@
 ---
 title: "Introduction to Versioning & Git"
 toc: true
-draft: true
 ---
 
 ::: {.callout-note}
@@ -179,7 +178,7 @@ This is telling us that we are on the `main` branch, we have no changes to commi
 
 The DHRI lesson has the following metaphor/explanation for how we can conceptualize this process that I find very helpful:
 
-![](../images/dhri_git.png)
+![](../../assets/images/dhri_git.png)
 
 Thinking of git as a camera taking a photo of your project at a particular point in time is a helpful way to understand how git works (also like thinking of it as a save point in a video game). Every time you commit your changes, you are taking a snapshot of your project. You can then go back to that snapshot at any time. But also sometimes you don't want to save a snapshot or you want to redo it, git let's you do that too.
 
@@ -550,15 +549,15 @@ We have yet to learn much about Markdown but you can use the following template 
 
 1. Python
 
-![Python Installation](images/python-installation.png)
+![Python Installation](../../assets/images/python-installation.png)
 
 2. Git
 
-![Git Installation](images/git-installation.png)
+![Git Installation](../../assets/images/git-installation.png)
 
 3. VS Code
 
-![VS Code Installation](images/vscode-installation.png)
+![VS Code Installation](../../assets/images/vscode-installation.png)
 ```
 
 **This should also include your Discord and Hypothesis usernames.**

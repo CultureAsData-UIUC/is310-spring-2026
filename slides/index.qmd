@@ -7,4 +7,4 @@ Slides from class lectures and presentations.
 
 ## Available Slides
 
-- [Weekly Assessments](weekly-assessments.qmd) - Overview of how assessments work in this course
+- [First Class Slides](01-introducing-computing-in-the-humanities.qmd)

@@ -1,0 +1,980 @@
+---
+title: "Introductions & Installations"
+subtitle: "✨ Welcome to IS310 - Culture As Data Spring 2026 ✨"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+---
+
+# 
+
+![](../assets/images/IS310_welcome.png){fig-alt="Welcome to IS310"}
+
+## Course Description
+
+Currently the iSchool catalogue lists this following course description:
+
+> Explores use and application of technology to scholarly activity in the humanities, including projects that put classic texts on the web or create multimedia applications on humanities topics.
+
+This isn't necessarily wrong, but not quite descriptive enough for this version of the course.
+
+## What is "Culture as Data"?
+
+Our goal is to understand how **culture** can be represented as data and studied with computation.
+
+. . .
+
+By culture, we mean what's usually associated with the Humanities:
+
+- Popular fiction & literature
+- Newspapers & government documents
+- Online communities (Reddit, TikTok subcultures)
+
+## Culture is Increasingly Digital
+
+Culture is an intrinsic part of being human.
+
+. . .
+
+Today, that culture is increasingly both **digital** and **datafied**.
+
+. . .
+
+But representing our cultural heritage is rarely straightforward or without tradeoffs.
+
+## Humanities Can Change Computing
+
+We will explore how humanities can change how we think about computing.
+
+. . .
+
+- Histories of data collection and computation are **fundamentally political**
+- Interpretation becomes "baked" into technologies
+- These forces shape both scholarship and society
+
+## What We'll Do
+
+We will investigate these topics through:
+
+. . .
+
+- Weekly readings and assignments
+
+. . .
+
+- A semester-long project
+
+. . .
+
+- Experiencing the full process: from humanistic questions → collecting data → analyzing → communicating findings
+
+## Bigger Questions
+
+Through weekly assignments and projects, we will debate:
+
+- Data ethics and privacy
+- Sustainability and curation of digital projects
+- Possibilities and limitations of computational methods
+- How computing in the humanities connects to global conversations about data and society
+
+# Learning Objectives
+
+## Objective 1: Explore
+
+**Explore computing in the humanities as a research field.**
+
+. . .
+
+Through class discussions, readings, selected projects, and assignments, this course will provide an overview of the:
+
+- History
+- Debates
+- Current trends
+
+## Objective 2: Experiment
+
+**Experiment with computing in the humanities as a research praxis.**
+
+. . .
+
+Through learning coding, data analysis, and project management, this course will provide a foundation for:
+
+- Making projects that blend culture and coding
+- Engaging with debates over how to maintain and evaluate this type of scholarship
+
+## What Comes After This Course?
+
+Much depends on your interests, but you will be well equipped to continue undertaking **substantive and innovative research** on culture using computation and data. These skills are useful whether you aim to be a:
+
+- Data scientist or developer
+- Computational or Data Journalist
+- Data or DH Librarian
+- HCI or UX researcher
+
+Or just someone who understands how technology and information shape our world
+
+## Ideally...
+
+I hope each of you continues to work on your final project and share your research **long after the course ends**.
+
+# Prerequisites
+
+## Pre- and Co-Requisites
+
+There is **no required prerequisite**.
+
+. . .
+
+However, students should have some previous experience equivalent to a semester of programming, ideally in Python.
+
+. . .
+
+Relevant courses include **IS205** and **IS107**.
+
+## Questions?
+
+Interested students should contact the instructor if they have any questions.
+
+. . .
+
+**Let's get started!**
+
+. . .
+
+By exploring our [course website ✨](../schedule/index.qmd){target="_blank"}
+
+
+# Assessments
+
+In this course, we have two main categories of assessments: weekly ones and ones associated with the semester long project. Both types are intended to introduce you to new materials, help you synthesize this content, and engage in research that is meaningful to you. Your final grade will be evenly divided between these two categories.
+
+# Weekly Assessments
+
+Your performance in weekly assessments constitutes **half of your final grade**.
+
+These assessments include:
+
+- In-class discussions
+- Asynchronous annotations
+- Weekly coding assignments
+
+. . .
+
+**Graded as pass/fail** — but engagement, creativity, and growth matter!
+
+## Weekly Participation (25%)
+
+Two components:
+
+1. **Individual engagement** with course materials
+2. **Collaborative group presentations**
+
+Both ensure you're deepening your own understanding AND learning from peers.
+
+## Seminar Discussion & Annotations (15%)
+
+Before each class, engage with assigned materials:
+
+- Book chapters or articles
+- Data visualizations
+- Documentation
+
+These lay the groundwork for class discussions and your semester project.
+
+## Questions to Consider
+
+When engaging with weekly materials, ask yourself:
+
+- What is the main argument? Is there one?
+- How does the author support their argument?
+- What evidence or data did they use?
+- What is the likely audience?
+
+## More Questions to Consider
+
+- What connections or tensions exist across materials?
+- What was confusing or unclear?
+- How does this connect to previous weeks?
+
+. . .
+
+**Goal:** Summarize central points in a few lines, not detail everything!
+
+## Demonstrating Engagement
+
+### Option 1: Seminar Discussions
+
+- Ask questions about complex concepts
+- Share connections across materials
+- Respond thoughtfully to peers
+
+. . .
+
+**Goal:** Create a thoughtful and respectful intellectual community
+
+## Demonstrating Engagement
+
+### Option 2: Asynchronous Annotations
+
+Using **Hypothesis** annotation platform:
+
+- Share thoughts on weekly materials
+- Engage with peers' annotations
+- May be asked to expand during discussions
+
+Sign up: [hypothes.is/signup](https://hypothes.is/signup){target="_blank"} and more details available in our [course website](../materials/introducing-humanities-computing/01-course-tools.qmd#hypothesis){target="_blank"}
+
+## Grading: Seminar Discussions
+
+To receive full credit:
+
+- **Be present** in person
+- **Actively participate** in discussion or activities
+
+. . .
+
+Simply attending class is **not enough**!
+
+## Grading: Annotations
+
+- Submit via Hypothesis by **midnight the day before class**
+- Tag appropriately in our Hypothesis group
+- Demonstrate **thoughtful engagement**:
+  - Summarize key points
+  - Raise questions
+  - Make connections
+
+## Group Presentations (10%)
+
+Groups assigned in first two weeks based on:
+
+- Student interests
+- Backgrounds (music, literature, social media, gaming, etc.)
+
+## Group Work Structure
+
+**Weekly Prompts and Activities:**
+
+- Find digital objects
+- Explore datasets
+- Apply concepts from readings
+
+## In-Class Presentations
+
+- Not every group presents every week
+- Even if not presenting:
+  - Submit work to GitHub
+  - Be prepared to discuss
+
+. . .
+
+Presentations should be **clear, concise**, and demonstrate understanding.
+
+## Documentation Requirements
+
+All group work must be documented on GitHub:
+
+- Summary of activities
+- How labor was divided
+- Reflections on the process
+
+. . .
+
+**Clear documentation is crucial** for grading and project progress!
+
+## Grading: Group Work
+
+Based on:
+
+- Active participation in presentations
+- Quality of contributions
+- Effectiveness of collaboration
+
+. . .
+
+Grade not impacted if a member is absent (but group must pivot).
+
+## Group Work Deadlines
+
+Submit to GitHub by **midnight before class**.
+
+- **Late submissions:** Half credit (with explanation)
+- **Repeated late submissions:** Meeting with Instructor
+
+## Weekly Coding Assignments (25%)
+
+- Complete and share via GitHub
+- **Pair programming encouraged!**
+
+. . .
+
+Work together, but make sure you **understand the concepts** — they build quickly!
+
+## Grading: Coding Assignments
+
+- Due: **Midnight before class**
+- Late submissions: **Half credit** (if before final class)
+
+. . .
+
+Questions encouraged — in person and online!
+
+## Required Texts & Resources
+
+**Good news:** Almost all materials available free online!
+
+- Course website
+- Canvas
+
+. . .
+
+No required purchases for software or books.
+
+## Computer Access
+
+You will need access to a computer.
+
+. . .
+
+If this is an issue, **let me know early** — we'll find solutions!
+
+## Summary
+
+| Component | Weight |
+|-----------|--------|
+| Seminar Discussion & Annotations | 15% |
+| Group Presentations | 10% |
+| Weekly Coding Assignments | 25% |
+| **Total** | **50%** |
+
+## Questions?
+
+Remember:
+
+- Engage thoughtfully
+- Collaborate with peers
+- Ask questions early and often!
+
+# Semester Long Project
+
+The goal of this project is to expose you to how we **create and work with culture as data**.
+
+. . .
+
+You will be assessed on both your **individual contributions** and the **group's final submission**.
+
+## Inspired by RDC Project
+
+The project is modeled on the *Responsible Datasets in Context* Project:
+
+[responsible-datasets-in-context.com](https://www.responsible-datasets-in-context.com/){target="_blank"}
+
+. . .
+
+Created to help students "work with data responsibly."
+
+## Why Context Matters
+
+> "Data cannot be analyzed responsibly without deep knowledge of its social and historical context, provenance, and limitations."
+
+. . .
+
+> "In classes, it is very common for students to use datasets that they find on websites like Kaggle, datasets that are poorly documented and that students thus don't fully understand. This is a recipe for irresponsible data work."
+
+## Your Goal
+
+You will work collaboratively to create a **first draft** of what could eventually be part of the RDC Project.
+
+. . .
+
+Not as polished or extensive — but a meaningful contribution.
+
+# Project Milestones
+
+## Timeline Overview
+
+| Milestone | Due Date | Weight |
+|-----------|----------|--------|
+| Group & Individual Topic Selection | Feb 5 | Pass/Fail |
+| Initial Dataset | Mar 12 | 15% |
+| Data Demo Day | Apr 30 or May 5 | 5% |
+| Final Submission | May 15 | 30% |
+
+# Milestone 1: Topic Selection
+
+**DUE FEBRUARY 5, 2026**
+
+(Optional Extension to February 12)
+
+## Group Formation
+
+In the first two weeks, you will be assigned to a group based on:
+
+- Shared interests
+- Complementary skill sets
+
+## Planning Document
+
+Your first task is to collaboratively determine:
+
+. . .
+
+- **Group Theme:** Shared area of interest
+
+. . .
+
+- **Individual Ideas:** Specific datasets each member is considering
+
+. . .
+
+- **Collaboration Plan:** Communication and GitHub organization strategy
+
+## Format & Submission
+
+- Markdown file (`planning.md`) in your GitHub repo
+- 500–750 words
+- Use headings, bullet points, links, images, or tables
+
+# Milestone 2: Initial Dataset
+
+**DUE MARCH 12, 2026**
+
+(Optional Extension to March 24)
+
+**15% of Final Grade**
+
+## Why Start Small?
+
+Create approximately **50-100 data items** through close, interpretive work.
+
+. . .
+
+**Why small?** This is where you learn that every dataset embeds interpretive choices.
+
+. . .
+
+When you manually work through items, deciding what counts and how to categorize, you experience the intellectual and ethical labor that gets hidden at scale.
+
+## Computation Required
+
+While your dataset is small, you **must use computational tools** to assist.
+
+. . .
+
+This is not about automation—it's about understanding how computation can **augment** even bespoke data work.
+
+## Approach 1: Create from Scratch
+
+Transform complex cultural materials into structured data.
+
+. . .
+
+**Examples:**
+
+- Digitize lesser-known children's literature and decide what to capture
+- Annotate TikToks mentioning AI to track recurring themes
+- Extract and categorize visual elements from historical documents
+
+## Approach 2: Audit & Augment
+
+Critically engage with an **existing dataset** that lacks documentation or transparency.
+
+. . .
+
+**Examples:**
+
+- Trace a Kaggle movie dataset back to its source
+- Compare original reviews to what appears in the dataset
+- Add missing metadata or flag inconsistencies
+
+## Submission Components
+
+1. **Initial Dataset** (~50-100 items) in structured format
+
+. . .
+
+2. **Initial Documentation** explaining process and interpretive choices
+
+. . .
+
+3. **Next Steps** plan for scaling computationally
+
+# Milestone 3: Data Demo Day
+
+**APRIL 30 OR MAY 5, 2026**
+
+**5% of Final Grade**
+
+## Focus on What's Next
+
+This presentation is primarily about **speculation**:
+
+. . .
+
+- What users do you envision?
+- What computational methods might you try?
+- What patterns might emerge at scale?
+- What future data would you collect?
+
+## Work in Progress
+
+This is **work-in-progress**, not a final polished product.
+
+. . .
+
+Be **creative and ambitious** in your presentations!
+
+# Milestone 4: Final Submission
+
+**DUE MAY 15, 2026**
+
+**NO EXTENSIONS**
+
+**30% of Final Grade**
+
+## What You'll Have Done
+
+By this point, you will have:
+
+- Created data manually with computational assistance
+- Augmented it at scale
+- Experimented with methods
+- Presented speculative visions
+
+## Individual Component (25%)
+
+**Culture As Dataset:**
+
+- Bespoke manual work + computational augmentation
+- Structured format, thoughtfully organized
+- Relevant documentation
+
+## Individual Component (cont.)
+
+**Culture As Documentation:**
+
+A final data essay that tells the story of your dataset:
+
+- How you made it
+- What it represents
+- What it reveals and conceals
+
+## Data Essay Focus Areas
+
+Your essay should address:
+
+- How computation played a role
+- How scale shaped the data
+- Limitations and qualifications
+- Ethical or privacy considerations
+- Lessons learned
+- Connection to peer-reviewed scholarship
+
+## Collective Component (5%)
+
+**Collective Principles & Documentation**
+
+. . .
+
+Synthesize what your group collectively learned about working with your particular type of cultural data.
+
+## Think of It As...
+
+Writing the documentation you wish had existed when you started.
+
+. . .
+
+- What should someone know before representing music as data? Or social media? Or gaming culture?
+
+. . .
+
+- What principles emerged from your group's diverse approaches?
+
+# Summary
+
+## Grade Breakdown
+
+| Component | Weight |
+|-----------|--------|
+| Topic Selection | Pass/Fail |
+| Initial Dataset | 15% |
+| Data Demo Day | 5% |
+| Final Submission (Individual) | 25% |
+| Final Submission (Collective) | 5% |
+| **Total** | **50%** |
+
+## Questions?
+
+Remember:
+
+- Start with **close, interpretive work**
+- Use **computation to augment**, not replace
+- Document your **decisions and process**
+- Think about **context and responsibility**
+
+. . .
+
+**More details throughout the semester!**
+
+# Course Policies
+
+Also available in the course syllabus and on the [course website](../policies.qmd){target="_blank"}
+
+# Attendance
+
+The iSchool expects students to attend all classes except in cases of emergency. Student Code on Attendance: [http://studentcode.illinois.edu/article1/part5/1-501/](http://studentcode.illinois.edu/article1/part5/1-501/){target="_blank"}
+
+. . .
+
+**But life happens** — illness, family emergencies, mental health needs, and other circumstances sometimes require missing class.
+
+## If You Need to Miss Class
+
+If you are feeling unwell or have been exposed to illness, **please stay home and prioritize your health.**
+
+. . .
+
+I do not require doctor's notes for absences.
+
+. . .
+
+However, please keep in mind that if you miss a substantial portion of class meetings, it will be difficult to make up missed content and that you need to coordinate with your group members who depend on your contributions.
+
+## When You Miss Class
+
+. . .
+
+- Message me on **Slack** as soon as possible
+  
+. . .
+
+- Inform your **group members** so they can plan accordingly
+  
+. . .
+
+- Check in with me about **making up** missed content
+
+. . .
+
+- Review materials on the **course website**
+
+## Information Overload Days
+
+Sometimes you need a break from the workload.
+
+. . .
+
+Instead of missing class outright, let me know you need an **information overload day**.
+
+## How Information Overload Days Work
+
+. . .
+
+- You are excused from assigned materials and discussion
+
+. . .
+
+- You **actively listen** during class
+
+. . .
+
+- Consult with instructor about make-up assignments later
+
+. . .
+
+- Inform your group and help them adjust
+
+. . .
+
+**Two free, no questions asked** — after that, let's talk!
+
+## Worst Case Scenarios
+
+If you or someone close to you becomes ill:
+
+- Final grade based on existing work
+- Option to move course to pass/fail
+
+. . .
+
+**When you can, please get in touch.** Your wellbeing comes first.
+
+# Communication & Respect
+
+We use **Slack** for communication beyond class meetings.
+
+. . .
+
+- Join the **DH@UIUC Slack** (link in Canvas)
+
+. . .
+
+- Join the `#is310-spring-2026` channel
+
+. . .
+
+You can also use [Calendly](https://calendly.com/zleblanc/chat-with-prof-zoe) or email [zleblanc@illinois.edu](mailto:zleblanc@illinois.edu).
+
+## Respect in All Communication
+
+. . .
+
+- In-person interactions
+
+. . .
+
+- Slack messages
+
+. . .
+
+- Emails
+
+. . .
+
+This course is experimental with students from varied backgrounds. Every opinion, question, and idea deserves a **respectful response**.
+
+## Rule of Thumb
+
+**When in doubt, ask questions and over-communicate — but do so respectfully!**
+
+# Academic and Self Integrity
+
+The iSchool maintains academic integrity to protect the quality of education.
+
+. . .
+
+Consequences range from written warnings to **failing grades or dismissal**.
+
+## The Short Version
+
+**Don't cheat.**
+
+. . .
+
+If you need help, see the instructor.
+
+. . .
+
+I would rather you turn in work **late** than have to report you for plagiarism.
+
+---
+
+## Citation as Practice
+
+We'll discuss what constitutes plagiarism (it gets thorny with code).
+
+. . .
+
+**Rule of thumb:** Cite as much as possible.
+
+. . .
+
+All scholarship is a collective endeavor.
+
+---
+
+## Why Citation Matters
+
+> "Citation is how we acknowledge our debt to those who came before; those who helped us find our way when the way was obscured because we deviated from the paths we were told to follow."
+>
+> — Sara Ahmed, *Living a Feminist Life*
+
+. . .
+
+> "Acknowledging and establishing feminist genealogies is part of the work of producing more just forms of knowledge and intellectual practice."
+>
+> — Beverly Weber, [Digital Feminist Collective](https://digitalfeministcollective.net/index.php/2018/01/13/the-politics-of-citation/)
+
+## Why Citation Matters
+
+Acknowledging sources is both **intellectually and politically imperative**.
+
+# AI Policy
+
+This course **explicitly allows** AI tools.
+
+. . .
+
+We will experiment primarily with **GitHub Co-Pilot**.
+
+. . .
+
+AI is not going away — we need to engage with it **critically**.
+
+## Your Course Workflow
+
+In the first two weeks, submit your **Course Workflow** addressing:
+
+- **Using AI?** Which tools? For what purposes?
+- **Not using AI?** What's your alternative workflow?
+- **Using local models?** Consult with instructor for setup.
+
+## If Your Workflow Changes
+
+AI use is **iterative and experimental**.
+
+. . .
+
+If your approach changes during the semester, simply update your workflow statement.
+
+. . .
+
+**No judgment** — experimentation is encouraged!
+
+## Using Agentic AI
+
+If you use highly agentic AI tools, you'll be held to **higher standards**:
+
+- More sophisticated analysis
+- Rigorous documentation of AI use
+- Deeper engagement with scholarship
+
+. . .
+
+If AI does more technical work, you show more **intellectual work**.
+
+## What Counts as Agentic AI?
+
+- Tools that autonomously write, debug, and execute complex code
+- Tools that independently conduct multi-step research
+- Tools that generate substantial written work with minimal input
+
+. . .
+
+**If you're unsure, ask!**
+
+## AI Access & Equity
+
+We use **free tools**:
+
+- GitHub Copilot (free with GitHub Student Developer Pack)
+- Open-source local models
+
+. . .
+
+If using paid tools, **disclose** and check for education discounts.
+
+## AI for Coding
+
+You may use AI to help write, debug, and understand code.
+
+. . .
+
+**But make sure you understand what the code does.**
+
+. . .
+
+If code breaks, **you** need to fix it.
+
+## AI for Written Work
+
+You may use AI for brainstorming, outlining, drafting, or editing.
+
+. . .
+
+**Your ideas, arguments, and voice should be yours.**
+
+. . .
+
+If an essay reads like it was primarily AI-generated or if you cannot answer questions about your submissions, you will be dinged points.
+
+## AI for Data Work
+
+You may use AI for data collection, cleaning, analysis, or documentation.
+
+. . .
+
+**You** make the interpretive decisions.
+
+. . .
+
+Your work must demonstrate you understand your methodology deeply.
+
+## The Bottom Line
+
+AI should make you **more capable**, not less thoughtful.
+
+. . .
+
+It should **amplify** your learning, not replace it.
+
+. . .
+
+If you can't explain what your code does or why your essay makes certain arguments, **stop and reassess**.
+
+## Questions?
+
+Remember:
+
+- Communicate early and often
+- Engage thoughtfully with AI
+- Respect the land and each other
+
+. . .
+
+**Full policies available on the course website and in the syllabus on Canvas.**
+
+# Land Acknowledgement Statement
+
+*Adopted by the University of Illinois in 2018*
+
+I would like to begin today by recognizing and acknowledging that we are on the lands of the Peoria, Kaskaskia, Piankashaw, Wea, Miami, Mascoutin, Odawa, Sauk, Mesquaki, Kickapoo, Potawatomi, Ojibwe, and Chickasaw Nations. 
+
+## Traditional Territory
+
+These lands were the traditional territory of these Native Nations **prior to their forced removal**; 
+
+. . .
+
+These lands continue to carry the stories of these Nations and their struggles for survival and identity. 
+
+## Our Responsibility
+
+As a **land-grant institution**, the University of Illinois has a particular responsibility to acknowledge the peoples of these lands, as well as the histories of dispossession that have allowed for the growth of this institution for the past 150 years. We are also obligated to reflect on and actively address these histories and the role that this university has played in shaping them. This acknowledgement and the centering of Native peoples is a start as we move forward for the next 150 years.
+
+## Beyond Platitudes: What does this mean?
+
+While this acknowledgement is important, I find that these words can be difficult to understand or visualize.
+
+. . .
+
+Let's look at the first two digital humanities projects in this course to help us understand.
+
+## *Native Land Digital*
+
+Visualizes indigenous lands worldwide, built by a Canadian non-for-profit, that helps us see how this dispossession has shaped our very understanding of geography and political identity. 
+
+## *Native Land Digital*
+
+[![Native Lands Map of Illinois](../assets/images/nativelands_illinois.png)](https://native-land.ca/){target="_blank"}
+
+
+## *Land Grab Universities*
+
+How the Morrill Act dispossessed tribal lands, signed in 1862, dispossessed tribal lands to fund the creation of public state universities. The project was built by Robert Lee, Tristane Ahtone, Margaret Pearce, Kalen Goodluck, Geoff McGhee, and Cody Leff and published by *High Country News*
+
+## *Land Grab Universities*
+
+[![Land Grab Universities - Illinois](../assets/images/landgrabu_illinois.png)](https://www.landgrabu.org/){target="_blank"}
+
+## Final Discussion Questions
+
+What is computing in the humanities? 
+
+. . .
+
+What is culture as data?
+
+. . .
+
+Visit [What is Digital Humanities?](https://whatisdigitalhumanities.com/){target="_blank"} and refresh a few times
+
+. . .
+
+Also visit [Open Syllabus Project](https://opensyllabus.org/){target="_blank"}
+
+
+
