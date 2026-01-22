@@ -35,158 +35,620 @@
     "text": "TF-IDF Code\nTo run TF-IDF we’ll be using the scikit-learn library. You can find the documentation here https://scikit-learn.org/stable/. In particular, we’ll be using the TfidfVectorizer class https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html.\n\nfrom sklearn.feature_extraction.text import TfidfVectorizer\n\nvectorizer = TfidfVectorizer()\n\n# Fit and transform the text data\ntfidf_matrix = vectorizer.fit_transform(combined_novels_nyt_df.cleaned_pg_eng_text.fillna(''))\n\n# Convert the TF-IDF matrix to a DataFrame for better readability\ntfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=vectorizer.get_feature_names_out())\n\n# Add the titles to the DataFrame\ntfidf_df['title'] = combined_novels_nyt_df['title'].values\n\n# Melt the DataFrame to get a long format DataFrame with terms and scores\nmelted_tfidf_df = tfidf_df.melt(id_vars=['title'], var_name='term', value_name='score')\n\n# Sort the DataFrame by score in descending order\nsorted_tfidf_df = melted_tfidf_df.sort_values(by='score', ascending=False)\n\n# Display the top 10 results\nsorted_tfidf_df.head(10)\n\n\n\n\n\n\n\n\ntitle\nterm\nscore\n\n\n\n\n115304890\nThe Last Days of Pompeii\nthe\n0.730242\n\n\n115304767\nGerminal\nthe\n0.700247\n\n\n115304868\nNostromo\nthe\n0.699570\n\n\n115304932\nDeath In Venice\nthe\n0.687305\n\n\n115304523\nThe Grapes of Wrath\nthe\n0.670729\n\n\n115304601\nThe War of the Worlds\nthe\n0.668319\n\n\n115304796\nThe Phantom of the Opera\nthe\n0.667619\n\n\n115304750\nDeath Comes for the Archbishop\nthe\n0.659896\n\n\n115304525\nThe Last of the Mohicans\nthe\n0.659860\n\n\n115304564\nA Journey to the Center of the Earth\nthe\n0.653512\n\n\n\n\n\n\n\nYou’ll notice that our top results are all the words the. This is exactly the issue with common words and why stop words are so popular. So we can try removing the stop words and see what results we get.\nIndeed, TF-IDF has a number of parameters that you can set. Specifically it includes parameters for dealing with stop words, max_df, min_df, and ngram_range. Let’s experiment with some of these parameters.\nfrom sklearn.feature_extraction.text import TfidfVectorizer\n\n# Let's try out some different parameters\ntfidf = TfidfVectorizer(stop_words='english', max_df=0.5, min_df=2, ngram_range=(1, 2))\ntfidf_matrix = tfidf.fit_transform(df['text'])\n\nvectorizer = TfidfVectorizer(stop_words=\"english\")\n\n# Fit and transform the text data\ntfidf_matrix = vectorizer.fit_transform(combined_novels_nyt_df.cleaned_pg_eng_text.fillna(''))\n\n# Convert the TF-IDF matrix to a DataFrame for better readability\ntfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=vectorizer.get_feature_names_out())\n\n# Add the titles to the DataFrame\ntfidf_df['title'] = combined_novels_nyt_df['title'].values\n\n# Melt the DataFrame to get a long format DataFrame with terms and scores\nmelted_tfidf_df = tfidf_df.melt(id_vars=['title'], var_name='term', value_name='score')\n\n# Sort the DataFrame by score in descending order\nsorted_tfidf_no_stopwords_df = melted_tfidf_df.sort_values(by='score', ascending=False)\n\n# Display the top 10 results\nsorted_tfidf_no_stopwords_df.head(10)\n\n\n\n\n\n\n\n\ntitle\nterm\nscore\n\n\n\n\n38042168\nHeidi\nheidi\n0.821331\n\n\n107126913\nA Christmas Carol\nscrooge\n0.819125\n\n\n8154752\nThis Side of Paradise\namory\n0.786431\n\n\n16185827\nCandide\ncandide\n0.748896\n\n\n65341057\nResurrection\nnekhludoff\n0.732123\n\n\n124364958\nHeart of Darkness\nx80\n0.684902\n\n\n141660306\nHeart of Darkness\nxe2\n0.684902\n\n\n141659937\nUncle Tom's Cabin\nxe2\n0.684411\n\n\n124364589\nUncle Tom's Cabin\nx80\n0.684411\n\n\n124364572\nThe Adventures of Tom Sawyer\nx80\n0.684342\n\n\n\n\n\n\n\nNow we see we are getting words that are more specific to each novel, though we still have some unicode characters like x80 and x99 which are € and ’ respectively. We could try removing these characters from our text or use more of the TF-IDF parameters to make them less important. We can also add a custom token pattern that removes these characters.\ntfidf = TfidfVectorizer(stop_words='english', max_df=0.5, min_df=2, ngram_range=(1, 2), token_pattern=r'(?u)\\b\\w+\\b')\ntfidf_matrix = tfidf.fit_transform(df['text'])\nAlternatively though we could actually use spaCy to help us clean this text. Let’s try using spaCy to clean our text and see if we get better results.\n# Load the spaCy English model\nnlp = spacy.load(\"en_core_web_sm\")\n\n# Define a function to clean the text with spaCy\ndef clean_text_spacy(text):\n    # Process the text with spaCy\n    doc = nlp(text)\n    # Remove stopwords, punctuation, and non-alphabetic tokens\n    tokens = [token.lemma_ for token in doc if token.is_alpha and not token.is_stop]\n    # Join tokens back to a single string\n    return ' '.join(tokens)\n\n# Apply the cleaning function to the text data\ncombined_novels_nyt_df['cleaned_text'] = combined_novels_nyt_df['cleaned_pg_eng_text'].fillna('').apply(clean_text_spacy)\n\ndef chunk_text(text, n=10000):\n    return (text[i:i+n] for i in range(0, len(text), n))\n\n# Define a function to clean text with spaCy, processing in chunks\ndef clean_text_spacy(text, nlp, chunk_size=10000):\n    cleaned_chunks = []\n    chunks = list(chunk_text(text, chunk_size))\n    \n    # Chunk the text and process each chunk\n    for chunk in tqdm(chunks, desc=\"Processing Chunks\", leave=False):\n        doc = nlp(chunk)  # Process each chunk with spaCy\n        # Remove stopwords, punctuation, and non-alphabetic tokens, and apply lemmatization\n        tokens = [token.lemma_ for token in doc if token.is_alpha and not token.is_stop]\n        # Join tokens of the current chunk and add to cleaned chunks\n        cleaned_chunks.append(' '.join(tokens))\n    \n    # Join all chunks into a single string (optional, based on your needs)\n    return ' '.join(cleaned_chunks)\n\n# Assuming combined_novels_nyt_df and eng_nlp are already defined\ntqdm.pandas(desc=\"Cleaning Text\")\ncombined_novels_nyt_df['cleaned_pg_eng_text_spacy'] = combined_novels_nyt_df.cleaned_pg_eng_text.fillna('').progress_apply(clean_text_spacy, nlp=eng_nlp)\n\n\nvectorizer = TfidfVectorizer(stop_words=\"english\", min_df=1, max_df=0.7,)\n\n# Fit and transform the text data\ntfidf_matrix = vectorizer.fit_transform(combined_novels_nyt_df.cleaned_pg_eng_text_spacy.fillna(''))\n\n# Convert the TF-IDF matrix to a DataFrame for better readability\ntfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=vectorizer.get_feature_names_out())\n\n# Add the titles to the DataFrame\ntfidf_df['title'] = combined_novels_nyt_df['title'].values\n\n# Melt the DataFrame to get a long format DataFrame with terms and scores\nmelted_tfidf_df = tfidf_df.melt(id_vars=['title'], var_name='term', value_name='score')\n\n# Sort the DataFrame by score in descending order\nsorted_tfidf_no_stopwords_min_max_df = melted_tfidf_df.sort_values(by='score', ascending=False)\n\n# Display the top 10 results\nsorted_tfidf_no_stopwords_min_max_df.head(10)\n\n\n\n\n\n\n\n\ntitle\nterm\nscore\n\n\n\n\n44672498\nThe Hunchback of Notre Dame\nn\n0.992497\n\n\n44672555\nThe Hound of the Baskervilles\nn\n0.988642\n\n\n44672495\nThe Count of Monte Cristo\nn\n0.951079\n\n\n44672602\nThe Sun Also Rises\nn\n0.950076\n\n\n44672542\nSons and Lovers\nn\n0.946033\n\n\n44672446\nJane Eyre\nn\n0.944493\n\n\n44672469\nLes Misérables\nn\n0.941966\n\n\n44672520\nA Journey to the Center of the Earth\nn\n0.941441\n\n\n44672492\nUlysses\nn\n0.939559\n\n\n44672491\nUlysses\nn\n0.939559\n\n\n\n\n\n\n\nYou’ll notice that I’ve set the parameter min_df=1 and max_df=0.7. If we go to the scikit-learn documentation for TfidfVectorizer we can see that min_df is the minimum document frequency and max_df is the maximum document frequency. This means that we are only including words that appear in at least 2 documents and in at most 70% of the documents. So you can imagine that these parameters can determine a lot of our analysis.\n\nvectorizer = TfidfVectorizer(stop_words=\"english\", min_df=1, max_df=0.9, ngram_range=(1, 2), max_features=1000)\n\n# Fit and transform the text data\ntfidf_matrix = vectorizer.fit_transform(combined_novels_nyt_df.cleaned_pg_eng_text_spacy.fillna(''))\n\n# Convert the TF-IDF matrix to a DataFrame for better readability\ntfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=vectorizer.get_feature_names_out())\n\n# Add the titles to the DataFrame\ntfidf_df['title'] = combined_novels_nyt_df['title'].values\n\n# Melt the DataFrame to get a long format DataFrame with terms and scores\nmelted_tfidf_df = tfidf_df.melt(id_vars=['title'], var_name='term', value_name='score')\n\n# Sort the DataFrame by score in descending order\nsorted_tfidf_no_stopwords_min_max_ngram_df = melted_tfidf_df.sort_values(by='score', ascending=False)\n\n# Display the top 10 results\nsorted_tfidf_no_stopwords_min_max_ngram_df.head(10)"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#what-is-a-terminal",
-    "href": "slides/03-intro-cli-prompt-engineering.html#what-is-a-terminal",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "What is a Terminal?",
-    "text": "What is a Terminal?\nA terminal is a way to interact with your computer via text commands.\n\nInstead of clicking on icons (GUI), we type explicit commands.\n\n\nYou’ve already used it!\npython3 --version\n\nTerminals are a way to interact with your computer via text commands. Today, we usually give commands to a computer via a Graphical User Interface (GUI), pronounced “gooey”. Any time you download an app, whether on your phone or computer, you are using a GUI. GUIs let us click on icons, drag items, and interact with our computers in a visual way. Terminals let us do many of the same functions, but we have to be more explicit and write these commands."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#who-are-your-instructors",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#who-are-your-instructors",
+    "title": "Introductions & Installations",
+    "section": "Who are your instructors?",
+    "text": "Who are your instructors?\nLead Instructor: Dr. Zoe LeBlanc (You can call me Prof. LeBlanc or Prof. Zoe)\nPronouns: She/Her\nEmail: zleblanc@illinois.edu\nWebsite: zoeleblanc.com\nContact me via Slack please I will try to learn your names starting next week. Please correct me if I get it wrong. Thank you!!"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#a-brief-history-of-computing",
-    "href": "slides/03-intro-cli-prompt-engineering.html#a-brief-history-of-computing",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "A Brief History of Computing",
-    "text": "A Brief History of Computing\n\n\n\nEarly computer (ENIAC)\n\n\n\nBack in the 1950s and 1960s, computers were the size of entire rooms and functioned through the use of something called punch cards. These early computers required teams of operators, often comprised of women, who inputted punch cards to prompt the computers to process and output results on paper."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#who-are-your-instructors-1",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#who-are-your-instructors-1",
+    "title": "Introductions & Installations",
+    "section": "Who are your instructors?",
+    "text": "Who are your instructors?\nTeaching Assistant: Jessica Frye (Prefers Jess)\nPronouns: She/Her\nEmail: jrfrye2@illinois.edu"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#punch-cards",
-    "href": "slides/03-intro-cli-prompt-engineering.html#punch-cards",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Punch Cards",
-    "text": "Punch Cards\n\n\n\nPunch card from Index Thomisticus\n\n\nOne of the first Computing in the Humanities projects (1940s)\n\nPunch cards contained a series of holes that encoded information like numbers, letters, and even instructions for programs. These cards were fed into machines called card readers, translating the hole patterns into electrical signals the computer could understand. This enabled data entry for tasks like payroll calculations, statistical analysis, and even early gaming."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#course-description",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#course-description",
+    "title": "Introductions & Installations",
+    "section": "Course Description",
+    "text": "Course Description\nCurrently the iSchool catalogue lists this following course description:\n\nExplores use and application of technology to scholarly activity in the humanities, including projects that put classic texts on the web or create multimedia applications on humanities topics.\n\nThis isn’t necessarily wrong, but not quite descriptive enough for this version of the course."
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#key-terminology",
-    "href": "slides/03-intro-cli-prompt-engineering.html#key-terminology",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Key Terminology",
-    "text": "Key Terminology\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nTerminal\nThe device/program that allows you to interact with the computer\n\n\nShell\nA program that interprets your commands (bash, zsh, PowerShell)\n\n\nCommand Line\nThe text-based interface where you type commands\n\n\n\n\nThe term “terminal” refers to the device that allowed operators to interact with the computer. The “command line” refers to the text-based interface that allowed operators to input commands. The command line was the only way to interact with computers until the 1970s, when the first GUI was developed at Xerox PARC.\nA “shell” is a program within a terminal that interprets user commands and processes computer output. Popular shells include bash (default for most Linux/MacOS), PowerShell (Windows), and zsh."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#what-is-culture-as-data",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#what-is-culture-as-data",
+    "title": "Introductions & Installations",
+    "section": "What is “Culture as Data”?",
+    "text": "What is “Culture as Data”?\nOur goal is to understand how culture can be represented as data and studied with computation.\n\nBy culture, we mean what’s usually associated with the Humanities:\n\nPopular fiction & literature\nNewspapers & government documents\nOnline communities (Reddit, TikTok subcultures)"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#gui-vs-cli",
-    "href": "slides/03-intro-cli-prompt-engineering.html#gui-vs-cli",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "GUI vs CLI",
-    "text": "GUI vs CLI\n\n\nGUI (Graphical) \n\nCLI (Command Line) \n\n\nIn the GUI example, we see using the Mac Finder App to interact graphically with file folders - clicking and moving files around with a mouse.\nIn the CLI example, we see typing commands in the terminal like mkdir and rmdir to create and remove directories. The shell being used is bash."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#culture-is-increasingly-digital",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#culture-is-increasingly-digital",
+    "title": "Introductions & Installations",
+    "section": "Culture is Increasingly Digital",
+    "text": "Culture is Increasingly Digital\nCulture is an intrinsic part of being human.\n\nToday, that culture is increasingly both digital and datafied.\n\n\nBut representing our cultural heritage is rarely straightforward or without tradeoffs."
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#creating-a-directory",
-    "href": "slides/03-intro-cli-prompt-engineering.html#creating-a-directory",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Creating a Directory",
-    "text": "Creating a Directory\nOpen your terminal in VS Code: Terminal &gt; New Terminal\n\nmkdir Intro-CA-Notes\n\n\nBut how do we know it worked?\n\nTo create a directory (folder), we use the mkdir command followed by the name we want. But after pressing enter, there’s no visual confirmation - we need to use other commands to verify it worked."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#humanities-can-change-computing",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#humanities-can-change-computing",
+    "title": "Introductions & Installations",
+    "section": "Humanities Can Change Computing",
+    "text": "Humanities Can Change Computing\nWe will explore how humanities can change how we think about computing.\n\n\nHistories of data collection and computation are fundamentally political\nInterpretation becomes “baked” into technologies\nThese forces shape both scholarship and society"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#essential-commands",
-    "href": "slides/03-intro-cli-prompt-engineering.html#essential-commands",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Essential Commands",
-    "text": "Essential Commands\n\n\n\nCommand\nWhat it does\n\n\n\n\npwd\nPrint working directory (where am I?)\n\n\nls\nList directory contents\n\n\ncd\nChange directory\n\n\nmkdir\nMake a new directory\n\n\ntouch\nCreate a new file\n\n\nmv\nMove or rename files\n\n\nrmdir\nRemove an empty directory\n\n\n\n\nThese are the fundamental commands you’ll use constantly. pwd shows your current location, ls shows what’s in your current folder, cd moves you around, mkdir creates folders, touch creates files, mv moves things, and rmdir removes empty folders.\nSee the Command Line cheatsheet for more commands and details!"
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#what-well-do",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#what-well-do",
+    "title": "Introductions & Installations",
+    "section": "What We’ll Do",
+    "text": "What We’ll Do\nWe will investigate these topics through:\n\n\nWeekly readings and assignments\n\n\n\n\nA semester-long project\n\n\n\n\nExperiencing the full process: from humanistic questions → collecting data → analyzing → communicating findings"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#understanding-file-paths",
-    "href": "slides/03-intro-cli-prompt-engineering.html#understanding-file-paths",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Understanding File Paths",
-    "text": "Understanding File Paths\n\n\n\nFile tree structure\n\n\n\nThis figure shows how folders and files are organized on a computer. The top level is the root directory - on Windows it’s the C: drive, on Mac/Linux it’s represented by /. The root directory contains all files and folders. Most of your personal files are stored under your user account in Documents, Downloads, and Desktop folders."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#bigger-questions",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#bigger-questions",
+    "title": "Introductions & Installations",
+    "section": "Bigger Questions",
+    "text": "Bigger Questions\nThrough weekly assignments and projects, we will debate:\n\nData ethics and privacy\nSustainability and curation of digital projects\nPossibilities and limitations of computational methods\nHow computing in the humanities connects to global conversations about data and society"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#absolute-vs-relative-paths",
-    "href": "slides/03-intro-cli-prompt-engineering.html#absolute-vs-relative-paths",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Absolute vs Relative Paths",
-    "text": "Absolute vs Relative Paths\nAbsolute path: Full path from root\n/Users/zleblanc/Documents/is310\n\nRelative path: Path from current location\ncd ~        # Go to home directory\ncd ..       # Go up one directory\ncd ../..    # Go up two directories\n\nAn absolute file path is the complete path from the root directory to a specific location. It’s unique to your computer. A relative path is relative to your current directory. The tilde ~ represents your home directory, and .. means “parent directory” (one level up)."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#objective-1-explore",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#objective-1-explore",
+    "title": "Introductions & Installations",
+    "section": "Objective 1: Explore",
+    "text": "Objective 1: Explore\nExplore computing in the humanities as a research field.\n\nThrough class discussions, readings, selected projects, and assignments, this course will provide an overview of the:\n\nHistory\nDebates\nCurrent trends"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#putting-it-together",
-    "href": "slides/03-intro-cli-prompt-engineering.html#putting-it-together",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Putting It Together",
-    "text": "Putting It Together\n# Create a file\ntouch is310-computing-humanities.txt\n\n# Move it into a folder\nmv is310-computing-humanities.txt is310-computing-humanities\n\n# Change into the folder\ncd is310-computing-humanities\n\n# List contents to verify\nls\n\n# Go back up and remove the folder\ncd ..\nrmdir is310-computing-humanities\n\nThis sequence demonstrates a typical workflow: creating a file, moving it into a directory, navigating into that directory to verify, then cleaning up by going back and removing the directory. Note that rmdir only works on empty directories."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#objective-2-experiment",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#objective-2-experiment",
+    "title": "Introductions & Installations",
+    "section": "Objective 2: Experiment",
+    "text": "Objective 2: Experiment\nExperiment with computing in the humanities as a research praxis.\n\nThrough learning coding, data analysis, and project management, this course will provide a foundation for:\n\nMaking projects that blend culture and coding\nEngaging with debates over how to maintain and evaluate this type of scholarship"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#what-is-a-prompt",
-    "href": "slides/03-intro-cli-prompt-engineering.html#what-is-a-prompt",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "What is a Prompt?",
-    "text": "What is a Prompt?\nIn the terminal: the symbol that indicates where you type\n\n$ (bash)\n% (zsh)\n&gt; (PowerShell)\n\n\nIn AI: the text input you give to a chatbot\n\nThe term “prompt” has become incredibly popular since the release of GPT-3 by OpenAI in Summer 2020. In the terminal, the prompt is a symbol like $ or % that indicates where your next command will appear. In AI contexts, it refers to the text commands or questions you give to chatbots."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#what-comes-after-this-course",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#what-comes-after-this-course",
+    "title": "Introductions & Installations",
+    "section": "What Comes After This Course?",
+    "text": "What Comes After This Course?\nMuch depends on your interests, but you will be well equipped to continue undertaking substantive and innovative research on culture using computation and data. These skills are useful whether you aim to be a:\n\nData scientist or developer\nComputational or Data Journalist\nData or DH Librarian\nHCI or UX researcher\n\nOr just someone who understands how technology and information shape our world"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#the-ai-explosion",
-    "href": "slides/03-intro-cli-prompt-engineering.html#the-ai-explosion",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "The AI Explosion",
-    "text": "The AI Explosion\n\n\n\nEvolution of LLMs\n\n\n\nThe term “prompt engineering” describes giving commands or prompts to chatbots for certain outputs or results. While prompt engineering has a longer history in natural language processing, the term has taken over with the proliferation of new AI chatbots and models since 2020."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#ideally",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#ideally",
+    "title": "Introductions & Installations",
+    "section": "Ideally…",
+    "text": "Ideally…\nI hope each of you continues to work on your final project and share your research long after the course ends."
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#terminal-vs-ai-prompting",
-    "href": "slides/03-intro-cli-prompt-engineering.html#terminal-vs-ai-prompting",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Terminal vs AI Prompting",
-    "text": "Terminal vs AI Prompting\n\n\n\nTerminal Commands\nAI Prompts\n\n\n\n\nFixed, specific syntax\nNatural language\n\n\nPredictable outputs\nVariable outputs\n\n\nMust use exact commands\nFlexible phrasing\n\n\nReproducible\nRarely reproducible\n\n\n\n\nBoth require writing text, but depending on your operating system, terminal, and shell, you have to give the command line certain set of commands that have been previously programmed. With AI chatbots, you can write without those set structures - but that doesn’t mean there aren’t helpful guidelines."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#pre--and-co-requisites",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#pre--and-co-requisites",
+    "title": "Introductions & Installations",
+    "section": "Pre- and Co-Requisites",
+    "text": "Pre- and Co-Requisites\nThere is no required prerequisite.\n\nHowever, students should have some previous experience equivalent to a semester of programming, ideally in Python.\n\n\nRelevant courses include IS205 and IS107."
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#the-4s-of-prompt-engineering",
-    "href": "slides/03-intro-cli-prompt-engineering.html#the-4s-of-prompt-engineering",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "The 4S of Prompt Engineering",
-    "text": "The 4S of Prompt Engineering\nMicrosoft’s guidelines for GitHub Copilot:\n\n\nSingle - One task or question at a time\n\n\n\n\nSpecific - Detailed requests and specifications\n\n\n\n\nShort - Be concise\n\n\n\n\nSurround - Keep relevant files open for context\n\n\nMicrosoft provides these guidelines specifically for Copilot since it has been trained primarily for coding tasks. The final one is particularly important for Copilot since it works best when it has code examples to learn from - this is called “few-shot learning.”"
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#how-much-coding-experience",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#how-much-coding-experience",
+    "title": "Introductions & Installations",
+    "section": "How much coding experience?",
+    "text": "How much coding experience?\nI get this question every semester and there is no one answer. Part of the reason it depends is because AI is revolutionizing how we code. So even if you have limited experience, you might actually get further than you expect.\n\nHowever, I would say that if you have limited interest in coding, you might consider switching to Dr. Roland’s section of IS310 (Section A). Happy to assist if you decide that’s what is best for you!"
   },
   {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#how-copilot-processes-prompts",
-    "href": "slides/03-intro-cli-prompt-engineering.html#how-copilot-processes-prompts",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "How Copilot Processes Prompts",
-    "text": "How Copilot Processes Prompts\n\n\n\nCopilot processing flow\n\n\n\nThis diagram details what GitHub Copilot does with your prompt. The key thing to understand is that it looks for patterns in the prompt and tries to match those patterns to code examples it has seen before. So the more specific and detailed your prompt is, the more likely it is to find a match."
-  },
-  {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#important-warning",
-    "href": "slides/03-intro-cli-prompt-engineering.html#important-warning",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Important Warning",
-    "text": "Important Warning\nNever share sensitive information in prompts!\n\n\nPersonal data can be leaked\nCopilot scrapes GitHub repositories\nThe legality and ethics remain hazy\n\n\n\nUse AI tools with a critical lens\n\nEven though Copilot claims to be secure, there’s a lot of potential for personal data to be leaked through this process. The legality of Copilot remains hazy, not to mention the ethics or politics of it. You’ll see why as we continue to work with it, as it autocompletes file names and other information from GitHub that it has scraped."
-  },
-  {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#example-prompts-for-the-cli",
-    "href": "slides/03-intro-cli-prompt-engineering.html#example-prompts-for-the-cli",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Example Prompts for the CLI",
-    "text": "Example Prompts for the CLI\n\n\n\n\n\n\nTry these prompts!\n\n\nHow can I check if my directory was created in my terminal?\nShould I use the command ls or pwd to check if my directory\nwas created? And what is the difference between these two?\nHow can I create a directory named is310-computing-humanities\nin my terminal?\n\n\n\n\nThese are examples of good prompts for getting help with command line tasks. Notice they are specific, ask one thing at a time, and are concise. When you get answers, always verify them using the command line cheatsheet or by testing carefully."
-  },
-  {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#your-tasks",
-    "href": "slides/03-intro-cli-prompt-engineering.html#your-tasks",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Your Tasks",
-    "text": "Your Tasks\nUsing the cheatsheet and your preferred AI chatbot:\n\nCreate is310-computing-humanities directory in your Desktop folder\nInside it, create is310-computing-humanities.txt\nAdd text to your file using the command line (new command!)\nDisplay the file contents (new command!)\nReturn to your home directory\n\n\nBonus: Copy your folder, then delete the copy\n\nThis exercise combines what we’ve learned about the command line with using AI tools for help. The new commands you’ll need to look up are for adding text to a file (like echo or cat with redirection) and displaying file contents (like cat). Remember to ask the instructors if you need help!"
-  },
-  {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#additional-resources",
-    "href": "slides/03-intro-cli-prompt-engineering.html#additional-resources",
-    "title": "Introduction to the Command Line & Prompt Engineering",
-    "section": "Additional Resources",
-    "text": "Additional Resources\n\nIntroduction to the Bash Command Line - Programming Historian\nBash Basics Part 1 - Video tutorial\nBeginner’s Guide to the Bash Terminal\nCodeAcademy Command Line Course\n\n\nThese resources provide additional depth on the command line. The Programming Historian tutorial is particularly good for humanities contexts. The videos are helpful if you prefer visual learning. And the CodeAcademy course provides interactive practice."
-  },
-  {
-    "objectID": "slides/03-intro-cli-prompt-engineering.html#questions",
-    "href": "slides/03-intro-cli-prompt-engineering.html#questions",
-    "title": "Introduction to the Command Line & Prompt Engineering",
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#questions",
+    "title": "Introductions & Installations",
     "section": "Questions?",
-    "text": "Questions?\nRemember:\n\nThe terminal is the interface\nThe shell interprets commands\nThe command line is where you type\nPrompts work for both CLI and AI!\n\n\nSee also: Command Line Cheatsheet"
+    "text": "Questions?\nInterested students should contact the instructor if they have any questions.\n\nLet’s get started!\n\n\nBy exploring our course website ✨"
   },
   {
-    "objectID": "slides/index.html",
-    "href": "slides/index.html",
-    "title": "Course Slides",
-    "section": "",
-    "text": "Slides from class lectures and presentations."
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#weekly-participation-25",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#weekly-participation-25",
+    "title": "Introductions & Installations",
+    "section": "Weekly Participation (25%)",
+    "text": "Weekly Participation (25%)\nTwo components:\n\nIndividual engagement with course materials\nCollaborative group presentations\n\nBoth ensure you’re deepening your own understanding AND learning from peers."
   },
   {
-    "objectID": "slides/index.html#available-slides",
-    "href": "slides/index.html#available-slides",
-    "title": "Course Slides",
-    "section": "Available Slides",
-    "text": "Available Slides\n\nFirst Class Slides\nSecond Class Slides"
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#seminar-discussion-annotations-15",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#seminar-discussion-annotations-15",
+    "title": "Introductions & Installations",
+    "section": "Seminar Discussion & Annotations (15%)",
+    "text": "Seminar Discussion & Annotations (15%)\nBefore each class, engage with assigned materials:\n\nBook chapters or articles\nData visualizations\nDocumentation\n\nThese lay the groundwork for class discussions and your semester project."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions-to-consider",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#questions-to-consider",
+    "title": "Introductions & Installations",
+    "section": "Questions to Consider",
+    "text": "Questions to Consider\nWhen engaging with weekly materials, ask yourself:\n\nWhat is the main argument? Is there one?\nHow does the author support their argument?\nWhat evidence or data did they use?\nWhat is the likely audience?"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#more-questions-to-consider",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#more-questions-to-consider",
+    "title": "Introductions & Installations",
+    "section": "More Questions to Consider",
+    "text": "More Questions to Consider\n\nWhat connections or tensions exist across materials?\nWhat was confusing or unclear?\nHow does this connect to previous weeks?\n\n\nGoal: Summarize central points in a few lines, not detail everything!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#demonstrating-engagement",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#demonstrating-engagement",
+    "title": "Introductions & Installations",
+    "section": "Demonstrating Engagement",
+    "text": "Demonstrating Engagement\nOption 1: Seminar Discussions\n\nAsk questions about complex concepts\nShare connections across materials\nRespond thoughtfully to peers\n\n. . .\nGoal: Create a thoughtful and respectful intellectual community"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#demonstrating-engagement-1",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#demonstrating-engagement-1",
+    "title": "Introductions & Installations",
+    "section": "Demonstrating Engagement",
+    "text": "Demonstrating Engagement\nOption 2: Asynchronous Annotations\nUsing Hypothesis annotation platform:\n\nShare thoughts on weekly materials\nEngage with peers’ annotations\nMay be asked to expand during discussions\n\nSign up: hypothes.is/signup and more details available in our course website"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#grading-seminar-discussions",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#grading-seminar-discussions",
+    "title": "Introductions & Installations",
+    "section": "Grading: Seminar Discussions",
+    "text": "Grading: Seminar Discussions\nTo receive full credit:\n\nBe present in person\nActively participate in discussion or activities\n\n\nSimply attending class is not enough!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#grading-annotations",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#grading-annotations",
+    "title": "Introductions & Installations",
+    "section": "Grading: Annotations",
+    "text": "Grading: Annotations\n\nSubmit via Hypothesis by midnight the day before class\nTag appropriately in our Hypothesis group\nDemonstrate thoughtful engagement:\n\nSummarize key points\nRaise questions\nMake connections"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#group-presentations-10",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#group-presentations-10",
+    "title": "Introductions & Installations",
+    "section": "Group Presentations (10%)",
+    "text": "Group Presentations (10%)\nGroups assigned in first two weeks based on:\n\nStudent interests\nBackgrounds (music, literature, social media, gaming, etc.)"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#group-work-structure",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#group-work-structure",
+    "title": "Introductions & Installations",
+    "section": "Group Work Structure",
+    "text": "Group Work Structure\nWeekly Prompts and Activities:\n\nFind digital objects\nExplore datasets\nApply concepts from readings"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#in-class-presentations",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#in-class-presentations",
+    "title": "Introductions & Installations",
+    "section": "In-Class Presentations",
+    "text": "In-Class Presentations\n\nNot every group presents every week\nEven if not presenting:\n\nSubmit work to GitHub\nBe prepared to discuss\n\n\n\nPresentations should be clear, concise, and demonstrate understanding."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#documentation-requirements",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#documentation-requirements",
+    "title": "Introductions & Installations",
+    "section": "Documentation Requirements",
+    "text": "Documentation Requirements\nAll group work must be documented on GitHub:\n\nSummary of activities\nHow labor was divided\nReflections on the process\n\n\nClear documentation is crucial for grading and project progress!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#grading-group-work",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#grading-group-work",
+    "title": "Introductions & Installations",
+    "section": "Grading: Group Work",
+    "text": "Grading: Group Work\nBased on:\n\nActive participation in presentations\nQuality of contributions\nEffectiveness of collaboration\n\n\nGrade not impacted if a member is absent (but group must pivot)."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#group-work-deadlines",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#group-work-deadlines",
+    "title": "Introductions & Installations",
+    "section": "Group Work Deadlines",
+    "text": "Group Work Deadlines\nSubmit to GitHub by midnight before class.\n\nLate submissions: Half credit (with explanation)\nRepeated late submissions: Meeting with Instructor"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#weekly-coding-assignments-25",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#weekly-coding-assignments-25",
+    "title": "Introductions & Installations",
+    "section": "Weekly Coding Assignments (25%)",
+    "text": "Weekly Coding Assignments (25%)\n\nComplete and share via GitHub\nPair programming encouraged!\n\n\nWork together, but make sure you understand the concepts — they build quickly!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#grading-coding-assignments",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#grading-coding-assignments",
+    "title": "Introductions & Installations",
+    "section": "Grading: Coding Assignments",
+    "text": "Grading: Coding Assignments\n\nDue: Midnight before class\nLate submissions: Half credit (if before final class)\n\n\nQuestions encouraged — in person and online!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#required-texts-resources",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#required-texts-resources",
+    "title": "Introductions & Installations",
+    "section": "Required Texts & Resources",
+    "text": "Required Texts & Resources\nGood news: Almost all materials available free online!\n\nCourse website\nCanvas\n\n\nNo required purchases for software or books."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#computer-access",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#computer-access",
+    "title": "Introductions & Installations",
+    "section": "Computer Access",
+    "text": "Computer Access\nYou will need access to a computer.\n\nIf this is an issue, let me know early — we’ll find solutions!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#summary",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#summary",
+    "title": "Introductions & Installations",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nComponent\nWeight\n\n\n\n\nSeminar Discussion & Annotations\n15%\n\n\nGroup Presentations\n10%\n\n\nWeekly Coding Assignments\n25%\n\n\nTotal\n50%"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions-1",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#questions-1",
+    "title": "Introductions & Installations",
+    "section": "Questions?",
+    "text": "Questions?\nRemember:\n\nEngage thoughtfully\nCollaborate with peers\nAsk questions early and often!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#inspired-by-rdc-project",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#inspired-by-rdc-project",
+    "title": "Introductions & Installations",
+    "section": "Inspired by RDC Project",
+    "text": "Inspired by RDC Project\nThe project is modeled on the Responsible Datasets in Context Project:\nresponsible-datasets-in-context.com\n\nCreated to help students “work with data responsibly.”"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#why-context-matters",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#why-context-matters",
+    "title": "Introductions & Installations",
+    "section": "Why Context Matters",
+    "text": "Why Context Matters\n\n“Data cannot be analyzed responsibly without deep knowledge of its social and historical context, provenance, and limitations.”\n\n\n\n“In classes, it is very common for students to use datasets that they find on websites like Kaggle, datasets that are poorly documented and that students thus don’t fully understand. This is a recipe for irresponsible data work.”"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#your-goal",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#your-goal",
+    "title": "Introductions & Installations",
+    "section": "Your Goal",
+    "text": "Your Goal\nYou will work collaboratively to create a first draft of what could eventually be part of the RDC Project.\n\nNot as polished or extensive — but a meaningful contribution."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#timeline-overview",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#timeline-overview",
+    "title": "Introductions & Installations",
+    "section": "Timeline Overview",
+    "text": "Timeline Overview\n\n\n\nMilestone\nDue Date\nWeight\n\n\n\n\nGroup & Individual Topic Selection\nFeb 5\nPass/Fail\n\n\nInitial Dataset\nMar 12\n15%\n\n\nData Demo Day\nApr 30 or May 5\n5%\n\n\nFinal Submission\nMay 15\n30%"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#group-formation",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#group-formation",
+    "title": "Introductions & Installations",
+    "section": "Group Formation",
+    "text": "Group Formation\nIn the first two weeks, you will be assigned to a group based on:\n\nShared interests\nComplementary skill sets"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#planning-document",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#planning-document",
+    "title": "Introductions & Installations",
+    "section": "Planning Document",
+    "text": "Planning Document\nYour first task is to collaboratively determine:\n\n\nGroup Theme: Shared area of interest\n\n\n\n\nIndividual Ideas: Specific datasets each member is considering\n\n\n\n\nCollaboration Plan: Communication and GitHub organization strategy"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#format-submission",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#format-submission",
+    "title": "Introductions & Installations",
+    "section": "Format & Submission",
+    "text": "Format & Submission\n\nMarkdown file (planning.md) in your GitHub repo\n500–750 words\nUse headings, bullet points, links, images, or tables"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#why-start-small",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#why-start-small",
+    "title": "Introductions & Installations",
+    "section": "Why Start Small?",
+    "text": "Why Start Small?\nCreate approximately 50-100 data items through close, interpretive work.\n\nWhy small? This is where you learn that every dataset embeds interpretive choices.\n\n\nWhen you manually work through items, deciding what counts and how to categorize, you experience the intellectual and ethical labor that gets hidden at scale."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#computation-required",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#computation-required",
+    "title": "Introductions & Installations",
+    "section": "Computation Required",
+    "text": "Computation Required\nWhile your dataset is small, you must use computational tools to assist.\n\nThis is not about automation—it’s about understanding how computation can augment even bespoke data work."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#approach-1-create-from-scratch",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#approach-1-create-from-scratch",
+    "title": "Introductions & Installations",
+    "section": "Approach 1: Create from Scratch",
+    "text": "Approach 1: Create from Scratch\nTransform complex cultural materials into structured data.\n\nExamples:\n\nDigitize lesser-known children’s literature and decide what to capture\nAnnotate TikToks mentioning AI to track recurring themes\nExtract and categorize visual elements from historical documents"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#approach-2-audit-augment",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#approach-2-audit-augment",
+    "title": "Introductions & Installations",
+    "section": "Approach 2: Audit & Augment",
+    "text": "Approach 2: Audit & Augment\nCritically engage with an existing dataset that lacks documentation or transparency.\n\nExamples:\n\nTrace a Kaggle movie dataset back to its source\nCompare original reviews to what appears in the dataset\nAdd missing metadata or flag inconsistencies"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#submission-components",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#submission-components",
+    "title": "Introductions & Installations",
+    "section": "Submission Components",
+    "text": "Submission Components\n\nInitial Dataset (~50-100 items) in structured format\n\n\n\nInitial Documentation explaining process and interpretive choices\n\n\n\n\nNext Steps plan for scaling computationally"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#focus-on-whats-next",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#focus-on-whats-next",
+    "title": "Introductions & Installations",
+    "section": "Focus on What’s Next",
+    "text": "Focus on What’s Next\nThis presentation is primarily about speculation:\n\n\nWhat users do you envision?\nWhat computational methods might you try?\nWhat patterns might emerge at scale?\nWhat future data would you collect?"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#work-in-progress",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#work-in-progress",
+    "title": "Introductions & Installations",
+    "section": "Work in Progress",
+    "text": "Work in Progress\nThis is work-in-progress, not a final polished product.\n\nBe creative and ambitious in your presentations!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#what-youll-have-done",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#what-youll-have-done",
+    "title": "Introductions & Installations",
+    "section": "What You’ll Have Done",
+    "text": "What You’ll Have Done\nBy this point, you will have:\n\nCreated data manually with computational assistance\nAugmented it at scale\nExperimented with methods\nPresented speculative visions"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#individual-component-25",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#individual-component-25",
+    "title": "Introductions & Installations",
+    "section": "Individual Component (25%)",
+    "text": "Individual Component (25%)\nCulture As Dataset:\n\nBespoke manual work + computational augmentation\nStructured format, thoughtfully organized\nRelevant documentation"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#individual-component-cont.",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#individual-component-cont.",
+    "title": "Introductions & Installations",
+    "section": "Individual Component (cont.)",
+    "text": "Individual Component (cont.)\nCulture As Documentation:\nA final data essay that tells the story of your dataset:\n\nHow you made it\nWhat it represents\nWhat it reveals and conceals"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#data-essay-focus-areas",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#data-essay-focus-areas",
+    "title": "Introductions & Installations",
+    "section": "Data Essay Focus Areas",
+    "text": "Data Essay Focus Areas\nYour essay should address:\n\nHow computation played a role\nHow scale shaped the data\nLimitations and qualifications\nEthical or privacy considerations\nLessons learned\nConnection to peer-reviewed scholarship"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#collective-component-5",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#collective-component-5",
+    "title": "Introductions & Installations",
+    "section": "Collective Component (5%)",
+    "text": "Collective Component (5%)\nCollective Principles & Documentation\n\nSynthesize what your group collectively learned about working with your particular type of cultural data."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#think-of-it-as",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#think-of-it-as",
+    "title": "Introductions & Installations",
+    "section": "Think of It As…",
+    "text": "Think of It As…\nWriting the documentation you wish had existed when you started.\n\n\nWhat should someone know before representing music as data? Or social media? Or gaming culture?\n\n\n\n\nWhat principles emerged from your group’s diverse approaches?"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#grade-breakdown",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#grade-breakdown",
+    "title": "Introductions & Installations",
+    "section": "Grade Breakdown",
+    "text": "Grade Breakdown\n\n\n\nComponent\nWeight\n\n\n\n\nTopic Selection\nPass/Fail\n\n\nInitial Dataset\n15%\n\n\nData Demo Day\n5%\n\n\nFinal Submission (Individual)\n25%\n\n\nFinal Submission (Collective)\n5%\n\n\nTotal\n50%"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions-2",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#questions-2",
+    "title": "Introductions & Installations",
+    "section": "Questions?",
+    "text": "Questions?\nRemember:\n\nStart with close, interpretive work\nUse computation to augment, not replace\nDocument your decisions and process\nThink about context and responsibility\n\n\nMore details throughout the semester! Though requirements are subject to change depending on speed and AI-usage."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#general-note-on-grading",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#general-note-on-grading",
+    "title": "Introductions & Installations",
+    "section": "General Note on Grading",
+    "text": "General Note on Grading\nI tend to use GitHub to have as much transparency when it comes to grading and feedback.\n\nGenerally, as far as I’m concerned you are all A+ humans. It’s just about ensuring that effort, creativity, labor, and other core principles are correctly evaluated. If you have concerns over grades, I am always happy to discuss them."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#if-you-need-to-miss-class",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#if-you-need-to-miss-class",
+    "title": "Introductions & Installations",
+    "section": "If You Need to Miss Class",
+    "text": "If You Need to Miss Class\nIf you are feeling unwell or have been exposed to illness, please stay home and prioritize your health.\n\nI do not require doctor’s notes for absences.\n\n\nHowever, please keep in mind that if you miss a substantial portion of class meetings, it will be difficult to make up missed content and that you need to coordinate with your group members who depend on your contributions."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#when-you-miss-class",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#when-you-miss-class",
+    "title": "Introductions & Installations",
+    "section": "When You Miss Class",
+    "text": "When You Miss Class\n\n\nMessage me on Slack as soon as possible\n\n\n\n\nInform your group members so they can plan accordingly\n\n\n\n\nCheck in with me about making up missed content\n\n\n\n\nReview materials on the course website"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#information-overload-days",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#information-overload-days",
+    "title": "Introductions & Installations",
+    "section": "Information Overload Days",
+    "text": "Information Overload Days\nSometimes you need a break from the workload.\n\nInstead of missing class outright, let me know you need an information overload day."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#how-information-overload-days-work",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#how-information-overload-days-work",
+    "title": "Introductions & Installations",
+    "section": "How Information Overload Days Work",
+    "text": "How Information Overload Days Work\n\n\nYou are excused from assigned materials and discussion\n\n\n\n\nYou actively listen during class\n\n\n\n\nConsult with instructor about make-up assignments later\n\n\n\n\nInform your group and help them adjust\n\n\n\nTwo free, no questions asked — after that, let’s talk!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#worst-case-scenarios",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#worst-case-scenarios",
+    "title": "Introductions & Installations",
+    "section": "Worst Case Scenarios",
+    "text": "Worst Case Scenarios\nIf you or someone close to you becomes ill:\n\nFinal grade based on existing work\nOption to move course to pass/fail\n\n\nWhen you can, please get in touch. Your wellbeing comes first."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#respect-in-all-communication",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#respect-in-all-communication",
+    "title": "Introductions & Installations",
+    "section": "Respect in All Communication",
+    "text": "Respect in All Communication\n\n\nIn-person interactions\n\n\n\n\nSlack messages\n\n\n\n\nEmails\n\n\n\nThis course is experimental with students from varied backgrounds. Every opinion, question, and idea deserves a respectful response."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#rule-of-thumb",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#rule-of-thumb",
+    "title": "Introductions & Installations",
+    "section": "Rule of Thumb",
+    "text": "Rule of Thumb\nWhen in doubt, ask questions and over-communicate — but do so respectfully!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#the-short-version",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#the-short-version",
+    "title": "Introductions & Installations",
+    "section": "The Short Version",
+    "text": "The Short Version\nDon’t cheat.\n\nIf you need help, see the instructor.\n\n\nI would rather you turn in work late than have to report you for plagiarism."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#citation-as-practice",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#citation-as-practice",
+    "title": "Introductions & Installations",
+    "section": "Citation as Practice",
+    "text": "Citation as Practice\nWe’ll discuss what constitutes plagiarism (it gets thorny with code).\n\nRule of thumb: Cite as much as possible.\n\n\nAll scholarship is a collective endeavor."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#why-citation-matters",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#why-citation-matters",
+    "title": "Introductions & Installations",
+    "section": "Why Citation Matters",
+    "text": "Why Citation Matters\n\n“Citation is how we acknowledge our debt to those who came before; those who helped us find our way when the way was obscured because we deviated from the paths we were told to follow.”\n— Sara Ahmed, Living a Feminist Life\n\n\n\n“Acknowledging and establishing feminist genealogies is part of the work of producing more just forms of knowledge and intellectual practice.”\n— Beverly Weber, Digital Feminist Collective"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#why-citation-matters-1",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#why-citation-matters-1",
+    "title": "Introductions & Installations",
+    "section": "Why Citation Matters",
+    "text": "Why Citation Matters\nAcknowledging sources is both intellectually and politically imperative."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#your-course-workflow",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#your-course-workflow",
+    "title": "Introductions & Installations",
+    "section": "Your Course Workflow",
+    "text": "Your Course Workflow\nIn the first two weeks, submit your Course Workflow addressing:\n\nUsing AI? Which tools? For what purposes?\nNot using AI? What’s your alternative workflow?\nUsing local models? Consult with instructor for setup."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#if-your-workflow-changes",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#if-your-workflow-changes",
+    "title": "Introductions & Installations",
+    "section": "If Your Workflow Changes",
+    "text": "If Your Workflow Changes\nAI use is iterative and experimental.\n\nIf your approach changes during the semester, simply update your workflow statement.\n\n\nNo judgment — experimentation is encouraged!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#using-agentic-ai",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#using-agentic-ai",
+    "title": "Introductions & Installations",
+    "section": "Using Agentic AI",
+    "text": "Using Agentic AI\nIf you use highly agentic AI tools, you’ll be held to higher standards:\n\nMore sophisticated analysis\nRigorous documentation of AI use\nDeeper engagement with scholarship\n\n\nIf AI does more technical work, you show more intellectual work."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#what-counts-as-agentic-ai",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#what-counts-as-agentic-ai",
+    "title": "Introductions & Installations",
+    "section": "What Counts as Agentic AI?",
+    "text": "What Counts as Agentic AI?\n\nTools that autonomously write, debug, and execute complex code\nTools that independently conduct multi-step research\nTools that generate substantial written work with minimal input\n\n\nIf you’re unsure, ask!"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#ai-access-equity",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#ai-access-equity",
+    "title": "Introductions & Installations",
+    "section": "AI Access & Equity",
+    "text": "AI Access & Equity\nWe use free tools:\n\nGitHub Copilot (free with GitHub Student Developer Pack)\nOpen-source local models\n\n\nIf using paid tools, disclose and check for education discounts."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#ai-for-coding",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#ai-for-coding",
+    "title": "Introductions & Installations",
+    "section": "AI for Coding",
+    "text": "AI for Coding\nYou may use AI to help write, debug, and understand code.\n\nBut make sure you understand what the code does.\n\n\nIf code breaks, you need to fix it."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#ai-for-written-work",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#ai-for-written-work",
+    "title": "Introductions & Installations",
+    "section": "AI for Written Work",
+    "text": "AI for Written Work\nYou may use AI for brainstorming, outlining, drafting, or editing.\n\nYour ideas, arguments, and voice should be yours.\n\n\nIf an essay reads like it was primarily AI-generated or if you cannot answer questions about your submissions, you will be dinged points."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#ai-for-data-work",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#ai-for-data-work",
+    "title": "Introductions & Installations",
+    "section": "AI for Data Work",
+    "text": "AI for Data Work\nYou may use AI for data collection, cleaning, analysis, or documentation.\n\nYou make the interpretive decisions.\n\n\nYour work must demonstrate you understand your methodology deeply."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#the-bottom-line",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#the-bottom-line",
+    "title": "Introductions & Installations",
+    "section": "The Bottom Line",
+    "text": "The Bottom Line\nAI should make you more capable, not less thoughtful.\n\nIt should amplify your learning, not replace it.\n\n\nIf you can’t explain what your code does or why your essay makes certain arguments, stop and reassess."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#example-citation",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#example-citation",
+    "title": "Introductions & Installations",
+    "section": "Example Citation?",
+    "text": "Example Citation?\nWhen using AI tools like Claude Code, cite them as you would software:\n\nAnthropic. (2026). Claude Code (Version 4.5) [AI coding assistant]. https://claude.ai/claude-code\n\nOr in prose: “These slides were created with assistance from Claude Code (Anthropic, 2026), an AI coding assistant used for formatting Quarto/Reveal.js syntax.”"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions-3",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#questions-3",
+    "title": "Introductions & Installations",
+    "section": "Questions?",
+    "text": "Questions?\nRemember:\n\nCommunicate early and often\nEngage thoughtfully with AI\nRespect the land and each other\n\n\nFull policies available on the course website and in the syllabus on Canvas."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#traditional-territory",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#traditional-territory",
+    "title": "Introductions & Installations",
+    "section": "Traditional Territory",
+    "text": "Traditional Territory\nThese lands were the traditional territory of these Native Nations prior to their forced removal;\n\nThese lands continue to carry the stories of these Nations and their struggles for survival and identity."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#our-responsibility",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#our-responsibility",
+    "title": "Introductions & Installations",
+    "section": "Our Responsibility",
+    "text": "Our Responsibility\nAs a land-grant institution, the University of Illinois has a particular responsibility to acknowledge the peoples of these lands, as well as the histories of dispossession that have allowed for the growth of this institution for the past 150 years. We are also obligated to reflect on and actively address these histories and the role that this university has played in shaping them. This acknowledgement and the centering of Native peoples is a start as we move forward for the next 150 years."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#beyond-platitudes-what-does-this-mean",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#beyond-platitudes-what-does-this-mean",
+    "title": "Introductions & Installations",
+    "section": "Beyond Platitudes: What does this mean?",
+    "text": "Beyond Platitudes: What does this mean?\nWhile this acknowledgement is important, I find that these words can be difficult to understand or visualize.\n\nLet’s look at the first two digital humanities projects in this course to help us understand."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#native-land-digital",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#native-land-digital",
+    "title": "Introductions & Installations",
+    "section": "Native Land Digital",
+    "text": "Native Land Digital\nVisualizes indigenous lands worldwide, built by a Canadian non-for-profit, that helps us see how this dispossession has shaped our very understanding of geography and political identity."
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#native-land-digital-1",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#native-land-digital-1",
+    "title": "Introductions & Installations",
+    "section": "Native Land Digital",
+    "text": "Native Land Digital\n\n\n\nNative Lands Map of Illinois"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#land-grab-universities",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#land-grab-universities",
+    "title": "Introductions & Installations",
+    "section": "Land Grab Universities",
+    "text": "Land Grab Universities\nHow the Morrill Act dispossessed tribal lands, signed in 1862, dispossessed tribal lands to fund the creation of public state universities. The project was built by Robert Lee, Tristane Ahtone, Margaret Pearce, Kalen Goodluck, Geoff McGhee, and Cody Leff and published by High Country News"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#land-grab-universities-1",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#land-grab-universities-1",
+    "title": "Introductions & Installations",
+    "section": "Land Grab Universities",
+    "text": "Land Grab Universities\n\n\n\nLand Grab Universities - Illinois"
+  },
+  {
+    "objectID": "slides/01-introducing-computing-in-the-humanities.html#final-discussion-questions",
+    "href": "slides/01-introducing-computing-in-the-humanities.html#final-discussion-questions",
+    "title": "Introductions & Installations",
+    "section": "Final Discussion Questions",
+    "text": "Final Discussion Questions\nWhat is computing in the humanities?\n\nWhat is culture as data?\n\n\nVisit What is Digital Humanities? and refresh a few times\n\n\nAlso visit Open Syllabus Project"
   },
   {
     "objectID": "policies.html",
@@ -1001,851 +1463,18 @@
     "text": "Acknowledgements\nThanks to John R Ladd, Melanie Walsh, Anna Preus, Brandon Walsh, Meredith Martin, Sierra Eckert, Anelise Shrout, Cameron Blevins, Lincoln Mullen, Benjamin Schmidt, Lauren Klein, Miriam Posner, Alan Liu, Ted Underwood, and Ryan Cordell for sharing their syllabi - all of which have been immensely helpful and influential.\nI also want to especially thank Rebecca Munson, who remains an inspiration for how I think and teach about data and who is sorely missed but will never be forgotten."
   },
   {
-    "objectID": "slides/04-intro-versioning-git.html#the-problem",
-    "href": "slides/04-intro-versioning-git.html#the-problem",
-    "title": "Introduction to Versioning & Git",
-    "section": "The Problem",
-    "text": "The Problem\nHave you ever had files like this?\n\n\nessay_final.docx\nessay_final_v2.docx\nessay_FINAL_FINAL.docx\nessay_FINAL_FINAL_actually_final.docx\n\n\n\nVersion control solves this problem!\n\nVersion control is the practice of tracking and managing changes to files over time. We’ve all experienced the chaos of multiple file versions. Git provides a systematic way to track changes, collaborate, and maintain a clean history of your work."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#what-is-git",
-    "href": "slides/04-intro-versioning-git.html#what-is-git",
-    "title": "Introduction to Versioning & Git",
-    "section": "What is Git?",
-    "text": "What is Git?\nGit is software for version control - tracking changes in files over time.\n\n\nCreated in 2005 by Linus Torvalds (creator of Linux)\nMost popular version control system in the world\nUsed by millions of developers and researchers\n\n\nGit requires changes to be saved (committed) before they can be combined (merged) with the main project. You’re already familiar with this concept if you’ve used Google Docs or Word’s “Track Changes” - but with those you get version history automatically. With git, we have to tell it what to track and when to track it."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#git-vs-github",
-    "href": "slides/04-intro-versioning-git.html#git-vs-github",
-    "title": "Introduction to Versioning & Git",
-    "section": "Git vs GitHub",
-    "text": "Git vs GitHub\n\n\n\n\n\n\n\n\n\nGit\nGitHub\n\n\n\n\nWhat\nVersion control system\nPlatform for hosting git repositories\n\n\nWhere\nLocal (on your computer)\nRemote (website)\n\n\nInstall?\nYes\nNo (it’s a website)\n\n\n\n\nThey are two separate technologies often used together!\n\nA very important thing to understand is that while git and GitHub sound the same, they are two separate technologies. Git is a version control system, while GitHub is a platform for hosting git repositories. In git, a folder is called a repository. We’ll be using both in this course, but it’s important to realize they are not identical."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#git-github-together",
-    "href": "slides/04-intro-versioning-git.html#git-github-together",
-    "title": "Introduction to Versioning & Git",
-    "section": "Git + GitHub Together",
-    "text": "Git + GitHub Together\n\n\n\nGit and GitHub workflow\n\n\n\nEven though these two technologies are separate, they are often used together. You can use git to track changes in your files locally on your computer, and then push those changes to a remote repository on GitHub. This is what we will be doing in this course."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#why-git-for-humanities",
-    "href": "slides/04-intro-versioning-git.html#why-git-for-humanities",
-    "title": "Introduction to Versioning & Git",
-    "section": "Why Git for Humanities?",
-    "text": "Why Git for Humanities?\nGit allows you to:\n\nKeep track of changes in plain text files\nCollaborate in real-time with other researchers\nEasily revert to earlier versions\nCreate different branches to explore new ideas\nSee who added what to the project\n\n\nAlthough Git and version control systems are predominantly used in software development, they offer several advantages for scholars in Digital Humanities. Similar to how you might handle versions of a paper, essay, or dataset, Git provides systematic version tracking."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#what-version-tracking-looks-like",
-    "href": "slides/04-intro-versioning-git.html#what-version-tracking-looks-like",
-    "title": "Introduction to Versioning & Git",
-    "section": "What Version Tracking Looks Like",
-    "text": "What Version Tracking Looks Like\n\n\n\nExample of a git diff\n\n\n\nThis screenshot is from GitHub but shows what git tracks. You can see on the left, the previous erroneous line was deleted, and on the right is the corrected version. This is a very simple example, but it gives you a sense of how git tracks changes - showing exactly what was removed and what was added."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#check-your-installation",
-    "href": "slides/04-intro-versioning-git.html#check-your-installation",
-    "title": "Introduction to Versioning & Git",
-    "section": "Check Your Installation",
-    "text": "Check Your Installation\nFirst, verify git is installed:\ngit --version\n\nYou should see something like:\ngit version 2.39.0\n\nRemember that we run our commands in the terminal! If you don’t see a version number, you may need to install git. Let the instructors know if you’re having issues."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#create-a-project-folder",
-    "href": "slides/04-intro-versioning-git.html#create-a-project-folder",
-    "title": "Introduction to Versioning & Git",
-    "section": "Create a Project Folder",
-    "text": "Create a Project Folder\n# Create a new folder\nmkdir is310-first-repo\n\n# Navigate into it\ncd is310-first-repo\n\n# Create a file\ntouch first_file.txt\n\nAdd some text to the file:\necho \"This is my first file\" &gt; first_file.txt\n\nLet’s create a new folder for our project. We use mkdir to create the folder, cd to navigate into it, and touch to create an empty file. Then we use echo with the redirect operator &gt; to add text to the file."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#initialize-a-git-repository",
-    "href": "slides/04-intro-versioning-git.html#initialize-a-git-repository",
-    "title": "Introduction to Versioning & Git",
-    "section": "Initialize a Git Repository",
-    "text": "Initialize a Git Repository\ngit init\n\nOutput:\nInitialized empty Git repository in /Users/YOU/is310-first-repo/.git/\n\n\nA hidden .git folder is created (use ls -a to see it)\n\nTo start tracking changes, we need to initialize a git repository. The git init command creates a hidden .git folder that contains all the information about our repository. This folder is hidden by default - you won’t see it in Finder or normal ls commands."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#the-git-workflow",
-    "href": "slides/04-intro-versioning-git.html#the-git-workflow",
-    "title": "Introduction to Versioning & Git",
-    "section": "The Git Workflow",
-    "text": "The Git Workflow\n\n\n\nGit as a camera\n\n\nThink of git as a camera taking snapshots of your project\n\nThinking of git as a camera taking a photo of your project at a particular point in time is helpful. Every time you commit your changes, you are taking a snapshot. You can then go back to that snapshot at any time. Like save points in a video game!"
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#step-1-add-to-staging-area",
-    "href": "slides/04-intro-versioning-git.html#step-1-add-to-staging-area",
-    "title": "Introduction to Versioning & Git",
-    "section": "Step 1: Add to Staging Area",
-    "text": "Step 1: Add to Staging Area\nGit doesn’t track automatically - you must tell it what to track:\ngit add first_file.txt\n\nCheck the status:\ngit status\nChanges to be committed:\n    new file:   first_file.txt\n\nAfter initializing a repository, tracking is NOT automatic. We have to tell git which files to pay attention to by adding them to the staging area. The staging area is like selecting which photos you want to include in an album before actually printing them."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#step-2-commit-changes",
-    "href": "slides/04-intro-versioning-git.html#step-2-commit-changes",
-    "title": "Introduction to Versioning & Git",
-    "section": "Step 2: Commit Changes",
-    "text": "Step 2: Commit Changes\nFinalize your snapshot with a descriptive message:\ngit commit -m \"Added first file to our repository\"\n\nCheck status again:\ngit status\nOn branch main\nnothing to commit, working tree clean\n\nCommitting is like actually taking the photo. The -m flag lets you add a message describing what changed. Your commit messages should be short and descriptive - they help you (and collaborators) understand the history of your project."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#if-you-forget-the--m-flag",
-    "href": "slides/04-intro-versioning-git.html#if-you-forget-the--m-flag",
-    "title": "Introduction to Versioning & Git",
-    "section": "If You Forget the -m Flag…",
-    "text": "If You Forget the -m Flag…\nYou’ll see Vim (a text editor):\n\n\n\nVim editor\n\n\n\n\nPress i to type, then esc, then :wq to save and exit\nOr press esc, then :q! to exit without saving\n\n\nIf you don’t add a message, git will open Vim to ask for one. Vim is powerful but has a steep learning curve. The key commands: i for insert mode to type, esc to exit insert mode, :wq to save and quit, :q! to quit without saving."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#step-3-view-history",
-    "href": "slides/04-intro-versioning-git.html#step-3-view-history",
-    "title": "Introduction to Versioning & Git",
-    "section": "Step 3: View History",
-    "text": "Step 3: View History\nSee your commit history:\ngit log\ncommit 8bb8306c1392eed52d4407eb16867a49b49a46ac (HEAD -&gt; main)\nAuthor: Your Name &lt;your-email@gmail.com&gt;\nDate:   Tue Jan 22 16:03:39 2024 -0400\n\n    Added first file to our repository\n\nThe git log command shows your commit history. Each commit has a unique hash (that long string of letters and numbers), the author, date, and your commit message. You can use this hash to revert to previous versions if needed."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#git-commands-summary",
-    "href": "slides/04-intro-versioning-git.html#git-commands-summary",
-    "title": "Introduction to Versioning & Git",
-    "section": "Git Commands Summary",
-    "text": "Git Commands Summary\n\n\n\nCommand\nWhat it does\n\n\n\n\ngit init\nInitialize a repository\n\n\ngit add &lt;file&gt;\nAdd file to staging area\n\n\ngit commit -m \"msg\"\nCommit with message\n\n\ngit status\nCheck current status\n\n\ngit log\nView commit history\n\n\n\n\nThese are the core local git commands. You’ll use these constantly: init to start, add to stage, commit to save snapshots, status to check where you are, and log to see history."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#creating-a-repository-on-github",
-    "href": "slides/04-intro-versioning-git.html#creating-a-repository-on-github",
-    "title": "Introduction to Versioning & Git",
-    "section": "Creating a Repository on GitHub",
-    "text": "Creating a Repository on GitHub\n\nGo to github.com\nClick the New button\n\n\n\n\nCreate repo button\n\n\n\nTo get our local git repository onto GitHub, we first need to create a new repository on the website. Click the New button in the top right corner of GitHub."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#repository-settings",
-    "href": "slides/04-intro-versioning-git.html#repository-settings",
-    "title": "Introduction to Versioning & Git",
-    "section": "Repository Settings",
-    "text": "Repository Settings\n\n\n\nNew repository form\n\n\n\nName it is310-first-repo\nChoose Public so we can see each other’s work\nLeave README unchecked for now\n\n\nGive your repository a name, add a description if you want, and choose whether it’s public or private. For class purposes, choose public so we can see each other’s repositories. Leave the README option unchecked since we’ll push our existing local repo."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#connect-local-to-remote",
-    "href": "slides/04-intro-versioning-git.html#connect-local-to-remote",
-    "title": "Introduction to Versioning & Git",
-    "section": "Connect Local to Remote",
-    "text": "Connect Local to Remote\nAdd your GitHub repo as a “remote”:\ngit remote add origin https://github.com/USERNAME/is310-first-repo.git\n\nVerify it worked:\ngit remote -v\norigin  https://github.com/username/repository.git (fetch)\norigin  https://github.com/username/repository.git (push)\n\nWe need to connect our local repository to GitHub. The git remote add command links them. “origin” is just a nickname for your GitHub URL - it’s the default convention. Replace USERNAME with your actual GitHub username."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#push-to-github",
-    "href": "slides/04-intro-versioning-git.html#push-to-github",
-    "title": "Introduction to Versioning & Git",
-    "section": "Push to GitHub",
-    "text": "Push to GitHub\nSend your local commits to GitHub:\ngit push origin main\n\nEnumerating objects: 3, done.\nCounting objects: 100% (3/3), done.\nWriting objects: 100% (3/3), 226 bytes | 226.00 KiB/s, done.\nTo github.com:username/is310-first-repo.git\n * [new branch]      main -&gt; main\n\nThe push command sends your local commits to the remote repository. “origin” is the name we gave our remote, and “main” is the branch we’re pushing. After this, you’ll see your files on GitHub!"
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#ssh-keys-optional-but-recommended",
-    "href": "slides/04-intro-versioning-git.html#ssh-keys-optional-but-recommended",
-    "title": "Introduction to Versioning & Git",
-    "section": "SSH Keys (Optional but Recommended)",
-    "text": "SSH Keys (Optional but Recommended)\nTired of entering your username/password?\n\nSSH keys let you connect securely without credentials.\n\n\nCheck for existing keys:\nls ~/.ssh/id_*.pub\n\nWhen you push to GitHub, you might be asked for your username and password every time. SSH keys solve this by providing secure authentication. Check if you already have keys - if you see id_rsa.pub or id_ed25519.pub, you already have one."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#generate-an-ssh-key",
-    "href": "slides/04-intro-versioning-git.html#generate-an-ssh-key",
-    "title": "Introduction to Versioning & Git",
-    "section": "Generate an SSH Key",
-    "text": "Generate an SSH Key\nssh-keygen -t ed25519 -C \"your_email@example.com\"\n\n\nPress Enter to save in default location\nOptionally add a passphrase (or leave blank)\n\n\n\nThen add to GitHub: Settings &gt; SSH and GPG keys &gt; New SSH key\n\nIf you don’t have a key, generate one with ssh-keygen. Use the email associated with your GitHub account. After generating, you’ll need to copy the public key and add it to your GitHub account settings. See the full lesson for detailed instructions."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#create-files-in-the-browser",
-    "href": "slides/04-intro-versioning-git.html#create-files-in-the-browser",
-    "title": "Introduction to Versioning & Git",
-    "section": "Create Files in the Browser",
-    "text": "Create Files in the Browser\nClick Add file &gt; Create new file\n\n\n\nAdd file button\n\n\n\nYou can also create and edit files directly on GitHub through the web interface. This is great for quick changes or adding new files without going through the command line."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#create-a-readme.md",
-    "href": "slides/04-intro-versioning-git.html#create-a-readme.md",
-    "title": "Introduction to Versioning & Git",
-    "section": "Create a README.md",
-    "text": "Create a README.md\nName your file README.md and add:\n# IS 310 Test Repository\n\nThis is my first repository.\n\n\nClick Preview to see formatted output\nClick Commit changes\nAdd a commit message\nSelect main branch\n\n\nLet’s create a README file - the .md extension means Markdown, which is a way to format text. README files are special - GitHub displays them automatically on your repository’s main page. They typically describe what the project is about."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#github-dev-bonus-feature",
-    "href": "slides/04-intro-versioning-git.html#github-dev-bonus-feature",
-    "title": "Introduction to Versioning & Git",
-    "section": "GitHub Dev (Bonus Feature)",
-    "text": "GitHub Dev (Bonus Feature)\nChange github.com to github.dev in your URL\n\nOr press . on any repository\n\n\n\n\n\nGitHub Dev interface\n\n\nIt’s VS Code in your browser!\n\nGitHub Dev is a new feature that gives you a VS Code-like editor right in the browser. Just change .com to .dev in the URL or press the period key. You can edit files and commit changes through this interface."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#the-problem-1",
-    "href": "slides/04-intro-versioning-git.html#the-problem-1",
-    "title": "Introduction to Versioning & Git",
-    "section": "The Problem",
-    "text": "The Problem\nNow we have two versions:\n\nLocal repository (on your computer)\nRemote repository (on GitHub)\n\n\nThey have different files! How do we sync them?\n\nAfter creating a file on GitHub, our local and remote repositories are out of sync. The remote has a README that our local doesn’t have. We need to pull those changes down."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#pull-from-github",
-    "href": "slides/04-intro-versioning-git.html#pull-from-github",
-    "title": "Introduction to Versioning & Git",
-    "section": "Pull from GitHub",
-    "text": "Pull from GitHub\ngit pull origin main\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\n...\n README.md | 1 +\n 1 file changed, 1 insertion(+)\n create mode 100644 README.md\n\nNow ls shows the README.md file locally!\n\nThe git pull command downloads changes from GitHub to your local repository. After pulling, you’ll see the README.md file that was created on GitHub is now on your local computer. We’ve closed the loop!"
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#the-complete-workflow",
-    "href": "slides/04-intro-versioning-git.html#the-complete-workflow",
-    "title": "Introduction to Versioning & Git",
-    "section": "The Complete Workflow",
-    "text": "The Complete Workflow\n\n\n\nGit architecture\n\n\n\nThis diagram shows the complete workflow. Your working directory is where you edit files. You add changes to the staging area, commit them to your local repository, then push to the remote (GitHub). And you pull from GitHub to get others’ changes."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#core-workflow-summary",
-    "href": "slides/04-intro-versioning-git.html#core-workflow-summary",
-    "title": "Introduction to Versioning & Git",
-    "section": "Core Workflow Summary",
-    "text": "Core Workflow Summary\n\nEdit files locally\nAdd to staging: git add &lt;file&gt;\nCommit snapshot: git commit -m \"message\"\nPush to GitHub: git push origin main\nPull from GitHub: git pull origin main\n\n\nThis is the core git/GitHub workflow you’ll use constantly. Edit locally, add, commit, push. When working with others or after editing on GitHub, pull first to get the latest changes."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#your-assignment",
-    "href": "slides/04-intro-versioning-git.html#your-assignment",
-    "title": "Introduction to Versioning & Git",
-    "section": "Your Assignment",
-    "text": "Your Assignment\nCreate a repository called is310-coding-assignments:\n\nCreate on GitHub\nCreate locally and initialize with git init\nConnect local to remote\nCreate folder init-is310-homework/\nCreate README.md with proof of tool installations\nCreate images/ folder for screenshots\nPush everything to GitHub\n\n\nFor homework, you’ll practice this entire workflow. Create a repository for your coding assignments, add proof that you’ve installed all the required course tools, and push it to GitHub. Post the link in our discussion forum when done."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#readme-template",
-    "href": "slides/04-intro-versioning-git.html#readme-template",
-    "title": "Introduction to Versioning & Git",
-    "section": "README Template",
-    "text": "README Template\n# Init IS310 Homework\n\n## Proof of Installation\n\n1. Python\n\n![Python Installation](images/python-installation.png)\n\n2. Git\n\n![Git Installation](images/git-installation.png)\n\n3. VS Code\n\n![VS Code Installation](images/vscode-installation.png)\nInclude your Hypothesis username!\n\nUse this template for your README. Take screenshots of each tool running on your computer, save them in the images folder, and reference them in your markdown file. Don’t forget to include your Hypothesis username for the annotation tool."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#pushing-your-homework",
-    "href": "slides/04-intro-versioning-git.html#pushing-your-homework",
-    "title": "Introduction to Versioning & Git",
-    "section": "Pushing Your Homework",
-    "text": "Pushing Your Homework\ngit add .\ngit commit -m \"Init IS310 Homework\"\ngit push origin main\n\nRemember to connect local to remote first:\ngit remote add origin https://github.com/USERNAME/is310-coding-assignments.git\n\n\nPost your repo link in the discussion forum!\n\nUse git add . (with the period) to add all files at once. Commit with a descriptive message, then push. Make sure you’ve connected your local and remote repositories first! When done, share your repository link in the class discussion forum."
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#resources",
-    "href": "slides/04-intro-versioning-git.html#resources",
-    "title": "Introduction to Versioning & Git",
-    "section": "Resources",
-    "text": "Resources\n\nAdvanced Git & GitHub Resource\nGit Commands Cheat Sheet\nGitHub Docs: Managing Remote Repositories\nGitHub Docs: SSH Keys"
-  },
-  {
-    "objectID": "slides/04-intro-versioning-git.html#questions",
-    "href": "slides/04-intro-versioning-git.html#questions",
-    "title": "Introduction to Versioning & Git",
-    "section": "Questions?",
-    "text": "Questions?\nKey takeaways:\n\nGit = local version control\nGitHub = remote hosting platform\nWorkflow: edit → add → commit → push/pull\nCommit messages should be descriptive!\n\n\nSee also: Advanced Git & GitHub"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#who-are-your-instructors",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#who-are-your-instructors",
-    "title": "Introductions & Installations",
-    "section": "Who are your instructors?",
-    "text": "Who are your instructors?\nLead Instructor: Dr. Zoe LeBlanc (You can call me Prof. LeBlanc or Prof. Zoe)\nPronouns: She/Her\nEmail: zleblanc@illinois.edu\nWebsite: zoeleblanc.com\nContact me via Slack please I will try to learn your names starting next week. Please correct me if I get it wrong. Thank you!!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#who-are-your-instructors-1",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#who-are-your-instructors-1",
-    "title": "Introductions & Installations",
-    "section": "Who are your instructors?",
-    "text": "Who are your instructors?\nTeaching Assistant: Jessica Frye (Prefers Jess)\nPronouns: She/Her\nEmail: jrfrye2@illinois.edu"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#course-description",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#course-description",
-    "title": "Introductions & Installations",
-    "section": "Course Description",
-    "text": "Course Description\nCurrently the iSchool catalogue lists this following course description:\n\nExplores use and application of technology to scholarly activity in the humanities, including projects that put classic texts on the web or create multimedia applications on humanities topics.\n\nThis isn’t necessarily wrong, but not quite descriptive enough for this version of the course."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#what-is-culture-as-data",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#what-is-culture-as-data",
-    "title": "Introductions & Installations",
-    "section": "What is “Culture as Data”?",
-    "text": "What is “Culture as Data”?\nOur goal is to understand how culture can be represented as data and studied with computation.\n\nBy culture, we mean what’s usually associated with the Humanities:\n\nPopular fiction & literature\nNewspapers & government documents\nOnline communities (Reddit, TikTok subcultures)"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#culture-is-increasingly-digital",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#culture-is-increasingly-digital",
-    "title": "Introductions & Installations",
-    "section": "Culture is Increasingly Digital",
-    "text": "Culture is Increasingly Digital\nCulture is an intrinsic part of being human.\n\nToday, that culture is increasingly both digital and datafied.\n\n\nBut representing our cultural heritage is rarely straightforward or without tradeoffs."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#humanities-can-change-computing",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#humanities-can-change-computing",
-    "title": "Introductions & Installations",
-    "section": "Humanities Can Change Computing",
-    "text": "Humanities Can Change Computing\nWe will explore how humanities can change how we think about computing.\n\n\nHistories of data collection and computation are fundamentally political\nInterpretation becomes “baked” into technologies\nThese forces shape both scholarship and society"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#what-well-do",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#what-well-do",
-    "title": "Introductions & Installations",
-    "section": "What We’ll Do",
-    "text": "What We’ll Do\nWe will investigate these topics through:\n\n\nWeekly readings and assignments\n\n\n\n\nA semester-long project\n\n\n\n\nExperiencing the full process: from humanistic questions → collecting data → analyzing → communicating findings"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#bigger-questions",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#bigger-questions",
-    "title": "Introductions & Installations",
-    "section": "Bigger Questions",
-    "text": "Bigger Questions\nThrough weekly assignments and projects, we will debate:\n\nData ethics and privacy\nSustainability and curation of digital projects\nPossibilities and limitations of computational methods\nHow computing in the humanities connects to global conversations about data and society"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#objective-1-explore",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#objective-1-explore",
-    "title": "Introductions & Installations",
-    "section": "Objective 1: Explore",
-    "text": "Objective 1: Explore\nExplore computing in the humanities as a research field.\n\nThrough class discussions, readings, selected projects, and assignments, this course will provide an overview of the:\n\nHistory\nDebates\nCurrent trends"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#objective-2-experiment",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#objective-2-experiment",
-    "title": "Introductions & Installations",
-    "section": "Objective 2: Experiment",
-    "text": "Objective 2: Experiment\nExperiment with computing in the humanities as a research praxis.\n\nThrough learning coding, data analysis, and project management, this course will provide a foundation for:\n\nMaking projects that blend culture and coding\nEngaging with debates over how to maintain and evaluate this type of scholarship"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#what-comes-after-this-course",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#what-comes-after-this-course",
-    "title": "Introductions & Installations",
-    "section": "What Comes After This Course?",
-    "text": "What Comes After This Course?\nMuch depends on your interests, but you will be well equipped to continue undertaking substantive and innovative research on culture using computation and data. These skills are useful whether you aim to be a:\n\nData scientist or developer\nComputational or Data Journalist\nData or DH Librarian\nHCI or UX researcher\n\nOr just someone who understands how technology and information shape our world"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#ideally",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#ideally",
-    "title": "Introductions & Installations",
-    "section": "Ideally…",
-    "text": "Ideally…\nI hope each of you continues to work on your final project and share your research long after the course ends."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#pre--and-co-requisites",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#pre--and-co-requisites",
-    "title": "Introductions & Installations",
-    "section": "Pre- and Co-Requisites",
-    "text": "Pre- and Co-Requisites\nThere is no required prerequisite.\n\nHowever, students should have some previous experience equivalent to a semester of programming, ideally in Python.\n\n\nRelevant courses include IS205 and IS107."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#how-much-coding-experience",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#how-much-coding-experience",
-    "title": "Introductions & Installations",
-    "section": "How much coding experience?",
-    "text": "How much coding experience?\nI get this question every semester and there is no one answer. Part of the reason it depends is because AI is revolutionizing how we code. So even if you have limited experience, you might actually get further than you expect.\n\nHowever, I would say that if you have limited interest in coding, you might consider switching to Dr. Roland’s section of IS310 (Section A). Happy to assist if you decide that’s what is best for you!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#questions",
-    "title": "Introductions & Installations",
-    "section": "Questions?",
-    "text": "Questions?\nInterested students should contact the instructor if they have any questions.\n\nLet’s get started!\n\n\nBy exploring our course website ✨"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#weekly-participation-25",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#weekly-participation-25",
-    "title": "Introductions & Installations",
-    "section": "Weekly Participation (25%)",
-    "text": "Weekly Participation (25%)\nTwo components:\n\nIndividual engagement with course materials\nCollaborative group presentations\n\nBoth ensure you’re deepening your own understanding AND learning from peers."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#seminar-discussion-annotations-15",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#seminar-discussion-annotations-15",
-    "title": "Introductions & Installations",
-    "section": "Seminar Discussion & Annotations (15%)",
-    "text": "Seminar Discussion & Annotations (15%)\nBefore each class, engage with assigned materials:\n\nBook chapters or articles\nData visualizations\nDocumentation\n\nThese lay the groundwork for class discussions and your semester project."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions-to-consider",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#questions-to-consider",
-    "title": "Introductions & Installations",
-    "section": "Questions to Consider",
-    "text": "Questions to Consider\nWhen engaging with weekly materials, ask yourself:\n\nWhat is the main argument? Is there one?\nHow does the author support their argument?\nWhat evidence or data did they use?\nWhat is the likely audience?"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#more-questions-to-consider",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#more-questions-to-consider",
-    "title": "Introductions & Installations",
-    "section": "More Questions to Consider",
-    "text": "More Questions to Consider\n\nWhat connections or tensions exist across materials?\nWhat was confusing or unclear?\nHow does this connect to previous weeks?\n\n\nGoal: Summarize central points in a few lines, not detail everything!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#demonstrating-engagement",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#demonstrating-engagement",
-    "title": "Introductions & Installations",
-    "section": "Demonstrating Engagement",
-    "text": "Demonstrating Engagement\nOption 1: Seminar Discussions\n\nAsk questions about complex concepts\nShare connections across materials\nRespond thoughtfully to peers\n\n. . .\nGoal: Create a thoughtful and respectful intellectual community"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#demonstrating-engagement-1",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#demonstrating-engagement-1",
-    "title": "Introductions & Installations",
-    "section": "Demonstrating Engagement",
-    "text": "Demonstrating Engagement\nOption 2: Asynchronous Annotations\nUsing Hypothesis annotation platform:\n\nShare thoughts on weekly materials\nEngage with peers’ annotations\nMay be asked to expand during discussions\n\nSign up: hypothes.is/signup and more details available in our course website"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#grading-seminar-discussions",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#grading-seminar-discussions",
-    "title": "Introductions & Installations",
-    "section": "Grading: Seminar Discussions",
-    "text": "Grading: Seminar Discussions\nTo receive full credit:\n\nBe present in person\nActively participate in discussion or activities\n\n\nSimply attending class is not enough!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#grading-annotations",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#grading-annotations",
-    "title": "Introductions & Installations",
-    "section": "Grading: Annotations",
-    "text": "Grading: Annotations\n\nSubmit via Hypothesis by midnight the day before class\nTag appropriately in our Hypothesis group\nDemonstrate thoughtful engagement:\n\nSummarize key points\nRaise questions\nMake connections"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#group-presentations-10",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#group-presentations-10",
-    "title": "Introductions & Installations",
-    "section": "Group Presentations (10%)",
-    "text": "Group Presentations (10%)\nGroups assigned in first two weeks based on:\n\nStudent interests\nBackgrounds (music, literature, social media, gaming, etc.)"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#group-work-structure",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#group-work-structure",
-    "title": "Introductions & Installations",
-    "section": "Group Work Structure",
-    "text": "Group Work Structure\nWeekly Prompts and Activities:\n\nFind digital objects\nExplore datasets\nApply concepts from readings"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#in-class-presentations",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#in-class-presentations",
-    "title": "Introductions & Installations",
-    "section": "In-Class Presentations",
-    "text": "In-Class Presentations\n\nNot every group presents every week\nEven if not presenting:\n\nSubmit work to GitHub\nBe prepared to discuss\n\n\n\nPresentations should be clear, concise, and demonstrate understanding."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#documentation-requirements",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#documentation-requirements",
-    "title": "Introductions & Installations",
-    "section": "Documentation Requirements",
-    "text": "Documentation Requirements\nAll group work must be documented on GitHub:\n\nSummary of activities\nHow labor was divided\nReflections on the process\n\n\nClear documentation is crucial for grading and project progress!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#grading-group-work",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#grading-group-work",
-    "title": "Introductions & Installations",
-    "section": "Grading: Group Work",
-    "text": "Grading: Group Work\nBased on:\n\nActive participation in presentations\nQuality of contributions\nEffectiveness of collaboration\n\n\nGrade not impacted if a member is absent (but group must pivot)."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#group-work-deadlines",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#group-work-deadlines",
-    "title": "Introductions & Installations",
-    "section": "Group Work Deadlines",
-    "text": "Group Work Deadlines\nSubmit to GitHub by midnight before class.\n\nLate submissions: Half credit (with explanation)\nRepeated late submissions: Meeting with Instructor"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#weekly-coding-assignments-25",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#weekly-coding-assignments-25",
-    "title": "Introductions & Installations",
-    "section": "Weekly Coding Assignments (25%)",
-    "text": "Weekly Coding Assignments (25%)\n\nComplete and share via GitHub\nPair programming encouraged!\n\n\nWork together, but make sure you understand the concepts — they build quickly!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#grading-coding-assignments",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#grading-coding-assignments",
-    "title": "Introductions & Installations",
-    "section": "Grading: Coding Assignments",
-    "text": "Grading: Coding Assignments\n\nDue: Midnight before class\nLate submissions: Half credit (if before final class)\n\n\nQuestions encouraged — in person and online!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#required-texts-resources",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#required-texts-resources",
-    "title": "Introductions & Installations",
-    "section": "Required Texts & Resources",
-    "text": "Required Texts & Resources\nGood news: Almost all materials available free online!\n\nCourse website\nCanvas\n\n\nNo required purchases for software or books."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#computer-access",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#computer-access",
-    "title": "Introductions & Installations",
-    "section": "Computer Access",
-    "text": "Computer Access\nYou will need access to a computer.\n\nIf this is an issue, let me know early — we’ll find solutions!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#summary",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#summary",
-    "title": "Introductions & Installations",
-    "section": "Summary",
-    "text": "Summary\n\n\n\nComponent\nWeight\n\n\n\n\nSeminar Discussion & Annotations\n15%\n\n\nGroup Presentations\n10%\n\n\nWeekly Coding Assignments\n25%\n\n\nTotal\n50%"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions-1",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#questions-1",
-    "title": "Introductions & Installations",
-    "section": "Questions?",
-    "text": "Questions?\nRemember:\n\nEngage thoughtfully\nCollaborate with peers\nAsk questions early and often!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#inspired-by-rdc-project",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#inspired-by-rdc-project",
-    "title": "Introductions & Installations",
-    "section": "Inspired by RDC Project",
-    "text": "Inspired by RDC Project\nThe project is modeled on the Responsible Datasets in Context Project:\nresponsible-datasets-in-context.com\n\nCreated to help students “work with data responsibly.”"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#why-context-matters",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#why-context-matters",
-    "title": "Introductions & Installations",
-    "section": "Why Context Matters",
-    "text": "Why Context Matters\n\n“Data cannot be analyzed responsibly without deep knowledge of its social and historical context, provenance, and limitations.”\n\n\n\n“In classes, it is very common for students to use datasets that they find on websites like Kaggle, datasets that are poorly documented and that students thus don’t fully understand. This is a recipe for irresponsible data work.”"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#your-goal",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#your-goal",
-    "title": "Introductions & Installations",
-    "section": "Your Goal",
-    "text": "Your Goal\nYou will work collaboratively to create a first draft of what could eventually be part of the RDC Project.\n\nNot as polished or extensive — but a meaningful contribution."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#timeline-overview",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#timeline-overview",
-    "title": "Introductions & Installations",
-    "section": "Timeline Overview",
-    "text": "Timeline Overview\n\n\n\nMilestone\nDue Date\nWeight\n\n\n\n\nGroup & Individual Topic Selection\nFeb 5\nPass/Fail\n\n\nInitial Dataset\nMar 12\n15%\n\n\nData Demo Day\nApr 30 or May 5\n5%\n\n\nFinal Submission\nMay 15\n30%"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#group-formation",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#group-formation",
-    "title": "Introductions & Installations",
-    "section": "Group Formation",
-    "text": "Group Formation\nIn the first two weeks, you will be assigned to a group based on:\n\nShared interests\nComplementary skill sets"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#planning-document",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#planning-document",
-    "title": "Introductions & Installations",
-    "section": "Planning Document",
-    "text": "Planning Document\nYour first task is to collaboratively determine:\n\n\nGroup Theme: Shared area of interest\n\n\n\n\nIndividual Ideas: Specific datasets each member is considering\n\n\n\n\nCollaboration Plan: Communication and GitHub organization strategy"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#format-submission",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#format-submission",
-    "title": "Introductions & Installations",
-    "section": "Format & Submission",
-    "text": "Format & Submission\n\nMarkdown file (planning.md) in your GitHub repo\n500–750 words\nUse headings, bullet points, links, images, or tables"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#why-start-small",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#why-start-small",
-    "title": "Introductions & Installations",
-    "section": "Why Start Small?",
-    "text": "Why Start Small?\nCreate approximately 50-100 data items through close, interpretive work.\n\nWhy small? This is where you learn that every dataset embeds interpretive choices.\n\n\nWhen you manually work through items, deciding what counts and how to categorize, you experience the intellectual and ethical labor that gets hidden at scale."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#computation-required",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#computation-required",
-    "title": "Introductions & Installations",
-    "section": "Computation Required",
-    "text": "Computation Required\nWhile your dataset is small, you must use computational tools to assist.\n\nThis is not about automation—it’s about understanding how computation can augment even bespoke data work."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#approach-1-create-from-scratch",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#approach-1-create-from-scratch",
-    "title": "Introductions & Installations",
-    "section": "Approach 1: Create from Scratch",
-    "text": "Approach 1: Create from Scratch\nTransform complex cultural materials into structured data.\n\nExamples:\n\nDigitize lesser-known children’s literature and decide what to capture\nAnnotate TikToks mentioning AI to track recurring themes\nExtract and categorize visual elements from historical documents"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#approach-2-audit-augment",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#approach-2-audit-augment",
-    "title": "Introductions & Installations",
-    "section": "Approach 2: Audit & Augment",
-    "text": "Approach 2: Audit & Augment\nCritically engage with an existing dataset that lacks documentation or transparency.\n\nExamples:\n\nTrace a Kaggle movie dataset back to its source\nCompare original reviews to what appears in the dataset\nAdd missing metadata or flag inconsistencies"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#submission-components",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#submission-components",
-    "title": "Introductions & Installations",
-    "section": "Submission Components",
-    "text": "Submission Components\n\nInitial Dataset (~50-100 items) in structured format\n\n\n\nInitial Documentation explaining process and interpretive choices\n\n\n\n\nNext Steps plan for scaling computationally"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#focus-on-whats-next",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#focus-on-whats-next",
-    "title": "Introductions & Installations",
-    "section": "Focus on What’s Next",
-    "text": "Focus on What’s Next\nThis presentation is primarily about speculation:\n\n\nWhat users do you envision?\nWhat computational methods might you try?\nWhat patterns might emerge at scale?\nWhat future data would you collect?"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#work-in-progress",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#work-in-progress",
-    "title": "Introductions & Installations",
-    "section": "Work in Progress",
-    "text": "Work in Progress\nThis is work-in-progress, not a final polished product.\n\nBe creative and ambitious in your presentations!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#what-youll-have-done",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#what-youll-have-done",
-    "title": "Introductions & Installations",
-    "section": "What You’ll Have Done",
-    "text": "What You’ll Have Done\nBy this point, you will have:\n\nCreated data manually with computational assistance\nAugmented it at scale\nExperimented with methods\nPresented speculative visions"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#individual-component-25",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#individual-component-25",
-    "title": "Introductions & Installations",
-    "section": "Individual Component (25%)",
-    "text": "Individual Component (25%)\nCulture As Dataset:\n\nBespoke manual work + computational augmentation\nStructured format, thoughtfully organized\nRelevant documentation"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#individual-component-cont.",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#individual-component-cont.",
-    "title": "Introductions & Installations",
-    "section": "Individual Component (cont.)",
-    "text": "Individual Component (cont.)\nCulture As Documentation:\nA final data essay that tells the story of your dataset:\n\nHow you made it\nWhat it represents\nWhat it reveals and conceals"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#data-essay-focus-areas",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#data-essay-focus-areas",
-    "title": "Introductions & Installations",
-    "section": "Data Essay Focus Areas",
-    "text": "Data Essay Focus Areas\nYour essay should address:\n\nHow computation played a role\nHow scale shaped the data\nLimitations and qualifications\nEthical or privacy considerations\nLessons learned\nConnection to peer-reviewed scholarship"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#collective-component-5",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#collective-component-5",
-    "title": "Introductions & Installations",
-    "section": "Collective Component (5%)",
-    "text": "Collective Component (5%)\nCollective Principles & Documentation\n\nSynthesize what your group collectively learned about working with your particular type of cultural data."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#think-of-it-as",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#think-of-it-as",
-    "title": "Introductions & Installations",
-    "section": "Think of It As…",
-    "text": "Think of It As…\nWriting the documentation you wish had existed when you started.\n\n\nWhat should someone know before representing music as data? Or social media? Or gaming culture?\n\n\n\n\nWhat principles emerged from your group’s diverse approaches?"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#grade-breakdown",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#grade-breakdown",
-    "title": "Introductions & Installations",
-    "section": "Grade Breakdown",
-    "text": "Grade Breakdown\n\n\n\nComponent\nWeight\n\n\n\n\nTopic Selection\nPass/Fail\n\n\nInitial Dataset\n15%\n\n\nData Demo Day\n5%\n\n\nFinal Submission (Individual)\n25%\n\n\nFinal Submission (Collective)\n5%\n\n\nTotal\n50%"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions-2",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#questions-2",
-    "title": "Introductions & Installations",
-    "section": "Questions?",
-    "text": "Questions?\nRemember:\n\nStart with close, interpretive work\nUse computation to augment, not replace\nDocument your decisions and process\nThink about context and responsibility\n\n\nMore details throughout the semester! Though requirements are subject to change depending on speed and AI-usage."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#general-note-on-grading",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#general-note-on-grading",
-    "title": "Introductions & Installations",
-    "section": "General Note on Grading",
-    "text": "General Note on Grading\nI tend to use GitHub to have as much transparency when it comes to grading and feedback.\n\nGenerally, as far as I’m concerned you are all A+ humans. It’s just about ensuring that effort, creativity, labor, and other core principles are correctly evaluated. If you have concerns over grades, I am always happy to discuss them."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#if-you-need-to-miss-class",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#if-you-need-to-miss-class",
-    "title": "Introductions & Installations",
-    "section": "If You Need to Miss Class",
-    "text": "If You Need to Miss Class\nIf you are feeling unwell or have been exposed to illness, please stay home and prioritize your health.\n\nI do not require doctor’s notes for absences.\n\n\nHowever, please keep in mind that if you miss a substantial portion of class meetings, it will be difficult to make up missed content and that you need to coordinate with your group members who depend on your contributions."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#when-you-miss-class",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#when-you-miss-class",
-    "title": "Introductions & Installations",
-    "section": "When You Miss Class",
-    "text": "When You Miss Class\n\n\nMessage me on Slack as soon as possible\n\n\n\n\nInform your group members so they can plan accordingly\n\n\n\n\nCheck in with me about making up missed content\n\n\n\n\nReview materials on the course website"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#information-overload-days",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#information-overload-days",
-    "title": "Introductions & Installations",
-    "section": "Information Overload Days",
-    "text": "Information Overload Days\nSometimes you need a break from the workload.\n\nInstead of missing class outright, let me know you need an information overload day."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#how-information-overload-days-work",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#how-information-overload-days-work",
-    "title": "Introductions & Installations",
-    "section": "How Information Overload Days Work",
-    "text": "How Information Overload Days Work\n\n\nYou are excused from assigned materials and discussion\n\n\n\n\nYou actively listen during class\n\n\n\n\nConsult with instructor about make-up assignments later\n\n\n\n\nInform your group and help them adjust\n\n\n\nTwo free, no questions asked — after that, let’s talk!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#worst-case-scenarios",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#worst-case-scenarios",
-    "title": "Introductions & Installations",
-    "section": "Worst Case Scenarios",
-    "text": "Worst Case Scenarios\nIf you or someone close to you becomes ill:\n\nFinal grade based on existing work\nOption to move course to pass/fail\n\n\nWhen you can, please get in touch. Your wellbeing comes first."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#respect-in-all-communication",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#respect-in-all-communication",
-    "title": "Introductions & Installations",
-    "section": "Respect in All Communication",
-    "text": "Respect in All Communication\n\n\nIn-person interactions\n\n\n\n\nSlack messages\n\n\n\n\nEmails\n\n\n\nThis course is experimental with students from varied backgrounds. Every opinion, question, and idea deserves a respectful response."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#rule-of-thumb",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#rule-of-thumb",
-    "title": "Introductions & Installations",
-    "section": "Rule of Thumb",
-    "text": "Rule of Thumb\nWhen in doubt, ask questions and over-communicate — but do so respectfully!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#the-short-version",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#the-short-version",
-    "title": "Introductions & Installations",
-    "section": "The Short Version",
-    "text": "The Short Version\nDon’t cheat.\n\nIf you need help, see the instructor.\n\n\nI would rather you turn in work late than have to report you for plagiarism."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#citation-as-practice",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#citation-as-practice",
-    "title": "Introductions & Installations",
-    "section": "Citation as Practice",
-    "text": "Citation as Practice\nWe’ll discuss what constitutes plagiarism (it gets thorny with code).\n\nRule of thumb: Cite as much as possible.\n\n\nAll scholarship is a collective endeavor."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#why-citation-matters",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#why-citation-matters",
-    "title": "Introductions & Installations",
-    "section": "Why Citation Matters",
-    "text": "Why Citation Matters\n\n“Citation is how we acknowledge our debt to those who came before; those who helped us find our way when the way was obscured because we deviated from the paths we were told to follow.”\n— Sara Ahmed, Living a Feminist Life\n\n\n\n“Acknowledging and establishing feminist genealogies is part of the work of producing more just forms of knowledge and intellectual practice.”\n— Beverly Weber, Digital Feminist Collective"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#why-citation-matters-1",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#why-citation-matters-1",
-    "title": "Introductions & Installations",
-    "section": "Why Citation Matters",
-    "text": "Why Citation Matters\nAcknowledging sources is both intellectually and politically imperative."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#your-course-workflow",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#your-course-workflow",
-    "title": "Introductions & Installations",
-    "section": "Your Course Workflow",
-    "text": "Your Course Workflow\nIn the first two weeks, submit your Course Workflow addressing:\n\nUsing AI? Which tools? For what purposes?\nNot using AI? What’s your alternative workflow?\nUsing local models? Consult with instructor for setup."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#if-your-workflow-changes",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#if-your-workflow-changes",
-    "title": "Introductions & Installations",
-    "section": "If Your Workflow Changes",
-    "text": "If Your Workflow Changes\nAI use is iterative and experimental.\n\nIf your approach changes during the semester, simply update your workflow statement.\n\n\nNo judgment — experimentation is encouraged!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#using-agentic-ai",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#using-agentic-ai",
-    "title": "Introductions & Installations",
-    "section": "Using Agentic AI",
-    "text": "Using Agentic AI\nIf you use highly agentic AI tools, you’ll be held to higher standards:\n\nMore sophisticated analysis\nRigorous documentation of AI use\nDeeper engagement with scholarship\n\n\nIf AI does more technical work, you show more intellectual work."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#what-counts-as-agentic-ai",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#what-counts-as-agentic-ai",
-    "title": "Introductions & Installations",
-    "section": "What Counts as Agentic AI?",
-    "text": "What Counts as Agentic AI?\n\nTools that autonomously write, debug, and execute complex code\nTools that independently conduct multi-step research\nTools that generate substantial written work with minimal input\n\n\nIf you’re unsure, ask!"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#ai-access-equity",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#ai-access-equity",
-    "title": "Introductions & Installations",
-    "section": "AI Access & Equity",
-    "text": "AI Access & Equity\nWe use free tools:\n\nGitHub Copilot (free with GitHub Student Developer Pack)\nOpen-source local models\n\n\nIf using paid tools, disclose and check for education discounts."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#ai-for-coding",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#ai-for-coding",
-    "title": "Introductions & Installations",
-    "section": "AI for Coding",
-    "text": "AI for Coding\nYou may use AI to help write, debug, and understand code.\n\nBut make sure you understand what the code does.\n\n\nIf code breaks, you need to fix it."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#ai-for-written-work",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#ai-for-written-work",
-    "title": "Introductions & Installations",
-    "section": "AI for Written Work",
-    "text": "AI for Written Work\nYou may use AI for brainstorming, outlining, drafting, or editing.\n\nYour ideas, arguments, and voice should be yours.\n\n\nIf an essay reads like it was primarily AI-generated or if you cannot answer questions about your submissions, you will be dinged points."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#ai-for-data-work",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#ai-for-data-work",
-    "title": "Introductions & Installations",
-    "section": "AI for Data Work",
-    "text": "AI for Data Work\nYou may use AI for data collection, cleaning, analysis, or documentation.\n\nYou make the interpretive decisions.\n\n\nYour work must demonstrate you understand your methodology deeply."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#the-bottom-line",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#the-bottom-line",
-    "title": "Introductions & Installations",
-    "section": "The Bottom Line",
-    "text": "The Bottom Line\nAI should make you more capable, not less thoughtful.\n\nIt should amplify your learning, not replace it.\n\n\nIf you can’t explain what your code does or why your essay makes certain arguments, stop and reassess."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#example-citation",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#example-citation",
-    "title": "Introductions & Installations",
-    "section": "Example Citation?",
-    "text": "Example Citation?\nWhen using AI tools like Claude Code, cite them as you would software:\n\nAnthropic. (2026). Claude Code (Version 4.5) [AI coding assistant]. https://claude.ai/claude-code\n\nOr in prose: “These slides were created with assistance from Claude Code (Anthropic, 2026), an AI coding assistant used for formatting Quarto/Reveal.js syntax.”"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#questions-3",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#questions-3",
-    "title": "Introductions & Installations",
-    "section": "Questions?",
-    "text": "Questions?\nRemember:\n\nCommunicate early and often\nEngage thoughtfully with AI\nRespect the land and each other\n\n\nFull policies available on the course website and in the syllabus on Canvas."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#traditional-territory",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#traditional-territory",
-    "title": "Introductions & Installations",
-    "section": "Traditional Territory",
-    "text": "Traditional Territory\nThese lands were the traditional territory of these Native Nations prior to their forced removal;\n\nThese lands continue to carry the stories of these Nations and their struggles for survival and identity."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#our-responsibility",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#our-responsibility",
-    "title": "Introductions & Installations",
-    "section": "Our Responsibility",
-    "text": "Our Responsibility\nAs a land-grant institution, the University of Illinois has a particular responsibility to acknowledge the peoples of these lands, as well as the histories of dispossession that have allowed for the growth of this institution for the past 150 years. We are also obligated to reflect on and actively address these histories and the role that this university has played in shaping them. This acknowledgement and the centering of Native peoples is a start as we move forward for the next 150 years."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#beyond-platitudes-what-does-this-mean",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#beyond-platitudes-what-does-this-mean",
-    "title": "Introductions & Installations",
-    "section": "Beyond Platitudes: What does this mean?",
-    "text": "Beyond Platitudes: What does this mean?\nWhile this acknowledgement is important, I find that these words can be difficult to understand or visualize.\n\nLet’s look at the first two digital humanities projects in this course to help us understand."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#native-land-digital",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#native-land-digital",
-    "title": "Introductions & Installations",
-    "section": "Native Land Digital",
-    "text": "Native Land Digital\nVisualizes indigenous lands worldwide, built by a Canadian non-for-profit, that helps us see how this dispossession has shaped our very understanding of geography and political identity."
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#native-land-digital-1",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#native-land-digital-1",
-    "title": "Introductions & Installations",
-    "section": "Native Land Digital",
-    "text": "Native Land Digital\n\n\n\nNative Lands Map of Illinois"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#land-grab-universities",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#land-grab-universities",
-    "title": "Introductions & Installations",
-    "section": "Land Grab Universities",
-    "text": "Land Grab Universities\nHow the Morrill Act dispossessed tribal lands, signed in 1862, dispossessed tribal lands to fund the creation of public state universities. The project was built by Robert Lee, Tristane Ahtone, Margaret Pearce, Kalen Goodluck, Geoff McGhee, and Cody Leff and published by High Country News"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#land-grab-universities-1",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#land-grab-universities-1",
-    "title": "Introductions & Installations",
-    "section": "Land Grab Universities",
-    "text": "Land Grab Universities\n\n\n\nLand Grab Universities - Illinois"
-  },
-  {
-    "objectID": "slides/01-introducing-computing-in-the-humanities.html#final-discussion-questions",
-    "href": "slides/01-introducing-computing-in-the-humanities.html#final-discussion-questions",
-    "title": "Introductions & Installations",
-    "section": "Final Discussion Questions",
-    "text": "Final Discussion Questions\nWhat is computing in the humanities?\n\nWhat is culture as data?\n\n\nVisit What is Digital Humanities? and refresh a few times\n\n\nAlso visit Open Syllabus Project"
+    "objectID": "slides/index.html",
+    "href": "slides/index.html",
+    "title": "Course Slides",
+    "section": "",
+    "text": "Slides from class lectures and presentations."
+  },
+  {
+    "objectID": "slides/index.html#available-slides",
+    "href": "slides/index.html#available-slides",
+    "title": "Course Slides",
+    "section": "Available Slides",
+    "text": "Available Slides\n\nFirst Class Slides\nSecond Class Slides"
   },
   {
     "objectID": "assets/files/is310IntroLLMS.html",
