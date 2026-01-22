@@ -51,10 +51,10 @@ Essentially, modern software is a bit of a house of cards, and it's not uncommon
 <table>
   <tr>
     <td>
-      ![Jake VanderPlas Tweet](../../assets/images/python_twitter.png)
+      ![Jake VanderPlas Tweet](../assets/images/python_twitter.png)
     </td>
     <td>
-      ![Stack Overflow's Annual Survey](../../assets/images/python_so.png)
+      ![Stack Overflow's Annual Survey](../assets/images/python_so.png)
     </td>
   </tr>
 </table>
@@ -73,7 +73,7 @@ While alternatives to GitHub exist (primarily [GitLab](https://about.gitlab.com/
 
 ## Arctic Code Vault
 
-![GitHub Arctic Code Vault](../../assets/images/artic_code_vault.png)
+![GitHub Arctic Code Vault](../assets/images/artic_code_vault.png)
 
 :::{.notes}
 For example, GitHub has created what amounts to the largest code archive in the world through their GitHub Arctic Code Vault, an initiative to take a snapshot of all code hosted on their platform on February 2, 2020 and store it in the Svalbard Global Seed Vault. Such an initiative is impressive and was done in partnership with some academic institutions (the exact partners were the Long Now Foundation, the Internet Archive, the Software Heritage Foundation, Arctic World Archive, Microsoft Research, the Bodleian Library, and Stanford Libraries). But it also raises a number of ethical, archival, and political questions.
@@ -569,7 +569,7 @@ If I use the `pwd` command, I can start to see this structure.
 
 ## Working Directories
 
-![Current Directory](../../assets/images/pwd_example.png)
+![Current Directory](../assets/images/pwd_example.png)
 
 ::: {.notes}
 You'll notice the command prints out a long string that has names like `Users`, followed by a series of names separated by a forward slash `/` (in PowerShell, you'll see backslashes `\`). Each of these are my folders or directories, and this represents the **absolute file path** from my root directory to my current directory -- that is the current location of my terminal. I realize this might be a bit confusing initially, but eventually as you use the command line more, you'll start to get a sense of how this works.
@@ -751,7 +751,7 @@ Although Git and version control systems are predominantly used in software deve
 
 ## What Version Tracking Looks Like
 
-![Example of a git diff](../../assets/images/github_diff.png){height="400"}
+![Example of a git diff](../assets/images/github_diff.png){height="400"}
 
 ::: {.notes}
 This screenshot is from GitHub but shows what git tracks. You can see on the left, the previous erroneous line was deleted, and on the right is the corrected version. This is a very simple example, but it gives you a sense of how git tracks changes - showing exactly what was removed and what was added.
@@ -831,7 +831,7 @@ To start tracking changes, we need to initialize a git repository. The git init 
 
 ## The Git Workflow
 
-![Git as a camera](../../assets/images/dhri_git.png){height="400"}
+![Git as a camera](../assets/images/dhri_git.png){height="400"}
 
 *Think of git as a camera taking snapshots of your project*
 
@@ -1168,7 +1168,7 @@ Or press `.` on any repository
 
 . . .
 
-![GitHub Dev interface](../../assets/images/github_dev.png){height="300"}
+![GitHub Dev interface](../assets/images/github_dev.png){height="300"}
 
 *It's VS Code in your browser!* You can read more about it [https://docs.github.com/en/codespaces/the-githubdev-web-based-editor](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor).
 
