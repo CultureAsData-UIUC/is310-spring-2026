@@ -1477,6 +1477,643 @@
     "text": "Available Slides\n\nFirst Class Slides\nSecond Class Slides"
   },
   {
+    "objectID": "slides/02-programming-and-processing.html#reminder-these-are-required",
+    "href": "slides/02-programming-and-processing.html#reminder-these-are-required",
+    "title": "Programming & Processing",
+    "section": "Reminder: These Are Required",
+    "text": "Reminder: These Are Required\n\nSlack Account with DH@UIUC Server.\nHypothesis Account with IS310-Spring-2026 Group.\nGitHub Account.\nLocal Python 3 Installation.\nGit.\nLocal Text Editor (VS Code Recommended)."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#reminder-these-are-optional",
+    "href": "slides/02-programming-and-processing.html#reminder-these-are-optional",
+    "title": "Programming & Processing",
+    "section": "Reminder: These Are Optional",
+    "text": "Reminder: These Are Optional\n\nAI Tooling of Your Choice:\n\nRecommend GitHub Co-Pilot and using GitHub Education Benefits to get access to Co-Pilot.\n\nIDE of Your Choice:\n\nRecommend Visual Studio Code and Visual Studio Code Extensions.\n\nOh-My-Zsh."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#any-python-issues",
+    "href": "slides/02-programming-and-processing.html#any-python-issues",
+    "title": "Programming & Processing",
+    "section": "Any Python Issues?",
+    "text": "Any Python Issues?\n\nPython Environment by Russell Monroe"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#why-python",
+    "href": "slides/02-programming-and-processing.html#why-python",
+    "title": "Programming & Processing",
+    "section": "Why Python?",
+    "text": "Why Python?\n\n\n\n\n\n\nJake VanderPlas Tweet\n\n\n\n\n\n\n\nStack Overflow’s Annual Survey"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#alternatives-to-github",
+    "href": "slides/02-programming-and-processing.html#alternatives-to-github",
+    "title": "Programming & Processing",
+    "section": "Alternatives to GitHub",
+    "text": "Alternatives to GitHub\n\n\nWhile alternatives to GitHub exist (primarily GitLab or Bitbucket), it is hard to overstate how much in the last decade GitHub has become the platform for this type of work. Such a centralization is truly a double-edged sword"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#arctic-code-vault",
+    "href": "slides/02-programming-and-processing.html#arctic-code-vault",
+    "title": "Programming & Processing",
+    "section": "Arctic Code Vault",
+    "text": "Arctic Code Vault\n\nGitHub Arctic Code Vault\nFor example, GitHub has created what amounts to the largest code archive in the world through their GitHub Arctic Code Vault, an initiative to take a snapshot of all code hosted on their platform on February 2, 2020 and store it in the Svalbard Global Seed Vault. Such an initiative is impressive and was done in partnership with some academic institutions (the exact partners were the Long Now Foundation, the Internet Archive, the Software Heritage Foundation, Arctic World Archive, Microsoft Research, the Bodleian Library, and Stanford Libraries). But it also raises a number of ethical, archival, and political questions. For example, this Arctic Code Vault has been criticized for its erasure of the indigenous Sami people who live on Svalbard and its performative approach to archives. GitHub also has contracts with U.S. Immigrations and Customs Enforcement (ICE) led to protests and boycotts from some sectors of the developer community.[^4] While we plan to use this platform, it’s important to do so with these issues in mind."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#what-is-data-labor-why-does-data-labor-matter",
+    "href": "slides/02-programming-and-processing.html#what-is-data-labor-why-does-data-labor-matter",
+    "title": "Programming & Processing",
+    "section": "What is Data Labor? Why Does Data Labor Matter?",
+    "text": "What is Data Labor? Why Does Data Labor Matter?"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#what-is-laion-5b",
+    "href": "slides/02-programming-and-processing.html#what-is-laion-5b",
+    "title": "Programming & Processing",
+    "section": "What is LAION-5B?",
+    "text": "What is LAION-5B?\n\n\nLAION-5B is a “foundation dataset” for generative AI - it’s what models like Stable Diffusion and Midjourney are trained on. The scale makes human review essentially impossible, which is precisely why problems emerge.\n\nReleased in 2022 by LAION, a German non-profit\nImages and text captions scraped from the internet\nBuilt to give AI models “a comprehensive representation of the world”"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#how-was-laion-5b-built",
+    "href": "slides/02-programming-and-processing.html#how-was-laion-5b-built",
+    "title": "Programming & Processing",
+    "section": "How was LAION-5B Built?",
+    "text": "How was LAION-5B Built?\n\n\nLAION-5B was built from Common Crawl using automated methods:\n\nSearch for HTML &lt;img&gt; tags with alt attributes\n\nALT tags describe what site owners want algorithms to see, not what humans see\nOnly about 40% of images on the web have ALT tags. Sites like Pinterest, Shopify, and SlidePlayer have high ALT tag coverage because they auto-generate them for SEO purposes. This means LAION-5B is “powerfully shaped by commercial logics” - it reflects how search engines see the world, not how humans do."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#what-is-in-common-crawl",
+    "href": "slides/02-programming-and-processing.html#what-is-in-common-crawl",
+    "title": "Programming & Processing",
+    "section": "What is in Common Crawl?",
+    "text": "What is in Common Crawl?\nSchaul, Kevin, Szu Yu Chen, and Nitasha Tiku. “Inside the Secret List of Websites That Make AI like ChatGPT Sound Smart.” Washington Post, April 19, 2023."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#about-me",
+    "href": "slides/02-programming-and-processing.html#about-me",
+    "title": "Programming & Processing",
+    "section": "About Me",
+    "text": "About Me\nLucy, Li, Suchin Gururangan, Luca Soldaini, et al. “AboutMe: Using Self-Descriptions in Webpages to Document the Effects of English Pretraining Data Filters.” arXiv:2401.06408. Preprint, arXiv, January 12, 2024. https://doi.org/10.48550/arXiv.2401.06408."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#about-me-1",
+    "href": "slides/02-programming-and-processing.html#about-me-1",
+    "title": "Programming & Processing",
+    "section": "About Me",
+    "text": "About Me"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#what-is-seeing-like-an-algorithm",
+    "href": "slides/02-programming-and-processing.html#what-is-seeing-like-an-algorithm",
+    "title": "Programming & Processing",
+    "section": "What is seeing like an algorithm?",
+    "text": "What is seeing like an algorithm?\n\n\n\nUse OpenAI’s CLIP model to score image-text similarity\nInclude pairs above a threshold (0.26-0.28)\nALT tags describe what site owners want algorithms to see, not what humans see\n\nOnly about 40% of images on the web have ALT tags. Sites like Pinterest, Shopify, and SlidePlayer have high ALT tag coverage because they auto-generate them for SEO purposes. This means LAION-5B is “powerfully shaped by commercial logics” - it reflects how search engines see the world, not how humans do."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#excavating-ai",
+    "href": "slides/02-programming-and-processing.html#excavating-ai",
+    "title": "Programming & Processing",
+    "section": "Excavating AI",
+    "text": "Excavating AI\nThe Politics of Images in Machine Learning Training Sets \nBy Kate Crawford and Trevor Paglen"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#why-models-all-the-way-down-what-is-the-circularity-problem",
+    "href": "slides/02-programming-and-processing.html#why-models-all-the-way-down-what-is-the-circularity-problem",
+    "title": "Programming & Processing",
+    "section": "Why Models All the Way Down? What is the Circularity Problem?",
+    "text": "Why Models All the Way Down? What is the Circularity Problem?\n\n“There are models on top of models, and training sets on top of training sets.”\n\n\n\n“Omissions and biases and blind spots from these stacked-up models and training sets shape all of the resulting new models and new training sets.”\n\n\nThere’s a deep circularity here. LAION-5B’s similarity score comes from CLIP (trained on undisclosed data). To set thresholds, they trained another model and compared to ImageNet benchmarks. ImageNet’s gold standard was set by ResNet50. Each layer inherits biases from the previous ones.\n“Omissions and biases and blind spots from these stacked-up models and training sets shape all of the resulting new models and new training sets.” This is why investigating datasets is so important - it’s perhaps the only way to understand what these models actually contain."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#what-are-the-problems-with-this-data",
+    "href": "slides/02-programming-and-processing.html#what-are-the-problems-with-this-data",
+    "title": "Programming & Processing",
+    "section": "What are the problems with this data?",
+    "text": "What are the problems with this data?\n\nWhy is scale a problem?\n\n\nThe Problem: In December 2023, researchers found over 1,000 images of Child Sexual Abuse Material (CSAM) in the dataset\n\n\n“If your full-time, eight-hours-a-day, five-days-a-week job were to look at each image in the dataset for just one second, it would take you 781 years.”\n\nLAION-5B contains 5.85 billion image-text pairs\nLAION-5B is a “foundation dataset” for generative AI - it’s what models like Stable Diffusion and Midjourney are trained on. The scale makes human review essentially impossible, which is precisely why problems emerge. The stated goal was research into automated dataset curation - building a dataset with “no humans in the mix.” The creators explicitly warned against using it for “ready-to-go industrial products.” This warning was largely ignored by Midjourney and Stable Diffusion."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#how-are-these-datsets-curated",
+    "href": "slides/02-programming-and-processing.html#how-are-these-datsets-curated",
+    "title": "Programming & Processing",
+    "section": "How are these datsets “curated”?",
+    "text": "How are these datsets “curated”?"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#curation-by-statistics",
+    "href": "slides/02-programming-and-processing.html#curation-by-statistics",
+    "title": "Programming & Processing",
+    "section": "Curation by Statistics",
+    "text": "Curation by Statistics\n\n“The tiniest of shifts in LAION’s thresholds could have excluded or included hundreds of millions of images”\n\n\n\n16% of images are within 0.01 of the lower threshold\nRaising the threshold by just 0.01 would remove 937 million image pairs\n\n\nThis is what “curation by statistics” looks like: tiny tweaks to code can have profound effects on the content of training sets. The thresholds are “very often poorly understood” - even by the developers who set them."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#whose-images",
+    "href": "slides/02-programming-and-processing.html#whose-images",
+    "title": "Programming & Processing",
+    "section": "Whose Images?",
+    "text": "Whose Images?\nFor every English speaker: 1.6 image captions\nFor every French speaker: 0.5 image captions\nFor every Swahili speaker: 0.03 image captions\n\n\n“For models trained on LAION-5B, English (and English-speaking culture) is valued more than the other 107 languages combined.”\n\n\nThe language distribution in LAION differs significantly from Common Crawl. CLD3 (the language detector) miscategorized millions of captions - for example, labeling 34 million captions as Luxembourgian (a language only 300,000 people speak). These are mostly actually English."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#whose-aesthetics",
+    "href": "slides/02-programming-and-processing.html#whose-aesthetics",
+    "title": "Programming & Processing",
+    "section": "Whose Aesthetics?",
+    "text": "Whose Aesthetics?\n\n“The concepts of what is and isn’t visually appealing can be influenced in outsized ways by the tastes of a very small group of individuals”\n\n\nMidjourney’s aesthetic fine-tuning: shaped by a handful of Discord users and a 65-year-old mechanical engineer from Wisconsin\n\nLAION-Aesthetics: a subset for “high visual quality” images\nThe aesthetic model was trained on:\n\n15,000 logos\n238,000 synthetic AI images rated by Discord users\n250,000 photos rated on dpchallenge.com\n\nThe Discord raters were described as “WEIRD” (Western, Educated, Industrialized, Rich, Democratic) and “nerdy” and “esoteric.” The dpchallenge.com top 50 reviewers are 95% from the US, Canada, or Europe - “mostly middle-aged photography enthusiasts from small American cities.”\nThe SAC dataset creators acknowledge that “most of the ratings in the dataset were submitted by a handful of users” whose “aesthetic preferences dominate the dataset.” Yet this shapes what millions of users see when they generate images."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#what-does-this-mean-for-how-we-use-ai",
+    "href": "slides/02-programming-and-processing.html#what-does-this-mean-for-how-we-use-ai",
+    "title": "Programming & Processing",
+    "section": "What does this mean for how we use AI?",
+    "text": "What does this mean for how we use AI?\n\nWhat sorts of use cases are appropriate for AI?\nWhat dangers exist because of the reliance on training data?\nDo we understand the difference between and LLM and a chatbot? hint: models all the way down!"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#what-is-a-terminal",
+    "href": "slides/02-programming-and-processing.html#what-is-a-terminal",
+    "title": "Programming & Processing",
+    "section": "What is a Terminal?",
+    "text": "What is a Terminal?\nA terminal is a way to interact with your computer via text commands.\n\nInstead of clicking on icons (GUI), we type explicit commands.\n\n\nYou’ve already used it!\npython3 --version\n\nSo far, you have been installing software via something called the terminal, but we have yet to explain what the terminal is or how it works.\nTerminals are a way to interact with your computer via text commands. Today, we usually give commands to a computer via a Graphical User Interface (GUI), pronounced “gooey”. Any time you download an app, whether on your phone or computer, you are using a GUI. GUIs let us click on icons, drag items, and interact with our computers in a visual way. Terminals let us do many of the same functions, but we have to be more explicit and write these commands."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#a-brief-history-of-computing",
+    "href": "slides/02-programming-and-processing.html#a-brief-history-of-computing",
+    "title": "Programming & Processing",
+    "section": "A Brief History of Computing",
+    "text": "A Brief History of Computing\n\n\n\nEarly computer (ENIAC)\n\n\n\nBack in the 1950s and 1960s, computers were the size of entire rooms and functioned through the use of something called punch cards. These early computers required teams of operators, often comprised of women, who inputted punch cards to prompt the computers to process and output results on paper."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#punch-cards",
+    "href": "slides/02-programming-and-processing.html#punch-cards",
+    "title": "Programming & Processing",
+    "section": "Punch Cards",
+    "text": "Punch Cards\n\n\n\nExample punch card from the Index Thomisticus\n\n\n\nPunch cards contained a series of holes that encoded information like numbers, letters, and even instructions for programs. These cards were fed into machines called card readers, translating the hole patterns into electrical signals the computer could understand. This enabled data entry for tasks like payroll calculations, statistical analysis, and even early gaming. The punch cards and computers were run by teams of operator, often comprised of women, who inputted these punch cards, prompting the computers to process and output the results on paper."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#punch-cards-1",
+    "href": "slides/02-programming-and-processing.html#punch-cards-1",
+    "title": "Programming & Processing",
+    "section": "Punch Cards",
+    "text": "Punch Cards\n\nOne of the first Computing in the Humanities projects started in the 1940s to digitize the writings of Thomas Aquinas. More information available here https://theoreti.ca/?p=6096\nFor more on this history, I would highly recommend watching “Computer History: Punch Cards Historical Overview -IBM Remington Rand UNIVAC - History 1900’s-1960’s”, 2016. https://www.youtube.com/watch?v=kKJxzay85Vk.\n\n\nThe term terminal then refers to the device that allowed operators to interact with the computer, and the command line refers to the text-based interface that allowed operators to input commands to the computer."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#the-first-gui",
+    "href": "slides/02-programming-and-processing.html#the-first-gui",
+    "title": "Programming & Processing",
+    "section": "The First GUI",
+    "text": "The First GUI\n\nSmallTalk: The First GUIReimer, Jeremy. “A History of the GUI.” Ars Technica, May 5, 2005. https://arstechnica.com/features/2005/05/gui/.\n\nThe command line was the only way to interact with computers until the 1970s, when the first Graphical User Interface (GUI) was developed at Xerox PARC. This GUI was later adopted by Apple and Microsoft, and is the basis for the GUIs we use today. Smalltalk was conceived as a programming language and development environment so easy to use that a child could understand it, and in many respects was successful in this goal. Smalltalk was the world’s first object-oriented programming language, where program code and data could be encapsulated into single units called objects that could then be reused by other programs without having to know the details of the object’s implementation. It also had modern, Java-like features like automatic memory management, to take some of the hard work away from the programmer. The development environment of Smalltalk was also the user interface that Smalltalk programs ran in, and introduced many modern GUI concepts. It first began to take shape around 1974, and was continuously updated and enhanced."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#shells",
+    "href": "slides/02-programming-and-processing.html#shells",
+    "title": "Programming & Processing",
+    "section": "Shells?",
+    "text": "Shells?\n\n\nToday when we use terminals, we are not just using the terminal but also using often using something called a shell. A “shell” is a program within a terminal that interprets user commands and processes computer output. Originating from the Unix operating system, the term “shell” signifies a user-friendly interface that encapsulates the complexities of various computer systems. Popular shell programs include bash (Bourne Again SHell), which is the default shell for most Linux distributions and MacOS; PowerShell, which is Windows default option, and zsh (Z Shell) – the optional configuration from our course tools. Each shell has its own set of commands and syntax, but they all share the same basic functionality."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#key-terminology",
+    "href": "slides/02-programming-and-processing.html#key-terminology",
+    "title": "Programming & Processing",
+    "section": "Key Terminology",
+    "text": "Key Terminology\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nTerminal\nThe device/program that allows you to interact with the computer\n\n\nShell\nA program that interprets your commands (bash, zsh, PowerShell)\n\n\nCommand Line\nThe text-based interface where you type commands\n\n\n\n\nThe term “terminal” refers to the device that allowed operators to interact with the computer. The “command line” refers to the text-based interface that allowed operators to input commands. The command line was the only way to interact with computers until the 1970s, when the first GUI was developed at Xerox PARC.\nA “shell” is a program within a terminal that interprets user commands and processes computer output. Popular shells include bash (default for most Linux/MacOS), PowerShell (Windows), and zsh."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#gui-vs-cli",
+    "href": "slides/02-programming-and-processing.html#gui-vs-cli",
+    "title": "Programming & Processing",
+    "section": "GUI vs CLI",
+    "text": "GUI vs CLI\n\n\nGUI (Graphical) \n\nCLI (Command Line) \n\n\nIn the GUI example, we see using the Mac Finder App to interact graphically with file folders - clicking and moving files around with a mouse.\nIn the CLI example, we see typing commands in the terminal like mkdir and rmdir to create and remove directories. The shell being used is bash."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#creating-a-directory",
+    "href": "slides/02-programming-and-processing.html#creating-a-directory",
+    "title": "Programming & Processing",
+    "section": "Creating a Directory",
+    "text": "Creating a Directory\nOpen your terminal in VS Code: Terminal &gt; New Terminal\n\nmkdir Intro-CA-Notes\n\n\nBut how do we know it worked?\n\nTo create a directory (folder), we use the mkdir command followed by the name we want. But after pressing enter, there’s no visual confirmation - we need to use other commands to verify it worked."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#writing-vs.-prompting",
+    "href": "slides/02-programming-and-processing.html#writing-vs.-prompting",
+    "title": "Programming & Processing",
+    "section": "Writing Vs. Prompting",
+    "text": "Writing Vs. Prompting\nWe have two options: - look at the Command Line cheatsheet that contains a number of these commands and see what would be the best option to help us check if this worked."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#writing-vs.-prompting-1",
+    "href": "slides/02-programming-and-processing.html#writing-vs.-prompting-1",
+    "title": "Programming & Processing",
+    "section": "Writing Vs. Prompting",
+    "text": "Writing Vs. Prompting\nOur other option is to try and start testing out these AI Chatbots, and specifically GitHub Co-Pilot (though again you are welcome to use any AI tool that is free and helps you understand these materials)."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#what-is-a-prompt",
+    "href": "slides/02-programming-and-processing.html#what-is-a-prompt",
+    "title": "Programming & Processing",
+    "section": "What is a Prompt?",
+    "text": "What is a Prompt?\nIn the terminal: the symbol that indicates where you type\n\n$ (bash)\n% (zsh)\n&gt; (PowerShell)\n\n\nIn AI: the text input you give to a chatbot\n\nSo far we have been doing a form of prompting, called Command Prompt, which refers to where we write the text commands in the terminal. Often times the command prompt is a symbol that indicates the start of a new command. For example, in Melanie’s example, the command prompt is the $ symbol. This symbol is called a prompt because it prompts you to enter a command. The prompt is followed by a cursor, which is the blinking vertical line that indicates where your next character will appear. Other symbols you might see include #, %, and &gt;.\nThe term “prompt” has become incredibly popular since the release of GPT-3 by OpenAI in Summer 2020. In the terminal, the prompt is a symbol like $ or % that indicates where your next command will appear. In AI contexts, it refers to the text commands or questions you give to chatbots."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#the-ai-explosion",
+    "href": "slides/02-programming-and-processing.html#the-ai-explosion",
+    "title": "Programming & Processing",
+    "section": "The AI Explosion",
+    "text": "The AI Explosion\n\n\n\nEvolution of LLMs\n\n\n\nWhile there idea of prompt engineering has a longer history in natural language processing, the term has taken over, with the proliferation of new AI chatbots and models.\nIn some ways our idea of giving text prompts to the terminal via the command line echoes how we do prompt engineering for AI chatbots, since both require writing text (something we’ll discuss more later in this lesson).\nThe term “prompt engineering” describes giving commands or prompts to chatbots for certain outputs or results. While prompt engineering has a longer history in natural language processing, the term has taken over with the proliferation of new AI chatbots and models since 2020."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#terminal-vs-ai-prompting",
+    "href": "slides/02-programming-and-processing.html#terminal-vs-ai-prompting",
+    "title": "Programming & Processing",
+    "section": "Terminal vs AI Prompting",
+    "text": "Terminal vs AI Prompting\n\n\n\nTerminal Commands\nAI Prompts\n\n\n\n\nFixed, specific syntax\nNatural language\n\n\nPredictable outputs\nVariable outputs\n\n\nMust use exact commands\nFlexible phrasing\n\n\nReproducible\nRarely reproducible\n\n\n\n\nBoth require writing text, but depending on your operating system, terminal, and shell, you have to give the command line certain set of commands that have been previously programmed. With AI chatbots, you can write without those set structures - but that doesn’t mean there aren’t helpful guidelines."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#prompting-guidelines",
+    "href": "slides/02-programming-and-processing.html#prompting-guidelines",
+    "title": "Programming & Processing",
+    "section": "Prompting Guidelines?",
+    "text": "Prompting Guidelines?\n\nInfographics Abound\nBut while depending on your operating system, terminal, and shell, you have to give the command line certain set of commands that have been previously programmed, with AI chatbots you can write without those set structures.\nHowever, that doesn’t mean there aren’t some helpful guidelines for prompt engineering, even if the process often requires lots of trial and error, and is rarely reproducible or transparent.\nIf you search for tips on prompt engineering, you’ll find lots of infographics like this one:"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#the-4s-of-prompt-engineering",
+    "href": "slides/02-programming-and-processing.html#the-4s-of-prompt-engineering",
+    "title": "Programming & Processing",
+    "section": "The 4S of Prompt Engineering",
+    "text": "The 4S of Prompt Engineering\nMicrosoft’s guidelines for GitHub Copilot:\n\n\nSingle - One task or question at a time\n\n\n\n\nSpecific - Detailed requests and specifications\n\n\n\n\nShort - Be concise\n\n\n\n\nSurround - Keep relevant files open for context\n\n\nMicrosoft provides these guidelines specifically for Copilot since it has been trained primarily for coding tasks. The final one is particularly important for Copilot since it works best when it has code examples to learn from - this is called “few-shot learning.”\nWhile these are general guidelines, the final one is particularly important for Co-Pilot, since it works best when it has code examples to learn from (something called few-shot learning, for those that are interested)."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#how-copilot-processes-prompts",
+    "href": "slides/02-programming-and-processing.html#how-copilot-processes-prompts",
+    "title": "Programming & Processing",
+    "section": "How Copilot Processes Prompts",
+    "text": "How Copilot Processes Prompts\n\n\n\nCopilot processing flow\n\n\n\nThis diagram details what GitHub Copilot does with your prompt. The key thing to understand is that it looks for patterns in the prompt and tries to match those patterns to code examples it has seen before. So the more specific and detailed your prompt is, the more likely it is to find a match."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#important-warning",
+    "href": "slides/02-programming-and-processing.html#important-warning",
+    "title": "Programming & Processing",
+    "section": "Important Warning",
+    "text": "Important Warning\nNever share sensitive information in prompts!\n\n\nPersonal data can be leaked\nCopilot scrapes GitHub repositories\nThe legality and ethics remain hazy\n\n\n\nUse AI tools with a critical lens\n\nEven though Copilot claims to be secure, there’s a lot of potential for personal data to be leaked through this process. The legality of Copilot remains hazy, not to mention the ethics or politics of it. You’ll see why as we continue to work with it, as it autocompletes file names and other information from GitHub that it has scraped."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#example-prompts-for-the-cli",
+    "href": "slides/02-programming-and-processing.html#example-prompts-for-the-cli",
+    "title": "Programming & Processing",
+    "section": "Example Prompts for the CLI",
+    "text": "Example Prompts for the CLI\n\n\n\n\n\n\nTry these prompts!\n\n\nHow can I check if my directory was created in my terminal?\nShould I use the command ls or pwd to check if my directory\nwas created? And what is the difference between these two?\nHow can I create a directory named is310-computing-humanities\nin my terminal?\n\n\n\n\nThese are examples of good prompts for getting help with command line tasks. Notice they are specific, ask one thing at a time, and are concise. When you get answers, always verify them using the command line cheatsheet or by testing carefully."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#essential-commands",
+    "href": "slides/02-programming-and-processing.html#essential-commands",
+    "title": "Programming & Processing",
+    "section": "Essential Commands",
+    "text": "Essential Commands\n\n\n\nCommand\nWhat it does\n\n\n\n\npwd\nPrint working directory (where am I?)\n\n\nls\nList directory contents\n\n\ncd\nChange directory\n\n\nmkdir\nMake a new directory\n\n\ntouch\nCreate a new file\n\n\nmv\nMove or rename files\n\n\nrmdir\nRemove an empty directory\n\n\n\n\nThese are the fundamental commands you’ll use constantly. pwd shows your current location, ls shows what’s in your current folder, cd moves you around, mkdir creates folders, touch creates files, mv moves things, and rmdir removes empty folders.\nSee the Command Line cheatsheet for more commands and details!"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#making-directories",
+    "href": "slides/02-programming-and-processing.html#making-directories",
+    "title": "Programming & Processing",
+    "section": "Making Directories?",
+    "text": "Making Directories?\nmkdir is310-computing-humanities\n\nWith the help of the cheatsheet and GitHub Co-Pilot, we should see that the command ls lists the contents of a directory, and pwd prints the full working path. So we can use these commands to check if our directory was created.\nAnd then we can use the command mkdir to create a directory named is310-computing-humanities.\nUsing these commands, we can see that our directory was created. But what does this mean exactly?\nAs we read this week, how we interact with computers has increasingly made it difficult to understand where our files are stored. While search functionality often takes care of this for us in GUI applications, in the command line we have to be more explicit about where we want to store our files and we have to know where we are located."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#understanding-file-paths",
+    "href": "slides/02-programming-and-processing.html#understanding-file-paths",
+    "title": "Programming & Processing",
+    "section": "Understanding File Paths",
+    "text": "Understanding File Paths\n\n\n\nFile tree structure\n\n\n\nIn this figure, we see a representation of how folders and files are organized on a Windows computer. The top level is the root directory, which on Windows is the C: drive. On Macs and Linux machines, we have a similar root directory, but it is represented by a / symbol. This root directory contains all of the files and folders on your computer. The root directory is also called the parent directory because it is the parent of all the other directories on your computer.\nImportant to know: directory is the same as folder, and the two are often used interchangeably. Directory is the original term, but with GUIs we often use the term folder.\nIn this diagram, we can see that there is a Users folder or directory. This is where most of your files that you download or create are stored: under your user account and in the Documents, Downloads, and Desktop folders.\nIf I use the pwd command, I can start to see this structure."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#working-directories",
+    "href": "slides/02-programming-and-processing.html#working-directories",
+    "title": "Programming & Processing",
+    "section": "Working Directories",
+    "text": "Working Directories\n\nCurrent Directory\nYou’ll notice the command prints out a long string that has names like Users, followed by a series of names separated by a forward slash / (in PowerShell, you’ll see backslashes \\). Each of these are my folders or directories, and this represents the absolute file path from my root directory to my current directory – that is the current location of my terminal. I realize this might be a bit confusing initially, but eventually as you use the command line more, you’ll start to get a sense of how this works.\nEach file path is unique to your computer, and so if you are following along with this lesson, you’ll see a different file path, though there should be a Users folder as your root or home directory."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#absolute-vs-relative-paths",
+    "href": "slides/02-programming-and-processing.html#absolute-vs-relative-paths",
+    "title": "Programming & Processing",
+    "section": "Absolute vs Relative Paths",
+    "text": "Absolute vs Relative Paths\nAbsolute path: Full path from root\n/Users/zleblanc/Documents/is310\n\nRelative path: Path from current location\ncd ~        # Go to home directory\ncd ..       # Go up one directory\ncd ../..    # Go up two directories\n\nYou’ll also notice I did the command cd ~. What do you think this command does? What does cd stand for do you think?\nA core distinction with how I used this final command is the fact that I used a tilde ~ symbol. This symbol is a relative file path, meaning it is relative to my current directory. So if I am in the Documents folder, cd ~ will take me to my home directory. You can also use cd .. to go up one directory, and cd ../.. to go up two directories, and so on.\nAn absolute file path is the complete path from the root directory to a specific location. It’s unique to your computer. A relative path is relative to your current directory. The tilde ~ represents your home directory, and .. means “parent directory” (one level up)."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#putting-it-together",
+    "href": "slides/02-programming-and-processing.html#putting-it-together",
+    "title": "Programming & Processing",
+    "section": "Putting It Together",
+    "text": "Putting It Together\n# Create a file\ntouch is310-computing-humanities.txt\n\n# Move it into a folder\nmv is310-computing-humanities.txt is310-computing-humanities\n\n# Change into the folder\ncd is310-computing-humanities\n\n# List contents to verify\nls\n\n# Go back up and remove the folder\ncd ..\nrmdir is310-computing-humanities\n\nThis sequence demonstrates a typical workflow: creating a file, moving it into a directory, navigating into that directory to verify, then cleaning up by going back and removing the directory. Note that rmdir only works on empty directories."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#your-tasks",
+    "href": "slides/02-programming-and-processing.html#your-tasks",
+    "title": "Programming & Processing",
+    "section": "Your Tasks",
+    "text": "Your Tasks\nUsing the cheatsheet and/or your preferred AI chatbot:\n\nCreate is310-computing-humanities directory in your Desktop folder\nInside it, create is310-computing-humanities.txt\nAdd text to your file using the command line (new command!)\nDisplay the file contents (new command!)\nReturn to your home directory\n\n\nBonus: Copy your folder, then delete the copy\n\nThis exercise combines what we’ve learned about the command line with using AI tools for help. The new commands you’ll need to look up are for adding text to a file (like echo or cat with redirection) and displaying file contents (like cat). Remember to ask the instructors if you need help!"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#additional-resources",
+    "href": "slides/02-programming-and-processing.html#additional-resources",
+    "title": "Programming & Processing",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\nIntroduction to the Bash Command Line - Programming Historian\nBash Basics Part 1 - Video tutorial\nBeginner’s Guide to the Bash Terminal\nCodeAcademy Command Line Course\n\n\nThese resources provide additional depth on the command line. The Programming Historian tutorial is particularly good for humanities contexts. The videos are helpful if you prefer visual learning. And the CodeAcademy course provides interactive practice."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#questions",
+    "href": "slides/02-programming-and-processing.html#questions",
+    "title": "Programming & Processing",
+    "section": "Questions?",
+    "text": "Questions?\nRemember:\n\nThe terminal is the interface\nThe shell interprets commands\nThe command line is where you type\nPrompts work for both CLI and AI!\n\n\nSee also: Command Line Cheatsheet"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#the-problem",
+    "href": "slides/02-programming-and-processing.html#the-problem",
+    "title": "Programming & Processing",
+    "section": "The Problem",
+    "text": "The Problem\nHave you ever had files like this?\n\n\nessay_final.docx\nessay_final_v2.docx\nessay_FINAL_FINAL.docx\nessay_FINAL_FINAL_actually_final.docx\n\n\n\nVersion control solves this problem!\n\nSo far, we have been using the command line in the terminal, installed GitHub Co-Pilot and git, but we have yet to use either for their main purpose: version control and collaborative coding. In this lesson, we will explore what version control is and how it works, as well as how to use GitHub to collaborate with others and share our code and datasets.\nVersion control is the practice of tracking and managing changes to files over time. We’ve all experienced the chaos of multiple file versions. Git provides a systematic way to track changes, collaborate, and maintain a clean history of your work."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#what-is-git",
+    "href": "slides/02-programming-and-processing.html#what-is-git",
+    "title": "Programming & Processing",
+    "section": "What is Git?",
+    "text": "What is Git?\nGit is software for version control - tracking changes in files over time.\n\n\nCreated in 2005 by Linus Torvalds (creator of Linux)\nMost popular version control system in the world\nUsed by millions of developers and researchers\n\n\nGit requires changes to be saved (committed) before they can be combined (merged) with the main project. You’re already familiar with this concept if you’ve used Google Docs or Word’s “Track Changes” - but with those you get version history automatically. With git, we have to tell it what to track and when to track it.\nCreated in 2005 by Linus Torvalds, the creator of Linux, the open-source operating system that powers much of the internet, Git is now the most popular version control system in the world."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#git-vs-github",
+    "href": "slides/02-programming-and-processing.html#git-vs-github",
+    "title": "Programming & Processing",
+    "section": "Git vs GitHub",
+    "text": "Git vs GitHub\n\n\n\n\n\n\n\n\n\nGit\nGitHub\n\n\n\n\nWhat\nVersion control system\nPlatform for hosting git repositories\n\n\nWhere\nLocal (on your computer)\nRemote (website)\n\n\nInstall?\nYes\nNo (it’s a website)\n\n\n\n\nThey are two separate technologies often used together!\n\nA very important thing to understand is that while git and GitHub sound the same, they are two separate technologies. Git is a version control system, while GitHub is a platform for hosting git repositories. In git, a folder is called a repository. We’ll be using both in this course, but it’s important to realize they are not identical."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#git-github-together",
+    "href": "slides/02-programming-and-processing.html#git-github-together",
+    "title": "Programming & Processing",
+    "section": "Git + GitHub Together",
+    "text": "Git + GitHub Together\n\n\n\nGit and GitHub workflow\n\n\n\nEven though these two technologies are separate, they are often used together. You can use git to track changes in your files locally on your computer, and then push those changes to a remote repository on GitHub. This is what we will be doing in this course."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#why-git-for-culture-as-data",
+    "href": "slides/02-programming-and-processing.html#why-git-for-culture-as-data",
+    "title": "Programming & Processing",
+    "section": "Why Git for Culture as Data?",
+    "text": "Why Git for Culture as Data?\nGit allows you to:\n\nKeep track of changes in plain text files\nCollaborate in real-time with other researchers\nEasily revert to earlier versions\nCreate different branches to explore new ideas\nSee who added what to the project\n\n\nAlthough Git and version control systems are predominantly used in software development, they offer several advantages for scholars in Digital Humanities. Similar to how you might handle versions of a paper, essay, or dataset, Git provides systematic version tracking."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#what-version-tracking-looks-like",
+    "href": "slides/02-programming-and-processing.html#what-version-tracking-looks-like",
+    "title": "Programming & Processing",
+    "section": "What Version Tracking Looks Like",
+    "text": "What Version Tracking Looks Like\n\n\n\nExample of a git diff\n\n\n\nThis screenshot is from GitHub but shows what git tracks. You can see on the left, the previous erroneous line was deleted, and on the right is the corrected version. This is a very simple example, but it gives you a sense of how git tracks changes - showing exactly what was removed and what was added."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#check-your-installation",
+    "href": "slides/02-programming-and-processing.html#check-your-installation",
+    "title": "Programming & Processing",
+    "section": "Check Your Installation",
+    "text": "Check Your Installation\nFirst, verify git is installed:\ngit --version\n\nYou should see something like:\ngit version 2.39.0\n\nRemember that we run our commands in the terminal! If you don’t see a version number, you may need to install git. Let the instructors know if you’re having issues."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#create-a-project-folder",
+    "href": "slides/02-programming-and-processing.html#create-a-project-folder",
+    "title": "Programming & Processing",
+    "section": "Create a Project Folder",
+    "text": "Create a Project Folder\n# Create a new folder\nmkdir is310-first-repo\n\n# Navigate into it\ncd is310-first-repo\n\n# Create a file\ntouch first_file.txt # For Unix/Linux\nNew-Item -ItemType File -Path . -Name first_file.txt # For PowerShell\n\nAdd some text to the file:\necho \"This is my first file\" &gt; first_file.txt # For Unix/Linux\n\n\"This is my first file\" | Out-File -FilePath first_file.txt #For PowerShell\n\nLet’s create a new folder for our project. We use mkdir to create the folder, cd to navigate into it, and touch to create an empty file. Then we use echo with the redirect operator &gt; to add text to the file."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#initialize-a-git-repository",
+    "href": "slides/02-programming-and-processing.html#initialize-a-git-repository",
+    "title": "Programming & Processing",
+    "section": "Initialize a Git Repository",
+    "text": "Initialize a Git Repository\ngit init\n\nOutput:\nInitialized empty Git repository in /Users/YOU/is310-first-repo/.git/\n\n\nA hidden .git folder is created. We can use ls -a for Unix/Linux or Get-ChildItem -Force for PowerShell to see it.\n\nTo start tracking changes, we need to initialize a git repository. The git init command creates a hidden .git folder that contains all the information about our repository. The .git folder is hidden by default, so we need to use the -a or -Force flag to see it. This means that if you try looking at your folder either in a file explorer or in the terminal with just ls, or even in the VS Code Explorer, you won’t see the .git folder."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#the-git-workflow",
+    "href": "slides/02-programming-and-processing.html#the-git-workflow",
+    "title": "Programming & Processing",
+    "section": "The Git Workflow",
+    "text": "The Git Workflow\n\n\n\nGit as a camera\n\n\nThink of git as a camera taking snapshots of your project\n\nThinking of git as a camera taking a photo of your project at a particular point in time is helpful. Every time you commit your changes, you are taking a snapshot. You can then go back to that snapshot at any time. Like save points in a video game!"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#step-1-add-to-staging-area",
+    "href": "slides/02-programming-and-processing.html#step-1-add-to-staging-area",
+    "title": "Programming & Processing",
+    "section": "Step 1: Add to Staging Area",
+    "text": "Step 1: Add to Staging Area\nGit doesn’t track automatically - you must tell it what to track:\ngit add first_file.txt\n\nCheck the status:\ngit status\nOn branch main\n\nNo commits yet\n\nChanges to be committed:\n    new file:   first_file.txt\n\nAfter initializing a repository, tracking is NOT automatic. We have to tell git which files to pay attention to by adding them to the staging area. The staging area is like selecting which photos you want to include in an album before actually printing them."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#step-2-commit-changes",
+    "href": "slides/02-programming-and-processing.html#step-2-commit-changes",
+    "title": "Programming & Processing",
+    "section": "Step 2: Commit Changes",
+    "text": "Step 2: Commit Changes\nFinalize your snapshot with a descriptive message:\ngit commit -m \"Added first file to our repository\"\n\nCheck status again:\ngit status\nOn branch main\nnothing to commit, working tree clean\n\nCommitting is like actually taking the photo. The -m flag lets you add a message describing what changed. Your commit messages should be short and descriptive - they help you (and collaborators) understand the history of your project."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#if-you-forget-the--m-flag",
+    "href": "slides/02-programming-and-processing.html#if-you-forget-the--m-flag",
+    "title": "Programming & Processing",
+    "section": "If You Forget the -m Flag…",
+    "text": "If You Forget the -m Flag…\nYou’ll see Vim (a text editor):\n\n\n\nVim editor\n\n\n\nIdeally, your commit messages should be short and descriptive. They should describe the changes you made to the file.\nIf you don’t add a message, git will automatically open a text editor in your terminal and ask you to add a message. You’ll likely see something that looks like the following.\nThis looks very intimidating, but it’s actually not that bad. This is the default text editor (think like VS Code, but much simpler) for git, which is called Vim. Vim is a very powerful text editor, but it has a steep learning curve. If you want to learn more about Vim, you can read this https://www.freecodecamp.org/news/vim-beginners-guide/."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#if-you-forget-the--m-flag-1",
+    "href": "slides/02-programming-and-processing.html#if-you-forget-the--m-flag-1",
+    "title": "Programming & Processing",
+    "section": "If You Forget the -m Flag…",
+    "text": "If You Forget the -m Flag…\n\nPress i to type, then esc, then :wq to save and exit\nOr press esc, then :q! to exit without saving\n\nAborting commit due to empty commit message.\n\nThe key thing to know is that if you get this screen you can either add a message or exit the text editor. To add a message, you need to press i on your keyboard. This will put you in insert mode, which means you can type. Then you can add your message. Once you have added your message, you need to press esc on your keyboard. This will take you out of insert mode. Then you need to type :wq and press enter. This will save your message and exit the text editor.\nIf you just want to exit the text editor, you can press esc on your keyboard. Then you need to type :q! and press enter. This will exit the text editor without saving your message. In which case, you’ll see the following message:"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#quotes",
+    "href": "slides/02-programming-and-processing.html#quotes",
+    "title": "Programming & Processing",
+    "section": "Quotes",
+    "text": "Quotes\nquote&gt;\n\nWhile doing this once or twice is fine, it can get annoying so it’s better to add a message to your commit with the -m flag. Be sure that you use quotations marks around your message, and that you use the same type of quotations marks. So if you use double quotes, use double quotes around your message. If you use single quotes, use single quotes around your message. If for some reason you end up mixing them, you’ll get a quote prompt in your terminal. This is just git telling you that you didn’t close your quotation marks, so if you add the correct quotation marks and press enter, it will add your message."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#step-3-view-history",
+    "href": "slides/02-programming-and-processing.html#step-3-view-history",
+    "title": "Programming & Processing",
+    "section": "Step 3: View History",
+    "text": "Step 3: View History\nSee your commit history:\ngit log\ncommit 8bb8306c1392eed52d4407eb16867a49b49a46ac (HEAD -&gt; main)\nAuthor: Your Name &lt;your-email@gmail.com&gt;\nDate:   Tue Jan 22 16:03:39 2024 -0400\n\n    Added first file to our repository\n\nNow that we have committed our changes, we can view the version history of our file. To do this, we use the git log command. This will show us the commit history of our file. We can see the commit message, the author, the date, and the commit hash. The commit hash is a unique identifier for each commit. It is a long string of letters and numbers that is used to identify each commit. We can use this commit hash to revert to a previous version of our file.\nThis is telling us that we have one commit, the commit is identified with that long string of letters and numbers (this is the commit hash), the commit is on the main branch. The Author and Date should correspond to your information and when you made the commit. Finally, we see our commit message.\nWe could now update the file and commit our changes again. If we did that, then our version history via git log would show the two commits.\nThese activities are the core features of git. The next step is to connect our local repository to a remote repository on GitHub."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#git-commands-summary",
+    "href": "slides/02-programming-and-processing.html#git-commands-summary",
+    "title": "Programming & Processing",
+    "section": "Git Commands Summary",
+    "text": "Git Commands Summary\n\n\n\nCommand\nWhat it does\n\n\n\n\ngit init\nInitialize a repository\n\n\ngit add &lt;file&gt;\nAdd file to staging area\n\n\ngit commit -m \"msg\"\nCommit with message\n\n\ngit status\nCheck current status\n\n\ngit log\nView commit history\n\n\n\n\nThese are the core local git commands. You’ll use these constantly: init to start, add to stage, commit to save snapshots, status to check where you are, and log to see history."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#creating-a-repository-on-github",
+    "href": "slides/02-programming-and-processing.html#creating-a-repository-on-github",
+    "title": "Programming & Processing",
+    "section": "Creating a Repository on GitHub",
+    "text": "Creating a Repository on GitHub\n\nGo to github.com\nClick the New button\n\n\n\n\nCreate repo button\n\n\n\nTo get our local git repository onto GitHub, we first need to create a new repository on the website. Click the New button in the top right corner of GitHub."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#repository-settings",
+    "href": "slides/02-programming-and-processing.html#repository-settings",
+    "title": "Programming & Processing",
+    "section": "Repository Settings",
+    "text": "Repository Settings"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#repository-settings-1",
+    "href": "slides/02-programming-and-processing.html#repository-settings-1",
+    "title": "Programming & Processing",
+    "section": "Repository Settings",
+    "text": "Repository Settings\n\nName it is310-first-repo\nChoose Public so we can see each other’s work\nLeave README unchecked for now\n\n\nGive your repository a name, add a description if you want, and choose whether it’s public or private. For class purposes, choose public so we can see each other’s repositories. Leave the README option unchecked since we’ll push our existing local repo.\nYou also have the option to initialize the repository with a README, which is a file that provides information about the project. We will be discussing this more later so for now leave this option unchecked. You can also add a .gitignore file, which is a file that tells Git to ignore certain files in the repository. Again, something we’ll discuss more in-depth in the coming weeks."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#repository-settings-2",
+    "href": "slides/02-programming-and-processing.html#repository-settings-2",
+    "title": "Programming & Processing",
+    "section": "Repository Settings",
+    "text": "Repository Settings\n\nFirst Commit\nOnce you create your repository it should like the photo above. If you selected the Initialize this repository with a README option, you will see a blank repository that looks like the photo below."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#repository-settings-3",
+    "href": "slides/02-programming-and-processing.html#repository-settings-3",
+    "title": "Programming & Processing",
+    "section": "Repository Settings",
+    "text": "Repository Settings\n\nFirst Commit With READMETo understand what each button does feel free to browse through our advanced git and GitHub resource, but first let’s try to get our local repository onto GitHub."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#connect-local-to-remote",
+    "href": "slides/02-programming-and-processing.html#connect-local-to-remote",
+    "title": "Programming & Processing",
+    "section": "Connect Local to Remote",
+    "text": "Connect Local to Remote\nAdd your GitHub repo as a “remote”:\ngit remote add origin https://github.com/USERNAME/is310-first-repo.git\n\nNow that we have created a new repository on GitHub, we need to connect it to our local repository. To do this, we need to add a remote repository. We can do this by using the git remote add command and then the name of the remote repository and the URL of the remote repository. Let’s call our remote repository origin and use the URL of our GitHub repository."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#connect-local-to-remote-1",
+    "href": "slides/02-programming-and-processing.html#connect-local-to-remote-1",
+    "title": "Programming & Processing",
+    "section": "Connect Local to Remote",
+    "text": "Connect Local to Remote\nVerify it worked:\ngit remote -v\norigin  https://github.com/username/repository.git (fetch)\norigin  https://github.com/username/repository.git (push)\n\nIn this case, we would replace OWNER with our GitHub username and REPOSITORY with the name of our repository. So for me, it would be ZoeLeBlanc/is310-first-repo.\nWe can check this by using the git remote -v command. This will show us the remote repositories we have added to our local repository."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#push-to-github",
+    "href": "slides/02-programming-and-processing.html#push-to-github",
+    "title": "Programming & Processing",
+    "section": "Push to GitHub",
+    "text": "Push to GitHub\ngit push [remote repository] [flags] [local repository]\n\nSo all we need to do is specify the name of our remote repository and the name of our local repository. What’s a bit confusing is that we don’t need to write our GitHub URL here but instead can just write origin. If you look at the output from git remote -v again, you’ll notice it says origin next to our GitHub URL. This is because origin is the default name for our remote repository. We can change this, but for now we’ll just use origin.\nThen for our local repository, we don’t need to say our directory name but instead need to specify the name of the branch we want to push. We’ll discuss branches more later, but for now we can just use main. So our command will look like this:"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#push-to-github-1",
+    "href": "slides/02-programming-and-processing.html#push-to-github-1",
+    "title": "Programming & Processing",
+    "section": "Push to GitHub",
+    "text": "Push to GitHub\nSend your local commits to GitHub:\ngit push origin main\nEnumerating objects: 3, done.\nCounting objects: 100% (3/3), done.\nWriting objects: 100% (3/3), 226 bytes | 226.00 KiB/s, done.\nTo github.com:username/is310-first-repo.git\n * [new branch]      main -&gt; main\n\nThe push command sends your local commits to the remote repository. “origin” is the name we gave our remote, and “main” is the branch we’re pushing. After this, you’ll see your files on GitHub!\n\nFatal Errors?\nIf you see a fatal error that looks like this:\nfatal: 'origin' does not appear to be a git repository\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.\n\nThat just means you forgot to add your remote repository. If you fix that and try again, it should work.\nNow if we go to our GitHub repository, we will see that our local repository has been pushed to our remote repository."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#ssh-keys-optional-but-recommended",
+    "href": "slides/02-programming-and-processing.html#ssh-keys-optional-but-recommended",
+    "title": "Programming & Processing",
+    "section": "SSH Keys (Optional but Recommended)",
+    "text": "SSH Keys (Optional but Recommended)\nTired of entering your username/password?\n\nSSH keys let you connect securely without credentials.\n\n\nYou can find instructions on how to do it here"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#create-files-in-the-browser",
+    "href": "slides/02-programming-and-processing.html#create-files-in-the-browser",
+    "title": "Programming & Processing",
+    "section": "Create Files in the Browser",
+    "text": "Create Files in the Browser\nClick Add file &gt; Create new file\n\n\n\nAdd file button\n\n\n\nSo far, we have been editing our files locally and pushing them up to GitHub. However, we can also edit files in GitHub. This is a great way to make quick changes to a file or add a new file to a repository. Let’s try adding using the GitHub interface in the browser and add a special type of file called a README.md file."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#create-a-readme.md",
+    "href": "slides/02-programming-and-processing.html#create-a-readme.md",
+    "title": "Programming & Processing",
+    "section": "Create a README.md",
+    "text": "Create a README.md"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#create-a-readme.md-1",
+    "href": "slides/02-programming-and-processing.html#create-a-readme.md-1",
+    "title": "Programming & Processing",
+    "section": "Create a README.md",
+    "text": "Create a README.md\nName your file README.md and add:\n# IS 310 Test Repository\n\nThis is my first repository.\n\nLet’s create a README file - the .md extension means Markdown, which is a way to format text. README files are special - GitHub displays them automatically on your repository’s main page. They typically describe what the project is about."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#create-a-readme.md-2",
+    "href": "slides/02-programming-and-processing.html#create-a-readme.md-2",
+    "title": "Programming & Processing",
+    "section": "Create a README.md",
+    "text": "Create a README.md\n\n\nClick Preview to see formatted output\nClick Commit changes\nAdd a commit message\nSelect main branch\n\n\nNow we need to commit our changes and file by clicking the green Commit changes box. This will prompt us for a commit message. Let’s add the following message Finally, we need to tell GitHub whether to create a new branch or commit to the main branch. Click main for now and then click Commit changes. Now we have added a new file to our repository and you should see it when you navigate to your repository."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#github-dev-bonus-feature",
+    "href": "slides/02-programming-and-processing.html#github-dev-bonus-feature",
+    "title": "Programming & Processing",
+    "section": "GitHub Dev (Bonus Feature)",
+    "text": "GitHub Dev (Bonus Feature)\nChange github.com to github.dev in your URL. So for us, we would change https://github.com/[USER NAME]/is310-first-repo to https://github.dev/[USER NAME]/is310-first-repo.\n\nGitHub Dev"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#github-dev-bonus-feature-1",
+    "href": "slides/02-programming-and-processing.html#github-dev-bonus-feature-1",
+    "title": "Programming & Processing",
+    "section": "GitHub Dev (Bonus Feature)",
+    "text": "GitHub Dev (Bonus Feature)\nOr press . on any repository\n\n\n\n\nGitHub Dev interface\n\n\nIt’s VS Code in your browser! You can read more about it https://docs.github.com/en/codespaces/the-githubdev-web-based-editor.\n\nGitHub Dev is a new feature that gives you a VS Code-like editor right in the browser. Just change .com to .dev in the URL or press the period key. You can edit files and commit changes through this interface."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#the-problem-1",
+    "href": "slides/02-programming-and-processing.html#the-problem-1",
+    "title": "Programming & Processing",
+    "section": "The Problem",
+    "text": "The Problem\nNow we have two versions:\n\nLocal repository (on your computer)\nRemote repository (on GitHub)\n\n\nThey have different files! How do we sync them?\n\nAfter creating a file on GitHub, our local and remote repositories are out of sync. The remote has a README that our local doesn’t have. We need to pull those changes down."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#pull-from-github",
+    "href": "slides/02-programming-and-processing.html#pull-from-github",
+    "title": "Programming & Processing",
+    "section": "Pull from GitHub",
+    "text": "Pull from GitHub\ngit pull origin main\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (2/2), done.\nremote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0\nUnpacking objects: 100% (3/3), 935 bytes | 233.00 KiB/s, done.\nFrom github.com:ZoeLeBlanc/is310-first-repo\n * branch            main       -&gt; FETCH_HEAD\n   d8dad7b..832b673  main       -&gt; origin/main\nUpdating d8dad7b..832b673\nFast-forward\n README.md | 1 +\n 1 file changed, 1 insertion(+)\n create mode 100644 README.md\n\nNow ls shows the README.md file locally!\n\nThe git pull command downloads changes from GitHub to your local repository. After pulling, you’ll see the README.md file that was created on GitHub is now on your local computer. We’ve closed the loop!"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#the-complete-workflow",
+    "href": "slides/02-programming-and-processing.html#the-complete-workflow",
+    "title": "Programming & Processing",
+    "section": "The Complete Workflow",
+    "text": "The Complete Workflow\n\n\n\nGit architecture\n\n\n\nThis diagram shows the complete workflow. Your working directory is where you edit files. You add changes to the staging area, commit them to your local repository, then push to the remote (GitHub). And you pull from GitHub to get others’ changes."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#core-workflow-summary",
+    "href": "slides/02-programming-and-processing.html#core-workflow-summary",
+    "title": "Programming & Processing",
+    "section": "Core Workflow Summary",
+    "text": "Core Workflow Summary\n\nEdit files locally\nAdd to staging: git add &lt;file&gt;\nCommit snapshot: git commit -m \"message\"\nPush to GitHub: git push origin main\nPull from GitHub: git pull origin main\n\n\nThis is the core git/GitHub workflow you’ll use constantly. Edit locally, add, commit, push. When working with others or after editing on GitHub, pull first to get the latest changes."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#your-assignment",
+    "href": "slides/02-programming-and-processing.html#your-assignment",
+    "title": "Programming & Processing",
+    "section": "Your Assignment",
+    "text": "Your Assignment\n\nCreate a new GitHub repository called is310-coding-assignments.\nCreate a new directory in your local computer called is310-coding-assignments and enable it as a git repository.\nCreate a Markdown file called README.md within is310-coding-assignments.\nCreate a folder called images within is310-coding-assignments.\n\n\nFor homework, you’ll practice this entire workflow. Create a repository for your coding assignments, add proof that you’ve installed all the required course tools, and push it to GitHub. Post the link in our discussion forum when done."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#readme-template",
+    "href": "slides/02-programming-and-processing.html#readme-template",
+    "title": "Programming & Processing",
+    "section": "README Template",
+    "text": "README Template\n# Init IS310 Homework\n\n## Proof of Installation\n\n1. Python\n\n![Python Installation](images/python-installation.png)\n\n2. Git\n\n![Git Installation](images/git-installation.png)\n\n3. VS Code\n\n![VS Code Installation](images/vscode-installation.png)\nInclude your Hypothesis username!\n\nUse this template for your README. Take screenshots of each tool running on your computer, save them in the images folder, and reference them in your markdown file. Don’t forget to include your Hypothesis username for the annotation tool."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#pushing-your-homework",
+    "href": "slides/02-programming-and-processing.html#pushing-your-homework",
+    "title": "Programming & Processing",
+    "section": "Pushing Your Homework",
+    "text": "Pushing Your Homework\ngit add .\ngit commit -m \"Init IS310 Homework\"\ngit push origin main\n\nRemember to connect local to remote first:\ngit remote add origin https://github.com/USERNAME/is310-coding-assignments.git\n\n\nPost your repo link in the discussion forum!\n\nUse git add . (with the period) to add all files at once. Commit with a descriptive message, then push. Make sure you’ve connected your local and remote repositories first! When done, share your repository link in the class discussion forum."
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#resources",
+    "href": "slides/02-programming-and-processing.html#resources",
+    "title": "Programming & Processing",
+    "section": "Resources",
+    "text": "Resources\n\nAdvanced Git & GitHub Resource\nGit Commands Cheat Sheet\nGitHub Docs: Managing Remote Repositories\nGitHub Docs: SSH Keys"
+  },
+  {
+    "objectID": "slides/02-programming-and-processing.html#questions-1",
+    "href": "slides/02-programming-and-processing.html#questions-1",
+    "title": "Programming & Processing",
+    "section": "Questions?",
+    "text": "Questions?\nKey takeaways:\n\nGit = local version control\nGitHub = remote hosting platform\nWorkflow: edit → add → commit → push/pull\nCommit messages should be descriptive!\n\n\nSee also: Advanced Git & GitHub"
+  },
+  {
     "objectID": "assets/files/is310IntroLLMS.html",
     "href": "assets/files/is310IntroLLMS.html",
     "title": "Introduction to LLMs Notebook",

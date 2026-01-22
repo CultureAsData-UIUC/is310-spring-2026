@@ -7,7 +7,6 @@ format:
     slide-number: true
     chalkboard: true
     preview-links: auto
-draft: true
 ---
 
 # Any Questions About Course Tools?
