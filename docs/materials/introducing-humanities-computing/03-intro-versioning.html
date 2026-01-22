@@ -364,6 +364,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Introduction to Versioning &amp; Git</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../materials/introducing-humanities-computing/04-command-line-cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Command Line Cheatsheet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../materials/introducing-humanities-computing/05-advanced-git-github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advanced Git and GitHub</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -506,7 +518,7 @@ Note
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should see the following output:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Initialized</span> empty Git repository in /Users/YOU/is310-first-repo/.git/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now if we type <code>ls -a</code> of <code>Get-ChildItem -Force</code> we will see a new folder called <code>.git</code>. This is the folder that contains all of the information about our git repository. The <code>.git</code> folder is hidden by default, so we need to use the <code>-a</code> or <code>-Force</code> flag to see it. This means that if you try looking at your folder either in a file explorer or in the terminal with just <code>ls</code>, or even in the VS Code Explorer, you won’t see the <code>.git</code> folder.</p>
+<p>Now if we type <code>ls -a</code> or <code>Get-ChildItem -Force</code> we will see a new folder called <code>.git</code>. This is the folder that contains all of the information about our git repository. The <code>.git</code> folder is hidden by default, so we need to use the <code>-a</code> or <code>-Force</code> flag to see it. This means that if you try looking at your folder either in a file explorer or in the terminal with just <code>ls</code>, or even in the VS Code Explorer, you won’t see the <code>.git</code> folder.</p>
 <p>With our git repository initialized, we can now start tracking changes to our file, but this is <strong>not automatic</strong>. Instead, we have to tell git which files to pay attention to and track, and also when to take a snapshot of our changes.</p>
 </section>
 <section id="adding-files-to-the-staging-area" class="level3">
@@ -575,7 +587,7 @@ Note
 <p>To get our local git repository into GitHub, the first thing we need is open a web browser and navigate to <a href="https://github.com/">GitHub</a>. The homepage is very full featured, and we’ll be discussing some of those later. First, we need to create a new repository. To do this, we need to click on the <code>New</code> button in the top right-hand corner of the screen. This will take us to a page where we can create a new repository.</p>
 <p><img src="https://docs.github.com/assets/cb-31554/images/help/repository/repo-create.png" class="img-fluid"></p>
 <p>Now you’ll be asked to give your repository a name. Let’s create a repository called <code>is310-first-repo</code>. You can also add a description, choose whether it’s public or private, and add a license (this essentially tells others if they can reuse your materials or not). For us to see each other’s repositories, we need to select public.</p>
-<p><img src="https://cdn-media-1.freecodecamp.org/images/mxGU5eGEki7FsedthUt8Vyi3uqAhL02FbmXF.png" class="img-fluid"></p>
+<p><img src="../../assets/images/new_repository.webp" class="img-fluid"></p>
 <p>You also have the option to <code>initialize the repository with a README</code>, which is a file that provides information about the project. We will be discussing this more later so for now leave this option unchecked. You can also add a <code>.gitignore</code> file, which is a file that tells Git to ignore certain files in the repository. Again, something we’ll discuss more in-depth in the coming weeks.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -586,7 +598,7 @@ Note
 <p>Once you create your repository it should like the photo above. If you selected the <code>Initialize this repository with a README</code> option, you will see a blank repository that looks like the photo below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://material.bits.vib.be/topics/git-introduction/images/02-3-create-readme-repository.PNG" class="img-fluid figure-img"></p>
+<p><img src="../../assets/images/create_readme.png" class="img-fluid figure-img"></p>
 <figcaption>First Commit With README</figcaption>
 </figure>
 </div>
@@ -747,16 +759,15 @@ Note
 </section>
 <section id="homework-init-is310" class="level2">
 <h2 class="anchored" data-anchor-id="homework-init-is310">Homework: Init IS310</h2>
-<p>Now it’s your turn to try this out! Trying following the steps above to create a new GitHub repository called <code>is310-coding-assignments</code> in your GitHub account. For this assignment, I would highly recommend you use this <a href="../introducing-humanities-computing/05-advanced-git-github#git-commands-cheat-sheet"><code>git</code> cheatsheet</a> and also take a look at <a href="../introducing-humanities-computing/05-advanced-git-github#general-best-practices-for-git-and-github">this overview of best practices</a>, though we will be discussing this in-class as well.</p>
+<p>Now it’s your turn to try this out! Trying following the steps above to create a new GitHub repository called <code>is310-coding-assignments</code> in your GitHub account. For this assignment, I would highly recommend you use this <a href="../../materials/introducing-humanities-computing/05-advanced-git-github#git-commands-cheat-sheet"><code>git</code> cheatsheet</a> and also take a look at <a href="../../materials/introducing-humanities-computing/05-advanced-git-github#general-best-practices-for-git-and-github">this overview of best practices</a>, though we will be discussing this in-class as well.</p>
 <p>For this assignment, you need to do the following:</p>
 <ul>
 <li>Create a new GitHub repository called <code>is310-coding-assignments</code>.</li>
 <li>Create a new directory in your local computer called <code>is310-coding-assignments</code> and enable it as a git repository.</li>
-<li>Create a folder called <code>init-is310-homework</code> within <code>is310-coding-assignments</code>.</li>
-<li>Create a Markdown file called <code>README.md</code> within <code>init-is310-homework</code>.</li>
-<li>Create a folder called <code>images</code> within <code>init-is310-homework</code>.</li>
+<li>Create a Markdown file called <code>README.md</code> within <code>is310-coding-assignments</code>.</li>
+<li>Create a folder called <code>images</code> within <code>is310-coding-assignments</code>.</li>
 </ul>
-<p>The final piece is updating your <code>README.md</code> file with evidence that you have completed all <strong>Required</strong> tool installations for the course, listed <a href="../introducing-humanities-computing/01-course-tools/#assigned-list-of-course-software--tools">here</a> (though you are welcome to post also proof of Optional tools). <strong>If you are using your own setup, please also post proof of your equivalent.</strong> You can do this by adding a list of the tools you have installed and adding screenshots of the tools running on your computer. You can use the <code>images</code> folder to store these screenshots.</p>
+<p>The final piece is updating your <code>README.md</code> file with evidence that you have completed all <strong>Required</strong> tool installations for the course, listed <a href="../../materials/introducing-humanities-computing/01-course-tools/#assigned-list-of-course-software--tools">here</a> (though you are welcome to post also proof of Optional tools). <strong>If you are using your own setup, please also post proof of your equivalent.</strong> You can do this by adding a list of the tools you have installed and adding screenshots of the tools running on your computer. You can use the <code>images</code> folder to store these screenshots.</p>
 <p>We have yet to learn much about Markdown but you can use the following template to structure your <code>README.md</code> file:</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Init IS310 Homework</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -779,14 +790,14 @@ Note
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Init IS310 Homework"</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>However, remember to connect your <strong>local repository with your GitHub repository</strong> (hint: <code>git remote add origin</code> if your GitHub repository is empty OR <code>git remote set-url origin</code> if you have files in your GitHub). If you get any errors, you can always ask for help in the Slack channel or reach out to the Instructors directly.</p>
-<p>You are also encouraged to try out using GitHub Co-Pilot or any other AI chatbot to help you complete this assignment, and we also have a mored detailed <a href="../introducing-humanities-computing/05-advanced-git-github">lesson on git &amp; GitHub</a> that should cover most issues you might face.</p>
+<p>You are also encouraged to try out using GitHub Co-Pilot or any other AI chatbot to help you complete this assignment, and we also have a mored detailed <a href="../../materials/introducing-humanities-computing/05-advanced-git-github">lesson on git &amp; GitHub</a> that should cover most issues you might face.</p>
 <p>Once you have completed this assignment, post the link to your GitHub repository in our first discussion forum <a href="https://github.com/cultureasdata-uiuc/is310-spring-2026/discussions/1">https://github.com/cultureasdata-uiuc/is310-spring-2026/discussions/1</a>.</p>
 <hr>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <ul>
-<li>Once you’ve worked through this lesson, feel free to read through our <a href="../introducing-humanities-computing/05-advanced-git-github">Advanced git and GitHub resource</a>. In particular, it has a helpful section on <a href="../introducing-humanities-computing/05-advanced-git-github#git-commands-cheat-sheet">git cheatsheet</a> that you’re welcome to refer to as you work through the assignments/throughout the semester.</li>
+<li>Once you’ve worked through this lesson, feel free to read through our <a href="../../materials/introducing-humanities-computing/05-advanced-git-github">Advanced git and GitHub resource</a>. In particular, it has a helpful section on <a href="../../materials/introducing-humanities-computing/05-advanced-git-github#git-commands-cheat-sheet">git cheatsheet</a> that you’re welcome to refer to as you work through the assignments/throughout the semester.</li>
 </ul>
 
 

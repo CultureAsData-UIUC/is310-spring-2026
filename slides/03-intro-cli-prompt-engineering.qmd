@@ -1,0 +1,332 @@
+---
+title: "Introduction to the Command Line & Prompt Engineering"
+subtitle: "IS310 - Culture As Data Spring 2026"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+---
+
+# The Command Line
+
+## What is a Terminal?
+
+A **terminal** is a way to interact with your computer via **text** commands.
+
+. . .
+
+Instead of clicking on icons (GUI), we type explicit commands.
+
+. . .
+
+You've already used it!
+
+```sh
+python3 --version
+```
+
+::: {.notes}
+Terminals are a way to interact with your computer via text commands. Today, we usually give commands to a computer via a Graphical User Interface (GUI), pronounced "gooey". Any time you download an app, whether on your phone or computer, you are using a GUI. GUIs let us click on icons, drag items, and interact with our computers in a visual way. Terminals let us do many of the same functions, but we have to be more explicit and write these commands.
+:::
+
+## A Brief History of Computing
+
+![Early computer (ENIAC)](https://www.computerhope.com/cdn/eniac.jpg){height="400"}
+
+::: {.notes}
+Back in the 1950s and 1960s, computers were the size of entire rooms and functioned through the use of something called punch cards. These early computers required teams of operators, often comprised of women, who inputted punch cards to prompt the computers to process and output results on paper.
+:::
+
+## Punch Cards
+
+![Punch card from Index Thomisticus](https://theoreti.ca/wp-content/uploads/2016/03/IMG_1628.jpg){height="400"}
+
+*One of the first Computing in the Humanities projects (1940s)*
+
+::: {.notes}
+Punch cards contained a series of holes that encoded information like numbers, letters, and even instructions for programs. These cards were fed into machines called card readers, translating the hole patterns into electrical signals the computer could understand. This enabled data entry for tasks like payroll calculations, statistical analysis, and even early gaming.
+:::
+
+## Key Terminology
+
+| Term | Definition |
+|------|------------|
+| **Terminal** | The device/program that allows you to interact with the computer |
+| **Shell** | A program that interprets your commands (bash, zsh, PowerShell) |
+| **Command Line** | The text-based interface where you type commands |
+
+::: {.notes}
+The term "terminal" refers to the device that allowed operators to interact with the computer. The "command line" refers to the text-based interface that allowed operators to input commands. The command line was the only way to interact with computers until the 1970s, when the first GUI was developed at Xerox PARC.
+
+A "shell" is a program within a terminal that interprets user commands and processes computer output. Popular shells include bash (default for most Linux/MacOS), PowerShell (Windows), and zsh.
+:::
+
+## GUI vs CLI
+
+::: {.columns}
+::: {.column width="50%"}
+**GUI (Graphical)**
+![GUI example](https://melaniewalsh.github.io/Intro-Cultural-Analytics/_images/GUI-example.gif){height="300"}
+:::
+::: {.column width="50%"}
+**CLI (Command Line)**
+![CLI example](https://melaniewalsh.github.io/Intro-Cultural-Analytics/_images/CLI-example.gif){height="300"}
+:::
+:::
+
+::: {.notes}
+In the GUI example, we see using the Mac Finder App to interact graphically with file folders - clicking and moving files around with a mouse.
+
+In the CLI example, we see typing commands in the terminal like `mkdir` and `rmdir` to create and remove directories. The shell being used is bash.
+:::
+
+# Working With The Command Line
+
+## Creating a Directory
+
+Open your terminal in VS Code: **Terminal > New Terminal**
+
+. . .
+
+```sh
+mkdir Intro-CA-Notes
+```
+
+. . .
+
+But how do we know it worked?
+
+::: {.notes}
+To create a directory (folder), we use the mkdir command followed by the name we want. But after pressing enter, there's no visual confirmation - we need to use other commands to verify it worked.
+:::
+
+## Essential Commands
+
+| Command | What it does |
+|---------|--------------|
+| `pwd` | Print working directory (where am I?) |
+| `ls` | List directory contents |
+| `cd` | Change directory |
+| `mkdir` | Make a new directory |
+| `touch` | Create a new file |
+| `mv` | Move or rename files |
+| `rmdir` | Remove an empty directory |
+
+::: {.notes}
+These are the fundamental commands you'll use constantly. pwd shows your current location, ls shows what's in your current folder, cd moves you around, mkdir creates folders, touch creates files, mv moves things, and rmdir removes empty folders.
+
+See the Command Line cheatsheet for more commands and details!
+:::
+
+## Understanding File Paths
+
+![File tree structure](https://heardlibrary.github.io/digital-scholarship/computer/images-2-pc/file-tree.png){height="400"}
+
+::: {.notes}
+This figure shows how folders and files are organized on a computer. The top level is the root directory - on Windows it's the C: drive, on Mac/Linux it's represented by /. The root directory contains all files and folders. Most of your personal files are stored under your user account in Documents, Downloads, and Desktop folders.
+:::
+
+## Absolute vs Relative Paths
+
+**Absolute path:** Full path from root
+
+```sh
+/Users/zleblanc/Documents/is310
+```
+
+. . .
+
+**Relative path:** Path from current location
+
+```sh
+cd ~        # Go to home directory
+cd ..       # Go up one directory
+cd ../..    # Go up two directories
+```
+
+::: {.notes}
+An absolute file path is the complete path from the root directory to a specific location. It's unique to your computer. A relative path is relative to your current directory. The tilde ~ represents your home directory, and .. means "parent directory" (one level up).
+:::
+
+## Putting It Together
+
+```sh
+# Create a file
+touch is310-computing-humanities.txt
+
+# Move it into a folder
+mv is310-computing-humanities.txt is310-computing-humanities
+
+# Change into the folder
+cd is310-computing-humanities
+
+# List contents to verify
+ls
+
+# Go back up and remove the folder
+cd ..
+rmdir is310-computing-humanities
+```
+
+::: {.notes}
+This sequence demonstrates a typical workflow: creating a file, moving it into a directory, navigating into that directory to verify, then cleaning up by going back and removing the directory. Note that rmdir only works on empty directories.
+:::
+
+# Prompt Engineering
+
+## What is a Prompt?
+
+In the terminal: the symbol that indicates where you type
+
+- `$` (bash)
+- `%` (zsh)
+- `>` (PowerShell)
+
+. . .
+
+In AI: the text input you give to a chatbot
+
+::: {.notes}
+The term "prompt" has become incredibly popular since the release of GPT-3 by OpenAI in Summer 2020. In the terminal, the prompt is a symbol like $ or % that indicates where your next command will appear. In AI contexts, it refers to the text commands or questions you give to chatbots.
+:::
+
+## The AI Explosion
+
+![Evolution of LLMs](https://github.com/Mooler0410/LLMsPracticalGuide/raw/main/imgs/tree.jpg){height="450"}
+
+::: {.notes}
+The term "prompt engineering" describes giving commands or prompts to chatbots for certain outputs or results. While prompt engineering has a longer history in natural language processing, the term has taken over with the proliferation of new AI chatbots and models since 2020.
+:::
+
+## Terminal vs AI Prompting
+
+| Terminal Commands | AI Prompts |
+|-------------------|------------|
+| Fixed, specific syntax | Natural language |
+| Predictable outputs | Variable outputs |
+| Must use exact commands | Flexible phrasing |
+| Reproducible | Rarely reproducible |
+
+::: {.notes}
+Both require writing text, but depending on your operating system, terminal, and shell, you have to give the command line certain set of commands that have been previously programmed. With AI chatbots, you can write without those set structures - but that doesn't mean there aren't helpful guidelines.
+:::
+
+## The 4S of Prompt Engineering
+
+Microsoft's guidelines for GitHub Copilot:
+
+. . .
+
+- **Single** - One task or question at a time
+
+. . .
+
+- **Specific** - Detailed requests and specifications
+
+. . .
+
+- **Short** - Be concise
+
+. . .
+
+- **Surround** - Keep relevant files open for context
+
+::: {.notes}
+Microsoft provides these guidelines specifically for Copilot since it has been trained primarily for coding tasks. The final one is particularly important for Copilot since it works best when it has code examples to learn from - this is called "few-shot learning."
+:::
+
+## How Copilot Processes Prompts
+
+![Copilot processing flow](https://learn.microsoft.com/en-us/training/github/introduction-prompt-engineering-with-github-copilot/media/3-prompt-processing-flow-diagram.png){height="400"}
+
+::: {.notes}
+This diagram details what GitHub Copilot does with your prompt. The key thing to understand is that it looks for patterns in the prompt and tries to match those patterns to code examples it has seen before. So the more specific and detailed your prompt is, the more likely it is to find a match.
+:::
+
+## Important Warning
+
+**Never share sensitive information in prompts!**
+
+. . .
+
+- Personal data can be leaked
+- Copilot scrapes GitHub repositories
+- The legality and ethics remain hazy
+
+. . .
+
+Use AI tools with a **critical lens**
+
+::: {.notes}
+Even though Copilot claims to be secure, there's a lot of potential for personal data to be leaked through this process. The legality of Copilot remains hazy, not to mention the ethics or politics of it. You'll see why as we continue to work with it, as it autocompletes file names and other information from GitHub that it has scraped.
+:::
+
+## Example Prompts for the CLI
+
+::: {.callout-note}
+## Try these prompts!
+
+```
+How can I check if my directory was created in my terminal?
+```
+
+```
+Should I use the command ls or pwd to check if my directory
+was created? And what is the difference between these two?
+```
+
+```
+How can I create a directory named is310-computing-humanities
+in my terminal?
+```
+:::
+
+::: {.notes}
+These are examples of good prompts for getting help with command line tasks. Notice they are specific, ask one thing at a time, and are concise. When you get answers, always verify them using the command line cheatsheet or by testing carefully.
+:::
+
+# In-Class Exercise
+
+## Your Tasks
+
+Using the cheatsheet and your preferred AI chatbot:
+
+1. Create `is310-computing-humanities` directory in your `Desktop` folder
+2. Inside it, create `is310-computing-humanities.txt`
+3. Add text to your file using the command line *(new command!)*
+4. Display the file contents *(new command!)*
+5. Return to your home directory
+
+. . .
+
+**Bonus:** Copy your folder, then delete the copy
+
+::: {.notes}
+This exercise combines what we've learned about the command line with using AI tools for help. The new commands you'll need to look up are for adding text to a file (like echo or cat with redirection) and displaying file contents (like cat). Remember to ask the instructors if you need help!
+:::
+
+## Additional Resources
+
+1. [Introduction to the Bash Command Line](https://programminghistorian.org/en/lessons/intro-to-bash) - *Programming Historian*
+2. [Bash Basics Part 1](https://youtu.be/eH8Z9zeywq0?t=885) - Video tutorial
+3. [Beginner's Guide to the Bash Terminal](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
+4. [CodeAcademy Command Line Course](https://www.codecademy.com/learn/learn-the-command-line)
+
+::: {.notes}
+These resources provide additional depth on the command line. The Programming Historian tutorial is particularly good for humanities contexts. The videos are helpful if you prefer visual learning. And the CodeAcademy course provides interactive practice.
+:::
+
+## Questions?
+
+Remember:
+
+- The **terminal** is the interface
+- The **shell** interprets commands
+- The **command line** is where you type
+- **Prompts** work for both CLI and AI!
+
+. . .
+
+See also: [Command Line Cheatsheet](../materials/introducing-humanities-computing/04-command-line-cheatsheet.qmd)

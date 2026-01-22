@@ -1,7 +1,6 @@
 ---
 title: "Command Line Cheatsheet"
 toc: true
-draft: true
 ---
 
 ## Why use the Command Line?

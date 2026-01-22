@@ -1,0 +1,579 @@
+---
+title: "Introduction to Versioning & Git"
+subtitle: "IS310 - Culture As Data Spring 2026"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+---
+
+# What is Version Control?
+
+## The Problem
+
+Have you ever had files like this?
+
+. . .
+
+- `essay_final.docx`
+- `essay_final_v2.docx`
+- `essay_FINAL_FINAL.docx`
+- `essay_FINAL_FINAL_actually_final.docx`
+
+. . .
+
+Version control solves this problem!
+
+::: {.notes}
+Version control is the practice of tracking and managing changes to files over time. We've all experienced the chaos of multiple file versions. Git provides a systematic way to track changes, collaborate, and maintain a clean history of your work.
+:::
+
+## What is Git?
+
+**Git** is software for version control - tracking changes in files over time.
+
+. . .
+
+- Created in 2005 by Linus Torvalds (creator of Linux)
+- Most popular version control system in the world
+- Used by millions of developers and researchers
+
+::: {.notes}
+Git requires changes to be saved (committed) before they can be combined (merged) with the main project. You're already familiar with this concept if you've used Google Docs or Word's "Track Changes" - but with those you get version history automatically. With git, we have to tell it what to track and when to track it.
+:::
+
+## Git vs GitHub
+
+|     | Git | GitHub |
+|-----|-----|--------|
+| **What** | Version control system | Platform for hosting git repositories |
+| **Where** | Local (on your computer) | Remote (website) |
+| **Install?** | Yes | No (it's a website) |
+
+. . .
+
+They are **two separate technologies** often used together!
+
+::: {.notes}
+A very important thing to understand is that while git and GitHub sound the same, they are two separate technologies. Git is a version control system, while GitHub is a platform for hosting git repositories. In git, a folder is called a repository. We'll be using both in this course, but it's important to realize they are not identical.
+:::
+
+## Git + GitHub Together
+
+![Git and GitHub workflow](https://miro.medium.com/v2/resize:fit:1400/1*tDz-Vkeg-yoBRcnAZ5SDow.png){height="450"}
+
+::: {.notes}
+Even though these two technologies are separate, they are often used together. You can use git to track changes in your files locally on your computer, and then push those changes to a remote repository on GitHub. This is what we will be doing in this course.
+:::
+
+## Why Git for Humanities?
+
+Git allows you to:
+
+- Keep track of changes in plain text files
+- Collaborate in real-time with other researchers
+- Easily revert to earlier versions
+- Create different branches to explore new ideas
+- See who added what to the project
+
+::: {.notes}
+Although Git and version control systems are predominantly used in software development, they offer several advantages for scholars in Digital Humanities. Similar to how you might handle versions of a paper, essay, or dataset, Git provides systematic version tracking.
+:::
+
+## What Version Tracking Looks Like
+
+![Example of a git diff](../../assets/images/github_diff.png){height="400"}
+
+::: {.notes}
+This screenshot is from GitHub but shows what git tracks. You can see on the left, the previous erroneous line was deleted, and on the right is the corrected version. This is a very simple example, but it gives you a sense of how git tracks changes - showing exactly what was removed and what was added.
+:::
+
+# Working with Git
+
+## Check Your Installation
+
+First, verify git is installed:
+
+```sh
+git --version
+```
+
+. . .
+
+You should see something like:
+
+```sh
+git version 2.39.0
+```
+
+::: {.notes}
+Remember that we run our commands in the terminal! If you don't see a version number, you may need to install git. Let the instructors know if you're having issues.
+:::
+
+## Create a Project Folder
+
+```sh
+# Create a new folder
+mkdir is310-first-repo
+
+# Navigate into it
+cd is310-first-repo
+
+# Create a file
+touch first_file.txt
+```
+
+. . .
+
+Add some text to the file:
+
+```sh
+echo "This is my first file" > first_file.txt
+```
+
+::: {.notes}
+Let's create a new folder for our project. We use mkdir to create the folder, cd to navigate into it, and touch to create an empty file. Then we use echo with the redirect operator > to add text to the file.
+:::
+
+## Initialize a Git Repository
+
+```sh
+git init
+```
+
+. . .
+
+Output:
+
+```sh
+Initialized empty Git repository in /Users/YOU/is310-first-repo/.git/
+```
+
+. . .
+
+A hidden `.git` folder is created (use `ls -a` to see it)
+
+::: {.notes}
+To start tracking changes, we need to initialize a git repository. The git init command creates a hidden .git folder that contains all the information about our repository. This folder is hidden by default - you won't see it in Finder or normal ls commands.
+:::
+
+## The Git Workflow
+
+![Git as a camera](../../assets/images/dhri_git.png){height="400"}
+
+*Think of git as a camera taking snapshots of your project*
+
+::: {.notes}
+Thinking of git as a camera taking a photo of your project at a particular point in time is helpful. Every time you commit your changes, you are taking a snapshot. You can then go back to that snapshot at any time. Like save points in a video game!
+:::
+
+## Step 1: Add to Staging Area
+
+Git doesn't track automatically - you must tell it what to track:
+
+```sh
+git add first_file.txt
+```
+
+. . .
+
+Check the status:
+
+```sh
+git status
+```
+
+```sh
+Changes to be committed:
+    new file:   first_file.txt
+```
+
+::: {.notes}
+After initializing a repository, tracking is NOT automatic. We have to tell git which files to pay attention to by adding them to the staging area. The staging area is like selecting which photos you want to include in an album before actually printing them.
+:::
+
+## Step 2: Commit Changes
+
+Finalize your snapshot with a descriptive message:
+
+```sh
+git commit -m "Added first file to our repository"
+```
+
+. . .
+
+Check status again:
+
+```sh
+git status
+```
+
+```sh
+On branch main
+nothing to commit, working tree clean
+```
+
+::: {.notes}
+Committing is like actually taking the photo. The -m flag lets you add a message describing what changed. Your commit messages should be short and descriptive - they help you (and collaborators) understand the history of your project.
+:::
+
+## If You Forget the -m Flag...
+
+You'll see Vim (a text editor):
+
+![Vim editor](https://miro.medium.com/v2/resize:fit:1400/1*p-tiZIHNuZYJbxMlkis-Dw.png){height="350"}
+
+. . .
+
+- Press `i` to type, then `esc`, then `:wq` to save and exit
+- Or press `esc`, then `:q!` to exit without saving
+
+::: {.notes}
+If you don't add a message, git will open Vim to ask for one. Vim is powerful but has a steep learning curve. The key commands: i for insert mode to type, esc to exit insert mode, :wq to save and quit, :q! to quit without saving.
+:::
+
+## Step 3: View History
+
+See your commit history:
+
+```sh
+git log
+```
+
+```sh
+commit 8bb8306c1392eed52d4407eb16867a49b49a46ac (HEAD -> main)
+Author: Your Name <your-email@gmail.com>
+Date:   Tue Jan 22 16:03:39 2024 -0400
+
+    Added first file to our repository
+```
+
+::: {.notes}
+The git log command shows your commit history. Each commit has a unique hash (that long string of letters and numbers), the author, date, and your commit message. You can use this hash to revert to previous versions if needed.
+:::
+
+## Git Commands Summary
+
+| Command | What it does |
+|---------|--------------|
+| `git init` | Initialize a repository |
+| `git add <file>` | Add file to staging area |
+| `git commit -m "msg"` | Commit with message |
+| `git status` | Check current status |
+| `git log` | View commit history |
+
+::: {.notes}
+These are the core local git commands. You'll use these constantly: init to start, add to stage, commit to save snapshots, status to check where you are, and log to see history.
+:::
+
+# Working with GitHub
+
+## Creating a Repository on GitHub
+
+1. Go to [github.com](https://github.com/)
+2. Click the **New** button
+
+![Create repo button](https://docs.github.com/assets/cb-31554/images/help/repository/repo-create.png){height="300"}
+
+::: {.notes}
+To get our local git repository onto GitHub, we first need to create a new repository on the website. Click the New button in the top right corner of GitHub.
+:::
+
+## Repository Settings
+
+![New repository form](https://cdn-media-1.freecodecamp.org/images/mxGU5eGEki7FsedthUt8Vyi3uqAhL02FbmXF){height="400"}
+
+- Name it `is310-first-repo`
+- Choose **Public** so we can see each other's work
+- Leave README unchecked for now
+
+::: {.notes}
+Give your repository a name, add a description if you want, and choose whether it's public or private. For class purposes, choose public so we can see each other's repositories. Leave the README option unchecked since we'll push our existing local repo.
+:::
+
+## Connect Local to Remote
+
+Add your GitHub repo as a "remote":
+
+```sh
+git remote add origin https://github.com/USERNAME/is310-first-repo.git
+```
+
+. . .
+
+Verify it worked:
+
+```sh
+git remote -v
+```
+
+```sh
+origin  https://github.com/username/repository.git (fetch)
+origin  https://github.com/username/repository.git (push)
+```
+
+::: {.notes}
+We need to connect our local repository to GitHub. The git remote add command links them. "origin" is just a nickname for your GitHub URL - it's the default convention. Replace USERNAME with your actual GitHub username.
+:::
+
+## Push to GitHub
+
+Send your local commits to GitHub:
+
+```sh
+git push origin main
+```
+
+. . .
+
+```sh
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 226 bytes | 226.00 KiB/s, done.
+To github.com:username/is310-first-repo.git
+ * [new branch]      main -> main
+```
+
+::: {.notes}
+The push command sends your local commits to the remote repository. "origin" is the name we gave our remote, and "main" is the branch we're pushing. After this, you'll see your files on GitHub!
+:::
+
+## SSH Keys (Optional but Recommended)
+
+Tired of entering your username/password?
+
+. . .
+
+SSH keys let you connect securely without credentials.
+
+. . .
+
+Check for existing keys:
+
+```sh
+ls ~/.ssh/id_*.pub
+```
+
+::: {.notes}
+When you push to GitHub, you might be asked for your username and password every time. SSH keys solve this by providing secure authentication. Check if you already have keys - if you see id_rsa.pub or id_ed25519.pub, you already have one.
+:::
+
+## Generate an SSH Key
+
+```sh
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+. . .
+
+- Press Enter to save in default location
+- Optionally add a passphrase (or leave blank)
+
+. . .
+
+Then add to GitHub: **Settings > SSH and GPG keys > New SSH key**
+
+::: {.notes}
+If you don't have a key, generate one with ssh-keygen. Use the email associated with your GitHub account. After generating, you'll need to copy the public key and add it to your GitHub account settings. See the full lesson for detailed instructions.
+:::
+
+# Editing on GitHub
+
+## Create Files in the Browser
+
+Click **Add file > Create new file**
+
+![Add file button](https://docs.github.com/assets/cb-70797/mw-1440/images/help/repository/add-file-buttons.webp){height="300"}
+
+::: {.notes}
+You can also create and edit files directly on GitHub through the web interface. This is great for quick changes or adding new files without going through the command line.
+:::
+
+## Create a README.md
+
+Name your file `README.md` and add:
+
+```md
+# IS 310 Test Repository
+
+This is my first repository.
+```
+
+. . .
+
+- Click **Preview** to see formatted output
+- Click **Commit changes**
+- Add a commit message
+- Select **main** branch
+
+::: {.notes}
+Let's create a README file - the .md extension means Markdown, which is a way to format text. README files are special - GitHub displays them automatically on your repository's main page. They typically describe what the project is about.
+:::
+
+## GitHub Dev (Bonus Feature)
+
+Change `github.com` to `github.dev` in your URL
+
+. . .
+
+Or press `.` on any repository
+
+. . .
+
+![GitHub Dev interface](../../assets/images/github_dev.png){height="300"}
+
+*It's VS Code in your browser!*
+
+::: {.notes}
+GitHub Dev is a new feature that gives you a VS Code-like editor right in the browser. Just change .com to .dev in the URL or press the period key. You can edit files and commit changes through this interface.
+:::
+
+# Pulling Changes
+
+## The Problem
+
+Now we have **two versions**:
+
+- Local repository (on your computer)
+- Remote repository (on GitHub)
+
+. . .
+
+They have different files! How do we sync them?
+
+::: {.notes}
+After creating a file on GitHub, our local and remote repositories are out of sync. The remote has a README that our local doesn't have. We need to pull those changes down.
+:::
+
+## Pull from GitHub
+
+```sh
+git pull origin main
+```
+
+```sh
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+...
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+```
+
+. . .
+
+Now `ls` shows the README.md file locally!
+
+::: {.notes}
+The git pull command downloads changes from GitHub to your local repository. After pulling, you'll see the README.md file that was created on GitHub is now on your local computer. We've closed the loop!
+:::
+
+## The Complete Workflow
+
+![Git architecture](https://www.edureka.co/blog/wp-content/uploads/2016/11/Git-Architechture-Git-Tutorial-Edureka-2.png){height="400"}
+
+::: {.notes}
+This diagram shows the complete workflow. Your working directory is where you edit files. You add changes to the staging area, commit them to your local repository, then push to the remote (GitHub). And you pull from GitHub to get others' changes.
+:::
+
+## Core Workflow Summary
+
+1. **Edit** files locally
+2. **Add** to staging: `git add <file>`
+3. **Commit** snapshot: `git commit -m "message"`
+4. **Push** to GitHub: `git push origin main`
+5. **Pull** from GitHub: `git pull origin main`
+
+::: {.notes}
+This is the core git/GitHub workflow you'll use constantly. Edit locally, add, commit, push. When working with others or after editing on GitHub, pull first to get the latest changes.
+:::
+
+# Homework: Init IS310
+
+## Your Assignment
+
+Create a repository called `is310-coding-assignments`:
+
+1. Create on GitHub
+2. Create locally and initialize with `git init`
+3. Connect local to remote
+4. Create folder `init-is310-homework/`
+5. Create `README.md` with proof of tool installations
+6. Create `images/` folder for screenshots
+7. Push everything to GitHub
+
+::: {.notes}
+For homework, you'll practice this entire workflow. Create a repository for your coding assignments, add proof that you've installed all the required course tools, and push it to GitHub. Post the link in our discussion forum when done.
+:::
+
+## README Template
+
+```md
+# Init IS310 Homework
+
+## Proof of Installation
+
+1. Python
+
+![Python Installation](images/python-installation.png)
+
+2. Git
+
+![Git Installation](images/git-installation.png)
+
+3. VS Code
+
+![VS Code Installation](images/vscode-installation.png)
+```
+
+**Include your Hypothesis username!**
+
+::: {.notes}
+Use this template for your README. Take screenshots of each tool running on your computer, save them in the images folder, and reference them in your markdown file. Don't forget to include your Hypothesis username for the annotation tool.
+:::
+
+## Pushing Your Homework
+
+```sh
+git add .
+git commit -m "Init IS310 Homework"
+git push origin main
+```
+
+. . .
+
+Remember to connect local to remote first:
+
+```sh
+git remote add origin https://github.com/USERNAME/is310-coding-assignments.git
+```
+
+. . .
+
+Post your repo link in the [discussion forum](https://github.com/cultureasdata-uiuc/is310-spring-2026/discussions/1)!
+
+::: {.notes}
+Use git add . (with the period) to add all files at once. Commit with a descriptive message, then push. Make sure you've connected your local and remote repositories first! When done, share your repository link in the class discussion forum.
+:::
+
+## Resources
+
+- [Advanced Git & GitHub Resource](../materials/introducing-humanities-computing/05-advanced-git-github.qmd)
+- [Git Commands Cheat Sheet](../materials/introducing-humanities-computing/05-advanced-git-github.qmd#git-commands-cheat-sheet)
+- [GitHub Docs: Managing Remote Repositories](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories)
+- [GitHub Docs: SSH Keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
+## Questions?
+
+Key takeaways:
+
+- **Git** = local version control
+- **GitHub** = remote hosting platform
+- **Workflow**: edit → add → commit → push/pull
+- Commit messages should be descriptive!
+
+. . .
+
+See also: [Advanced Git & GitHub](../materials/introducing-humanities-computing/05-advanced-git-github.qmd)

@@ -8,3 +8,4 @@ Slides from class lectures and presentations.
 ## Available Slides
 
 - [First Class Slides](01-introducing-computing-in-the-humanities.qmd)
+- [Second Class Slides](02-programming-and-processing.qmd)

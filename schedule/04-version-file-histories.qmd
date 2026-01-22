@@ -1,15 +1,19 @@
 ---
 title: "Version & File Histories"
+subtitle: "How can we work collaboratively and computationally?"
 toc: true
-date: 2024-09-05
-draft: true
+date: 2026-01-29
 ---
 
-## Revised In-Class Agenda
+## In-Class Agenda TBD
 
-- [ ] Discuss assigned readings from Tuesday, available [here](03-histories-of-culture-and-computing.qmd).
-- [ ] Work through remainder of Git & GitHub materials.
-- [ ] Start the [Introduction to File Formats & Text](../materials/introducing-humanities-computing/06-intro-file-formats/index.qmd).
+## Assigned Materials
+
+- Chin, Monica. “Kids Who Grew up with Search Engines Could Change STEM Education Forever.” *The Verge*, September 22, 2021. [https://web.archive.org/web/20211102083237/https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z](https://web.archive.org/web/20211102083237/https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z). This is a web archive link because *The Verge* requires a subscription.
+
+## Assignments
+
+- Complete [Init IS310 Homework](../materials/introducing-humanities-computing/03-intro-versioning.qmd#homework-init-is310)
 
 ## Additional Materials
 

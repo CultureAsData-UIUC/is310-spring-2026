@@ -1,7 +1,6 @@
 ---
 title: "Advanced Git and GitHub"
 toc: true
-draft: true
 ---
 ::: {.callout-note}
 ⚡️ This lesson has been adapted from materials drawn from <i>The Turing Way</i> book <a href="https://the-turing-way.netlify.app/collaboration/github-novice/github-novice-firststeps">https://the-turing-way.netlify.app/collaboration/github-novice/github-novice-firststeps</a>. Many thanks to the authors for sharing their materials!
