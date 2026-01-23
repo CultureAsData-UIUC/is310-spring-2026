@@ -9,7 +9,7 @@ date: 2026-01-22
 
 - [ ] Discuss the assigned readings.
 - [ ] Answer any questions about the Introduction to [Course Tools](../materials/introducing-humanities-computing/01-course-tools.qmd).
-- [ ] Start [Introduction to the Command Line & Prompt Engineering](../materials/introducing-humanities-computing/02-intro-cli-prompt-engineering.qmd) and [Introduction to Versioning & Git](../materials/introducing-humanities-computing/03-intro-versioning-git.qmd) (if not completed in-class, these will become homework).
+- [ ] Start [Introduction to the Command Line & Prompt Engineering](../materials/introducing-humanities-computing/02-intro-cli-prompt-engineering.qmd) and [Introduction to Versioning & Git](../materials/introducing-humanities-computing/03-intro-versioning.qmd)(if not completed in-class, these will become homework).
 
 ## Assigned Materials (Complete Prior to Class)
 
