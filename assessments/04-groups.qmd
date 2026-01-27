@@ -33,6 +33,7 @@ The groups are as follows:
        - Hongli P.
        - Jesus V.
        - Tara V.
+       - Andrew P.
 
 3. **Group 3** MUSIC & SOCIAL MEDIA
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-spring-2026-group-3)
@@ -53,6 +54,7 @@ The groups are as follows:
         - Rana B.
         - Solam S.
         - Michelle Y.
+        - Cynthia S.
 
 
 5. **Group 5** ACADEMICS & INTERNET CULTURE
@@ -72,3 +74,4 @@ The groups are as follows:
         - Jasmitha G.
         - Vedha P.
         - Daria M.
+        - Adin F.
