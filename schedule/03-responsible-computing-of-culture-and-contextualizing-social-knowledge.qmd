@@ -5,7 +5,7 @@ toc: true
 date: 2026-01-27
 ---
 
-## In-Class Agenda TBD
+## In-Class Agenda
 
 - Any questions from last week?
 - Discuss LLMs as Research Tools and look at their data and survey [https://openreview.net/forum?id=p0BwJk3R1p#discussion](https://openreview.net/forum?id=p0BwJk3R1p#discussion)
