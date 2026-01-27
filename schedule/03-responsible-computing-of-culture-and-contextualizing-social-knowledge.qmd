@@ -7,6 +7,12 @@ date: 2026-01-27
 
 ## In-Class Agenda TBD
 
+- Any questions from last week?
+- Discuss LLMs as Research Tools and look at their data and survey [https://openreview.net/forum?id=p0BwJk3R1p#discussion](https://openreview.net/forum?id=p0BwJk3R1p#discussion)
+- Discuss Myths of Generative AI
+- Discuss Responsible Datasets in Context and Final Projects
+- Start discussing focus with your groups, which are assigned [here](../assessments/04-groups.qmd) and the [GitHub Style Guide](../assessments/05-github-style-guide.qmd).
+
 ## Assigned Materials
 
 - “Mission.” *Responsible Datasets in Context *(blog), n.d. [https://www.responsible-datasets-in-context.com/mission.html](https://www.responsible-datasets-in-context.com/mission.html) and discuss final projects
