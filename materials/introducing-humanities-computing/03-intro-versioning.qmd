@@ -557,9 +557,17 @@ We have yet to learn much about Markdown but you can use the following template 
 3. VS Code
 
 ![VS Code Installation](images/vscode-installation.png)
+
+4. AI Tool/Workflow 
+
+How will you work with AI? What tools if any do you plan to use?
 ```
 
 **This should also include your Hypothesis username.**
+
+::: {.callout-important}
+Please also include proof of what AI tool you will be using this semester! If you plan, not to use AI in class, you can just note that in your Markdown file.
+:::
 
 Once you have created everything locally, you will need to add, commit, and push your changes to your GitHub repository. You can use the following commands to do this:
 

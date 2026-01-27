@@ -32,7 +32,6 @@ The groups are as follows:
        - Charles C.
        - Hongli P.
        - Jesus V.
-       - Tara V.
        - Andrew P.
 
 3. **Group 3** MUSIC & SOCIAL MEDIA
@@ -65,6 +64,7 @@ The groups are as follows:
         - Zohra H.
         - Hannen O.
         - Malvika C.
+        - Tara V.
 
 6. **Group 6** POLITICS & HISTORY
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-spring-2026-group-6)
