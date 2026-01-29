@@ -1,7 +1,6 @@
 ---
 title: "Introduction to Markup and Styling Web Documents"
 toc: true
-draft: true
 ---
 
 Last week we learned about file formats, and specifically plain text and Markdown. You've now had a chance to try out writing some Markdown files and have seen how they can be used to create formatted text documents. This week we're going to take a step further and introduce you to HTML, which is the language of the web. 
@@ -42,7 +41,7 @@ While TEI is still in use today, by far the most popular of all markup languages
 
 ![HTML](https://media.giphy.com/media/bF2M6el0vi2qc/giphy.gif)
 
-According to the [Mozilla website](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#what_is_html):
+According to the [Mozilla website](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#what_is_html):
 
 > "HTML (Hypertext Markup Language) is not a programming language; it is a markup language used to tell your browser how to structure the web pages you visit. It can be as complicated or as simple as the web developer wishes it to be. HTML consists of a series of elements, which you use to enclose, wrap, or mark up different parts of the content to make it appear or act a certain way. The enclosing tags can make a bit of content into a hyperlink to link to another page on the web, italicize words, and so on."
 
@@ -86,7 +85,7 @@ What we're using is called the Developer Tools Console ([you can find more info 
 
 Now we can see that our tags do exist, but what exactly are they doing and why do they look like that?
 
-![HTML Tags](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started/grumpy-cat-small.png)
+![HTML Tags](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax/grumpy-cat-small.png)
 
 This diagram is from that same Mozilla docs, where they describe the anatomy of an "HTML element".
 
@@ -113,9 +112,9 @@ Great now what if we wanted to add a link so that you could click on that headin
 
 Well then we need to add an `attribute`.
 
-![HTML Attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started/grumpy-cat-attribute-small.png)
+![HTML Attributes](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax/grumpy-cat-attribute-small.png)
 
-This diagram is also from the Mozilla docs and you can read more about how HTML elements can also have [attributes here](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#Attributes). Some of the guidelines for using attributes are:
+This diagram is also from the Mozilla docs and you can read more about how HTML elements can also have [attributes here](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#attributes). Some of the guidelines for using attributes are:
 
 > Attributes contain extra information about the element that won't appear in the content. In this example, the class attribute is an identifying name used to target the element with style information.
 > 
@@ -164,7 +163,7 @@ HTML is a very powerful language and there are many more tags that we can use to
 
 > **HTML is also notoriously messy---web browsers are very forgiving of syntax errors and other irregularities in HTML (like mismatched or unclosed tags).** For this reason, we need special libraries to parse HTML into data structures that our Python programs can use, libraries that can make a "good guess" about what the structure of an HTML document is, even when that structure is written incorrectly or inconsistently.
 
-Understanding these limitations is important as we start to work with HTML and other web technologies. For more detailed information, I recommend reading through this [introduction from Mozilla on HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#What_is_HTML).
+Understanding these limitations is important as we start to work with HTML and other web technologies. For more detailed information, I recommend reading through this [introduction from Mozilla on HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#what_is_html).
 
 ## Web Styling and Interaction
 
@@ -219,7 +218,7 @@ selector {
 }
 ```
 
-So in our example, once again the selector is `.title` and the declaration block contains three declarations: `font-family`, `background`, and `color`. Each declaration has a property name and a value. For example, the `font-family` property specifies the font family to use (you could change it to something like `Garamond` or `Papyrus` if you wanted), and the `background` property specifies the background color to use (which is what we changed from black to pink). A great resource for learning more about CSS is the Mozilla docs [https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS).
+So in our example, once again the selector is `.title` and the declaration block contains three declarations: `font-family`, `background`, and `color`. Each declaration has a property name and a value. For example, the `font-family` property specifies the font family to use (you could change it to something like `Garamond` or `Papyrus` if you wanted), and the `background` property specifies the background color to use (which is what we changed from black to pink). A great resource for learning more about CSS is the Mozilla docs [https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS).
 
 To get a better sense of what this code looks like, we can look directly at the `index.html` file directly in the GitHub repository [https://github.com/hepplerj/whatisdigitalhumanities](https://github.com/hepplerj/whatisdigitalhumanities).
 
@@ -233,7 +232,8 @@ If we search for the `<style>` tags, we can see it is located between lines `42`
 
 Some of this code looks similar to what we saw in the inspector, but the rest is difficult to read. To help us, we can break down the various elements of this code (select the toggle below to read more):
 
-{% capture toggle_content %}
+::: {.callout-note collapse=true}
+## Deep Dive Into CSS
 
 **@font-face**
 This is a CSS at-rule used to define custom fonts to be used on the website. In your code, there are two custom fonts being defined: 'Changa' and 'Nunito'. The `src` property specifies the path to the font file, and the `format('truetype')` indicates the type of font format being used.
@@ -262,8 +262,7 @@ These class selectors apply styles to elements with the respective classes, ofte
 **button, button:hover**
 These selectors define the styles for `button` elements. The `button:hover` selector applies styles when the user hovers over a button with their mouse, providing a visual cue that the button is interactive.
 
-{% endcapture %}
-{% include toggle.html content=toggle_content %}
+:::
 
 **Why write code like this?**
 
@@ -299,7 +298,8 @@ This code is in a language called JavaScript. This code is using a JavaScript li
 
 If you want to learn more about what exactly this code is doing, toggle the following section. Full disclosure some of this language and concepts are fairly advanced, so feel free to use Co-Pilot or ask the Instructors for help:
 
-{% capture advanced_toggle_content %}
+::: {.callout-note collapse=true}
+## Deep Dive Into JavaScript
 
 This script is written in JavaScript and uses the D3.js library, which is a powerful tool for creating dynamic and interactive data visualizations in web browsers. It also uses Lodash (indicated by `_`), which is a utility library that makes JavaScript easier by taking the hassle out of working with arrays, numbers, objects, strings, etc.
 
@@ -366,8 +366,7 @@ The purpose of this script is to:
 
 This script is a good example of how modern web technologies can be used to create interactive and dynamic web pages that engage users with content.
 
-{% endcapture %}
-{% include toggle.html content=advanced_toggle_content %}
+:::
 
 To put this more simply, imagine a webpage as a tree with many branches. Each branch and leaf could be a piece of text, a picture, or a button. This tree is what we call the `DOM`, which stands for `Document Object Model`. It's a way of describing the structure and contents of a webpage in a way that programming languages like JavaScript can understand and manipulate.
 

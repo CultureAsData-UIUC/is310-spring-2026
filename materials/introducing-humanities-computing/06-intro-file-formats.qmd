@@ -1,7 +1,6 @@
 ---
 title: "Introduction to File Formats & Text"
 toc: true
-draft: true
 ---
 
 Now that we have seen how we can use the command line to create directories and files, and move them around. It seems like we're doing a lot of work to do something that we could do with a GUI, but the command line is actually much more powerful than a GUI. For example, we can use the command line to do things like search for text in a file, count the number of words in a file, and even delete a file.
@@ -12,7 +11,7 @@ Before we try that though, let's learn a bit more about what files are exactly.
 
 What constitutes a document or a file might seem obvious, but is actually a robust and ongoing scholarly debate in Library and Information Sciences (LIS) and Computer Science (CS). To put it a bit simply, a file is a collection of data stored in a single unit, identified by a filename. It can be a document, an image, a video, a sound, or any other collection of data. The file extension is the part of the file name after the period. The file extension tells the computer what type of file it is and what program to use to open it.
 
-![File Formats](https://www.filecenter.com/blog/wp-content/uploads/2022/04/The-Giant-List-of-Document-File-Types-and-Extensions.jpg)
+![The Many File Formats](https://dragondatarecovery.co.uk/wp-content/uploads/2021/10/The-Giant-List-of-Document-File-Types-and-Extensions.jpg)
 
 There are many different file formats and each one has its own purpose. For example, a `.docx` file is a Microsoft Word document, a `.jpg` file is an image, and a `.mp3` file is an audio file. Some file formats are proprietary, meaning they are owned by a company and can only be opened by certain programs. For example, `.docx` files can only be opened by Microsoft Word. So if you try to open up a word document in a PDF Viewer you might see what looks like a bunch of gibberish.
 
@@ -164,9 +163,9 @@ This figure shows some examples of how Markdown is written depending on the plat
 
 ### First Exercise
 
-Now that you have a basic understanding of Markdown, let's try improving the `README.md` file in our `is310-coding-assignments` repository. To do this, we are going to use the Markdown Preview extension in VS Code.
+Now that you have a basic understanding of Markdown, let's try improving the `README.md` file in our `is310-coding-assignments` repository. To do this, we are going to use the Markdown Preview extension in VS Code. First, currently your `README.md` is your first assignment [Init IS310 Homework](03-intro-versioning.qmd#homework-init-is310). However, that is not very sustainable for the course since all your assignments will be in that folder. So, your first goal is to clean up your repository so that your first homework assignment has it's own folder `init_is310`, which contains your initial `README.md` and any images. Then you will create a new `README.md` file in the root of your `is310-coding-assignments` that will be the main home page for your homework repository. 
 
-Try adding the following elements:
+In the `README.md`, you should add the following elements:
 
 - [ ] A heading
 - [ ] A subheading
@@ -177,20 +176,24 @@ Try adding the following elements:
 
 You can use both AI tools and this [GitHub Markdown Cheatsheet](https://github.com/lifeparticle/Markdown-Cheatsheet) to help you. Once you've completed the exercise, push up your changes to GitHub.
 
-## Homework: Lost & Found in the Command Line
+## Homework: Lost & Found in the Cultural Command Line
 
 ![maze](https://media.giphy.com/media/Xbn2CXq5u2Wc0/giphy.gif)
 
-### Part 1: Build a Command Line ~~Corn~~ Maze
+This assignment has two goals:
 
-The Fall weather is officially here, which means it is time to get lost in a corn maze! But since we are in the digital humanities, we are going to get lost in a command line maze instead. 
+1. **Explore the cultural framing for your broader topic of interest.** By building a maze themed around your cultural data topic, you'll start developing the cultural framing for the work you'll do this semester.
+2. **See how your group members each approach the topic.** By solving your group members' mazes, you'll get to see how others in your group think about and frame the same broad area of interest differently.
 
-For this assignment, you will be using your new mastery of the command line to create a maze for your classmates to solve. You should work individually on this, though you are welcome to brainstorm ideas.
+### Part 1: Build a Cultural Data Maze
+
+For this assignment, you will be using your new mastery of the command line to create a maze **themed around your broader cultural data topic of interest** for your group members to solve. Your directories, files, and clues should connect to the cultural data topic you are interested in exploring this semester. For example, if you're interested in the history of video games, your maze directories and files could reference game titles, developers, eras, or genres. You should work individually on this, though you are welcome to brainstorm ideas.
 
 First, you should create a new folder in your `is310-coding-assignments` repository called `command-line-maze`. Inside this folder, you should create a maze using directories and files.
 
 Your maze should have the following components:
 
+- [ ] A theme connected to your **cultural data topic of interest**
 - [ ] An entrance and a solution
 - [ ] At least 5 directories (these can be nested)
 - [ ] At least 5 files (these can be nested)
@@ -203,15 +206,15 @@ You also need to include a `README.md` file in your maze folder that provides an
 
 Once you have created your maze, you should zip the folder that contains your maze. If you do not know how to zip a file, you can usually right click on the file and select "Compress" or "Zip". If you are using the command line, you can use the command `zip -r path/to/your/zip/file path/to/your/directory` to zip the file. Be sure to replace these dummy file paths with your actual desired ones (or ask AI for help!).
 
-Be sure to not zip the `README.md` file, as we will need to read this file to solve the maze. Once you have zipped your maze, you should upload it to your `is310-coding-assignments` repository and post a link in our GitHub discussion [https://github.com/cultureasdata-uiuc/is310-fall-2024/discussions/2](https://github.com/cultureasdata-uiuc/is310-fall-2024/discussions/2).
+Be sure to not zip the `README.md` file, as we will need to read this file to solve the maze. Once you have zipped your maze, you should upload it to your `is310-coding-assignments` repository and post a link in our GitHub discussion [https://github.com/cultureasdata-uiuc/is310-spring-2026/discussions/2](https://github.com/cultureasdata-uiuc/is310-spring-2026/discussions/2).
 
-If you need inspiration for your maze, take a look at this one I created, which you can download as a [zip file](../../assets/files/cli_exercises/zipped_gutenberg_maze.zip){:download} or via our [GitHub repository](https://github.com/CultureAsData-UIUC/is310-fall-2024/blob/main/assets/files/cli_exercises/zipped_gutenberg_maze.zip) (you can also try solving it if you like!).
+If you need inspiration for your maze, take a look at this one I created, which you can download as a [zip file](../../assets/files/cli_exercises/zipped_gutenberg_maze.zip){:download} or via our [GitHub repository](https://github.com/CultureAsData-UIUC/is310-spring-2026/blob/main/assets/files/cli_exercises/zipped_gutenberg_maze.zip) (you can also try solving it if you like!).
 
-### Part 2: Solve the Command Line ~~Corn~~ Maze
+### Part 2: Solve Your Group Members' Mazes
 
-Once you have created and zipped your maze, pushed it up to GitHub, and posted a link in our discussion, it's time to try and solve someone else's maze.
+Once you have created and zipped your maze, pushed it up to GitHub, and posted a link in our discussion, it's time to solve your group members' mazes. **You are required to solve at least two mazes from students in your own group.** This is your chance to see how others in your group are approaching the same broad cultural data topic - pay attention to the choices they made in theming their mazes!
 
-The first step is to select one of your peers' mazes from the discussion link and try **cloning their repository to your computer**. Remember if you have setup SSH keys, you can use the SSH link, otherwise you can use the HTTPS link.
+The first step is to select one of your group members' mazes from the discussion link and try **cloning their repository to your computer**. Remember if you have setup SSH keys, you can use the SSH link, otherwise you can use the HTTPS link.
 
 ```sh
 git clone name-of-repo
@@ -247,9 +250,9 @@ Be sure to replace these dummy file paths with your actual desired ones (or ask 
 
 You should use the `cd` command to navigate through the maze and the `ls` command to see what is in each directory, or `ls -la` if you think there might be hidden materials. You can also use the `cat` command to read the contents of files.
 
-Once you have solved the maze, you should reply to their post in the discussion, letting them know that you were successful and posting a screenshot of your solved maze in your terminal. If you have any issues with the maze, you're welcome to request help on their post, but please try to solve it on your own first. 
+Once you have solved the maze, you should reply to their post in the discussion, letting them know that you were successful and posting a screenshot of your solved maze in your terminal. If you have any issues with the maze, you're welcome to request help on their post, but please try to solve it on your own first.
 
-I would encourage you to try and solve a maze that has not been solved yet, but if you are struggling, you can try solving one that has already been solved. You can also try solving multiple mazes if you like.
+**Remember: you must solve at least two mazes from students in your own group.** Repeat the steps above for each maze you solve. Pay attention to how your group members framed their cultural data topic. You'll start to see different perspectives on the same broad area of interest. You are also welcome to solve additional mazes beyond the required two if you like.
 
 ## Additional Resources
 

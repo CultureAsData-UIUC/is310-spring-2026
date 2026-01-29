@@ -18,7 +18,7 @@ Just to reiterate, repositories are the core of GitHub and git, and are essentia
 
 #### Repository Structure
 
-![](https://the-turing-way.netlify.app/_images/github-basic-diagram.jpg)
+![](https://book.the-turing-way.org/build/github-basic-diagram-7ced048590f0763d047760260c2de457.jpg)
 
 In the diagram above, you see the basic structure of a repository, which consists of:
 
@@ -48,7 +48,7 @@ In the diagram above, you see the basic structure of a repository, which consist
 
 #### Repository Features
 
-![](https://the-turing-way.netlify.app/_images/github-project.jpg)
+![](https://book.the-turing-way.org/build/github-project-5bc71376e42189ccc009c6d43f5978d1.jpg)
 
 1. **Projects**: This tab allows you to create a project board for the repository. Project boards are a way to track tasks and issues related to a project. They are a way to organize work and can be used to coordinate work between collaborators. You can read more about GitHub Projects here [https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects).
 2. **Issues**: This tab takes you to the issues page for the repository. You can read more about [GitHub Issues below](../introducing-humanities-computing/05-advanced-git-github#issues).
@@ -220,7 +220,7 @@ Branches are a way to create a copy of your project that you can make changes to
 
 Branches are also very useful for collaboration. For example, if you are working on a project with a group of people, you can create a branch for each person to work on. Then you can merge them back into the main project when you're ready. This is a way to coordinate work, allow people to work on separate features or ideas, and then make sure that these paths can be incorporated into the main version of the project or left as a rabbit hole.
 
-![Loki Branches](https://qph.cf2.quoracdn.net/main-qimg-4940a907ef8edc5c31b920e3d9f0cdf1-lq)
+![Loki Branches](https://i0.wp.com/www.thewrap.com/wp-content/uploads/2021/07/Loki-Timeline.jpg?fit=990%2C557&quality=89&ssl=1)
 
 For those that are a fan of time travel fiction, you can think of branches as a way to create alternate timelines. This is a bit of a spoiler alert, but in the Marvel series *Loki*, the main character creates a branch in the timeline when he steals the Tesseract. This branch is then used to create a new timeline, which is different from the main timeline. This is a good way to think about branches, as they are a way to create a new timeline for your project.
 

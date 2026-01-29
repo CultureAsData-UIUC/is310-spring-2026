@@ -5,7 +5,12 @@ toc: true
 date: 2026-01-29
 ---
 
-## In-Class Agenda TBD
+## In-Class Agenda
+
+- Review Init IS310 Homework Questions & GitHub or Git related questions
+- Discuss assigned readings
+- Complete introduction to File Formats. Slides available [here](../slides/04-version-file-histories.qmd) and lesson available [here](../materials/introducing-humanities-computing/06-intro-file-formats.qmd)
+- Time permitting either discuss [Advanced Git & GitHub](../materials/introducing-humanities-computing/05-advanced-git-github.qmd) OR work in groups on [first project assignment](../assessments/03-semester-project.qmd#collective-individual-topic-selection).
 
 ## Assigned Materials
 
@@ -13,19 +18,11 @@ date: 2026-01-29
 
 ## Assignments
 
-- Complete [Init IS310 Homework](../materials/introducing-humanities-computing/03-intro-versioning.qmd#homework-init-is310)
+- Complete [Init IS310 Homework](../materials/introducing-humanities-computing/03-intro-versioning.qmd#homework-init-is310). **Be sure to include AI workflow!**
 
 ## Additional Materials
 
 - Namanyay Goel. “Vibe Coding Is a Dangerous Fantasy.” *N’s Blog*, March 20, 2025. [https://nmn.gl/blog/vibe-coding-fantasy](https://nmn.gl/blog/vibe-coding-fantasy).
 - Weingart, Scott B. "The Route of a Text Message." *Vice*, February 2019. [https://www.vice.com/en_us/article/kzdn8n/the-route-of-a-text-message-a-love-story](https://www.vice.com/en_us/article/kzdn8n/the-route-of-a-text-message-a-love-story).
 
-### Additional Links
 
-- [Vannevar Bush, "As We May Think"](https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/) and [pdf version](https://cdn.theatlantic.com/media/archives/1945/07/176-1/132407932.pdf).
-  - [Example of a potential memex machine](https://mediartinnovation.com/wp-content/uploads/2014/06/1945_bush_memex-diagram_bc_c.jpg?w=1272).
-- The History of the Old Bailey Online Project [https://www.oldbaileyonline.org/about/a-narrative-history-of-the-project#digitisation](https://www.oldbaileyonline.org/about/a-narrative-history-of-the-project#digitisation).
-- HathiTrust Digital Library [https://www.hathitrust.org/](https://www.hathitrust.org/) and an issue of *The Crisis* [https://babel.hathitrust.org/cgi/pt?id=coo.31924055965465&seq=1](https://babel.hathitrust.org/cgi/pt?id=coo.31924055965465&seq=1).
-- [The Art of Google Books by Krissy Wilson](https://theartofgooglebooks.tumblr.com/) and [The Darker Side of Digitization by Leah Henrickson](https://bhilluminated.wordpress.com/2014/03/20/google-book-scanners/).
-- Scanning Labor Project by Eliie Colbert, Lucian Li, David Satten-Lopez, and Elizabeth Schwartz [https://scanninglabor.github.io/IAScanningLabor/scanners.html](https://scanninglabor.github.io/IAScanningLabor/scanners.html).
-- Breeding, Marshall. "History of Mergers and Acquisitions in the Library Technology Industry." Library Technology Guides.[http://librarytechnology.org/mergers/](http://librarytechnology.org/mergers/).

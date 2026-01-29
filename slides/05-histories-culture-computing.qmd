@@ -1,0 +1,21 @@
+---
+title: "Introduction to Version and File Histories"
+subtitle: "What are files, and how can we work with them from the command line? How can we continue to work collaboratively?"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+draft: true
+---
+
+### Additional Links
+
+- [Vannevar Bush, "As We May Think"](https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/) and [pdf version](https://cdn.theatlantic.com/media/archives/1945/07/176-1/132407932.pdf).
+  - [Example of a potential memex machine](https://mediartinnovation.com/wp-content/uploads/2014/06/1945_bush_memex-diagram_bc_c.jpg?w=1272).
+- The History of the Old Bailey Online Project [https://www.oldbaileyonline.org/about/a-narrative-history-of-the-project#digitisation](https://www.oldbaileyonline.org/about/a-narrative-history-of-the-project#digitisation).
+- HathiTrust Digital Library [https://www.hathitrust.org/](https://www.hathitrust.org/) and an issue of *The Crisis* [https://babel.hathitrust.org/cgi/pt?id=coo.31924055965465&seq=1](https://babel.hathitrust.org/cgi/pt?id=coo.31924055965465&seq=1).
+- [The Art of Google Books by Krissy Wilson](https://theartofgooglebooks.tumblr.com/) and [The Darker Side of Digitization by Leah Henrickson](https://bhilluminated.wordpress.com/2014/03/20/google-book-scanners/).
+- Scanning Labor Project by Eliie Colbert, Lucian Li, David Satten-Lopez, and Elizabeth Schwartz [https://scanninglabor.github.io/IAScanningLabor/scanners.html](https://scanninglabor.github.io/IAScanningLabor/scanners.html).
+- Breeding, Marshall. "History of Mergers and Acquisitions in the Library Technology Industry." Library Technology Guides.[http://librarytechnology.org/mergers/](http://librarytechnology.org/mergers/).

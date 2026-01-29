@@ -38,10 +38,10 @@ website:
               href: materials/introducing-humanities-computing/04-command-line-cheatsheet.qmd
             - text: "Advanced Git and GitHub"
               href: materials/introducing-humanities-computing/05-advanced-git-github.qmd
-        #     - text: "Introduction to File Formats & Text"
-        #       href: materials/introducing-humanities-computing/06-intro-file-formats.qmd
-        #     - text: "Introduction to Markup & Styling Web Documents"
-        #       href: materials/introducing-humanities-computing/07-intro-html.qmd
+            - text: "Introduction to File Formats & Text"
+              href: materials/introducing-humanities-computing/06-intro-file-formats.qmd
+            - text: "Introduction to Markup & Styling Web Documents"
+              href: materials/introducing-humanities-computing/07-intro-html.qmd
         #     - text: "Introduction to The Web & Servers"
         #       href: materials/introducing-humanities-computing/08-intro-web.qmd
         # - section: "Collections & Curations"
@@ -85,17 +85,19 @@ website:
               href: schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.qmd
             - text: "Jan 29: How can we work collaboratively and computationally?"
               href: schedule/04-version-file-histories.qmd
-        #     - text: "Sep 10: Digital Objects & Obsolescence"
-        #       href: schedule/05-digital-objects-and-obsolescence.qmd
-        #     - text: "Sep 12: Markup & Markdown"
-        #       href: schedule/06-markup-and-markdown.qmd
-        #     - text: "Sep 17: Data Feminism & Culture As Data"
+        - section: "February"
+          contents:
+            - text: "Feb 3: How and when did we first start representing culture as data?"
+              href: schedule/05-histories-culture-computing.qmd
+            - text: "Feb 5: What does it mean to work digitally?"
+              href: schedule/06-markup-and-markdown.qmd
+        #     - text: "Feb 10: Data Feminism & Culture As Data"
         #       href: schedule/07-data-feminism-and-culture-as-data.qmd
-        #     - text: "Sep 19: Servers & Web Standards"
+        #     - text: "Feb 12: Servers & Web Standards"
         #       href: schedule/08-servers-web-standards.qmd
-        #     - text: "Sep 24: Standardizing Culture & Data Archeology"
+        #     - text: "Feb 17: Standardizing Culture & Data Archeology"
         #       href: schedule/09-standardizing-culture-data-archeology.qmd
-        #     - text: "Sep 26: Scripts & Types"
+        #     - text: "Feb 19: Scripts & Types"
         #       href: schedule/10-scripts-types.qmd
         # - section: "October"
         #   contents:

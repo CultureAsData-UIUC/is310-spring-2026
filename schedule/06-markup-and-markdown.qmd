@@ -1,29 +1,31 @@
 ---
 title: "Markup & Markdown"
+subtitle: "What does it mean to work digitally?"
 toc: true
-date: 2024-09-12
-draft: true
+date: 2026-02-05
 ---
 
 ## In-Class Agenda
 
-- [ ] Brief demo of Hypothesis and how to use it for annotating web pages.
-- [ ] Review [Lost & Found in the Command Line](../materials/introducing-humanities-computing/06-intro-file-formats/index.qmd#homework-lost--found-in-the-command-line).
-- [ ] [Introduction to Markup Languages & Web Styling](../materials/introducing-humanities-computing/07-intro-html/index.qmd).
-- [ ] Time Permitting: Working in your project groups on the following activities:
-    - [ ] Finalizing your Project Manager Schedule and creating your first project manager weekly report issue, following these guidelines: [Project Manager Weekly Report Issue](../assessments/05-github-style-guide/index.qmd#project-manager-weekly-report).
-    - [ ] Relatedly, working on your initial project proposal. Technically this is due today, but I have extended the optional deadline from September 19 to September 24. Please reach out if you have questions or need help.
-    - [ ] Transferring your content from this week's group assignment if it is in a Google Doc to a Markdown file and uploading it to your group's GitHub repository, following the [GitHub Style Guide](../assessments/05-github-style-guide/index.qmd).
+- [ ] Review [Lost & Found in the Cultural Command Line](../materials/introducing-humanities-computing/06-intro-file-formats.qmd#homework-lost-found-in-the-cultural-command-line).
+- [ ] Discuss the [Introduction to Markup Languages & Web Styling](../materials/introducing-humanities-computing/07-intro-html.qmd).
+- [ ] Time Permitting finish work on group assignment and start new lesson on how the web works!
+
+
+## Assigned Materials
+
+- Things That Shouldn’t Be in File Names for $1,000 Alex – Joseph Scott. February 12, 2007. [https://blog.josephscott.org/2007/02/12/things-that-shouldnt-be-in-file-names-for-1000-alex/](https://blog.josephscott.org/2007/02/12/things-that-shouldnt-be-in-file-names-for-1000-alex/). 
 
 ## Additional Materials
 
-- Veen, Jeffrey. "A Brief History of HTML." *Wired*, April 28, 1997. [https://www.wired.com/1997/04/a-brief-history-of-html/](https://www.wired.com/1997/04/a-brief-history-of-html/).
-- Ford, Paul. "What Is Code? If You Don't Know, You Need to Read This." *Business Week*, June 11, 2015. Sections 1-2. [http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/](http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/).
-- Barbot, Laure, Frank Fischer, Yoann Moranville, and Ivan Pozdniakov. "Which DH Tools Are Actually Used In Research?" *weltliteratur.net*, December 6, 2019. [https://weltliteratur.net/dh-tools-used-in-research/](https://weltliteratur.net/dh-tools-used-in-research/).
-- Results from the StackOverflow Developer Survey [https://survey.stackoverflow.co/2023/](https://survey.stackoverflow.co/2023/).
+- “Which Dh Tools Are Actually Used In Research?” By Laure Barbot, Frank Fischer, Yoann Moranville And Ivan Pozdniakov, December 6 2019 [https://weltliteratur.net/dh-tools-used-in-research/](https://weltliteratur.net/dh-tools-used-in-research/)
 
 ## Assignments
 
 ### Individual
 
-- [ ] [Lost & Found in the Command Line](../materials/introducing-humanities-computing/06-intro-file-formats/index.qmd#homework-lost--found-in-the-command-line).
+- [ ] [Lost & Found in the Cultural Command Line](../materials/introducing-humanities-computing/06-intro-file-formats.qmd#homework-lost-found-in-the-cultural-command-line).
+
+### Group
+
+- [ ] [Collective and Individual Topic Selection](../assessments/03-semester-project.qmd#collective-individual-topic-selection). Extension available until **February 12, 2026**.
