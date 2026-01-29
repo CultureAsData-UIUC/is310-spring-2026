@@ -36,3 +36,20 @@ Another dataset to explore:
 - Schmidt, Ben. "Gendered Language in Teaching Evaluations." [https://benschmidt.org/profGender/](https://benschmidt.org/profGender/).
 - *Colored Conventions Project* [https://coloredconventions.org/](https://coloredconventions.org/).
 - *Saving Ukrainian Cultural Heritage Online* [https://www.sucho.org/](https://www.sucho.org/).
+
+## Assigned Materials
+
+- Johnson, Jessica Marie. "Markup Bodies: Black [Life] Studies and Slavery [Death] Studies at the Digital Crossroads." *Social Text* 36, no. 4 (137) (December 1, 2018): 57-79. [https://doi.org/10.1215/01642472-7145658](https://doi.org/10.1215/01642472-7145658). This reading is available on Canvas and please follow the [updated instructions on how to annotate local PDFs if you are using Hypothesis](../materials/introducing-humanities-computing/01-course-tools/index.qmd#using-hypothesis-on-local-pdfs).
+- Keyes, Melanie Walsh and Os. "U.S. National Park Visit Data (1979-2023) - Responsible Datasets in Context." *Responsible Datasets in Context*, June 1, 2024. [https://www.responsible-datasets-in-context.com/posts/np-data/](https://www.responsible-datasets-in-context.com/posts/np-data/).
+
+## Additional Materials
+
+- Onuoha, Mimi. "The Library of Missing Datasets - MIMI ONUOHA." MIMI   ONUOHA. Accessed January 11, 2024. [https://mimionuoha.com/the-library-of-missing-datasets](https://mimionuoha.com/the-library-of-missing-datasets).
+- Onuoha, Mimi. "MimiOnuoha/Missing-Datasets," January 9, 2024. [https://github.com/MimiOnuoha/missing-datasets](https://github.com/MimiOnuoha/missing-datasets).
+
+
+### Additional Links
+
+- *The Trans-Atlantic Slave Trade Database* [https://www.slavevoyages.org/](https://www.slavevoyages.org/).
+- *Freedom on the Move* [https://freedomonthemove.org/](https://freedomonthemove.org/).
+- *Enslaved: Peoples of the Historical Slave Trade* [https://enslaved.org/](https://enslaved.org/)

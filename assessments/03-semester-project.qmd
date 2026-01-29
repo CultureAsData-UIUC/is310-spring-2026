@@ -25,14 +25,14 @@ In the first two weeks of the course, you will be assigned to a group based on s
 This planning document should address:
 
 - **Group Theme:** What is your shared area of interest? What kinds of cultural objects, practices, or phenomena fall within this theme? What's included and what's beyond scope?
-- **Individual Ideas:** What specific dataset is each group member considering? How do these relate to the group theme? (These can be preliminary - you'll develop them further as the semester progresses)
+- **Individual Ideas:** What specific dataset is each group member considering? How do these relate to the group theme? Why this topic? (These can be preliminary. You'll develop them further as the semester progresses)
 - **Collaboration Plan:** How will your group communicate and share progress? What's your GitHub organization strategy?
 
 **Format & Submission**
 
-- Markdown file (planning.md or similar) in the root of your GitHub repo or a planning/ subfolder
-- 500–750 words is sufficient, though you are welcome to be as creative and verbose as you like.
+- Feel free to use one or multiple Markdown files in the root of your GitHub repo or a planning/ subfolder, depending on what makes sense for your group. 
 - Use headings, bullet points, links, images, or tables if helpful
+- **NO WORD COUNT**. The goal of this submission is to just help you start to concretize your ideas for the final project and start to figure out how you will handle working collectively on one group repository.
 
 ---
   
