@@ -35,3 +35,4 @@ This overview gives a top level view of the topics for each of our meetings. You
 | Assignment | Due Date (Subject to Change) |
 | -----------------: | --------------: |
 |[Collective & Individual Topic Selection](../assessments/03-semester-project.qmd#collective-individual-topic-selection) | [Due February 5 with Optional Extension Until February 12](06-markup-and-markdown.qmd) |
+|[Mass Digitization & Digital Libraries Group Assignment](../assessments/06-collecting-digitizing-culture.qmd) | Due February 19 In-Class Presentations |
