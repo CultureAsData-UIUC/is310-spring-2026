@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-985aa47af68dae11cd4d235c71fb941e.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.27">
 
-  <title>IS310 - Culture As Data Spring 2026 – Introduction to Version and File Histories</title>
+  <title>IS310 - Culture As Data Spring 2026 – Histories of Culture and Computing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -129,30 +129,630 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction to Version and File Histories</h1>
-  <p class="subtitle">What are files, and how can we work with them from the command line? How can we continue to work collaboratively?</p>
+  <h1 class="title">Histories of Culture and Computing</h1>
+  <p class="subtitle">How and when did we first start representing culture as data?</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section class="slide level2">
-
-<h3 id="additional-links">Additional Links</h3>
-<ul>
-<li><a href="https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/">Vannevar Bush, “As We May Think”</a> and <a href="https://cdn.theatlantic.com/media/archives/1945/07/176-1/132407932.pdf">pdf version</a>.
-<ul>
-<li><a href="https://mediartinnovation.com/wp-content/uploads/2014/06/1945_bush_memex-diagram_bc_c.jpg?w=1272">Example of a potential memex machine</a>.</li>
-</ul></li>
-<li>The History of the Old Bailey Online Project <a href="https://www.oldbaileyonline.org/about/a-narrative-history-of-the-project#digitisation">https://www.oldbaileyonline.org/about/a-narrative-history-of-the-project#digitisation</a>.</li>
-<li>HathiTrust Digital Library <a href="https://www.hathitrust.org/">https://www.hathitrust.org/</a> and an issue of <em>The Crisis</em> <a href="https://babel.hathitrust.org/cgi/pt?id=coo.31924055965465&amp;seq=1">https://babel.hathitrust.org/cgi/pt?id=coo.31924055965465&amp;seq=1</a>.</li>
-<li><a href="https://theartofgooglebooks.tumblr.com/">The Art of Google Books by Krissy Wilson</a> and <a href="https://bhilluminated.wordpress.com/2014/03/20/google-book-scanners/">The Darker Side of Digitization by Leah Henrickson</a>.</li>
-<li>Scanning Labor Project by Eliie Colbert, Lucian Li, David Satten-Lopez, and Elizabeth Schwartz <a href="https://scanninglabor.github.io/IAScanningLabor/scanners.html">https://scanninglabor.github.io/IAScanningLabor/scanners.html</a>.</li>
-<li>Breeding, Marshall. “History of Mergers and Acquisitions in the Library Technology Industry.” Library Technology Guides.<a href="http://librarytechnology.org/mergers/">http://librarytechnology.org/mergers/</a>.</li>
-</ul>
-
+<section id="any-questions" class="title-slide slide level1 center">
+<h1>Any Questions?</h1>
 
 </section>
+
+<section id="todays-journey" class="title-slide slide level1 center">
+<h1>Today’s Journey</h1>
+<ul>
+<li><strong>Library foundations</strong>: What is a library? Why does it matter?</li>
+<li><strong>From catalogs to metadata</strong>: How libraries organized knowledge</li>
+<li><strong>Digital collections vs.&nbsp;digital libraries</strong>: What’s the difference?</li>
+<li><strong>What is digitization?</strong> Technical processes and costs</li>
+<li><strong>The Internet Archive</strong>: One vision for universal access</li>
+</ul>
+</section>
+
+<section>
+<section id="a-brief-history-what-is-a-library" class="title-slide slide level1 center">
+<h1>A Brief History: What Is a Library?</h1>
+
+</section>
+<section id="kahles-ambitious-vision" class="slide level2">
+<h2>Kahle’s Ambitious Vision</h2>
+<blockquote>
+<p>“Universal access to all knowledge is possible, and I’d say it could be measured as one of the great achievements of humankind, along with putting a man on the moon or assembling the Library of Alexandria.”</p>
+<p>— Brewster Kahle, 2007</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Big Question for Today</strong>: Is this possible? Desirable? Who benefits?</p>
+</div>
+</section>
+<section id="but-first-what-was-the-library-of-alexandria" class="slide level2">
+<h2>But first what was the Library of Alexandria?</h2>
+
+<img data-src="../assets/images/library_alexandria.png" class="r-stretch quarto-figure quarto-figure-center" width="800"><p><strong>The dream</strong>: Collect <em>all</em> the world’s knowledge in one place</p>
+<ul>
+<li>Scholars estimate: 400,000-700,000 scrolls</li>
+<li>Copying texts from ships that docked in port</li>
+</ul>
+</section>
+<section id="what-happened-to-alexandria" class="slide level2">
+<h2>What Happened to Alexandria?</h2>
+<ul>
+<li><strong>The problem</strong>: Single point of failure</li>
+<li>Likely destroyed gradually (fires, neglect, political turmoil)</li>
+<li>Most devastating: 48 BCE fire during Caesar’s visit</li>
+<li>By 3rd century CE: collection largely gone</li>
+</ul>
+<div class="fragment">
+<p><strong>Legacy?</strong> Don’t have just one copy in one location!</p>
+</div>
+</section>
+<section id="how-did-we-get-from-alexandria-to-today" class="slide level2">
+<h2>How Did We Get From Alexandria To Today?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://www.prepressure.com/printing/history" class="r-stretch" target="_blank" data-fig-align="center" width="800px"><img data-src="https://cdn.britannica.com/43/120643-004-926C49EB/Illustration-Encyclopaedia-Britannica-printing-press-edition-stick.jpg"></a></p>
+<figcaption>Print Technologies</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p><strong>Before Gutenberg (~1440)</strong>: - Books copied by hand (monasteries) - Expensive, rare, limited access - Estimated: 30,000 books in all of Europe <strong>After Gutenberg</strong>: - By 1500: ~20 million books printed - Prices dropped dramatically - Knowledge became more accessible - BUT: Still physical, still scarce, still expensive</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-do-modern-american-libraries-exist" class="slide level2">
+<h2>Why Do <em>Modern, American</em> Libraries Exist?</h2>
+
+<img data-src="https://www.loc.gov/static/managed-content/uploads/sites/24/2023/05/AmericanLibraries.jpg" class="r-stretch quarto-figure quarto-figure-center" width="800"><p><strong>18-19th century revolution</strong>:</p>
+<ul>
+<li>Libraries as <em>public good</em></li>
+<li>Free access regardless of ability to pay</li>
+<li>Democracy requires informed citizens</li>
+<li>Andrew Carnegie: 2,509 libraries funded (1883-1929)</li>
+</ul>
+</section>
+<section id="how-does-besser-define-the-values-goals-of-libraries" class="slide level2">
+<h2>How Does Besser Define The Values &amp; Goals of Libraries?</h2>
+<p>Beyond just “storing books,” libraries have always:</p>
+<ol type="1">
+<li class="fragment"><strong>Collected</strong> — actively chose what to preserve</li>
+<li class="fragment"><strong>Organized</strong> — made materials findable</li>
+<li class="fragment"><strong>Preserved</strong> — maintained materials over time</li>
+<li class="fragment"><strong>Provided access</strong> — helped people use materials</li>
+<li class="fragment"><strong>Served communities</strong> — adapted to different needs</li>
+<li class="fragment"><strong>Upheld values</strong> — fought for privacy, free speech, equity</li>
+</ol>
+<aside class="notes">
+<p><strong>Core values emerge</strong>: - Equal access - Serving the underserved<br>
+- Privacy/confidentiality - Intellectual freedom - Community spaces</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="challenges-for-libraries-in-the-20th-century" class="slide level2">
+<h2>Challenges for Libraries in the 20th Century</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://www.prepressure.com/printing/history" class="r-stretch" target="_blank" data-fig-align="center" width="800px"><img data-src="https://www.prepressure.com/images/1945-2010-USA-newspaper-circulation.png"></a></p>
+<figcaption>What is this graph tracking?</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p><strong>New challenges</strong>: - Explosion of publishing (journals, books, media) - Specialization of collections - Rising costs - Copyright extensions - Competing with commercial information providers</p>
+<p><strong>New technologies</strong>: - Microfilm (1930s) — promises miniaturization - Computers (1960s-70s) — catalog automation - Networks (1980s-90s) — shared catalogs, interlibrary loan - Web (1990s) — everything changes?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="from-card-catalogs-to-digital-metadata" class="title-slide slide level1 center">
+<h1>From Card Catalogs to Digital Metadata</h1>
+
+</section>
+<section id="the-problem-card-catalogs" class="slide level2">
+<h2>The Problem: Card Catalogs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://libraries.uta.edu/sites/default/files/styles/news_blog_hero_img_1920x1080/public/2022-03/Catalog%20Lead%20Image.jpg.webp?itok=4tUSPixy"></p>
+<figcaption>Card catalog drawers</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Before computers</strong>: - Every library had physical cards - Filed alphabetically by author, title, subject - To share catalog info: mail physical cards - Each library maintained separately</p>
+</div></div>
+<div class="fragment">
+<p><strong>Problem</strong>: No way to search across libraries efficiently</p>
+</div>
+</section>
+<section id="enter-marc-1966" class="slide level2">
+<h2>Enter MARC (1966)</h2>
+<p><strong>MA</strong>chine-<strong>R</strong>eadable <strong>C</strong>ataloging</p>
+<p><a href="https://benschmidt.org/sappingattention/a-brief-visual-history-of-marc/"><img data-src="https://4.bp.blogspot.com/-d38P9An3g80/WRt7LiGNGjI/AAAAAAAAIdM/B7Tne8WH3C0ch3Vn35TChvSQ9SwllMSQwCLcB/s1600/MARC.png"></a></p>
+</section>
+<section id="enter-marc-1966-1" class="slide level2">
+<h2>Enter MARC (1966)</h2>
+<p><strong>MA</strong>chine-<strong>R</strong>eadable <strong>C</strong>ataloging</p>
+<ul>
+<li class="fragment">Developed by Library of Congress</li>
+<li class="fragment"><strong>Standard format</strong> for bibliographic data</li>
+<li class="fragment">Made catalog records <strong>machine-readable</strong></li>
+<li class="fragment">Enabled <strong>sharing</strong> records between libraries</li>
+<li class="fragment">Foundation for online catalogs (OPACs)</li>
+</ul>
+<div class="fragment">
+<p><strong>Key insight</strong>: If we all describe books the same way, computers can share and search our catalogs</p>
+</div>
+</section>
+<section id="what-marc-records-look-like" class="slide level2">
+<h2>What MARC Records Look Like</h2>
+<pre><code>=LDR  00000cam  2200000 a 4500
+=001  123456789
+=020  \\$a9780123456789
+=100  1\$aKahle, Brewster.
+=245  10$aUniversal access to all knowledge /$cBrewster Kahle.
+=260  \\$aWashington, D.C. :$bSociety of American Archivists,$c2007.
+=300  \\$app. 23-31.
+=650  \0$aDigital libraries.
+=650  \0$aDigitization.</code></pre>
+<div class="fragment">
+<p>Each <strong>field</strong> (020, 100, 245) has a specific meaning</p>
+<p>This allows computers to: - Search by author, title, subject - Sort results - Share records between systems</p>
+</div>
+</section>
+<section id="metadata-data-about-data" class="slide level2">
+<h2>Metadata = Data About Data</h2>
+<p><strong>MARC is metadata</strong>: Information that describes the content</p>
+<div class="r-fit-text">
+<ul>
+<li class="fragment"><strong>Author</strong> (who created it?)</li>
+<li class="fragment"><strong>Title</strong> (what’s it called?)</li>
+<li class="fragment"><strong>Subject</strong> (what’s it about?)</li>
+<li class="fragment"><strong>Date</strong> (when published?)</li>
+<li class="fragment"><strong>Format</strong> (book? journal? recording?)</li>
+<li class="fragment"><strong>Location</strong> (where can I find it?)</li>
+</ul>
+<p><strong>Without metadata</strong>: Just a pile of stuff</p>
+<p><strong>With metadata</strong>: Organized, searchable collection</p>
+</div>
+</section>
+<section id="types-of-metadata-bessers-framework" class="slide level2">
+<h2>Types of Metadata (Besser’s Framework)</h2>
+<div class="r-fit-text">
+<ol type="1">
+<li class="fragment"><strong>Descriptive metadata</strong> — What is it? (MARC, Dublin Core)</li>
+<li class="fragment"><strong>Discovery metadata</strong> — How do I find it? (subject headings, keywords)</li>
+<li class="fragment"><strong>Administrative metadata</strong> — How do I manage it? (file formats, permissions)</li>
+<li class="fragment"><strong>Structural metadata</strong> — How is it organized? (chapters, pages, sequences)</li>
+<li class="fragment"><strong>Preservation metadata</strong> — How do I keep it? (format history, migrations)</li>
+<li class="fragment"><strong>Rights metadata</strong> — Who can use it? (copyright, licenses)</li>
+</ol>
+<p><strong>Digital materials need ALL of these</strong> — not just descriptive</p>
+</div>
+</section>
+<section id="from-marc-to-dublin-core" class="slide level2">
+<h2>From MARC to Dublin Core</h2>
+<p><strong>By the 1990s</strong>: Web creates new problem</p>
+
+<img data-src="https://www2.seas.gwu.edu/~shmuel/WORK/Metadata/img13.jpg" class="r-stretch"></section>
+<section id="from-marc-to-dublin-core-1" class="slide level2">
+<h2>From MARC to Dublin Core</h2>
+<ul>
+<li class="fragment">Not everything is a “book”</li>
+<li class="fragment">Websites, datasets, images, videos</li>
+<li class="fragment">MARC too complex for web resources</li>
+<li class="fragment">Need something simpler, more flexible</li>
+</ul>
+<div class="fragment">
+<p><strong>Dublin Core (1995)</strong>: 15 basic elements</p>
+<p><code>Title, Creator, Subject, Description, Publisher, Date, Type, Format, Identifier, Source, Language, Relation, Coverage, Rights, Contributor</code></p>
+<p><strong>Goal</strong>: Simple enough for non-librarians, rich enough for discovery</p>
+</div>
+</section>
+<section id="why-standards-matter" class="slide level2">
+<h2>Why Standards Matter</h2>
+<p><strong>Without standards</strong>:</p>
+<ul>
+<li>Every library uses different system</li>
+<li>Can’t search across collections</li>
+<li>Can’t share records</li>
+<li>Everyone reinvents the wheel</li>
+</ul>
+<div class="fragment">
+<p><strong>With standards</strong>:</p>
+<ul>
+<li>Interoperability — systems talk to each other</li>
+<li>Efficiency — share catalog records</li>
+<li>Better discovery — search across collections</li>
+<li>Preservation — future systems can understand</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="what-makes-something-a-digital-library" class="title-slide slide level1 center">
+<h1>What Makes Something a “Digital Library”?</h1>
+
+</section>
+<section id="digital-collections-digital-libraries" class="slide level2">
+<h2>Digital Collections ≠ Digital Libraries</h2>
+<p><strong>Besser’s key argument</strong>:</p>
+<blockquote>
+<p>“A common misperception is that a large body of online materials constitutes a ‘digital library.’ But a library is much more than an online collection of materials.”</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Having digital stuff</strong> ≠ <strong>Being a digital library</strong></p>
+</div>
+</section>
+<section id="whats-missing-from-most-digital-collections" class="slide level2">
+<h2>What’s Missing from Most Digital Collections?</h2>
+<p><strong>Remember library functions</strong>:</p>
+<ol type="1">
+<li>Service to users</li>
+<li>Stewardship over time</li>
+<li>Sustainability</li>
+<li>Ethical traditions (privacy, access, equity)</li>
+</ol>
+<div class="fragment">
+<p><strong>Early digital library projects</strong> (1994-1998):</p>
+<ul>
+<li>Computer science experiments</li>
+<li>“Exercises in pure research, with few practical applications”</li>
+<li>No users, no service, no long-term plan</li>
+<li>Called “digital libraries” but weren’t really libraries</li>
+</ul>
+</div>
+</section>
+<section id="the-interoperability-problem" class="slide level2">
+<h2>The Interoperability Problem</h2>
+<p><strong>Early digital collections</strong>:</p>
+<ul>
+<li class="fragment">Each repository separate</li>
+<li class="fragment">Different search interfaces</li>
+<li class="fragment">Different file formats</li>
+<li class="fragment">User must learn each system</li>
+<li class="fragment">Can’t search across collections</li>
+</ul>
+</section>
+<section id="what-users-actually-want" class="slide level2">
+<h2>What Users Actually Want</h2>
+<blockquote>
+<p>“Users want to access an interoperable information world, where a set of separate repositories looks to them like a single information portal.”</p>
+<p>— Besser</p>
+</blockquote>
+</section>
+<section id="getting-to-interoperability" class="slide level2">
+<h2>Getting to Interoperability</h2>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li class="fragment"><strong>Metadata standards</strong> (Dublin Core, METS, MODS)</li>
+<li class="fragment"><strong>Protocols</strong> (OAI-PMH for harvesting)</li>
+<li class="fragment"><strong>Common formats</strong> (TIFF, JPEG2000, PDF/A)</li>
+<li class="fragment"><strong>Persistent identifiers</strong> (DOIs, Handles)</li>
+<li class="fragment"><strong>Authentication systems</strong> (Shibboleth)</li>
+</ul>
+<div class="fragment">
+<p>This is <strong>years of infrastructure work</strong></p>
+<p>Not visible to users, but essential for functionality</p>
+</div>
+</section>
+<section id="digital-library-maturity-model" class="slide level2">
+<h2>Digital Library Maturity Model</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 20%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Date</th>
+<th>Characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Experimental</strong></td>
+<td>1994-1998</td>
+<td>Computer science experiments, no users</td>
+</tr>
+<tr class="even">
+<td><strong>Developing</strong></td>
+<td>1998-2007</td>
+<td>Adding library functions, some standards</td>
+</tr>
+<tr class="odd">
+<td><strong>Mature</strong></td>
+<td>???</td>
+<td>Full sustainability, interoperability, ethics</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><strong>Besser (2004)</strong>: We’re still not at “mature”</p>
+<p><strong>Question for us (2026)</strong>: Are we there yet?</p>
+</div>
+</section>
+<section id="library-values-in-digital-form" class="slide level2">
+<h2>Library Values in Digital Form</h2>
+<p><strong>Traditional library values</strong>:</p>
+<ul>
+<li>Privacy (no tracking of what you read)</li>
+<li>Equal access (free, regardless of ability to pay)</li>
+<li>Intellectual freedom (no censorship)</li>
+<li>Serving underserved (going to communities)</li>
+</ul>
+<div class="fragment">
+<p><strong>Digital challenges</strong>:</p>
+<ul>
+<li>Commercial databases track everything</li>
+<li>Paywalls and licensing restrict access</li>
+<li>Platform censorship and filtering</li>
+<li>Digital divide excludes communities</li>
+</ul>
+</div>
+</section>
+<section id="your-annotation-security-vs.-privacy" class="slide level2">
+<h2>Your Annotation: Security vs.&nbsp;Privacy</h2>
+<blockquote>
+<p>“I can only imagine this digital highly protective libraries to be locked by many pages with verification and passwords.”</p>
+</blockquote>
+<div class="fragment">
+<p><strong>The tension</strong>: Security vs.&nbsp;Access</p>
+<ul>
+<li>Traditional libraries: Design systems to <strong>protect privacy</strong></li>
+<li>Example: Circulation systems that only save aggregate statistics</li>
+<li>Librarians have “risked serving jail time” to protect borrowing records</li>
+</ul>
+<p><strong>Commercial databases</strong>: Design systems to <strong>track users</strong></p>
+<p><strong>Question</strong>: Can digital libraries be both secure AND private?</p>
+</div>
+</section>
+<section id="who-controls-access" class="slide level2">
+<h2>Who Controls Access?</h2>
+<div class="fragment">
+<p><strong>Stakes</strong>: Who controls the digital library infrastructure?</p>
+<ul>
+<li><strong>Commercial</strong>: Profit motive, paywalls, user tracking</li>
+<li><strong>Public</strong>: Access mission, privacy, sustainability</li>
+</ul>
+<p><strong>Besser’s answer</strong> (2004): “It’s a big unknown right now”</p>
+<p><strong>Our question</strong> (2026): Has this been resolved? Who’s winning?</p>
+</div>
+</section></section>
+<section>
+<section id="digitization-process-vs.-system" class="title-slide slide level1 center">
+<h1>Digitization: Process vs.&nbsp;System</h1>
+
+</section>
+<section id="digitization-the-process" class="slide level2">
+<h2>Digitization = The Process</h2>
+
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/6/65/Internet_Archive_book_scanner_1.jpg" class="r-stretch quarto-figure-center"><p class="caption">Internet Archive book scanner, 2010</p></section>
+<section id="the-digitization-process" class="slide level2">
+<h2>The Digitization Process</h2>
+<p><strong>Digitization</strong>: Converting analog → digital</p>
+<div class="r-fit-text">
+<ol type="1">
+<li class="fragment"><strong>Selection</strong> — What gets digitized? (Already political!)</li>
+<li class="fragment"><strong>Physical handling</strong> — Moving, preparing materials</li>
+<li class="fragment"><strong>Scanning/imaging</strong> — Resolution, color depth, format choices</li>
+<li class="fragment"><strong>OCR</strong> — Optical Character Recognition (text extraction)</li>
+<li class="fragment"><strong>Metadata creation</strong> — How to describe and organize</li>
+<li class="fragment"><strong>Storage</strong> — Where and how to keep the files</li>
+<li class="fragment"><strong>Preservation</strong> — Maintaining access over time</li>
+<li class="fragment"><strong>Access systems</strong> — How users find and use materials</li>
+</ol>
+</div>
+</section>
+<section id="the-costs" class="slide level2">
+<h2>The Costs</h2>
+<p><strong>From Kahle’s experience at the Internet Archive</strong>:</p>
+<ul>
+<li>$10/book (outsourced to India)</li>
+<li>$30/book (in-house in US, 10 cents/page)</li>
+<li>$15/video hour</li>
+<li>$10/LP record</li>
+</ul>
+<div class="fragment">
+<p><strong>For 1 million books</strong>: $10-30 million</p>
+<p><strong>US library/archive budgets</strong>: ~$12 billion/year</p>
+<p><em>Technologically feasible. Financially achievable. But who decides priorities?</em></p>
+</div>
+</section>
+<section id="hidden-costs" class="slide level2">
+<h2>Hidden Costs</h2>
+<div class="fragment">
+<p>But there are hidden costs:</p>
+<ul>
+<li>Labor (often invisible, often overseas)</li>
+<li>Ongoing storage and migration</li>
+<li>Metadata creation</li>
+<li>Rights clearance</li>
+<li>Preservation (technology changes every 3 years!)</li>
+</ul>
+</div>
+</section>
+<section id="digital-library-the-system" class="slide level2">
+<h2>Digital Library = The System</h2>
+<p><strong>Digital library</strong>: Infrastructure + services + values</p>
+<ul>
+<li class="fragment"><strong>Infrastructure</strong>: Servers, storage, software, networks</li>
+<li class="fragment"><strong>Metadata</strong>: Standards, catalogs, discovery systems</li>
+<li class="fragment"><strong>Preservation</strong>: Redundancy, migration, format management</li>
+<li class="fragment"><strong>Access</strong>: Search, retrieval, authentication, delivery</li>
+<li class="fragment"><strong>Services</strong>: Reference, instruction, user support</li>
+<li class="fragment"><strong>Values</strong>: Privacy, equity, freedom, sustainability</li>
+</ul>
+<div class="fragment">
+<p>This is the <strong>institutional work</strong> of being a library</p>
+</div>
+</section>
+<section id="the-full-stack" class="slide level2">
+<h2>The Full Stack</h2>
+<pre><code>┌─────────────────────────────┐
+│   Library Values &amp; Ethics   │ ← Equal access, privacy, freedom
+├─────────────────────────────┤
+│   Services to Users         │ ← Reference, instruction, community
+├─────────────────────────────┤
+│   Access &amp; Discovery        │ ← Search, browse, authenticate
+├─────────────────────────────┤
+│   Preservation &amp; Curation   │ ← Long-term stewardship
+├─────────────────────────────┤
+│   Metadata &amp; Organization   │ ← Standards, cataloging, indexing
+├─────────────────────────────┤
+│   Digital Objects           │ ← Scanned images, OCR text, files
+├─────────────────────────────┤
+│   Digitization Process      │ ← Scanning, imaging, conversion
+└─────────────────────────────┘</code></pre>
+<div class="fragment">
+<p>Most projects focus on <strong>bottom layers</strong></p>
+<p>True digital libraries need <strong>all layers</strong></p>
+</div>
+</section>
+<section id="examples-collection-vs.-library" class="slide level2">
+<h2>Examples: Collection vs.&nbsp;Library</h2>
+<p><strong>Digital Collection</strong>:</p>
+<ul>
+<li>Google Books scans</li>
+<li>Random PDFs on a server</li>
+<li>Files without metadata or preservation plan</li>
+</ul>
+<div class="fragment">
+<p><strong>Digital Library</strong>:</p>
+<ul>
+<li>HathiTrust (rights management, preservation, services)</li>
+<li>DPLA (aggregation, standards, open access)</li>
+<li>Europeana (cultural heritage, multilingual)</li>
+<li>Library of Congress Digital Collections</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Difference</strong>: Sustainability, stewardship, service, values</p>
+</div>
+</section>
+<section id="the-scale-of-the-challenge" class="slide level2">
+<h2>The Scale of the Challenge</h2>
+<p><strong>Library of Congress</strong> (2007):</p>
+<ul>
+<li>26-28 million bound volumes</li>
+<li>~26 terabytes of text</li>
+<li>Cost to store: ~$60,000 (in 2007)</li>
+</ul>
+<div class="fragment">
+<p><strong>Kahle’s argument</strong>: This is <em>technologically</em> achievable</p>
+<blockquote>
+<p>“Why don’t we put it all on-line? Sometimes it’s a lot less expensive, because often the selection process is more expensive than the digitization process.”</p>
+</blockquote>
+<p>But what about the other barriers?</p>
+</div>
+</section>
+<section id="three-key-questions" class="slide level2">
+<h2>Three Key Questions</h2>
+<ol type="1">
+<li class="fragment"><strong>Technical</strong>: Can we actually digitize everything?</li>
+<li class="fragment"><strong>Economic</strong>: Who will pay? Who will control access?</li>
+<li class="fragment"><strong>Political</strong>: What gets digitized? Whose stories are preserved?</li>
+</ol>
+</section>
+<section id="unlimited-hosting-as-public-service" class="slide level2">
+<h2>Unlimited Hosting as Public Service</h2>
+<p><strong>The offer</strong>:</p>
+<blockquote>
+<p>“Unlimited storage, unlimited bandwidth, forever, for free, for those who want to share materials that, broadly defined, belong in a library.”</p>
+</blockquote>
+<p><strong>The model</strong>: Make it free to give things away</p>
+<div class="fragment">
+<p>What they’ve collected:</p>
+<ul>
+<li>2,000+ bands (30,000+ concert recordings)</li>
+<li>Community-contributed films</li>
+<li>University lecture archives</li>
+<li>Public domain books</li>
+</ul>
+</div>
+</section>
+<section id="the-opt-out-approach" class="slide level2">
+<h2>The “Opt-Out” Approach</h2>
+<p><strong>Kahle’s strategy</strong>:</p>
+<ol type="1">
+<li>Put materials online</li>
+<li>If someone complains, take it down</li>
+<li>As long as there’s no commercial intent, communities generally accept it</li>
+</ol>
+<div class="fragment">
+<p><strong>Your annotation</strong>: “risky but practical”</p>
+<p><strong>Question</strong>: What are the ethics of this? When does it work? When doesn’t it?</p>
+</div>
+</section>
+<section id="what-theyve-collected" class="slide level2">
+<h2>What They’ve Collected</h2>
+<ul>
+<li><strong>Books</strong>: Working with libraries, millions digitized</li>
+<li><strong>Web</strong>: 55 billion web pages (Wayback Machine since 1996)</li>
+<li><strong>Audio</strong>: 30,000+ concert recordings, radio shows</li>
+<li><strong>Video</strong>: Prelinger collection (2 million downloads/year), TV news</li>
+<li><strong>Software</strong>: ~30,000 titles</li>
+</ul>
+<div class="fragment">
+<p><strong>Your annotation</strong>: “As the wayback machine basically gives users access to browse older versions of various web pages, it shows that large scale archiving is already happening in practice”</p>
+</div>
+</section>
+<section id="preservation-through-redundancy" class="slide level2">
+<h2>Preservation Through Redundancy</h2>
+<blockquote>
+<p>“Don’t have just one copy” — lesson from Library of Alexandria</p>
+</blockquote>
+<ul>
+<li>Copies in Egypt, Amsterdam, multiple US locations</li>
+<li>“Different administrations so they’ll have different faults”</li>
+<li>Technology refreshes every 3 years (“painful and lossy”)</li>
+</ul>
+</section>
+<section id="is-this-our-moment" class="slide level2">
+<h2>Is This Our Moment?</h2>
+<blockquote>
+<p>“This is our day—certainly for access. And, in this time of digital transition, we will discover new forms of preservation, even if not in exactly the same way we’ve always thought of it, as well as radically opening up our archives.”</p>
+</blockquote>
+<div class="fragment">
+<p><strong>The claim</strong>: This moment is as significant as:</p>
+<ul>
+<li>The Library of Alexandria</li>
+<li>The printing press</li>
+<li>The public library movement</li>
+</ul>
+<p><strong>The question</strong>: Will we get it right this time?</p>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

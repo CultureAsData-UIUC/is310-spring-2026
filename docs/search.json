@@ -1240,6 +1240,50 @@
     ]
   },
   {
+    "objectID": "assessments/06-collecting-digitizing-culture.html",
+    "href": "assessments/06-collecting-digitizing-culture.html",
+    "title": "Mass Digitization & Digital Libraries Group Assignment",
+    "section": "",
+    "text": "In this week’s readings, we explored the history and challenges of mass digitization and digital libraries. We learned about Brewster Kahle’s vision for universal access to all knowledge through the Internet Archive, Howard Besser’s framework for understanding what makes a true digital library (beyond just digitized collections), and how the African American Periodical Poetry dataset demonstrates the labor and choices involved in creating digital collections.\nToday, we will be working in groups to start exploring some of the digital libraries and archives mentioned in the assigned readings, with a particular focus on understanding the digitization process through hands-on exploration of HathiTrust. This will help us think critically about the different ways that cultural objects are digitized and made available online, as well as the challenges and opportunities that come with this process. It will also serve as a foundation for discussing potential topics for your collaborative semester-long project.\nThis first assignment has two components: exploring the HathiTrust Digital Library to understand digitization in practice, and starting to explore how cultural objects in your area of interest are digitized. If you have questions, please reach out to the instructors on Slack.",
+    "crumbs": [
+      "Assessments",
+      "Mass Digitization & Digital Libraries"
+    ]
+  },
+  {
+    "objectID": "assessments/06-collecting-digitizing-culture.html#exploring-hathitrust-digitization-in-practice",
+    "href": "assessments/06-collecting-digitizing-culture.html#exploring-hathitrust-digitization-in-practice",
+    "title": "Mass Digitization & Digital Libraries Group Assignment",
+    "section": "Exploring HathiTrust: Digitization in Practice",
+    "text": "Exploring HathiTrust: Digitization in Practice\nBefore diving into your own area of focus, we want everyone to gain hands-on experience with a major digital library to better understand what digitization looks like in practice. HathiTrust is one of the largest digital libraries in the world and provides an excellent case study for understanding the concepts from our readings.\nAs a group, work through the following tasks together. Document your findings and observations as you go:\n\nFinding the African American Periodical Poetry: Using the Hennessey dataset from your readings, select 2-3 poems from different magazines (e.g., The Crisis, Opportunity, Black Opals). Try to locate the original magazine issues in HathiTrust that contain these poems.\n\nWhat search strategies did you use?\nWere you able to find all the issues you looked for?\nWhat barriers or challenges did you encounter?\n\nExamining OCR Quality: Once you’ve found at least one magazine issue, examine the OCR (Optical Character Recognition) quality:\n\nCan you search for specific words or phrases within the document?\nHow accurate is the OCR text compared to what you see in the page images?\nWhat kinds of errors do you notice? (Consider fonts, layouts, damaged pages, etc.)\nHow might OCR quality affect research using this material?\n\nUnderstanding Context: Compare the poem in the dataset to the original magazine page:\n\nWhat additional context do you gain from seeing the original page?\nWhat else appears on the page or in the issue alongside the poem?\nWhat information was lost in creating just the dataset of poems?\nWhat information was gained by creating the structured dataset?\n\nAccess and Rights: Look at the viewing options and restrictions:\n\nCan you download the full PDF? Individual page images?\nAre there any access restrictions? (Full view vs. limited preview)\nWhat copyright or usage information is provided?\nHow does HathiTrust balance preservation, access, and copyright?\n\nMetadata and Organization: Examine how HathiTrust has cataloged and organized the material versus the dataset:\n\nWhat metadata is provided for the item you’re viewing?\nHow does this compare to the MARC records we discussed in class?\nWhat other data could have the authors collected?\nWould you organize the dataset differently?",
+    "crumbs": [
+      "Assessments",
+      "Mass Digitization & Digital Libraries"
+    ]
+  },
+  {
+    "objectID": "assessments/06-collecting-digitizing-culture.html#discovering-digitizing-cultural-objects",
+    "href": "assessments/06-collecting-digitizing-culture.html#discovering-digitizing-cultural-objects",
+    "title": "Mass Digitization & Digital Libraries Group Assignment",
+    "section": "Discovering & Digitizing Cultural Objects",
+    "text": "Discovering & Digitizing Cultural Objects\nOnce you have completed the HathiTrust exploration, you should begin working on this part of the assignment, which is designed to help you start discovering relevant materials and discussing potential focuses for your semester-long project. This section is focused on the cultural area of your group.\n\n\n\n\n\n\nImportant\n\n\n\nYou are welcome to use AI tools to help you with your assignment, but you should include links and screenshots to all materials you find. You should also be prepared to discuss how you found these materials and what tools you used to find them.\n\n\nIn our readings this week, we learned about how cultural objects and practices are turned into digital representations, and how these representations are then shared and preserved online. Building on your HathiTrust exploration, you will now investigate what this process looks like for your selected area of focus.\nHere are the following prompts you should answer for your area of focus:\n\nDigital Objects & Representations: What might be considered a digital object or digital representation for your area of focus? You can have multiple examples, but you should explain why you consider it relating to your area of focus (this can be short though).\nDigitization Processes: How are digital objects and representations created for your area of focus? What are the processes involved in digitizing these objects? In the African American Periodical Poetry dataset and your HathiTrust exploration, you learned about OCR (Optical Character Recognition) for extracting text from digitized print materials. What are some of the digitization processes for your area of focus? How do they compare to what you observed in HathiTrust?\nHistorical Equivalents: Kahle repeatedly made reference to the Library of Alexandria in his article. What are some historical equivalents to digital objects in your area of focus? How do these historical objects compare to their digital counterparts?\nBorn-Digital Materials: Are there examples of born-digital materials for your area of focus? How do these materials compare to digitized objects? For those unfamiliar, born-digital materials are those that were created digitally and never existed in analog or physical form (think most social media, for example).\nOldest Digital Library/Archive: What is the oldest digital library or archive you can find that relates to your area of focus? How has this resource been maintained and updated over time? What metadata or standards exist for the object? You may also include examples that are no longer maintained or have been abandoned.\nNewest Digital Library/Archive: Conversely, what is the newest digital library or archive you can find that relates to your area of focus? How does this resource compare to older digital libraries or archives, especially around metadata?\nViral Examples: Are there any examples of your digital object that have gone viral? How did this happen and what impact did it have on the object or the digital library/archive that hosted it?\nFree vs. Proprietary Access: Can you find any examples of free vs. proprietary digital libraries or archives for your area of focus? How do these resources differ in terms of access? Think back to Besser and Kahle’s discussions about public vs. commercial digital libraries.\n\nYou should aim to find at least one example for each prompt, but you are welcome to find more.",
+    "crumbs": [
+      "Assessments",
+      "Mass Digitization & Digital Libraries"
+    ]
+  },
+  {
+    "objectID": "assessments/06-collecting-digitizing-culture.html#step-3-documenting-presenting-your-findings",
+    "href": "assessments/06-collecting-digitizing-culture.html#step-3-documenting-presenting-your-findings",
+    "title": "Mass Digitization & Digital Libraries Group Assignment",
+    "section": "Step 3: Documenting & Presenting Your Findings",
+    "text": "Step 3: Documenting & Presenting Your Findings\nThe final part of this assignment is to document and present your findings and decisions. You should create a new folder and Markdown file in your group’s GitHub repository that outlines:\n\nYour HathiTrust exploration findings and reflections\nYour responses to the cultural objects prompts above\n\nWe will be discussing your findings in the following weeks. Each member should be prepared to discuss their contributions to the group’s findings. You do not need to prepare a formal presentation or any slides, but each member should be ready to engage in the discussion.",
+    "crumbs": [
+      "Assessments",
+      "Mass Digitization & Digital Libraries"
+    ]
+  },
+  {
     "objectID": "assessments/04-groups.html",
     "href": "assessments/04-groups.html",
     "title": "Assigned Project Groups",
@@ -1475,7 +1519,7 @@
     "href": "schedule/05-histories-culture-computing.html",
     "title": "Histories of Culture & Computing",
     "section": "",
-    "text": "Discuss the assigned readings.\nTime permitting work on topic selection and review Advanced GitHub and Git Features for working collaboratively",
+    "text": "Discuss the assigned readings.\nStart first group in-class assignment on Digital Collections & Libraries\nTime permitting work on topic selection and review Advanced GitHub and Git Features for working collaboratively",
     "crumbs": [
       "Schedule",
       "February",
@@ -1487,7 +1531,7 @@
     "href": "schedule/05-histories-culture-computing.html#in-class-agenda",
     "title": "Histories of Culture & Computing",
     "section": "",
-    "text": "Discuss the assigned readings.\nTime permitting work on topic selection and review Advanced GitHub and Git Features for working collaboratively",
+    "text": "Discuss the assigned readings.\nStart first group in-class assignment on Digital Collections & Libraries\nTime permitting work on topic selection and review Advanced GitHub and Git Features for working collaboratively",
     "crumbs": [
       "Schedule",
       "February",

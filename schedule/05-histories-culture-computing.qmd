@@ -8,6 +8,7 @@ date: 2026-02-03
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings.
+- [ ] Start first group in-class assignment on [Digital Collections & Libraries](../assessments/06-collecting-digitizing-culture.qmd)
 - [ ] Time permitting work on topic selection and review [Advanced GitHub and Git Features for working collaboratively](../materials/introducing-humanities-computing/05-advanced-git-github.qmd)
 
 ## Assigned Materials
