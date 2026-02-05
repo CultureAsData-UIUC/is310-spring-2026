@@ -7,7 +7,7 @@ date: 2026-02-05
 
 ## In-Class Agenda
 
-- [ ] Review [Lost & Found in the Cultural Command Line](../materials/introducing-humanities-computing/06-intro-file-formats.qmd#homework-lost-found-in-the-cultural-command-line).
+- [ ] Review [Lost & Found in the Cultural Command Line](../materials/introducing-humanities-computing/06-intro-file-formats.qmd#homework-lost-found-in-the-cultural-command-line) and discuss assigned reading.
 - [ ] Discuss the [Introduction to Markup Languages & Web Styling](../materials/introducing-humanities-computing/07-intro-html.qmd). Slides are available [here](../slides/06-intro-html-and-styling.qmd).
 - [ ] Time Permitting finish work on group assignment and start new lesson on how the web works!
 
