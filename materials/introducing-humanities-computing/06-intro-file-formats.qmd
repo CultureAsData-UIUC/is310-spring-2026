@@ -230,6 +230,17 @@ ForEach-Object {
 
 Then update your instructions to tell Windows' PowerShell users to first run this command `.\hide-dotfiles.ps1` from the maze once they have unzipped your folder. Please reach out to the instructors if you have any questions or issues with this script!
 
+::: {.callout-tip}
+## Struggling with Permissions?
+
+Thanks to Maya B, I've learned that PowerShell can be finicky with permissions so if you are still getting issues you might try running PowerShell as an administrator or running this command:
+
+```powershell
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass .\hide-dotfiles.ps1.
+```
+:::
+
 ### Part 2: Solve Your Group Members' Mazes
 
 Once you have created and zipped your maze, pushed it up to GitHub, and posted a link in our discussion, it's time to solve your group members' mazes. **You are required to solve at least two mazes from students in your own group.** This is your chance to see how others in your group are approaching the same broad cultural data topic - pay attention to the choices they made in theming their mazes!

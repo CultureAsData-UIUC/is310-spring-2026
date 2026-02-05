@@ -405,6 +405,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#creating-an-html-file" id="toc-creating-an-html-file" class="nav-link" data-scroll-target="#creating-an-html-file">Creating an HTML File</a></li>
   </ul></li>
+  <li><a href="#web-styling-and-interaction" id="toc-web-styling-and-interaction" class="nav-link" data-scroll-target="#web-styling-and-interaction">Web Styling and Interaction</a></li>
+  <li><a href="#homework-source-and-style" id="toc-homework-source-and-style" class="nav-link" data-scroll-target="#homework-source-and-style">Homework: Source and Style</a>
+  <ul class="collapse">
+  <li><a href="#assignment-1-inspecting-the-cultural-web" id="toc-assignment-1-inspecting-the-cultural-web" class="nav-link" data-scroll-target="#assignment-1-inspecting-the-cultural-web">Assignment 1: Inspecting the Cultural Web</a></li>
+  <li><a href="#assignment-2-styling-the-cultural-web" id="toc-assignment-2-styling-the-cultural-web" class="nav-link" data-scroll-target="#assignment-2-styling-the-cultural-web">Assignment 2: Styling the Cultural Web</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -479,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>So while in Google Docs, you can use the GUI to format your text or in Markdown we use <code>#</code> symbol, in HTML we use a series of <strong>tags</strong>. Tags have a name, a series of key/value pairs called <strong>attributes</strong>, and some textual content. Attributes are optional.</p>
 <p>Let’s try an example.</p>
 <section id="creating-an-html-file" class="level3">
-<h3 class="anchored">Creating an HTML File</h3>
+<h3 class="anchored" data-anchor-id="creating-an-html-file">Creating an HTML File</h3>
 <p>First, let’s create an HTML file. To do that we need to add <code>.html</code> to the end of the file name.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> first_page.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now, I’m going to open the file in a text editor and add some text, just like we did with our Markdown files.</p>
@@ -541,11 +547,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can find a list of HTML attributes here <a href="https://www.w3schools.com/tags/ref_attributes.asp">https://www.w3schools.com/tags/ref_attributes.asp</a></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://ischool.illinois.edu/"</span><span class="dt">&gt;</span>My first page!<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>How does this new tag change our html page?</p>
-Here’s another example that we should add to our html page, using the HTML
-<div>
-<p>tag:</p>
+<p>Here’s another example that we should add to our html page, using the HTML <code>&lt;div&gt;</code> tag:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"header"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"background: blue;"</span><span class="dt">&gt;</span>About Me<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In this example, the tag’s name is div. The tag has two attributes: class, with value <code>header</code>, and style, with value <code>background: blue;</code>. The contents of this tag is Digital Humanities Tools and Projects.</p>
+<p>In this example, the tag’s name is div. The tag has two attributes: class, with value <code>header</code>, and style, with value <code>background: blue;</code>. The contents of this tag is About Me.</p>
 <p>Tags can contain other tags, in a hierarchical relationship. For example, here’s some HTML to make a bulleted list:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Likes Coding and History<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
@@ -564,6 +568,8 @@ Here’s another example that we should add to our html page, using the HTML
 <p><strong>HTML is also notoriously messy—web browsers are very forgiving of syntax errors and other irregularities in HTML (like mismatched or unclosed tags).</strong> For this reason, we need special libraries to parse HTML into data structures that our Python programs can use, libraries that can make a “good guess” about what the structure of an HTML document is, even when that structure is written incorrectly or inconsistently.</p>
 </blockquote>
 <p>Understanding these limitations is important as we start to work with HTML and other web technologies. For more detailed information, I recommend reading through this <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#what_is_html">introduction from Mozilla on HTML</a>.</p>
+</section>
+</section>
 <section id="web-styling-and-interaction" class="level2">
 <h2 class="anchored" data-anchor-id="web-styling-and-interaction">Web Styling and Interaction</h2>
 <p>So far we’ve been either working with very simple HTML documents (like our example above). To find a middle ground, let’s return to our very first week and take a look at <a href="https://whatisdigitalhumanities.com/">whatisdigitalhumanities.com</a>.</p>
@@ -630,7 +636,7 @@ Here’s another example that we should add to our html page, using the HTML
 </figure>
 </div>
 <p>Some of this code looks similar to what we saw in the inspector, but the rest is difficult to read. To help us, we can break down the various elements of this code (select the toggle below to read more):</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div id="css-deep-dive" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -679,7 +685,7 @@ See the Pen <a href="https://codepen.io/ste-vg/pen/GRooLza"> Airplanes.</a> by S
 </div>
 <p>This code is in a language called JavaScript. This code is using a JavaScript library called jQuery, which is a library that makes it easier to write JavaScript. Unlike HTML or CSS, JavaScript is a <code>programming language</code> (the distinction is not crucial to know but can be helpful when learning about different Digital Humanities methods). At this point, most of the web is powered by JavaScript, so it is incredible powerful and ubiquitous.</p>
 <p>If you want to learn more about what exactly this code is doing, toggle the following section. Full disclosure some of this language and concepts are fairly advanced, so feel free to use Co-Pilot or ask the Instructors for help:</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div id="js-deep-dive" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -756,7 +762,6 @@ Deep Dive Into JavaScript
 </ul>
 <p><strong>Why Do It This Way?</strong></p>
 <p>The reason for writing a script like this is to make the webpage interactive and interesting. Instead of seeing the same quote every time, you get a surprise each time you click the button. It’s a way to keep the website fresh and engaging for visitors.</p>
-<hr>
 <p>Now we can start to understand that the code in the <code>script</code> tag is what controls what happens on each page load, whereas the code in the <code>style</code> tag controls what the page looks like.</p>
 <p>These three technologies, <code>HTML</code>, <code>CSS</code>, and <code>JavaScript</code>, are the three pillars of the web. They are what make the web interactive and dynamic. They can also often make websites slow to load (for example, large JavaScript files can take a long time to load) and difficult to maintain (until recently, each line of code was written by humans).</p>
 <p>In the case of <code>whatisdigitalhumanities</code>, we can even see this effort by exploring the <code>insights</code> page on the GitHub repo, which shows the following graph of the number of commits over time.</p>
@@ -771,19 +776,19 @@ Deep Dive Into JavaScript
 <section id="homework-source-and-style" class="level2">
 <h2 class="anchored" data-anchor-id="homework-source-and-style">Homework: Source and Style</h2>
 <p>The assignments below are intended to help you start to explore both some of the web technologies and markup languages we’ve discussed, as well as try your hand at using them. Do your best to get through both assignments, and reach out for help from the Instructors if you get stuck.</p>
-<p>Once you’ve completed the assignments you should push up your materials to your GitHub <code>is310-coding-assignments</code> repository. These materials should be in a new folder <code>source-and-style</code> and share the link to your folder in the GitHub discussion thread <a href="https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/4">https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/4</a>.</p>
-<section id="assignment-1-inspecting-the-web" class="level3">
-<h3 class="anchored" data-anchor-id="assignment-1-inspecting-the-web">Assignment 1: Inspecting the Web</h3>
-<p>For this assignment, the goal is to find either a digital library, archive, or project that you are interested in, and inspect the website in the browser to try and assess how it has been built (you might even see if you can find the GitHub repository for it). In your investigation, you should try and answer the following questions:</p>
+<p>Once you’ve completed the assignments you should push up your materials to your GitHub <code>is310-coding-assignments</code> repository. These materials should be in a new folder <code>source-and-style</code> and share the link to your folder in the GitHub discussion thread <a href="https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/3">https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/3</a>.</p>
+<section id="assignment-1-inspecting-the-cultural-web" class="level3">
+<h3 class="anchored" data-anchor-id="assignment-1-inspecting-the-cultural-web">Assignment 1: Inspecting the Cultural Web</h3>
+<p>To build from your group assignment on <a href="../../assessments/06-collecting-digitizing-culture.html">Mass Digitization &amp; Digital Libraries</a>, for this assignment, the goal is to select one of the digital libraries or archives you’ve identified as relevant to your cultural area of focus, and inspect the website in the browser to try and assess how it has been built (you might even see if you can find the GitHub repository for it). In your investigation, you should try and answer the following questions:</p>
 <ul>
 <li>What web technologies (that is HTML, CSS, or JavaScript) were used to build the tool? Are there files that end in <code>.html</code>, <code>.css</code>, or <code>.js</code>? What about files you don’t recognize?</li>
 <li>Who built this website? How many people were involved? How can you tell?</li>
 </ul>
 <p>You can use screenshots to support your assessment, but you should also include a link to the website and the GitHub repository (if you can find it). You are also welcome to use AI tools to help you assess and investigate the web technologies. You should write your assessments in the <code>README.md</code> file in the <code>source-and-style</code> folder of your <code>is310-coding-assignments</code> repository, and remember to place any screenshots in an <code>images</code> folder (you will need to create a new one for this folder if you decide to include screenshots).</p>
 </section>
-<section id="assignment-2-styling-the-web" class="level3">
-<h3 class="anchored" data-anchor-id="assignment-2-styling-the-web">Assignment 2: Styling the Web</h3>
-<p>For this assignment, the goal is to try creating an HTML page from scratch. You should create a file called <code>index.html</code> in the <code>source-and-style</code> folder of your <code>is310-coding-assignments</code> repository. You can use the terminal to create the file or your text editor, but the file should be created in the <code>source-and-style</code> folder.</p>
+<section id="assignment-2-styling-the-cultural-web" class="level3">
+<h3 class="anchored" data-anchor-id="assignment-2-styling-the-cultural-web">Assignment 2: Styling the Cultural Web</h3>
+<p>For this assignment, the goal is to try creating an HTML page from scratch that presents ONE of the digitized cultural objects you are exploring for the group assignment. You should create a file called <code>index.html</code> in the <code>source-and-style</code> folder of your <code>is310-coding-assignments</code> repository. You can use the terminal to create the file or your text editor, but the file should be created in the <code>source-and-style</code> folder.</p>
 <p>This HTML file should include the following elements:</p>
 <ul class="task-list">
 <li><label><input type="checkbox">The standard structure of an HTML page (so the <code>&lt;!DOCTYPE html&gt;</code> declaration, <code>&lt;html&gt;</code> tag, <code>&lt;head&gt;</code> tag, and <code>&lt;body&gt;</code> tag)</label></li>
@@ -795,7 +800,15 @@ Deep Dive Into JavaScript
 <li><label><input type="checkbox">At least one list (so <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>)</label></li>
 <li><label><input type="checkbox">Try to include either some styling (so a <code>&lt;style&gt;</code> tag) or some interactivity (so a <code>&lt;script&gt;</code> tag).</label></li>
 </ul>
-<p>You’re welcome to add any other elements you want, but these are the minimum requirements. Once you’ve created your file you should open it in your browser and inspect it to make sure it looks the way you want it to. And then you should push it up to GitHub.</p>
+<p>In terms of content, you should include the following about your digital object:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Title of the object</label></li>
+<li><label><input type="checkbox">Any relevant images</label></li>
+<li><label><input type="checkbox">Description of what it represents</label></li>
+<li><label><input type="checkbox">Links to the original collection and object</label></li>
+<li><label><input type="checkbox">Metadata you consider relevant for the object</label></li>
+</ul>
+<p>You’re welcome to add any other elements you want (like CSS for styling for instance!), but these are the minimum requirements. Once you’ve created your file you should open it in your browser and inspect it to make sure it looks the way you want it to. And then you should push it up to GitHub.</p>
 <p>As a reminder our standard git workflow is:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Completed Source and Style Assignment"</span></span>
@@ -803,9 +816,6 @@ Deep Dive Into JavaScript
 <p>If you have any questions or need help, please don’t hesitate to use Co-Pilot or reach out to the Instructors for help.</p>
 
 
-</section>
-</section>
-</div>
 </section>
 </section>
 

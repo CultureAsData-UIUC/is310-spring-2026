@@ -196,29 +196,17 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Introduction to Markup and Styling Web Documents</h1>
-  <p class="subtitle">How do we structure and style content for the web?</p>
+  <p class="subtitle">From Markdown to the language of the web</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section>
-<section id="from-markdown-to-the-web" class="title-slide slide level1 center">
-<h1>From Markdown to the Web</h1>
-
-</section>
-<section id="what-we-know-so-far" class="slide level2">
-<h2>What We Know So Far</h2>
-<p>We’ve learned about:</p>
-<ul>
-<li>Plain text files</li>
-<li><strong>Markdown</strong> - a markup language for formatting text</li>
-<li>How to work with files and directories from the command line</li>
-</ul>
-<div class="fragment">
-<p>But what makes the web work?</p>
+<section id="from-markdown-to-html" class="title-slide slide level1 center">
+<h1>From Markdown to HTML</h1>
+<p>Last week we learned about Markdown. This week we’re going to take a step further and introduce you to <strong>HTML</strong>, which is the language of the web.</p>
 <aside class="notes">
-<p>We’ve spent time learning about markup languages in the context of Markdown, which uses symbols like <code>#</code> to format text. Now we’re going to expand that understanding and look at how the web uses markup languages differently.</p>
+<p>We’ve spent time learning about markup languages in the context of Markdown, which uses symbols like <code>#</code> to format text. Now we’re going to expand that understanding and look at how the web uses markup languages differently. The key shift is that we’re moving from a simple notation system to a more complex, tag-based system that powers the entire web.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -230,8 +218,8 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
-</section></section>
+</section>
+
 <section>
 <section id="introducing-markup-languages" class="title-slide slide level1 center">
 <h1>Introducing Markup Languages</h1>
@@ -245,6 +233,7 @@
 </blockquote>
 <aside class="notes">
 <p>So a markup language is really about annotating content with metadata that describes how it should be formatted or displayed. In Markdown, we use <code>#</code> to say “this is a heading.” In HTML, we use tags like <code>&lt;h1&gt;</code> for the same purpose.</p>
+<p>This is fundamentally different from a programming language like Python or JavaScript, which is used to create programs that can be executed by a computer. Markup languages don’t perform logic—they just annotate or describe text.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -257,16 +246,23 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="different-markup-languages" class="slide level2">
-<h2>Different Markup Languages</h2>
-<p><strong>Markdown</strong> (what we know) - Simple symbols like <code>#</code> for formatting - Useful for documents</p>
-<div class="fragment">
-<p><strong>TEI (Text Encoding Initiative)</strong> (for humanities) - Encodes texts to make them machine-readable - Marks up dates, person names, places - Enables searching and analysis</p>
+<section id="tei-text-encoding-initiative" class="slide level2">
+<h2>TEI: Text Encoding Initiative</h2>
+<div class="columns">
+<div class="column r-fit-text" style="width:40%;">
+<p>Another example of a Markup language that has a long history in Computing in the Humanities is TEI, which stands for <strong>Text Encoding Initiative</strong>—a markup language used to encode texts in a way that makes them <strong>machine-readable</strong>. You can read more about TEI in “What Is TEI?” Text Encoding Initiative, 2022. <a href="https://tei-c.org/what-is-tei/">https://tei-c.org/what-is-tei/</a>.</p>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://image.slidesharecdn.com/2015-08-15-datamanagementsrs-150817155314-lva1-app6891/95/research-data-management-in-the-humanities-and-social-sciences-15-638.jpg"></p>
+<figcaption>Markup Language</figcaption>
+</figure>
 </div>
-<div class="fragment">
-<p><strong>HTML (HyperText Markup Language)</strong> (for the web) - Structures content for browsers - Uses <strong>tags</strong> to describe elements - Powers the entire World Wide Web</p>
+</div></div>
 <aside class="notes">
-<p>TEI and HTML were both created in the early days of the web - HTML in 1991 by Tim Berners-Lee, and TEI in 1987. They both serve similar purposes (marking up text with metadata) but for different audiences.</p>
+<p>Another important markup language is TEI. It has a long history in Computing in the Humanities. TEI is used to encode texts in a way that makes them machine-readable. You can read more about it at https://tei-c.org/what-is-tei/.</p>
+<p>Today we are used to having OCR and other tools that can help us digitize texts, and then programming languages like Python and R that let us manipulate text into data (a topic we’ll cover later in the semester). But in the early days of the web, this was not the case, which made it difficult for machines to know what was in a text. This is where TEI comes in, as it allows us to encode texts in a way that makes them useable to machines. For example, TEI often involves marking what a date is, or what a person’s name is, or what a place is. This allows us to search and analyze texts in ways that would be impossible without TEI.</p>
+<p>TEI and HTML both were created in the same historical moment, the early days of the web. HTML was created by Tim Berners-Lee in 1991, while TEI was created in 1987.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -278,14 +274,15 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
-<section id="a-real-world-example-the-old-bailey" class="slide level2">
-<h2>A Real-World Example: The Old Bailey</h2>
-<p><em>The Proceedings of the Old Bailey</em> - digitizing 18th century criminal court records</p>
-<p><img data-src="https://www.dhi.ac.uk/blogs/old-bailey/wp-content/uploads/sites/35/2022/09/Robert-Marshall-7-Dec-1692-1-894x1024.jpg" height="350"></p>
-<aside class="notes">
-<p>The Old Bailey Online project started in 1999 and manually transcribed and marked up these historical records using XML/TEI. They used a “double rekeying” strategy - having each text transcribed twice and automatically compared to catch errors. This level of care created 99.9% accurate transcriptions, which then allowed for sophisticated searching and analysis.</p>
+<section id="tei-example-the-proceedings-of-the-old-bailey" class="slide level2">
+<h2>TEI Example: The Proceedings of the Old Bailey</h2>
+
+<img data-src="https://www.dhi.ac.uk/blogs/old-bailey/wp-content/uploads/sites/35/2022/09/Robert-Marshall-7-Dec-1692-1-894x1024.jpg" class="r-stretch quarto-figure-center"><p class="caption">The Proceedings of the Old Bailey</p><aside class="notes">
+<p>The Old Bailey Online project (started in 1999) is one of the older Digital Humanities projects that’s still in operation. They’ve been digitizing the records of the Old Bailey, the central criminal court of England and Wales. They use TEI/XML to encode the text of the records, which allows them to be searched and analyzed in sophisticated ways.</p>
+<p>What’s unique about the Old Bailey is that they manually marked up all the text using a “double rekeying” strategy—having each text transcribed twice and then automatically compared to identify errors. They did this because OCR software in the 1990s wasn’t good enough for eighteenth-century print, especially from microfilm.</p>
+<p>This incredibly laborious process resulted in 99.9% accurate transcriptions. The authors note that “XML markup would not have worked with the kind of error-ridden text produced by OCR methodologies, so applying complex markup was dependent on adopting rekeying.”</p>
+<p>Not only did this facilitate accurate searching, but it meant that the text could be reused in subsequent digital projects. This example shows us that rigorous markup and encoding requires significant human effort, but that effort creates very high-quality data.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -305,16 +302,79 @@
 </section>
 <section id="hypertext-markup-language" class="slide level2">
 <h2>HyperText Markup Language</h2>
-<p>HTML is <strong>not a programming language</strong> - it’s a markup language used to:</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#what_is_html" target="_blank"><img data-src="https://media.giphy.com/media/bF2M6el0vi2qc/giphy.gif" class="quarto-figure quarto-figure-center"></a></p>
+</figure>
+</div>
+<figcaption>Click for Definition</figcaption>
+</figure>
+</div>
+</div><div class="column r-fit-text" style="width:60%;">
+<p>HTML is <strong>not a programming language</strong>—it’s a markup language used to:</p>
 <ul>
 <li>Tell your browser how to structure web pages</li>
-<li>Create documents that are rendered by your browser</li>
+<li>Create documents that are rendered in your browser</li>
 <li>Make content appear or act a certain way</li>
 </ul>
-<div class="fragment">
-<p>When you visit a website, you’re viewing an HTML document rendered in your browser.</p>
+</div></div>
 <aside class="notes">
-<p>This is an important distinction. HTML is purely about structure and presentation. It doesn’t perform logic or calculations. Programming languages like Python or JavaScript do that.</p>
+<p>While TEI is still in use today, by far the most popular of all markup languages is HTML, which stands for <strong>HyperText Markup Language</strong>. HTML is the language of the web and is used to create web pages. This might be surprising to learn but when you go to a website, it is just showing you a document (just like our <code>.txt</code> or <code>.md</code> files). The difference is that this document is written and marked-up in HTML and is rendered by your browser.</p>
+<p>This is an important distinction. HTML is purely about structure and presentation. It doesn’t perform logic or calculations. Unlike Markdown, which uses simple symbols, HTML uses more formal “tags” that describe the semantic meaning and structure of content.</p>
+<p>So while in Google Docs you might use the GUI to format text, or in Markdown we use <code>#</code> symbols, in HTML we use a series of <strong>tags</strong>. Tags have a name, a series of key/value pairs called <strong>attributes</strong>, and some textual content.</p>
+<p>When you visit a website, you’re viewing an HTML document rendered by your browser.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="creating-an-html-file" class="slide level2">
+<h2>Creating an HTML File</h2>
+<p>Let’s try an example! To create an HTML file, just use the <code>.html</code> extension:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="fu">touch</span> first_page.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then add some content in my IDE, like we did with our Markdown files.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a></a>My first page!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then save it and open it in your browser!</p>
+<aside class="notes">
+<p>Creating an HTML file is really simple—it’s just a text file with the <code>.html</code> extension. You can create it with the command line or a text editor. Once you create the file with some HTML tags in it, you can open it in any web browser.</p>
+<p>I can then save this file and open it in a browser. To do this, I can either right click on the file and select <code>open with</code> and then select my browser, or simply go to my preferred browser and select <code>Open File</code>. We’ll talk more about web browsers in the next lesson, but some popular ones include Chrome, Firefox, Safari, and Edge.</p>
+<p>We should see our text in the browser, just like we did with our Markdown file. So everything is working so far!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="adding-html-tags" class="slide level2">
+<h2>Adding HTML Tags</h2>
+<p>Now try altering your file to include HTML tags:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>My first page!<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Save it and open the file in the browser again. What do you see?</p>
+<div class="fragment">
+<p>Notice anything different?</p>
+</div>
+<div class="fragment">
+<p>Probably not!</p>
+<aside class="notes">
+<p>This is a key realization—when you add HTML tags to your content and view it in the browser, you don’t see the tags themselves. The browser interprets the tags as instructions for how to display the content, but doesn’t show the tags to the user.</p>
+<p>So even though you added <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code> tags, the browser just displays “My first page!” without showing the tags. This can be confusing at first—did the tags actually do anything? Are they there?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -328,17 +388,19 @@
       }</style></aside>
 </div>
 </section>
-<section id="html-building-blocks-tags" class="slide level2">
-<h2>HTML Building Blocks: Tags</h2>
-<p>HTML uses <strong>tags</strong> to mark up content:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a paragraph<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong>Opening tag</strong>: <code>&lt;p&gt;</code></li>
-<li><strong>Content</strong>: “This is a paragraph”</li>
-<li><strong>Closing tag</strong>: <code>&lt;/p&gt;</code></li>
-</ul>
-<aside class="notes">
-<p>Tags are the fundamental building block of HTML. They come in pairs (opening and closing) and wrap around content. The tag name tells the browser what the content represents.</p>
+<section id="inspecting-the-webpage" class="slide level2">
+<h2>Inspecting the Webpage</h2>
+<p>To see the HTML tags, use <strong>Developer Tools</strong>:</p>
+<ol type="1">
+<li>Right-click on your webpage</li>
+<li>Select <strong>“Inspect”</strong> or <strong>“Inspect Element”</strong></li>
+</ol>
+
+<img data-src="../../assets/images/inspect_pg.png" class="r-stretch quarto-figure-center"><p class="caption">Inspect Page</p><aside class="notes">
+<p>This is one of the most important skills for web development. When you right-click and select “Inspect,” your browser opens a panel showing you the actual HTML source code of the page you’re viewing.</p>
+<p>This works on any website—not just your own pages. You can inspect any website to see how it was built, what HTML structure it uses, what CSS is applied, etc. This is how you learn web development.</p>
+<p>Different browsers have slightly different names: - Chrome/Edge: “Inspect” or “Inspect Element” - Firefox: “Inspect Element” - Safari: “Inspect Element”</p>
+<p>You can read more about Chrome Developer Tools here: https://developers.google.com/web/tools/chrome-devtools/console/ And Firefox Developer Tools here: https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Open_the_Inspector</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -351,18 +413,49 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="anatomy-of-an-html-element" class="slide level2">
-<h2>Anatomy of an HTML Element</h2>
-
-<img data-src="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax/grumpy-cat-small.png" class="r-stretch"><ul>
-<li>Opening tag</li>
-<li>Content</li>
-<li>Closing tag</li>
-</ul>
+<section id="the-source-code" class="slide level2">
+<h2>The Source Code</h2>
+<p>What you see in the inspector is called the <strong>source code</strong>—the actual HTML that creates the page:</p>
 <div class="fragment">
-<p>All three together = an HTML <strong>element</strong></p>
+<ul>
+<li>Your <code>&lt;p&gt;</code> tags are there!</li>
+<li>The browser was interpreting them the whole time</li>
+<li>They just don’t display on the page itself</li>
+</ul>
 <aside class="notes">
-<p>This diagram from Mozilla shows the three parts of an HTML element. The element is the combination of all three parts together. It’s important to close your tags - forgetting the closing tag is a common beginner error.</p>
+<p>The inspector reveals what’s happening behind the scenes. The HTML tags are definitely there—the browser was reading them and using them to format the page. But the tags themselves aren’t visible to the user, only the result of what the tags tell the browser to do.</p>
+<p>This separation between the source code and the rendered output is fundamental to how the web works. The browser reads the HTML, interprets the tags, and displays the content accordingly.</p>
+<p>The Developer Tools are your window into this hidden layer. They let you see: - The actual HTML source - Any CSS styling applied - Any JavaScript code running - Network requests and responses - And much more</p>
+<p>Mastering the Developer Tools is one of the most important skills for web development.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="anatomy-of-an-html-tag" class="slide level2">
+<h2>Anatomy of an HTML Tag</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>My first page!<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<ul>
+<li><strong>Opening tag</strong>: <code>&lt;p&gt;</code></li>
+<li><strong>Content</strong>: “My first page!”</li>
+<li><strong>Closing tag</strong>: <code>&lt;/p&gt;</code></li>
+<li><strong>Element</strong>: all three together</li>
+</ul>
+<p><img data-src="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax/grumpy-cat-small.png"></p>
+<aside class="notes">
+<p>This is the fundamental building block of HTML. The <code>&lt;p&gt;</code> tag means “paragraph.” The opening tag tells the browser where the paragraph starts, the content is what you see on the page, and the closing tag tells the browser where the paragraph ends.</p>
+<p>It’s really important to close your tags. Forgetting the closing tag is a common beginner error that can produce strange results and make your HTML invalid.</p>
+<p>In HTML, the element is the combination of the opening tag, the content, and the closing tag all together. This is the unit that browsers understand and render.</p>
+<p>To see the HTML tags in your browser, you need to open the Developer Tools Console by right-clicking on a page and selecting “Inspect.” This shows you the <strong>source code</strong>—the HTML that creates the page you’re looking at.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -378,6 +471,10 @@
 </section>
 <section id="common-html-tags" class="slide level2">
 <h2>Common HTML Tags</h2>
+<p>How would we make it into an HTML heading? Let’s take a look at some of the more common HTML tags that we can use to create HTML elements <a href="https://www.w3schools.com/tags/ref_byfunc.asp" target="_blank">https://www.w3schools.com/tags/ref_byfunc.asp</a></p>
+</section>
+<section id="common-html-tags-1" class="slide level2">
+<h2>Common HTML Tags</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -388,7 +485,7 @@
 <tbody>
 <tr class="odd">
 <td><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></td>
-<td>Headings</td>
+<td>Headings (h1 is largest)</td>
 </tr>
 <tr class="even">
 <td><code>&lt;p&gt;</code></td>
@@ -412,10 +509,16 @@
 </tr>
 </tbody>
 </table>
-<div class="fragment">
-<p><a href="https://www.w3schools.com/tags/ref_byfunc.asp" target="_blank">Full list at W3Schools</a></p>
 <aside class="notes">
-<p>These are some of the most common tags you’ll encounter. There are many more, but these cover the basic structural elements of most web pages.</p>
+<p>These are some of the most common tags you’ll encounter. There are many more tags available, but these cover the basic structural elements of most web pages.</p>
+<ul>
+<li>Headings go from h1 (most important) to h6 (least important)</li>
+<li>Paragraphs are blocks of text</li>
+<li>Divs are generic containers that you can style</li>
+<li>Anchors create links to other pages</li>
+<li>Lists can be ordered (numbered) or unordered (bulleted)</li>
+</ul>
+<p>You can find a full list at W3Schools: https://www.w3schools.com/tags/ref_byfunc.asp</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -427,19 +530,20 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
 <section id="html-attributes" class="slide level2">
 <h2>HTML Attributes</h2>
-<p>HTML elements can have <strong>attributes</strong> - extra information about the element:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://ischool.illinois.edu/"</span><span class="dt">&gt;</span>iSchool<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment">
-<ul>
-<li>Attribute name: <code>href</code></li>
-<li>Attribute value: <code>https://ischool.illinois.edu/</code></li>
-</ul>
+<p>Great now what if we wanted to add a link so that you could click on that heading and go to another page (say the iSchool home page <a href="https://ischool.illinois.edu/" target="_blank"><code>https://ischool.illinois.edu/</code></a>)?</p>
+<p>Well then we need to add an <code>attribute</code>.</p>
+</section>
+<section id="html-attributes-1" class="slide level2">
+<h2>HTML Attributes</h2>
+<p>HTML elements can have <strong>attributes</strong>—extra information about the element.</p>
+
+<img data-src="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax/grumpy-cat-attribute-small.png" class="r-stretch"><p>This diagram is also from the Mozilla docs and you can read more about how HTML elements can also have <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#attributes" target="_blank">attributes here</a>.</p>
 <aside class="notes">
-<p>Attributes appear in the opening tag and provide additional information about how the element should behave or what it contains. The <code>href</code> attribute tells a link where to navigate to.</p>
+<p>Attributes appear in the opening tag and provide additional information about how the element should behave or what it contains. They follow a specific syntax: the attribute name, followed by an equals sign, then the value wrapped in quotes.</p>
+<p>Some guidelines for attributes: - There should be a space between the element name and the first attribute - Multiple attributes should be separated by spaces - The attribute name is followed by an equal sign - The attribute value is wrapped in opening and closing quote marks</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -451,78 +555,37 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
+</section>
+<section id="html-attributes-2" class="slide level2">
+<h2>HTML Attributes</h2>
+<p>Let’s try using the <code>anchor</code> tag and <code>href</code> attribute to create an HTML element that links to <code>https://ischool.illinois.edu/</code></p>
+<p>You can find a list of HTML attributes here <a href="https://www.w3schools.com/tags/ref_attributes.asp">https://www.w3schools.com/tags/ref_attributes.asp</a></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://ischool.illinois.edu/"</span><span class="dt">&gt;</span>iSchool<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>How does this new tag change our html page?</p>
+</section>
+<section id="html-attributes-3" class="slide level2">
+<h2>HTML Attributes</h2>
+<p>Here’s another example that we should add to our html page, using the HTML <code>&lt;div&gt;</code> tag:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"header"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"background: blue;"</span><span class="dt">&gt;</span>About Me<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In our example, the <code>href</code> attribute tells a link where to navigate to when clicked. The <code>class</code> attribute is another common one that helps you identify elements for styling with CSS.</p>
 </section>
 <section id="nesting-tags" class="slide level2">
 <h2>Nesting Tags</h2>
-<p>Tags can contain other tags in a hierarchical relationship:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a></a><span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
-<span id="cb3-2"><a></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Item one<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb3-3"><a></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Item two<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb3-4"><a></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Item three<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb3-5"><a></a><span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tags can contain other tags in a hierarchical structure:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a></a><span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb7-2"><a></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Likes Coding and History<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb7-3"><a></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Likes "What We Do in the Shadows" TV show<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb7-4"><a></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Dislikes Mint Chocolate<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb7-5"><a></a><span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
 <ul>
 <li><code>&lt;ul&gt;</code> is the <strong>parent</strong></li>
 <li><code>&lt;li&gt;</code> elements are <strong>children</strong></li>
-<li>All <code>&lt;li&gt;</code> elements are <strong>siblings</strong> of each other</li>
+<li>All <code>&lt;li&gt;</code> elements are <strong>siblings</strong></li>
 </ul>
 <aside class="notes">
-<p>This hierarchical relationship is really important in HTML. Every element has a place in a tree structure, and understanding parent-child relationships helps you write proper HTML.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="basic-html-document-structure" class="slide level2">
-<h2>Basic HTML Document Structure</h2>
-<p>Every HTML page should have:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb4-2"><a></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb4-3"><a></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb4-4"><a></a>    <span class="co">&lt;!-- Metadata about the page --&gt;</span></span>
-<span id="cb4-5"><a></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb4-6"><a></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb4-7"><a></a>    <span class="co">&lt;!-- The actual content --&gt;</span></span>
-<span id="cb4-8"><a></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb4-9"><a></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>&lt;!DOCTYPE html&gt;</code> - tells browser it’s an HTML document</li>
-<li><code>&lt;head&gt;</code> - metadata (title, links to stylesheets, etc.)</li>
-<li><code>&lt;body&gt;</code> - content that displays on the page</li>
-</ul>
-<aside class="notes">
-<p>This is the basic skeleton of every web page. The head contains information about the page (like its title or what fonts to load), and the body contains everything the user sees.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="htmls-limitations" class="slide level2">
-<h2>HTML’s Limitations</h2>
-<p>From Alison Parrish (bold added for emphasis):</p>
-<blockquote>
-<p><strong>Because the primary purpose of HTML is to change the appearance of text, HTML markup usually does not tell us anything useful about what the text means.</strong></p>
-</blockquote>
-<div class="fragment">
-<blockquote>
-<p><strong>HTML is also notoriously messy—web browsers are very forgiving of syntax errors</strong> (like mismatched or unclosed tags)</p>
-</blockquote>
-<aside class="notes">
-<p>HTML tells you how something should look, not what it means. And because browsers are forgiving of errors, we sometimes end up with invalid HTML that still displays. This is why we need special tools to parse and analyze HTML programmatically.</p>
+<p>This hierarchical relationship is really important in HTML. Every element has a place in a tree structure. The parent-child relationship helps browsers understand how to render the content.</p>
+<p>The <code>&lt;ul&gt;</code> tag (ul stands for <strong>unordered list</strong>) in this example has three other <code>&lt;li&gt;</code> tags inside of it (li stands for <strong>list item</strong>). The <code>&lt;ul&gt;</code> tag is said to be the <strong>parent</strong> of the <code>&lt;li&gt;</code> tags, and the <code>&lt;li&gt;</code> tags are the <strong>children</strong> of the <code>&lt;ul&gt;</code> tag. All tags grouped under a particular parent tag are called <strong>siblings.</strong></p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -535,22 +598,82 @@
           display:block!important;
       }</style></aside>
 </div>
+</section>
+<section id="htmls-limitations" class="slide level2">
+<h2>HTML’s Limitations</h2>
+<p>HTML is a very powerful language and there are many more tags that we can use to create HTML elements. You can find a list of all the HTML tags here <a href="https://www.w3schools.com/tags/ref_byfunc.asp" target="_blank">https://www.w3schools.com/tags/ref_byfunc.asp</a>.</p>
+</section>
+<section id="htmls-limitations-1" class="slide level2">
+<h2>HTML’s Limitations</h2>
+<p>But HTML also has some limitations. Take a look at this helpful overview of <a href="https://github.com/aparrish/dmep-python-intro/blob/master/scraping-html.ipynb" target="_blank"><em>HTML’s shortcomings by Alison Parrish</em></a> (bold added for emphasis)</p>
+</section>
+<section id="htmls-shortcomings-by-alison-parrish" class="slide level2">
+<h2>HTML’s shortcomings by Alison Parrish</h2>
+<blockquote>
+<p>HTML documents are intended to add <strong>markup</strong> to text to add information that allows browsers to display the text in different ways—e.g., HTML markup might tell the browser to make the font of the text a particular size, or to position it in a particular place on the screen.</p>
+</blockquote>
+</section>
+<section id="htmls-shortcomings-by-alison-parrish-1" class="slide level2">
+<h2>HTML’s shortcomings by Alison Parrish</h2>
+<blockquote>
+<p><strong>Because the primary purpose of HTML is to change the appearance of text, HTML markup usually does not tell us anything useful about what the text means, or what kind of data it contains.</strong> When you look at a web page in the browser, it might appear to contain a list of newspaper articles, or a table with birth rates, or a series of names with associated biographies, or whatever. But that’s information that we get, as humans, from reading the page. There’s (usually) no easy way to extract this information with a computer program.</p>
+</blockquote>
+<aside class="notes">
+<p>This is a critical limitation. HTML can tell you that something is a heading or a paragraph, but it can’t tell you that it’s a product price or a person’s name (unless you add special attributes). When you look at a web page in the browser, it might appear to contain a list of newspaper articles, or a table with birth rates, or a series of names with biographies. But that’s information we get as humans from reading the page. There’s usually no easy way for a computer program to automatically extract that meaning.</p>
+<p>This is why TEI was developed—to add semantic meaning to markup. And it’s also why modern HTML encourages using semantic tags like <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;footer&gt;</code> to give more meaning to the structure.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="html-is-forgiving-but-messy" class="slide level2">
+<h2>HTML is Forgiving (But Messy)</h2>
+<blockquote>
+<p><strong>HTML is also notoriously messy—web browsers are very forgiving of syntax errors and other irregularities in HTML (like mismatched or unclosed tags).</strong> For this reason, we need special libraries to parse HTML into data structures that our Python programs can use, libraries that can make a “good guess” about what the structure of an HTML document is, even when that structure is written incorrectly or inconsistently.</p>
+</blockquote>
+<aside class="notes">
+<p>Browsers are deliberately forgiving of HTML errors because the early web was chaotic, and they wanted to make the web work for everyone. This is good for user experience but bad for data extraction.</p>
+<p>If you forget to close a tag, the browser will usually figure out what you meant and render it anyway. This means invalid HTML can still display, which is why we need special parsing libraries when we want to programmatically analyze HTML.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="learn-more-about-html" class="slide level2">
+<h2>Learn More About HTML</h2>
+<p>Understanding these limitations is important as we start to work with HTML and other web technologies. For more detailed information, I recommend reading through this <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#what_is_html" target="_blank">introduction from Mozilla on HTML</a>.</p>
 </section></section>
 <section>
 <section id="web-styling-and-interaction" class="title-slide slide level1 center">
 <h1>Web Styling and Interaction</h1>
 
 </section>
-<section id="how-do-websites-look-nice" class="slide level2">
-<h2>How Do Websites Look Nice?</h2>
-<p>HTML provides <strong>structure</strong> - What things are (headings, paragraphs, lists, etc.)</p>
-<div class="fragment">
-<p>But websites need more than structure…</p>
+<section id="a-real-example-whatisdigitalhumanities.com" class="slide level2">
+<h2>A Real Example: whatisdigitalhumanities.com</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://whatisdigitalhumanities.com/" target="_blank"><img data-src="../../assets/images/whatisdigitalhumanities.png"></a></p>
+<figcaption>What is Digital Humanities Website</figcaption>
+</figure>
 </div>
-<div class="fragment">
-<p>They need <strong>style</strong> (colors, fonts, layout) They need <strong>interactivity</strong> (buttons that do things, animations, etc.)</p>
+<p><em>What do we see in the inspector?</em></p>
 <aside class="notes">
-<p>HTML alone can’t create beautiful, interactive websites. We need additional technologies to handle presentation and behavior. That’s where CSS and JavaScript come in.</p>
+<p>Let’s look at a real, working example. When you inspect the source code of whatisdigitalhumanities.com, you see the HTML structure. You’ll notice the first line is <code>&lt;!DOCTYPE html&gt;</code>, then the <code>&lt;html&gt;</code> tag, which contains <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>.</p>
+<p>When you open the inspector (right-click → Inspect), you can see the HTML structure of the page. You’ll also see two other important elements: the <code>&lt;style&gt;</code> tag (which contains CSS code) and the <code>&lt;script&gt;</code> tag (which contains JavaScript code). These are the other two pillars of the web that make it interactive and beautiful.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -562,19 +685,25 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
-<section id="inspecting-the-web" class="slide level2">
-<h2>Inspecting the Web</h2>
-<p>You can see the HTML of any website using <strong>Developer Tools</strong>:</p>
-<ol type="1">
-<li>Right-click on a page</li>
-<li>Select “Inspect” or “Inspect Element”</li>
-</ol>
-<div class="fragment">
-<p>This shows you the <strong>source code</strong> - the HTML that creates the page you see</p>
+<section id="inspecting-html-in-your-browser" class="slide level2">
+<h2>Inspecting HTML in Your Browser</h2>
+
+<img data-src="../../assets/images/inspect_whatisdigitalhumanities.png" class="r-stretch quarto-figure-center"><p class="caption">What is Digital Humanities Inspected</p></section>
+<section id="basic-html-document-structure" class="slide level2">
+<h2>Basic HTML Document Structure</h2>
+<p>Every HTML page should have this basic structure:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb8-2"><a></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb8-3"><a></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb8-4"><a></a>    <span class="co">&lt;!-- Metadata about the page --&gt;</span></span>
+<span id="cb8-5"><a></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb8-6"><a></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb8-7"><a></a>    <span class="co">&lt;!-- The actual content --&gt;</span></span>
+<span id="cb8-8"><a></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb8-9"><a></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
-<p>The Developer Tools are incredibly useful for understanding how websites are built. You can see the HTML, CSS, and JavaScript that powers any site. This is a valuable learning tool.</p>
+<p>You’ll notice that on every website we inspect, the first line is <code>&lt;!DOCTYPE html&gt;</code>. This is called a <strong>document type declaration</strong> and it tells the browser what type of document it is. In this case, it’s an HTML document. Then we see the <code>&lt;html&gt;</code> tag, which is the root element of an HTML page. This element contains two other elements: <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>. The <code>&lt;head&gt;</code> element contains metadata about the document, while the <code>&lt;body&gt;</code> element contains the actual content of the document. While there are some exceptions, most of the time the <code>&lt;head&gt;</code> element comes before the <code>&lt;body&gt;</code> element, and most websites use both.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -586,70 +715,85 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
+</section>
+<section id="selecting-and-editing-elements" class="slide level2">
+<h2>Selecting and Editing Elements</h2>
+
+<img data-src="../../assets/images/select_title.png" class="r-stretch quarto-figure-center"><p class="caption">Selecting elements in the inspector</p><aside class="notes">
+<p>If click the small arrow in the corner, we can start selecting elements. I’m trying to select the black box that says “What is Digital Humanities?”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="selecting-and-editing-elements-1" class="slide level2">
+<h2>Selecting and Editing Elements</h2>
+<p>You can even modify CSS and HTML right in the inspector to experiment:</p>
+
+<img data-src="../../assets/images/edit_title.png" class="r-stretch quarto-figure-center"><p class="caption">Editing in the inspector</p><aside class="notes">
+<p>While selecting elements is exciting, it can also be powerful. For example, I could change the very text or color of this element through editing it in the inspector.</p>
+<p>Now if I reload this page, I’ll lose that change, so this is not permanent. But it does give us a sense of how we can <em>style</em> our webpages.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="styling-websites" class="slide level2">
+<h2>Styling Websites</h2>
+<p>In this example, I altered two part of the HTML document:</p>
+<p>The span element with the class <code>title</code>:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"title"</span><span class="dt">&gt;</span>When Is Digital Humanities?<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And then the styles that are applied to that class:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a></a><span class="fu">.title</span> {</span>
+<span id="cb10-2"><a></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Changa</span><span class="op">,</span> <span class="fu">var(</span><span class="va">--sans-font</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb10-3"><a></a>    <span class="kw">background</span><span class="ch">:</span> <span class="cn">#faf</span><span class="op">;</span></span>
+<span id="cb10-4"><a></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">#fff</span><span class="op">;</span></span>
+<span id="cb10-5"><a></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb10-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>This code is something called CSS, which stands for <strong>Cascading Style Sheets</strong>. CSS is a <code>style sheet</code> language that essentially tells the computer how to style and display a document, whether that’s an HTML or Markdown document. We have already used it when we added the <code>style</code> attribute to our <code>&lt;div&gt;</code> element. One way to think about it is that HTML is the structure of the document, while CSS is the style of the document (similar to styling fonts or positioning images in a Word Document for example).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="css-cascading-style-sheets" class="slide level2">
 <h2>CSS: Cascading Style Sheets</h2>
-<p>CSS is a <strong>style sheet language</strong> that controls how HTML is displayed:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb5-1"><a></a><span class="fu">.title</span> {</span>
-<span id="cb5-2"><a></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Garamond</span><span class="op">;</span></span>
-<span id="cb5-3"><a></a>    <span class="kw">background</span><span class="ch">:</span> <span class="cn">#faf</span><span class="op">;</span></span>
-<span id="cb5-4"><a></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">#fff</span><span class="op">;</span></span>
-<span id="cb5-5"><a></a>    <span class="kw">padding</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb5-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>CSS Structure:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb11-1"><a></a>selector {</span>
+<span id="cb11-2"><a></a>    property<span class="ch">:</span> <span class="dv">value</span><span class="op">;</span></span>
+<span id="cb11-3"><a></a>    property<span class="ch">:</span> <span class="dv">value</span><span class="op">;</span></span>
+<span id="cb11-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
 <ul>
 <li><strong>Selector</strong> (<code>.title</code>) - which elements to style</li>
-<li><strong>Properties</strong> and <strong>values</strong> - how to style them</li>
+<li><strong>Properties and values</strong> - how to style them</li>
 </ul>
 <aside class="notes">
-<p>CSS is what makes websites look beautiful. It separates content (HTML) from presentation (CSS), which is a good practice. You can apply the same CSS to different HTML to completely change how a site looks - this is demonstrated by CSS Zen Garden.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="css-selectors" class="slide level2">
-<h2>CSS Selectors</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb6-1"><a></a>selector {</span>
-<span id="cb6-2"><a></a>    property<span class="ch">:</span> <span class="dv">value</span><span class="op">;</span></span>
-<span id="cb6-3"><a></a>    property<span class="ch">:</span> <span class="dv">value</span><span class="op">;</span></span>
-<span id="cb6-4"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Different ways to select elements:</p>
-<ul>
-<li><code>h1</code> - all <code>&lt;h1&gt;</code> tags (element selector)</li>
-<li><code>.title</code> - elements with class <code>title</code> (class selector)</li>
-<li><code>#header</code> - element with ID <code>header</code> (ID selector)</li>
-</ul>
-<aside class="notes">
-<p>Selectors are how you target specific HTML elements for styling. Understanding selectors is crucial to writing effective CSS.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="css-in-action" class="slide level2">
-<h2>CSS in Action</h2>
-<p>The same HTML can look completely different with different CSS:</p>
-<p><a href="http://www.csszengarden.com/" target="_blank">CSS Zen Garden</a></p>
-<div class="fragment">
-<p>Or even create complex 3D animations:</p>
-<p><a href="https://codepen.io/ste-vg/pen/GRooLza" target="_blank">CodePen 3D Airplane</a></p>
-<aside class="notes">
-<p>These are great examples of CSS’s power. CSS Zen Garden shows the same HTML with dozens of different stylesheets, creating radically different designs. The CodePen example shows that CSS can even create 3D effects and animations.</p>
+<p>CSS is what makes websites beautiful. The term “cascading” refers to how styles cascade down through the document hierarchy—parent styles apply to children unless overridden. Much like HTML, CSS has a defined structure that is comprises a <strong>selector</strong> (in our case the <code>.title</code>) and a <strong>declaration block</strong> (the curly brackets), where you write your style rules. The selector specifies which HTML elements the rules apply to, and the declaration block contains one or more declarations separated by semicolons. Each declaration includes a CSS property name and a value, separated by a colon.</p>
+<p>In our example, the selector <code>.title</code> targets any element with the class “title”. The declaration block (inside the curly braces) contains the style rules. Each rule has a property (like <code>font-family</code> or <code>background</code>) and a value (like <code>Garamond</code> or <code>#faf</code>).</p>
+<p>This separation of content (HTML) from presentation (CSS) is crucial. It means you can completely change how a page looks by just changing the CSS, without touching the HTML.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -662,17 +806,120 @@
           display:block!important;
       }</style></aside>
 </div>
+</section>
+<section id="the-source-code-behind-the-styling" class="slide level2">
+<h2>The Source Code Behind the Styling</h2>
+<p>To get a better sense of what this code looks like, we can look directly at the <code>index.html</code> file directly in the GitHub repository <a href="https://github.com/hepplerj/whatisdigitalhumanities" target="_blank">https://github.com/hepplerj/whatisdigitalhumanities</a>.</p>
+
+<img data-src="../../assets/images/whatisdigitalhumanities_index.png" class="r-stretch quarto-figure-center"><p class="caption">What is Digital Humanities</p><aside class="notes">
+<p>Seeing the full document, we can find both the <code>span</code> element we edited, as well as see how it fits within the overall structure of the HTML document. There’s also a number of other elements that we haven’t discussed yet, but I want to highlight two of them: <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-source-code-behind-the-styling-1" class="slide level2">
+<h2>The Source Code Behind the Styling</h2>
+<p>If we search for the <code>&lt;style&gt;</code> tags, we can see it is located between lines <code>42</code> and <code>58</code> that it contains the following code:</p>
+
+<img data-src="../../assets/images/whatisdigitalhumanities_style.png" class="r-stretch quarto-figure-center"><p class="caption">CSS in the actual website code</p><p>To learn more about this particular code, read the callout <a href="../materials/introducing-humanities-computing/07-intro-html.html#css-deep-dive" target="_blank">Deep Dive Into CSS on the course website.</a></p>
+<aside class="notes">
+<p>When you look at the actual HTML/CSS source code of a website like whatisdigitalhumanities, you see complex CSS that includes: - Custom fonts (<span class="citation" data-cites="font-face">@font-face</span>) - CSS variables (:root) - Dark mode support ([data-theme=“dark”]) - Different selectors for different elements - Media queries for responsive design - Detailed styling rules for every aspect</p>
+<p>Overall, CSS is used to enhance the user experience by providing a visually appealing and functional interface. It allows web developers to:</p>
+<ul>
+<li><p>Apply custom styles to their web pages, making them look unique.</p></li>
+<li><p>Define responsive designs that adapt to different screen sizes and devices.</p></li>
+<li><p>Implement theme toggling (like dark mode) to enhance accessibility and user preference.</p></li>
+<li><p>Ensure that the presentation of the content is consistent across different browsers and platforms.</p></li>
+</ul>
+<p>So here we can see that the <code>.title</code> code we altered is actually part of a larger set of code that is used to style the entire website. This example hopefully shows how powerful and complex web development can be.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="learn-more-about-css" class="slide level2">
+<h2>Learn More about CSS</h2>
+<p>A great resource for learning more about CSS is the Mozilla docs <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS" target="_blank">https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS</a>.</p>
+</section>
+<section id="example-of-advanced-css" class="slide level2">
+<h2>Example of Advanced CSS</h2>
+<ul>
+<li><a href="http://www.csszengarden.com/" target="_blank">CSS Zen Garden</a></li>
+<li><a href="https://codepen.io/ste-vg/pen/GRooLza" target="_blank">CodePen</a></li>
+</ul>
+<figure>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Airplanes." src="https://codepen.io/ste-vg/embed/GRooLza?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+See the Pen <a href="https://codepen.io/ste-vg/pen/GRooLza"> Airplanes.</a> by Steve Gardner (<a href="https://codepen.io/ste-vg"><span class="citation" data-cites="ste-vg">@ste-vg</span></a>) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+</figure>
+<aside class="notes">
+<p>A great example of CSS in action is the <a href="http://www.csszengarden.com/">CSS Zen Garden</a>, which shows how the same HTML document can be styled in a variety of different ways. Another great example is this <a href="https://codepen.io/ste-vg/pen/GRooLza">CodePen</a> that shows how CSS can be used to create a 3D airplane (I found it via <a href="https://dev.to/keefdrive/top-5-most-hearted-animations-and-designs-on-codepen-whats-under-the-hood-5b0l">this blog post</a>).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="javascript-in-whatisdh" class="slide level2">
+<h2>JavaScript in WhatIsDH</h2>
+<p>The main other tag that we should pay attention to is the <code>script</code> element is the other way that interactivity happens on most websites. If we search for the <code>&lt;script&gt;</code> tags, we can see it is located between lines <code>80</code> and <code>109</code> that it contains the following code:</p>
+
+<img data-src="../../assets/images/whatisdigitalhumanities_script.png" class="r-stretch quarto-figure-center"><p class="caption">JavaScript code in whatisdigitalhumanities</p><p>Learn more in the callout on <a href="../materials/introducing-humanities-computing/07-intro-html.html#js-deep-dive" target="_blank">the Deep Dive Into JavaScript on our course website.</a></p>
+<aside class="notes">
+<p>This code is in a language called JavaScript. This code is using a JavaScript library called jQuery, which is a library that makes it easier to write JavaScript. Unlike HTML or CSS, JavaScript is a <code>programming language</code> (the distinction is not crucial to know but can be helpful when learning about different Digital Humanities methods). At this point, most of the web is powered by JavaScript, so it is incredible powerful and ubiquitous.</p>
+<p>When you look at the actual JavaScript in whatisdigitalhumanities, you see it using D3.js (a powerful data visualization library) and Lodash (a utility library) to: 1. Load quote data from a CSV file 2. Select a random quote from that data 3. Display it on the page using the DOM 4. Listen for click events on the “update quote” button 5. Change the quote when the user clicks</p>
+<p>If you want to learn more about what exactly this code is doing, toggle the following section. Full disclosure some of this language and concepts are fairly advanced, so feel free to use Co-Pilot or ask the Instructors for help.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="javascript-adding-interactivity" class="slide level2">
 <h2>JavaScript: Adding Interactivity</h2>
 <p>JavaScript is a <strong>programming language</strong> that adds behavior to websites:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource javascript number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"button"</span>)<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"click"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb7-2"><a></a>  <span class="co">// Do something when button is clicked</span></span>
-<span id="cb7-3"><a></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource javascript number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"button"</span>)<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"click"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb12-2"><a></a>  <span class="co">// Do something when button is clicked</span></span>
+<span id="cb12-3"><a></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<p>JavaScript can: - Respond to user actions (clicks, scrolling, typing) - Update page content dynamically - Fetch data from servers - Create animations and interactive features</p>
+<p>JavaScript can:</p>
+<ul>
+<li>Respond to user actions (clicks, scrolling, typing)</li>
+<li>Update page content dynamically</li>
+<li>Fetch data from servers</li>
+<li>Create animations and interactive features</li>
+</ul>
 <aside class="notes">
-<p>While HTML and CSS are declarative (you describe what things are and how they should look), JavaScript is imperative - it describes what should happen when things occur. Most modern websites rely heavily on JavaScript for their interactivity.</p>
+<p>While HTML and CSS are declarative (you describe what things are and how they should look), JavaScript is imperative—it describes what should happen when things occur.</p>
+<p>JavaScript can listen for events (like clicks), modify the HTML and CSS dynamically, load new content without reloading the page, and create complex interactive experiences.</p>
+<p>In the whatisdigitalhumanities website, for example, there’s JavaScript that loads a random quote from a CSV file and displays it on the page. When you click the “update quote” button, JavaScript listens for that click, picks a new random quote, and updates the page content—all without reloading.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -685,6 +932,34 @@
           display:block!important;
       }</style></aside>
 </div>
+</section>
+<section id="the-dom-document-object-model" class="slide level2">
+<h2>The DOM: Document Object Model</h2>
+<p>JavaScript sees a webpage as a tree structure:</p>
+<pre><code>html
+├── head
+│   └── title
+└── body
+    ├── h1
+    ├── p
+    └── ul
+        ├── li
+        └── li</code></pre>
+<aside class="notes">
+<p>The DOM is how programming languages understand and manipulate the structure of a web page. It’s a tree structure where each HTML element is a node. JavaScript can traverse this tree, find specific elements, modify them, add new ones, or remove them.</p>
+<p>Think of a webpage as a tree with many branches. Each branch and leaf could be a piece of text, a picture, or a button. JavaScript can work with this tree to change what appears on the page.</p>
+<p>This is incredibly powerful. It means you can create dynamic, responsive pages that change based on user input or data from servers, all without reloading the page.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-three-pillars-of-the-web" class="slide level2">
 <h2>The Three Pillars of the Web</h2>
@@ -711,58 +986,12 @@
 </tbody>
 </table>
 <aside class="notes">
-<p>These three technologies together create everything on the web. Understanding all three is important for web development. They work together - HTML provides the content, CSS makes it look good, and JavaScript makes it interactive.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="dom-document-object-model" class="slide level2">
-<h2>DOM: Document Object Model</h2>
-<p>JavaScript sees a web page as a tree structure called the <strong>DOM</strong>:</p>
-<pre><code>html
-├── head
-│   └── title
-└── body
-    ├── h1
-    ├── p
-    └── ul
-        ├── li
-        └── li</code></pre>
-<p>JavaScript can manipulate this tree to change the page</p>
-<aside class="notes">
-<p>The DOM is how programming languages understand the structure of a web page. It’s a tree structure where each HTML element is a node. JavaScript can traverse this tree and modify elements dynamically.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="why-all-this-complexity" class="slide level2">
-<h2>Why All This Complexity?</h2>
-<p>These technologies enable:</p>
-<ul>
-<li>Custom, unique designs</li>
-<li>Responsive design (works on all devices)</li>
-<li>Theme toggling (dark mode, light mode)</li>
-<li>Interactive features that engage users</li>
-<li>Content that adapts to user input</li>
-</ul>
-<aside class="notes">
+<p>HTML alone creates a functional webpage, but it’s not very beautiful or interactive. To create modern websites, we need three technologies working together.</p>
+<p>HTML provides the semantic structure and content. CSS controls how everything looks. JavaScript makes things interactive.</p>
 <p>The combination of HTML, CSS, and JavaScript is what makes the modern web possible. Yes, it can be complex, but this complexity is necessary to create the rich, interactive experiences we expect from websites today.</p>
+<p>For example, think about Gmail or Google Maps. These are incredibly interactive applications running in your browser. They’re possible because of the combination of these three technologies.</p>
+<p>Also note that these technologies can make websites slow to load (large JavaScript files can take a long time) and difficult to maintain. This is an ongoing challenge for web developers.</p>
+<p>Looking at projects like whatisdigitalhumanities, you can even see the effort required by exploring the commit history on GitHub—showing many contributions over time as people continuously update, fix, and improve the site.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -774,54 +1003,18 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section></section>
-<section>
-<section id="your-turn" class="title-slide slide level1 center">
-<h1>Your Turn</h1>
-
 </section>
-<section id="try-it-out" class="slide level2">
-<h2>Try It Out</h2>
-<p>Create your own HTML page:</p>
-<ol type="1">
-<li>Create a file called <code>index.html</code></li>
-<li>Add the basic HTML structure</li>
-<li>Include at least:
-<ul>
-<li>A heading</li>
-<li>Some paragraphs</li>
-<li>A link</li>
-<li>A list</li>
-</ul></li>
-</ol>
-<div class="fragment">
-<p>Open it in your browser - you’ve made your first webpage!</p>
-<aside class="notes">
-<p>The best way to learn HTML is to do it. Starting simple and building up is a great approach. Don’t worry about making it beautiful at first - just get the structure right.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="the-effort-behind-web-projects" class="slide level2">
+<h2>The Effort Behind Web Projects</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://github.com/hepplerj/whatisdigitalhumanities/graphs/contributors" target="_blank"><img data-src="../../assets/images/whatisdigitalhumanities_insights.png"></a></p>
+<figcaption>GitHub commit history for whatisdigitalhumanities</figcaption>
+</figure>
 </div>
-</section>
-<section id="next-steps" class="slide level2">
-<h2>Next Steps</h2>
-<p>Once you can write basic HTML:</p>
-<ul>
-<li>Learn more CSS to style your pages</li>
-<li>Explore JavaScript to add interactivity</li>
-<li>Inspect real websites to see how they’re built</li>
-<li>Use browser Developer Tools to experiment and learn</li>
-</ul>
 <aside class="notes">
-<p>Learning web development is a journey. These three technologies work together, and getting comfortable with them takes practice. Experimentation is key - don’t be afraid to inspect websites, break things, and try new things.</p>
+<p>Creating and maintaining websites requires significant, ongoing effort. The commit graph shows how many times developers have updated, fixed, and improved the whatisdigitalhumanities website over time. These are thousands of individual changes, bug fixes, feature additions, and refinements.</p>
+<p>This illustrates that web development is complex and labor-intensive work. It’s not something you build once and forget about—websites require continuous maintenance and improvement.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -833,9 +1026,13 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-
-
 </section></section>
+<section id="homework-source-and-style" class="title-slide slide level1 center">
+<h1>Homework: Source and Style</h1>
+<p><a href="../materials/introducing-humanities-computing/07-intro-html.html#homework-source-and-style">✨ Time for you to create some HTML ✨</a></p>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

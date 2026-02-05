@@ -604,22 +604,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    attrib <span class="op">+</span><span class="fu">h</span> <span class="va">$_</span><span class="op">.</span><span class="fu">FullName</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then update your instructions to tell Windows’ PowerShell users to first run this command <code>.\hide-dotfiles.ps1</code> from the maze once they have unzipped your folder. Please reach out to the instructors if you have any questions or issues with this script!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Struggling with Permissions?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Thanks to Maya B, I’ve learned that PowerShell can be finicky with permissions so if you are still getting issues you might try running PowerShell as an administrator or running this command:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> <span class="op">-</span>Scope <span class="cf">Process</span> <span class="op">-</span>ExecutionPolicy Bypass <span class="op">.</span>\hide-dotfiles<span class="op">.</span><span class="fu">ps1</span><span class="op">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
 </section>
 <section id="part-2-solve-your-group-members-mazes" class="level3">
 <h3 class="anchored" data-anchor-id="part-2-solve-your-group-members-mazes">Part 2: Solve Your Group Members’ Mazes</h3>
 <p>Once you have created and zipped your maze, pushed it up to GitHub, and posted a link in our discussion, it’s time to solve your group members’ mazes. <strong>You are required to solve at least two mazes from students in your own group.</strong> This is your chance to see how others in your group are approaching the same broad cultural data topic - pay attention to the choices they made in theming their mazes!</p>
 <p>The first step is to select one of your group members’ mazes from the discussion link and try <strong>cloning their repository to your computer</strong>. Remember if you have setup SSH keys, you can use the SSH link, otherwise you can use the HTTPS link.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone name-of-repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone name-of-repo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Once you have cloned the repository, you should use the command line to enter the maze folder. If you are having issues with cloning, you can also download the zip file and unzip it on your computer. But I would recommend trying to clone the repository first, since it is a very useful skill to have and one you will often need as a coder.</p>
 <p>To enter the cloned repository, you can do this by using the <code>cd</code> command to navigate to the maze folder. You can read the <code>README.md</code> file to get any relevant instructions for solving the maze. To print out the contents of the file, you can use the <code>cat</code> command.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> README.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> README.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Once you are in the maze folder and have read the instructions, you should unzip the maze.</p>
 <p>For Unix/Linux (so Macs, Linux, and the Window Subsystems for Linux), you can use the following command:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> path/to/your/zip/file <span class="at">-d</span> path/to/your/desired/directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> path/to/your/zip/file <span class="at">-d</span> path/to/your/desired/directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <code>-d</code> flag is just telling the terminal where to unzip the file. So if you are already in the correct spot, you can just use <code>unzip path/to/your/zip/file</code>.</p>
 <p>If you are using PowerShell, you will need to use the following command:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Expand-Archive</span> <span class="at">-Path</span> <span class="st">"path\to\your\zip\file"</span> <span class="at">-DestinationPath</span> <span class="st">"path\to\your\desired\directory"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Expand-Archive</span> <span class="at">-Path</span> <span class="st">"path\to\your\zip\file"</span> <span class="at">-DestinationPath</span> <span class="st">"path\to\your\desired\directory"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Again the <code>-DestinationPath</code> flag is just telling the terminal where to unzip the file. So if you are already in the correct spot, you can just use <code>Expand-Archive -Path "path\to\your\zip\file"</code>.</p>
 <p>Be sure to replace these dummy file paths with your actual desired ones (or ask AI for help!). Your goal with this maze is to use both the command line cheatsheet and your preferred AI chatbot to solve the maze. You should be able to solve the maze in ~30 minutes, but if you are struggling, please reach out to the instructors via Slack for help.</p>
 <p>You should use the <code>cd</code> command to navigate through the maze and the <code>ls</code> command to see what is in each directory, or <code>ls -la</code> if you think there might be hidden materials. You can also use the <code>cat</code> command to read the contents of files.</p>
