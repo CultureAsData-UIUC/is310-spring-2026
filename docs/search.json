@@ -1543,6 +1543,34 @@
     ]
   },
   {
+    "objectID": "schedule/09-archives-collections.html",
+    "href": "schedule/09-archives-collections.html",
+    "title": "Standardizing Culture & Data Archeology",
+    "section": "",
+    "text": "Visit UIUC Archives"
+  },
+  {
+    "objectID": "schedule/09-archives-collections.html#in-class-agenda",
+    "href": "schedule/09-archives-collections.html#in-class-agenda",
+    "title": "Standardizing Culture & Data Archeology",
+    "section": "",
+    "text": "Visit UIUC Archives"
+  },
+  {
+    "objectID": "schedule/09-archives-collections.html#assigned-materials",
+    "href": "schedule/09-archives-collections.html#assigned-materials",
+    "title": "Standardizing Culture & Data Archeology",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nDorothy Berry. “The House Archives Built.” Uproot//Zines, June 22, 2021. https://www.uproot.space/features/the-house-archives-built."
+  },
+  {
+    "objectID": "schedule/09-archives-collections.html#additional-materials",
+    "href": "schedule/09-archives-collections.html#additional-materials",
+    "title": "Standardizing Culture & Data Archeology",
+    "section": "Additional Materials",
+    "text": "Additional Materials"
+  },
+  {
     "objectID": "assessments/03-semester-project.html",
     "href": "assessments/03-semester-project.html",
     "title": "Semester Long Project 50%",
@@ -1880,7 +1908,7 @@
     "href": "schedule/index.html#weekly-schedule",
     "title": "Schedule & Assignments Overview",
     "section": "Weekly Schedule",
-    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 - How can we work collaboratively and computationally? Version & File Histories\n\n\nFebruary 3 - How and when did we first start representing culture as data? Histories of Culture & Computing\nFebruary 5 - What does it mean to work digitally? Markup & Markdown\n\n\nFebruary 10 - Digital Objects & Obsolescence\nFebruary 12 - Servers & Web Standards",
+    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 - How can we work collaboratively and computationally? Version & File Histories\n\n\nFebruary 3 - How and when did we first start representing culture as data? Histories of Culture & Computing\nFebruary 5 - What does it mean to work digitally? Markup & Markdown\n\n\nFebruary 10 - What are the historic legacies and politics of representing culture as data? Digital Objects & Obsolescence\nFebruary 12 - How has the web changed culture as data? Servers & Web Standards",
     "crumbs": [
       "Schedule",
       "Schedule Overview"
@@ -1902,11 +1930,11 @@
     "href": "schedule/07-digital-objects-and-obsolescence.html",
     "title": "Digital Objects & Obsolescence",
     "section": "",
-    "text": "Discuss the assigned readings\nGroup assignment on Digital Collections & Libraries.",
+    "text": "Discuss the assigned readings\nGroups present on Mass Digitization & Digital Libraries Group Assignment.",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 10: Digital Objects & Obsolescence"
+      "Feb 10: What are the historic legacies and politics of representing culture as data?"
     ]
   },
   {
@@ -1914,11 +1942,11 @@
     "href": "schedule/07-digital-objects-and-obsolescence.html#in-class-agenda",
     "title": "Digital Objects & Obsolescence",
     "section": "",
-    "text": "Discuss the assigned readings\nGroup assignment on Digital Collections & Libraries.",
+    "text": "Discuss the assigned readings\nGroups present on Mass Digitization & Digital Libraries Group Assignment.",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 10: Digital Objects & Obsolescence"
+      "Feb 10: What are the historic legacies and politics of representing culture as data?"
     ]
   },
   {
@@ -1926,11 +1954,11 @@
     "href": "schedule/07-digital-objects-and-obsolescence.html#assigned-materials",
     "title": "Digital Objects & Obsolescence",
     "section": "Assigned Materials",
-    "text": "Assigned Materials\nRead:\n\nJohnson, Jessica Marie. “Markup Bodies: Black [Life] Studies and Slavery [Death] Studies at the Digital Crossroads.” Social Text 36, no. 4 (137) (December 1, 2018): 57–79. https://doi.org/10.1215/01642472-7145658 (also available on Canvas)\nDorothy Berry. “The House Archives Built.” Uproot//Zines, June 22, 2021. https://www.uproot.space/features/the-house-archives-built.\n\nAnother dataset to explore:\n\nKeyes, Melanie Walsh and Os. “U.S. National Park Visit Data (1979-2023) – Responsible Datasets in Context,” June 1, 2024. https://www.responsible-datasets-in-context.com/posts/np-data/?tab=data-essay.",
+    "text": "Assigned Materials\nRead:\n\nJohnson, Jessica Marie. “Markup Bodies: Black [Life] Studies and Slavery [Death] Studies at the Digital Crossroads.” Social Text 36, no. 4 (137) (December 1, 2018): 57–79. https://doi.org/10.1215/01642472-7145658 (also available on Canvas)\n\nAnother dataset to explore:\n\nKeyes, Melanie Walsh and Os. “U.S. National Park Visit Data (1979-2023) – Responsible Datasets in Context,” June 1, 2024. https://www.responsible-datasets-in-context.com/posts/np-data/?tab=data-essay.",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 10: Digital Objects & Obsolescence"
+      "Feb 10: What are the historic legacies and politics of representing culture as data?"
     ]
   },
   {
@@ -1942,7 +1970,7 @@
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 10: Digital Objects & Obsolescence"
+      "Feb 10: What are the historic legacies and politics of representing culture as data?"
     ]
   },
   {
@@ -1974,11 +2002,11 @@
     "href": "schedule/08-servers-web-standards.html",
     "title": "Servers & Web Standards",
     "section": "",
-    "text": "Review the Source & Style homework.\nDiscuss Introduction to the Web & Servers.\nTime Permitting: Start the Python Refresher lesson.",
+    "text": "Finish remaining group presentations on Mass Digitization & Digital Libraries Group Assignment.\nReview the Source & Style homework.\nDiscuss Introduction to the Web & Servers.\nTime Permitting: Start the Python Refresher lesson.",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 12: Servers & Web Standards"
+      "Feb 12: How has the web changed culture as data?"
     ]
   },
   {
@@ -1986,11 +2014,11 @@
     "href": "schedule/08-servers-web-standards.html#in-class-agenda",
     "title": "Servers & Web Standards",
     "section": "",
-    "text": "Review the Source & Style homework.\nDiscuss Introduction to the Web & Servers.\nTime Permitting: Start the Python Refresher lesson.",
+    "text": "Finish remaining group presentations on Mass Digitization & Digital Libraries Group Assignment.\nReview the Source & Style homework.\nDiscuss Introduction to the Web & Servers.\nTime Permitting: Start the Python Refresher lesson.",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 12: Servers & Web Standards"
+      "Feb 12: How has the web changed culture as data?"
     ]
   },
   {
@@ -2002,7 +2030,7 @@
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 12: Servers & Web Standards"
+      "Feb 12: How has the web changed culture as data?"
     ]
   },
   {
@@ -2014,7 +2042,7 @@
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 12: Servers & Web Standards"
+      "Feb 12: How has the web changed culture as data?"
     ]
   },
   {

@@ -7,6 +7,7 @@ date: 2026-02-12
 
 ## In-Class Agenda
 
+- Finish remaining group presentations on [Mass Digitization & Digital Libraries Group Assignment](../assessments/06-collecting-digitizing-culture.qmd).
 - [ ] Review the [Source & Style homework](../materials/introducing-humanities-computing/07-intro-html.qmd#assignment-2-styling-the-web).
 - [ ] Discuss [Introduction to the Web & Servers](../materials/introducing-humanities-computing/08-intro-web/index.qmd).
 - [ ] Time Permitting: Start [the Python Refresher lesson](../materials/creating-curating-humanities-data/01-python-refresher-foundations/index.qmd).

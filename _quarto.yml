@@ -91,9 +91,9 @@ website:
               href: schedule/05-histories-culture-computing.qmd
             - text: "Feb 5: What does it mean to work digitally?"
               href: schedule/06-markup-and-markdown.qmd
-            - text: "Feb 10: Digital Objects & Obsolescence"
+            - text: "Feb 10: What are the historic legacies and politics of representing culture as data?"
               href: schedule/07-digital-objects-and-obsolescence.qmd
-            - text: "Feb 12: Servers & Web Standards"
+            - text: "Feb 12: How has the web changed culture as data?"
               href: schedule/08-servers-web-standards.qmd
         #     - text: "Feb 17: Standardizing Culture & Data Archeology"
         #       href: schedule/09-standardizing-culture-data-archeology.qmd
