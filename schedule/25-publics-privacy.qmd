@@ -1,0 +1,24 @@
+---
+title: "Publics & Privacy"
+subtitle: "How can we preserve culture as data? "
+toc: true
+date: 2026-04-21
+draft: true
+---
+
+## In-Class Agenda TBD
+
+## Assigned Materials
+
+- Explore and read the principles of *The Colored Conventions Project* [https://coloredconventions.org/](https://coloredconventions.org/)
+- Ding, Jennifer, Jan Diehm, and Michelle McGhee. "Can Data Die? Tracking the Lenna Image." *The Pudding*, October 2021. [https://pudding.cool/2021/10/lenna/](https://pudding.cool/2021/10/lenna/).
+- Cegłowski, Maciej. “Haunted By Data.” Idle Words, October 1, 2015. [https://idlewords.com/talks/haunted_by_data.htm](https://idlewords.com/talks/haunted_by_data.htm). 
+
+## Additional Materials
+
+- Klein, Lauren F., and Sandeep Soni. "How Words Lead to Justice." *Public Books*, August 17, 2021. [https://www.publicbooks.org/how-words-lead-to-justice/](https://www.publicbooks.org/how-words-lead-to-justice/).
+- Nowviskie, Bethany. "Reconstitute the World." Bethany Nowviskie, June 12, 2018. [http://nowviskie.org/2018/reconstitute-the-world/](http://nowviskie.org/2018/reconstitute-the-world/).
+- Tarnoff, Ben. “The Data Is Ours!” *Logic(s) Magazine*, April 1, 2018. [https://logicmag.io/scale/the-data-is-ours/](https://logicmag.io/scale/the-data-is-ours/).
+- Posner, Miriam. “What’s Next: The Radical, Unrealized Potential of Digital Humanities.” In *Debates in the Digital Humanities* 2016, edited by Matthew K. Gold and Lauren F. Klein, 32–41. University of Minnesota Press, 2016. [https://doi.org/10.5749/j.ctt1cn6thb.6](https://doi.org/10.5749/j.ctt1cn6thb.6).
+
+

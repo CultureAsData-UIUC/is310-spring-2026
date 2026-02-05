@@ -1,18 +1,19 @@
 ---
 title: "Servers & Web Standards"
+subtitle: "How has the web changed culture as data?"
 toc: true
-date: 2024-09-19
-draft: true
+date: 2026-02-12
 ---
 
 ## In-Class Agenda
 
-- [ ] Review the [Source & Style homework](../materials/introducing-humanities-computing/07-intro-html/index.qmd#homework-source-and-style).
-- [ ] [Introduction to the Web & Servers](../materials/introducing-humanities-computing/08-intro-web/index.qmd).
+- [ ] Review the [Source & Style homework](../materials/introducing-humanities-computing/07-intro-html.qmd#assignment-2-styling-the-web).
+- [ ] Discuss [Introduction to the Web & Servers](../materials/introducing-humanities-computing/08-intro-web/index.qmd).
 - [ ] Time Permitting: Start [the Python Refresher lesson](../materials/creating-curating-humanities-data/01-python-refresher-foundations/index.qmd).
 
 ## Additional Materials
 
+- Veen, Jeffrey. “A Brief History of HTML | WIRED.” *Wired*, April 28, 1997. [https://www.wired.com/1997/04/a-brief-history-of-html/](https://www.wired.com/1997/04/a-brief-history-of-html/). 
 - Samora, Russell. "Life After Death on Wikipedia." *The Pudding*, August 2018. [https://pudding.cool/2018/08/wiki-death/](https://pudding.cool/2018/08/wiki-death/).
 
 ## Assignments

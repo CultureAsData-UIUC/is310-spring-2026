@@ -15,7 +15,8 @@ This overview gives a top level view of the topics for each of our meetings. You
 | -----------------: | --------------: |
 | [January 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data](01-introducing-computing-in-the-humanities-culture-as-data.qmd) | [January 22 - How Will We Work in This Course? Programming & Processing](02-programming-and-processing.qmd) |
 | [January 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge](03-responsible-computing-of-culture-and-contextualizing-social-knowledge.qmd) | [January 29 - How can we work collaboratively and computationally? Version & File Histories](04-version-file-histories.qmd) |
-| [February 3 - How and when did we first start representing culture as data? Histories of Culture & Computing](05-histories-culture-computing.qmd) | [February 5 - What does it mean to work digitally? Markup & Markdown](06-markup-and-markdown.qmd)
+| [February 3 - How and when did we first start representing culture as data? Histories of Culture & Computing](05-histories-culture-computing.qmd) | [February 5 - What does it mean to work digitally? Markup & Markdown](06-markup-and-markdown.qmd) |
+| [February 10 - Digital Objects & Obsolescence](07-digital-objects-and-obsolescence.qmd) | [February 12 - Servers & Web Standards](08-servers-web-standards.qmd)
 
 ## Assignment Schedule
 

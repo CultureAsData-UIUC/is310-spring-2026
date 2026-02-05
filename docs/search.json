@@ -1543,123 +1543,6 @@
     ]
   },
   {
-    "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
-    "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
-    "title": "Introducing Computing in the Humanities & Culture As Data",
-    "section": "",
-    "text": "Introductions and goals for the course\nOverview and review the syllabus, slides available here\nDiscuss and define “What is computing in the humanities?” versus “What is culture as data?”\n\nVisit What is Digital Humanities? and refresh a few times\nAlso visit Open Syllabus Project\n\nStart survey for group assignments (time permitting) available on Canvas\nStart lesson on Course Tools",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 20: Why Represent Culture As Data?"
-    ]
-  },
-  {
-    "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html#in-class-agenda",
-    "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html#in-class-agenda",
-    "title": "Introducing Computing in the Humanities & Culture As Data",
-    "section": "",
-    "text": "Introductions and goals for the course\nOverview and review the syllabus, slides available here\nDiscuss and define “What is computing in the humanities?” versus “What is culture as data?”\n\nVisit What is Digital Humanities? and refresh a few times\nAlso visit Open Syllabus Project\n\nStart survey for group assignments (time permitting) available on Canvas\nStart lesson on Course Tools",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 20: Why Represent Culture As Data?"
-    ]
-  },
-  {
-    "objectID": "schedule/index.html",
-    "href": "schedule/index.html",
-    "title": "Schedule & Assignments Overview",
-    "section": "",
-    "text": "Note\n\n\n\nThis schedule is subject to change depending on our collective progress this semester, so please treat this as a general guideline that is not set in stone. I will add assignments as we progress below, but you should generally expect to have both assigned materials and assignments each week.",
-    "crumbs": [
-      "Schedule",
-      "Schedule Overview"
-    ]
-  },
-  {
-    "objectID": "schedule/index.html#weekly-schedule",
-    "href": "schedule/index.html#weekly-schedule",
-    "title": "Schedule & Assignments Overview",
-    "section": "Weekly Schedule",
-    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 - How can we work collaboratively and computationally? Version & File Histories\n\n\nFebruary 3 - How and when did we first start representing culture as data? Histories of Culture & Computing\nFebruary 5 - What does it mean to work digitally? Markup & Markdown",
-    "crumbs": [
-      "Schedule",
-      "Schedule Overview"
-    ]
-  },
-  {
-    "objectID": "schedule/index.html#assignment-schedule",
-    "href": "schedule/index.html#assignment-schedule",
-    "title": "Schedule & Assignments Overview",
-    "section": "Assignment Schedule",
-    "text": "Assignment Schedule\nAssignments will be added throughout the semester depending on how much material we get through.\n\nIndividual Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nInitial Interest Survey (Link Available on Canvas)\nDue by Midnight CT on January 21\n\n\nInit IS310 Homework\nDue by Midnight CT on January 28\n\n\nLost & Found in the Cultural Command Line\nDue by Midnight CT on February 4\n\n\n\n\n\nGroup Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nCollective & Individual Topic Selection\nDue February 5 with Optional Extension Until February 12\n\n\nMass Digitization & Digital Libraries Group Assignment\nDue February 10 & 12 In-Class Presentations",
-    "crumbs": [
-      "Schedule",
-      "Schedule Overview"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html",
-    "href": "schedule/06-markup-and-markdown.html",
-    "title": "Markup & Markdown",
-    "section": "",
-    "text": "Review Lost & Found in the Cultural Command Line.\nDiscuss the Introduction to Markup Languages & Web Styling.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#in-class-agenda",
-    "href": "schedule/06-markup-and-markdown.html#in-class-agenda",
-    "title": "Markup & Markdown",
-    "section": "",
-    "text": "Review Lost & Found in the Cultural Command Line.\nDiscuss the Introduction to Markup Languages & Web Styling.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#assigned-materials",
-    "href": "schedule/06-markup-and-markdown.html#assigned-materials",
-    "title": "Markup & Markdown",
-    "section": "Assigned Materials",
-    "text": "Assigned Materials\n\nThings That Shouldn’t Be in File Names for $1,000 Alex – Joseph Scott. February 12, 2007. https://blog.josephscott.org/2007/02/12/things-that-shouldnt-be-in-file-names-for-1000-alex/.",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#additional-materials",
-    "href": "schedule/06-markup-and-markdown.html#additional-materials",
-    "title": "Markup & Markdown",
-    "section": "Additional Materials",
-    "text": "Additional Materials\n\n“Which Dh Tools Are Actually Used In Research?” By Laure Barbot, Frank Fischer, Yoann Moranville And Ivan Pozdniakov, December 6 2019 https://weltliteratur.net/dh-tools-used-in-research/",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#assignments",
-    "href": "schedule/06-markup-and-markdown.html#assignments",
-    "title": "Markup & Markdown",
-    "section": "Assignments",
-    "text": "Assignments\n\nIndividual\n\nLost & Found in the Cultural Command Line.\n\n\n\nGroup\n\nCollective and Individual Topic Selection. Extension available until February 12, 2026.",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
     "objectID": "assessments/03-semester-project.html",
     "href": "assessments/03-semester-project.html",
     "title": "Semester Long Project 50%",
@@ -1919,6 +1802,219 @@
       "Schedule",
       "January",
       "Jan 29: How can we work collaboratively and computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html",
+    "href": "schedule/06-markup-and-markdown.html",
+    "title": "Markup & Markdown",
+    "section": "",
+    "text": "Review Lost & Found in the Cultural Command Line.\nDiscuss the Introduction to Markup Languages & Web Styling.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#in-class-agenda",
+    "href": "schedule/06-markup-and-markdown.html#in-class-agenda",
+    "title": "Markup & Markdown",
+    "section": "",
+    "text": "Review Lost & Found in the Cultural Command Line.\nDiscuss the Introduction to Markup Languages & Web Styling.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#assigned-materials",
+    "href": "schedule/06-markup-and-markdown.html#assigned-materials",
+    "title": "Markup & Markdown",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nThings That Shouldn’t Be in File Names for $1,000 Alex – Joseph Scott. February 12, 2007. https://blog.josephscott.org/2007/02/12/things-that-shouldnt-be-in-file-names-for-1000-alex/.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#additional-materials",
+    "href": "schedule/06-markup-and-markdown.html#additional-materials",
+    "title": "Markup & Markdown",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\n“Which Dh Tools Are Actually Used In Research?” By Laure Barbot, Frank Fischer, Yoann Moranville And Ivan Pozdniakov, December 6 2019 https://weltliteratur.net/dh-tools-used-in-research/",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#assignments",
+    "href": "schedule/06-markup-and-markdown.html#assignments",
+    "title": "Markup & Markdown",
+    "section": "Assignments",
+    "text": "Assignments\n\nIndividual\n\nLost & Found in the Cultural Command Line.\n\n\n\nGroup\n\nCollective and Individual Topic Selection. Extension available until February 12, 2026.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/index.html",
+    "href": "schedule/index.html",
+    "title": "Schedule & Assignments Overview",
+    "section": "",
+    "text": "Note\n\n\n\nThis schedule is subject to change depending on our collective progress this semester, so please treat this as a general guideline that is not set in stone. I will add assignments as we progress below, but you should generally expect to have both assigned materials and assignments each week.",
+    "crumbs": [
+      "Schedule",
+      "Schedule Overview"
+    ]
+  },
+  {
+    "objectID": "schedule/index.html#weekly-schedule",
+    "href": "schedule/index.html#weekly-schedule",
+    "title": "Schedule & Assignments Overview",
+    "section": "Weekly Schedule",
+    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 - How can we work collaboratively and computationally? Version & File Histories\n\n\nFebruary 3 - How and when did we first start representing culture as data? Histories of Culture & Computing\nFebruary 5 - What does it mean to work digitally? Markup & Markdown\n\n\nFebruary 10 - Digital Objects & Obsolescence\nFebruary 12 - Servers & Web Standards",
+    "crumbs": [
+      "Schedule",
+      "Schedule Overview"
+    ]
+  },
+  {
+    "objectID": "schedule/index.html#assignment-schedule",
+    "href": "schedule/index.html#assignment-schedule",
+    "title": "Schedule & Assignments Overview",
+    "section": "Assignment Schedule",
+    "text": "Assignment Schedule\nAssignments will be added throughout the semester depending on how much material we get through.\n\nIndividual Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nInitial Interest Survey (Link Available on Canvas)\nDue by Midnight CT on January 21\n\n\nInit IS310 Homework\nDue by Midnight CT on January 28\n\n\nLost & Found in the Cultural Command Line\nDue by Midnight CT on February 4\n\n\n\n\n\nGroup Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nCollective & Individual Topic Selection\nDue February 5 with Optional Extension Until February 12\n\n\nMass Digitization & Digital Libraries Group Assignment\nDue February 10 & 12 In-Class Presentations",
+    "crumbs": [
+      "Schedule",
+      "Schedule Overview"
+    ]
+  },
+  {
+    "objectID": "schedule/07-digital-objects-and-obsolescence.html",
+    "href": "schedule/07-digital-objects-and-obsolescence.html",
+    "title": "Digital Objects & Obsolescence",
+    "section": "",
+    "text": "Discuss the assigned readings\nGroup assignment on Digital Collections & Libraries.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 10: Digital Objects & Obsolescence"
+    ]
+  },
+  {
+    "objectID": "schedule/07-digital-objects-and-obsolescence.html#in-class-agenda",
+    "href": "schedule/07-digital-objects-and-obsolescence.html#in-class-agenda",
+    "title": "Digital Objects & Obsolescence",
+    "section": "",
+    "text": "Discuss the assigned readings\nGroup assignment on Digital Collections & Libraries.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 10: Digital Objects & Obsolescence"
+    ]
+  },
+  {
+    "objectID": "schedule/07-digital-objects-and-obsolescence.html#assigned-materials",
+    "href": "schedule/07-digital-objects-and-obsolescence.html#assigned-materials",
+    "title": "Digital Objects & Obsolescence",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\nRead:\n\nJohnson, Jessica Marie. “Markup Bodies: Black [Life] Studies and Slavery [Death] Studies at the Digital Crossroads.” Social Text 36, no. 4 (137) (December 1, 2018): 57–79. https://doi.org/10.1215/01642472-7145658 (also available on Canvas)\nDorothy Berry. “The House Archives Built.” Uproot//Zines, June 22, 2021. https://www.uproot.space/features/the-house-archives-built.\n\nAnother dataset to explore:\n\nKeyes, Melanie Walsh and Os. “U.S. National Park Visit Data (1979-2023) – Responsible Datasets in Context,” June 1, 2024. https://www.responsible-datasets-in-context.com/posts/np-data/?tab=data-essay.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 10: Digital Objects & Obsolescence"
+    ]
+  },
+  {
+    "objectID": "schedule/07-digital-objects-and-obsolescence.html#additional-materials-links",
+    "href": "schedule/07-digital-objects-and-obsolescence.html#additional-materials-links",
+    "title": "Digital Objects & Obsolescence",
+    "section": "Additional Materials & Links",
+    "text": "Additional Materials & Links\n\nRankin, Bill, and Matt Daniels. “Mapping Slavery Against US Incarceration.” The Pudding, January 2017. https://pudding.cool/2017/01/shape-of-slavery/\nBouk, Dan. “The History and Political Economy of Personal Data over the Last Two Centuries in Three Acts.” Osiris 32, no. 1 (September 2017): 85–106. https://doi.org/10.1086/693400.\nDavid Eltis, ‘A Brief Overview of the Trans-Atlantic Slave Trade,’ Slave Voyages: The Trans-Atlantic Slave Trade Database, https://www.slavevoyages.org/voyage/about.\nOnuoha, Mimi. “The Library of Missing Datasets - MIMI ONUOHA.” MIMI ONUOHA. Accessed January 11, 2024. https://mimionuoha.com/the-library-of-missing-datasets.\nOnuoha, Mimi. “MimiOnuoha/Missing-Datasets,” January 9, 2024. https://github.com/MimiOnuoha/missing-datasets.\nThe Trans-Atlantic Slave Trade Database https://www.slavevoyages.org/.\nFreedom on the Move https://freedomonthemove.org/.\nEnslaved: Peoples of the Historical Slave Trade https://enslaved.org/",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 10: Digital Objects & Obsolescence"
+    ]
+  },
+  {
+    "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
+    "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
+    "title": "Introducing Computing in the Humanities & Culture As Data",
+    "section": "",
+    "text": "Introductions and goals for the course\nOverview and review the syllabus, slides available here\nDiscuss and define “What is computing in the humanities?” versus “What is culture as data?”\n\nVisit What is Digital Humanities? and refresh a few times\nAlso visit Open Syllabus Project\n\nStart survey for group assignments (time permitting) available on Canvas\nStart lesson on Course Tools",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 20: Why Represent Culture As Data?"
+    ]
+  },
+  {
+    "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html#in-class-agenda",
+    "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html#in-class-agenda",
+    "title": "Introducing Computing in the Humanities & Culture As Data",
+    "section": "",
+    "text": "Introductions and goals for the course\nOverview and review the syllabus, slides available here\nDiscuss and define “What is computing in the humanities?” versus “What is culture as data?”\n\nVisit What is Digital Humanities? and refresh a few times\nAlso visit Open Syllabus Project\n\nStart survey for group assignments (time permitting) available on Canvas\nStart lesson on Course Tools",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 20: Why Represent Culture As Data?"
+    ]
+  },
+  {
+    "objectID": "schedule/08-servers-web-standards.html",
+    "href": "schedule/08-servers-web-standards.html",
+    "title": "Servers & Web Standards",
+    "section": "",
+    "text": "Review the Source & Style homework.\nDiscuss Introduction to the Web & Servers.\nTime Permitting: Start the Python Refresher lesson.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 12: Servers & Web Standards"
+    ]
+  },
+  {
+    "objectID": "schedule/08-servers-web-standards.html#in-class-agenda",
+    "href": "schedule/08-servers-web-standards.html#in-class-agenda",
+    "title": "Servers & Web Standards",
+    "section": "",
+    "text": "Review the Source & Style homework.\nDiscuss Introduction to the Web & Servers.\nTime Permitting: Start the Python Refresher lesson.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 12: Servers & Web Standards"
+    ]
+  },
+  {
+    "objectID": "schedule/08-servers-web-standards.html#additional-materials",
+    "href": "schedule/08-servers-web-standards.html#additional-materials",
+    "title": "Servers & Web Standards",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nVeen, Jeffrey. “A Brief History of HTML | WIRED.” Wired, April 28, 1997. https://www.wired.com/1997/04/a-brief-history-of-html/.\nSamora, Russell. “Life After Death on Wikipedia.” The Pudding, August 2018. https://pudding.cool/2018/08/wiki-death/.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 12: Servers & Web Standards"
+    ]
+  },
+  {
+    "objectID": "schedule/08-servers-web-standards.html#assignments",
+    "href": "schedule/08-servers-web-standards.html#assignments",
+    "title": "Servers & Web Standards",
+    "section": "Assignments",
+    "text": "Assignments\n\nIndividual\n\nSource & Style Homework.\n\n\n\nGroup",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 12: Servers & Web Standards"
     ]
   },
   {

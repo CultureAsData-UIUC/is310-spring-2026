@@ -91,10 +91,10 @@ website:
               href: schedule/05-histories-culture-computing.qmd
             - text: "Feb 5: What does it mean to work digitally?"
               href: schedule/06-markup-and-markdown.qmd
-        #     - text: "Feb 10: Data Feminism & Culture As Data"
-        #       href: schedule/07-data-feminism-and-culture-as-data.qmd
-        #     - text: "Feb 12: Servers & Web Standards"
-        #       href: schedule/08-servers-web-standards.qmd
+            - text: "Feb 10: Digital Objects & Obsolescence"
+              href: schedule/07-digital-objects-and-obsolescence.qmd
+            - text: "Feb 12: Servers & Web Standards"
+              href: schedule/08-servers-web-standards.qmd
         #     - text: "Feb 17: Standardizing Culture & Data Archeology"
         #       href: schedule/09-standardizing-culture-data-archeology.qmd
         #     - text: "Feb 19: Scripts & Types"
