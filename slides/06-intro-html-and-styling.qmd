@@ -1,0 +1,413 @@
+---
+title: "Introduction to Markup and Styling Web Documents"
+subtitle: "How do we structure and style content for the web?"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+---
+
+# From Markdown to the Web
+
+## What We Know So Far
+
+We've learned about:
+
+- Plain text files
+- **Markdown** - a markup language for formatting text
+- How to work with files and directories from the command line
+
+. . .
+
+But what makes the web work?
+
+::: {.notes}
+We've spent time learning about markup languages in the context of Markdown, which uses symbols like `#` to format text. Now we're going to expand that understanding and look at how the web uses markup languages differently.
+:::
+
+# Introducing Markup Languages
+
+## What is a Markup Language?
+
+From Wikipedia:
+
+> "a markup language is a system for annotating a document in a way that is syntactically distinguishable from the text, meaning when the document is processed for display, the markup language is not shown, and is only used to format the text."
+
+::: {.notes}
+So a markup language is really about annotating content with metadata that describes how it should be formatted or displayed. In Markdown, we use `#` to say "this is a heading." In HTML, we use tags like `<h1>` for the same purpose.
+:::
+
+## Different Markup Languages
+
+**Markdown** (what we know)
+- Simple symbols like `#` for formatting
+- Useful for documents
+
+. . .
+
+**TEI (Text Encoding Initiative)** (for humanities)
+- Encodes texts to make them machine-readable
+- Marks up dates, person names, places
+- Enables searching and analysis
+
+. . .
+
+**HTML (HyperText Markup Language)** (for the web)
+- Structures content for browsers
+- Uses **tags** to describe elements
+- Powers the entire World Wide Web
+
+::: {.notes}
+TEI and HTML were both created in the early days of the web - HTML in 1991 by Tim Berners-Lee, and TEI in 1987. They both serve similar purposes (marking up text with metadata) but for different audiences.
+:::
+
+## A Real-World Example: The Old Bailey
+
+*The Proceedings of the Old Bailey* - digitizing 18th century criminal court records
+
+![](https://www.dhi.ac.uk/blogs/old-bailey/wp-content/uploads/sites/35/2022/09/Robert-Marshall-7-Dec-1692-1-894x1024.jpg){height="350"}
+
+::: {.notes}
+The Old Bailey Online project started in 1999 and manually transcribed and marked up these historical records using XML/TEI. They used a "double rekeying" strategy - having each text transcribed twice and automatically compared to catch errors. This level of care created 99.9% accurate transcriptions, which then allowed for sophisticated searching and analysis.
+:::
+
+# What is HTML?
+
+## HyperText Markup Language
+
+HTML is **not a programming language** - it's a markup language used to:
+
+- Tell your browser how to structure web pages
+- Create documents that are rendered by your browser
+- Make content appear or act a certain way
+
+. . .
+
+When you visit a website, you're viewing an HTML document rendered in your browser.
+
+::: {.notes}
+This is an important distinction. HTML is purely about structure and presentation. It doesn't perform logic or calculations. Programming languages like Python or JavaScript do that.
+:::
+
+## HTML Building Blocks: Tags
+
+HTML uses **tags** to mark up content:
+
+```html
+<p>This is a paragraph</p>
+```
+
+- **Opening tag**: `<p>`
+- **Content**: "This is a paragraph"
+- **Closing tag**: `</p>`
+
+::: {.notes}
+Tags are the fundamental building block of HTML. They come in pairs (opening and closing) and wrap around content. The tag name tells the browser what the content represents.
+:::
+
+## Anatomy of an HTML Element
+
+![](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax/grumpy-cat-small.png)
+
+- Opening tag
+- Content
+- Closing tag
+
+. . .
+
+All three together = an HTML **element**
+
+::: {.notes}
+This diagram from Mozilla shows the three parts of an HTML element. The element is the combination of all three parts together. It's important to close your tags - forgetting the closing tag is a common beginner error.
+:::
+
+## Common HTML Tags
+
+| Tag | Purpose |
+|-----|---------|
+| `<h1>` to `<h6>` | Headings |
+| `<p>` | Paragraph |
+| `<div>` | Container/division |
+| `<a>` | Link (anchor) |
+| `<ul>` | Unordered list |
+| `<li>` | List item |
+
+. . .
+
+[Full list at W3Schools](https://www.w3schools.com/tags/ref_byfunc.asp){target="_blank"}
+
+::: {.notes}
+These are some of the most common tags you'll encounter. There are many more, but these cover the basic structural elements of most web pages.
+:::
+
+## HTML Attributes
+
+HTML elements can have **attributes** - extra information about the element:
+
+```html
+<a href="https://ischool.illinois.edu/">iSchool</a>
+```
+
+. . .
+
+- Attribute name: `href`
+- Attribute value: `https://ischool.illinois.edu/`
+
+::: {.notes}
+Attributes appear in the opening tag and provide additional information about how the element should behave or what it contains. The `href` attribute tells a link where to navigate to.
+:::
+
+## Nesting Tags
+
+Tags can contain other tags in a hierarchical relationship:
+
+```html
+<ul>
+  <li>Item one</li>
+  <li>Item two</li>
+  <li>Item three</li>
+</ul>
+```
+
+- `<ul>` is the **parent**
+- `<li>` elements are **children**
+- All `<li>` elements are **siblings** of each other
+
+::: {.notes}
+This hierarchical relationship is really important in HTML. Every element has a place in a tree structure, and understanding parent-child relationships helps you write proper HTML.
+:::
+
+## Basic HTML Document Structure
+
+Every HTML page should have:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Metadata about the page -->
+  </head>
+  <body>
+    <!-- The actual content -->
+  </body>
+</html>
+```
+
+- `<!DOCTYPE html>` - tells browser it's an HTML document
+- `<head>` - metadata (title, links to stylesheets, etc.)
+- `<body>` - content that displays on the page
+
+::: {.notes}
+This is the basic skeleton of every web page. The head contains information about the page (like its title or what fonts to load), and the body contains everything the user sees.
+:::
+
+## HTML's Limitations
+
+From Alison Parrish (bold added for emphasis):
+
+> **Because the primary purpose of HTML is to change the appearance of text, HTML markup usually does not tell us anything useful about what the text means.**
+
+. . .
+
+> **HTML is also notoriously messy—web browsers are very forgiving of syntax errors** (like mismatched or unclosed tags)
+
+::: {.notes}
+HTML tells you how something should look, not what it means. And because browsers are forgiving of errors, we sometimes end up with invalid HTML that still displays. This is why we need special tools to parse and analyze HTML programmatically.
+:::
+
+# Web Styling and Interaction
+
+## How Do Websites Look Nice?
+
+HTML provides **structure**
+- What things are (headings, paragraphs, lists, etc.)
+
+. . .
+
+But websites need more than structure...
+
+. . .
+
+They need **style** (colors, fonts, layout)
+They need **interactivity** (buttons that do things, animations, etc.)
+
+::: {.notes}
+HTML alone can't create beautiful, interactive websites. We need additional technologies to handle presentation and behavior. That's where CSS and JavaScript come in.
+:::
+
+## Inspecting the Web
+
+You can see the HTML of any website using **Developer Tools**:
+
+1. Right-click on a page
+2. Select "Inspect" or "Inspect Element"
+
+. . .
+
+This shows you the **source code** - the HTML that creates the page you see
+
+::: {.notes}
+The Developer Tools are incredibly useful for understanding how websites are built. You can see the HTML, CSS, and JavaScript that powers any site. This is a valuable learning tool.
+:::
+
+## CSS: Cascading Style Sheets
+
+CSS is a **style sheet language** that controls how HTML is displayed:
+
+```css
+.title {
+    font-family: Garamond;
+    background: #faf;
+    color: #fff;
+    padding: 3px;
+}
+```
+
+- **Selector** (`.title`) - which elements to style
+- **Properties** and **values** - how to style them
+
+::: {.notes}
+CSS is what makes websites look beautiful. It separates content (HTML) from presentation (CSS), which is a good practice. You can apply the same CSS to different HTML to completely change how a site looks - this is demonstrated by CSS Zen Garden.
+:::
+
+## CSS Selectors
+
+```css
+selector {
+    property: value;
+    property: value;
+}
+```
+
+Different ways to select elements:
+
+- `h1` - all `<h1>` tags (element selector)
+- `.title` - elements with class `title` (class selector)
+- `#header` - element with ID `header` (ID selector)
+
+::: {.notes}
+Selectors are how you target specific HTML elements for styling. Understanding selectors is crucial to writing effective CSS.
+:::
+
+## CSS in Action
+
+The same HTML can look completely different with different CSS:
+
+[CSS Zen Garden](http://www.csszengarden.com/){target="_blank"}
+
+. . .
+
+Or even create complex 3D animations:
+
+[CodePen 3D Airplane](https://codepen.io/ste-vg/pen/GRooLza){target="_blank"}
+
+::: {.notes}
+These are great examples of CSS's power. CSS Zen Garden shows the same HTML with dozens of different stylesheets, creating radically different designs. The CodePen example shows that CSS can even create 3D effects and animations.
+:::
+
+## JavaScript: Adding Interactivity
+
+JavaScript is a **programming language** that adds behavior to websites:
+
+```javascript
+document.getElementById("button").addEventListener("click", () => {
+  // Do something when button is clicked
+});
+```
+
+. . .
+
+JavaScript can:
+- Respond to user actions (clicks, scrolling, typing)
+- Update page content dynamically
+- Fetch data from servers
+- Create animations and interactive features
+
+::: {.notes}
+While HTML and CSS are declarative (you describe what things are and how they should look), JavaScript is imperative - it describes what should happen when things occur. Most modern websites rely heavily on JavaScript for their interactivity.
+:::
+
+## The Three Pillars of the Web
+
+| Technology | Purpose |
+|-----------|---------|
+| **HTML** | Structure - what things are |
+| **CSS** | Presentation - how things look |
+| **JavaScript** | Behavior - what things do |
+
+::: {.notes}
+These three technologies together create everything on the web. Understanding all three is important for web development. They work together - HTML provides the content, CSS makes it look good, and JavaScript makes it interactive.
+:::
+
+## DOM: Document Object Model
+
+JavaScript sees a web page as a tree structure called the **DOM**:
+
+```
+html
+├── head
+│   └── title
+└── body
+    ├── h1
+    ├── p
+    └── ul
+        ├── li
+        └── li
+```
+
+JavaScript can manipulate this tree to change the page
+
+::: {.notes}
+The DOM is how programming languages understand the structure of a web page. It's a tree structure where each HTML element is a node. JavaScript can traverse this tree and modify elements dynamically.
+:::
+
+## Why All This Complexity?
+
+These technologies enable:
+
+- Custom, unique designs
+- Responsive design (works on all devices)
+- Theme toggling (dark mode, light mode)
+- Interactive features that engage users
+- Content that adapts to user input
+
+::: {.notes}
+The combination of HTML, CSS, and JavaScript is what makes the modern web possible. Yes, it can be complex, but this complexity is necessary to create the rich, interactive experiences we expect from websites today.
+:::
+
+# Your Turn
+
+## Try It Out
+
+Create your own HTML page:
+
+1. Create a file called `index.html`
+2. Add the basic HTML structure
+3. Include at least:
+   - A heading
+   - Some paragraphs
+   - A link
+   - A list
+
+. . .
+
+Open it in your browser - you've made your first webpage!
+
+::: {.notes}
+The best way to learn HTML is to do it. Starting simple and building up is a great approach. Don't worry about making it beautiful at first - just get the structure right.
+:::
+
+## Next Steps
+
+Once you can write basic HTML:
+
+- Learn more CSS to style your pages
+- Explore JavaScript to add interactivity
+- Inspect real websites to see how they're built
+- Use browser Developer Tools to experiment and learn
+
+::: {.notes}
+Learning web development is a journey. These three technologies work together, and getting comfortable with them takes practice. Experimentation is key - don't be afraid to inspect websites, break things, and try new things.
+:::

@@ -210,6 +210,26 @@ Be sure to not zip the `README.md` file, as we will need to read this file to so
 
 If you need inspiration for your maze, take a look at this one I created, which you can download as a [zip file](../../assets/files/cli_exercises/zipped_gutenberg_maze.zip){:download} or via our [GitHub repository](https://github.com/CultureAsData-UIUC/is310-spring-2026/blob/main/assets/files/cli_exercises/zipped_gutenberg_maze.zip) (you can also try solving it if you like!).
 
+#### Hiding Files (Important Cross-Platform Note)
+
+Different operating systems handle “hidden” files differently. So far, we have seen what are called `dotfiles` which is a type of hidden file or directory. These are hidden by default on Mac/Linux but not on Windows if you are running PowerShell.
+
+If you want your hidden files and folders to behave as hidden on Windows, include a PowerShell script in your maze folder named: `hide-dotfiles.ps1`. 
+
+In the file, place the following code:
+
+```powershell
+# Hide all dotfiles and dotfolders recursively from the current directory
+
+Get-ChildItem -Recurse -Force |
+Where-Object { $_.Name.StartsWith('.') } |
+ForEach-Object {
+    attrib +h $_.FullName
+}
+```
+
+Then update your instructions to tell Windows' PowerShell users to first run this command `.\hide-dotfiles.ps1` from the maze once they have unzipped your folder. Please reach out to the instructors if you have any questions or issues with this script!
+
 ### Part 2: Solve Your Group Members' Mazes
 
 Once you have created and zipped your maze, pushed it up to GitHub, and posted a link in our discussion, it's time to solve your group members' mazes. **You are required to solve at least two mazes from students in your own group.** This is your chance to see how others in your group are approaching the same broad cultural data topic - pay attention to the choices they made in theming their mazes!
