@@ -15,7 +15,7 @@ Before diving into your own area of focus, we want everyone to gain hands-on exp
 
 As a group, work through the following tasks together. Document your findings and observations as you go:
 
-1. **Finding the African American Periodical Poetry**: Using the Hennessey dataset from your readings, select 2-3 poems from different magazines (e.g., *The Crisis*, *Opportunity*, *Black Opals*). Try to locate the original magazine issues in HathiTrust that contain these poems.
+1. **Finding the African American Periodical Poetry**: Using the Hennessey dataset from your readings (which is available in the [readings here](../schedule/05-histories-culture-computing.qmd#assigned-materials)), select 2-3 poems from different magazines (e.g., *The Crisis*, *Opportunity*, *Black Opals*). Try to locate the original magazine issues in HathiTrust that contain these poems.
 
    - What search strategies did you use?
    - Were you able to find all the issues you looked for?
@@ -79,7 +79,7 @@ Here are the following prompts you should answer for your area of focus:
 
 You should aim to find at least one example for each prompt, but you are welcome to find more.
 
-## Step 3: Documenting & Presenting Your Findings
+## Documenting & Presenting Your Findings
 
 The final part of this assignment is to document and present your findings and decisions. You should create a new folder and Markdown file in your group's GitHub repository that outlines:
 
@@ -87,3 +87,9 @@ The final part of this assignment is to document and present your findings and d
 2. Your responses to the cultural objects prompts above
 
 We will be discussing your findings in the following weeks. Each member should be prepared to discuss their contributions to the group's findings. You do not need to prepare a formal presentation or any slides, but each member should be ready to engage in the discussion.
+
+::: {.callout-note}
+## Dividing Labor
+
+You are welcome to divide labor any way you choose, BUT please do your best to be equitable and be sure to document who is responsible for what. You may have some group members do part 1 or part 2, but ideally everyone should contribute to either investigating the data in HathiTrust or identifying digital objects. I would highly encourage you to consider the git history (your `git log`) as a way of making your labor visible in these types of assignments.
+:::
