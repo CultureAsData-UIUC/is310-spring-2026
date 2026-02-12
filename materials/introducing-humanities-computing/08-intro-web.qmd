@@ -263,6 +263,8 @@ This is the complete web ecosystem in action—you've created content (HTML), ve
 
 ## Assignment: Doing It Live
 
+![](https://media.tenor.com/ug1DBRF_MjIAAAAM/bill-oreilly-well-do-it-live.gif)
+
 Now that you understand how the web works and how GitHub Pages works, it's time to deploy your own website! You'll take the HTML page you created in the [Source & Style Assignment](../introducing-humanities-computing/07-intro-html#assignment-2-styling-the-web) and host it online.
 
 ### Choose Your Hosting Option

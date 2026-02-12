@@ -431,7 +431,7 @@ There's also Ingrid Burrington's fascinating piece on visiting a Domain-Names Co
 
 # Hosting HTML Pages with GitHub Pages
 
-[![GitHub Pages Doc](../../assets/images/github_pages_docs.png)](https://docs.github.com/en/pages){target="_blank"}
+[![GitHub Pages Doc](../assets/images/github_pages_docs.png)](https://docs.github.com/en/pages){target="_blank"}
 
 
 ::: {.notes}
@@ -464,7 +464,7 @@ Create a new repository with the exact name: **`yourusername.github.io`**
 
 For example: `ZoeLeBlanc.github.io`
 
-![Creating a GitHub.io repository](../../assets/images/githubio_repo.png)
+![Creating a GitHub.io repository](../assets/images/githubio_repo.png)
 
 ::: {.notes}
 The special naming convention tells GitHub that this repository should be hosted as your personal website.
@@ -478,7 +478,7 @@ Make sure:
 
 Clone the repository and add your `index.html` file (and any other HTML, CSS, or JavaScript files).
 
-![Creating index.html](../../assets/images/create_index_html.png)
+![Creating index.html](../assets/images/create_index_html.png)
 
 ::: {.notes}
 The `index.html` file is important—it's the file that GitHub serves when someone visits your site. So `yourusername.github.io/` automatically displays your `index.html`.
@@ -506,7 +506,7 @@ Your website is now live at: `https://yourusername.github.io`
 
 Verify deployment by checking the **Actions** tab for green checkmarks:
 
-![GitHub Actions](../../assets/images/actions_tab.png)
+![GitHub Actions](../assets/images/actions_tab.png)
 
 ::: {.notes}
 You can verify the deployment by going to your repository and clicking the Actions tab. You should see green checkmarks indicating successful deployment.
@@ -574,7 +574,7 @@ Whether you choose Option 1 or Option 2, you can always check your deployment st
 
 A green checkmark ✓ means your site deployed successfully.
 
-![Live deployment](../../assets/images/live_website.png)
+![Live deployment](../assets/images/live_website.png)
 
 ::: {.notes}
 You can see live deployment confirmation in the Actions tab.
