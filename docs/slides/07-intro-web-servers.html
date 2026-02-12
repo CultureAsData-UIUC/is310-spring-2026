@@ -236,10 +236,12 @@
 </section>
 <section id="the-world-wide-web" class="slide level2">
 <h2>The World Wide Web</h2>
+<div class="r-fit-text">
 <p><a href="https://en.wikipedia.org/wiki/World_Wide_Web" target="_blank"><strong>From Wikipedia:</strong></a></p>
 <blockquote>
 <p>“The World Wide Web (WWW), commonly known as the Web, is an information system where documents and other web resources are identified by Uniform Resource Locators (URLs), which may be interlinked by hypertext, and are accessible over the Internet. The resources of the WWW are transferred via the Hypertext Transfer Protocol (HTTP) and may be accessed by users by a software application called a web browser and are published by a software application called a web server.”</p>
 </blockquote>
+</div>
 <aside class="notes">
 <p>While this is technically accurate, there’s a lot of important history and concepts packed into this definition. Let’s break it down piece by piece to understand how the web actually works and where it came from.</p>
 <p>Key concepts to understand: - URLs: how we identify and locate resources - Hypertext: linked documents - HTTP: the protocol for transferring data - Web browsers: applications that display web pages - Web servers: applications that host web pages</p>
@@ -403,11 +405,6 @@
 <aside class="notes">
 <p>A URL is another term for a URI or a web address, which Berners-Lee envisioned as way to locate anything on the web. It is a string of characters that provides a way to access a specific resource on the web. URLs are made up of different components, which you can see in this diagram:</p>
 <p>This diagram is from the Mozilla Web Docs, which provide a great overview of the topic <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL">https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL</a>. You’ve already encountered URLs when we created an <code>a</code> tag in our HTML page.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://ischool.illinois.edu/"</span><span class="dt">&gt;</span>My first page!<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This creates a <strong>hyperlink</strong> or <strong>link</strong> that allows us to navigate to other webpages. We created an <strong>external link</strong> because we linked to a webpage outside our own website.</p>
-<p>You can also create: - <strong>Internal links</strong> - linking to other pages on your own website - <strong>Anchors</strong> - linking to specific sections within a webpage (this is how the sidebar navigation on our course site works)</p>
-<p>More on hyperlinks: https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_are_hyperlinks</p>
-<p>More on URLs: https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -421,11 +418,38 @@
       }</style></aside>
 </div>
 </section>
+<section id="what-is-a-url-1" class="slide level2">
+<h2>What is a URL?</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://ischool.illinois.edu/"</span><span class="dt">&gt;</span>My first page!<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This creates a <strong>hyperlink</strong> or <strong>link</strong> that allows us to navigate to other webpages. We created an <strong>external link</strong> because we linked to a webpage outside our own website.</p>
+</section>
+<section id="what-is-a-url-2" class="slide level2">
+<h2>What is a URL?</h2>
+<p>You can also create:</p>
+<ul>
+<li><strong>Internal links</strong> - linking to other pages on your own website</li>
+<li><strong>Anchors</strong> - linking to specific sections within a webpage (this is how the sidebar navigation on our course site works)</li>
+</ul>
+<p>More on hyperlinks: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_are_hyperlinks" target="_blank">https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_are_hyperlinks</a></p>
+<aside class="notes">
+<p>But URLs are more than just links; they are the way we access webpages. Mozilla describes URLs as akin to postal addresses, an analogy I find helpful. Just as you need an address to send a letter, you need a URL to send a request to a webpage. Before delving into the anatomy of URLs, understanding domain names and the web’s functionality is beneficial.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="clients-and-servers" class="slide level2">
 <h2>Clients and Servers</h2>
 <p>The web is built on a <strong>client-server model</strong>:</p>
 
-<img data-src="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work/internet-schema-2.png" class="r-stretch quarto-figure-center"><p class="caption">How the internet works</p><div class="fragment">
+<img data-src="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work/internet-schema-2.png" class="r-stretch quarto-figure-center"><p class="caption">How the internet works</p><div class="fragment">
 <ul>
 <li><strong>Client</strong> = computer that <em>requests</em> data</li>
 <li><strong>Server</strong> = computer that <em>hosts</em> and <em>sends</em> data</li>
@@ -456,6 +480,8 @@
 <aside class="notes">
 <p>This simplified diagram shows the basic back-and-forth: 1. Client sends a request 2. Server receives the request 3. Server sends back a response 4. Client receives the response</p>
 <p>This happens billions of times per second across the internet.</p>
+<p>Although our current internet is vastly more complex, this core idea of a client <strong>requesting</strong> data and a server <strong>hosting</strong> and <strong>sending</strong> data remains central to how the web functions.</p>
+<p>Much of the data sent from servers to clients consists of HTML documents, but it can also include images, videos, audio, or virtually any type of data.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -478,11 +504,40 @@
 <h2>What is HTTP?</h2>
 <p><strong>HTTP (HyperText Transfer Protocol)</strong> is how clients and servers communicate.</p>
 <p>You’ll notice URLs start with <code>http://</code> or <code>https://</code>—this indicates the protocol being used.</p>
-<div class="fragment">
-<p>When you enter a URL in your browser: 1. Browser sends an <strong>HTTP request</strong> to a server 2. Server validates the request 3. Server sends back an <strong>HTTP response</strong> with status codes</p>
 <aside class="notes">
 <p>Tim Berners-Lee developed HTTP as the standard way to transmit data across the web. It’s a simple request-response protocol.</p>
-<p>When you type “google.com” into your browser, you’re actually: 1. Sending an HTTP request to Google’s server 2. The server checks if the request is valid 3. If valid, the server sends back the HTML, CSS, JavaScript, and other files that make up the Google homepage</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-is-http-1" class="slide level2">
+<h2>What is HTTP?</h2>
+<p>I particularly like <a href="https://jvns.ca/blog/2019/09/12/new-zine-on-http/" target="_blank">Julia Evans’ Zine on HTTP</a> for explaining this concept:</p>
+<p><a href="https://tweets.jvns.ca/tweets_media/1155318552129396736-EAiEGSgXsAELERE.jpg" target="_blank"><img data-src="https://tweets.jvns.ca/tweets_media/1155318552129396736-EAiEGSgXsAELERE.jpg"></a></p>
+</section>
+<section id="what-is-http-2" class="slide level2">
+<h2>What is HTTP?</h2>
+<p>When you enter a URL in your browser:</p>
+<ol type="1">
+<li>Browser sends an <strong>HTTP request</strong> to a server</li>
+<li>Server validates the request</li>
+<li>Server sends back an <strong>HTTP response</strong> with status codes</li>
+</ol>
+<aside class="notes">
+<p>When you type “google.com” into your browser, you’re actually:</p>
+<ol type="1">
+<li>Sending an HTTP request to Google’s server</li>
+<li>The server checks if the request is valid</li>
+<li>If valid, the server sends back the HTML, CSS, JavaScript, and other files that make up the Google homepage</li>
+</ol>
 <p>The key innovation of HTTP is that it’s stateless—each request is independent. This makes it simple and efficient.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -495,16 +550,34 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
 <section id="http-status-codes" class="slide level2">
 <h2>HTTP Status Codes</h2>
-
-<img data-src="https://pbs.twimg.com/media/D-bI-xyWkAAY0Qb?format=jpg&amp;name=large.png" class="r-stretch quarto-figure-center"><p class="caption">HTTP Status Codes</p><div class="fragment">
-<p>Most important: - <strong>200 OK</strong> = request successful - <strong>404 Not Found</strong> = resource doesn’t exist</p>
+<p>There’s a number of different types of status codes, that you can see here:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://tweets.jvns.ca/tweets_media/1145824140462608387-D-bI-xyWkAAY0Qb.jpg" target="_blank"><img data-src="https://tweets.jvns.ca/tweets_media/1145824140462608387-D-bI-xyWkAAY0Qb.jpg"></a></p>
+<figcaption>HTTP Status Codes</figcaption>
+</figure>
+</div>
+</section>
+<section id="http-status-codes-1" class="slide level2">
+<h2>HTTP Status Codes</h2>
+<p>Most important:</p>
+<ul>
+<li><strong>200 OK</strong> = request successful</li>
+<li><strong>404 Not Found</strong> = resource doesn’t exist</li>
+</ul>
 <aside class="notes">
 <p>When a server responds to an HTTP request, it sends back a status code that indicates what happened.</p>
-<p>Status codes are grouped by number range: - 1xx = informational - 2xx = success (200 is the most common) - 3xx = redirection - 4xx = client errors (404 is very common—“page not found”) - 5xx = server errors</p>
+<p>Status codes are grouped by number range:</p>
+<ul>
+<li>1xx = informational</li>
+<li>2xx = success (200 is the most common)</li>
+<li>3xx = redirection</li>
+<li>4xx = client errors (404 is very common—“page not found”)</li>
+<li>5xx = server errors</li>
+</ul>
 <p>When you’ve seen an error message saying a page doesn’t exist, you were seeing a 404 error. This is a status code sent back by the HTTP protocol when the server couldn’t find the requested resource.</p>
 <p>One famous 404 page is this one:</p>
 <style type="text/css">
@@ -518,7 +591,6 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
 <section id="famous-404-pages" class="slide level2">
 <h2>Famous 404 Pages</h2>
@@ -540,8 +612,13 @@
 <section id="understanding-urls-the-protocol" class="slide level2">
 <h2>Understanding URLs: The Protocol</h2>
 <p>Now let’s break down the URL components:</p>
-
-<img data-src="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL/mdn-url-protocol@x2_update.png" class="r-stretch quarto-figure-center"><p class="caption">URL Protocol</p><div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL#scheme" target="_blank"><img data-src="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL/mdn-url-protocol@x2_update.png"></a></p>
+<figcaption>URL Protocol</figcaption>
+</figure>
+</div>
+<div class="fragment">
 <p>The <strong>scheme or protocol</strong> tells the browser how to communicate with the server.</p>
 <aside class="notes">
 <p>The first part of a URL is the scheme/protocol. This tells the browser what set of rules to use when communicating with the server.</p>
@@ -592,24 +669,14 @@
 <section id="what-is-a-domain-name" class="slide level2">
 <h2>What is a Domain Name?</h2>
 <p>The <strong>authority or domain name</strong> is the name of the server hosting the website:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL/mdn-url-authority.png"></p>
-<figcaption>URL Authority/Domain Name</figcaption>
-</figure>
-</div>
-<div class="fragment">
+
+<img data-src="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL/mdn-url-authority.png" class="r-stretch quarto-figure-center"><p class="caption">URL Authority/Domain Name</p></section>
+<section id="what-is-a-domain-name-1" class="slide level2">
+<h2>What is a Domain Name?</h2>
 <p>Originally, you accessed websites using <strong>IP addresses</strong> (series of numbers identifying a computer):</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://www.ipxo.com/app/uploads/2021/09/IPv4-anatomy.png"></p>
-<figcaption>IPv4 Address</figcaption>
-</figure>
-</div>
-<aside class="notes">
+
+<img data-src="https://www.ipxo.com/app/uploads/2021/09/IPv4-anatomy.png" class="r-stretch quarto-figure-center"><p class="caption">IPv4 Address</p><aside class="notes">
 <p>Before domain names existed, you had to remember IP addresses to access computers. An IP address looks like <code>192.168.1.1</code> or similar.</p>
-<p>In the 1995 movie <em>The Net</em>, starring Sandra Bullock, there’s a scene where she searches using IP addresses. You can watch a clip here: https://youtu.be/M1K-B8QVLyo?t=242</p>
-<p>IP addresses are still used today under the hood, but they’re not user-friendly. Imagine having to remember your bank’s website as <code>104.21.32.105</code> instead of <code>bank.com</code>!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -621,13 +688,22 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
+</section>
+<section id="what-is-a-domain-name-2" class="slide level2">
+<h2>What is a Domain Name?</h2>
+<p>For example, the 1995 classic, thriller movie <a href="https://en.wikipedia.org/wiki/The_Net_(1995_film)" target="_blank"><em>The Net</em></a>, starring Sandra Bullock, there’s a scene where she searches using IP addresses. You can watch a clip here: <a href="https://youtu.be/M1K-B8QVLyo?t=242" target="_blank">https://youtu.be/M1K-B8QVLyo?t=242</a></p>
+<p>IP addresses are still used today under the hood, but they’re not user-friendly. Imagine having to remember your bank’s website as <code>104.21.32.105</code> instead of <code>bank.com</code>!</p>
 </section>
 <section id="the-domain-name-system-dns" class="slide level2">
 <h2>The Domain Name System (DNS)</h2>
-<p>The <strong>Domain Name System (DNS)</strong> is like a “phone book” or “address book” that translates IP addresses into human-readable domain names.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="_blank"><strong>Domain Name System (DNS)</strong></a> is like a “phone book” or “address book” that translates IP addresses into human-readable domain names.</p>
 <div class="fragment">
-<p>Every time you enter a URL in your browser: 1. Browser queries DNS server: “What IP address is associated with google.com?” 2. DNS returns the IP address 3. Browser connects to that IP address using HTTP</p>
+<p>Every time you enter a URL in your browser:</p>
+<ol type="1">
+<li>Browser queries DNS server: “What IP address is associated with google.com?”</li>
+<li>DNS returns the IP address</li>
+<li>Browser connects to that IP address using HTTP</li>
+</ol>
 <aside class="notes">
 <p>DNS is a critical piece of internet infrastructure. It’s a distributed system of computers (DNS servers) that maintains a database mapping domain names to IP addresses.</p>
 <p>When you type “google.com” into your browser, the browser doesn’t actually know where Google’s servers are. It sends a query to a DNS server asking “What’s the IP address for google.com?” The DNS server responds with the IP address, and then the browser can make its HTTP request to that address.</p>
@@ -648,7 +724,7 @@
 <section id="domain-name-structure" class="slide level2">
 <h2>Domain Name Structure</h2>
 
-<img data-src="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name/structure.png" class="r-stretch quarto-figure-center"><p class="caption">Domain Name Structure</p><div class="fragment">
+<img data-src="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_domain_name/structure.png" class="r-stretch quarto-figure-center"><p class="caption">Domain Name Structure</p><div class="fragment">
 <p>Two main components:</p>
 <ul>
 <li><strong>Top-Level Domain (TLD)</strong> = <code>.com</code>, <code>.org</code>, <code>.edu</code> (registered by ICANN)</li>
@@ -662,7 +738,7 @@
 <p>This rental model leads to two interesting phenomena: 1. You have to keep paying to keep your domain 2. Domain name speculation—people buy domains hoping to sell them for profit</p>
 <p>For more on TLDs, see this article about dead TLDs: https://astrid.tech/2022/04/05/1/dead-tlds/</p>
 <p>For more on internet governance and the politics of domains, read books like Milton Mueller’s <em>Networks and States</em> or Laura DeNardis’ <em>The Global War for Internet Governance</em>.</p>
-<p>There’s also Ingrid Burrington’s fascinating piece on visiting a Domain-Names Conference: https://www.theatlantic.com/technology/archive/2017/02/domain-names-dot-horse/516438/</p>
+<p>There’s also Ingrid Burrington’s fascinating piece on visiting a Domain-Names Conference: <a href="https://astrid.tech/2022/04/05/1/dead-tlds/">https://www.theatlantic.com/technology/archive/2017/02/domain-names-dot-horse/516438/</a></p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -675,19 +751,31 @@
           display:block!important;
       }</style></aside>
 </div>
+</section>
+<section id="learn-more-1" class="slide level2">
+<h2>Learn More?</h2>
+<p>For more on TLDs, see this article about dead TLDs: <a href="https://astrid.tech/2022/04/05/1/dead-tlds/">https://astrid.tech/2022/04/05/1/dead-tlds/</a></p>
+<p>For more on internet governance and the politics of domains, read books like Milton Mueller’s <em>Networks and States</em> or Laura DeNardis’ <em>The Global War for Internet Governance</em>.</p>
+<p>There’s also Ingrid Burrington’s fascinating piece on visiting a Domain-Names Conference: <a href="https://astrid.tech/2022/04/05/1/dead-tlds/">https://www.theatlantic.com/technology/archive/2017/02/domain-names-dot-horse/516438/</a></p>
 </section></section>
 <section>
-<section id="hosting-your-website" class="title-slide slide level1 center">
-<h1>Hosting Your Website</h1>
-
-</section>
-<section id="github-pages" class="slide level2">
-<h2>GitHub Pages</h2>
-<p><strong>GitHub Pages</strong> allows you to host static websites for free using GitHub.</p>
-<div class="fragment">
-<p>You can: - Share your work with others - Learn how web hosting works - Host personal websites or project sites</p>
+<section id="hosting-html-pages-with-github-pages" class="title-slide slide level1 center">
+<h1>Hosting HTML Pages with GitHub Pages</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://docs.github.com/en/pages" target="_blank"><img data-src="../../assets/images/github_pages_docs.png"></a></p>
+<figcaption>GitHub Pages Doc</figcaption>
+</figure>
+</div>
 <aside class="notes">
-<p>We’ve learned about GitHub for version control and collaboration, but it also has a hosting feature. This is a great way to share your work and understand how web servers work without having to pay for hosting or manage a server yourself.</p>
+<p><strong>GitHub Pages</strong> allows you to host static websites for free directly from a GitHub repository.</p>
+<p>. . .</p>
+<p>This is perfect for:</p>
+<ul>
+<li>Portfolios and personal websites</li>
+<li>Project sites and documentation</li>
+<li>Learning how web hosting works While we have primarily been using GitHub for its versioning and collaboration features, it also has a feature called GitHub Pages that allows you to host static websites for free. You don’t need to pay for hosting or configure a server—GitHub handles all of that automatically.</li>
+</ul>
 <p>A “static website” means it’s just HTML, CSS, and JavaScript files that don’t require a server-side database or computation. It’s perfect for portfolios, documentation, blogs, and learning.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -700,18 +788,32 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
-<section id="creating-a-github-pages-site" class="slide level2">
-<h2>Creating a GitHub Pages Site</h2>
-<ol type="1">
-<li>Create a repository with the name: <strong>your-username.github.io</strong></li>
-</ol>
+<section id="option-1-personal-website-github.io" class="slide level2">
+<h2>Option 1: Personal Website (github.io)</h2>
+<p>A personal <code>github.io</code> site is great for building a portfolio that you can use on your resume or to showcase your work.</p>
+<aside class="notes">
+<p>If you want to create a personal portfolio website that you can use for your career, this is the best option.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="option-1-step-1---create-the-repository" class="slide level2">
+<h2>Option 1: Step 1 - Create the Repository</h2>
+<p>Create a new repository with the exact name: <strong><code>yourusername.github.io</code></strong></p>
+<p>For example: <code>ZoeLeBlanc.github.io</code></p>
 
 <img data-src="../../assets/images/githubio_repo.png" class="r-stretch quarto-figure-center"><p class="caption">Creating a GitHub.io repository</p><aside class="notes">
-<p>The key thing to understand is that GitHub has special behavior for repositories named <code>{username}.github.io</code>. When you create a repository with this exact name, GitHub automatically recognizes it as your personal website repository and hosts it.</p>
-<p>For example: - If your username is <code>ZoeLeBlanc</code>, you’d create a repository called <code>ZoeLeBlanc.github.io</code> - Your website would be automatically hosted at <code>https://zoeleblanc.github.io</code> - Any HTML files you add to this repository are automatically served</p>
-<p>This is different from regular repositories on GitHub where you’d have to manually configure GitHub Pages.</p>
+<p>The special naming convention tells GitHub that this repository should be hosted as your personal website.</p>
+<p>Make sure: - The repository is <strong>Public</strong> (required for GitHub Pages to work) - You can add a <code>README.md</code> if you’d like (optional)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -724,20 +826,108 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="adding-your-html-files" class="slide level2">
-<h2>Adding Your HTML Files</h2>
-<p>Once you have your repository:</p>
+<section id="option-1-step-2---add-your-html-files" class="slide level2">
+<h2>Option 1: Step 2 - Add Your HTML Files</h2>
+<p>Clone the repository and add your <code>index.html</code> file (and any other HTML, CSS, or JavaScript files).</p>
 
-<img data-src="../../assets/images/create_index_html.png" class="r-stretch quarto-figure-center"><p class="caption">Creating index.html</p><div class="fragment">
-<ol type="1">
-<li>Create an <code>index.html</code> file (this is the main page)</li>
-<li>Add your HTML code</li>
-<li>Commit and push using standard git workflow</li>
-<li>GitHub automatically hosts your site at <code>https://yourusername.github.io</code></li>
-</ol>
+<img data-src="../../assets/images/create_index_html.png" class="r-stretch quarto-figure-center"><p class="caption">Creating index.html</p><aside class="notes">
+<p>The <code>index.html</code> file is important—it’s the file that GitHub serves when someone visits your site. So <code>yourusername.github.io/</code> automatically displays your <code>index.html</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="option-1-step-3---push-to-github" class="slide level2">
+<h2>Option 1: Step 3 - Push to GitHub</h2>
+<p>Use the standard git workflow:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="fu">git</span> add .</span>
+<span id="cb2-2"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial commit: add digital object page"</span></span>
+<span id="cb2-3"><a></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once you push, GitHub automatically detects the change and starts hosting your site. No configuration needed!</p>
 <aside class="notes">
-<p>The naming convention is important: - <code>index.html</code> is the default file served when someone visits your domain - When someone goes to <code>yourusername.github.io/</code>, the server automatically serves the <code>index.html</code> file - You can create additional HTML files, and they’d be accessed as <code>yourusername.github.io/filename.html</code></p>
-<p>You don’t need to configure anything—GitHub automatically detects that you’ve added files to your <code>{username}.github.io</code> repository and starts hosting them. This is the magic of having a special repository name.</p>
+<p>After you push, GitHub will automatically begin the deployment process.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="option-1-step-4---find-your-live-site" class="slide level2">
+<h2>Option 1: Step 4 - Find Your Live Site</h2>
+<p>Your website is now live at: <code>https://yourusername.github.io</code></p>
+<p>Verify deployment by checking the <strong>Actions</strong> tab for green checkmarks:</p>
+
+<img data-src="../../assets/images/actions_tab.png" class="r-stretch quarto-figure-center"><p class="caption">GitHub Actions</p><aside class="notes">
+<p>You can verify the deployment by going to your repository and clicking the Actions tab. You should see green checkmarks indicating successful deployment.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="option-2-grouporganization-website" class="slide level2">
+<h2>Option 2: Group/Organization Website</h2>
+<p>If your group wants to create a collaborative showcase, you can enable GitHub Pages on your group’s repository.</p>
+<aside class="notes">
+<p>If you already have a personal github.io site or don’t want to create one from scratch, you can use your group’s repository instead.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="option-2-step-1---choose-your-repository" class="slide level2">
+<h2>Option 2: Step 1 - Choose Your Repository</h2>
+<p>Use your existing group repository (the one assigned to your group in the course).</p>
+</section>
+<section id="option-2-step-2---add-your-html-files" class="slide level2">
+<h2>Option 2: Step 2 - Add Your HTML Files</h2>
+<p>Create a folder structure for your digital object:</p>
+<pre><code>group-repository/digital-objects/
+├── index.html (main showcase page)
+├── member1-name/
+│   └── index.html
+├── member2-name/
+│   └── index.html
+└── member3-name/
+    └── index.html</code></pre>
+</section>
+<section id="option-2-step-3---enable-github-pages" class="slide level2">
+<h2>Option 2: Step 3 - Enable GitHub Pages</h2>
+<p>In your repository, go to <strong>Settings</strong> → <strong>Pages</strong>:</p>
+<div class="fragment">
+<ul>
+<li>Under “Source,” select the branch (usually <code>main</code>)</li>
+<li>Click Save</li>
+</ul>
+<p>GitHub will now host your site.</p>
+<aside class="notes">
+<p>This configuration tells GitHub which branch contains the files to deploy.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -750,18 +940,23 @@
           display:block!important;
       }</style></aside>
 </div>
+</section>
+<section id="option-2-step-4---find-your-live-site" class="slide level2">
+<h2>Option 2: Step 4 - Find Your Live Site</h2>
+<p>Your group’s website will be hosted at:</p>
+<p><code>https://cultureasdata-uiuc.github.io/is310-spring-2026-group-*/digital-objects</code></p>
+<p>Check deployment status in the <strong>Actions</strong> tab, just like with Option 1.</p>
 </section>
 <section id="monitoring-your-deployment" class="slide level2">
 <h2>Monitoring Your Deployment</h2>
-<p>You can check the status of your deployment in the <strong>Actions</strong> tab:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../../assets/images/actions_tab.png"></p>
-<figcaption>GitHub Actions</figcaption>
-</figure>
-</div>
+<p>Whether you choose Option 1 or Option 2, you can always check your deployment status:</p>
+<ol type="1">
+<li>Go to your repository on GitHub</li>
+<li>Click the <strong>Actions</strong> tab</li>
+<li>Look for the most recent workflow run</li>
+</ol>
 <div class="fragment">
-<p>Green checkmarks mean your site is live and deployed successfully.</p>
+<p>A green checkmark ✓ means your site deployed successfully.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../../assets/images/live_website.png"></p>
@@ -769,10 +964,7 @@
 </figure>
 </div>
 <aside class="notes">
-<p>GitHub uses a continuous deployment system called “Actions” that automatically builds and deploys your website whenever you push code.</p>
-<p>When you push to your <code>{username}.github.io</code> repository: 1. GitHub detects the push 2. GitHub Actions runs a build process 3. The HTML, CSS, and JavaScript files are copied to the web server 4. Your site is live and accessible at your GitHub Pages URL</p>
-<p>This typically happens in seconds to a couple of minutes. You can check the status in the Actions tab to see if there were any errors or if it deployed successfully.</p>
-<p>This is a simplified version of what many modern web hosting platforms do—they automatically rebuild and deploy your site whenever you make changes.</p>
+<p>You can see live deployment confirmation in the Actions tab.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -786,52 +978,17 @@
       }</style></aside>
 </div>
 </section>
-<section id="example-live-site" class="slide level2">
-<h2>Example Live Site</h2>
-
-<img data-src="../../assets/images/github_pages_settings_html.png" class="r-stretch quarto-figure-center"><p class="caption">Example GitHub Pages site</p><p>You can visit a live example here: https://testzoe.github.io/</p>
-<aside class="notes">
-<p>Once your site is live, you have a real URL on the internet that anyone can visit. You can share it with others, add it to your resume, or use it as a personal portfolio.</p>
-<p>This is a real website hosted on actual servers at GitHub’s data centers. When someone visits your URL, their browser: 1. Sends an HTTP request to GitHub’s servers 2. GitHub’s servers find your repository 3. The server sends back your HTML, CSS, and JavaScript files 4. The browser renders the page</p>
-<p>You’ve now participated in the entire web ecosystem—creating content (HTML), version controlling it (Git), hosting it (GitHub Pages), and making it accessible on the internet!</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="your-turn" class="title-slide slide level1 center">
-<h1>Your Turn</h1>
-
-</section>
-<section id="deploy-your-website" class="slide level2">
-<h2>Deploy Your Website</h2>
+<section id="understanding-whats-happening" class="slide level2">
+<h2>Understanding What’s Happening</h2>
+<p>When you push your HTML files to GitHub, here’s what happens behind the scenes:</p>
 <ol type="1">
-<li>Create a repository named <code>your-username.github.io</code></li>
-<li>Make it <strong>Public</strong></li>
-<li>Add your HTML file from the previous Source &amp; Style Assignment</li>
-<li>Push using standard git workflow</li>
-<li>Visit <code>https://yourusername.github.io</code> in your browser</li>
+<li>GitHub detects the push to your repository</li>
+<li>GitHub Pages automatically builds your site</li>
+<li>Your HTML, CSS, and JavaScript files are copied to a web server</li>
+<li>Your site becomes accessible at your unique URL</li>
 </ol>
-<p>Your site should include at least: - Your name - A brief introduction about yourself - A link to your GitHub profile</p>
 <aside class="notes">
-<p>Now it’s time to take what you’ve learned and put it into practice. You’re going to:</p>
-<ol type="1">
-<li>Set up your own corner of the web</li>
-<li>Deploy a real website</li>
-<li>Learn how hosting works</li>
-<li>Share your work with the world</li>
-</ol>
-<p>This is a concrete way to understand everything we’ve been learning about URLs, domain names, servers, and HTTP. You’ll have a real URL that you can share, and every time someone visits it, you’ll see the client-server model in action.</p>
-<p>If you already have a GitHub Pages site, you should update it with new content or styling and share what you changed.</p>
-<p>Once your site is live, post the link to the GitHub Discussion thread so everyone can see what you’ve created.</p>
+<p>This is the complete web ecosystem in action.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -844,16 +1001,17 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="next-steps" class="slide level2">
-<h2>Next Steps</h2>
-<p>Now that you understand: - How the web works - How URLs locate resources - How HTTP transfers data - How DNS translates names to IP addresses - How to host a website</p>
-<div class="fragment">
-<p>You’re ready to: - Build more complex websites - Understand web architecture - Deploy real projects - Explore server-side technologies</p>
+<section id="understanding-whats-happening-1" class="slide level2">
+<h2>Understanding What’s Happening</h2>
+<p>When someone visits your URL:</p>
+<ol type="1">
+<li>Their browser sends an <strong>HTTP request</strong> to GitHub’s servers</li>
+<li>GitHub’s servers respond with your <strong>HTML file</strong></li>
+<li>The browser <strong>renders</strong> the page</li>
+</ol>
+<p>You’ve created content (HTML), version controlled it (Git), and deployed it to a live web server!</p>
 <aside class="notes">
-<p>You’ve now learned the foundational technologies of the web. You understand the history, the protocols, the infrastructure, and how to actually host a website.</p>
-<p>In the coming weeks, we’ll build on this knowledge: - We’ll learn about web standards and best practices - We’ll explore how servers work beyond just hosting static files - We’ll understand how to handle user data and databases - We’ll learn about APIs and how modern websites communicate</p>
-<p>But the core concepts you’ve learned today—clients requesting data, servers responding, HTTP as the protocol, DNS translating names to addresses—these remain fundamental to everything we’ll learn next.</p>
-<p>The web is one of humanity’s greatest collaborative achievements. Billions of people can share information across borders, languages, and time zones because of these simple but elegant systems.</p>
+<p>You’ve now participated in the entire web ecosystem—creating content (HTML), version controlling it (Git), hosting it (GitHub Pages), and making it accessible on the internet! This is what we’ve been building toward throughout this lesson—actually participating in the web as both a creator and a participant in the client-server model.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -865,10 +1023,13 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="your-turn-doing-it-live-assignment" class="slide level2">
+<h2>Your Turn: Doing It Live Assignment</h2>
 
 
-</div>
-</section></section>
+
+<img data-src="https://media.tenor.com/ug1DBRF_MjIAAAAM/bill-oreilly-well-do-it-live.gif" class="r-stretch"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

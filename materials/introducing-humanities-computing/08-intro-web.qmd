@@ -261,7 +261,7 @@ When you push your HTML files to GitHub, here's what happens behind the scenes:
 
 This is the complete web ecosystem in action—you've created content (HTML), version controlled it (Git), and deployed it to a live web server!
 
-## Assignment: Host Your Digital Object Page
+## Assignment: Doing It Live
 
 Now that you understand how the web works and how GitHub Pages works, it's time to deploy your own website! You'll take the HTML page you created in the [Source & Style Assignment](../introducing-humanities-computing/07-intro-html#assignment-2-styling-the-web) and host it online.
 
