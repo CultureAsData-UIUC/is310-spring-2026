@@ -16,14 +16,27 @@ Last week we learned how to create webpages using HTML. But what is a webpage? H
 ::: {.notes}
 We've been learning about the technologies that create web pages (HTML, CSS, JavaScript), but we haven't yet discussed the infrastructure that makes those pages accessible to people around the world. This lesson is about understanding the web itself—the interconnected system of computers, protocols, and standards that allow us to share information globally.
 
-This lesson draws from Ashley Blewer's fantastic *Halt and Catch Fire Syllabus*, a project designed around the TV show that explored the history of computing in the 1980s and 1990s. I'd highly recommend both the show and the syllabus, which you can find at https://bits.ashleyblewer.com/halt-and-catch-fire-syllabus/
+
 :::
+
+## Acknowledgements
+
+:::: {.columns}
+::: {.column width="40%" .r-fit-text}
+This lesson draws from Ashley Blewer's fantastic *Halt and Catch Fire Syllabus*, a project designed around the TV show that explored the history of computing in the 1980s and 1990s. I'd highly recommend both the show and the syllabus, which you can find at [https://bits.ashleyblewer.com/halt-and-catch-fire-syllabus/](https://bits.ashleyblewer.com/halt-and-catch-fire-syllabus/){target="_blank"}
+:::
+::: {.column width="60%" }
+[![](https://www.foundthisweek.com/sites/default/files/styles/item_image_1140/public/hacf.png?itok=BXAPrJ3j)](https://bits.ashleyblewer.com/halt-and-catch-fire-syllabus/)
+:::
+::::
 
 # What is the Web?
 
+We all use the web constantly, but what exactly is it?
+
 ## The World Wide Web
 
-From Wikipedia:
+[**From Wikipedia:**](https://en.wikipedia.org/wiki/World_Wide_Web){target="_blank"}
 
 > "The World Wide Web (WWW), commonly known as the Web, is an information system where documents and other web resources are identified by Uniform Resource Locators (URLs), which may be interlinked by hypertext, and are accessible over the Internet. The resources of the WWW are transferred via the Hypertext Transfer Protocol (HTTP) and may be accessed by users by a software application called a web browser and are published by a software application called a web server."
 
@@ -44,30 +57,52 @@ The core idea of hypertext and the web is about **linking information across mac
 
 . . .
 
-Early influences:
 - **Vannevar Bush's *Memex*** (1940s) - envisioned using microfilm to link information
-- **Ted Nelson's *Project Xanadu*** (1960s-70s) - create a system to link any information to any other
-- **Douglas Engelbart** - first computer mouse and hypertext system
 
-. . .
-
-But it was **Tim Berners-Lee** (1980s-90s) who created the web we know today.
+![](https://filiph.net/text/imgs/memex.webp)
 
 ::: {.notes}
 The web didn't emerge from nowhere. There were important antecedents and influences.
 
 Vannevar Bush wrote an influential essay called "As We May Think" that imagined a device called the Memex using microfilm to store and link information. This was visionary thinking about interconnected information.
+:::
 
-Ted Nelson developed Project Xanadu, which tried to create a system where you could link any piece of information to any other piece. It was very influential but never fully realized. You can read more at https://en.wikipedia.org/wiki/Project_Xanadu
+## The History: From Vision to Reality
 
-Douglas Engelbart developed the first computer mouse and the first hypertext system.
+- **Ted Nelson's *Project Xanadu*** (1960s-70s) - create a system to link any information to any other. You can read more at [https://en.wikipedia.org/wiki/Project_Xanadu](https://en.wikipedia.org/wiki/Project_Xanadu){target="_blank"}
 
-But it was really Tim Berners-Lee working at CERN (the European Organization for Nuclear Research) in the 1980s and 1990s who developed the World Wide Web as we know it. He created three key components that made the modern web possible.
+![Project Xanadu Schematic](https://www.notion.so/cdn-cgi/image/format=webp,width=1920/https://images.ctfassets.net/spoqsaf9291f/e6NwTCm5KBL1YdnasYq0p/696dbb47785069c66cdb0e46563d104a/Xanadu_Schematic.png)
+
+::: {.notes}
+Ted Nelson developed Project Xanadu, which tried to create a system where you could link any piece of information to any other piece. It was very influential but never fully realized. 
+:::
+
+## The History: From Vision to Reality
+
+- **Douglas Engelbart** - first computer mouse and hypertext system
+
+:::: {.columns}
+::: {.column width="40%" }
+![](https://petetjohnson.files.wordpress.com/2011/04/first-mouse.jpeg?w=490)
+:::
+::: {.column width="60%" .r-fit-text}
+![](https://historyofinformation.com/images/Screen_Shot_2020-09-07_at_3.07.41_PM_big.png)
+:::
+::::
+
+## The History: From Vision to Reality
+
+But it was **Tim Berners-Lee** (1980s-90s) who created the web we know today.
+
+[![Tim Berners-Lee's initial vision for the web](https://www.w3.org/History/1989/Image1.gif)](https://worldwideweb.cern.ch/browser/){target="_blank"}
+
+::: {.notes}
+
+But it was really Tim Berners-Lee working at CERN (the European Organization for Nuclear Research) in the 1980s and 1990s who developed the World Wide Web as we know it. 
+This diagram shows Berners-Lee's initial vision for the web. You can actually explore it via an emulator at https://worldwideweb.cern.ch/browser/, which allows you to "party like it's 1989" and see the first web browser in action.
 :::
 
 ## Tim Berners-Lee's Vision
-
-![Tim Berners-Lee's initial vision for the web](https://www.w3.org/History/1989/Image1.gif)
 
 Berners-Lee developed three key components:
 
@@ -76,7 +111,6 @@ Berners-Lee developed three key components:
 - **HTML (HyperText Markup Language)** - universal language for creating web pages
 
 ::: {.notes}
-This diagram shows Berners-Lee's initial vision for the web. You can actually explore it via an emulator at https://worldwideweb.cern.ch/browser/, which allows you to "party like it's 1989" and see the first web browser in action.
 
 The three components he created were revolutionary:
 
@@ -85,21 +119,23 @@ The three components he created were revolutionary:
 2. **HTTP** - This is the protocol (set of rules) for how computers communicate when transferring web content. It's a simple request-response system: browser requests something, server responds with data.
 
 3. **HTML** - This became the "fabric" or "connective tissue" of the web. With HTML as a universal language, anyone could create web pages that anyone else could view, regardless of their computer or software.
-
-For more on this history, I highly recommend Anne Helmond's historiography: "A Historiography of the Hyperlink: Periodizing the Web through the Changing Role of the Hyperlink" in *The SAGE Handbook of Web History* (2019).
-
-You can read more about the web's history at https://worldwideweb.cern.ch/
 :::
 
 ## Exploring the Origins
 
 ![The first web project at CERN](https://worldwideweb.cern.ch/images/www_project.png)
 
-For a detailed timeline of internet and computing history from the 1960s-1990s, see the Computer History Museum's timeline: https://www.computerhistory.org/internethistory/
+For a detailed timeline of internet and computing history from the 1960s-1990s, see the Computer History Museum's timeline: [https://www.computerhistory.org/internethistory/](https://www.computerhistory.org/internethistory/){target="_blank"}
 
 ::: {.notes}
 These resources let you see the actual historical documents and understand how the web emerged from research needs at CERN.
 :::
+
+## Learn More?
+
+For more on this history, I highly recommend Anne Helmond's historiography: "A Historiography of the Hyperlink: Periodizing the Web through the Changing Role of the Hyperlink" in *The SAGE Handbook of Web History* (2019).
+
+You can read more about the web's history at [https://worldwideweb.cern.ch/](https://worldwideweb.cern.ch/)
 
 # Understanding URLs
 
@@ -111,15 +147,15 @@ A **URL (Uniform Resource Locator)** is a web address—a string of characters t
 
 URLs are made up of different components:
 
-![URL Anatomy](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL/mdn-url-all.png)
+[![URL Anatomy](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL/mdn-url-all.png)](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL){target="_blank"}
 
 ::: {.notes}
-URLs are how we locate and access resources on the web. They're like postal addresses for the internet—you need them to "send a request" to a webpage.
+A URL is another term for a URI or a web address, which Berners-Lee envisioned as way to locate anything on the web. It is a string of characters that provides a way to access a specific resource on the web. URLs are made up of different components, which you can see in this diagram:
 
-You've already encountered URLs when we created an `<a>` tag in our HTML pages. For example:
+This diagram is from the Mozilla Web Docs, which provide a great overview of the topic [https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL). You've already encountered URLs when we created an `a` tag in our HTML page.
 
 ```html
-<a href="https://www.google.com/">Google</a>
+<a href="https://ischool.illinois.edu/">My first page!</a>
 ```
 
 This creates a **hyperlink** or **link** that allows us to navigate to other webpages. We created an **external link** because we linked to a webpage outside our own website.
