@@ -42,8 +42,8 @@ website:
               href: materials/introducing-humanities-computing/06-intro-file-formats.qmd
             - text: "Introduction to Markup & Styling Web Documents"
               href: materials/introducing-humanities-computing/07-intro-html.qmd
-        #     - text: "Introduction to The Web & Servers"
-        #       href: materials/introducing-humanities-computing/08-intro-web.qmd
+            - text: "Introduction to The Web & Servers"
+              href: materials/introducing-humanities-computing/08-intro-web.qmd
         # - section: "Collections & Curations"
         #   contents:
         #     - text: "Python Refresher: Foundations"
