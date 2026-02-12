@@ -609,6 +609,6 @@ You've now participated in the entire web ecosystem—creating content (HTML), v
 
 ## Your Turn: Doing It Live Assignment
 
-![](https://media.tenor.com/ug1DBRF_MjIAAAAM/bill-oreilly-well-do-it-live.gif)
+[![](https://media.tenor.com/ug1DBRF_MjIAAAAM/bill-oreilly-well-do-it-live.gif)](../materials/introducing-humanities-computing/08-intro-web.qmd#assignment-doing-it-live)
 
 
