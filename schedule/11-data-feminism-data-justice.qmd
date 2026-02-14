@@ -53,3 +53,5 @@ Another dataset to explore:
 - *The Trans-Atlantic Slave Trade Database* [https://www.slavevoyages.org/](https://www.slavevoyages.org/).
 - *Freedom on the Move* [https://freedomonthemove.org/](https://freedomonthemove.org/).
 - *Enslaved: Peoples of the Historical Slave Trade* [https://enslaved.org/](https://enslaved.org/)
+
+- [ ] [Doing it Live Homework](../materials/introducing-humanities-computing/08-intro-web/index.qmd#homework-doing-it-live).
