@@ -1,11 +1,21 @@
 ---
-title: "Projects & Proposals"
+title: "Ecosystems & Environments"
+subtitle: "How can we start creating culture as data?"
 toc: true
-date: 2024-10-03
-draft: true
+date: 2026-02-26
 ---
 
 ## In-Class Agenda
 
-- [ ] Review feedback on project proposal.
-- [ ] Work in groups on project, updating Project Manager and Project Board, planning next steps.
+- Discuss questions from the Python Refresher lessons
+- Start the Complex Python and Virtual Environment lessons.
+
+## Assigned Materials
+
+- Read through the two Python Refreshers:
+  - [Python Refresher Foundations](../materials/creating-curating-humanities-data/01-python-refresher-foundations.qmd)
+  - [Python Refresher Advanced](../materials/creating-curating-humanities-data/02-python-refresher-advanced.qmd)
+
+## Additional Materials
+
+- Ford, Paul. “What Is Code? If You Don’t Know, You Need to Read This.” *Business Week*, June 11, 2015. Sections 1-2.  [http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/](http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/). 

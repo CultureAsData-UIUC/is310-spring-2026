@@ -1437,99 +1437,360 @@
     ]
   },
   {
-    "objectID": "schedule/05-histories-culture-computing.html",
-    "href": "schedule/05-histories-culture-computing.html",
-    "title": "Histories of Culture & Computing",
+    "objectID": "materials/creating-curating-humanities-data/02-python-refresher-advanced.html",
+    "href": "materials/creating-curating-humanities-data/02-python-refresher-advanced.html",
+    "title": "Python Refresher II: Advanced Python",
     "section": "",
-    "text": "Discuss the assigned readings.\nStart first group in-class assignment on Digital Collections & Libraries\nTime permitting work on topic selection and review Advanced GitHub and Git Features for working collaboratively",
+    "text": "Now that we have covered the foundations, it is time to get a little bit more advanced. In this lesson, we will cover some more advanced ways to use Python, including how to write and run scripts, and how to use built-in methods for strings and data structures. We will also cover how to use control flow structures like loops, functions, and conditional statements.",
     "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 3: How and when did we first start representing culture as data?"
+      "Resources",
+      "Collections & Curations",
+      "Python Refresher II: Advanced Python"
     ]
   },
   {
-    "objectID": "schedule/05-histories-culture-computing.html#in-class-agenda",
-    "href": "schedule/05-histories-culture-computing.html#in-class-agenda",
-    "title": "Histories of Culture & Computing",
-    "section": "",
-    "text": "Discuss the assigned readings.\nStart first group in-class assignment on Digital Collections & Libraries\nTime permitting work on topic selection and review Advanced GitHub and Git Features for working collaboratively",
+    "objectID": "materials/creating-curating-humanities-data/02-python-refresher-advanced.html#advanced-python",
+    "href": "materials/creating-curating-humanities-data/02-python-refresher-advanced.html#advanced-python",
+    "title": "Python Refresher II: Advanced Python",
+    "section": "Advanced Python",
+    "text": "Advanced Python\nPython interpreter is great, but why might we not want to write all our code in the interpreter? What happens every time you quit?\nIt gets erased!\nRather than having to start from scratch every time, we can write our code in a script and then run that script. This is also how we can share our code with others.\n\nWriting and Running Scripts\nOpen your is310-coding-assignments folder in VS Code, and create a new folder python-scripting. This is where we will store all our scripts for this lesson. Inside the python-scripting folder, create a new file called first_script.py. You can do this in the terminal by typing:\nFor Mac:\ntouch first_script.py\nFor Windows PowerShell:\nni first_script.py\nWe’re going to copy our code from the interpreter into this file:\nfavorite_movies =[\n    {\n        \"name\": \"The Matrix I\",\n        \"release_year\": 1999,\n        \"sequels\": [\"The Matrix II\", \"The Matrix III\", \"The Matrix IV\"]\n    },\n    {\n        \"name\": \"Star Wars IV\",\n        \"release_year\": 1977,\n        \"sequels\": [\"Star Wars V\", \"Star Wars VI\", \"Star Wars VII\", \"Star Wars VIII\", \"Star Wars IX\"],\n        \"prequels\": [\"Star Wars I\", \"Star Wars II\", \"Star Wars III\"]\n    }\n]\nNow save this file. You can do this by clicking File and then Save or by using the keyboard shortcut Cmd + S or Ctrl + S. Our next step is to run this script.\nIn our terminal, we can run the script by typing (but make sure you aren’t in the Python interpreter):\npython3 first_script.py\nWhat happens?\n\n\n\nFirst Script\n\n\nBecause we aren’t in the interpreter any more, unless we tell the computer to output a value it won’t show us anything (unless there’s an error).\nOne solution is the print method.\nIn first_script.py, add the line to the bottom of the script:\nprint(favorite_movies)\nThis time you should see the list of movies printed out in the terminal when you run the script.\nSo what’s the print statement?\n\n\nBuilt-In Methods\nPrint is a built-in Python method, which means it comes installed with Python and we can use it whenever we are writing Python.\nPrint is used to display (or print out) variables, values, and data to the terminal, which is useful for seeing what our code is doing. It’s also useful for debugging, which is the process of finding and fixing errors in our code.\nPrint is just one of many built-in methods though. Let’s take a look at a few more.\n\nLen() In first_script.py, after our existing code, add the following:\n\ntotal_favorite_movies = len(favorite movies)\nprint(\"How many total favorite movies do we have?\", total_favorite_movies)\nThen try saving your file and running the code in the terminal. You should see first our favorite movies, and then the total number of favorite movies printed out. While this example might seem trivial since we can easily count the number of items in our list, imagine we had hundreds or thousands of items in our list. This is where the len method comes in handy.\nThe len method can return the length of any list, dictionary, or string in Python.\n\nType()\n\nSo far we’ve been writing all our variables, but sometimes you will be working with code that you didn’t write. When that happens you might want to know what type of variable you are working with, which is where the type method comes in.\nIn first_script.py, add to the bottom of the script:\nprint(type(favorite_movies), type(favorite_movies[0]))\nOnce you save and run the script you should see that we have both a list and a dictionary. With print statements you can add multiple items as long as they are separated by commas, and you can use built-in methods inside the print statement, instead of assigning them to a variable first.\n\nInput()\n\nNow we have been writing all our data in our script, but what if we wanted to get input from the user? This is where the input method comes in.\nIn first_script.py, type the following at the bottom of the script:\nprint('Enter your favorite movie of the last year:')\nrecent_favorite_movie = input()\nprint('Your favorite movie is of the last year:', recent_favorite_movie)\n\n\n\nFirst Script\n\n\nWhat did we just do?\nFirst we printed out a prompt (i.e. we used the print() method to display some text to our user). Then we assigned the input method to a variable called recent_favorite_methods, and then we printed out the value of that variable, along with some explanatory text.\nYou’ve now used built-in methods before for both dictionaries and lists. But they exist for data types too.\n\n\n\n\n\n\n\n\nMethod\nDescription\nExample\n\n\n\n\nprint()\nPrints out a value to the terminal\nprint('Hello World')\n\n\nlen()\nReturns the length of a list, dictionary, or string\nlen([1,2,3,4,5])\n\n\ntype()\nReturns the type of a variable\ntype('Hello World')\n\n\ninput()\nGets input from the user\ninput('What is your name?')\n\n\n\nFor more information about built-in methods, check out the Python documentation.\n\n\nBuilt-In Methods for Strings\nNow that we have mastered more complex data structures, we can start manipulating our data. With cultural data, we are often working text which in Python is represented as a string. Strings are a sequence of characters, and Python has many built-in methods for manipulating strings.\n\nSplit()\n\nThe split method lets us split up a string and turn it into a list. In first_script.py, add the following description of the movie The Matrix:\nfavorite_movies[0]['long_description'] = \"The Matrix is a 1999 science fiction action film written and directed by the Wachowskis. It is the first installment in The Matrix film series, starring Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano. The Waschowskis created a plot set in a dystopian future where humanity is unknowingly trapped inside a simulated reality, the Matrix, created by intelligent machines to distract humans while using their bodies as an energy source. In the movie, the main character, Neo, is a computer programmer who learns this truth and is drawn into a rebellion against the machines, which involves other people who have been freed from the Matrix.\"\nprint(favorite_movies[0])\nWhen we save and rerun our code, we should now see this long_description printed out. As a reminder, to create long_description we are using indexing of our list and then adding a new key to the dictionary called long_description. We are then assigning a string to that key.\nBut what if we wanted to get a list of all the words in the description? We can use the split method to do this.\nsplit_description = favorite_movies[0]['long_description'].split(' ')\nprint(split_description)\nThe split method takes a string and splits it up into a list of substrings. In this case, we are splitting the description of the movie The Matrix into a list of words. We are using the space character as the delimiter, which means that every time there is a space in the string, it will split the string into a new item in the list. You can use any character as a delimiter, and you can also use multiple characters as a delimiter.\nNow that we have this split list, we could use len to count the number of words in the description:\nprint(len(split_description))\nWe could also decide that we want to create a shorter description key in our dictionary and use indexing range to get the first 10 words of the description:\nfavorite_movies[0]['short_description'] = ' '.join(split_description[:10])\nprint(favorite_movies[0]['short_description'])\n\nJoin()\n\nYou’ll notice that we use a new method in the example above called join. This method lets us take a list and join all the values together.\nprint(' '.join(split_description))\nLike split(), join requires a delimiter, which in this case is a space. This means that every item in the list will be joined together with a space in between. You can use any character as a delimiter, and often you’ll see people use a comma to join lists together into a string.\n\nReplace()\n\nNow currently our description names the directors as the Wachowskis. But what if we wanted to change that to Lana and Lilly Wachowski? We can use the replace method to do this.\nedited_description = favorite_movies[0]['long_description'].replace('the Wachowskis', 'Lana and Lilly Wachowski')\nprint(edited_description)\nThe replace method lets us find a string and replace it with another string. You can also specify how many times you want to replace a string. For example, if you only wanted to replace the first instance of the Wachowskis you could use the following:\nedited_description = favorite_movies[0]['long_description'].replace('the Wachowskis', 'Lana and Lilly Wachowski', 1)\nprint(edited_description)\n\nLower(), Upper(), Title(), Strip()\n\nSome additional methods that can be helpful include lower, upper, title, and strip. These methods let you change the case of a string, remove white space from the beginning and end of a string, and capitalize the first letter of each word in a string.\nprint(favorite_movies[0]['long_description'].lower())\nprint(favorite_movies[0]['long_description'].upper())\nprint(favorite_movies[0]['long_description'].title())\nprint(favorite_movies[0]['long_description'].strip())\n\n\n\n\n\n\n\n\nMethod\nExplanation\nExample\n\n\n\n\nsplit('delim')\nReturns a list of substrings separated by the given delimiter\nsplit_description = favorite_movies[0]['long_description'].split(' ')\n\n\njoin(list)\nOpposite of split(), joins the elements in the given list together using the string\n' '.join(split_description)\n\n\nreplace('old string', 'new string')\nReplaces old string with new string\nfavorite_movies[0]['long_description'].replace('the Wachowskis', 'Lana and Lilly Wachowski')\n\n\nlower()\nMakes the string lowercase\nfavorite_movies[0]['long_description'].lower()\n\n\nupper()\nMakes the string uppercase\nfavorite_movies[0]['long_description'].upper()\n\n\ntitle()\nMakes the string titlecase\nfavorite_movies[0]['long_description'].title()\n\n\nstrip()\nRemoves lead and trailing white spaces\nfavorite_movies[0]['long_description'].strip()\n\n\n\nYou can find more information about string methods here https://www.w3schools.com/python/python_ref_string.asp\n\nQuick Exercise For Practice (Optional But Recommended)\n\nCreate two variables in your script, one for your favorite movie and one for your favorite book. You can use any data structure you want.\nThe variables should include the title, the year it was released, and any sequels or prequels or series.\nThe script should then ask for input from the user for a description of their favorite movie and book. These should be assigned to new keys in the dictionary.\nThe script should print out the length of the list of your favorite movies and books, should create a short description of your favorite movie and book, and should print out the length of the long description of your favorite movie and book.\n\n\n\n\nControl Flow\nSo far we have been writing code that runs from top to bottom, but what if we moved our latest print statement to the top of our script? What would happen?\nprint(favorite_movies)\nfavorite_movies =[\n    {\n        \"name\": \"The Matrix I\",\n        \"release_year\": 1999,\n        \"sequels\": [\"The Matrix II\", \"The Matrix III\", \"The Matrix IV\"]\n    },\n    {\n        \"name\": \"Star Wars IV\",\n        \"release_year\": 1977,\n        \"sequels\": [\"Star Wars V\", \"Star Wars VI\", \"Star Wars VII\", \"Star Wars VIII\", \"Star Wars IX\"],\n        \"prequels\": [\"Star Wars I\", \"Star Wars II\", \"Star Wars III\"]\n    }\n]\n\n\n\nFirst Script\n\n\nWe’ve hit a problem. Let’s break down what happened here. If the print statement was at the bottom of the script it worked, but if it was at the top it didn’t.\nThat’s because the print statement within it’s parentheses references the variable favorite_movies, but we haven’t defined that variable yet. This is an example of a NameError. But it’s also helping us understand that Python reads code from top to bottom, line by line. This is called sequential execution and we can manipulate this with control flow structures.\nUnderstanding control flow structures is essential to writing more complex code. These structures let us control the flow of our code, and they include loops, functions, and conditional statements.\n\nLooping\nSo far, we have been working with a list of dictionaries and writing out individual print statements for each value. But this gets tedious quickly, especially as we add more values (imagine if we had hundreds or thousands of movies, for example).\nThere’s a much faster way to traverse data structures and types in Python, called Looping. With various types of loops in Python, you can travel through a sequence (i.e. a list, dictionary, string, etc…) to be able to manipulate items within the sequence.\nFor Loops are one of the most common ways in python to loop over a sequence. But what does looping mean exactly?\nLet’s take our list of favorite movies and print out the name of each movie.\nfor movie in favorite_movies:\n    print(movie['name'])\n\nThis diagram helps us understand this new syntax. We start with the for keyword (which is another reserved word in Python), followed by a variable name (in this case movie) and the in keyword (reserved word again), followed by the sequence we want to loop over (in this case favorite_movies). We then end the line with a colon, and indent the code we want to run for each item in the sequence.\nIndenting is very important in Python. It tells Python that the indented code is part of the loop. If we don’t indent, Python will throw an error. To indent in Python, we use either two or four spaces (or tabs). You can use any number of spaces or tabs, but they have to be consistent. This use of white space is called indentation and is a core part of Python’s syntax.\nWithin the loop, we can use the variable movie to access each item in the sequence. This is called iteration. In this code, we are using the print statement to print out the name of each movie.\nWhile we named our variable movie, we could have named it anything. For example, we could have named it film or item. The name of the variable is up to you, but ideally it should be descriptive of the items in the sequence.\nNow what would happen if we tried to print movie outside of the loop?\nfor movie in favorite_movies:\n    print(movie['name'])\nprint(movie)\nWe would either get an error or the last movie in the list. This is because the variable movie only exists within the local scope of the loop. This is called local scope. This is also why we can use the same variable name in different loops and not have to worry about them conflicting with each other. We’ll go into detail about this more later in this lesson.\nWe can also use For Loops on dictionaries. The syntax is slightly different because dictionaries are not one long sequence, but rather a sequence of key/value pairs. Let’s try and loop through all the keys in our favorite movies.\nindividual_movie = favorite_movies[0]\nfor key, value in individual_movie.items():\n    print(key, value)   \nYou’ll notice that we are using the items method to get the key/value pairs of the dictionary. This is a built-in method for dictionaries. We are then using the for keyword, followed by two variables (in this case key and value), and the in keyword, followed by the sequence we want to loop over (in this case individual_movie.items()). We then end the line with a colon, and indent the code we want to run for each item in the sequence. We can then use the key and value variables to access each item in the sequence. Instead of key and value, we could’ve used any name we wanted, like metadata and data.\nFinally we can even loop through a string. Let’s try and print out each letter in the first name of our favorite movie.\nfirst_movie_name = favorite_movies[0]['name']\nfor letter in first_movie_name:\n    print(letter)\nLooping is fairly complex, but the core thing to remember is the reserved words for and in, and the colon at the end of the line. We then indent the code we want to run for each item in the sequence.\nFor more about looping in Python, check out the Python documentation and the W3Schools tutorial.\n\n\n\n\n\n\n\n\nLooping keyword\nExplanation\nExample\n\n\n\n\nfor\nUsed to loop over a sequence\nfor movie in favorite_movies:\n\n\nin\nUsed to specify the sequence to loop over\nfor movie in favorite_movies:\n\n\nitems()\nUsed to get the key/value pairs of a dictionary\nfor key, value in individual_movie.items():\n\n\n\n\n\nFunctions\nLooping is very powerful, but if we want to loop through a second list of movies or a different variable, we would have to repeat our code later in the script. An alternative is to create a function.\nA function is a way to organize code into a reusable block. It’s a way to avoid repeating code, and also to make our code more readable. Functions are also a way to make our code more modular and easier to fix.\nFunction Syntax\n\nTo create a function, we use the reserved word def and then create a unique name for our function, followed by parentheses and colon. Similar to variables, function names can contain letters, numbers, and underscores, but they cannot start with a number. We usually write function names in lowercase and use underscores to separate words.\nThen we can pass arguments (also called parameters) in the parentheses, that we can that use inside of the functions. Those arguments will be variables and we can do any transformation you would normally do to a value. Finally we can return the result of our manipulation.\nFor example let’s create a function that takes a movie and prints out the name of the movie.\ndef print_movie_name(movie):\n    print(movie['name'])\n\nprint_movie_name(favorite_movies[0])\nThis function takes a movie as an argument and then prints out the name of the movie. We can then call this function and pass in a movie as an argument. This is called calling the function.\nNow we could do a more complex function that takes a movie and a year and returns a string with the name of the movie and the year.\ndef print_movie_name_and_year(movie):\n    movie_data = movie['name'] + ' was released in ' + str(movie['release_year'])\n    print(movie_data)\n\nprint_movie_name_and_year(favorite_movies[0], favorite_movies[0]['release_year'])\nYou’ll notice in this example that we are using the + operator to concatenate the strings together. We are also using the str method to convert the integer to a string. This is because you can’t concatenate a string and an integer together. This type of transformation is called type casting, which is when we change the type of a variable. Finally we are assigning the result of our manipulation to a new variable called movie_data and printing that out.\nWhat would happen if you try to access the variable movie_data outside of the function?\ndef print_movie_name_and_year(movie):\n    movie_data = movie['name'] + ' was released in ' + str(movie['release_year'])\n    print(movie_data)\n\nprint_movie_name_and_year(favorite_movies[0])\nprint(movie_data)\nNameError: name 'movie_data' is not defined\nSimilar to our looping example, the variable movie_data only exists within the local scope of the function. In functions, everything indented within the function is part of the local scope. This is also why we can use the same variable name in different functions and not have to worry about them conflicting with each other.\n\nIn this diagram, we can start to see how where we define our variables impacts whether it is global or local scope. This is a core concept in Python and is called variable scope. So our favorite movies list is in the global scope, but the variable movie and movie_data are in the local scope of the function. Knowing the scope of your variables is essential because if you try to access something globally but it only exists locally, you’ll get an error. Alternatively, if you want to only change a variable locally but it exists globally, you’ll also end up overwriting the global variable. This is all very complex, but I promise with practice and time it will start to make sense.\nThe final part of a function is the return statement. This is used to pass data back from the function, which can then be assigned to a new variable that’s accessible in the rest of the script, also known as the global scope.\ndef print_movie_name_and_year(movie):\n    movie_data = movie['name'] + ' was released in ' + str(movie['release_year'])\n    return movie_data\n\nnew_movie_data = print_movie_name_and_year(favorite_movies[0])\nprint(new_movie_data)\nNow we can see that we are assigning the result of our manipulation to a new variable called new_movie_data. This variable is accessible in the rest of the script, also known as the global scope.\nFor more about functions in Python, check out the Python documentation and the W3Schools tutorial.\n\n\n\n\n\n\n\n\nFunction keyword\nExplanation\nExample\n\n\n\n\ndef\nUsed to define a function\ndef print_movie_name(movie):\n\n\nreturn\nUsed to pass data back from the function\nreturn movie_data\n\n\n\n\n\nConditional Statements\nSo far we have been manipulating all our code the same way, but what if we wanted to have a different manipulation for different types of movies? Or for movies versus books? This is where conditional statements come in.\nEarlier we learned about booleans (True or False). So we could test if our two movies are the same.\nprint(favorite_movies[0] == favorite_movies[1])\nThis should output False, but we can also use this type of condition to perform different actions with our code.\n\nif favorite_movies[0] == favorite_movies[1]:\n    print('The same')\nelse:\n    print('Different')\nIn this example, we are doing the same comparison as before, but now we are using the if keyword, followed by the condition we want to test, followed by a colon. We then indent the code we want to run if the condition is True. We can also use the else keyword to run code if the condition is False. This is called an if/else statement. Both if and else are reserved words in Python. And with these keywords, we can create complex logic in our code.\nWe can also use the elif keyword to add more complexity to our code. Each of the conditional blocks (the three print() statements) are only run if the associated conditional statement is True (in the boolean logic sense). We can have multiple elif blocks if we want. We can also omit elif and else blocks altogether.\nif favorite_movies[0] == favorite_movies[1]:\n    print('The same')\nelif favorite_movies[0] != favorite_movies[1]:\n    print('Different')\nelse:\n    print('No idea')\nIn this example, if our initial condition is True, we print out The same. If it’s False, we then test the next condition with the elif (which stands for else if). If that’s True, we print out Different. Finally, if that is also False, we print out No idea.\nIn conditional statements, we can use any of the previous operators we’ve learned about, including ==, !=, &gt;, &gt;=, &lt;, and &lt;=. We can also test more complicated comparisons using various comparison operators:\n\nFor strings, we can use use == for comparison and some special operators like in to see if one string exists inside of another.\nif 'Matrix' in favorite_movies[0]['name']:\n    print('Matrix')\nelse:\n    print('No Matrix')\nWe can also use == to test numbers:\nif favorite_movies[0]['release_year'] == 1999:\n    print('The Matrix')\nelse:\n    print('Not The Matrix')\nFor numbers, we can also use &gt;, &gt;=, ==, &lt;, and &lt;= to make numeric comparisons.\nif favorite_movies[0]['release_year'] &gt; favorite_movies[1]['release_year']:\n    print('The Matrix')\nelse:\n    print('Star Wars')\n\nWe can also do more than one condition, we can use and, or, and not:\nif favorite_movies[0]['release_year'] &gt; 1999 and 'Matrix' in favorite_movies[0]['name']:\n    print('The Matrix')\nelse:\n    print('Star Wars')\n\nif not favorite_movies[0]['release_year'] &gt; 1999:\n    print('The Matrix')\nelse:\n    print('Star Wars')\nFinally we can also check if a variable exists or not using is and is not:\nif favorite_movies[0]['sequels'] is not None:\n    print('Sequels')\nelse:\n    print('No Sequels')\nYou’ll notice we’re using a new keyword None. This is a special Python object that represents the absence of a value. It’s similar to null in other programming languages. We can use is and is not to check if a variable is None or not.\nFor more about conditional statements in Python, check out the Python documentation and the W3Schools tutorial.\n\n\n\n\n\n\n\n\nConditional keyword\nExplanation\nExample\n\n\n\n\nif\nUsed to test a condition\nif favorite_movies[0] == favorite_movies[1]:\n\n\nelif\nUsed to test another condition\nelif favorite_movies[0] != favorite_movies[1]:\n\n\nelse\nUsed to run code if the condition is False\nelse:\n\n\nin\nUsed to test if a string exists in another string\nif 'Matrix' in favorite_movies[0]['name']:\n\n\nand\nUsed to test if two conditions are True\nif favorite_movies[0]['release_year'] &gt; 1999 and 'Matrix' in favorite_movies[0]['name']:\n\n\nor\nUsed to test if one of two conditions is True\nif favorite_movies[0]['release_year'] &gt; 1999 or 'Matrix' in favorite_movies[0]['name']:\n\n\nnot\nUsed to test if a condition is False\nif not favorite_movies[0]['release_year'] &gt; 1999:\n\n\nis\nUsed to test if a variable is None\nif favorite_movies[0]['sequels'] is not None:\n\n\nis not\nUsed to test if a variable is not None\nif favorite_movies[0]['sequels'] is not None:\n\n\nNone\nA special Python object that represents the absence of a value\nNone\n\n\n\n\n\n\nHomework: Scripting Python Foundations (Optional But Recommended)\nThis homework assignment is optional but highly recommended for those that do not have experience with writing Python scripts. If you decide to complete the homework, it will be added to your grade as extra credit but if you do not complete it, it will not be counted against you.\nIn the first quick exercise, you created a script that asked for input from the user and then printed out the length of the list of your favorite movies and books, created a short description of your favorite movie and book, and printed out the length of the long description of your favorite movie and book.\nNow we will augment this script to include loops, functions, and conditional statements.\nIn your first_script.py, try to complete the following tasks:\n\nCreate a function that takes a movie as an argument. Inside the function, it should check if the movie was released before 2000. If it was, it should print a string that says “This movie was released before 2000”. If it wasn’t, it should print a string that says “This movie was released after 2000”. The function should only return the movie name if it was released after 2000.\nBelow the function create an empty list called recent_movies.\nOutside and below the function and recent_movies, use a for loop to loop through all the movies in your list of favorite movies. For each movie, call the function and pass in the movie as an argument. If the function returns a value, append the movie to the recent_movies list. You can check if the function returns a value by using the if keyword and checking if the result is None or not.\nFinally, outside of the loop, print out the recent_movies list.\n\nOnce you have completed this script, save it and run it in the terminal. You should see a list of all the movies that were released after 2000. If you prefer, you can use books or another cultural object instead of movies.\nAfter confirming that the script works, you should push it up to your GitHub repository. You can do this by using the following commands in the terminal:\ngit add .\ngit commit -m \"Completed homework for Python Foundations\"\ngit push origin main # or master if you haven't changed the default branch name\nYou should then put a link to our GitHub discussion https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/7.",
     "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 3: How and when did we first start representing culture as data?"
+      "Resources",
+      "Collections & Curations",
+      "Python Refresher II: Advanced Python"
     ]
   },
   {
-    "objectID": "schedule/05-histories-culture-computing.html#assigned-materials",
-    "href": "schedule/05-histories-culture-computing.html#assigned-materials",
-    "title": "Histories of Culture & Computing",
+    "objectID": "schedule/11-data-feminism-design-justice.html",
+    "href": "schedule/11-data-feminism-design-justice.html",
+    "title": "Data Feminism & Design Justice",
+    "section": "",
+    "text": "Discuss the assigned readings",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 24: How do our choices shape whose culture becomes data? Data Feminism & Design Justice"
+    ]
+  },
+  {
+    "objectID": "schedule/11-data-feminism-design-justice.html#in-class-agenda",
+    "href": "schedule/11-data-feminism-design-justice.html#in-class-agenda",
+    "title": "Data Feminism & Design Justice",
+    "section": "",
+    "text": "Discuss the assigned readings",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 24: How do our choices shape whose culture becomes data? Data Feminism & Design Justice"
+    ]
+  },
+  {
+    "objectID": "schedule/11-data-feminism-design-justice.html#assigned-materials",
+    "href": "schedule/11-data-feminism-design-justice.html#assigned-materials",
+    "title": "Data Feminism & Design Justice",
     "section": "Assigned Materials",
-    "text": "Assigned Materials\nRead the following:\n\nKahle, Brewster. “Universal Access to All Knowledge.” The American Archivist 70, no. 1 (2007): 23–31. https://www.jstor.org/stable/40294448. Please follow the instructions on how to annotate local PDFs if you are using Hypothesis.\nBesser, Howard. “The Past, Present, and Future of Digital Libraries.” In A Companion to Digital Humanities. John Wiley & Sons, Ltd, 2004. https://companions.digitalhumanities.org/DH/content/9781405103213_chapter_36.html\n\nExplore the following:\n\nHennessey, Amardeep Singh and Kate. “African American Periodical Poetry (1900-1928) – Responsible Datasets in Context.” Responsible Datasets in Context, July 1, 2024. https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/aa-periodical-poetry.html?tab=data-essay.",
+    "text": "Assigned Materials\nTwo chapters from Data Feminism by Catherine D’Ignazio and Lauren F. Klein. Please click on the PDF link on each webpage to access the full chapter if you would prefer to annotate that pdf with Hypothesis:\n\nD’Ignazio, Catherine, and Lauren F. Klein. Chapter 1 “The Power Chapter.” In Data Feminism. The MIT Press, 2020. https://direct.mit.edu/books/book/4660/chapter/213285/The-Power-Chapter.\nD’Ignazio, Catherine, and Lauren F. Klein. Chapter 4 “‘What Gets Counted Counts.’” In Data Feminism, by Catherine D’Ignazio and Lauren F. Klein. The MIT Press, 2020. https://direct.mit.edu/books/book/4660/chapter/213288/What-Gets-Counted-Counts.\n\nAnother dataset to explore:\n\nTrejo, Sylvia Fernandez and Paulina Hernandez. “Gender Violence at the Border (1993-1998) - Responsible Datasets in Context.” Responsible Datasets in Context, August 1, 2024. https://www.responsible-datasets-in-context.com/posts/gender-violence/.",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 3: How and when did we first start representing culture as data?"
+      "Feb 24: How do our choices shape whose culture becomes data? Data Feminism & Design Justice"
     ]
   },
   {
-    "objectID": "schedule/05-histories-culture-computing.html#additional-materials",
-    "href": "schedule/05-histories-culture-computing.html#additional-materials",
-    "title": "Histories of Culture & Computing",
+    "objectID": "schedule/11-data-feminism-design-justice.html#additional-materials",
+    "href": "schedule/11-data-feminism-design-justice.html#additional-materials",
+    "title": "Data Feminism & Design Justice",
     "section": "Additional Materials",
-    "text": "Additional Materials\n\nMcpherson, Tara. “Why Are the Digital Humanities So White?: Or Thinking the Histories of Race and Computation.” In Debates in the Digital Humanities, edited by Matthew K. Gold, NED-New edition., 139–60. University of Minnesota Press, 2012. https://www.jstor.org/stable/10.5749/j.ctttv8hq.12.\nSection 2 Libraries and Database, Milligan, Ian. The Transformation of Historical Research in the Digital Age. Cambridge Elements in Historical Theory and Practice, August 2022. https://doi.org/10.1017/9781009026055.\nMilic, Louis T. “The Next Step.” Computers and the Humanities 1, no. 1 (1966): 3–6. http://www.jstor.org/stable/30199191.",
+    "text": "Additional Materials\n\nSilge, Julia, Russell Samora, Amber Thomas, and Hanah Anderson. “She Giggles, He Gallops.” The Pudding, August 2017. https://pudding.cool/2017/08/screen-direction.\nSchmidt, Ben. “Gendered Language in Teaching Evaluations.” https://benschmidt.org/profGender/.\nD’Ignazio, Catherine, and Lauren F. Klein. Chapter 6 “The Numbers Don’t Speak for Themselves.” In Data Feminism, 2020. https://direct.mit.edu/books/oa-monograph/4660/chapter/213291/The-Numbers-Don-t-Speak-for-Themselves.\n\n\nAdditional Links\n\nPamphlet from Eleanor Barkhorn, “‘Vote No on Women’s Suffrage’: Bizarre Reasons for Not Letting Women Vote,” Atlantic, November 6, 2012, https://www.theatlantic.com/sexes/archive/2012/11/vote-no-on-womens-suffrage-bizarre-reasons-for-not-letting-women-vote/264639/ cited in “The Power Chapter” of Data Feminism.\nOnuoha, Mimi. “The Library of Missing Datasets - MIMI ONUOHA.” MIMI ONUOHA. Accessed January 11, 2024. https://mimionuoha.com/the-library-of-missing-datasets.\nOnuoha, Mimi. “MimiOnuoha/Missing-Datasets,” January 9, 2024. https://github.com/MimiOnuoha/missing-datasets.\nSchmidt, Ben. “Gendered Language in Teaching Evaluations.” https://benschmidt.org/profGender/.\nColored Conventions Project https://coloredconventions.org/.\nSaving Ukrainian Cultural Heritage Online https://www.sucho.org/.",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 3: How and when did we first start representing culture as data?"
+      "Feb 24: How do our choices shape whose culture becomes data? Data Feminism & Design Justice"
     ]
   },
   {
-    "objectID": "schedule/02-programming-and-processing.html",
-    "href": "schedule/02-programming-and-processing.html",
-    "title": "Programming and Processing",
+    "objectID": "schedule/11-data-feminism-design-justice.html#assignments",
+    "href": "schedule/11-data-feminism-design-justice.html#assignments",
+    "title": "Data Feminism & Design Justice",
+    "section": "Assignments",
+    "text": "Assignments\n\nIndividual\n\nDoing it Live Homework.\n\n\n\nGroup",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 24: How do our choices shape whose culture becomes data? Data Feminism & Design Justice"
+    ]
+  },
+  {
+    "objectID": "schedule/08-servers-web-standards.html",
+    "href": "schedule/08-servers-web-standards.html",
+    "title": "Servers & Web Standards",
     "section": "",
-    "text": "Discuss the assigned readings.\nAnswer any questions about the Introduction to Course Tools.\nStart Introduction to the Command Line & Prompt Engineering and Introduction to Versioning & Git(if not completed in-class, these will become homework).",
+    "text": "CLASS CANCELED",
     "crumbs": [
       "Schedule",
-      "January",
-      "Jan 22: How Will We Work in this Course?"
+      "February",
+      "Feb 12: How has the web changed culture as data?"
     ]
   },
   {
-    "objectID": "schedule/02-programming-and-processing.html#in-class-agenda",
-    "href": "schedule/02-programming-and-processing.html#in-class-agenda",
-    "title": "Programming and Processing",
+    "objectID": "schedule/08-servers-web-standards.html#in-class-agenda",
+    "href": "schedule/08-servers-web-standards.html#in-class-agenda",
+    "title": "Servers & Web Standards",
     "section": "",
-    "text": "Discuss the assigned readings.\nAnswer any questions about the Introduction to Course Tools.\nStart Introduction to the Command Line & Prompt Engineering and Introduction to Versioning & Git(if not completed in-class, these will become homework).",
+    "text": "CLASS CANCELED",
     "crumbs": [
       "Schedule",
-      "January",
-      "Jan 22: How Will We Work in this Course?"
+      "February",
+      "Feb 12: How has the web changed culture as data?"
     ]
   },
   {
-    "objectID": "schedule/02-programming-and-processing.html#assigned-materials-complete-prior-to-class",
-    "href": "schedule/02-programming-and-processing.html#assigned-materials-complete-prior-to-class",
-    "title": "Programming and Processing",
-    "section": "Assigned Materials (Complete Prior to Class)",
-    "text": "Assigned Materials (Complete Prior to Class)\nNo Hypothesis Annotations Required for This Week\n\nBuschek, Christo, and Jer Thorp. “Models All The Way Down.” Knowing Machines. https://knowingmachines.org/models-all-the-way\nVincent, Nick, and Hanlin Li. “GitHub Copilot and the Exploitation of ‘Data Labor’: A Wake-Up Call for the Tech Industry.” PSA Group (blog), July 8, 2021. https://www.psagroup.org/blogposts/101.\nComplete Introduction to Course Tools.",
+    "objectID": "schedule/08-servers-web-standards.html#additional-materials",
+    "href": "schedule/08-servers-web-standards.html#additional-materials",
+    "title": "Servers & Web Standards",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nVeen, Jeffrey. “A Brief History of HTML | WIRED.” Wired, April 28, 1997. https://www.wired.com/1997/04/a-brief-history-of-html/.\nSamora, Russell. “Life After Death on Wikipedia.” The Pudding, August 2018. https://pudding.cool/2018/08/wiki-death/.",
     "crumbs": [
       "Schedule",
-      "January",
-      "Jan 22: How Will We Work in this Course?"
+      "February",
+      "Feb 12: How has the web changed culture as data?"
     ]
   },
   {
-    "objectID": "schedule/02-programming-and-processing.html#additional-materials-not-required-reading",
-    "href": "schedule/02-programming-and-processing.html#additional-materials-not-required-reading",
-    "title": "Programming and Processing",
-    "section": "Additional Materials (Not Required Reading)",
-    "text": "Additional Materials (Not Required Reading)\n\nChiang, Ted. “ChatGPT Is a Blurry JPEG of the Web.” The New Yorker, February 9, 2023. https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web.\nSchaul, Kevin, Szu Yu Chen, and Nitasha Tiku. “Inside the Secret List of Websites That Make AI like ChatGPT Sound Smart.” Washington Post, April 19, 2023. https://www.washingtonpost.com/technology/interactive/2023/ai-chatbot-learning/",
+    "objectID": "schedule/08-servers-web-standards.html#assignments",
+    "href": "schedule/08-servers-web-standards.html#assignments",
+    "title": "Servers & Web Standards",
+    "section": "Assignments",
+    "text": "Assignments\n\nIndividual\n\nSource & Style Homework.\n\n\n\nGroup",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 12: How has the web changed culture as data?"
+    ]
+  },
+  {
+    "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
+    "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
+    "title": "Introducing Computing in the Humanities & Culture As Data",
+    "section": "",
+    "text": "Introductions and goals for the course\nOverview and review the syllabus, slides available here\nDiscuss and define “What is computing in the humanities?” versus “What is culture as data?”\n\nVisit What is Digital Humanities? and refresh a few times\nAlso visit Open Syllabus Project\n\nStart survey for group assignments (time permitting) available on Canvas\nStart lesson on Course Tools",
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 22: How Will We Work in this Course?"
+      "Jan 20: Why Represent Culture As Data?"
+    ]
+  },
+  {
+    "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html#in-class-agenda",
+    "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html#in-class-agenda",
+    "title": "Introducing Computing in the Humanities & Culture As Data",
+    "section": "",
+    "text": "Introductions and goals for the course\nOverview and review the syllabus, slides available here\nDiscuss and define “What is computing in the humanities?” versus “What is culture as data?”\n\nVisit What is Digital Humanities? and refresh a few times\nAlso visit Open Syllabus Project\n\nStart survey for group assignments (time permitting) available on Canvas\nStart lesson on Course Tools",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 20: Why Represent Culture As Data?"
+    ]
+  },
+  {
+    "objectID": "schedule/07-digital-objects-and-obsolescence.html",
+    "href": "schedule/07-digital-objects-and-obsolescence.html",
+    "title": "Digital Objects & Obsolescence",
+    "section": "",
+    "text": "Discuss the assigned readings. Slides available here.\nGroups present on Mass Digitization & Digital Libraries Group Assignment.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 10: What are the historic legacies and politics of representing culture as data?"
+    ]
+  },
+  {
+    "objectID": "schedule/07-digital-objects-and-obsolescence.html#in-class-agenda",
+    "href": "schedule/07-digital-objects-and-obsolescence.html#in-class-agenda",
+    "title": "Digital Objects & Obsolescence",
+    "section": "",
+    "text": "Discuss the assigned readings. Slides available here.\nGroups present on Mass Digitization & Digital Libraries Group Assignment.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 10: What are the historic legacies and politics of representing culture as data?"
+    ]
+  },
+  {
+    "objectID": "schedule/07-digital-objects-and-obsolescence.html#assigned-materials",
+    "href": "schedule/07-digital-objects-and-obsolescence.html#assigned-materials",
+    "title": "Digital Objects & Obsolescence",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\nRead:\n\nJohnson, Jessica Marie. “Markup Bodies: Black [Life] Studies and Slavery [Death] Studies at the Digital Crossroads.” Social Text 36, no. 4 (137) (December 1, 2018): 57–79. https://doi.org/10.1215/01642472-7145658 (also available on Canvas)\n\nAnother dataset to explore:\n\nKeyes, Melanie Walsh and Os. “U.S. National Park Visit Data (1979-2023) – Responsible Datasets in Context,” June 1, 2024. https://www.responsible-datasets-in-context.com/posts/np-data/?tab=data-essay.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 10: What are the historic legacies and politics of representing culture as data?"
+    ]
+  },
+  {
+    "objectID": "schedule/07-digital-objects-and-obsolescence.html#additional-materials-links",
+    "href": "schedule/07-digital-objects-and-obsolescence.html#additional-materials-links",
+    "title": "Digital Objects & Obsolescence",
+    "section": "Additional Materials & Links",
+    "text": "Additional Materials & Links\n\nRankin, Bill, and Matt Daniels. “Mapping Slavery Against US Incarceration.” The Pudding, January 2017. https://pudding.cool/2017/01/shape-of-slavery/\nBouk, Dan. “The History and Political Economy of Personal Data over the Last Two Centuries in Three Acts.” Osiris 32, no. 1 (September 2017): 85–106. https://doi.org/10.1086/693400.\nDavid Eltis, ‘A Brief Overview of the Trans-Atlantic Slave Trade,’ Slave Voyages: The Trans-Atlantic Slave Trade Database, https://www.slavevoyages.org/voyage/about.\nOnuoha, Mimi. “The Library of Missing Datasets - MIMI ONUOHA.” MIMI ONUOHA. Accessed January 11, 2024. https://mimionuoha.com/the-library-of-missing-datasets.\nOnuoha, Mimi. “MimiOnuoha/Missing-Datasets,” January 9, 2024. https://github.com/MimiOnuoha/missing-datasets.\nThe Trans-Atlantic Slave Trade Database https://www.slavevoyages.org/.\nFreedom on the Move https://freedomonthemove.org/.\nEnslaved: Peoples of the Historical Slave Trade https://enslaved.org/",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 10: What are the historic legacies and politics of representing culture as data?"
+    ]
+  },
+  {
+    "objectID": "schedule/index.html",
+    "href": "schedule/index.html",
+    "title": "Schedule & Assignments Overview",
+    "section": "",
+    "text": "Note\n\n\n\nThis schedule is subject to change depending on our collective progress this semester, so please treat this as a general guideline that is not set in stone. I will add assignments as we progress below, but you should generally expect to have both assigned materials and assignments each week.",
+    "crumbs": [
+      "Schedule",
+      "Schedule Overview"
+    ]
+  },
+  {
+    "objectID": "schedule/index.html#weekly-schedule",
+    "href": "schedule/index.html#weekly-schedule",
+    "title": "Schedule & Assignments Overview",
+    "section": "Weekly Schedule",
+    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 - How can we work collaboratively and computationally? Version & File Histories\n\n\nFebruary 3 - How and when did we first start representing culture as data? Histories of Culture & Computing\nFebruary 5 - What does it mean to work digitally? Markup & Markdown\n\n\nFebruary 10 - What are the historic legacies and politics of representing culture as data? Digital Objects & Obsolescence\nFebruary 12 - How has the web changed culture as data? Servers & Web Standards",
+    "crumbs": [
+      "Schedule",
+      "Schedule Overview"
+    ]
+  },
+  {
+    "objectID": "schedule/index.html#assignment-schedule",
+    "href": "schedule/index.html#assignment-schedule",
+    "title": "Schedule & Assignments Overview",
+    "section": "Assignment Schedule",
+    "text": "Assignment Schedule\nAssignments will be added throughout the semester depending on how much material we get through.\n\nIndividual Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nInitial Interest Survey (Link Available on Canvas)\nDue by Midnight CT on January 21\n\n\nInit IS310 Homework\nDue by Midnight CT on January 28\n\n\nLost & Found in the Cultural Command Line Homework\nDue by Midnight CT on February 4\n\n\nSource & Style Homework\nDue By Midnight CT on February 11\n\n\nDoing It Live Homework\nDue By Midnight CT on February 23\n\n\n\n\n\nGroup Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nCollective & Individual Topic Selection\nDue February 5 with Optional Extension Until February 12\n\n\nMass Digitization & Digital Libraries Group Assignment\nDue February 10 & 12 In-Class Presentations",
+    "crumbs": [
+      "Schedule",
+      "Schedule Overview"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html",
+    "href": "schedule/06-markup-and-markdown.html",
+    "title": "Markup & Markdown",
+    "section": "",
+    "text": "Review Lost & Found in the Cultural Command Line and discuss assigned reading.\nDiscuss the Introduction to Markup Languages & Web Styling. Slides are available here.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#in-class-agenda",
+    "href": "schedule/06-markup-and-markdown.html#in-class-agenda",
+    "title": "Markup & Markdown",
+    "section": "",
+    "text": "Review Lost & Found in the Cultural Command Line and discuss assigned reading.\nDiscuss the Introduction to Markup Languages & Web Styling. Slides are available here.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#assigned-materials",
+    "href": "schedule/06-markup-and-markdown.html#assigned-materials",
+    "title": "Markup & Markdown",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nThings That Shouldn’t Be in File Names for $1,000 Alex – Joseph Scott. February 12, 2007. https://blog.josephscott.org/2007/02/12/things-that-shouldnt-be-in-file-names-for-1000-alex/.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#additional-materials",
+    "href": "schedule/06-markup-and-markdown.html#additional-materials",
+    "title": "Markup & Markdown",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\n“Which Dh Tools Are Actually Used In Research?” By Laure Barbot, Frank Fischer, Yoann Moranville And Ivan Pozdniakov, December 6 2019 https://weltliteratur.net/dh-tools-used-in-research/",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#assignments",
+    "href": "schedule/06-markup-and-markdown.html#assignments",
+    "title": "Markup & Markdown",
+    "section": "Assignments",
+    "text": "Assignments\n\nIndividual\n\nLost & Found in the Cultural Command Line.\n\n\n\nGroup\n\nCollective and Individual Topic Selection. Extension available until February 12, 2026.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/04-version-file-histories.html",
+    "href": "schedule/04-version-file-histories.html",
+    "title": "Version & File Histories",
+    "section": "",
+    "text": "Review Init IS310 Homework Questions & GitHub or Git related questions\nDiscuss assigned readings\nComplete introduction to File Formats. Slides available here and lesson available here\nTime permitting either discuss Advanced Git & GitHub OR work in groups on first project assignment.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 29: How can we work collaboratively and computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/04-version-file-histories.html#in-class-agenda",
+    "href": "schedule/04-version-file-histories.html#in-class-agenda",
+    "title": "Version & File Histories",
+    "section": "",
+    "text": "Review Init IS310 Homework Questions & GitHub or Git related questions\nDiscuss assigned readings\nComplete introduction to File Formats. Slides available here and lesson available here\nTime permitting either discuss Advanced Git & GitHub OR work in groups on first project assignment.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 29: How can we work collaboratively and computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/04-version-file-histories.html#assigned-materials",
+    "href": "schedule/04-version-file-histories.html#assigned-materials",
+    "title": "Version & File Histories",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nChin, Monica. “Kids Who Grew up with Search Engines Could Change STEM Education Forever.” The Verge, September 22, 2021. https://web.archive.org/web/20211102083237/https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z. This is a web archive link because The Verge requires a subscription.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 29: How can we work collaboratively and computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/04-version-file-histories.html#assignments",
+    "href": "schedule/04-version-file-histories.html#assignments",
+    "title": "Version & File Histories",
+    "section": "Assignments",
+    "text": "Assignments\n\nComplete Init IS310 Homework. Be sure to include AI workflow!",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 29: How can we work collaboratively and computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/04-version-file-histories.html#additional-materials",
+    "href": "schedule/04-version-file-histories.html#additional-materials",
+    "title": "Version & File Histories",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nNamanyay Goel. “Vibe Coding Is a Dangerous Fantasy.” N’s Blog, March 20, 2025. https://nmn.gl/blog/vibe-coding-fantasy.\nWeingart, Scott B. “The Route of a Text Message.” Vice, February 2019. https://www.vice.com/en_us/article/kzdn8n/the-route-of-a-text-message-a-love-story.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 29: How can we work collaboratively and computationally?"
     ]
   },
   {
@@ -1585,7 +1846,7 @@
     "href": "schedule/10-scripts-types.html",
     "title": "Scripts & Types",
     "section": "",
-    "text": "Finish remaining group presentations on Mass Digitization & Digital Libraries Group Assignment.\nReview the Source & Style homework and review any questions for the Doing it Live Homework.\nTime permitting start Python refresher lessons.",
+    "text": "Finish remaining group presentations on Mass Digitization & Digital Libraries Group Assignment.\nReview the Source & Style homework and review any questions for the Doing it Live Homework (not due until next class though).\nTime permitting start Python refresher lessons.",
     "crumbs": [
       "Schedule",
       "February",
@@ -1597,7 +1858,7 @@
     "href": "schedule/10-scripts-types.html#in-class-agenda",
     "title": "Scripts & Types",
     "section": "",
-    "text": "Finish remaining group presentations on Mass Digitization & Digital Libraries Group Assignment.\nReview the Source & Style homework and review any questions for the Doing it Live Homework.\nTime permitting start Python refresher lessons.",
+    "text": "Finish remaining group presentations on Mass Digitization & Digital Libraries Group Assignment.\nReview the Source & Style homework and review any questions for the Doing it Live Homework (not due until next class though).\nTime permitting start Python refresher lessons.",
     "crumbs": [
       "Schedule",
       "February",
@@ -1638,6 +1899,54 @@
       "Schedule",
       "February",
       "Feb 19: How can we represent culture computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/12-ecosystems-environments.html",
+    "href": "schedule/12-ecosystems-environments.html",
+    "title": "Ecosystems & Environments",
+    "section": "",
+    "text": "Discuss questions from the Python Refresher lessons\nStart the Complex Python and Virtual Environment lessons.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 26: How can we start creating culture as data? Ecosystems & Environments"
+    ]
+  },
+  {
+    "objectID": "schedule/12-ecosystems-environments.html#in-class-agenda",
+    "href": "schedule/12-ecosystems-environments.html#in-class-agenda",
+    "title": "Ecosystems & Environments",
+    "section": "",
+    "text": "Discuss questions from the Python Refresher lessons\nStart the Complex Python and Virtual Environment lessons.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 26: How can we start creating culture as data? Ecosystems & Environments"
+    ]
+  },
+  {
+    "objectID": "schedule/12-ecosystems-environments.html#assigned-materials",
+    "href": "schedule/12-ecosystems-environments.html#assigned-materials",
+    "title": "Ecosystems & Environments",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nRead through the two Python Refreshers:\n\nPython Refresher Foundations\nPython Refresher Advanced",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 26: How can we start creating culture as data? Ecosystems & Environments"
+    ]
+  },
+  {
+    "objectID": "schedule/12-ecosystems-environments.html#additional-materials",
+    "href": "schedule/12-ecosystems-environments.html#additional-materials",
+    "title": "Ecosystems & Environments",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nFord, Paul. “What Is Code? If You Don’t Know, You Need to Read This.” Business Week, June 11, 2015. Sections 1-2. http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 26: How can we start creating culture as data? Ecosystems & Environments"
     ]
   },
   {
@@ -1843,276 +2152,123 @@
     ]
   },
   {
-    "objectID": "schedule/04-version-file-histories.html",
-    "href": "schedule/04-version-file-histories.html",
-    "title": "Version & File Histories",
+    "objectID": "schedule/02-programming-and-processing.html",
+    "href": "schedule/02-programming-and-processing.html",
+    "title": "Programming and Processing",
     "section": "",
-    "text": "Review Init IS310 Homework Questions & GitHub or Git related questions\nDiscuss assigned readings\nComplete introduction to File Formats. Slides available here and lesson available here\nTime permitting either discuss Advanced Git & GitHub OR work in groups on first project assignment.",
+    "text": "Discuss the assigned readings.\nAnswer any questions about the Introduction to Course Tools.\nStart Introduction to the Command Line & Prompt Engineering and Introduction to Versioning & Git(if not completed in-class, these will become homework).",
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 29: How can we work collaboratively and computationally?"
+      "Jan 22: How Will We Work in this Course?"
     ]
   },
   {
-    "objectID": "schedule/04-version-file-histories.html#in-class-agenda",
-    "href": "schedule/04-version-file-histories.html#in-class-agenda",
-    "title": "Version & File Histories",
+    "objectID": "schedule/02-programming-and-processing.html#in-class-agenda",
+    "href": "schedule/02-programming-and-processing.html#in-class-agenda",
+    "title": "Programming and Processing",
     "section": "",
-    "text": "Review Init IS310 Homework Questions & GitHub or Git related questions\nDiscuss assigned readings\nComplete introduction to File Formats. Slides available here and lesson available here\nTime permitting either discuss Advanced Git & GitHub OR work in groups on first project assignment.",
+    "text": "Discuss the assigned readings.\nAnswer any questions about the Introduction to Course Tools.\nStart Introduction to the Command Line & Prompt Engineering and Introduction to Versioning & Git(if not completed in-class, these will become homework).",
     "crumbs": [
       "Schedule",
       "January",
-      "Jan 29: How can we work collaboratively and computationally?"
+      "Jan 22: How Will We Work in this Course?"
     ]
   },
   {
-    "objectID": "schedule/04-version-file-histories.html#assigned-materials",
-    "href": "schedule/04-version-file-histories.html#assigned-materials",
-    "title": "Version & File Histories",
+    "objectID": "schedule/02-programming-and-processing.html#assigned-materials-complete-prior-to-class",
+    "href": "schedule/02-programming-and-processing.html#assigned-materials-complete-prior-to-class",
+    "title": "Programming and Processing",
+    "section": "Assigned Materials (Complete Prior to Class)",
+    "text": "Assigned Materials (Complete Prior to Class)\nNo Hypothesis Annotations Required for This Week\n\nBuschek, Christo, and Jer Thorp. “Models All The Way Down.” Knowing Machines. https://knowingmachines.org/models-all-the-way\nVincent, Nick, and Hanlin Li. “GitHub Copilot and the Exploitation of ‘Data Labor’: A Wake-Up Call for the Tech Industry.” PSA Group (blog), July 8, 2021. https://www.psagroup.org/blogposts/101.\nComplete Introduction to Course Tools.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 22: How Will We Work in this Course?"
+    ]
+  },
+  {
+    "objectID": "schedule/02-programming-and-processing.html#additional-materials-not-required-reading",
+    "href": "schedule/02-programming-and-processing.html#additional-materials-not-required-reading",
+    "title": "Programming and Processing",
+    "section": "Additional Materials (Not Required Reading)",
+    "text": "Additional Materials (Not Required Reading)\n\nChiang, Ted. “ChatGPT Is a Blurry JPEG of the Web.” The New Yorker, February 9, 2023. https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web.\nSchaul, Kevin, Szu Yu Chen, and Nitasha Tiku. “Inside the Secret List of Websites That Make AI like ChatGPT Sound Smart.” Washington Post, April 19, 2023. https://www.washingtonpost.com/technology/interactive/2023/ai-chatbot-learning/",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 22: How Will We Work in this Course?"
+    ]
+  },
+  {
+    "objectID": "schedule/05-histories-culture-computing.html",
+    "href": "schedule/05-histories-culture-computing.html",
+    "title": "Histories of Culture & Computing",
+    "section": "",
+    "text": "Discuss the assigned readings.\nStart first group in-class assignment on Digital Collections & Libraries\nTime permitting work on topic selection and review Advanced GitHub and Git Features for working collaboratively",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 3: How and when did we first start representing culture as data?"
+    ]
+  },
+  {
+    "objectID": "schedule/05-histories-culture-computing.html#in-class-agenda",
+    "href": "schedule/05-histories-culture-computing.html#in-class-agenda",
+    "title": "Histories of Culture & Computing",
+    "section": "",
+    "text": "Discuss the assigned readings.\nStart first group in-class assignment on Digital Collections & Libraries\nTime permitting work on topic selection and review Advanced GitHub and Git Features for working collaboratively",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 3: How and when did we first start representing culture as data?"
+    ]
+  },
+  {
+    "objectID": "schedule/05-histories-culture-computing.html#assigned-materials",
+    "href": "schedule/05-histories-culture-computing.html#assigned-materials",
+    "title": "Histories of Culture & Computing",
     "section": "Assigned Materials",
-    "text": "Assigned Materials\n\nChin, Monica. “Kids Who Grew up with Search Engines Could Change STEM Education Forever.” The Verge, September 22, 2021. https://web.archive.org/web/20211102083237/https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z. This is a web archive link because The Verge requires a subscription.",
+    "text": "Assigned Materials\nRead the following:\n\nKahle, Brewster. “Universal Access to All Knowledge.” The American Archivist 70, no. 1 (2007): 23–31. https://www.jstor.org/stable/40294448. Please follow the instructions on how to annotate local PDFs if you are using Hypothesis.\nBesser, Howard. “The Past, Present, and Future of Digital Libraries.” In A Companion to Digital Humanities. John Wiley & Sons, Ltd, 2004. https://companions.digitalhumanities.org/DH/content/9781405103213_chapter_36.html\n\nExplore the following:\n\nHennessey, Amardeep Singh and Kate. “African American Periodical Poetry (1900-1928) – Responsible Datasets in Context.” Responsible Datasets in Context, July 1, 2024. https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/aa-periodical-poetry.html?tab=data-essay.",
     "crumbs": [
       "Schedule",
-      "January",
-      "Jan 29: How can we work collaboratively and computationally?"
+      "February",
+      "Feb 3: How and when did we first start representing culture as data?"
     ]
   },
   {
-    "objectID": "schedule/04-version-file-histories.html#assignments",
-    "href": "schedule/04-version-file-histories.html#assignments",
-    "title": "Version & File Histories",
-    "section": "Assignments",
-    "text": "Assignments\n\nComplete Init IS310 Homework. Be sure to include AI workflow!",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 29: How can we work collaboratively and computationally?"
-    ]
-  },
-  {
-    "objectID": "schedule/04-version-file-histories.html#additional-materials",
-    "href": "schedule/04-version-file-histories.html#additional-materials",
-    "title": "Version & File Histories",
+    "objectID": "schedule/05-histories-culture-computing.html#additional-materials",
+    "href": "schedule/05-histories-culture-computing.html#additional-materials",
+    "title": "Histories of Culture & Computing",
     "section": "Additional Materials",
-    "text": "Additional Materials\n\nNamanyay Goel. “Vibe Coding Is a Dangerous Fantasy.” N’s Blog, March 20, 2025. https://nmn.gl/blog/vibe-coding-fantasy.\nWeingart, Scott B. “The Route of a Text Message.” Vice, February 2019. https://www.vice.com/en_us/article/kzdn8n/the-route-of-a-text-message-a-love-story.",
+    "text": "Additional Materials\n\nMcpherson, Tara. “Why Are the Digital Humanities So White?: Or Thinking the Histories of Race and Computation.” In Debates in the Digital Humanities, edited by Matthew K. Gold, NED-New edition., 139–60. University of Minnesota Press, 2012. https://www.jstor.org/stable/10.5749/j.ctttv8hq.12.\nSection 2 Libraries and Database, Milligan, Ian. The Transformation of Historical Research in the Digital Age. Cambridge Elements in Historical Theory and Practice, August 2022. https://doi.org/10.1017/9781009026055.\nMilic, Louis T. “The Next Step.” Computers and the Humanities 1, no. 1 (1966): 3–6. http://www.jstor.org/stable/30199191.",
     "crumbs": [
       "Schedule",
-      "January",
-      "Jan 29: How can we work collaboratively and computationally?"
+      "February",
+      "Feb 3: How and when did we first start representing culture as data?"
     ]
   },
   {
-    "objectID": "schedule/06-markup-and-markdown.html",
-    "href": "schedule/06-markup-and-markdown.html",
-    "title": "Markup & Markdown",
+    "objectID": "materials/creating-curating-humanities-data/01-python-refresher-foundations.html",
+    "href": "materials/creating-curating-humanities-data/01-python-refresher-foundations.html",
+    "title": "Python Refresher I: Python Foundations",
     "section": "",
-    "text": "Review Lost & Found in the Cultural Command Line and discuss assigned reading.\nDiscuss the Introduction to Markup Languages & Web Styling. Slides are available here.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
+    "text": "So far in this course, we have either been using the command line or markup languages, but now it’s time to get back into some programming.",
     "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
+      "Resources",
+      "Collections & Curations",
+      "Python Refresher: Foundations"
     ]
   },
   {
-    "objectID": "schedule/06-markup-and-markdown.html#in-class-agenda",
-    "href": "schedule/06-markup-and-markdown.html#in-class-agenda",
-    "title": "Markup & Markdown",
-    "section": "",
-    "text": "Review Lost & Found in the Cultural Command Line and discuss assigned reading.\nDiscuss the Introduction to Markup Languages & Web Styling. Slides are available here.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
+    "objectID": "materials/creating-curating-humanities-data/01-python-refresher-foundations.html#python-foundations",
+    "href": "materials/creating-curating-humanities-data/01-python-refresher-foundations.html#python-foundations",
+    "title": "Python Refresher I: Python Foundations",
+    "section": "Python Foundations",
+    "text": "Python Foundations\nThe easiest way to work with Python is through the command line. Let’s start by first checking our Python version. Open your terminal (whether in VS Code or your preferred terminal app) and type python --version or python3 --version. You should see something like the following:\n\n\n\nPython Version\n\n\nIf you don’t see these messages, then you might not have Python installed, so return to our setup instructions and reach out to the instructors for assistance.\nIn this course, you should be using some version of Python 3. If you’re using Python 2, you should upgrade to Python 3. Python 2 is no longer supported and will not be maintained after 2020. If both commands output a version of Python 3, you can use either python or python3. Historically, python was used to call Python 2 and python3 was used to call Python 3. However, as Python 2 is no longer supported, python should now call Python 3. You can read more at the Python 3 documentation for more information.\n\nOnce you have Python working, you can type python3 (or python if it refers to a Python 3 version) and this will open the interactive Python interpreter where you can write your python code and have the computer execute it. This Python interpreter is a type of program that reads and executes Python code (i.e. either Python syntax or files that end with .py). The interactive Python interpreter is an excellent way to sandbox your ideas or check your syntax. You can exit using exit().\nType \"Hello world\" in the interpreter and press enter. Make sure to use single or double quotes around the this text (otherwise you’ll see a SyntaxError, something we’ll discuss later in this lesson).\n\n\n\nHello World\n\n\nCongrats you’ve just typed your first bit of Python and had the computer execute it 🎉!\nLet’s breakdown what just happened.\n\nYou entered data into the interpreter.\nThat data had a certain format, in this case a string, and the interpreter automatically showed that data again.\n\nWe can also use the interpreter as a calculator. Try out these examples.\n1+1\n2*3\nYou’ll notice that unlike with \"Hello World\" the interpreter doesn’t just show our data back to us. Instead, it prints out the result of our calculations. This is because the interpreter is designed to show us the results of our calculations. In our first example, we weren’t doing any calculations, so the interpreter just showed us our data. In our second example, we were doing calculations, so the interpreter showed us the results of our calculations.\nNow, you can experiment with the interpreter, and you’ll notice that if you use the up arrow, you can access your previous commands. However, the interpreter can do more than just print out data and do calculations. It can also store data.\n\nVariables & Data Types\nRather than retyping our \"Hello World\", we can save it into something called a variable that let’s us reuse it again and again.\nvar = \"Hello World\"\nNow try typing var again. What happens?\nYou should see that the var variable now has \"Hello World\" stored inside. Python understands that we created a variable called var and that our variable contains a string. You can type any string and assign it into a variable.\none = \"one\"\ntwo = \"two\"\nthree = \"three\"\nPython knows that these variables contain strings because of the use of either single(’’) or double quotes(““).\n\n\n\nAssign Value to Variable\n\n\nThe key thing to understand is that in Python we use the = symbol to assign values to variables. The variable is always on the left side of the = equal sign, and the value you want to store in the variable is on the right side of the =.\nStrings are just one of many data types accepted in Python.\nThere’s also numbers, called integers. We can take our variables that we assigned before and assign them their actual numbers.\none = 1\ntwo = 2\nOnce we do this though, you’ll notice that our strings that were stored in these variables will be erased! This is because in Python if you assign a new value to a variable, it will overwrite the old value of the variable.\nIf you’re curious, this is due to the fact that Python is a dynamically typed language, which means that the data type of a variable can change. This is different from statically typed languages, like Java, where the data type of a variable cannot change. This is a key difference between Python and other programming languages, but don’t worry if this is confusing. You’ll get used to it as you work with Python more and eventually learn other programming languages, as well!\nWhat happens if you try and use a number for your variable rather than typing the word one?\n1 = 1\n\n\n\nSyntax Error\n\n\nYou’ll get a syntax error, like this one above! That’s because Python has rules for how to name variables.\nHere are some rules for naming variables in Python:\n\nA variable name must start with a letter or the underscore character (so you could do both _one and one). Your variable name can also start with or contain a capital letter, but by convention, we don’t do this. So you’re better off doing one rather than One.\nA variable name cannot start with a number (so you can’t do 1one)\nA variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ ). So no spaces or special punctuation characters, like !, @, #, $, %, etc.\nA variable also can’t have a space in the name, so you can’t do one one. Python uses spaces to separate different parts of the code, so if you use a space in a variable name, Python will think you’re trying to separate two different parts of your code.\nA variable can’t have a reserved word as a name. The creators and developers of Python have selected a series of words that have a special meaning and function when you are programming in Python. If you try to use these words, then your computer will get confused. For example, if you try to use and as a variable name, you’ll get a Syntax Error again . You can see a list of reserved words here, as well as in the figure below. Don’t worry about memorizing these, but it’s helpful to know that they exist.\n\n\n\n\nPython Keywords\n\n\nFinally, you should know that variable names are case-sensitive. So, one and One are two different variables.\nWhat makes a good variable name?\nAs a general rule of thumb, I would recommend choosing names that are relatively short and descriptive. You’ll often see the use of x or y as variable names in Python, but I find these are too short to be helpful. Instead, I would recommend you try to balance describing what’s stored within the variable and keeping it shorter so that you don’t have too much to type. Also to reiterate, in Python we tend to use underscores for naming variables versus Javascript where you use camelCase, so one_one is better than oneOne in Python.\nFor some more examples, see Melanie Walsh’s note on “Striving for Good Variable Names”.\nSo our previous example could work if we changed the variable name to:\none_1 = 1\nPython also has a special name for numbers with decimal points, called floats. We can assign a float to a variable just like we did with integers.\none = 1.0\nIntegers are simple and easy to use. Floats are mostly easy, but sometimes really weird!\nWeird Numbers\nWhat does this return?\n0.1+0.2\nIf you try this in the Python interpreter, you’ll see that you get 0.30000000000000004. Weird right? This is because of the way that computers store numbers.\nAll data in a computer is represented as binary (base 2) numbers, comprising only 1s and 0s. The text you’re reading now is represented by individual characters that, under the hood, are stored as binary numbers. The method of translating these information between different forms and contexts (such as between binary numbers and text or numbers) is called encoding.\nIntegers are easy enough to represent in binary: 0 is 0, 1 is 1, 2 is 10, 3 is 11, 4 is 100, and so on.\nBut floats are trickier and require a special system to represent. This background is primarily just to provide context, but it is helpful to know that it’s impossible to represent exactly 1/3 in finite decimal notation (0.3333…). It’s similarly impossible to represent some simple decimal numbers in a binary notation. Which is why you get the weird results above.\nFor more information check out Float to Binary Converter and IEEE 754 Standard.\nHere is an overview of the most common data types in Python:\n\n\n\n\n\n\n\n\nData Type\nDescription\nExample\n\n\n\n\nstr\nString: a sequence of characters. Indicated with either double or single quotes.\n“Hello World”\n\n\nint\nInteger: a whole number\n1\n\n\nfloat\nFloat: a number with a decimal point\n1.0\n\n\nbool\nBoolean: a truth value\nTrue\n\n\n\nThe bool data type is a special one in Python. It can only have two values: True or False. We can assign these values to a variable just like we did with strings, integers, and floats.\nvar_true = True\nvar_false = False\nBoth True and False are reserved words in Python, so you can’t use them as variable names.\n\n\nOperators\nKnowing the data type of a variable is important because it determines what you can do with that variable. For example, you can’t add a string to an integer, but you can add an integer to a float.\none = 1\ntwo = 2.0\nHere’s a simple example of how you can use the Python interpreter to add these two variables together.\none + two\nYou should see 3.0 as your answer. This is because Python automatically converts the integer one into a float so that it can add it to two.\nThis type of joining is using an operator in Python. Operators are special symbols in Python that carry out arithmetic or logical computation. The value that the operator operates on is called the operand.\nFor addition, we use the + operator symbol, this is called concatenation.\none + two\nFor subtraction, we use the - operator symbol.\none - two\nFor multiplication, we use the * operator symbol.\none * two\nFor division, we use the / operator symbol.\none / two\nNow say we created a variable called three that contained the string \"three\". What would happen if we added variables one and three together?\none + three\nYou should see TypeError: unsupported operand type(s) for +: 'int' and 'str'. This is because Python can’t add an integer to a string. This is because Python can’t add an integer to a string.\nIf we instead tried joining our var and three variables together, we would get a new string.\nvar + three\nThis new string would be \"Hello Worldthree\". This might seem like we are overwriting the value of var, but in fact, we are creating a new string. This is because Python strings are immutable which means they cannot be changed after they are created (Java strings also use this immutable style).\nWhile \"Hello Worldthree\" is not the most useful string, we could check if our two variables contain the same value.\nvar == three\nThis would return False because the two variables contain different values. The == operator is used to compare the values of two variables. It’s important to remember that one = is used to assign a value to a variable, and == is used to compare the values of two variables.\nThis type of comparison will return a boolean value, either True or False. We can also use the != operator to check if two variables contain different values.\nvar != three\nNow this will return True because the two variables contain different values. True and False are reserved words in Python, so you can’t use them as variable names. You can also represent True as 1 and False as 0.\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\n\n\n\n\n+\nAddition: adds two operands\na + b\n\n\n-\nSubtraction: subtracts two operands\na - b\n\n\n*\nMultiplication: multiplies two operands\na * b\n\n\n/\nDivision: divides the first operand by the second\na / b\n\n\n==\nEqual: compares if the values of two operands are equal\na == b\n\n\n!=\nNot equal: compares if the values of two operands are not equal\na != b\n\n\n\nYou can find more information about operators here https://www.w3schools.com/python/python_operators.asp.\n\nQuick Exercise\nIn your Python interpreter, complete the following prompts:\n\nCreate the following variables and assign them the correct information:\n\n\nYour favorite film\nYour favorite book\nThe release year of your favorite film\nThe release year of your favorite book\n\n\nTry testing if your favorite film and book are equal.\nTry joining their names together.\nTry finding the difference between the release years of your favorite film and book.\n\n\n\n\nData Structures\nHopefully you’re starting to see the power of Python. But what if you wanted to store more than one value? You could create a new variable for each value, but that would be a lot of typing.\nfilm = \"The Matrix\"\nfilm_year = 1999\nbook = \"The Great Gatsby\"\nbook_year = 1925\nTo help with this, Python has a way to store multiple variables in one variable with more complex data types. These are called data structures.\nData structures are a way of organizing and storing data so that it can be accessed and worked with efficiently. They define the relationship between the data, and the operations that can be performed on the data. This is a broad definition, and data structures can be used to store data in a variety of ways.\n\n1. Lists\nOne of the most common data structures in Python is the list. A list is an ordered, comma-separated collection of any values. We can store any combination of values in our list.\nfavorite_movies = [\"The Matrix\", \"Star Wars\"]\nHere we have created a new variable called favorite_movies and assigned it a list of strings. We indicate that this is a list through the use of square brackets []. We separate each value in our list with a comma.\n\n\n\nPython List\n\n\nAs this diagram shows, lists contain a series or sequence of values that are separated by commas. Lists can contain duplicates and different types of data. For example, we could store the release years of our favorite movies in our list.\nfavorite_movies = [\"The Matrix\", \"Star Wars\", 1999, 1977, \"The Matrix\"]\nEach list in Python is a sequence, and we can access the position of an item in that sequence through indexing.\nThe syntax for indexing is to use the name of the list followed by the index of the value you want to access in square brackets. For example, to get the first value in our list, we would type favorite_movies[0].\nfavorite_movies[0]\nHow could we get the second value in our list? You’ll notice that to get the first movie in our list, we used the index 0. This is because Python is a zero-indexed language, which means that the first value in a list has an index of 0, the second value has an index of 1, and so on. So, just see indexing as a way to count and access the position of an item in a list.\nIndexing is very powerful and can be used in many ways. We can use indexing to access the last item in a list, to access a range of items in a list, and to access items in a list that are nested inside of other lists.\nfavorite_movies[-1]\nfavorite_movies[1:3]\nfavorite_movies = [\"The Matrix\", \"Star Wars\", 1999, 1977, [\"The Matrix II\", \"Star Wars IV\"]]\nfavorite_movies[4][0]\nSo in the first example here we’re using a negative index to access the last item in our list. Indexing with a negative number starts from the end of the list. We could also do -2 to get the second to last item in our list.\nIn the second example, we’re using a range of indexes to access the second and third items in our list. This type of range is called slicing. Index slicing is when we write the first index, a colon, and then the second index. The first index is the starting position of the slice, and the second index is the ending position of the slice. The slice will include the first index and exclude the second index. So in our example, we’re getting the second and third items in our list.\nFinally, we are expanding our list to contain another list. This is called a nested list. We can use indexing to access the nested list inside of our list. In our example, we’re using the index 4 to access the nested list, and then we’re using the index 0 to access the first item in the nested list.\n\n\n\n\n\n\n\n\nList Manipulation Method\nDescription\nExample\n\n\n\n\nfavorite_movies[0]\nIndexing: Using the square brackets and a single number to access an item in a list. 0 will access the first item in the list\n“The Matrix”\n\n\nfavorite_movies[-1]\nNegative Indexing: Using the - symbol to index from the end of the list. -1 accesses the last item in the list\n“The Matrix”\n\n\nfavorite_movies[1:3]\nSlicing: Using the colon to access a range of items in a list. 1:3 will access the second and third items in the list\n[“Star Wars”, 1999]\n\n\nfavorite_movies[:2]\nSlicing without start index: Using the colon, but without a start index, to access the first two items in the list. If you leave a beginning index blank, Python will assume you want to start from the beginning of the list\n[“The Matrix”, “Star Wars”]\n\n\nfavorite_movies[-2:]\nSlicing with Negative Indexing: Using the colon and negative indexing to access the last two items in the list. If you leave the ending index blank, Python will assume you want to go to the end of the list\n[1977, [“The Matrix II”, “Star Wars IV”]]\n\n\nfavorite_movies[4][0]\nNested Indexing: Using indexing to access a nested list inside of a list. 4 accesses the nested list, and 0 accesses the first item in the nested list\n“The Matrix II”\n\n\n+\nConcatenation: Using the + operator to combine two lists\nfavorite_movies + least_favorite_movies\n\n\n\nWhat if we wanted to keep track of our least favorite movies as well? We could create a new list and store it in a variable.\nleast_favorite_movies = [\"The Matrix III\", \"Star Wars I\"]\nIf we wanted to combine our favorite and least favorite movies, we could use a method called concatenation.\nfavorite_movies + least_favorite_movies\nNotice to do concatenation we use the + operator. This would return a new list that contains all of our favorite and least favorite movies. We could than contain this new list in a variable called our movie_collection.\n\n2. Dictionaries\nSo far we have been using lists to store our data, but what if we wanted to store more information about our movies? We could use a dictionary.\n\n\n\nPython Dictionary\n\n\nAs you can see in this diagram, dictionaries are like lists in that we assign them to variables. But rather than using square brackets [] to indicate that we are creating a list, we use curly brackets {} to indicate that we are creating a dictionary. We also use a colon : to separate the key and value in our dictionary. This is called a key/value pair.\nupdated_favorite_movies = {\n    \"The Matrix\": 1999,\n    \"Star Wars\": 1977\n}\nIn this example, we have created a new variable called updated_favorite_movies and assigned it a dictionary. The keys of our dictionary are the names of our movies, and the values of our dictionary are the release years of our movies. We can access the values in our dictionary using the keys of our dictionary.\nupdated_favorite_movies[\"The Matrix\"]\nThis would return 1999.\nHere we are using square brackets to access the value of the key \"The Matrix\". This looks similar to indexing in lists, but instead of using a number to access the position of an item in a list, we are using the key to access the value of a key/value pair in a dictionary. If you don’t use the key of a dictionary, you’ll get a KeyError.\nupdated_favorite_movies[\"The Matrix II\"]\nThis would return KeyError: 'The Matrix II'. This tells us that the key \"The Matrix II\" doesn’t exist in our dictionary.\nNow what if we didn’t want to have to remember the name of our movie to access it? Rather than using movie names as our keys, we could instead use a generic key, like movie, etc.\nupdated_favorite_movies = {\n    \"movie\": \"The Matrix\",\n}\nBut what if we wanted to added a second movie?\nupdated_favorite_movies = {\n    \"movie\": \"The Matrix\",\n    \"movie\": \"Star Wars\"\n}\nNow if we tried to access the value of the key \"movie\", we would only get Star Wars. This is because our new value overwrote our old value. In a dictionary, keys must be unique!\nThis is a key difference between lists and dictionaries. In a list, you can have duplicate values, but in a dictionary, you can’t have duplicate keys.\nSo to add a second movie to our dictionary, we would need to use a different key.\nupdated_favorite_movies = {\n    \"movie_1\": \"The Matrix\",\n    \"movie_2\": \"Star Wars\"\n}\nNow we can access the value of the key \"movie_1\" and \"movie_2\".\nupdated_favorite_movies[\"movie_1\"]\nupdated_favorite_movies[\"movie_2\"]\nThis would return \"The Matrix\" and \"Star Wars\" respectively.\nWe could also start storing the release years of our movies in the dictionary through creating a nested dictionary.\nupdated_favorite_movies = {\n    \"movie_1\": {\n        \"name\": \"The Matrix\",\n        \"release_year\": 1999\n    },\n    \"movie_2\": {\n        \"name\": \"Star Wars\",\n        \"release_year\": 1977\n    }\n}\nNow each of our movies is a dictionary that contains the name and release year of our movie. We can access the value for each movies using either movie_1 or movie_2.\nupdated_favorite_movies[\"movie_1\"]\nThis would return {'name': 'The Matrix', 'release_year': 1999}. We could also access just the name of the movie using the key name.\nupdated_favorite_movies[\"movie_1\"][\"name\"]\nWhat’s happening here is that we’re using the keys to find our value that’s nested inside a dictionary within a dictionary.\nWe can use a similar method for updating our dictionary. We can add new key/value pairs to our dictionary, update the value of a key, and remove a key/value pair from our dictionary.\nupdated_favorite_movies[\"movie_1\"][\"name\"] = \"The Matrix II\"\nupdated_favorite_movies[\"movie_1\"][\"release_year\"] = 2003\nNow our dictionary would look like this:\nupdated_favorite_movies = {\n    \"movie_1\": {\n        \"name\": \"The Matrix II\",\n        \"release_year\": 2003\n    },\n    \"movie_2\": {\n        \"name\": \"Star Wars\",\n        \"release_year\": 1977\n    }\n}\nWe can also add new key/value pairs to our dictionary.\nupdated_favorite_movies[\"movie_3\"] = {\n    \"name\": \"The Matrix III\",\n    \"release_year\": 2003\n}\nNotice that in each of these examples we are using the square brackets to access the value of a key in our dictionary, and then the equal sign to assign a new value to that key.\nYou can also get even more complex and store lists in dictionaries:\nupdated_favorite_movies = {\n    \"movie_1\": {\n        \"name\": \"The Matrix I\",\n        \"release_year\": 1999,\n        \"sequels\": [\"The Matrix II\", \"The Matrix III\", \"The Matrix IV\"]\n    },\n    \"movie_2\": {\n        \"name\": \"Star Wars IV\",\n        \"release_year\": 1977,\n        \"sequels\": [\"Star Wars V\", \"Star Wars VI\", \"Star Wars VII\", \"Star Wars VIII\", \"Star Wars IX\"],\n        \"prequels\": [\"Star Wars I\", \"Star Wars II\", \"Star Wars III\"]\n    }\n}\nNotice that the list is stored as a value in our dictionary. We can access the value of the key \"sequels\" in our dictionary using the key \"movie_1\".\nupdated_favorite_movies[\"movie_1\"][\"sequels\"]\nThis combining of lists and dictionaries, also means that can put dictionaries inside of lists:\nupdated_favorite_movies =[\n    {\n        \"name\": \"The Matrix I\",\n        \"release_year\": 1999,\n        \"sequels\": [\"The Matrix II\", \"The Matrix III\", \"The Matrix IV\"]\n    },\n    {\n        \"name\": \"Star Wars IV\",\n        \"release_year\": 1977,\n        \"sequels\": [\"Star Wars V\", \"Star Wars VI\", \"Star Wars VII\", \"Star Wars VIII\", \"Star Wars IX\"],\n        \"prequels\": [\"Star Wars I\", \"Star Wars II\", \"Star Wars III\"]\n    }\n]\nNotice that we now don’t have keys for our top-most dictionaries. In lists, items don’t have keys, so each of your dictionaries is without an explicit key.\nPython defaults to indexing each dictionary with numbers, just like in our list of strings. So to get the first value, you would type:\nupdated_favorite_movies[0]\n\n\n\n\n\n\n\n\nDictionary Manipulation Method\nDescription\nExample\n\n\n\n\nupdated_favorite_movies[\"movie_1\"]\nIndexing: Using the square brackets and a key to access a value in a dictionary. \"movie_1\" will access the value of the key \"movie_1\"\n{‘name’: ‘The Matrix’, ‘release_year’: 1999}\n\n\nupdated_favorite_movies[\"movie_1\"][\"name\"]\nNested Indexing: Using indexing to access a nested dictionary inside of a dictionary. \"movie_1\" accesses the nested dictionary, and \"name\" accesses the value of the key \"name\"\n“The Matrix”\n\n\nupdated_favorite_movies[\"movie_1\"][\"name\"] = \"The Matrix II\"\nUpdating a Value: Using the square brackets and a key to access a value in a dictionary, and then the equal sign to assign a new value to that key\n“The Matrix II”\n\n\nupdated_favorite_movies[\"movie_3\"] = {\"name\": \"The Matrix III\", \"release_year\": 2003}\nAdding a Key/Value Pair: Using the square brackets and a key to add a new key/value pair to a dictionary\n“The Matrix III”\n\n\nupdated_favorite_movies[\"movie_1\"][\"sequels\"]\nAccessing a List: Using indexing to access a list inside of a dictionary. \"movie_1\" accesses the nested dictionary, and \"sequels\" accesses the value of the key \"sequels\"\n[“The Matrix II”, “The Matrix III”, “The Matrix IV”]\n\n\n\n\nQuick Exercise\nIn your Python interpreter, complete the following prompts:\n\nCreate a dictionary that contains the following information about your favorite book: title, author, and release year.\nCreate a dictionary that contains the following information about your favorite film: title, director, and release year.\nCreate a list that contains both of these dictionaries.\nAccess the release year of your favorite book.\nAccess the director of your favorite film.",
     "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#assigned-materials",
-    "href": "schedule/06-markup-and-markdown.html#assigned-materials",
-    "title": "Markup & Markdown",
-    "section": "Assigned Materials",
-    "text": "Assigned Materials\n\nThings That Shouldn’t Be in File Names for $1,000 Alex – Joseph Scott. February 12, 2007. https://blog.josephscott.org/2007/02/12/things-that-shouldnt-be-in-file-names-for-1000-alex/.",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#additional-materials",
-    "href": "schedule/06-markup-and-markdown.html#additional-materials",
-    "title": "Markup & Markdown",
-    "section": "Additional Materials",
-    "text": "Additional Materials\n\n“Which Dh Tools Are Actually Used In Research?” By Laure Barbot, Frank Fischer, Yoann Moranville And Ivan Pozdniakov, December 6 2019 https://weltliteratur.net/dh-tools-used-in-research/",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#assignments",
-    "href": "schedule/06-markup-and-markdown.html#assignments",
-    "title": "Markup & Markdown",
-    "section": "Assignments",
-    "text": "Assignments\n\nIndividual\n\nLost & Found in the Cultural Command Line.\n\n\n\nGroup\n\nCollective and Individual Topic Selection. Extension available until February 12, 2026.",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/index.html",
-    "href": "schedule/index.html",
-    "title": "Schedule & Assignments Overview",
-    "section": "",
-    "text": "Note\n\n\n\nThis schedule is subject to change depending on our collective progress this semester, so please treat this as a general guideline that is not set in stone. I will add assignments as we progress below, but you should generally expect to have both assigned materials and assignments each week.",
-    "crumbs": [
-      "Schedule",
-      "Schedule Overview"
-    ]
-  },
-  {
-    "objectID": "schedule/index.html#weekly-schedule",
-    "href": "schedule/index.html#weekly-schedule",
-    "title": "Schedule & Assignments Overview",
-    "section": "Weekly Schedule",
-    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 - How can we work collaboratively and computationally? Version & File Histories\n\n\nFebruary 3 - How and when did we first start representing culture as data? Histories of Culture & Computing\nFebruary 5 - What does it mean to work digitally? Markup & Markdown\n\n\nFebruary 10 - What are the historic legacies and politics of representing culture as data? Digital Objects & Obsolescence\nFebruary 12 - How has the web changed culture as data? Servers & Web Standards",
-    "crumbs": [
-      "Schedule",
-      "Schedule Overview"
-    ]
-  },
-  {
-    "objectID": "schedule/index.html#assignment-schedule",
-    "href": "schedule/index.html#assignment-schedule",
-    "title": "Schedule & Assignments Overview",
-    "section": "Assignment Schedule",
-    "text": "Assignment Schedule\nAssignments will be added throughout the semester depending on how much material we get through.\n\nIndividual Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nInitial Interest Survey (Link Available on Canvas)\nDue by Midnight CT on January 21\n\n\nInit IS310 Homework\nDue by Midnight CT on January 28\n\n\nLost & Found in the Cultural Command Line\nDue by Midnight CT on February 4\n\n\nSource & Style homework\nDue By Midnight CT on February 11\n\n\n\n\n\nGroup Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nCollective & Individual Topic Selection\nDue February 5 with Optional Extension Until February 12\n\n\nMass Digitization & Digital Libraries Group Assignment\nDue February 10 & 12 In-Class Presentations",
-    "crumbs": [
-      "Schedule",
-      "Schedule Overview"
-    ]
-  },
-  {
-    "objectID": "schedule/07-digital-objects-and-obsolescence.html",
-    "href": "schedule/07-digital-objects-and-obsolescence.html",
-    "title": "Digital Objects & Obsolescence",
-    "section": "",
-    "text": "Discuss the assigned readings. Slides available here.\nGroups present on Mass Digitization & Digital Libraries Group Assignment.",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 10: What are the historic legacies and politics of representing culture as data?"
-    ]
-  },
-  {
-    "objectID": "schedule/07-digital-objects-and-obsolescence.html#in-class-agenda",
-    "href": "schedule/07-digital-objects-and-obsolescence.html#in-class-agenda",
-    "title": "Digital Objects & Obsolescence",
-    "section": "",
-    "text": "Discuss the assigned readings. Slides available here.\nGroups present on Mass Digitization & Digital Libraries Group Assignment.",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 10: What are the historic legacies and politics of representing culture as data?"
-    ]
-  },
-  {
-    "objectID": "schedule/07-digital-objects-and-obsolescence.html#assigned-materials",
-    "href": "schedule/07-digital-objects-and-obsolescence.html#assigned-materials",
-    "title": "Digital Objects & Obsolescence",
-    "section": "Assigned Materials",
-    "text": "Assigned Materials\nRead:\n\nJohnson, Jessica Marie. “Markup Bodies: Black [Life] Studies and Slavery [Death] Studies at the Digital Crossroads.” Social Text 36, no. 4 (137) (December 1, 2018): 57–79. https://doi.org/10.1215/01642472-7145658 (also available on Canvas)\n\nAnother dataset to explore:\n\nKeyes, Melanie Walsh and Os. “U.S. National Park Visit Data (1979-2023) – Responsible Datasets in Context,” June 1, 2024. https://www.responsible-datasets-in-context.com/posts/np-data/?tab=data-essay.",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 10: What are the historic legacies and politics of representing culture as data?"
-    ]
-  },
-  {
-    "objectID": "schedule/07-digital-objects-and-obsolescence.html#additional-materials-links",
-    "href": "schedule/07-digital-objects-and-obsolescence.html#additional-materials-links",
-    "title": "Digital Objects & Obsolescence",
-    "section": "Additional Materials & Links",
-    "text": "Additional Materials & Links\n\nRankin, Bill, and Matt Daniels. “Mapping Slavery Against US Incarceration.” The Pudding, January 2017. https://pudding.cool/2017/01/shape-of-slavery/\nBouk, Dan. “The History and Political Economy of Personal Data over the Last Two Centuries in Three Acts.” Osiris 32, no. 1 (September 2017): 85–106. https://doi.org/10.1086/693400.\nDavid Eltis, ‘A Brief Overview of the Trans-Atlantic Slave Trade,’ Slave Voyages: The Trans-Atlantic Slave Trade Database, https://www.slavevoyages.org/voyage/about.\nOnuoha, Mimi. “The Library of Missing Datasets - MIMI ONUOHA.” MIMI ONUOHA. Accessed January 11, 2024. https://mimionuoha.com/the-library-of-missing-datasets.\nOnuoha, Mimi. “MimiOnuoha/Missing-Datasets,” January 9, 2024. https://github.com/MimiOnuoha/missing-datasets.\nThe Trans-Atlantic Slave Trade Database https://www.slavevoyages.org/.\nFreedom on the Move https://freedomonthemove.org/.\nEnslaved: Peoples of the Historical Slave Trade https://enslaved.org/",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 10: What are the historic legacies and politics of representing culture as data?"
-    ]
-  },
-  {
-    "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
-    "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html",
-    "title": "Introducing Computing in the Humanities & Culture As Data",
-    "section": "",
-    "text": "Introductions and goals for the course\nOverview and review the syllabus, slides available here\nDiscuss and define “What is computing in the humanities?” versus “What is culture as data?”\n\nVisit What is Digital Humanities? and refresh a few times\nAlso visit Open Syllabus Project\n\nStart survey for group assignments (time permitting) available on Canvas\nStart lesson on Course Tools",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 20: Why Represent Culture As Data?"
-    ]
-  },
-  {
-    "objectID": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html#in-class-agenda",
-    "href": "schedule/01-introducing-computing-in-the-humanities-culture-as-data.html#in-class-agenda",
-    "title": "Introducing Computing in the Humanities & Culture As Data",
-    "section": "",
-    "text": "Introductions and goals for the course\nOverview and review the syllabus, slides available here\nDiscuss and define “What is computing in the humanities?” versus “What is culture as data?”\n\nVisit What is Digital Humanities? and refresh a few times\nAlso visit Open Syllabus Project\n\nStart survey for group assignments (time permitting) available on Canvas\nStart lesson on Course Tools",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 20: Why Represent Culture As Data?"
-    ]
-  },
-  {
-    "objectID": "schedule/08-servers-web-standards.html",
-    "href": "schedule/08-servers-web-standards.html",
-    "title": "Servers & Web Standards",
-    "section": "",
-    "text": "CLASS CANCELED",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 12: How has the web changed culture as data?"
-    ]
-  },
-  {
-    "objectID": "schedule/08-servers-web-standards.html#in-class-agenda",
-    "href": "schedule/08-servers-web-standards.html#in-class-agenda",
-    "title": "Servers & Web Standards",
-    "section": "",
-    "text": "CLASS CANCELED",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 12: How has the web changed culture as data?"
-    ]
-  },
-  {
-    "objectID": "schedule/08-servers-web-standards.html#additional-materials",
-    "href": "schedule/08-servers-web-standards.html#additional-materials",
-    "title": "Servers & Web Standards",
-    "section": "Additional Materials",
-    "text": "Additional Materials\n\nVeen, Jeffrey. “A Brief History of HTML | WIRED.” Wired, April 28, 1997. https://www.wired.com/1997/04/a-brief-history-of-html/.\nSamora, Russell. “Life After Death on Wikipedia.” The Pudding, August 2018. https://pudding.cool/2018/08/wiki-death/.",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 12: How has the web changed culture as data?"
-    ]
-  },
-  {
-    "objectID": "schedule/08-servers-web-standards.html#assignments",
-    "href": "schedule/08-servers-web-standards.html#assignments",
-    "title": "Servers & Web Standards",
-    "section": "Assignments",
-    "text": "Assignments\n\nIndividual\n\nSource & Style Homework.\n\n\n\nGroup",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 12: How has the web changed culture as data?"
+      "Resources",
+      "Collections & Curations",
+      "Python Refresher: Foundations"
     ]
   },
   {

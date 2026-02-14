@@ -44,12 +44,12 @@ website:
               href: materials/introducing-humanities-computing/07-intro-html.qmd
             - text: "Introduction to The Web & Servers"
               href: materials/introducing-humanities-computing/08-intro-web.qmd
-        # - section: "Collections & Curations"
-        #   contents:
-        #     - text: "Python Refresher: Foundations"
-        #       href: materials/creating-curating-humanities-data/01-python-refresher-foundations.qmd
-        #     - text: "Python Refresher II: Advanced Python"
-        #       href: materials/creating-curating-humanities-data/02-python-refresher-advanced.qmd
+        - section: "Collections & Curations"
+          contents:
+            - text: "Python Refresher: Foundations"
+              href: materials/creating-curating-humanities-data/01-python-refresher-foundations.qmd
+            - text: "Python Refresher II: Advanced Python"
+              href: materials/creating-curating-humanities-data/02-python-refresher-advanced.qmd
         #     - text: "Complex Python: Classes & Comments"
         #       href: materials/creating-curating-humanities-data/03-complex-python.qmd
         #     - text: "Python Virtual Environments & Packages"
@@ -99,6 +99,10 @@ website:
               href: schedule/09-archives-collections.qmd
             - text: "Feb 19: How can we represent culture computationally?"
               href: schedule/10-scripts-types.qmd
+            - text: "Feb 24: How do our choices shape whose culture becomes data? Data Feminism & Design Justice"
+              href: schedule/11-data-feminism-design-justice.qmd
+            - text: "Feb 26: How can we start creating culture as data? Ecosystems & Environments"
+              href: schedule/12-ecosystems-environments.qmd
         # - section: "October"
         #   contents:
         #     - text: "Oct 1: Classes & Comments"

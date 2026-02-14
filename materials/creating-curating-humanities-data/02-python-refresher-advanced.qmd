@@ -1,7 +1,6 @@
 ---
 title: "Python Refresher II: Advanced Python"
 toc: true
-draft: true
 ---
 
 Now that we have covered the foundations, it is time to get a little bit more advanced. In this lesson, we will cover some more advanced ways to use Python, including how to write and run scripts, and how to use built-in methods for strings and data structures. We will also cover how to use control flow structures like loops, functions, and conditional statements.
@@ -118,7 +117,7 @@ recent_favorite_movie = input()
 print('Your favorite movie is of the last year:', recent_favorite_movie)
 ```
 
-![First Script](https://media.giphy.com/media/3o7buirYcmV5nSwIRW/giphy.gif)
+![First Script](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDVhZGNmdmUxd2xmazEwZGZ3cWlqenJxY2RkNWs2aWVlMXJwcG0ybCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WRQBXSCnEFJIuxktnw/giphy.gif)
 
 *What did we just do?*
 
@@ -376,10 +375,9 @@ NameError: name 'movie_data' is not defined
 
 Similar to our looping example, the variable `movie_data` only exists within the local scope of the function. In functions, everything indented within the function is part of the local scope. This is also why we can use the same variable name in different functions and not have to worry about them conflicting with each other.  
 
-![](https://res.cloudinary.com/practicaldev/image/fetch/s--HkRI4FjM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/http://img.youtube.com/vi/UHgSrZGCzjg/0.jpg)
+![](https://pbs.twimg.com/media/GnGjXKtbgAQbvoI.png)
 
 In this diagram, we can start to see how where we define our variables impacts whether it is `global` or `local` scope. This is a core concept in Python and is called **variable scope**. So our favorite movies list is in the global scope, but the variable `movie` and `movie_data` are in the local scope of the function. Knowing the scope of your variables is essential because if you try to access something globally but it only exists locally, you'll get an error. Alternatively, if you want to only change a variable locally but it exists globally, you'll also end up overwriting the global variable. This is all very complex, but I promise with practice and time it will start to make sense.
-
 
 The final part of a function is the **return statement**. This is used to pass data back from the function, which can then be assigned to a new variable that's accessible in the rest of the script, also known as the **global scope**.
 
@@ -414,7 +412,7 @@ print(favorite_movies[0] == favorite_movies[1])
 
 This should output `False`, but we can also use this type of condition to perform different actions with our code.
 
-![](https://automatetheboringstuff.com/images/000019.jpg)
+![](../../assets/images/python_conditionals.jpg)
 
 ```python
 if favorite_movies[0] == favorite_movies[1]:

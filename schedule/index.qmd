@@ -28,8 +28,9 @@ This overview gives a top level view of the topics for each of our meetings. You
 | -----------------: | --------------: |
 | Initial Interest Survey (Link Available on Canvas) | [Due by Midnight CT on January 21](03-responsible-computing-of-culture-and-contextualizing-social-knowledge.qmd) |
 | [Init IS310 Homework](../materials/introducing-humanities-computing/03-intro-versioning.qmd#homework-init-is310) | [Due by Midnight CT on January 28](04-version-file-histories.qmd) |
-| [Lost & Found in the Cultural Command Line](../materials/introducing-humanities-computing/06-intro-file-formats.qmd#homework-lost-found-in-the-cultural-command-line) | [Due by Midnight CT on February 4](06-markup-and-markdown.qmd) |
-| [Source & Style homework](../materials/introducing-humanities-computing/07-intro-html.qmd#homework-source-and-style) | [Due By Midnight CT on February 11](08-servers-web-standards.qmd) |
+| [Lost & Found in the Cultural Command Line Homework](../materials/introducing-humanities-computing/06-intro-file-formats.qmd#homework-lost-found-in-the-cultural-command-line) | [Due by Midnight CT on February 4](06-markup-and-markdown.qmd) |
+| [Source & Style Homework](../materials/introducing-humanities-computing/07-intro-html.qmd#homework-source-and-style) | [Due By Midnight CT on February 11](08-servers-web-standards.qmd) |
+| [Doing It Live Homework](../materials/introducing-humanities-computing/08-intro-web.qmd#assignment-doing-it-live) | [Due By Midnight CT on February 23](11-data-feminism-design-justice.qmd) |
 
 
 ### Group Assignments
