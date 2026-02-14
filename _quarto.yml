@@ -99,9 +99,9 @@ website:
               href: schedule/09-archives-collections.qmd
             - text: "Feb 19: How can we represent culture computationally?"
               href: schedule/10-scripts-types.qmd
-            - text: "Feb 24: How do our choices shape whose culture becomes data? Data Feminism & Design Justice"
+            - text: "Feb 24: How do our choices shape whose culture becomes data?"
               href: schedule/11-data-feminism-design-justice.qmd
-            - text: "Feb 26: How can we start creating culture as data? Ecosystems & Environments"
+            - text: "Feb 26: How can we start creating culture as data?"
               href: schedule/12-ecosystems-environments.qmd
         # - section: "October"
         #   contents:
