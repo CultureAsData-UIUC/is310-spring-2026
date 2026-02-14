@@ -95,10 +95,10 @@ website:
               href: schedule/07-digital-objects-and-obsolescence.qmd
             - text: "Feb 12: How has the web changed culture as data?"
               href: schedule/08-servers-web-standards.qmd
-        #     - text: "Feb 17: Standardizing Culture & Data Archeology"
-        #       href: schedule/09-standardizing-culture-data-archeology.qmd
-        #     - text: "Feb 19: Scripts & Types"
-        #       href: schedule/10-scripts-types.qmd
+            - text: "Feb 17: Who decides what culture becomes data?"
+              href: schedule/09-archives-collections.qmd
+            - text: "Feb 19: How can we represent culture computationally?"
+              href: schedule/10-scripts-types.qmd
         # - section: "October"
         #   contents:
         #     - text: "Oct 1: Classes & Comments"
