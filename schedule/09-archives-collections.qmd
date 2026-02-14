@@ -1,5 +1,5 @@
 ---
-title: "Standardizing Culture & Data Archeology"
+title: "Archives & Collections"
 subtitle: "Who decides what culture becomes data?" 
 toc: true
 date: 2026-02-17
