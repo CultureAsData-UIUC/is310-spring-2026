@@ -18,6 +18,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [February 3 - How and when did we first start representing culture as data? Histories of Culture & Computing](05-histories-culture-computing.qmd) | [February 5 - What does it mean to work digitally? Markup & Markdown](06-markup-and-markdown.qmd) |
 | [February 10 - What are the historic legacies and politics of representing culture as data? Digital Objects & Obsolescence](07-digital-objects-and-obsolescence.qmd) | [February 12 - How has the web changed culture as data? Servers & Web Standards](08-servers-web-standards.qmd) |
 | [February 17 - Who decides what culture becomes data? Archives & Collections](09-archives-collections.qmd) | [February 19 - How can we represent culture computationally? Scripts & Types](10-scripts-types.qmd) |
+| [February 24 - How do our choices shape whose culture becomes data? Data Feminism & Design Justice](11-data-feminism-design-justice.qmd) | [February 26 - How can we start creating culture as data? Ecosystems & Environments](12-ecosystems-environments.qmd) |
 
 ## Assignment Schedule
 

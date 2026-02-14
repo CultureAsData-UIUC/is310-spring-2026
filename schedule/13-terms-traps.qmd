@@ -1,5 +1,6 @@
 ---
-title: "Documentation & Definitions"
+title: "Terms & Traps"
+subtitle: "How do we ethically and legally work with culture as data?"
 toc: true
 date: 2024-10-08
 draft: true
