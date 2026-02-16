@@ -1794,51 +1794,253 @@
     ]
   },
   {
-    "objectID": "schedule/09-archives-collections.html",
-    "href": "schedule/09-archives-collections.html",
-    "title": "Archives & Collections",
+    "objectID": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html",
+    "href": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html",
+    "title": "Responsible Computing of Culture & Contextualizing Social Knowledge",
     "section": "",
-    "text": "Visit UIUC Archives (Updates forthcoming on logistics)",
+    "text": "Any questions from last week?\nDiscuss LLMs as Research Tools and look at their data and survey https://openreview.net/forum?id=p0BwJk3R1p#discussion\nDiscuss Myths of Generative AI\nDiscuss Responsible Datasets in Context and Final Projects\nStart discussing focus with your groups, which are assigned here and the GitHub Style Guide.",
     "crumbs": [
       "Schedule",
-      "February",
-      "Feb 17: Who decides what culture becomes data?"
+      "January",
+      "Jan 27: What does it mean to work with culture as data responsibly?"
     ]
   },
   {
-    "objectID": "schedule/09-archives-collections.html#in-class-agenda",
-    "href": "schedule/09-archives-collections.html#in-class-agenda",
-    "title": "Archives & Collections",
+    "objectID": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#in-class-agenda",
+    "href": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#in-class-agenda",
+    "title": "Responsible Computing of Culture & Contextualizing Social Knowledge",
     "section": "",
-    "text": "Visit UIUC Archives (Updates forthcoming on logistics)",
+    "text": "Any questions from last week?\nDiscuss LLMs as Research Tools and look at their data and survey https://openreview.net/forum?id=p0BwJk3R1p#discussion\nDiscuss Myths of Generative AI\nDiscuss Responsible Datasets in Context and Final Projects\nStart discussing focus with your groups, which are assigned here and the GitHub Style Guide.",
     "crumbs": [
       "Schedule",
-      "February",
-      "Feb 17: Who decides what culture becomes data?"
+      "January",
+      "Jan 27: What does it mean to work with culture as data responsibly?"
     ]
   },
   {
-    "objectID": "schedule/09-archives-collections.html#assigned-materials",
-    "href": "schedule/09-archives-collections.html#assigned-materials",
-    "title": "Archives & Collections",
+    "objectID": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assigned-materials",
+    "href": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assigned-materials",
+    "title": "Responsible Computing of Culture & Contextualizing Social Knowledge",
     "section": "Assigned Materials",
-    "text": "Assigned Materials\n\nSkim Dorothy Berry. “The House Archives Built.” Uproot//Zines, June 22, 2021. https://www.uproot.space/features/the-house-archives-built.",
+    "text": "Assigned Materials\n\n“Mission.” Responsible Datasets in Context (blog), n.d. https://www.responsible-datasets-in-context.com/mission.html and discuss final projects\nLiao, Zhehui, Maria Antoniak, Inyoung Cheong, et al. “LLMs as Research Tools: A Large Scale Survey of Researchers’ Usage and Perceptions.” arXiv:2411.05025. Preprint, arXiv, October 30, 2024. https://arxiv.org/html/2411.05025v1.\n\nSalvaggio, Eryk. 2024. “Challenging The Myths of Generative AI” Tech Policy Press, August 29. https://techpolicy.press/challenging-the-myths-of-generative-ai.",
     "crumbs": [
       "Schedule",
-      "February",
-      "Feb 17: Who decides what culture becomes data?"
+      "January",
+      "Jan 27: What does it mean to work with culture as data responsibly?"
     ]
   },
   {
-    "objectID": "schedule/09-archives-collections.html#additional-materials",
-    "href": "schedule/09-archives-collections.html#additional-materials",
-    "title": "Archives & Collections",
-    "section": "Additional Materials",
-    "text": "Additional Materials",
+    "objectID": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assignments",
+    "href": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assignments",
+    "title": "Responsible Computing of Culture & Contextualizing Social Knowledge",
+    "section": "Assignments",
+    "text": "Assignments\n\nComplete Initial Interest Survey (link available on Canvas) due by January 21 at midnight.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 27: What does it mean to work with culture as data responsibly?"
+    ]
+  },
+  {
+    "objectID": "assessments/05-github-style-guide.html",
+    "href": "assessments/05-github-style-guide.html",
+    "title": "GitHub Style Guide",
+    "section": "",
+    "text": "Welcome to the GitHub Style Guide! This guide is designed to help you understand the expectations for your GitHub repositories and how to structure your work for the semester. This guide will be updated throughout the semester as we learn more about GitHub and how to use it effectively for our projects. You will be graded on your use of GitHub and the quality of your repositories, so please make sure to follow these guidelines carefully, though we will also discuss them in class and provide feedback on your work.",
+    "crumbs": [
+      "Assessments",
+      "GitHub Style Guide"
+    ]
+  },
+  {
+    "objectID": "assessments/05-github-style-guide.html#repositories",
+    "href": "assessments/05-github-style-guide.html#repositories",
+    "title": "GitHub Style Guide",
+    "section": "Repositories",
+    "text": "Repositories\nThese guidelines for your is310-coding-assignments repository and your group repository available on the CultureAsData-UIUC organization. We will cover all of these in class but this guide is here for your reference.\n\nGeneral Guidelines\n\nCreate a .gitignore file and ensure that you are not committing any private files or keys. More information here.\nInclude a README.md file in your repository that provides an overview of the contents. More information here.\nMake sure that your commits are associated with your GitHub account. More information here.\nEnsure that your repository has a clear and organized folder structure. More information here.\n\n\n\nSpecific Guidelines\n\n.gitignore and No Private Files or Keys\nPlease make sure that you have a .gitignore file in your repository. This file should include any files that you do not want to be tracked by Git. This includes any files that contain private information or keys. If you are using an API key or any other sensitive information, please make sure that you are not committing this information to your repository.\nAlso ensure that sensitive or unnecessary files (such as temporary files, IDE config files, and large data files) are not pushed to the repository. Some common files to include in .gitignore are:\n\nIDE files (e.g., .vscode/, .idea/)\nOS-specific files (e.g., .DS_Store for macOS)\nLog files (e.g., *.log)\nData or configuration files with sensitive information (e.g., .env, .json with API keys)\n\nExample content for a .gitignore file:\n# IDE files\n.vscode/\n.idea/\n\n# OS-specific files\n.DS_Store\n\n# Log files\n*.log\n\n# Sensitive data files\n*.env\n*.json\n\n\nREADME.md File\nYour repository should have a README.md file that provides an overview of the contents of the repository. This file should include the following information:\n\nA brief description of the repository and its purpose.\nInstructions on how to run any code or scripts in the repository.\nAny dependencies that are required to run the code.\nA brief description of the files and directories in the repository.\nAny other relevant information that would help someone understand the contents of the repository.\nContributors to the repository.\n\nHere is an example of a README.md file:\n# IS310 Coding Assignments\n\nThis repository contains the coding assignments for IS310: Computing in the Humanities.\n\n## Repository Structure\n\nEach folder in this repository corresponds to a different assignment. You can find a list of assignments on the course website.\n\n## Running the Code\n\nTo run the code in this repository, you will need to have Python installed on your machine. You can install all dependencies by running the following command:\n\n\n`pip install -r requirements.txt`\n\n\n### Contributors\n\n- @student1\n\n\nCommit User Configuration\nPlease make sure that your commits are associated with your GitHub account. This will help us track your contributions to the repository and ensure that you receive credit for your work.\nIf you are seeing a different username or email address in your commits, you can update your Git configuration with the following commands:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\nYou can check your current Git configuration with the following command:\ngit config --list\n\n\nFolder Structure\nPlease make sure that your repository has a clear and organized folder structure. This will help you and others navigate the repository and find the files they need. You should create separate folders for different types of files or different assignments. For example, in your is310-coding-assignments repository, you need to have a folder for each assignment that corresponds to the correct name from the assignment.\nFor your project repository, you might have folders for data, code, documentation, and other relevant files. Make sure that the folder structure is logical and easy to understand. You can also include a README.md file in each folder to provide more information about the contents of that folder, as well as document the structure in your main README.md file at the root of the repository.\nFor example, your is310-coding-assignments repository might look like this:\nis310-coding-assignments/\n├── .gitignore\n├── README.md\n├── init-is310-homework/\n│   ├── images/\n│   └── README.md\n└── command-line-maze/\n    ├── command_line.zip\n    └── README.md\nAnd so your README.md file might look like this:\n# IS310 Coding Assignments\n\nThis repository contains the coding assignments for IS310: Computing in the Humanities.\n\n## Repository Structure\n\n- `init-is310-homework`: Initial homework assignment.\n- `command-line-maze`: Command line maze assignment.",
+    "crumbs": [
+      "Assessments",
+      "GitHub Style Guide"
+    ]
+  },
+  {
+    "objectID": "assessments/05-github-style-guide.html#issues-projects",
+    "href": "assessments/05-github-style-guide.html#issues-projects",
+    "title": "GitHub Style Guide",
+    "section": "Issues & Projects",
+    "text": "Issues & Projects\nThese guidelines are primarily for your group repository, but you can also use them for your individual repositories. We will cover these in class but this guide is here for your reference.\n\nGeneral Guidelines\n\nUse GitHub Issues to track tasks, bugs, and other work items. More information here.\nUse GitHub Projects to organize and track the progress of your work. More information here.\nMake sure that your Issues and Projects are up-to-date and reflect the current state of your work. More information here.",
+    "crumbs": [
+      "Assessments",
+      "GitHub Style Guide"
+    ]
+  },
+  {
+    "objectID": "assessments/index.html",
+    "href": "assessments/index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "In this course, we have two main categories of assessments: weekly ones and ones associated with the semester long project. Both types are intended to introduce you to new materials, help you synthesize this content, and engage in research that is meaningful to you. Your final grade will be evenly divided between these two categories.",
+    "crumbs": [
+      "Assessments",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "assessments/06-collecting-digitizing-culture.html",
+    "href": "assessments/06-collecting-digitizing-culture.html",
+    "title": "Mass Digitization & Digital Libraries Group Assignment",
+    "section": "",
+    "text": "In this week’s readings, we explored the history and challenges of mass digitization and digital libraries. We learned about Brewster Kahle’s vision for universal access to all knowledge through the Internet Archive, Howard Besser’s framework for understanding what makes a true digital library (beyond just digitized collections), and how the African American Periodical Poetry dataset demonstrates the labor and choices involved in creating digital collections.\nToday, we will be working in groups to start exploring some of the digital libraries and archives mentioned in the assigned readings, with a particular focus on understanding the digitization process through hands-on exploration of HathiTrust. This will help us think critically about the different ways that cultural objects are digitized and made available online, as well as the challenges and opportunities that come with this process. It will also serve as a foundation for discussing potential topics for your collaborative semester-long project.\nThis first assignment has two components: exploring the HathiTrust Digital Library to understand digitization in practice, and starting to explore how cultural objects in your area of interest are digitized. If you have questions, please reach out to the instructors on Slack.",
+    "crumbs": [
+      "Assessments",
+      "Mass Digitization & Digital Libraries"
+    ]
+  },
+  {
+    "objectID": "assessments/06-collecting-digitizing-culture.html#exploring-hathitrust-digitization-in-practice",
+    "href": "assessments/06-collecting-digitizing-culture.html#exploring-hathitrust-digitization-in-practice",
+    "title": "Mass Digitization & Digital Libraries Group Assignment",
+    "section": "Exploring HathiTrust: Digitization in Practice",
+    "text": "Exploring HathiTrust: Digitization in Practice\nBefore diving into your own area of focus, we want everyone to gain hands-on experience with a major digital library to better understand what digitization looks like in practice. HathiTrust is one of the largest digital libraries in the world and provides an excellent case study for understanding the concepts from our readings.\nAs a group, work through the following tasks together. Document your findings and observations as you go:\n\nFinding the African American Periodical Poetry: Using the Hennessey dataset from your readings (which is available in the readings here), select 2-3 poems from different magazines (e.g., The Crisis, Opportunity, Black Opals). Try to locate the original magazine issues in HathiTrust that contain these poems.\n\nWhat search strategies did you use?\nWere you able to find all the issues you looked for?\nWhat barriers or challenges did you encounter?\n\nExamining OCR Quality: Once you’ve found at least one magazine issue, examine the OCR (Optical Character Recognition) quality:\n\nCan you search for specific words or phrases within the document?\nHow accurate is the OCR text compared to what you see in the page images?\nWhat kinds of errors do you notice? (Consider fonts, layouts, damaged pages, etc.)\nHow might OCR quality affect research using this material?\n\nUnderstanding Context: Compare the poem in the dataset to the original magazine page:\n\nWhat additional context do you gain from seeing the original page?\nWhat else appears on the page or in the issue alongside the poem?\nWhat information was lost in creating just the dataset of poems?\nWhat information was gained by creating the structured dataset?\n\nAccess and Rights: Look at the viewing options and restrictions:\n\nCan you download the full PDF? Individual page images?\nAre there any access restrictions? (Full view vs. limited preview)\nWhat copyright or usage information is provided?\nHow does HathiTrust balance preservation, access, and copyright?\n\nMetadata and Organization: Examine how HathiTrust has cataloged and organized the material versus the dataset:\n\nWhat metadata is provided for the item you’re viewing?\nHow does this compare to the MARC records we discussed in class?\nWhat other data could have the authors collected?\nWould you organize the dataset differently?",
+    "crumbs": [
+      "Assessments",
+      "Mass Digitization & Digital Libraries"
+    ]
+  },
+  {
+    "objectID": "assessments/06-collecting-digitizing-culture.html#discovering-digitizing-cultural-objects",
+    "href": "assessments/06-collecting-digitizing-culture.html#discovering-digitizing-cultural-objects",
+    "title": "Mass Digitization & Digital Libraries Group Assignment",
+    "section": "Discovering & Digitizing Cultural Objects",
+    "text": "Discovering & Digitizing Cultural Objects\nOnce you have completed the HathiTrust exploration, you should begin working on this part of the assignment, which is designed to help you start discovering relevant materials and discussing potential focuses for your semester-long project. This section is focused on the cultural area of your group.\n\n\n\n\n\n\nImportant\n\n\n\nYou are welcome to use AI tools to help you with your assignment, but you should include links and screenshots to all materials you find. You should also be prepared to discuss how you found these materials and what tools you used to find them.\n\n\nIn our readings this week, we learned about how cultural objects and practices are turned into digital representations, and how these representations are then shared and preserved online. Building on your HathiTrust exploration, you will now investigate what this process looks like for your selected area of focus.\nHere are the following prompts you should answer for your area of focus:\n\nDigital Objects & Representations: What might be considered a digital object or digital representation for your area of focus? You can have multiple examples, but you should explain why you consider it relating to your area of focus (this can be short though).\nDigitization Processes: How are digital objects and representations created for your area of focus? What are the processes involved in digitizing these objects? In the African American Periodical Poetry dataset and your HathiTrust exploration, you learned about OCR (Optical Character Recognition) for extracting text from digitized print materials. What are some of the digitization processes for your area of focus? How do they compare to what you observed in HathiTrust?\nHistorical Equivalents: Kahle repeatedly made reference to the Library of Alexandria in his article. What are some historical equivalents to digital objects in your area of focus? How do these historical objects compare to their digital counterparts?\nBorn-Digital Materials: Are there examples of born-digital materials for your area of focus? How do these materials compare to digitized objects? For those unfamiliar, born-digital materials are those that were created digitally and never existed in analog or physical form (think most social media, for example).\nOldest Digital Library/Archive: What is the oldest digital library or archive you can find that relates to your area of focus? How has this resource been maintained and updated over time? What metadata or standards exist for the object? You may also include examples that are no longer maintained or have been abandoned.\nNewest Digital Library/Archive: Conversely, what is the newest digital library or archive you can find that relates to your area of focus? How does this resource compare to older digital libraries or archives, especially around metadata?\nViral Examples: Are there any examples of your digital object that have gone viral? How did this happen and what impact did it have on the object or the digital library/archive that hosted it?\nFree vs. Proprietary Access: Can you find any examples of free vs. proprietary digital libraries or archives for your area of focus? How do these resources differ in terms of access? Think back to Besser and Kahle’s discussions about public vs. commercial digital libraries.\n\nYou should aim to find at least one example for each prompt, but you are welcome to find more.",
+    "crumbs": [
+      "Assessments",
+      "Mass Digitization & Digital Libraries"
+    ]
+  },
+  {
+    "objectID": "assessments/06-collecting-digitizing-culture.html#documenting-presenting-your-findings",
+    "href": "assessments/06-collecting-digitizing-culture.html#documenting-presenting-your-findings",
+    "title": "Mass Digitization & Digital Libraries Group Assignment",
+    "section": "Documenting & Presenting Your Findings",
+    "text": "Documenting & Presenting Your Findings\nThe final part of this assignment is to document and present your findings and decisions. You should create a new folder and Markdown file in your group’s GitHub repository that outlines:\n\nYour HathiTrust exploration findings and reflections\nYour responses to the cultural objects prompts above\n\nWe will be discussing your findings in the following weeks. Each member should be prepared to discuss their contributions to the group’s findings. You do not need to prepare a formal presentation or any slides, but each member should be ready to engage in the discussion.\n\n\n\n\n\n\nDividing Labor\n\n\n\nYou are welcome to divide labor any way you choose, BUT please do your best to be equitable and be sure to document who is responsible for what. You may have some group members do part 1 or part 2, but ideally everyone should contribute to either investigating the data in HathiTrust or identifying digital objects. I would highly encourage you to consider the git history (your git log) as a way of making your labor visible in these types of assignments.",
+    "crumbs": [
+      "Assessments",
+      "Mass Digitization & Digital Libraries"
+    ]
+  },
+  {
+    "objectID": "assessments/04-groups.html",
+    "href": "assessments/04-groups.html",
+    "title": "Assigned Project Groups",
+    "section": "",
+    "text": "After completing the initial interest survey, each student has been placed into a group with which they will work on a project for the remainder of the semester. These groups were created based on the interests and skills that students indicated in the survey, and we have endeavored to ensure everyone is in a group that aligns with their top choices.\nYou will find your group number and members below, as well as link to your GitHub repository for the semester long project. I have included in the initial README.md file some initial potential cultural interest topics that you might consider for your project. However, I want to stress that this is a suggested focus based off of your survey responses. You should discuss this further as a group, and you are welcome to choose a different topic if you all agree. If you cannot find a clear common interest, I would encourage you to reach out to the Instructors and also consider if there is a broad overarching theme that might provide some structure, while still allowing for individual interests to be pursued.\nIf you do not have a group, please fill out the initial interest survey as soon as possible so that we can place you in a group. If you have any questions or concerns about your group placement, please reach out to the Instructors as soon as possible.\nThe instructors will be adding you to the following GitHub repositories in the next week as you submit your first assignments and share your GitHub usernames with us.\nPlease note that these groupings are tentative and subject to change in the first few weeks. As a reminder, no group will be penalized if members leave and the instructors will help them pivot and adapt to any unforeseen changes.\nThe groups are as follows:\n\nGroup 1 SPORTS\n\nGitHub Repository\nMembers:\n\nAdam O.\nColin B.\nMaya B.\nAlex T.\nTiffany C.\n\n\nGroup 2 GAMING\n\nGitHub Repository\nMembers:\n\nAnshuman S.\nCharles C.\nHongli P.\nJesus V.\nAndrew P.\n\n\nGroup 3 MUSIC & SOCIAL MEDIA\n\nGitHub Repository\nMembers:\n\nAnanya S.\nEshaan A.\nBeau L.\nInika S.\nRohan V.G.\nRaymond Z.\n\n\nGroup 4 FILMS & FOOD & SOCIAL MEDIA\n\nGitHub Repository\nMembers:\n\nDiara S.\nFlynn H.\nMaya B.\nRana B.\nSolam S.\nMichelle Y.\nCynthia S.\n\n\nGroup 5 ACADEMICS & INTERNET CULTURE\n\nGitHub Repository\nMembers:\n\nDiana N.\nEmily C.\nZohra H.\nHannen O.\nMalvika C.\nTara V.\n\n\nGroup 6 POLITICS & HISTORY\n\nGitHub Repository\nMembers:\n\nAnanya K.\nChristina J.\nJasmitha G.\nVedha P.\nDaria M.\nAdin F.",
+    "crumbs": [
+      "Assessments",
+      "Assigned Project Groups"
+    ]
+  },
+  {
+    "objectID": "assessments/02-weekly-assessments.html",
+    "href": "assessments/02-weekly-assessments.html",
+    "title": "Weekly Assessments 50%",
+    "section": "",
+    "text": "Your performance in weekly assessments constitutes half of your final grade. These assessments include engaging with assigned materials through in-class discussions, asynchronous annotations of assigned materials, and weekly coding assignments, all of which is detailed below. Weekly assessments are graded as pass/fail though part of that assessment is also your degree of engagement and creativity, as well as the growth you demonstrated throughout the semester.",
+    "crumbs": [
+      "Assessments",
+      "Weekly Assignments"
+    ]
+  },
+  {
+    "objectID": "assessments/02-weekly-assessments.html#weekly-participation-25",
+    "href": "assessments/02-weekly-assessments.html#weekly-participation-25",
+    "title": "Weekly Assessments 50%",
+    "section": "Weekly Participation (25%)",
+    "text": "Weekly Participation (25%)\nWeekly participation includes both individual engagement with course materials and collaborative group presentations. This combination ensures you are both deepening your own understanding and learning from your peers’ when working with culture as data.\n\nWeekly Seminar Discussion and Asynchronous Annotations 15%\nBefore each class, you’re expected to engage with assigned materials, ranging from reading a book chapter or article, to exploring a data visualization to reading documentation. These materials lay the groundwork for our class discussions, as well as helping you with your semester long project. There may be some weeks that are of more interest to you, and I encourage you to explore the additional listed materials, though these are optional.\nQuestions to consider when engaging with the weekly materials include:\n\nWhat is the main argument of this piece? Is there an argument? What is interesting or evocative or infuriating?\nIf there is an argument, how does the author support the argument? What sorts of evidence or data did they utilize? How did they organize the structure of their piece?\nIf you didn’t feel there was an argument, what do you think was the author’s purpose or goal with the material (whether a project, blog post, tool, etc…)?\nWhat is the likely audience for the material?\nWhat connections or tensions did you identify across materials?\nWhat did you not understand in the materials? What was confusing?\nHow would you connect the week’s materials to previous ones?\n\nOverall, remember the goal is not to detail everything the author or creator says, but instead try to summarize in a few lines their central points and how they relate to the other materials from that week.\nOne way to demonstrate your engagement with the weekly materials is to participate in our weekly seminar discussions. Your contributions could be in the form of questions about complex or confusing concepts in the readings, connections that you want to share across the assigned materials, or feedback and responding to peer contributions. More than simply talking as much as possible though, our goal with seminar discussions is to create a thoughtful and respectful intellectual community.\nThe other way to demonstrate engagement is through asynchronous annotations. We will be using the Hypothesis annotation platform, with an introductory session in the first week of class. These annotations are a space for you to share your thoughts on the week’s materials and engage with your peers, and you will occasionally be asked to expand on your annotations during our discussions. You can sign up for Hypothesis here hypothes.is/signup and join our collective group (link in the syllabus or on Canvas). You will need to install the Hypothesis Browser Extension for your preferred browser as well.\n\nGrading Policy\nFor weekly seminar discussions, you must both be in person in class and be an active participant in the discussion or activities to receive full credit. Simply attending class is not enough; you are expected to contribute thoughtfully to discussions and engage with the material and your peers.\nFor the weekly annotations, you need to submit these via Hypothesis by midnight the day before class. This ensures that your contributions are available for others to review and discuss during our seminar. Your annotations should be tagged appropriately in our Hypothesis group to facilitate organization and discussion. To receive full credit, annotations must demonstrate thoughtful engagement with the material—this includes summarizing key points, raising questions, and making connections with other readings or topics we’ve covered.\n\n\n\nGroup Presentations and Collaboration (10%)\nGroups will be assigned within the first two weeks of class after an initial survey of student interests and backgrounds (e.g., music, literature, social media, gaming) . This group will work together to complete active in-class activities and out-of-class assignments, which will be documented and submitted via GitHub.\nStructure and Expectations:\n\nWeekly Prompts and Activities: Each week, your group will be assigned a prompt or task that builds on the week’s materials. This could involve finding digital objects, exploring datasets, or applying a concept from the readings.\nIn-Class Presentations: Some weeks, your group will present your findings to the class. Not every group will present every week, but even when your group is not presenting, you are still expected to submit your work to GitHub and be prepared to discuss it if called upon. Presentations should be clear, concise, and demonstrate your group’s understanding and application of the week’s materials\nDocumentation and Submission: All group work, whether presented in class or not, must be documented and submitted to your group’s GitHub repository. This documentation should include a summary of your group’s activities, details on how the labor was divided, and any relevant reflections on the process. Clear and detailed documentation is crucial for both grading and for your group members’ progress on the semester-long project.\n\n\nGrading Policy\nYour grade for weekly group work will be based on your active participation in presentations, the quality of your contributions, and the effectiveness of your collaboration. This includes both in-class activities and the quality of the work submitted on GitHub. This grade will not be impacted if a member of your group is absent, though the group will be required to pivot their schedule and plan in that event.\nWeekly group work must be submitted to GitHub by midnight prior to the class when it is due. This ensures that the work is available for review and that all group members are accountable for their contributions. Late submissions will receive half credit, as long as they are accompanied by an explanation for the delay. Repeated late submissions will result in the group meeting with the Instructor.\n\n\n\nWeekly Coding Assignments 25%\nYou will also have weekly programming assignments to complete and share via GitHub, unless indicated otherwise. Most coders work collaboratively, often engaging in pair programming, a method of talking through code problems together. This course encourages you to pair program, and work together to learn from each other’s solutions. However, be aware that copying and pasting code might get you through one week, but the concepts in this course move quickly and build upon each other. So, I would encourage you to do your best to not only try and complete the assignments each week, but to ensure that you are understanding the core concepts.. Questions are encouraged both in person and online, and we will be discussing more about best coding practices during our first week.\n\nGrading Policy\nWeekly coding assignments must be submitted via GitHub by midnight prior to the class meeting when they are due. These assignments are an opportunity to practice and solidify your understanding of the concepts covered each week. Late submissions will be accepted but will only receive half credit, as long as they are turned in before the final class meeting. Pair programming is encouraged, but remember that understanding the underlying concepts is crucial as the material builds progressively throughout the semester.",
+    "crumbs": [
+      "Assessments",
+      "Weekly Assignments"
+    ]
+  },
+  {
+    "objectID": "assessments/02-weekly-assessments.html#required-texts-and-resources",
+    "href": "assessments/02-weekly-assessments.html#required-texts-and-resources",
+    "title": "Weekly Assessments 50%",
+    "section": "Required Texts and Resources",
+    "text": "Required Texts and Resources\nAlmost all the course materials will be available online through either the course website or Canvas, so you are not required to purchase any materials. Throughout the semester, I will highlight books that you may want to purchase but that is completely up to you. The same goes for our coding resources. You will not be required to purchase any software but you will need access to a computer, so please let me know early on if you think that will be an issue and we can try and find solutions.",
+    "crumbs": [
+      "Assessments",
+      "Weekly Assignments"
+    ]
+  },
+  {
+    "objectID": "assessments/03-semester-project.html",
+    "href": "assessments/03-semester-project.html",
+    "title": "Semester Long Project 50%",
+    "section": "",
+    "text": "The remainder of your grade will be determined through a semester-long group project. The goal of this project is to expose you to how we create and work with culture as data. As stated above, this project will be completed in groups, and you will be assessed both on your individual contributions and the group’s final submission. The final project is modeled on the Responsible Datasets in Context Project (RDC) https://www.responsible-datasets-in-context.com/, which was created to help students “work with data responsibly.” While we will be using these datasets to practice and learn how to programmatically work with data, they also provide an example of how best to curate and share data about complex cultural phenomena and objects.\nAs the authors of the project write in the mission statement: &gt; “Data cannot be analyzed responsibly without deep knowledge of its social and historical context, provenance, and limitations. Anyone who works with data—from academic researchers to industry professionals—will know this claim to be true.\nWhile I do not expect you to create as polished or extensive of an output as the datasets available on the RDC Project, you will be working collaboratively to create a first draft of what could eventually be part of this project.",
+    "crumbs": [
+      "Assessments",
+      "Semester Long Project"
+    ]
+  },
+  {
+    "objectID": "assessments/03-semester-project.html#project-deadlines-milestones",
+    "href": "assessments/03-semester-project.html#project-deadlines-milestones",
+    "title": "Semester Long Project 50%",
+    "section": "Project Deadlines & Milestones",
+    "text": "Project Deadlines & Milestones\n\nCollective & Individual Topic Selection\nDUE FEBRUARY 5, 2026 (Optional Extension to February 12, 2026) PASS/FAIL Grade\nIn the first two weeks of the course, you will be assigned to a group based on shared interests and complementary skill sets. Your first task is to collaboratively determine the overall thematic focus of your group, as well as brainstorm some potential topics for your individual dataset. You will have time to work on this planning document in class and will submit it as a Markdown file in your group’s GitHub repository.\nThis planning document should address:\n\nGroup Theme: What is your shared area of interest? What kinds of cultural objects, practices, or phenomena fall within this theme? What’s included and what’s beyond scope?\nIndividual Ideas: What specific dataset is each group member considering? How do these relate to the group theme? Why this topic? (These can be preliminary. You’ll develop them further as the semester progresses)\nCollaboration Plan: How will your group communicate and share progress? What’s your GitHub organization strategy?\n\nFormat & Submission\n\nFeel free to use one or multiple Markdown files in the root of your GitHub repo or a planning/ subfolder, depending on what makes sense for your group.\nUse headings, bullet points, links, images, or tables if helpful\nNO WORD COUNT. The goal of this submission is to just help you start to concretize your ideas for the final project and start to figure out how you will handle working collectively on one group repository.\n\n\n\n\nInitial Dataset Submission\nDUE MARCH 12, 2026 (Optional Extension to March 24, 2026) 15%\nThis is your first major deliverable, and it focuses on creating a small, bespoke dataset through close, interpretive work. The goal is to understand what it means to make data carefully—item by item, decision by decision—before you attempt to scale that work computationally. You will create approximately 50-100 data items that reflect deep engagement with a particular cultural object, practice, or phenomenon.\nWhy small? We start with small-scale, bespoke data creation for a crucial reason: this is where you learn that every dataset embeds interpretive choices. When you manually work through 75 items, deciding what counts, what to capture, how to categorize, you experience the intellectual and ethical labor that gets hidden when you download a dataset or automate collection at scale. It is also an opportunity to get creative and think about what data you wish would exist for your cultural topic of interest.\nWhat about computation? While your dataset is small and reflects close interpretive work, you are required to use computational tools to assist your process. This is not about automation—it is about understanding how computation can augment even bespoke data work. Essentially, we want to break the divide between manual and automated to explore how computation and data can assist across scales.\nTo address this, your dataset must implement at least one of the following approaches:\n\nCreate Data from Scratch: Today, we are often handed datasets without ever experiencing the messy, interpretive process of creating one ourselves. This approach invites you to explore how complex cultural materials—say, a sculpture or a medieval manuscript—get transformed into structured data. While this may sound straightforward, every step involves interpretive decisions that shape how others can engage with the data downstream.\n\nFor example, if you are interested in the history of children’s literature and working with a lesser-known author whose work has yet to be digitized, you could scan those materials and decide what to capture: Is it just the text? The illustrations? The paratextual material? You might use image models to extract drawings and text, enabling analysis of the author’s evolving style.\nAlternatively, if you might be curious about how students are using AI in their daily lives and could turn to social media platforms like TikTok. While we cannot conduct human-subject research in this course (e.g., no surveys or interviews requiring IRB approval), you could analyze publicly posted videos. For instance, you might annotate TikToks that mention AI to track recurring themes or rhetorical patterns.\nThese are just a few possibilities, but whatever your focus, this approach requires you to define a clear methodology, justify your sampling, and carefully document your decisions. You are not just collecting data. You are making data, and that comes with responsibility.\n\nAudit and Augment Existing Data: Not all responsible data work begins from scratch though. In fact, some of the most important contributions come from uncovering how existing datasets were made, what they omit, and how they might be improved. This approach asks you to critically engage with an existing dataset—especially one that lacks documentation or transparency—and to make its origins, structure, and limitations legible to others.\n\nFor example, you might find a movie dataset on Kaggle that includes scraped reviews and ratings, but provides little information about where the data came from or how it was cleaned. You could trace the dataset back to its source—say, IMDb or Rotten Tomatoes or even historic newspapers—and compare a sample of the original reviews to what appears in the dataset. Were the reviews shortened or misattributed? What patterns of exclusion or distortion emerge? How much has been lost in this process?\nOr you might find a dataset that is widely reused but lacks key metadata or flattens the complexity of the phenomenon it represents, like popular economic benchmark datasets like GDP. Your goal then would be to try and reintroduce that complexity either through supplementing it with missing information, reconciling conflicting sources, or annotating entries to flag inconsistencies or bias. These contributions not only enhance the dataset, but also model what responsible reuse looks like.\nWhatever dataset you choose, this approach requires you to investigate its provenance, reflect on its transformations, and augment it in some meaningful way—whether by correcting errors, adding annotations, or merging it with new material. Just like with data creation, you’ll need a clear methodology, a justification for your interventions, and a well-documented data biography that makes your process transparent.\n\n\nFormat & Submission\nYour submission includes three components:\n\nInitial Dataset (~50-100 items). Your bespoke dataset in a structured format of your choice. You should have a rationale for how you have organized your data.\nInitial Documentation. Your first attempt at documentation that you think best reflects your process, interpretative choices, and explains the dataset. Some questions you might want to address include:\n\nWhat cultural materials are you working with and why? What approach did you take (from scratch or auditing)?\nWhat computational tools did you use to assist your work? How did they help? What were their limitations?\nWhat decisions did you make about what to include, exclude, or how to categorize? Why? What challenges did you encounter? How did you address them? What patterns, questions, or tensions emerged from working closely with this data?\n\nNext Steps. After creating this bespoke dataset, after Spring Break, you will work on scaling or expanding your dataset with computation. This plan should outline how you will address the following questions:\n\nHow will you generate more data computationally (Option 1: scale up to 500-1,000+ items using automation)? Or will you combine your bespoke data with an existing large dataset (Option 2: audit, merge, and analyze)? What computational methods will you use? (APIs, web scraping, LLMs, pattern matching, etc.)\nWhat will change when you scale? What interpretive decisions will you try to automate? What technical challenges do you anticipate?\nThis plan is your roadmap for understanding how scale transforms data work. You don’t need to implement it yet—but you should be thinking critically about what happens when you move from 75 carefully crafted items to 1,000 algorithmically generated ones. Your initial dataset should be submitted in your group’s GitHub repository and you should update any collective documentation to help users navigate the files and folders.\n\n\n\n\nData Demo Day\nEITHER DUE APRIL 30, 2026 OR MAY 5, 2026 5%\nWhile we are primarily using computation to create or curate data, you will also get the opportunity to speculate about what researchers might do with your data and, if you are ambitious, even present on your experiments with computation.\nRather than sharing all the details of your process or focus, this presentation is primarily focused on what might come next: What users do you envision? What computational methods might you want to try out on this data? What patterns or insights might emerge at scale that you couldn’t see in your bespoke manual dataset? What future data would you collect?\nWe will go over logistics closer to the date, but the focus here is on speculative experimentation and peer learning, so I encourage you to be creative and ambitious in your presentations. This is work-in-progress, not a final polished product.\n\n\n\nFinal Project Submission\nDUE MAY 15, 2026 NO EXTENSIONS 30%\nThis is the culmination of your semester-long engagement with culture as data. By this point, you will have created data manually with computational assistance, augmented it at scale, experimented with methods, and presented your speculative visions. Now you will submit your complete dataset and write scholarly essays that demonstrate what you have learned about the interpretive, technical, and ethical dimensions of representing culture as data, as well as how you situate your work in broader scholarly data practices.\nYour final submission includes both individual and collaborative components, all submitted via your group’s GitHub repository.\n\nIndividual Data Essay & Dataset 25%\nCulture As Dataset: You will submit your dataset that contains both your bespoke manual work and your computational augmentation at scale. It should be in a structured format, thoughtfully organized, and accompanied by relevant documentation, which is detailed in the next section.\nCulture As Documentation: Along with your dataset you will submit both documentation of your dataset but also a final data essay that tells the story of your dataset—how you made it, what it represents, what it reveals, and what it conceals. This essay should demonstrate your intellectual growth over the semester and your ability to critically reflect on the process of working with culture as data. You should pay special attention to explaining how computation played a role in your dataset; how scale shaped the data over the semester; the limitations or qualifications of your dataset; any ethical or privacy considerations; any lessons learned; and finally, how you situate your work in published peer reviewed scholarship.\nMore details about both parts of this assignment will be discussed over the course of the semester.\n\n\nCollective Principles & Documentation 5%\nYour group will collaboratively write a document with you group that synthesizes what you collectively learned about working with your particular type of cultural data. This is NOT a repeat of individual data essays—it’s methodological guidance and collective wisdom for future researchers.\nThink of this as: Writing the documentation you wish had existed when you started this project. What should someone know before they attempt to represent music as data? Or social media? Or gaming culture? What principles emerged from your group’s diverse approaches to similar materials? At its core, this document should include a set of principles for working with your cultural topic as data. The document should also attempt to note how each member contributed to its format, and like all work it will be submitted in your group’s collective GitHub repository.",
+    "crumbs": [
+      "Assessments",
+      "Semester Long Project"
+    ]
+  },
+  {
+    "objectID": "schedule/12-ecosystems-environments.html",
+    "href": "schedule/12-ecosystems-environments.html",
+    "title": "Ecosystems & Environments",
+    "section": "",
+    "text": "Discuss questions from the Python Refresher lessons\nStart the Complex Python and Virtual Environment lessons.",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 17: Who decides what culture becomes data?"
+      "Feb 26: How can we start creating culture as data?"
+    ]
+  },
+  {
+    "objectID": "schedule/12-ecosystems-environments.html#in-class-agenda",
+    "href": "schedule/12-ecosystems-environments.html#in-class-agenda",
+    "title": "Ecosystems & Environments",
+    "section": "",
+    "text": "Discuss questions from the Python Refresher lessons\nStart the Complex Python and Virtual Environment lessons.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 26: How can we start creating culture as data?"
+    ]
+  },
+  {
+    "objectID": "schedule/12-ecosystems-environments.html#assigned-materials",
+    "href": "schedule/12-ecosystems-environments.html#assigned-materials",
+    "title": "Ecosystems & Environments",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nRead through the two Python Refreshers:\n\nPython Refresher Foundations\nPython Refresher Advanced",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 26: How can we start creating culture as data?"
+    ]
+  },
+  {
+    "objectID": "schedule/12-ecosystems-environments.html#additional-materials",
+    "href": "schedule/12-ecosystems-environments.html#additional-materials",
+    "title": "Ecosystems & Environments",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nFord, Paul. “What Is Code? If You Don’t Know, You Need to Read This.” Business Week, June 11, 2015. Sections 1-2. http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 26: How can we start creating culture as data?"
     ]
   },
   {
@@ -1902,253 +2104,51 @@
     ]
   },
   {
-    "objectID": "schedule/12-ecosystems-environments.html",
-    "href": "schedule/12-ecosystems-environments.html",
-    "title": "Ecosystems & Environments",
+    "objectID": "schedule/09-archives-collections.html",
+    "href": "schedule/09-archives-collections.html",
+    "title": "Archives & Collections",
     "section": "",
-    "text": "Discuss questions from the Python Refresher lessons\nStart the Complex Python and Virtual Environment lessons.",
+    "text": "Visit UIUC Archives. Please arrive by 12:30pm at the following location:\n\nUniversity Archives Room 146 Library 1408 West Gregory Drive Urbana, IL, 61801 (MC-522)\nIf you have never visited the library before, feel free to ask any library staff member for directions to Room 146––they’re very helpful!",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 26: How can we start creating culture as data?"
+      "Feb 17: Who decides what culture becomes data?"
     ]
   },
   {
-    "objectID": "schedule/12-ecosystems-environments.html#in-class-agenda",
-    "href": "schedule/12-ecosystems-environments.html#in-class-agenda",
-    "title": "Ecosystems & Environments",
+    "objectID": "schedule/09-archives-collections.html#in-class-agenda",
+    "href": "schedule/09-archives-collections.html#in-class-agenda",
+    "title": "Archives & Collections",
     "section": "",
-    "text": "Discuss questions from the Python Refresher lessons\nStart the Complex Python and Virtual Environment lessons.",
+    "text": "Visit UIUC Archives. Please arrive by 12:30pm at the following location:\n\nUniversity Archives Room 146 Library 1408 West Gregory Drive Urbana, IL, 61801 (MC-522)\nIf you have never visited the library before, feel free to ask any library staff member for directions to Room 146––they’re very helpful!",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 26: How can we start creating culture as data?"
+      "Feb 17: Who decides what culture becomes data?"
     ]
   },
   {
-    "objectID": "schedule/12-ecosystems-environments.html#assigned-materials",
-    "href": "schedule/12-ecosystems-environments.html#assigned-materials",
-    "title": "Ecosystems & Environments",
+    "objectID": "schedule/09-archives-collections.html#assigned-materials",
+    "href": "schedule/09-archives-collections.html#assigned-materials",
+    "title": "Archives & Collections",
     "section": "Assigned Materials",
-    "text": "Assigned Materials\n\nRead through the two Python Refreshers:\n\nPython Refresher Foundations\nPython Refresher Advanced",
+    "text": "Assigned Materials\n\nSkim Dorothy Berry. “The House Archives Built.” Uproot//Zines, June 22, 2021. https://www.uproot.space/features/the-house-archives-built.",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 26: How can we start creating culture as data?"
+      "Feb 17: Who decides what culture becomes data?"
     ]
   },
   {
-    "objectID": "schedule/12-ecosystems-environments.html#additional-materials",
-    "href": "schedule/12-ecosystems-environments.html#additional-materials",
-    "title": "Ecosystems & Environments",
+    "objectID": "schedule/09-archives-collections.html#additional-materials",
+    "href": "schedule/09-archives-collections.html#additional-materials",
+    "title": "Archives & Collections",
     "section": "Additional Materials",
-    "text": "Additional Materials\n\nFord, Paul. “What Is Code? If You Don’t Know, You Need to Read This.” Business Week, June 11, 2015. Sections 1-2. http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/.",
+    "text": "Additional Materials",
     "crumbs": [
       "Schedule",
       "February",
-      "Feb 26: How can we start creating culture as data?"
-    ]
-  },
-  {
-    "objectID": "assessments/03-semester-project.html",
-    "href": "assessments/03-semester-project.html",
-    "title": "Semester Long Project 50%",
-    "section": "",
-    "text": "The remainder of your grade will be determined through a semester-long group project. The goal of this project is to expose you to how we create and work with culture as data. As stated above, this project will be completed in groups, and you will be assessed both on your individual contributions and the group’s final submission. The final project is modeled on the Responsible Datasets in Context Project (RDC) https://www.responsible-datasets-in-context.com/, which was created to help students “work with data responsibly.” While we will be using these datasets to practice and learn how to programmatically work with data, they also provide an example of how best to curate and share data about complex cultural phenomena and objects.\nAs the authors of the project write in the mission statement: &gt; “Data cannot be analyzed responsibly without deep knowledge of its social and historical context, provenance, and limitations. Anyone who works with data—from academic researchers to industry professionals—will know this claim to be true.\nWhile I do not expect you to create as polished or extensive of an output as the datasets available on the RDC Project, you will be working collaboratively to create a first draft of what could eventually be part of this project.",
-    "crumbs": [
-      "Assessments",
-      "Semester Long Project"
-    ]
-  },
-  {
-    "objectID": "assessments/03-semester-project.html#project-deadlines-milestones",
-    "href": "assessments/03-semester-project.html#project-deadlines-milestones",
-    "title": "Semester Long Project 50%",
-    "section": "Project Deadlines & Milestones",
-    "text": "Project Deadlines & Milestones\n\nCollective & Individual Topic Selection\nDUE FEBRUARY 5, 2026 (Optional Extension to February 12, 2026) PASS/FAIL Grade\nIn the first two weeks of the course, you will be assigned to a group based on shared interests and complementary skill sets. Your first task is to collaboratively determine the overall thematic focus of your group, as well as brainstorm some potential topics for your individual dataset. You will have time to work on this planning document in class and will submit it as a Markdown file in your group’s GitHub repository.\nThis planning document should address:\n\nGroup Theme: What is your shared area of interest? What kinds of cultural objects, practices, or phenomena fall within this theme? What’s included and what’s beyond scope?\nIndividual Ideas: What specific dataset is each group member considering? How do these relate to the group theme? Why this topic? (These can be preliminary. You’ll develop them further as the semester progresses)\nCollaboration Plan: How will your group communicate and share progress? What’s your GitHub organization strategy?\n\nFormat & Submission\n\nFeel free to use one or multiple Markdown files in the root of your GitHub repo or a planning/ subfolder, depending on what makes sense for your group.\nUse headings, bullet points, links, images, or tables if helpful\nNO WORD COUNT. The goal of this submission is to just help you start to concretize your ideas for the final project and start to figure out how you will handle working collectively on one group repository.\n\n\n\n\nInitial Dataset Submission\nDUE MARCH 12, 2026 (Optional Extension to March 24, 2026) 15%\nThis is your first major deliverable, and it focuses on creating a small, bespoke dataset through close, interpretive work. The goal is to understand what it means to make data carefully—item by item, decision by decision—before you attempt to scale that work computationally. You will create approximately 50-100 data items that reflect deep engagement with a particular cultural object, practice, or phenomenon.\nWhy small? We start with small-scale, bespoke data creation for a crucial reason: this is where you learn that every dataset embeds interpretive choices. When you manually work through 75 items, deciding what counts, what to capture, how to categorize, you experience the intellectual and ethical labor that gets hidden when you download a dataset or automate collection at scale. It is also an opportunity to get creative and think about what data you wish would exist for your cultural topic of interest.\nWhat about computation? While your dataset is small and reflects close interpretive work, you are required to use computational tools to assist your process. This is not about automation—it is about understanding how computation can augment even bespoke data work. Essentially, we want to break the divide between manual and automated to explore how computation and data can assist across scales.\nTo address this, your dataset must implement at least one of the following approaches:\n\nCreate Data from Scratch: Today, we are often handed datasets without ever experiencing the messy, interpretive process of creating one ourselves. This approach invites you to explore how complex cultural materials—say, a sculpture or a medieval manuscript—get transformed into structured data. While this may sound straightforward, every step involves interpretive decisions that shape how others can engage with the data downstream.\n\nFor example, if you are interested in the history of children’s literature and working with a lesser-known author whose work has yet to be digitized, you could scan those materials and decide what to capture: Is it just the text? The illustrations? The paratextual material? You might use image models to extract drawings and text, enabling analysis of the author’s evolving style.\nAlternatively, if you might be curious about how students are using AI in their daily lives and could turn to social media platforms like TikTok. While we cannot conduct human-subject research in this course (e.g., no surveys or interviews requiring IRB approval), you could analyze publicly posted videos. For instance, you might annotate TikToks that mention AI to track recurring themes or rhetorical patterns.\nThese are just a few possibilities, but whatever your focus, this approach requires you to define a clear methodology, justify your sampling, and carefully document your decisions. You are not just collecting data. You are making data, and that comes with responsibility.\n\nAudit and Augment Existing Data: Not all responsible data work begins from scratch though. In fact, some of the most important contributions come from uncovering how existing datasets were made, what they omit, and how they might be improved. This approach asks you to critically engage with an existing dataset—especially one that lacks documentation or transparency—and to make its origins, structure, and limitations legible to others.\n\nFor example, you might find a movie dataset on Kaggle that includes scraped reviews and ratings, but provides little information about where the data came from or how it was cleaned. You could trace the dataset back to its source—say, IMDb or Rotten Tomatoes or even historic newspapers—and compare a sample of the original reviews to what appears in the dataset. Were the reviews shortened or misattributed? What patterns of exclusion or distortion emerge? How much has been lost in this process?\nOr you might find a dataset that is widely reused but lacks key metadata or flattens the complexity of the phenomenon it represents, like popular economic benchmark datasets like GDP. Your goal then would be to try and reintroduce that complexity either through supplementing it with missing information, reconciling conflicting sources, or annotating entries to flag inconsistencies or bias. These contributions not only enhance the dataset, but also model what responsible reuse looks like.\nWhatever dataset you choose, this approach requires you to investigate its provenance, reflect on its transformations, and augment it in some meaningful way—whether by correcting errors, adding annotations, or merging it with new material. Just like with data creation, you’ll need a clear methodology, a justification for your interventions, and a well-documented data biography that makes your process transparent.\n\n\nFormat & Submission\nYour submission includes three components:\n\nInitial Dataset (~50-100 items). Your bespoke dataset in a structured format of your choice. You should have a rationale for how you have organized your data.\nInitial Documentation. Your first attempt at documentation that you think best reflects your process, interpretative choices, and explains the dataset. Some questions you might want to address include:\n\nWhat cultural materials are you working with and why? What approach did you take (from scratch or auditing)?\nWhat computational tools did you use to assist your work? How did they help? What were their limitations?\nWhat decisions did you make about what to include, exclude, or how to categorize? Why? What challenges did you encounter? How did you address them? What patterns, questions, or tensions emerged from working closely with this data?\n\nNext Steps. After creating this bespoke dataset, after Spring Break, you will work on scaling or expanding your dataset with computation. This plan should outline how you will address the following questions:\n\nHow will you generate more data computationally (Option 1: scale up to 500-1,000+ items using automation)? Or will you combine your bespoke data with an existing large dataset (Option 2: audit, merge, and analyze)? What computational methods will you use? (APIs, web scraping, LLMs, pattern matching, etc.)\nWhat will change when you scale? What interpretive decisions will you try to automate? What technical challenges do you anticipate?\nThis plan is your roadmap for understanding how scale transforms data work. You don’t need to implement it yet—but you should be thinking critically about what happens when you move from 75 carefully crafted items to 1,000 algorithmically generated ones. Your initial dataset should be submitted in your group’s GitHub repository and you should update any collective documentation to help users navigate the files and folders.\n\n\n\n\nData Demo Day\nEITHER DUE APRIL 30, 2026 OR MAY 5, 2026 5%\nWhile we are primarily using computation to create or curate data, you will also get the opportunity to speculate about what researchers might do with your data and, if you are ambitious, even present on your experiments with computation.\nRather than sharing all the details of your process or focus, this presentation is primarily focused on what might come next: What users do you envision? What computational methods might you want to try out on this data? What patterns or insights might emerge at scale that you couldn’t see in your bespoke manual dataset? What future data would you collect?\nWe will go over logistics closer to the date, but the focus here is on speculative experimentation and peer learning, so I encourage you to be creative and ambitious in your presentations. This is work-in-progress, not a final polished product.\n\n\n\nFinal Project Submission\nDUE MAY 15, 2026 NO EXTENSIONS 30%\nThis is the culmination of your semester-long engagement with culture as data. By this point, you will have created data manually with computational assistance, augmented it at scale, experimented with methods, and presented your speculative visions. Now you will submit your complete dataset and write scholarly essays that demonstrate what you have learned about the interpretive, technical, and ethical dimensions of representing culture as data, as well as how you situate your work in broader scholarly data practices.\nYour final submission includes both individual and collaborative components, all submitted via your group’s GitHub repository.\n\nIndividual Data Essay & Dataset 25%\nCulture As Dataset: You will submit your dataset that contains both your bespoke manual work and your computational augmentation at scale. It should be in a structured format, thoughtfully organized, and accompanied by relevant documentation, which is detailed in the next section.\nCulture As Documentation: Along with your dataset you will submit both documentation of your dataset but also a final data essay that tells the story of your dataset—how you made it, what it represents, what it reveals, and what it conceals. This essay should demonstrate your intellectual growth over the semester and your ability to critically reflect on the process of working with culture as data. You should pay special attention to explaining how computation played a role in your dataset; how scale shaped the data over the semester; the limitations or qualifications of your dataset; any ethical or privacy considerations; any lessons learned; and finally, how you situate your work in published peer reviewed scholarship.\nMore details about both parts of this assignment will be discussed over the course of the semester.\n\n\nCollective Principles & Documentation 5%\nYour group will collaboratively write a document with you group that synthesizes what you collectively learned about working with your particular type of cultural data. This is NOT a repeat of individual data essays—it’s methodological guidance and collective wisdom for future researchers.\nThink of this as: Writing the documentation you wish had existed when you started this project. What should someone know before they attempt to represent music as data? Or social media? Or gaming culture? What principles emerged from your group’s diverse approaches to similar materials? At its core, this document should include a set of principles for working with your cultural topic as data. The document should also attempt to note how each member contributed to its format, and like all work it will be submitted in your group’s collective GitHub repository.",
-    "crumbs": [
-      "Assessments",
-      "Semester Long Project"
-    ]
-  },
-  {
-    "objectID": "assessments/02-weekly-assessments.html",
-    "href": "assessments/02-weekly-assessments.html",
-    "title": "Weekly Assessments 50%",
-    "section": "",
-    "text": "Your performance in weekly assessments constitutes half of your final grade. These assessments include engaging with assigned materials through in-class discussions, asynchronous annotations of assigned materials, and weekly coding assignments, all of which is detailed below. Weekly assessments are graded as pass/fail though part of that assessment is also your degree of engagement and creativity, as well as the growth you demonstrated throughout the semester.",
-    "crumbs": [
-      "Assessments",
-      "Weekly Assignments"
-    ]
-  },
-  {
-    "objectID": "assessments/02-weekly-assessments.html#weekly-participation-25",
-    "href": "assessments/02-weekly-assessments.html#weekly-participation-25",
-    "title": "Weekly Assessments 50%",
-    "section": "Weekly Participation (25%)",
-    "text": "Weekly Participation (25%)\nWeekly participation includes both individual engagement with course materials and collaborative group presentations. This combination ensures you are both deepening your own understanding and learning from your peers’ when working with culture as data.\n\nWeekly Seminar Discussion and Asynchronous Annotations 15%\nBefore each class, you’re expected to engage with assigned materials, ranging from reading a book chapter or article, to exploring a data visualization to reading documentation. These materials lay the groundwork for our class discussions, as well as helping you with your semester long project. There may be some weeks that are of more interest to you, and I encourage you to explore the additional listed materials, though these are optional.\nQuestions to consider when engaging with the weekly materials include:\n\nWhat is the main argument of this piece? Is there an argument? What is interesting or evocative or infuriating?\nIf there is an argument, how does the author support the argument? What sorts of evidence or data did they utilize? How did they organize the structure of their piece?\nIf you didn’t feel there was an argument, what do you think was the author’s purpose or goal with the material (whether a project, blog post, tool, etc…)?\nWhat is the likely audience for the material?\nWhat connections or tensions did you identify across materials?\nWhat did you not understand in the materials? What was confusing?\nHow would you connect the week’s materials to previous ones?\n\nOverall, remember the goal is not to detail everything the author or creator says, but instead try to summarize in a few lines their central points and how they relate to the other materials from that week.\nOne way to demonstrate your engagement with the weekly materials is to participate in our weekly seminar discussions. Your contributions could be in the form of questions about complex or confusing concepts in the readings, connections that you want to share across the assigned materials, or feedback and responding to peer contributions. More than simply talking as much as possible though, our goal with seminar discussions is to create a thoughtful and respectful intellectual community.\nThe other way to demonstrate engagement is through asynchronous annotations. We will be using the Hypothesis annotation platform, with an introductory session in the first week of class. These annotations are a space for you to share your thoughts on the week’s materials and engage with your peers, and you will occasionally be asked to expand on your annotations during our discussions. You can sign up for Hypothesis here hypothes.is/signup and join our collective group (link in the syllabus or on Canvas). You will need to install the Hypothesis Browser Extension for your preferred browser as well.\n\nGrading Policy\nFor weekly seminar discussions, you must both be in person in class and be an active participant in the discussion or activities to receive full credit. Simply attending class is not enough; you are expected to contribute thoughtfully to discussions and engage with the material and your peers.\nFor the weekly annotations, you need to submit these via Hypothesis by midnight the day before class. This ensures that your contributions are available for others to review and discuss during our seminar. Your annotations should be tagged appropriately in our Hypothesis group to facilitate organization and discussion. To receive full credit, annotations must demonstrate thoughtful engagement with the material—this includes summarizing key points, raising questions, and making connections with other readings or topics we’ve covered.\n\n\n\nGroup Presentations and Collaboration (10%)\nGroups will be assigned within the first two weeks of class after an initial survey of student interests and backgrounds (e.g., music, literature, social media, gaming) . This group will work together to complete active in-class activities and out-of-class assignments, which will be documented and submitted via GitHub.\nStructure and Expectations:\n\nWeekly Prompts and Activities: Each week, your group will be assigned a prompt or task that builds on the week’s materials. This could involve finding digital objects, exploring datasets, or applying a concept from the readings.\nIn-Class Presentations: Some weeks, your group will present your findings to the class. Not every group will present every week, but even when your group is not presenting, you are still expected to submit your work to GitHub and be prepared to discuss it if called upon. Presentations should be clear, concise, and demonstrate your group’s understanding and application of the week’s materials\nDocumentation and Submission: All group work, whether presented in class or not, must be documented and submitted to your group’s GitHub repository. This documentation should include a summary of your group’s activities, details on how the labor was divided, and any relevant reflections on the process. Clear and detailed documentation is crucial for both grading and for your group members’ progress on the semester-long project.\n\n\nGrading Policy\nYour grade for weekly group work will be based on your active participation in presentations, the quality of your contributions, and the effectiveness of your collaboration. This includes both in-class activities and the quality of the work submitted on GitHub. This grade will not be impacted if a member of your group is absent, though the group will be required to pivot their schedule and plan in that event.\nWeekly group work must be submitted to GitHub by midnight prior to the class when it is due. This ensures that the work is available for review and that all group members are accountable for their contributions. Late submissions will receive half credit, as long as they are accompanied by an explanation for the delay. Repeated late submissions will result in the group meeting with the Instructor.\n\n\n\nWeekly Coding Assignments 25%\nYou will also have weekly programming assignments to complete and share via GitHub, unless indicated otherwise. Most coders work collaboratively, often engaging in pair programming, a method of talking through code problems together. This course encourages you to pair program, and work together to learn from each other’s solutions. However, be aware that copying and pasting code might get you through one week, but the concepts in this course move quickly and build upon each other. So, I would encourage you to do your best to not only try and complete the assignments each week, but to ensure that you are understanding the core concepts.. Questions are encouraged both in person and online, and we will be discussing more about best coding practices during our first week.\n\nGrading Policy\nWeekly coding assignments must be submitted via GitHub by midnight prior to the class meeting when they are due. These assignments are an opportunity to practice and solidify your understanding of the concepts covered each week. Late submissions will be accepted but will only receive half credit, as long as they are turned in before the final class meeting. Pair programming is encouraged, but remember that understanding the underlying concepts is crucial as the material builds progressively throughout the semester.",
-    "crumbs": [
-      "Assessments",
-      "Weekly Assignments"
-    ]
-  },
-  {
-    "objectID": "assessments/02-weekly-assessments.html#required-texts-and-resources",
-    "href": "assessments/02-weekly-assessments.html#required-texts-and-resources",
-    "title": "Weekly Assessments 50%",
-    "section": "Required Texts and Resources",
-    "text": "Required Texts and Resources\nAlmost all the course materials will be available online through either the course website or Canvas, so you are not required to purchase any materials. Throughout the semester, I will highlight books that you may want to purchase but that is completely up to you. The same goes for our coding resources. You will not be required to purchase any software but you will need access to a computer, so please let me know early on if you think that will be an issue and we can try and find solutions.",
-    "crumbs": [
-      "Assessments",
-      "Weekly Assignments"
-    ]
-  },
-  {
-    "objectID": "assessments/04-groups.html",
-    "href": "assessments/04-groups.html",
-    "title": "Assigned Project Groups",
-    "section": "",
-    "text": "After completing the initial interest survey, each student has been placed into a group with which they will work on a project for the remainder of the semester. These groups were created based on the interests and skills that students indicated in the survey, and we have endeavored to ensure everyone is in a group that aligns with their top choices.\nYou will find your group number and members below, as well as link to your GitHub repository for the semester long project. I have included in the initial README.md file some initial potential cultural interest topics that you might consider for your project. However, I want to stress that this is a suggested focus based off of your survey responses. You should discuss this further as a group, and you are welcome to choose a different topic if you all agree. If you cannot find a clear common interest, I would encourage you to reach out to the Instructors and also consider if there is a broad overarching theme that might provide some structure, while still allowing for individual interests to be pursued.\nIf you do not have a group, please fill out the initial interest survey as soon as possible so that we can place you in a group. If you have any questions or concerns about your group placement, please reach out to the Instructors as soon as possible.\nThe instructors will be adding you to the following GitHub repositories in the next week as you submit your first assignments and share your GitHub usernames with us.\nPlease note that these groupings are tentative and subject to change in the first few weeks. As a reminder, no group will be penalized if members leave and the instructors will help them pivot and adapt to any unforeseen changes.\nThe groups are as follows:\n\nGroup 1 SPORTS\n\nGitHub Repository\nMembers:\n\nAdam O.\nColin B.\nMaya B.\nAlex T.\nTiffany C.\n\n\nGroup 2 GAMING\n\nGitHub Repository\nMembers:\n\nAnshuman S.\nCharles C.\nHongli P.\nJesus V.\nAndrew P.\n\n\nGroup 3 MUSIC & SOCIAL MEDIA\n\nGitHub Repository\nMembers:\n\nAnanya S.\nEshaan A.\nBeau L.\nInika S.\nRohan V.G.\nRaymond Z.\n\n\nGroup 4 FILMS & FOOD & SOCIAL MEDIA\n\nGitHub Repository\nMembers:\n\nDiara S.\nFlynn H.\nMaya B.\nRana B.\nSolam S.\nMichelle Y.\nCynthia S.\n\n\nGroup 5 ACADEMICS & INTERNET CULTURE\n\nGitHub Repository\nMembers:\n\nDiana N.\nEmily C.\nZohra H.\nHannen O.\nMalvika C.\nTara V.\n\n\nGroup 6 POLITICS & HISTORY\n\nGitHub Repository\nMembers:\n\nAnanya K.\nChristina J.\nJasmitha G.\nVedha P.\nDaria M.\nAdin F.",
-    "crumbs": [
-      "Assessments",
-      "Assigned Project Groups"
-    ]
-  },
-  {
-    "objectID": "assessments/06-collecting-digitizing-culture.html",
-    "href": "assessments/06-collecting-digitizing-culture.html",
-    "title": "Mass Digitization & Digital Libraries Group Assignment",
-    "section": "",
-    "text": "In this week’s readings, we explored the history and challenges of mass digitization and digital libraries. We learned about Brewster Kahle’s vision for universal access to all knowledge through the Internet Archive, Howard Besser’s framework for understanding what makes a true digital library (beyond just digitized collections), and how the African American Periodical Poetry dataset demonstrates the labor and choices involved in creating digital collections.\nToday, we will be working in groups to start exploring some of the digital libraries and archives mentioned in the assigned readings, with a particular focus on understanding the digitization process through hands-on exploration of HathiTrust. This will help us think critically about the different ways that cultural objects are digitized and made available online, as well as the challenges and opportunities that come with this process. It will also serve as a foundation for discussing potential topics for your collaborative semester-long project.\nThis first assignment has two components: exploring the HathiTrust Digital Library to understand digitization in practice, and starting to explore how cultural objects in your area of interest are digitized. If you have questions, please reach out to the instructors on Slack.",
-    "crumbs": [
-      "Assessments",
-      "Mass Digitization & Digital Libraries"
-    ]
-  },
-  {
-    "objectID": "assessments/06-collecting-digitizing-culture.html#exploring-hathitrust-digitization-in-practice",
-    "href": "assessments/06-collecting-digitizing-culture.html#exploring-hathitrust-digitization-in-practice",
-    "title": "Mass Digitization & Digital Libraries Group Assignment",
-    "section": "Exploring HathiTrust: Digitization in Practice",
-    "text": "Exploring HathiTrust: Digitization in Practice\nBefore diving into your own area of focus, we want everyone to gain hands-on experience with a major digital library to better understand what digitization looks like in practice. HathiTrust is one of the largest digital libraries in the world and provides an excellent case study for understanding the concepts from our readings.\nAs a group, work through the following tasks together. Document your findings and observations as you go:\n\nFinding the African American Periodical Poetry: Using the Hennessey dataset from your readings (which is available in the readings here), select 2-3 poems from different magazines (e.g., The Crisis, Opportunity, Black Opals). Try to locate the original magazine issues in HathiTrust that contain these poems.\n\nWhat search strategies did you use?\nWere you able to find all the issues you looked for?\nWhat barriers or challenges did you encounter?\n\nExamining OCR Quality: Once you’ve found at least one magazine issue, examine the OCR (Optical Character Recognition) quality:\n\nCan you search for specific words or phrases within the document?\nHow accurate is the OCR text compared to what you see in the page images?\nWhat kinds of errors do you notice? (Consider fonts, layouts, damaged pages, etc.)\nHow might OCR quality affect research using this material?\n\nUnderstanding Context: Compare the poem in the dataset to the original magazine page:\n\nWhat additional context do you gain from seeing the original page?\nWhat else appears on the page or in the issue alongside the poem?\nWhat information was lost in creating just the dataset of poems?\nWhat information was gained by creating the structured dataset?\n\nAccess and Rights: Look at the viewing options and restrictions:\n\nCan you download the full PDF? Individual page images?\nAre there any access restrictions? (Full view vs. limited preview)\nWhat copyright or usage information is provided?\nHow does HathiTrust balance preservation, access, and copyright?\n\nMetadata and Organization: Examine how HathiTrust has cataloged and organized the material versus the dataset:\n\nWhat metadata is provided for the item you’re viewing?\nHow does this compare to the MARC records we discussed in class?\nWhat other data could have the authors collected?\nWould you organize the dataset differently?",
-    "crumbs": [
-      "Assessments",
-      "Mass Digitization & Digital Libraries"
-    ]
-  },
-  {
-    "objectID": "assessments/06-collecting-digitizing-culture.html#discovering-digitizing-cultural-objects",
-    "href": "assessments/06-collecting-digitizing-culture.html#discovering-digitizing-cultural-objects",
-    "title": "Mass Digitization & Digital Libraries Group Assignment",
-    "section": "Discovering & Digitizing Cultural Objects",
-    "text": "Discovering & Digitizing Cultural Objects\nOnce you have completed the HathiTrust exploration, you should begin working on this part of the assignment, which is designed to help you start discovering relevant materials and discussing potential focuses for your semester-long project. This section is focused on the cultural area of your group.\n\n\n\n\n\n\nImportant\n\n\n\nYou are welcome to use AI tools to help you with your assignment, but you should include links and screenshots to all materials you find. You should also be prepared to discuss how you found these materials and what tools you used to find them.\n\n\nIn our readings this week, we learned about how cultural objects and practices are turned into digital representations, and how these representations are then shared and preserved online. Building on your HathiTrust exploration, you will now investigate what this process looks like for your selected area of focus.\nHere are the following prompts you should answer for your area of focus:\n\nDigital Objects & Representations: What might be considered a digital object or digital representation for your area of focus? You can have multiple examples, but you should explain why you consider it relating to your area of focus (this can be short though).\nDigitization Processes: How are digital objects and representations created for your area of focus? What are the processes involved in digitizing these objects? In the African American Periodical Poetry dataset and your HathiTrust exploration, you learned about OCR (Optical Character Recognition) for extracting text from digitized print materials. What are some of the digitization processes for your area of focus? How do they compare to what you observed in HathiTrust?\nHistorical Equivalents: Kahle repeatedly made reference to the Library of Alexandria in his article. What are some historical equivalents to digital objects in your area of focus? How do these historical objects compare to their digital counterparts?\nBorn-Digital Materials: Are there examples of born-digital materials for your area of focus? How do these materials compare to digitized objects? For those unfamiliar, born-digital materials are those that were created digitally and never existed in analog or physical form (think most social media, for example).\nOldest Digital Library/Archive: What is the oldest digital library or archive you can find that relates to your area of focus? How has this resource been maintained and updated over time? What metadata or standards exist for the object? You may also include examples that are no longer maintained or have been abandoned.\nNewest Digital Library/Archive: Conversely, what is the newest digital library or archive you can find that relates to your area of focus? How does this resource compare to older digital libraries or archives, especially around metadata?\nViral Examples: Are there any examples of your digital object that have gone viral? How did this happen and what impact did it have on the object or the digital library/archive that hosted it?\nFree vs. Proprietary Access: Can you find any examples of free vs. proprietary digital libraries or archives for your area of focus? How do these resources differ in terms of access? Think back to Besser and Kahle’s discussions about public vs. commercial digital libraries.\n\nYou should aim to find at least one example for each prompt, but you are welcome to find more.",
-    "crumbs": [
-      "Assessments",
-      "Mass Digitization & Digital Libraries"
-    ]
-  },
-  {
-    "objectID": "assessments/06-collecting-digitizing-culture.html#documenting-presenting-your-findings",
-    "href": "assessments/06-collecting-digitizing-culture.html#documenting-presenting-your-findings",
-    "title": "Mass Digitization & Digital Libraries Group Assignment",
-    "section": "Documenting & Presenting Your Findings",
-    "text": "Documenting & Presenting Your Findings\nThe final part of this assignment is to document and present your findings and decisions. You should create a new folder and Markdown file in your group’s GitHub repository that outlines:\n\nYour HathiTrust exploration findings and reflections\nYour responses to the cultural objects prompts above\n\nWe will be discussing your findings in the following weeks. Each member should be prepared to discuss their contributions to the group’s findings. You do not need to prepare a formal presentation or any slides, but each member should be ready to engage in the discussion.\n\n\n\n\n\n\nDividing Labor\n\n\n\nYou are welcome to divide labor any way you choose, BUT please do your best to be equitable and be sure to document who is responsible for what. You may have some group members do part 1 or part 2, but ideally everyone should contribute to either investigating the data in HathiTrust or identifying digital objects. I would highly encourage you to consider the git history (your git log) as a way of making your labor visible in these types of assignments.",
-    "crumbs": [
-      "Assessments",
-      "Mass Digitization & Digital Libraries"
-    ]
-  },
-  {
-    "objectID": "assessments/index.html",
-    "href": "assessments/index.html",
-    "title": "Overview",
-    "section": "",
-    "text": "In this course, we have two main categories of assessments: weekly ones and ones associated with the semester long project. Both types are intended to introduce you to new materials, help you synthesize this content, and engage in research that is meaningful to you. Your final grade will be evenly divided between these two categories.",
-    "crumbs": [
-      "Assessments",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "assessments/05-github-style-guide.html",
-    "href": "assessments/05-github-style-guide.html",
-    "title": "GitHub Style Guide",
-    "section": "",
-    "text": "Welcome to the GitHub Style Guide! This guide is designed to help you understand the expectations for your GitHub repositories and how to structure your work for the semester. This guide will be updated throughout the semester as we learn more about GitHub and how to use it effectively for our projects. You will be graded on your use of GitHub and the quality of your repositories, so please make sure to follow these guidelines carefully, though we will also discuss them in class and provide feedback on your work.",
-    "crumbs": [
-      "Assessments",
-      "GitHub Style Guide"
-    ]
-  },
-  {
-    "objectID": "assessments/05-github-style-guide.html#repositories",
-    "href": "assessments/05-github-style-guide.html#repositories",
-    "title": "GitHub Style Guide",
-    "section": "Repositories",
-    "text": "Repositories\nThese guidelines for your is310-coding-assignments repository and your group repository available on the CultureAsData-UIUC organization. We will cover all of these in class but this guide is here for your reference.\n\nGeneral Guidelines\n\nCreate a .gitignore file and ensure that you are not committing any private files or keys. More information here.\nInclude a README.md file in your repository that provides an overview of the contents. More information here.\nMake sure that your commits are associated with your GitHub account. More information here.\nEnsure that your repository has a clear and organized folder structure. More information here.\n\n\n\nSpecific Guidelines\n\n.gitignore and No Private Files or Keys\nPlease make sure that you have a .gitignore file in your repository. This file should include any files that you do not want to be tracked by Git. This includes any files that contain private information or keys. If you are using an API key or any other sensitive information, please make sure that you are not committing this information to your repository.\nAlso ensure that sensitive or unnecessary files (such as temporary files, IDE config files, and large data files) are not pushed to the repository. Some common files to include in .gitignore are:\n\nIDE files (e.g., .vscode/, .idea/)\nOS-specific files (e.g., .DS_Store for macOS)\nLog files (e.g., *.log)\nData or configuration files with sensitive information (e.g., .env, .json with API keys)\n\nExample content for a .gitignore file:\n# IDE files\n.vscode/\n.idea/\n\n# OS-specific files\n.DS_Store\n\n# Log files\n*.log\n\n# Sensitive data files\n*.env\n*.json\n\n\nREADME.md File\nYour repository should have a README.md file that provides an overview of the contents of the repository. This file should include the following information:\n\nA brief description of the repository and its purpose.\nInstructions on how to run any code or scripts in the repository.\nAny dependencies that are required to run the code.\nA brief description of the files and directories in the repository.\nAny other relevant information that would help someone understand the contents of the repository.\nContributors to the repository.\n\nHere is an example of a README.md file:\n# IS310 Coding Assignments\n\nThis repository contains the coding assignments for IS310: Computing in the Humanities.\n\n## Repository Structure\n\nEach folder in this repository corresponds to a different assignment. You can find a list of assignments on the course website.\n\n## Running the Code\n\nTo run the code in this repository, you will need to have Python installed on your machine. You can install all dependencies by running the following command:\n\n\n`pip install -r requirements.txt`\n\n\n### Contributors\n\n- @student1\n\n\nCommit User Configuration\nPlease make sure that your commits are associated with your GitHub account. This will help us track your contributions to the repository and ensure that you receive credit for your work.\nIf you are seeing a different username or email address in your commits, you can update your Git configuration with the following commands:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\nYou can check your current Git configuration with the following command:\ngit config --list\n\n\nFolder Structure\nPlease make sure that your repository has a clear and organized folder structure. This will help you and others navigate the repository and find the files they need. You should create separate folders for different types of files or different assignments. For example, in your is310-coding-assignments repository, you need to have a folder for each assignment that corresponds to the correct name from the assignment.\nFor your project repository, you might have folders for data, code, documentation, and other relevant files. Make sure that the folder structure is logical and easy to understand. You can also include a README.md file in each folder to provide more information about the contents of that folder, as well as document the structure in your main README.md file at the root of the repository.\nFor example, your is310-coding-assignments repository might look like this:\nis310-coding-assignments/\n├── .gitignore\n├── README.md\n├── init-is310-homework/\n│   ├── images/\n│   └── README.md\n└── command-line-maze/\n    ├── command_line.zip\n    └── README.md\nAnd so your README.md file might look like this:\n# IS310 Coding Assignments\n\nThis repository contains the coding assignments for IS310: Computing in the Humanities.\n\n## Repository Structure\n\n- `init-is310-homework`: Initial homework assignment.\n- `command-line-maze`: Command line maze assignment.",
-    "crumbs": [
-      "Assessments",
-      "GitHub Style Guide"
-    ]
-  },
-  {
-    "objectID": "assessments/05-github-style-guide.html#issues-projects",
-    "href": "assessments/05-github-style-guide.html#issues-projects",
-    "title": "GitHub Style Guide",
-    "section": "Issues & Projects",
-    "text": "Issues & Projects\nThese guidelines are primarily for your group repository, but you can also use them for your individual repositories. We will cover these in class but this guide is here for your reference.\n\nGeneral Guidelines\n\nUse GitHub Issues to track tasks, bugs, and other work items. More information here.\nUse GitHub Projects to organize and track the progress of your work. More information here.\nMake sure that your Issues and Projects are up-to-date and reflect the current state of your work. More information here.",
-    "crumbs": [
-      "Assessments",
-      "GitHub Style Guide"
-    ]
-  },
-  {
-    "objectID": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html",
-    "href": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html",
-    "title": "Responsible Computing of Culture & Contextualizing Social Knowledge",
-    "section": "",
-    "text": "Any questions from last week?\nDiscuss LLMs as Research Tools and look at their data and survey https://openreview.net/forum?id=p0BwJk3R1p#discussion\nDiscuss Myths of Generative AI\nDiscuss Responsible Datasets in Context and Final Projects\nStart discussing focus with your groups, which are assigned here and the GitHub Style Guide.",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 27: What does it mean to work with culture as data responsibly?"
-    ]
-  },
-  {
-    "objectID": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#in-class-agenda",
-    "href": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#in-class-agenda",
-    "title": "Responsible Computing of Culture & Contextualizing Social Knowledge",
-    "section": "",
-    "text": "Any questions from last week?\nDiscuss LLMs as Research Tools and look at their data and survey https://openreview.net/forum?id=p0BwJk3R1p#discussion\nDiscuss Myths of Generative AI\nDiscuss Responsible Datasets in Context and Final Projects\nStart discussing focus with your groups, which are assigned here and the GitHub Style Guide.",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 27: What does it mean to work with culture as data responsibly?"
-    ]
-  },
-  {
-    "objectID": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assigned-materials",
-    "href": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assigned-materials",
-    "title": "Responsible Computing of Culture & Contextualizing Social Knowledge",
-    "section": "Assigned Materials",
-    "text": "Assigned Materials\n\n“Mission.” Responsible Datasets in Context (blog), n.d. https://www.responsible-datasets-in-context.com/mission.html and discuss final projects\nLiao, Zhehui, Maria Antoniak, Inyoung Cheong, et al. “LLMs as Research Tools: A Large Scale Survey of Researchers’ Usage and Perceptions.” arXiv:2411.05025. Preprint, arXiv, October 30, 2024. https://arxiv.org/html/2411.05025v1.\n\nSalvaggio, Eryk. 2024. “Challenging The Myths of Generative AI” Tech Policy Press, August 29. https://techpolicy.press/challenging-the-myths-of-generative-ai.",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 27: What does it mean to work with culture as data responsibly?"
-    ]
-  },
-  {
-    "objectID": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assignments",
-    "href": "schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html#assignments",
-    "title": "Responsible Computing of Culture & Contextualizing Social Knowledge",
-    "section": "Assignments",
-    "text": "Assignments\n\nComplete Initial Interest Survey (link available on Canvas) due by January 21 at midnight.",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 27: What does it mean to work with culture as data responsibly?"
+      "Feb 17: Who decides what culture becomes data?"
     ]
   },
   {
