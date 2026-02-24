@@ -534,4 +534,4 @@ git commit -m "Completed homework for Python Foundations"
 git push origin main # or master if you haven't changed the default branch name
 ```
 
-You should then put a link to our GitHub discussion [https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/7](https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/7).
+You should then put a link to our GitHub discussion [https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/7](https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/5).
