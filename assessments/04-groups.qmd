@@ -33,6 +33,7 @@ The groups are as follows:
        - Hongli P.
        - Jesus V.
        - Andrew P.
+       - Raymond L.
 
 3. **Group 3** MUSIC & SOCIAL MEDIA
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-spring-2026-group-3)

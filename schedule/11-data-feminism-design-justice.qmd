@@ -7,7 +7,7 @@ date: 2026-02-24
 
 ## In-Class Agenda
 
-- [ ] Discuss the assigned readings
+- [ ] Discuss the assigned readings. Slides available [here](../slides/08-data-feminism-design-justice.qmd).
 
 ## Assigned Materials
 
@@ -29,9 +29,6 @@ Another dataset to explore:
 ### Additional Links
 
 - [Pamphlet](https://cdn.theatlantic.com/media/mt/hua_hsu/barkhorn_womenvoters1.jpg) from Eleanor Barkhorn, "'Vote No on Women's Suffrage': Bizarre Reasons for Not Letting Women Vote," *Atlantic*, November 6, 2012, [https://www.theatlantic.com/sexes/archive/2012/11/vote-no-on-womens-suffrage-bizarre-reasons-for-not-letting-women-vote/264639/](https://www.theatlantic.com/sexes/archive/2012/11/vote-no-on-womens-suffrage-bizarre-reasons-for-not-letting-women-vote/264639/) cited in "The Power Chapter" of *Data Feminism*.
-- Onuoha, Mimi. "The Library of Missing Datasets - MIMI ONUOHA." MIMI   ONUOHA. Accessed January 11, 2024. [https://mimionuoha.com/the-library-of-missing-datasets](https://mimionuoha.com/the-library-of-missing-datasets).
-- Onuoha, Mimi. "MimiOnuoha/Missing-Datasets," January 9, 2024. [https://github.com/MimiOnuoha/missing-datasets](https://github.com/MimiOnuoha/missing-datasets).
-- Schmidt, Ben. "Gendered Language in Teaching Evaluations." [https://benschmidt.org/profGender/](https://benschmidt.org/profGender/).
 - *Colored Conventions Project* [https://coloredconventions.org/](https://coloredconventions.org/).
 - *Saving Ukrainian Cultural Heritage Online* [https://www.sucho.org/](https://www.sucho.org/).
 
