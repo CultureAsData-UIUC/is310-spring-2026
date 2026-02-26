@@ -19,6 +19,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [February 10 - What are the historic legacies and politics of representing culture as data? Digital Objects & Obsolescence](07-digital-objects-and-obsolescence.qmd) | [February 12 - How has the web changed culture as data? Servers & Web Standards](08-servers-web-standards.qmd) |
 | [February 17 - Who decides what culture becomes data? Archives & Collections](09-archives-collections.qmd) | [February 19 - How can we represent culture computationally? Scripts & Types](10-scripts-types.qmd) |
 | [February 24 - How do our choices shape whose culture becomes data? Data Feminism & Design Justice](11-data-feminism-design-justice.qmd) | [February 26 - How can we start creating culture as data? Ecosystems & Environments](12-ecosystems-environments.qmd) |
+| [March 3 - How do we ethically and legally work with culture as data? Terms & Traps](13-terms-traps.qmd) | [March 5 - How do we start scaling culture as data? Scrape On & Off](14-scrapes-structures.qmd) |
 
 ## Assignment Schedule
 
@@ -33,7 +34,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [Lost & Found in the Cultural Command Line Homework](../materials/introducing-humanities-computing/06-intro-file-formats.qmd#homework-lost-found-in-the-cultural-command-line) | [Due by Midnight CT on February 4](06-markup-and-markdown.qmd) |
 | [Source & Style Homework](../materials/introducing-humanities-computing/07-intro-html.qmd#homework-source-and-style) | [Due By Midnight CT on February 11](08-servers-web-standards.qmd) |
 | [Doing It Live Homework](../materials/introducing-humanities-computing/08-intro-web.qmd#assignment-doing-it-live) | [Due By Midnight CT on February 23](11-data-feminism-design-justice.qmd) |
-
+| [Command Line Data Curation Homework](../materials/creating-curating-humanities-data/04-virtual-environments.qmd#homework-command-line-data-curation) | [Due By Midnight CT on March 4](14-scrapes-structures.qmd) | 
 
 ### Group Assignments
 

@@ -36,6 +36,6 @@ Another dataset to explore:
 
 ### Individual
 
-- [ ] [Doing it Live Homework](../materials/introducing-humanities-computing/08-intro-web/index.qmd#homework-doing-it-live).
+- [ ] [Doing it Live Homework](../materials/introducing-humanities-computing/08-intro-web.qmd#homework-doing-it-live).
 
 ### Group

@@ -7,7 +7,7 @@ draft: true
 
 ## In-Class Agenda
 
-- [ ] Complete group presentations for the [Proprietary & Perspectival Data Creation Assignment](../proprietary-perspectival-dataset-creation/index.qmd).
-- [ ] Start [introduction to APIs and cultural data](../materials/creating-curating-humanities-data/06-getting-data-apis/index.qmd).
+- [ ] Complete group presentations for the [Proprietary & Perspectival Data Creation Assignment](../proprietary-perspectival-dataset-creation.qmd).
+- [ ] Start [introduction to APIs and cultural data](../materials/creating-curating-humanities-data/06-getting-data-apis.qmd).
 
 ## Additional Materials

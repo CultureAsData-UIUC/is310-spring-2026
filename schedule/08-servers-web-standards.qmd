@@ -18,6 +18,6 @@ CLASS CANCELED
 
 ### Individual
 
-- [ ] [Source & Style Homework](../materials/introducing-humanities-computing/07-intro-html/index.qmd#homework-source-and-style).
+- [ ] [Source & Style Homework](../materials/introducing-humanities-computing/07-intro-html.qmd#homework-source-and-style).
 
 ### Group

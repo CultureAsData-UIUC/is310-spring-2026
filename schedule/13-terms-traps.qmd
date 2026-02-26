@@ -2,15 +2,12 @@
 title: "Terms & Traps"
 subtitle: "How do we ethically and legally work with culture as data?"
 toc: true
-date: 2024-10-08
-draft: true
+date: 2026-03-03
 ---
 
 ## In-Class Agenda
 
-- [ ] Discuss any questions from proposal feedback and updated timeline for project.
-- [ ] Discuss the assigned readings
-- [ ] Start new group assignment on [Proprietary & Perspectival Data Creation](../proprietary-perspectival-dataset-creation/index.qmd).
+- [ ] Discuss assigned readings
 
 ## Assigned Materials
 

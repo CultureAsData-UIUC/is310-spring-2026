@@ -7,9 +7,9 @@ draft: true
 
 ## In-Class Agenda
 
-- [ ] Discuss and demo the remainder of the [Advanced Web Scraping Section](../materials/creating-curating-humanities-data/05-web-scraping/index.qmd#advanced-web-scraping). You are welcome to read this material prior to class but it is not required.
+- [ ] Discuss and demo the remainder of the [Advanced Web Scraping Section](../materials/creating-curating-humanities-data/05-web-scraping.qmd#advanced-web-scraping). You are welcome to read this material prior to class but it is not required.
 - [ ] Discuss assigned readings
-- [ ] Time permitting: Group presentations for the [Proprietary & Perspectival Data Creation Assignment](../proprietary-perspectival-dataset-creation/index.qmd). These may get moved to the next class on Thursday if we run out of time.
+- [ ] Time permitting: Group presentations for the [Proprietary & Perspectival Data Creation Assignment](../proprietary-perspectival-dataset-creation.qmd). These may get moved to the next class on Thursday if we run out of time.
 
 ## Assigned Materials
 
@@ -39,7 +39,7 @@ We will also be discussing our [assigned reading from last class](14-scrapes-on-
 
 ### Group
 
-- [ ] [Proprietary & Perspectival Data Creation Assignment](../proprietary-perspectival-dataset-creation/index.qmd)
+- [ ] [Proprietary & Perspectival Data Creation Assignment](../proprietary-perspectival-dataset-creation.qmd)
 
 
 
@@ -61,4 +61,4 @@ We will also be discussing our [assigned reading from last class](14-scrapes-on-
 
 ### Group
 
-- [ ] [Critical Cultural Data Explorations](../critical-cultural-data-explorations/index.qmd)
+- [ ] [Critical Cultural Data Explorations](../critical-cultural-data-explorations.qmd)

@@ -1,0 +1,372 @@
+---
+title: "Python Refresher II: Advanced Python"
+subtitle: "Scripts, Built-in Methods, and Control Flow"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+---
+
+# From Interpreter to Scripts
+
+Last week we explored Python in the **interpreter**. But what happens when you quit?
+
+. . .
+
+**Your code is gone!**
+
+::: {.notes}
+The Python interpreter is great for testing code and learning, but it's not practical for real work. Once you quit the interpreter, you lose all your code. That's where scripts come in—they let us write code that persists, can be run again and again, and can be shared with others.
+:::
+
+## Why Scripts?
+
+Think about your workflow:
+- How could we save code we write?
+- How could we run that code later without retyping it?
+- How could we share code with others?
+
+. . .
+
+**These are the questions scripts answer.**
+
+::: {.notes}
+Scripts are text files that contain Python code. We can save them, version control them, share them, and run them whenever we want. This is the foundation of real programming.
+:::
+
+## Running a Script
+
+How do we run a Python script from the terminal?
+
+. . .
+
+What does `python3 filename.py` do?
+
+::: {.notes}
+The basic command is `python3 filename.py` where filename is the name of your script. This tells Python to read and execute the code in that file.
+:::
+
+## A Key Difference
+
+When code runs in a script, what's different from the interpreter?
+
+. . .
+
+**Scripts don't automatically show output.**
+
+. . .
+
+How would we make our script show us what it's doing?
+
+::: {.notes}
+In the interpreter, when you type a variable name, Python shows you its value. In a script, nothing displays unless you explicitly tell it to. That's where the print() function comes in.
+:::
+
+# Built-In Methods
+
+Python comes with many built-in functions. Let's explore some common ones.
+
+## print()
+
+What does `print()` do?
+
+. . .
+
+How could we use it to debug our code?
+
+::: {.notes}
+print() is your window into what your code is doing. Use it to display variables, values, and messages to the terminal. It's essential for understanding program flow and finding bugs.
+:::
+
+## len()
+
+What do you think `len()` returns?
+
+. . .
+
+What data types could we use it with?
+
+::: {.notes}
+len() returns the number of items in a sequence (list, string, dictionary, etc.). It's useful when you need to know how many items you're working with.
+:::
+
+## type()
+
+Why would we want to know the type of a variable?
+
+. . .
+
+How could `type()` help us debug?
+
+::: {.notes}
+When working with code you didn't write, or when data comes from external sources, type() helps you understand what you're working with. This is crucial for debugging type-related errors.
+:::
+
+## input()
+
+How could we get information from a user?
+
+. . .
+
+What does `input()` return?
+
+::: {.notes}
+input() pauses the script and waits for the user to type something. Whatever they type is returned as a string. This lets you create interactive programs.
+:::
+
+# String Methods
+
+Strings are sequences of characters. Python has many built-in methods for manipulating them.
+
+## split()
+
+If we have a sentence as a string, how could we turn it into a list of words?
+
+. . .
+
+What is a **delimiter**?
+
+::: {.notes}
+split() breaks a string apart at a delimiter (like a space or comma) and creates a list of the pieces. This is useful for parsing text data.
+:::
+
+## join()
+
+Think about the opposite operation: how could we turn a list of words back into a sentence?
+
+::: {.notes}
+join() does the opposite of split(). It takes a list and combines the items with a delimiter between them. It's often called on a string that represents the delimiter.
+:::
+
+## replace()
+
+How would you change one word to another in a string?
+
+. . .
+
+Could you replace only the first occurrence?
+
+::: {.notes}
+replace() finds a substring and replaces it with a different string. You can specify how many times to replace, or replace all occurrences.
+:::
+
+## Case Methods
+
+What methods could change the capitalization of a string?
+
+. . .
+
+What's the difference between `lower()`, `upper()`, `title()`?
+
+::: {.notes}
+These methods change the case of text:
+- lower() makes everything lowercase
+- upper() makes everything UPPERCASE
+- title() capitalizes the first letter of each word
+- strip() removes whitespace from the beginning and end
+:::
+
+# Control Flow: Loops
+
+How would you run the same code multiple times?
+
+. . .
+
+What if you had 100 items instead of 2?
+
+::: {.notes}
+This is where loops come in. Instead of copying code over and over, a loop runs code once for each item in a sequence.
+:::
+
+## For Loops
+
+What's the basic structure of a for loop?
+
+. . .
+
+```python
+for _______ in _______:
+    # what goes here?
+```
+
+::: {.notes}
+A for loop has three key parts:
+1. The for keyword (reserved word)
+2. A variable name (represents each item as we loop)
+3. The sequence we're looping through
+4. Indented code that runs for each item
+
+The indentation is critical—Python uses whitespace to determine what's part of the loop.
+:::
+
+## Iterating
+
+When we loop through a list, what does the variable represent?
+
+. . .
+
+What happens to that variable after the loop ends?
+
+::: {.notes}
+The variable represents the current item as we go through the sequence. After each iteration, it gets the next item. After the loop ends, the variable still exists and holds the value of the last item.
+:::
+
+## Looping Over Dictionaries
+
+How would you loop through the keys and values of a dictionary?
+
+. . .
+
+What's the `.items()` method?
+
+::: {.notes}
+When looping over a dictionary, you can use .items() to get both keys and values. This gives you access to the metadata and data together.
+:::
+
+# Control Flow: Functions
+
+What if you want to reuse the same code in multiple places?
+
+. . .
+
+**Functions let you write code once and use it many times.**
+
+::: {.notes}
+A function is a reusable block of code. It helps you avoid repetition, makes code more readable, and organizes logic into manageable pieces.
+:::
+
+## Defining a Function
+
+What's the syntax for creating a function?
+
+. . .
+
+```python
+_____ function_name(_________):
+    # code here
+    _____ something
+```
+
+::: {.notes}
+You define a function with the `def` keyword, give it a name, list any arguments in parentheses, and end with a colon. The code inside is indented. You can use return to pass data back out.
+:::
+
+## Arguments and Parameters
+
+What are arguments?
+
+. . .
+
+How do you pass data into a function?
+
+::: {.notes}
+Arguments are inputs to a function. You list them in the parentheses when defining the function, and you pass values when calling the function. The function can use those values as variables inside its code.
+:::
+
+## Return Values
+
+Why would you use `return` in a function?
+
+. . .
+
+What happens to the returned value?
+
+::: {.notes}
+return passes data back from the function to the code that called it. Without return, a function can still do things (like print), but you can't get a value back to use elsewhere.
+:::
+
+## Variable Scope
+
+If you create a variable inside a function, can you use it outside?
+
+. . .
+
+What's **local scope** vs **global scope**?
+
+::: {.notes}
+Variables defined inside a function only exist inside that function—this is local scope. Variables defined outside are global and accessible everywhere. This prevents conflicts and helps organize code.
+:::
+
+# Control Flow: Conditionals
+
+What if you want different code to run based on different conditions?
+
+. . .
+
+How could you write code that makes decisions?
+
+::: {.notes}
+Conditional statements let your code make decisions. Based on whether something is true or false, different code runs.
+:::
+
+## if/else
+
+What's the structure of a conditional statement?
+
+. . .
+
+```python
+if _____________:
+    # what if it's True?
+else:
+    # what if it's False?
+```
+
+::: {.notes}
+if tests a condition. If it's True, the indented code runs. else handles the False case. The indentation is crucial.
+:::
+
+## Comparison Operators
+
+What operators could you use to test conditions?
+
+. . .
+
+What's the difference between `=` and `==`?
+
+::: {.notes}
+- = assigns a value
+- == checks if two values are equal
+- != means "not equal"
+- >, >=, <, <= for comparing numbers
+- in to check if something exists in a string or list
+:::
+
+## Multiple Conditions
+
+How could you test more than one condition?
+
+. . .
+
+What keywords let you combine conditions?
+
+::: {.notes}
+and means both conditions must be True
+or means at least one must be True
+not reverses a condition
+These let you create complex logic.
+:::
+
+## elif
+
+What if you have more than two possibilities?
+
+. . .
+
+When would you use `elif` instead of multiple `if` statements?
+
+::: {.notes}
+elif (else if) lets you test multiple conditions in sequence. If the first if is False, it checks the elif. You can have many elifs. This is cleaner and more efficient than multiple separate if statements.
+:::
+
+# Your Turn
+
+Ready to code?
+
+Let's build something using what we've learned.
+
+::: {.notes}
+Now it's time to practice. We'll work through exercises that combine scripts, methods, loops, functions, and conditionals. Start simple and build up to more complex programs.
+:::

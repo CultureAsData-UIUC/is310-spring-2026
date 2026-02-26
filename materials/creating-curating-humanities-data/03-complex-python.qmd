@@ -1,7 +1,6 @@
 ---
 title: "Complex Python: Classes & Comments"
 toc: true
-draft: true
 ---
 
 Now that we have refreshed our knowledge of Python, it's time to start getting more advanced in how we use Python, especially to work with data.
@@ -573,7 +572,8 @@ The second new thing here is the newline character "\n", which is technically ca
 
 If you're getting stuck here's a possible solution, if you click on the toggle below it will show you the solution.
 
-{% capture toggle_content %}
+::: {.callout-note collapse="true" #python-class-solution}
+## Python Class Solution
 
 Here's a function to save the movie's information to a file:
 
@@ -636,5 +636,4 @@ a_movie.read_movie_info("movie_info.txt")
 a_movie.get_movie_info()
 ```
 
-{% endcapture %}
-{% include toggle.html content=toggle_content %}
+:::

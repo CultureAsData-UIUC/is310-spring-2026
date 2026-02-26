@@ -1,0 +1,301 @@
+---
+title: "Complex Python: Classes & Comments"
+subtitle: "Object-Oriented Programming and Documentation"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+---
+
+# From Dictionaries to Classes
+
+We've learned a lot about storing data in different structures. But what if we want to combine **data and functions** into one cohesive unit?
+
+::: {.notes}
+Dictionaries are great for describing complex data, but when we want to add behavior (functions) to our data, classes become more powerful.
+:::
+
+## What is a Class?
+
+A **class** is a particular type of **object** that encapsulates both **data and functions** in a single cohesive unit.
+
+. . .
+
+We've already used built-in classes:
+- Strings are a class
+- Lists are a class
+- Dictionaries are a class
+
+::: {.notes}
+You can check what class something is by using the type() function. Every object in Python is an instance of a class.
+:::
+
+## The Simplest Class
+
+```python
+class Blank:
+    pass  # Nothing to see here
+```
+
+This class does nothing when instantiated, but it shows the basic syntax.
+
+::: {.notes}
+To define a class, use the `class` keyword followed by the class name and a colon. When you call a class (like a function), it executes the `__init__` method, which is the constructor.
+:::
+
+## A Simple Movie Class
+
+```python
+class Movie:
+    def __init__(self, name):
+        self.movie_name = name
+
+a_movie = Movie("The Matrix")
+a_movie.movie_name
+```
+
+. . .
+
+The `__init__` method runs when you create an instance. `self` represents the instance itself.
+
+::: {.notes}
+`self` is the first argument to any method in a class. It refers to the specific instance you've created. When you set `self.movie_name = name`, you're creating an attribute on that instance.
+:::
+
+## Adding Methods
+
+Methods are functions **inside** a class. They operate on the instance's data.
+
+. . .
+
+```python
+def add_directors(self, directors):
+    """Adds directors to the movie"""
+    if isinstance(directors, list) is False:
+        directors = [directors]
+    self.directors.extend(directors)
+```
+
+::: {.notes}
+Methods always take `self` as the first argument. This allows them to access and modify the instance's attributes. Notice the docstring—this documents what the method does.
+:::
+
+## A More Complex Class
+
+```python
+class Movie:
+    def __init__(self, name):
+        self.movie_name = name
+        self.directors = []
+        self.release_year = None
+        self.age = 0
+        self.sequels = []
+```
+
+Initialize attributes as empty or None to structure your data.
+
+::: {.notes}
+By initializing attributes in `__init__`, you define the shape of your class. This makes it clear what data the class will hold.
+:::
+
+## Class Attributes vs Methods
+
+**Attributes**: Data stored in the class (like `self.movie_name`)
+
+**Methods**: Functions that operate on that data (like `add_directors()`)
+
+::: {.notes}
+This separation of data and behavior is the core of object-oriented programming. It makes code more organized and reusable.
+:::
+
+# Comments and Documentation
+
+Comments explain what your code does. They're not executed by Python.
+
+## Inline Comments
+
+```python
+movie = dict()  # Could also write {}
+```
+
+Use `#` to comment a single line.
+
+::: {.notes}
+Inline comments are useful for explaining **why** you did something, not necessarily what the code does (the code itself should be clear about that).
+:::
+
+## Block Comments (Docstrings)
+
+```python
+def add_directors(self, directors):
+    """Adds directors to the movie
+
+    Arguments:
+    directors (list) -- List of director names
+    """
+    # implementation here
+```
+
+. . .
+
+Docstrings are triple-quoted strings at the start of functions/classes.
+
+::: {.notes}
+Docstrings are special because you can access them programmatically with `function.__doc__`. They're the primary way to document what a function does.
+:::
+
+## Good Documentation
+
+- Explains **what** the function/class does
+- Describes arguments and return values
+- Provides usage examples when helpful
+
+::: {.notes}
+Good documentation helps others (and future you) understand the code. It's an investment that pays off when you revisit code months later.
+:::
+
+# Python Libraries & Imports
+
+Most of the power in Python comes from **libraries** of pre-written code.
+
+## The Standard Library
+
+The Python Standard Library contains modules built into Python.
+
+. . .
+
+Example: **pathlib** for working with file paths
+
+::: {.notes}
+pathlib is a great example. Instead of working with file paths as strings, you can use Path objects that are smarter and cross-platform.
+:::
+
+## Importing Libraries
+
+```python
+import pathlib
+```
+
+. . .
+
+Or import a specific class:
+
+```python
+from pathlib import Path
+```
+
+::: {.notes}
+The first syntax lets you use `pathlib.Path()`. The second lets you use just `Path()`. Both work the same way, it's just about what you prefer.
+:::
+
+## Aliasing Imports
+
+```python
+import pathlib as pl
+```
+
+. . .
+
+Now you can use `pl.Path()` instead of `pathlib.Path()`.
+
+::: {.notes}
+Aliasing is useful when module names are long or when you want to avoid naming conflicts.
+:::
+
+## Using pathlib
+
+```python
+from pathlib import Path
+
+current_directory = Path.cwd()
+print(current_directory)
+
+file = Path('data.csv')
+print(file.read_text())
+```
+
+::: {.notes}
+Path objects have methods like `.cwd()` to get the current working directory and `.read_text()` to read file contents as a string.
+:::
+
+# File Input and Output
+
+Working with files is essential for data work.
+
+## Reading Files
+
+```python
+with open("data.csv", "r") as file:
+    text = file.read()
+    print(text)
+```
+
+. . .
+
+The `with` statement automatically closes the file.
+
+::: {.notes}
+The "r" mode opens a file for reading. Using `with` is the best practice—it ensures the file is properly closed even if an error occurs.
+:::
+
+## File Modes
+
+| Mode | Purpose |
+|------|---------|
+| `r` | Read (default) |
+| `w` | Write (overwrites) |
+| `a` | Append |
+| `x` | Create new |
+
+::: {.notes}
+Be careful with "w"—it overwrites the entire file. Use "a" if you want to add to existing content.
+:::
+
+## Writing Files
+
+```python
+with open("output.txt", "w") as file:
+    for i in range(10):
+        file.write(str(i) + "\n")
+```
+
+. . .
+
+Note: `write()` needs a **string**, not an integer.
+
+::: {.notes}
+This is a common gotcha. Use str() to convert numbers to strings before writing.
+:::
+
+## The Newline Character
+
+The `"\n"` character creates a line break.
+
+```python
+file.write("Line 1\n")
+file.write("Line 2\n")
+```
+
+Without it, everything prints on one line.
+
+::: {.notes}
+The newline character is essential for readable output. Without it, all your data runs together.
+:::
+
+# Putting It All Together
+
+Classes let you organize related data and functions. Libraries extend what Python can do. File I/O lets you persist data.
+
+::: {.notes}
+These three concepts—classes, libraries, and file I/O—form the foundation of real Python programs. By combining them, you can build sophisticated data manipulation tools.
+:::
+
+## Next: Virtual Environments
+
+Before we can use external libraries, we need to manage them properly with **virtual environments**.
+
+::: {.notes}
+This prevents conflicts between different projects and keeps your system clean.
+:::

@@ -1,2 +1,1089 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"></html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-03-03">
+
+<title>Terms &amp; Traps – IS310 - Culture As Data Spring 2026</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/images/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-985aa47af68dae11cd4d235c71fb941e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6c49c5477b92c77c9eb341f9299c235f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-985aa47af68dae11cd4d235c71fb941e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-fc539113232677d296c547e50173fa21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-6bd77949012616049cccce2f6cb6e61f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-fc539113232677d296c547e50173fa21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    window.setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      window.setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    window.hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(darkModeDefault) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const darkModeDefault = false;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !window.hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (window.hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/images/favicon.ico" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">IS310 - Culture As Data Spring 2026</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../schedule/index.html" aria-current="page"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../assessments/index.html"> 
+<span class="menu-text">Assessments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../policies.html"> 
+<span class="menu-text">Policies</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../materials/introducing-humanities-computing/01-course-tools.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../schedule/13-terms-traps.html">March</a></li><li class="breadcrumb-item"><a href="../schedule/13-terms-traps.html">Mar 3: How do we ethically and legally work with culture as data?</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">January</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/01-introducing-computing-in-the-humanities-culture-as-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jan 20: Why Represent Culture As Data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/02-programming-and-processing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jan 22: How Will We Work in this Course?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/03-responsible-computing-of-culture-and-contextualizing-social-knowledge.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jan 27: What does it mean to work with culture as data responsibly?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/04-version-file-histories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jan 29: How can we work collaboratively and computationally?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">February</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/05-histories-culture-computing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feb 3: How and when did we first start representing culture as data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/06-markup-and-markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feb 5: What does it mean to work digitally?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/07-digital-objects-and-obsolescence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feb 10: What are the historic legacies and politics of representing culture as data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/08-servers-web-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feb 12: How has the web changed culture as data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/09-archives-collections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feb 17: Who decides what culture becomes data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/10-scripts-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feb 19: How can we represent culture computationally?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/11-data-feminism-design-justice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feb 24: How do our choices shape whose culture becomes data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/12-ecosystems-environments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feb 26: How can we start creating culture as data?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">March</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/13-terms-traps.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Mar 3: How do we ethically and legally work with culture as data?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule/14-scrapes-structures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mar 5: How do we start scaling culture as data?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#in-class-agenda" id="toc-in-class-agenda" class="nav-link active" data-scroll-target="#in-class-agenda">In-Class Agenda</a></li>
+  <li><a href="#assigned-materials" id="toc-assigned-materials" class="nav-link" data-scroll-target="#assigned-materials">Assigned Materials</a></li>
+  <li><a href="#additional-materials" id="toc-additional-materials" class="nav-link" data-scroll-target="#additional-materials">Additional Materials</a>
+  <ul class="collapse">
+  <li><a href="#additional-links" id="toc-additional-links" class="nav-link" data-scroll-target="#additional-links">Additional Links</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../schedule/13-terms-traps.html">March</a></li><li class="breadcrumb-item"><a href="../schedule/13-terms-traps.html">Mar 3: How do we ethically and legally work with culture as data?</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Terms &amp; Traps</h1>
+<p class="subtitle lead">How do we ethically and legally work with culture as data?</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 3, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="in-class-agenda" class="level2">
+<h2 class="anchored" data-anchor-id="in-class-agenda">In-Class Agenda</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Discuss assigned readings</label></li>
+</ul>
+</section>
+<section id="assigned-materials" class="level2">
+<h2 class="anchored" data-anchor-id="assigned-materials">Assigned Materials</h2>
+<ul>
+<li>Walsh, Melanie. “Where Is All the Book Data?” <em>Public Books</em>, October 4, 2022. <a href="https://www.publicbooks.org/where-is-all-the-book-data/">https://www.publicbooks.org/where-is-all-the-book-data/</a>.</li>
+<li>McNulty, Tess. “What’s on Top of TikTok?” <em>Public Books</em>, November 8, 2023. <a href="https://www.publicbooks.org/whats-on-top-of-tiktok/">https://www.publicbooks.org/whats-on-top-of-tiktok/</a>.</li>
+<li>Sheth, Anna Preus and Aashna. “Top 500 ‘Greatest’ Novels (1021-2015) - Responsible Datasets in Context.” <em>Responsible Datasets in Context</em>, July 1, 2024. <a href="https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html">https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html</a>.</li>
+</ul>
+</section>
+<section id="additional-materials" class="level2">
+<h2 class="anchored" data-anchor-id="additional-materials">Additional Materials</h2>
+<ul>
+<li>Lavigne, Sam. “Scrapism: A Manifesto.” <em>Critical AI</em> 1, no. 1-2 (October 1, 2023). <a href="https://doi.org/10.1215/2834703X-10734046">https://doi.org/10.1215/2834703X-10734046</a>.</li>
+</ul>
+<section id="additional-links" class="level3">
+<h3 class="anchored" data-anchor-id="additional-links">Additional Links</h3>
+<p><strong>Links Related to Platforms Data &amp; Recommendation Systems</strong></p>
+<ul>
+<li>Staley, Willy. “How Everyone Got Lost in Netflix’s Endless Library.” <em>The New York Times</em>, October 7, 2024, sec.&nbsp;Magazine. <a href="https://www.nytimes.com/2024/10/07/magazine/netflix-library-viewer-numbers.html">https://www.nytimes.com/2024/10/07/magazine/netflix-library-viewer-numbers.html</a>.</li>
+</ul>
+<p>This article details the challenges and complexities of navigating Netflix’s vast library of content. The author writes,</p>
+<blockquote class="blockquote">
+<p>“In December of last year, Netflix provided an unprecedented map of its library by releasing a comprehensive look at its viewer data for the very first time. It comes as an Excel file, less than a megabyte, and ranks 18,214 pieces of content in Netflix’s gargantuan library by the number of hours viewed during the first six months of 2023, rounded to the nearest 100,000. In fact, this rounding means that it doesn’t even capture the entirety of the thing, because Netflix excluded titles with fewer than 50,000 viewer hours.”</p>
+</blockquote>
+<p>You can access this data here <a href="https://about.netflix.com/en/news/what-we-watched-a-netflix-engagement-report">https://about.netflix.com/en/news/what-we-watched-a-netflix-engagement-report</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://pub.mdpi-res.com/electronics/electronics-12-01223/article_deploy/html/images/electronics-12-01223-ag.png?1677857761" class="img-fluid figure-img"></p>
+<figcaption>Example of how modern recommendation systems work, specifically newer graph-based approaches.</figcaption>
+</figure>
+</div>
+<ul>
+<li>Narayanan, Arvind. “TikTok’s Secret Sauce.” <em>Kinght First Amendment Insitute at Columbia University (blog)</em>, December 15, 2022. <a href="http://knightcolumbia.org/blog/tiktoks-secret-sauce">http://knightcolumbia.org/blog/tiktoks-secret-sauce</a>.</li>
+</ul>
+<p>This article details how TikTok’s recommendation system works. The author writes,</p>
+<blockquote class="blockquote">
+<p>” What made TikTok such a success? A commonly given reason is that the app’s advanced AI is really good at figuring out what you want to watch. Many people say TikTok knows them better than they know themselves. Some users think of the algorithm as a divine force that guides them.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>I’m not here to question people’s lived experience of TikTok. But there’s no truth to the idea that TikTok’s algorithm is more advanced than its peers. From everything we know–TikTok’s own description, leaked documents, studies, and reverse engineering efforts–it’s a standard recommender system of the kind that every major social media platform uses. Besides, recommender systems are a topic of furious research in computer science, and it would be implausible for TikTok engineers to have made a breakthrough that no one else knows about. Companies stay at the cutting edge by having their researchers and engineers participate in the open culture of knowledge sharing at conferences such as RecSys. A company walling itself off will only get left behind. For all these reasons, I don’t believe TikTok’s algorithm is its secret sauce.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Why, then, does TikTok’s algorithm feel so different? The answer has nothing to do with the algorithm itself: It’s all about the design.”</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://static01.nyt.com/newsgraphics/2018/11/06/location/assets/1600x700.jpg" class="img-fluid figure-img"></p>
+<figcaption>Location Data Privacy</figcaption>
+</figure>
+</div>
+<ul>
+<li>Valentino-DeVries, Jennifer, Natasha Singer, Michael H. Keller, and Aaron Krolik. “Your Apps Know Where You Were Last Night, and They’re Not Keeping It Secret.” <em>The New York Times</em>, December 10, 2018, sec.&nbsp;Business. <a href="https://www.nytimes.com/interactive/2018/12/10/business/location-data-privacy-apps.html">https://www.nytimes.com/interactive/2018/12/10/business/location-data-privacy-apps.html</a>.</li>
+</ul>
+<p>This article details how apps on your phone are tracking your location data and selling it to third parties. The authors write,</p>
+<blockquote class="blockquote">
+<p>“At least 75 companies receive anonymous, precise location data from apps whose users enable location services to get local news and weather or other information, The Times found. Several of those businesses claim to track up to 200 million mobile devices in the United States – about half those in use last year. The database reviewed by The Times – a sample of information gathered in 2017 and held by one company – reveals people’s travels in startling detail, accurate to within a few yards and in some cases updated more than 14,000 times a day.”</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/digital_trace_data.png" class="img-fluid figure-img"></p>
+<figcaption>A great resource for understanding digital trace data is this post by Bail, Chris. “Strengths &amp; Weaknesses of Digital Trace Data.” SICSS (blog), 2020.</figcaption>
+</figure>
+</div>
+<p>See more at <a href="https://sicss.io/2020/materials/day2-digital-trace-data/strengths-weaknesses/rmarkdown/Strengths_and_Weaknesses.html">https://sicss.io/2020/materials/day2-digital-trace-data/strengths-weaknesses/rmarkdown/Strengths_and_Weaknesses.html</a>.</p>
+<hr>
+<p><strong>Links Related to Copyright Regulations &amp; Cases</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sph.emory.edu/rollins-tlc/images/Fair-use-questions.png" class="img-fluid figure-img"></p>
+<figcaption>Fair Use</figcaption>
+</figure>
+</div>
+<ul>
+<li>Fair Use <a href="https://en.wikipedia.org/wiki/Fair_use">https://en.wikipedia.org/wiki/Fair_use</a></li>
+</ul>
+<p>Fair use is a legal doctrine that promotes freedom of expression by permitting the unlicensed use of copyright-protected works in certain circumstances. Section 107 of the Copyright Act provides the statutory framework for determining whether something is a fair use and establishes four factors to consider when determining whether a particular use is fair. These factors include the purpose and character of the use, the nature of the copyrighted work, the amount and substantiality of the portion used in relation to the copyrighted work as a whole, and the effect of the use upon the potential market for or value of the copyrighted work. Here’s another helpful infographic <a href="https://youthandmedia.org/wp-content/uploads/sites/6/2016/02/fairuse-infographic.png">for determining if something constitutes fair use</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87c69db2-4a16-4d93-973d-7d4ec432b43e_1398x1056.png" class="img-fluid figure-img"></p>
+<figcaption>HTRC</figcaption>
+</figure>
+</div>
+<ul>
+<li>Non-Consumptive Fair Use <a href="https://www.hathitrust.org/the-collection/terms-conditions/non-consumptive-use-policy/">https://www.hathitrust.org/the-collection/terms-conditions/non-consumptive-use-policy/</a></li>
+</ul>
+<p>Non-consumptive use is a type of fair use that allows researchers to analyze copyrighted works without consuming or replacing the original work. This type of use is often used in digital humanities research, where scholars analyze large datasets of copyrighted works to identify trends, patterns, and other insights. Non-consumptive use is considered fair use because it does not compete with the original work or replace the need for the original work. Instead, it provides new insights and knowledge that can benefit society as a whole. The right to non-consumptive use was the outcome of a lawsuit between the Authors Guild and Google over the Google Books project, which digitized millions of books for research purposes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://berkeley.pressbooks.pub/app/uploads/sites/137/2021/06/Screen-Shot-2021-06-07-at-3.44.11-PM-1024x580.png" class="img-fluid figure-img"></p>
+<figcaption>HathiTrust</figcaption>
+</figure>
+</div>
+<ul>
+<li>Althaus, Scott, David Bamman, Sara Benson, Brandon Butler, Beth Cate, Kyle K. Courtney, Sean Flynn, et al.&nbsp;<em>Building Legal Literacies for Text Data Mining</em>. University of California, Berkeley, 2021. <a href="https://doi.org/10.48451/S1159P">https://doi.org/10.48451/S1159P</a>.</li>
+</ul>
+<p>This is a book that provides an overview of the legal issues surrounding text data mining, including copyright, fair use, and licensing. The book covers topics such as the legal status of text data mining, the legal risks of text data mining, and the legal tools available to researchers. The above map details the copyright restrictions on text data mining in different countries, showing the varying legal landscapes that researchers must navigate when conducting text data mining projects. I would highly recommend this book to anyone considering using potentially copyrighted materials in their research.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://s3.amazonaws.com/libapps/accounts/22603/images/CC-License-Chart.png" class="img-fluid figure-img"></p>
+<figcaption>Creative Commons License Chart</figcaption>
+</figure>
+</div>
+<ul>
+<li>Creative Commons License <a href="https://creativecommons.org/share-your-work/">https://creativecommons.org/share-your-work/</a></li>
+</ul>
+<p>The creative commons licenses are a set of licenses that allow creators to share their work with others. These licenses are often used in digital humanities projects to share data and code. You can learn more about the different types of licenses and how they work at the link above.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.cyberpilot.io/hs-fs/hubfs/7%20GDPR%20Principles%20-%20Infographic.png?width=700&amp;name=7%20GDPR%20Principles%20-%20Infographic.png" class="img-fluid figure-img"></p>
+<figcaption>GDPR Principles Infographic</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="https://gdpr.eu/">General Data Protection Regulation (GDPR)</a></li>
+</ul>
+<p>The General Data Protection Regulation (GDPR) is a regulation in EU law on data protection and privacy in the European Union and the European Economic Area. It also addresses the transfer of personal data outside the EU and EEA areas. The GDPR aims primarily to give control to individuals over their personal data and to simplify the regulatory environment for international business by unifying the regulation within the EU. It was passed in 2016 and went into effect in 2018, and has had a significant impact on how data is collected, stored, and used online.</p>
+<ul>
+<li>Bode, Karl. “Court Rules That ‘Scraping’ Public Website Data Isn’t Hacking.” <em>Vice (blog)</em>, September 11, 2019. <a href="https://www.vice.com/en/article/9kek83/linkedin-data-scraping-lawsuit-shot-down">https://www.vice.com/en/article/9kek83/linkedin-data-scraping-lawsuit-shot-down</a>.</li>
+</ul>
+<p>This article details a ruling from the Ninth Circuit Court of Appeals determined that scraping publicly available data from websites does not constitute “hacking” under the Computer Fraud and Abuse Act (CFAA) in 2019. This decision arose from a dispute between HiQ Labs, a data analytics firm, and LinkedIn. HiQ Labs scrapes publicly viewable LinkedIn profiles, combines this data with other sources, and sells the information to employers. LinkedIn argued that this practice violated the CFAA, which criminalizes unauthorized computer access.</p>
+<p>The court rejected LinkedIn’s claim, stating that scraping public data does not bypass any meaningful authorization mechanisms, like passwords, which the CFAA would require to deem an act as hacking. The CFAA, enacted in 1986, is often used by corporations and prosecutors in cases not directly related to hacking, leading to widespread debate over what qualifies as “authorization.”</p>
+<p>This decision was seen as a positive step by advocates like the <em>Electronic Frontier Foundation</em> <a href="https://www.eff.org/">https://www.eff.org/</a>, which argues that public data scraping supports research and other beneficial uses. However, it also raises questions about the boundaries of data privacy and the rights of companies to control their online information. As data scraping becomes more common and sophisticated, legal disputes over data access and ownership are likely to continue.</p>
+<ul>
+<li>Lomas, Natasha. “Social Media Giants Urged to Tackle Data-Scraping Privacy Risks.” <em>TechCrunch (blog)</em>, August 24, 2023. <a href="https://techcrunch.com/2023/08/24/data-scraping-privacy-risks-joint-statement/">https://techcrunch.com/2023/08/24/data-scraping-privacy-risks-joint-statement/</a>.</li>
+</ul>
+<p>This article details the release of a joint statement from privacy regulators in twelve countries, including the U.K., Canada, and Hong Kong, urging major social media platforms to protect users’ public posts from data scraping. In the statement, the regulators emphasized that public data is still subject to privacy laws in most jurisdictions, holding platforms like Facebook, TikTok, and LinkedIn legally responsible for preventing unauthorized scraping. You can read the actual statement here <a href="https://ico.org.uk/media/about-the-ico/documents/4026232/joint-statement-data-scraping-202308.pdf">https://ico.org.uk/media/about-the-ico/documents/4026232/joint-statement-data-scraping-202308.pdf</a>.</p>
+<p>The statement outlines risks such as identity fraud, targeted cyberattacks, and unauthorized surveillance as potential consequences of scraping. Though AI isn’t explicitly mentioned, the article suggests a connection to growing concerns over generative AI models, which often use scraped data for training.</p>
+<p>The regulators recommend that platforms implement measures like CAPTCHAs and rate limiting to curb scraping, and also encourages users to be mindful of their online presence, advising them to manage privacy settings and consider long-term data impacts.</p>
+<ul>
+<li>Knibbs, Kate. “The Internet Archive Loses Its Appeal of a Major Copyright Case” <em>Wired</em>, September 4, 2024. <a href="https://www.wired.com/story/internet-archive-loses-hachette-books-case-appeal/">https://www.wired.com/story/internet-archive-loses-hachette-books-case-appeal/</a>.</li>
+</ul>
+<p>This article details how the Internet Archive recently faced a major setback when the US Court of Appeals for the Second Circuit upheld an earlier ruling against the nonprofit in the <em>Hachette v. Internet Archive</em> case. The court ruled that the Archive’s digital book lending practices, particularly its National Emergency Library (NEL) program, violated copyright law. This decision rejected the Archive’s argument that their practices were protected under the fair use doctrine.</p>
+<p>The NEL was launched in response to the COVID-19 pandemic, allowing users to borrow scanned books without the usual one-copy-per-reader restriction. Although this service was quickly halted after backlash from authors and publishers, the Archive was sued by major publishing houses. Courts have since determined that the Archive’s actions weren’t “transformative,” and thus didn’t qualify for fair use protections.</p>
+<p>While the ruling acknowledged the Internet Archive as a nonprofit rather than a commercial entity, it stressed that converting books into digital formats without permission infringes on copyright. This decision is viewed as a victory for publishers, emphasizing their rights to control digital distribution and enforce copyright.</p>
+<p>The Internet Archive, which also faces a similar lawsuit from music labels, expressed disappointment but remains committed to defending the rights of libraries. Critics of the ruling argue that it favors large publishers at the expense of researchers, authors, and readers who benefit from expanded digital access. With ongoing legal battles and potential damages, this case represents a critical moment for copyright law, particularly as similar fair use disputes arise in the context of AI and digital content preservation. It remains unclear how this ruling will impact the Archive’s future operations and the broader landscape of digital libraries.</p>
+<hr>
+<p><strong>Links Related to Accessing Platform Digital Trace Data</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/walsh_social_media.webp" class="img-fluid figure-img"></p>
+<figcaption>Social Media Data Resources</figcaption>
+</figure>
+</div>
+<p>This chart was provided by Prof.&nbsp;Melanie Walsh <a href="https://ischool.uw.edu/people/faculty/profile/melwalsh">https://ischool.uw.edu/people/faculty/profile/melwalsh</a>. Many thanks for being so generous!</p>
+<ul>
+<li>Also highly recommend her new chapter Walsh, Melanie. “The Challenges and Possibilities of Social Media Data: New Directions in Literary Studies and the Digital Humanities.” In <em>Debates in the Digital Humanities 2023</em>, edited by Matthew K. Gold and Lauren F. Klein, 275-94. University of Minnesota Press, 2023. Available online <a href="https://dhdebates.gc.cuny.edu/read/debates-in-the-digital-humanities-2023/section/a57b98ab-0f10-45d0-b205-3e563aab7ea8#ch18">here</a>. In the chapter, she outlines three principles for working with social media data:</li>
+</ul>
+<ol type="1">
+<li>Strive for community engagement through publicity and communications</li>
+<li>Explicit consent for citations and avoid linking to materials that are sensitive or not prominent</li>
+<li>Sharing data that allow for the right to be forgotten and with varying access levels</li>
+</ol>
+<ul>
+<li><a href="https://transparency.fb.com/researchtools/meta-content-library">Meta Academic API</a></li>
+</ul>
+<p>This provides an overview of the Meta Academic API, which allows researchers to access public data from Facebook, Instagram, and other Meta platforms. You will likely need to apply for access to the API, so if you want to use this data you should start the process as soon as possible.</p>
+<ul>
+<li><a href="https://socialmediaarchive.org/pages/?page=About&amp;ln=en">SOMAR</a></li>
+</ul>
+<p>The Social Media Archive (SOMAR) is a new project out of the Inter-university Consortium for Political and Social Research (ICPSR) at the University of Michigan Institute for Social Research (ISR).</p>
+<ul>
+<li><a href="https://www.docnow.io/">Documenting the Now</a></li>
+</ul>
+<p>Documenting the Now is a project that is focused on archiving social media data. They have a number of tools and resources that can help you archive and analyze social media data. Particularly, I would recommend taking a look at their <code>twarc</code> tool <a href="https://github.com/DocNow/twarc?tab=readme-ov-file">https://github.com/DocNow/twarc?tab=readme-ov-file</a>, which is intended to help access and archive Twitter data.</p>
+<ul>
+<li>Stijn Peeters, <em>Zeeschuimer</em> <a href="https://github.com/digitalmethodsinitiative/zeeschuimer?tab=readme-ov-file">https://github.com/digitalmethodsinitiative/zeeschuimer?tab=readme-ov-file</a></li>
+</ul>
+<blockquote class="blockquote">
+<p>“Zeeschuimer is a browser extension that monitors internet traffic while you are browsing a social media site, and collects data about the items you see in a platform’s web interface for later systematic analysis. Its target audience is researchers who wish to systematically study content on social media platforms that resist conventional scraping or API-based data collection.”</p>
+</blockquote>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    window.setColorSchemeToggle(window.hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>IS310 Culture As Data - Spring 2026</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
