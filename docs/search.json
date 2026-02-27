@@ -2128,158 +2128,63 @@
     ]
   },
   {
-    "objectID": "schedule/15-standarizing-culture-data-archeology.html",
-    "href": "schedule/15-standarizing-culture-data-archeology.html",
+    "objectID": "schedule/15-standardizing-culture-data-archeology.html",
+    "href": "schedule/15-standardizing-culture-data-archeology.html",
     "title": "Standardizing Culture & Data Archeology",
     "section": "",
-    "text": "Discuss assigned readings"
+    "text": "Discuss assigned readings",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 10: What is infrastructure and how does it shape culture as data?"
+    ]
   },
   {
-    "objectID": "schedule/15-standarizing-culture-data-archeology.html#in-class-agenda",
-    "href": "schedule/15-standarizing-culture-data-archeology.html#in-class-agenda",
+    "objectID": "schedule/15-standardizing-culture-data-archeology.html#in-class-agenda",
+    "href": "schedule/15-standardizing-culture-data-archeology.html#in-class-agenda",
     "title": "Standardizing Culture & Data Archeology",
     "section": "",
-    "text": "Discuss assigned readings"
+    "text": "Discuss assigned readings",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 10: What is infrastructure and how does it shape culture as data?"
+    ]
   },
   {
-    "objectID": "schedule/15-standarizing-culture-data-archeology.html#assigned-materials",
-    "href": "schedule/15-standarizing-culture-data-archeology.html#assigned-materials",
+    "objectID": "schedule/15-standardizing-culture-data-archeology.html#assigned-materials",
+    "href": "schedule/15-standardizing-culture-data-archeology.html#assigned-materials",
     "title": "Standardizing Culture & Data Archeology",
     "section": "Assigned Materials",
-    "text": "Assigned Materials\n\nKrause, Eunice. “Data Biographies: Getting to Know Your Data.” Global Investigative Journalism Network, March 27, 2017. https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/.\nLee, Benjamin. “Compounded Mediation: A Data Archaeology of the Newspaper Navigator Dataset.” Digital Humanities Quarterly 015, no. 4 (December 7, 2021). https://www.digitalhumanities.org/dhq/vol/15/4/000578/000578.html.\nExplore the Newspaper Navigator Project https://news-navigator.labs.loc.gov/."
+    "text": "Assigned Materials\n\nKrause, Eunice. “Data Biographies: Getting to Know Your Data.” Global Investigative Journalism Network, March 27, 2017. https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/.\nLee, Benjamin. “Compounded Mediation: A Data Archaeology of the Newspaper Navigator Dataset.” Digital Humanities Quarterly 015, no. 4 (December 7, 2021). https://www.digitalhumanities.org/dhq/vol/15/4/000578/000578.html.\nExplore the Newspaper Navigator Project https://news-navigator.labs.loc.gov/.",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 10: What is infrastructure and how does it shape culture as data?"
+    ]
   },
   {
-    "objectID": "schedule/15-standarizing-culture-data-archeology.html#additional-materials",
-    "href": "schedule/15-standarizing-culture-data-archeology.html#additional-materials",
+    "objectID": "schedule/15-standardizing-culture-data-archeology.html#additional-materials",
+    "href": "schedule/15-standardizing-culture-data-archeology.html#additional-materials",
     "title": "Standardizing Culture & Data Archeology",
     "section": "Additional Materials",
-    "text": "Additional Materials\n\n\nLoukissas, Yanni Alexander. “Collecting Infrastructures.” In All Data Are Local: Thinking Critically in a Data-Driven Society. The MIT Press, 2019. https://doi.org/10.7551/mitpress/11543.001.0001.\n\nAdams, Hannah Alpert. “Machine Reading the Primeros Libros.” Digital Humanities Quarterly (2017). http://www.digitalhumanities.org/dhq/vol/10/4/000268/000268.html.\nCordell, Ryan. “‘Q i-jtb the Raven’: Taking Dirty OCR Seriously.” Book History (2017). https://dx.doi.org/10.1353/bh.2017.0006."
+    "text": "Additional Materials\n\n\nLoukissas, Yanni Alexander. “Collecting Infrastructures.” In All Data Are Local: Thinking Critically in a Data-Driven Society. The MIT Press, 2019. https://doi.org/10.7551/mitpress/11543.001.0001.\n\nAdams, Hannah Alpert. “Machine Reading the Primeros Libros.” Digital Humanities Quarterly (2017). http://www.digitalhumanities.org/dhq/vol/10/4/000268/000268.html.\nCordell, Ryan. “‘Q i-jtb the Raven’: Taking Dirty OCR Seriously.” Book History (2017). https://dx.doi.org/10.1353/bh.2017.0006.",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 10: What is infrastructure and how does it shape culture as data?"
+    ]
   },
   {
-    "objectID": "schedule/15-standarizing-culture-data-archeology.html#assignments",
-    "href": "schedule/15-standarizing-culture-data-archeology.html#assignments",
+    "objectID": "schedule/15-standardizing-culture-data-archeology.html#assignments",
+    "href": "schedule/15-standardizing-culture-data-archeology.html#assignments",
     "title": "Standardizing Culture & Data Archeology",
     "section": "Assignments",
-    "text": "Assignments\n\nIndividual\n\nCommand Line Data Curation Homework\n\n\n\nGroup\n\n\nAdditional Links\n\nFor those interested here is the documented dataset for Newspaper Naviagor: Lee, Benjamin Charles Germain, Jaime Mears, Eileen Jakeway, Meghan Ferriter, Chris Adams, Nathan Yarasavage, Deborah Thomas, Kate Zwaard, and Daniel S. Weld. “The Newspaper Navigator Dataset: Extracting Headlines and Visual Content from 16 Million Historic Newspaper Pages in Chronicling America.” In Proceedings of the 29th ACM International Conference on Information & Knowledge Management, 3055-62. Virtual Event Ireland: ACM, 2020. https://doi.org/10.1145/3340531.3412767.\nAnd here is the code for Newspaper Navigator: https://github.com/LibraryOfCongress/newspaper-navigator.\nLink to map and timeline of Chroncling America newspapers https://chroniclingamerica.loc.gov/newspapers/ and https://loc.maps.arcgis.com/apps/instant/media/index.html?appid=3c6a392554d545bdb1c083348ef56458&center=-97.5126;39.6376&level=3.\nThe original Beyond Words project https://blogs.loc.gov/thesignal/2017/09/introducing-beyond-words/. Though it has since been retired in 2021 https://labs.loc.gov/work/experiments/beyond-words/, you can see some of the data in the Newspaper Navigator GitHub repository https://github.com/LibraryOfCongress/newspaper-navigator/tree/master/beyond_words_data."
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html",
-    "href": "schedule/06-markup-and-markdown.html",
-    "title": "Markup & Markdown",
-    "section": "",
-    "text": "Review Lost & Found in the Cultural Command Line and discuss assigned reading.\nDiscuss the Introduction to Markup Languages & Web Styling. Slides are available here.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
+    "text": "Assignments\n\nIndividual\n\nCommand Line Data Curation Homework\n\n\n\nGroup\n\n\nAdditional Links\n\nFor those interested here is the documented dataset for Newspaper Naviagor: Lee, Benjamin Charles Germain, Jaime Mears, Eileen Jakeway, Meghan Ferriter, Chris Adams, Nathan Yarasavage, Deborah Thomas, Kate Zwaard, and Daniel S. Weld. “The Newspaper Navigator Dataset: Extracting Headlines and Visual Content from 16 Million Historic Newspaper Pages in Chronicling America.” In Proceedings of the 29th ACM International Conference on Information & Knowledge Management, 3055-62. Virtual Event Ireland: ACM, 2020. https://doi.org/10.1145/3340531.3412767.\nAnd here is the code for Newspaper Navigator: https://github.com/LibraryOfCongress/newspaper-navigator.\nLink to map and timeline of Chroncling America newspapers https://chroniclingamerica.loc.gov/newspapers/ and https://loc.maps.arcgis.com/apps/instant/media/index.html?appid=3c6a392554d545bdb1c083348ef56458&center=-97.5126;39.6376&level=3.\nThe original Beyond Words project https://blogs.loc.gov/thesignal/2017/09/introducing-beyond-words/. Though it has since been retired in 2021 https://labs.loc.gov/work/experiments/beyond-words/, you can see some of the data in the Newspaper Navigator GitHub repository https://github.com/LibraryOfCongress/newspaper-navigator/tree/master/beyond_words_data.",
     "crumbs": [
       "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#in-class-agenda",
-    "href": "schedule/06-markup-and-markdown.html#in-class-agenda",
-    "title": "Markup & Markdown",
-    "section": "",
-    "text": "Review Lost & Found in the Cultural Command Line and discuss assigned reading.\nDiscuss the Introduction to Markup Languages & Web Styling. Slides are available here.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#assigned-materials",
-    "href": "schedule/06-markup-and-markdown.html#assigned-materials",
-    "title": "Markup & Markdown",
-    "section": "Assigned Materials",
-    "text": "Assigned Materials\n\nThings That Shouldn’t Be in File Names for $1,000 Alex – Joseph Scott. February 12, 2007. https://blog.josephscott.org/2007/02/12/things-that-shouldnt-be-in-file-names-for-1000-alex/.",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#additional-materials",
-    "href": "schedule/06-markup-and-markdown.html#additional-materials",
-    "title": "Markup & Markdown",
-    "section": "Additional Materials",
-    "text": "Additional Materials\n\n“Which Dh Tools Are Actually Used In Research?” By Laure Barbot, Frank Fischer, Yoann Moranville And Ivan Pozdniakov, December 6 2019 https://weltliteratur.net/dh-tools-used-in-research/",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/06-markup-and-markdown.html#assignments",
-    "href": "schedule/06-markup-and-markdown.html#assignments",
-    "title": "Markup & Markdown",
-    "section": "Assignments",
-    "text": "Assignments\n\nIndividual\n\nLost & Found in the Cultural Command Line.\n\n\n\nGroup\n\nCollective and Individual Topic Selection. Extension available until February 12, 2026.",
-    "crumbs": [
-      "Schedule",
-      "February",
-      "Feb 5: What does it mean to work digitally?"
-    ]
-  },
-  {
-    "objectID": "schedule/04-version-file-histories.html",
-    "href": "schedule/04-version-file-histories.html",
-    "title": "Version & File Histories",
-    "section": "",
-    "text": "Review Init IS310 Homework Questions & GitHub or Git related questions\nDiscuss assigned readings\nComplete introduction to File Formats. Slides available here and lesson available here\nTime permitting either discuss Advanced Git & GitHub OR work in groups on first project assignment.",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 29: How can we work collaboratively and computationally?"
-    ]
-  },
-  {
-    "objectID": "schedule/04-version-file-histories.html#in-class-agenda",
-    "href": "schedule/04-version-file-histories.html#in-class-agenda",
-    "title": "Version & File Histories",
-    "section": "",
-    "text": "Review Init IS310 Homework Questions & GitHub or Git related questions\nDiscuss assigned readings\nComplete introduction to File Formats. Slides available here and lesson available here\nTime permitting either discuss Advanced Git & GitHub OR work in groups on first project assignment.",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 29: How can we work collaboratively and computationally?"
-    ]
-  },
-  {
-    "objectID": "schedule/04-version-file-histories.html#assigned-materials",
-    "href": "schedule/04-version-file-histories.html#assigned-materials",
-    "title": "Version & File Histories",
-    "section": "Assigned Materials",
-    "text": "Assigned Materials\n\nChin, Monica. “Kids Who Grew up with Search Engines Could Change STEM Education Forever.” The Verge, September 22, 2021. https://web.archive.org/web/20211102083237/https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z. This is a web archive link because The Verge requires a subscription.",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 29: How can we work collaboratively and computationally?"
-    ]
-  },
-  {
-    "objectID": "schedule/04-version-file-histories.html#assignments",
-    "href": "schedule/04-version-file-histories.html#assignments",
-    "title": "Version & File Histories",
-    "section": "Assignments",
-    "text": "Assignments\n\nComplete Init IS310 Homework. Be sure to include AI workflow!",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 29: How can we work collaboratively and computationally?"
-    ]
-  },
-  {
-    "objectID": "schedule/04-version-file-histories.html#additional-materials",
-    "href": "schedule/04-version-file-histories.html#additional-materials",
-    "title": "Version & File Histories",
-    "section": "Additional Materials",
-    "text": "Additional Materials\n\nNamanyay Goel. “Vibe Coding Is a Dangerous Fantasy.” N’s Blog, March 20, 2025. https://nmn.gl/blog/vibe-coding-fantasy.\nWeingart, Scott B. “The Route of a Text Message.” Vice, February 2019. https://www.vice.com/en_us/article/kzdn8n/the-route-of-a-text-message-a-love-story.",
-    "crumbs": [
-      "Schedule",
-      "January",
-      "Jan 29: How can we work collaboratively and computationally?"
+      "March",
+      "Mar 10: What is infrastructure and how does it shape culture as data?"
     ]
   },
   {
@@ -2686,6 +2591,126 @@
       "Schedule",
       "February",
       "Feb 17: Who decides what culture becomes data?"
+    ]
+  },
+  {
+    "objectID": "schedule/04-version-file-histories.html",
+    "href": "schedule/04-version-file-histories.html",
+    "title": "Version & File Histories",
+    "section": "",
+    "text": "Review Init IS310 Homework Questions & GitHub or Git related questions\nDiscuss assigned readings\nComplete introduction to File Formats. Slides available here and lesson available here\nTime permitting either discuss Advanced Git & GitHub OR work in groups on first project assignment.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 29: How can we work collaboratively and computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/04-version-file-histories.html#in-class-agenda",
+    "href": "schedule/04-version-file-histories.html#in-class-agenda",
+    "title": "Version & File Histories",
+    "section": "",
+    "text": "Review Init IS310 Homework Questions & GitHub or Git related questions\nDiscuss assigned readings\nComplete introduction to File Formats. Slides available here and lesson available here\nTime permitting either discuss Advanced Git & GitHub OR work in groups on first project assignment.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 29: How can we work collaboratively and computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/04-version-file-histories.html#assigned-materials",
+    "href": "schedule/04-version-file-histories.html#assigned-materials",
+    "title": "Version & File Histories",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nChin, Monica. “Kids Who Grew up with Search Engines Could Change STEM Education Forever.” The Verge, September 22, 2021. https://web.archive.org/web/20211102083237/https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z. This is a web archive link because The Verge requires a subscription.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 29: How can we work collaboratively and computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/04-version-file-histories.html#assignments",
+    "href": "schedule/04-version-file-histories.html#assignments",
+    "title": "Version & File Histories",
+    "section": "Assignments",
+    "text": "Assignments\n\nComplete Init IS310 Homework. Be sure to include AI workflow!",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 29: How can we work collaboratively and computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/04-version-file-histories.html#additional-materials",
+    "href": "schedule/04-version-file-histories.html#additional-materials",
+    "title": "Version & File Histories",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nNamanyay Goel. “Vibe Coding Is a Dangerous Fantasy.” N’s Blog, March 20, 2025. https://nmn.gl/blog/vibe-coding-fantasy.\nWeingart, Scott B. “The Route of a Text Message.” Vice, February 2019. https://www.vice.com/en_us/article/kzdn8n/the-route-of-a-text-message-a-love-story.",
+    "crumbs": [
+      "Schedule",
+      "January",
+      "Jan 29: How can we work collaboratively and computationally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html",
+    "href": "schedule/06-markup-and-markdown.html",
+    "title": "Markup & Markdown",
+    "section": "",
+    "text": "Review Lost & Found in the Cultural Command Line and discuss assigned reading.\nDiscuss the Introduction to Markup Languages & Web Styling. Slides are available here.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#in-class-agenda",
+    "href": "schedule/06-markup-and-markdown.html#in-class-agenda",
+    "title": "Markup & Markdown",
+    "section": "",
+    "text": "Review Lost & Found in the Cultural Command Line and discuss assigned reading.\nDiscuss the Introduction to Markup Languages & Web Styling. Slides are available here.\nTime Permitting finish work on group assignment and start new lesson on how the web works!",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#assigned-materials",
+    "href": "schedule/06-markup-and-markdown.html#assigned-materials",
+    "title": "Markup & Markdown",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nThings That Shouldn’t Be in File Names for $1,000 Alex – Joseph Scott. February 12, 2007. https://blog.josephscott.org/2007/02/12/things-that-shouldnt-be-in-file-names-for-1000-alex/.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#additional-materials",
+    "href": "schedule/06-markup-and-markdown.html#additional-materials",
+    "title": "Markup & Markdown",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\n“Which Dh Tools Are Actually Used In Research?” By Laure Barbot, Frank Fischer, Yoann Moranville And Ivan Pozdniakov, December 6 2019 https://weltliteratur.net/dh-tools-used-in-research/",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/06-markup-and-markdown.html#assignments",
+    "href": "schedule/06-markup-and-markdown.html#assignments",
+    "title": "Markup & Markdown",
+    "section": "Assignments",
+    "text": "Assignments\n\nIndividual\n\nLost & Found in the Cultural Command Line.\n\n\n\nGroup\n\nCollective and Individual Topic Selection. Extension available until February 12, 2026.",
+    "crumbs": [
+      "Schedule",
+      "February",
+      "Feb 5: What does it mean to work digitally?"
     ]
   },
   {
