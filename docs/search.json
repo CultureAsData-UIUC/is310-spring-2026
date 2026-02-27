@@ -2047,6 +2047,34 @@
     ]
   },
   {
+    "objectID": "schedule/16-interfaces-limits.html",
+    "href": "schedule/16-interfaces-limits.html",
+    "title": "Interfaces & Limits",
+    "section": "",
+    "text": "Start introduction to APIs and cultural data."
+  },
+  {
+    "objectID": "schedule/16-interfaces-limits.html#in-class-agenda",
+    "href": "schedule/16-interfaces-limits.html#in-class-agenda",
+    "title": "Interfaces & Limits",
+    "section": "",
+    "text": "Start introduction to APIs and cultural data."
+  },
+  {
+    "objectID": "schedule/16-interfaces-limits.html#additional-materials",
+    "href": "schedule/16-interfaces-limits.html#additional-materials",
+    "title": "Interfaces & Limits",
+    "section": "Additional Materials",
+    "text": "Additional Materials"
+  },
+  {
+    "objectID": "schedule/16-interfaces-limits.html#assignments",
+    "href": "schedule/16-interfaces-limits.html#assignments",
+    "title": "Interfaces & Limits",
+    "section": "Assignments",
+    "text": "Assignments\n\nIndividual"
+  },
+  {
     "objectID": "schedule/index.html",
     "href": "schedule/index.html",
     "title": "Schedule & Assignments Overview",
@@ -2062,7 +2090,7 @@
     "href": "schedule/index.html#weekly-schedule",
     "title": "Schedule & Assignments Overview",
     "section": "Weekly Schedule",
-    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 - How can we work collaboratively and computationally? Version & File Histories\n\n\nFebruary 3 - How and when did we first start representing culture as data? Histories of Culture & Computing\nFebruary 5 - What does it mean to work digitally? Markup & Markdown\n\n\nFebruary 10 - What are the historic legacies and politics of representing culture as data? Digital Objects & Obsolescence\nFebruary 12 - How has the web changed culture as data? Servers & Web Standards\n\n\nFebruary 17 - Who decides what culture becomes data? Archives & Collections\nFebruary 19 - How can we represent culture computationally? Scripts & Types\n\n\nFebruary 24 - How do our choices shape whose culture becomes data? Data Feminism & Design Justice\nFebruary 26 - How can we start creating culture as data? Ecosystems & Environments\n\n\nMarch 3 - How do we ethically and legally work with culture as data? Terms & Traps\nMarch 5 - How do we start scaling culture as data? Scrape On & Off",
+    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 - How can we work collaboratively and computationally? Version & File Histories\n\n\nFebruary 3 - How and when did we first start representing culture as data? Histories of Culture & Computing\nFebruary 5 - What does it mean to work digitally? Markup & Markdown\n\n\nFebruary 10 - What are the historic legacies and politics of representing culture as data? Digital Objects & Obsolescence\nFebruary 12 - How has the web changed culture as data? Servers & Web Standards\n\n\nFebruary 17 - Who decides what culture becomes data? Archives & Collections\nFebruary 19 - How can we represent culture computationally? Scripts & Types\n\n\nFebruary 24 - How do our choices shape whose culture becomes data? Data Feminism & Design Justice\nFebruary 26 - How can we start creating culture as data? Ecosystems & Environments\n\n\nMarch 3 - How do we ethically and legally work with culture as data? Terms & Traps\nMarch 5 - How do we start scaling culture as data? Scrape On & Off\n\n\nMarch 10 - What is infrastructure and how does it shape culture as data? Standardizing Culture & Data Archeology\nMarch 12 - How do we get culture as data? Interfaces & Limits",
     "crumbs": [
       "Schedule",
       "Schedule Overview"
@@ -2073,11 +2101,46 @@
     "href": "schedule/index.html#assignment-schedule",
     "title": "Schedule & Assignments Overview",
     "section": "Assignment Schedule",
-    "text": "Assignment Schedule\nAssignments will be added throughout the semester depending on how much material we get through.\n\nIndividual Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nInitial Interest Survey (Link Available on Canvas)\nDue by Midnight CT on January 21\n\n\nInit IS310 Homework\nDue by Midnight CT on January 28\n\n\nLost & Found in the Cultural Command Line Homework\nDue by Midnight CT on February 4\n\n\nSource & Style Homework\nDue By Midnight CT on February 11\n\n\nDoing It Live Homework\nDue By Midnight CT on February 23\n\n\nCommand Line Data Curation Homework\nDue By Midnight CT on March 4\n\n\n\n\n\nGroup Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nCollective & Individual Topic Selection\nDue February 5 with Optional Extension Until February 12\n\n\nMass Digitization & Digital Libraries Group Assignment\nDue February 10 & 12 In-Class Presentations",
+    "text": "Assignment Schedule\nAssignments will be added throughout the semester depending on how much material we get through.\n\nIndividual Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nInitial Interest Survey (Link Available on Canvas)\nDue by Midnight CT on January 21\n\n\nInit IS310 Homework\nDue by Midnight CT on January 28\n\n\nLost & Found in the Cultural Command Line Homework\nDue by Midnight CT on February 4\n\n\nSource & Style Homework\nDue By Midnight CT on February 11\n\n\nDoing It Live Homework\nDue By Midnight CT on February 23\n\n\nOPTIONAL Scripting Python Foundations\nDue by Midnight CT on March 4\n\n\nCommand Line Data Curation Homework\nDue By Midnight CT on March 11\n\n\n\n\n\nGroup Assignments\n\n\n\nAssignment\nDue Date (Subject to Change)\n\n\n\n\nCollective & Individual Topic Selection\nDue February 5 with Optional Extension Until February 12\n\n\nMass Digitization & Digital Libraries Group Assignment\nDue February 10 & 12 In-Class Presentations",
     "crumbs": [
       "Schedule",
       "Schedule Overview"
     ]
+  },
+  {
+    "objectID": "schedule/15-standarizing-culture-data-archeology.html",
+    "href": "schedule/15-standarizing-culture-data-archeology.html",
+    "title": "Standardizing Culture & Data Archeology",
+    "section": "",
+    "text": "Discuss assigned readings"
+  },
+  {
+    "objectID": "schedule/15-standarizing-culture-data-archeology.html#in-class-agenda",
+    "href": "schedule/15-standarizing-culture-data-archeology.html#in-class-agenda",
+    "title": "Standardizing Culture & Data Archeology",
+    "section": "",
+    "text": "Discuss assigned readings"
+  },
+  {
+    "objectID": "schedule/15-standarizing-culture-data-archeology.html#assigned-materials",
+    "href": "schedule/15-standarizing-culture-data-archeology.html#assigned-materials",
+    "title": "Standardizing Culture & Data Archeology",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nKrause, Eunice. “Data Biographies: Getting to Know Your Data.” Global Investigative Journalism Network, March 27, 2017. https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/.\nLee, Benjamin. “Compounded Mediation: A Data Archaeology of the Newspaper Navigator Dataset.” Digital Humanities Quarterly 015, no. 4 (December 7, 2021). https://www.digitalhumanities.org/dhq/vol/15/4/000578/000578.html.\nExplore the Newspaper Navigator Project https://news-navigator.labs.loc.gov/."
+  },
+  {
+    "objectID": "schedule/15-standarizing-culture-data-archeology.html#additional-materials",
+    "href": "schedule/15-standarizing-culture-data-archeology.html#additional-materials",
+    "title": "Standardizing Culture & Data Archeology",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\n\nLoukissas, Yanni Alexander. “Collecting Infrastructures.” In All Data Are Local: Thinking Critically in a Data-Driven Society. The MIT Press, 2019. https://doi.org/10.7551/mitpress/11543.001.0001.\n\nAdams, Hannah Alpert. “Machine Reading the Primeros Libros.” Digital Humanities Quarterly (2017). http://www.digitalhumanities.org/dhq/vol/10/4/000268/000268.html.\nCordell, Ryan. “‘Q i-jtb the Raven’: Taking Dirty OCR Seriously.” Book History (2017). https://dx.doi.org/10.1353/bh.2017.0006."
+  },
+  {
+    "objectID": "schedule/15-standarizing-culture-data-archeology.html#assignments",
+    "href": "schedule/15-standarizing-culture-data-archeology.html#assignments",
+    "title": "Standardizing Culture & Data Archeology",
+    "section": "Assignments",
+    "text": "Assignments\n\nIndividual\n\nCommand Line Data Curation Homework\n\n\n\nGroup\n\n\nAdditional Links\n\nFor those interested here is the documented dataset for Newspaper Naviagor: Lee, Benjamin Charles Germain, Jaime Mears, Eileen Jakeway, Meghan Ferriter, Chris Adams, Nathan Yarasavage, Deborah Thomas, Kate Zwaard, and Daniel S. Weld. “The Newspaper Navigator Dataset: Extracting Headlines and Visual Content from 16 Million Historic Newspaper Pages in Chronicling America.” In Proceedings of the 29th ACM International Conference on Information & Knowledge Management, 3055-62. Virtual Event Ireland: ACM, 2020. https://doi.org/10.1145/3340531.3412767.\nAnd here is the code for Newspaper Navigator: https://github.com/LibraryOfCongress/newspaper-navigator.\nLink to map and timeline of Chroncling America newspapers https://chroniclingamerica.loc.gov/newspapers/ and https://loc.maps.arcgis.com/apps/instant/media/index.html?appid=3c6a392554d545bdb1c083348ef56458&center=-97.5126;39.6376&level=3.\nThe original Beyond Words project https://blogs.loc.gov/thesignal/2017/09/introducing-beyond-words/. Though it has since been retired in 2021 https://labs.loc.gov/work/experiments/beyond-words/, you can see some of the data in the Newspaper Navigator GitHub repository https://github.com/LibraryOfCongress/newspaper-navigator/tree/master/beyond_words_data."
   },
   {
     "objectID": "schedule/06-markup-and-markdown.html",
@@ -2610,7 +2673,7 @@
     "href": "schedule/14-scrapes-structures.html",
     "title": "Scrape On & Off",
     "section": "",
-    "text": "Review Command Line Data Curation Homework.\nStart the Introduction to Web Scraping lesson.",
+    "text": "Finish discussion of virtual environments\nReview questions from Command Line Data Curation Homework.\nDiscuss assigned reading and start the Introduction to Web Scraping lesson.",
     "crumbs": [
       "Schedule",
       "March",
@@ -2622,7 +2685,7 @@
     "href": "schedule/14-scrapes-structures.html#in-class-agenda",
     "title": "Scrape On & Off",
     "section": "",
-    "text": "Review Command Line Data Curation Homework.\nStart the Introduction to Web Scraping lesson.",
+    "text": "Finish discussion of virtual environments\nReview questions from Command Line Data Curation Homework.\nDiscuss assigned reading and start the Introduction to Web Scraping lesson.",
     "crumbs": [
       "Schedule",
       "March",
@@ -2658,7 +2721,7 @@
     "href": "schedule/14-scrapes-structures.html#assignments",
     "title": "Scrape On & Off",
     "section": "Assignments",
-    "text": "Assignments\n\nIndividual\n\nCommand Line Data Curation Homework\n\n\n\nGroup",
+    "text": "Assignments\n\nIndividual\n\n\nGroup",
     "crumbs": [
       "Schedule",
       "March",
