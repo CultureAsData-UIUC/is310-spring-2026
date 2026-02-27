@@ -364,10 +364,16 @@ release_date = input("Enter the release date of the movie: ")
 box_office = input("Enter the box office earnings of the movie: ")
 ```
 
-However, you'll notice that this script doesn't allow for multiple entries or writes the data to a file. This is where you come in! You should expand on this script to allow for multiple entries (maybe creating a `for-loop` or a `function`, though you can use whatever you think is best) and then save the data to a file.
+However, you'll notice that this script doesn't allow for multiple entries or writes the data to a file. This is where you come in! You should ensure that **your script allows for multiple entries** (maybe creating a `for-loop` or a `function`, though you can use whatever you think is best) and then save the data to a file.
 
-4. Once the user has entered the data, the script should print out their entry and ask the the user to confirm that the data they entered is correct. If the user confirms that the data is correct, the script should save the data to a file. If the user says the data is incorrect, the script should ask the user to re-enter the data. It is up to you to decide when to write data to a file, but you should only write the data to a file once the user has confirmed that the data is correct.
-5. Finally, the script should print a message to the user that the data has been saved to a file and the full path to the file, so they can locate it.
+1. Once the user has entered the data, the script should print out their entry and ask the the user to confirm that the data they entered is correct. If the user confirms that the data is correct, the script should save the data to a file. If the user says the data is incorrect, the script should ask the user to re-enter the data. It is up to you to decide when to write data to a file, but you should only write the data to a file once the user has confirmed that the data is correct.
+2. Finally, the script should print a message to the user that the data has been saved to a file and the full path to the file, so they can locate it.
+
+::: {.callout-tip}
+## Consider Your Cultural Data Focus
+
+While you can create your CLI app to collect data on any topic, I would highly recommend developing one that might be useful for your final project or at least somewhat related to your group's cultural topic. To be clear, this is simply a suggestion, but it might help you consider how best to design your CLI App if you have a clear dataset or topic in mind.
+:::
 
 ## Part 2: Data Entry in the Wild
 
@@ -376,3 +382,4 @@ Once your script is working, it is time to post it to GitHub to our next discuss
 Next, test a classmate’s script by entering new data (you should add **at least two data points**) and share the file that you generated back with them by replying to their post. Provide any feedback if the script doesn’t work or if there are improvements to be made. But please remember to be constructive and respectful in your feedback!
 
 If you have any questions or need help, please don't hesitate to ask in the discussion thread or reach out to the instructors via Slack. Also remember you are able to use GitHub Co-Pilot to help you with your coding assignments.
+
