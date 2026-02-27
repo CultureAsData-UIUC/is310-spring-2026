@@ -109,10 +109,10 @@ website:
               href: schedule/13-terms-traps.qmd
             - text: "Mar 5: How do we start scaling culture as data?"
               href: schedule/14-scrapes-structures.qmd
-        #     - text: "Oct 8: Documentation & Definitions"
-        #       href: schedule/13-documentation-definitions.qmd
-        #     - text: "Oct 10: Scrape On & Off"
-        #       href: schedule/14-scrapes-on-off.qmd
+            - text: "Mar 10: What is infrastructure and how does it shape culture as data?"
+              href: schedule/15-standardizing-culture-data-archeology.qmd
+            - text: "Mar 12: How do we get culture as data?"
+              href: schedule/16-interfaces-limits.qmd
         #     - text: "Oct 15: Curating vs. Cleaning"
         #       href: schedule/15-curating-vs-cleaning.qmd
         #     - text: "Oct 17: GETting Culture"
