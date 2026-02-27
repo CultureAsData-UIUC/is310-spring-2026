@@ -7,8 +7,9 @@ date: 2026-03-05
 
 ## In-Class Agenda
 
-- [ ] Review [Command Line Data Curation Homework](../materials/creating-curating-humanities-data/04-virtual-environments.qmd#homework-command-line-data-curation).
-- [ ] Start the [Introduction to Web Scraping](../materials/creating-curating-humanities-data/05-web-scraping.qmd) lesson.
+- [ ] Finish discussion of [virtual environments](../materials/creating-curating-humanities-data/04-virtual-environments.qmd)
+- [ ] Review questions from [Command Line Data Curation Homework](../materials/creating-curating-humanities-data/04-virtual-environments.qmd#homework-command-line-data-curation).
+- [ ] Discuss assigned reading and start the [Introduction to Web Scraping](../materials/creating-curating-humanities-data/05-web-scraping.qmd) lesson.
 
 ## Assigned Materials
 
@@ -21,7 +22,5 @@ date: 2026-03-05
 ## Assignments
 
 ### Individual
-
-- [ ] [Command Line Data Curation Homework](../materials/creating-curating-humanities-data/04-virtual-environments.qmd#homework-command-line-data-curation)
 
 ### Group

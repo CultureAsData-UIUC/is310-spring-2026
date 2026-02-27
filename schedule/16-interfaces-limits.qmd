@@ -1,13 +1,16 @@
 ---
-title: "GETting Culture"
+title: "Interfaces & Limits"
+subtitle: "How do we get culture as data?"
 toc: true
-date: 2024-10-17
-draft: true
+date: 2026-03-12
 ---
 
 ## In-Class Agenda
 
-- [ ] Complete group presentations for the [Proprietary & Perspectival Data Creation Assignment](../proprietary-perspectival-dataset-creation.qmd).
 - [ ] Start [introduction to APIs and cultural data](../materials/creating-curating-humanities-data/06-getting-data-apis.qmd).
 
 ## Additional Materials
+
+## Assignments
+
+### Individual

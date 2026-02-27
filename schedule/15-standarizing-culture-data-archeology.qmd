@@ -1,34 +1,22 @@
 ---
-title: "Curating vs. Cleaning"
+title: "Standardizing Culture & Data Archeology"
+subtitle: "What is infrastructure and how does it shape culture as data?"
 toc: true
-date: 2024-10-15
-draft: true
+date: 2023-03-10
 ---
 
 ## In-Class Agenda
 
-- [ ] Discuss and demo the remainder of the [Advanced Web Scraping Section](../materials/creating-curating-humanities-data/05-web-scraping.qmd#advanced-web-scraping). You are welcome to read this material prior to class but it is not required.
 - [ ] Discuss assigned readings
-- [ ] Time permitting: Group presentations for the [Proprietary & Perspectival Data Creation Assignment](../proprietary-perspectival-dataset-creation.qmd). These may get moved to the next class on Thursday if we run out of time.
 
 ## Assigned Materials
 
+- Krause, Eunice. “Data Biographies: Getting to Know Your Data.” *Global Investigative Journalism Network*, March 27, 2017. [https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/](https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/).
 - Lee, Benjamin. "Compounded Mediation: A Data Archaeology of the Newspaper Navigator Dataset." *Digital Humanities Quarterly* 015, no. 4 (December 7, 2021). [https://www.digitalhumanities.org/dhq/vol/15/4/000578/000578.html](https://www.digitalhumanities.org/dhq/vol/15/4/000578/000578.html).
 - Explore the *Newspaper Navigator Project* [https://news-navigator.labs.loc.gov/](https://news-navigator.labs.loc.gov/).
-- Rawson, Katie, and Trevor Munoz. "Against Cleaning." In *Debates in the Digital Humanities 2019*, edited by Matthew K. Gold and Lauren F. Klein, 279-92. University of Minnesota Press, 2019. [https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/07154de9-4903-428e-9c61-7a92a6f22e51#ch23](https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/07154de9-4903-428e-9c61-7a92a6f22e51#ch23).
-- Krause, Eunice. "Data Biographies: Getting to Know Your Data." *Global Investigative Journalism Network*, March 27, 2017. [https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/](https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/).
-- Ceglowski, Maciej. "Deep-Fried Data." *Idle Words*, September 27, 2016. [https://idlewords.com/talks/deep_fried_data.htm](https://idlewords.com/talks/deep_fried_data.htm).
-
-We will also be discussing our [assigned reading from last class](14-scrapes-on-off.qmd#assigned-materials):
-
-- Ceglowski, Maciej. "Website Obesity." *Idle Words*, October 29, 2015. [https://idlewords.com/talks/website_obesity.htm](https://idlewords.com/talks/website_obesity.htm).
-
 
 ## Additional Materials
 
-- D'Ignazio, Catherine, and Lauren F. Klein. "On Rational, Scientific, Objective Viewpoints from Mythical, Imaginary, Impossible Standpoints." In *Data Feminism*, 73-96. The MIT Press, 2020. [https://doi.org/10.7551/mitpress/11805.003.0005](https://doi.org/10.7551/mitpress/11805.003.0005).
-- Posner, Miriam. "How Did They Make That?" Miriam Posner's Blog, August 29, 2013. [https://miriamposner.com/blog/how-did-they-make-that/](https://miriamposner.com/blog/how-did-they-make-that/).
-- Posner, Miriam. "Humanities Data: A Necessary Contradiction - Miriam Posner's Blog," June 25, 2015. [https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/](https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/).
 - - Loukissas, Yanni Alexander. "Collecting Infrastructures." In *All Data Are Local: Thinking Critically in a Data-Driven Society*. The MIT Press, 2019. [https://doi.org/10.7551/mitpress/11543.001.0001](https://doi.org/10.7551/mitpress/11543.001.0001).
 - Adams, Hannah Alpert. "Machine Reading the Primeros Libros." *Digital Humanities Quarterly* (2017). [http://www.digitalhumanities.org/dhq/vol/10/4/000268/000268.html](http://www.digitalhumanities.org/dhq/vol/10/4/000268/000268.html).
 - Cordell, Ryan. "'Q i-jtb the Raven': Taking Dirty OCR Seriously." *Book History* (2017). [https://dx.doi.org/10.1353/bh.2017.0006.](https://dx.doi.org/10.1353/bh.2017.0006.)
@@ -37,9 +25,9 @@ We will also be discussing our [assigned reading from last class](14-scrapes-on-
 
 ### Individual
 
-### Group
+- [ ] [Command Line Data Curation Homework](../materials/creating-curating-humanities-data/04-virtual-environments.qmd#homework-command-line-data-curation)
 
-- [ ] [Proprietary & Perspectival Data Creation Assignment](../proprietary-perspectival-dataset-creation.qmd)
+### Group
 
 
 
@@ -48,17 +36,4 @@ We will also be discussing our [assigned reading from last class](14-scrapes-on-
 - For those interested here is the documented dataset for *Newspaper Naviagor*: Lee, Benjamin Charles Germain, Jaime Mears, Eileen Jakeway, Meghan Ferriter, Chris Adams, Nathan Yarasavage, Deborah Thomas, Kate Zwaard, and Daniel S. Weld. "The Newspaper Navigator Dataset: Extracting Headlines and Visual Content from 16 Million Historic Newspaper Pages in Chronicling America." In *Proceedings of the 29th ACM International Conference on Information & Knowledge Management*, 3055-62. Virtual Event Ireland: ACM, 2020. [https://doi.org/10.1145/3340531.3412767](https://doi.org/10.1145/3340531.3412767).
 - And here is the code for *Newspaper Navigator*: [https://github.com/LibraryOfCongress/newspaper-navigator](https://github.com/LibraryOfCongress/newspaper-navigator).
 - Link to map and timeline of *Chroncling America* newspapers [https://chroniclingamerica.loc.gov/newspapers/](https://chroniclingamerica.loc.gov/newspapers/) and [https://loc.maps.arcgis.com/apps/instant/media/index.html?appid=3c6a392554d545bdb1c083348ef56458&center=-97.5126;39.6376&level=3](https://loc.maps.arcgis.com/apps/instant/media/index.html?appid=3c6a392554d545bdb1c083348ef56458&center=-97.5126;39.6376&level=3).
-- A brief visual history of MARC cataloging at the Library of Congress by Ben Schmidt [https://benschmidt.org/sappingattention/a-brief-visual-history-of-marc/](https://benschmidt.org/sappingattention/a-brief-visual-history-of-marc/) and [timeline of MARC changes](https://journal.code4lib.org/media/issue11/thomale/fig1.png) from Thomale, Jason. "Interpreting MARC: Where's the Bibliographic Data?" *The Code4Lib Journal*, no. 11 (September 21, 2010). [https://journal.code4lib.org/articles/3832](https://journal.code4lib.org/articles/3832). Also the Library of Congress's MARC Guidelines [https://www.loc.gov/marc/umb/um01to06.html](https://www.loc.gov/marc/umb/um01to06.html).
 - The original *Beyond Words* project [https://blogs.loc.gov/thesignal/2017/09/introducing-beyond-words/](https://blogs.loc.gov/thesignal/2017/09/introducing-beyond-words/). Though it has since been retired in 2021 [https://labs.loc.gov/work/experiments/beyond-words/](https://labs.loc.gov/work/experiments/beyond-words/), you can see some of the data in the *Newspaper Navigator* GitHub repository [https://github.com/LibraryOfCongress/newspaper-navigator/tree/master/beyond_words_data](https://github.com/LibraryOfCongress/newspaper-navigator/tree/master/beyond_words_data).
-- Digitized version of *The Crisis* magazine [https://modjourn.org/journal/crisis/](https://modjourn.org/journal/crisis/).
-- *Viral Texts Project* [https://viraltexts.org/visualizations/](https://viraltexts.org/visualizations/).
-- Example of Image Searching and Clustering with *PixPlot* [https://labs.statsbiblioteket.dk/pixplot/](https://labs.statsbiblioteket.dk/pixplot/)
-- *Excavating AI Project* by Kate Crawford and Trevor Paglen [https://excavating.ai/](https://excavating.ai/) that explores the materiality of AI and specifically ImageNet.
-
-## Assignments
-
-### Individual
-
-### Group
-
-- [ ] [Critical Cultural Data Explorations](../critical-cultural-data-explorations.qmd)
