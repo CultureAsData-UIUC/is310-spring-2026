@@ -54,8 +54,8 @@ website:
               href: materials/creating-curating-humanities-data/03-complex-python.qmd
             - text: "Python Virtual Environments & Packages"
               href: materials/creating-curating-humanities-data/04-virtual-environments.qmd
-        #     - text: "Web Scraping with Python"
-        #       href: materials/creating-curating-humanities-data/05-web-scraping.qmd
+            - text: "Web Scraping with Python"
+              href: materials/creating-curating-humanities-data/05-web-scraping.qmd
         #     - text: "Getting Cultural Data From APIs"
         #       href: materials/creating-curating-humanities-data/06-getting-data-apis.qmd
         # - section: "Interpretations & Communications"

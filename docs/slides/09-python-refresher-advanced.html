@@ -1384,17 +1384,30 @@
 </section>
 <section id="why-virtual-environments-matter" class="slide level2">
 <h2>Why Virtual Environments Matter</h2>
+<div class="r-fit-text">
 <p>From the Python documentation:</p>
 <blockquote>
-<p>“Python applications will often use packages and modules that don’t come as part of the standard library. Applications will sometimes need a specific version of a library.”</p>
+<p>“Python applications will often use packages and modules that don’t come as part of the standard library. Applications will sometimes need a specific version of a library, because the application may require that a particular bug has been fixed or the application may be written using an obsolete version of the library’s interface.</p>
 </blockquote>
-<p>If Application A needs version 1.0 of a library and Application B needs version 2.0, a virtual environment lets both coexist on your system.</p>
+<blockquote>
+<p>This means it may not be possible for one Python installation to meet the requirements of every application. If application A needs version 1.0 of a particular module but application B needs version 2.0, then the requirements are in conflict and installing either version 1.0 or 2.0 will leave one application unable to run.</p>
+</blockquote>
+<blockquote>
+<p>The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages.”</p>
+</blockquote>
+<p>You can read more here about <a href="https://docs.python.org/3/library/venv.html#venv-def" target="_blank">virtual environments</a>.</p>
+</div>
 </section>
 <section id="before-we-begin-check-pip" class="slide level2">
 <h2>Before We Begin: Check pip</h2>
-<p>Ensure you have <code>pip</code> (“Python Installs Packages”) installed:</p>
+<p>Prior to installing our virtual environment, let’s make sure that you have the latest version of <code>pip</code>, which stands for “Python Installs Packages.”</p>
+
+<img data-src="../assets/images/install_pip.png" class="r-stretch quarto-figure-center"><p class="caption">install pip</p></section>
+<section id="before-we-begin-check-pip-1" class="slide level2">
+<h2>Before We Begin: Check pip</h2>
+<p>If you get any errors, you can check if you have pip installed by running the following command in your terminal:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a></a><span class="ex">pip3</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>pip</code> comes built-in to Python and is used to install external libraries.</p>
+<p><code>pip</code> comes built-in to Python and is used to install external libraries. If you don’t have pip, visit <a href="https://pip.pypa.io/en/stable/installation/" target="_blank">https://pip.pypa.io/en/stable/installation/</a></p>
 <aside class="notes">
 <p>If you don’t have pip, visit https://pip.pypa.io/en/stable/installation/</p>
 <style type="text/css">
@@ -1409,14 +1422,44 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="venv" class="slide level2">
+<h2><code>venv</code></h2>
+<p>Now we’ll use the built-in Python virtual environment, called <code>venv</code>, which you can read more about here <a href="https://docs.python.org/3/library/venv.html" target="_blank">https://docs.python.org/3/library/venv.html</a>. One thing to note is that there are LOTS of different ways to setup your virtual environment (which lots of people have <em>very</em> strong feelings about). I like this answer from Stack Overflow for giving an overview of the differing options <a href="https://stackoverflow.com/a/65854168/7437781" target="_blank">https://stackoverflow.com/a/65854168/7437781</a>.</p>
+</section>
+<section id="creating-virtual-environments" class="slide level2">
+<h2>Creating Virtual Environments</h2>
+<p>Now that we have a sense of what a virtual environment is, let’s start creating one. We’ll start by creating a virtual environment in VS Code and then we’ll move to the terminal.</p>
+</section>
 <section id="creating-virtual-environments-in-vs-code" class="slide level2">
 <h2>Creating Virtual Environments in VS Code</h2>
+<div class="r-fit-text">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>⚡️ This information has been adapted from <a href="&quot;https://code.visualstudio.com/docs/python/environments&quot;" target="_blank">“https://code.visualstudio.com/docs/python/environments”</a>.</p>
+</div>
+</div>
+</div>
 <p>In VS Code, open the Command Palette:</p>
 <ul>
 <li><strong>Mac</strong>: <code>⇧⌘P</code></li>
 <li><strong>Windows</strong>: <code>Ctrl+Shift+P</code></li>
 </ul>
-<p>Type <code>Python: Create Environment</code> and select <code>Venv</code>.</p>
+<p>You can also access the Command Palette by clicking on the <code>View</code> menu and selecting <code>Command Palette</code>.</p>
+<p>Once it is open, you should type <code>Python: Create Environment</code> and selecting it in the menu. You’ll see two options: <code>Venv</code> or <code>Conda</code>. You can choose either, but I would recommend using <code>Venv</code> since it is built into Python and is the most common way to create a virtual environment.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://code.visualstudio.com/assets/docs/python/environments/create_environment_dropdown.png"></p>
+<figcaption>Create Environment Dropdown</figcaption>
+</figure>
+</div>
+</div>
 <aside class="notes">
 <p>Venv is built into Python and is the most common way to create virtual environments. Make sure you’re in a folder (workspace) before creating an environment.</p>
 <style type="text/css">
@@ -1431,14 +1474,67 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="selecting-python-version" class="slide level2">
+<h2>Selecting Python Version</h2>
+<p>Once you select <code>Venv</code>, you’ll be prompted to select the Python interpreter you want to use. You can choose the one that comes with Python, or you can select a different one if you have multiple versions of Python installed on your computer. Please make sure to <strong>not select a Python 2 interpreter, as Python 2 is no longer supported</strong>.</p>
+
+<img data-src="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png" class="r-stretch quarto-figure-center"><p class="caption">Create Environment Name</p></section>
+<section id="locating-your-virtual-environment" class="slide level2">
+<h2>Locating Your Virtual Environment</h2>
+<p>Once you’ve created your virtual environment, you should see it in whatever folder you’ve opened in VS Code. If you do not open a folder and try to create a virtual environment, you will get an error saying that you need a “workspace” to create a virtual environment. You can create a workspace by opening a folder in VS Code.</p>
+
+<img data-src="../../assets/images/new_venv.png" class="r-stretch quarto-figure-center"><p class="caption">Created Environment</p></section>
+<section id="renaming-your-virtual-environment" class="slide level2">
+<h2>Renaming Your Virtual Environment</h2>
+<p>If you’ve successfully created your virtual environment, you should see a <code>.venv</code> folder in your project directory. This is where your virtual environment is stored. You’ll notice in the image above I renamed my virtual environment to <code>is310-env</code>. You can do this by right-clicking on the <code>.venv</code> folder and selecting <code>Rename Folder</code>. You may need to reopen your VS Code window to see the changes.</p>
+</section>
 <section id="activating-your-virtual-environment" class="slide level2">
 <h2>Activating Your Virtual Environment</h2>
-<p>Once created, you should see a <code>.venv</code> folder in your project directory.</p>
-<p>When you open a new terminal in VS Code, you should see <code>(.venv)</code> in the prompt—this means your virtual environment is activated.</p>
-<div class="fragment">
-<p>The status bar at the bottom left of VS Code will also show your active interpreter.</p>
+<div class="columns">
+<div class="column r-fit-text" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/images/example_interpreters.png"></p>
+<figcaption>Virtual Environment Activated</figcaption>
+</figure>
+</div>
+</div><div class="column r-fit-text" style="width:40%;">
+<p>Once created, you should see a <code>.venv</code> folder in your project directory. Though remember that <code>.</code> folders and files are hidden so you might need to use the relevant command to show them.</p>
+<p>You’ll notice that VS Code organizes the virtual environments by the type of environment and also if they are globally installed.</p>
+</div></div>
+</section>
+<section id="activated-venv-in-vs-code" class="slide level2">
+<h2>Activated Venv in VS Code</h2>
+
+<img data-src="https://code.visualstudio.com/assets/docs/python/shared/environment-in-status-bar.png" class="r-stretch quarto-figure-center"><p class="caption">Virtual Environment Activated</p><p>Once you select the virtual environment you want to use, you should see that it is activated in the bottom left corner of your VS Code window.</p>
+</section>
+<section id="not-activated-select-interpreter" class="slide level2">
+<h2>Not Activated? Select Interpreter!</h2>
+<p>If you have not activated your virtual environment, you’ll notice that the status bar will say <code>Select Python Interpreter</code> and if you click it you’ll be able to select the virtual environment you want to use.</p>
+
+<img data-src="https://code.visualstudio.com/assets/docs/python/environments/no-interpreter-selected-statusbar.png" class="r-stretch quarto-figure-center"><p class="caption">Select Python Interpreter</p></section>
+<section id="final-check" class="slide level2">
+<h2>Final Check</h2>
+<p>Now when you go to open a new terminal in VS Code, you should see that your virtual environment is activated by the <code>(.venv)</code> in your terminal. You can also see that the name of your virtual environment is in the terminal prompt so in our case it would be <code>(is310-env)</code>.</p>
+
+<img data-src="../assets/images/activated_venv.png" class="r-stretch quarto-figure-center"><p class="caption">Activate Virtual Environment</p></section>
+<section id="creating-virtual-environments-in-terminal-optional" class="slide level2">
+<h2>Creating Virtual Environments in Terminal (Optional)</h2>
+<p>To be honest, VS Code has gotten very good at creating virtual environments and I would recommend using that method. However, if you are interested in creating a virtual environment in the terminal, you can follow the instructions below. I’m mostly including this because I still work this way, so you’ll see me doing this in class.</p>
+</section>
+<section id="virtualenvs" class="slide level2">
+<h2><code>.virtualenvs</code></h2>
+<p>To create a virtual environment in the terminal, we’ll start by opening our terminal and then navigating to the directory where we want to create our virtual environment. I would recommend making the virtual environment in your project directory, though another popular choice is to make a directory in your home directory to store all your virtual environments. You can do that with the commands below:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a></a><span class="bu">cd</span> ~  <span class="co"># This will take you to your home directory</span></span>
+<span id="cb29-2"><a></a><span class="fu">mkdir</span> .virtualenvs <span class="co"># This will create a directory called .virtualenvs</span></span>
+<span id="cb29-3"><a></a><span class="bu">cd</span> .virtualenvs <span class="co"># This will take you into the .virtualenvs directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="creating-virtual-environments-in-terminal" class="slide level2">
+<h2>Creating Virtual Environments in Terminal</h2>
+<p>Now that we are in the directory where we want to create our virtual environment (whether that’s <code>is310-coding-assignments</code> or <code>.virtualenvs</code>), we can create it by running the following command:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a></a><span class="ex">python3</span> <span class="at">-m</span> venv is310-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
-<p>You can rename the .venv folder to something more descriptive like <code>is310-env</code> if you prefer.</p>
+<p>This doesn’t seem to do much, but if you look in your new <code>.virtualenvs</code> directory (or wherever you created your environment) you should see a new folder called <code>is310-new-env</code>. This is again a virtual environment. This command is telling Python to run the <code>venv</code> module and create a virtual environment called <code>is310-env</code>. You can name your virtual environment whatever you want, but I would recommend naming it something that is descriptive of the project you are working on. <strong>You should only create one virtual environment for this course.</strong> And generally, I would recommend creating a new virtual environment for each project you work on (so think personal projects, group projects, or other courses, etc.).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1450,52 +1546,53 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
-<section id="creating-virtual-environments-in-terminal-optional" class="slide level2">
-<h2>Creating Virtual Environments in Terminal (Optional)</h2>
-<p>If you prefer the terminal, navigate to your project directory and run:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a></a><span class="ex">python3</span> <span class="at">-m</span> venv is310-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="activating-virtual-environments" class="slide level2">
+<h2>Activating Virtual Environments</h2>
 <p>Then activate it with:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a></a><span class="co"># Mac/Linux</span></span>
-<span id="cb30-2"><a></a><span class="bu">source</span> is310-env/bin/activate</span>
-<span id="cb30-3"><a></a></span>
-<span id="cb30-4"><a></a><span class="co"># Windows (Command Prompt)</span></span>
-<span id="cb30-5"><a></a><span class="ex">is310-env\Scripts\activate</span></span>
-<span id="cb30-6"><a></a></span>
-<span id="cb30-7"><a></a><span class="co"># Windows (PowerShell)</span></span>
-<span id="cb30-8"><a></a><span class="bu">.</span><span class="dt">\i</span>s310-env<span class="dt">\S</span>cripts<span class="dt">\A</span>ctivate.ps1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a></a><span class="co"># Mac/Linux</span></span>
+<span id="cb31-2"><a></a><span class="bu">source</span> is310-env/bin/activate</span>
+<span id="cb31-3"><a></a></span>
+<span id="cb31-4"><a></a><span class="co"># Windows (Command Prompt)</span></span>
+<span id="cb31-5"><a></a><span class="ex">is310-env\Scripts\activate</span></span>
+<span id="cb31-6"><a></a></span>
+<span id="cb31-7"><a></a><span class="co"># Windows (PowerShell)</span></span>
+<span id="cb31-8"><a></a><span class="bu">.</span><span class="dt">\i</span>s310-env<span class="dt">\S</span>cripts<span class="dt">\A</span>ctivate.ps1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you are getting errors in PowerShell, you may need to change your execution policy. You can do this by running the following command:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a></a><span class="ex">Set-ExecutionPolicy</span> <span class="at">-ExecutionPolicy</span> RemoteSigned <span class="at">-Scope</span> Process</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>Now you need to activate our virtual environments. Activating the virtual environment just tells your computer to run Python and installed libraries from the virtual environment rather than the global environment. This might seem like unnecessary work, but as we saw in that xkcd comic, a lot of software can create conflicts over time (often called “dependency hell”). This is a way to avoid that.</p>
+<p>To activate our virtual environment in the terminal, we need to use a command called called <code>source</code> and after that we need to specify the path to the <code>activate</code> file in our virtual environment. The path to the <code>activate</code> file is <code>[LOCATION - OPTIONAL]/[NAME OF VIRTUAL ENVIRONMENT]/bin/activate</code>.</p>
+<p>In this example, <code>is310-new-env</code> is the name of the virtual environment and we are giving it the command to run the <code>activate</code> file. This will again change the prompt in your terminal to show the name of your virtual environment. This is how you know that your virtual environment is activated. If you are curious, you can explore the <code>activate</code> file in your virtual environment to see what it is doing. You can find it in the <code>bin</code> directory of your virtual environment.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="deactivating-virtual-environments" class="slide level2">
 <h2>Deactivating Virtual Environments</h2>
 <p>To deactivate your virtual environment in the terminal:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a></a><span class="ex">deactivate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a></a><span class="ex">deactivate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Your virtual environment will no longer be in the terminal prompt.</p>
+<p>This will deactivate your virtual environment and you’ll see that the name of your virtual environment is no longer in your terminal prompt. You can also deactivate your virtual environment in VS Code by selecting <code>New Terminal</code> under the <code>Terminal</code> menu.</p>
 </section>
 <section id="adding-to-.gitignore" class="slide level2">
 <h2>Adding to <code>.gitignore</code></h2>
 <p>Virtual environments are specific to your computer. Don’t commit them to git.</p>
 <p>Add this to your <code>.gitignore</code>:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a></a><span class="ex">is310-env/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a></a><span class="ex">is310-env/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Or if you accidentally committed it:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a></a><span class="fu">git</span> rm <span class="at">-r</span> <span class="at">--cached</span> is310-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="installing-libraries-with-pip" class="slide level2">
-<h2>Installing Libraries with pip</h2>
-<p>Now that your virtual environment is activated, install the <code>Rich</code> library:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a></a><span class="ex">pip3</span> install rich</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Remember</strong>: Always do this with your virtual environment activated!</p>
-</section>
-<section id="testing-the-installation" class="slide level2">
-<h2>Testing the Installation</h2>
-<p>To verify the installation worked:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb35-1"><a></a>python3</span>
-<span id="cb35-2"><a></a>&gt;&gt;&gt; import rich</span>
-<span id="cb35-3"><a></a>&gt;&gt;&gt; rich.__version__</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Or check all installed libraries:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a></a><span class="ex">pip</span> list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a></a><span class="fu">git</span> rm <span class="at">-r</span> <span class="at">--cached</span> is310-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
-<p>You can also look in your virtual environment’s <code>site-packages</code> directory to see installed libraries.</p>
+<p>Since we are using <code>git</code> to track our work, we don’t want to include our virtual environment in our repository. This is because the virtual environment is specific to your computer and the libraries you have installed. If someone else were to clone your repository, they wouldn’t have the same virtual environment as you. This is why we add the virtual environment to our <code>.gitignore</code> file. This file tells <code>git</code> to ignore certain files or directories when tracking changes. You can add the following line to your <code>.gitignore</code> file to ignore your virtual environment:</p>
+<p>Now when we run <code>git status</code>, we shouldn’t see our virtual environment in the list of files that have been changed. If you accidentally added your virtual environment to your repository, you can remove it by running the following command</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1508,50 +1605,199 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="installing-libraries-with-pip-in-venv" class="slide level2">
+<h2>Installing Libraries with <code>pip</code> in <code>venv</code></h2>
+<p>Now that we have our virtual environment created and activated in VS Code, we can start to try installing external Python libraries.</p>
+<p>Today, we will try installing the Python package <code>Rich</code> by running the following command:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a></a><span class="ex">pip3</span> install rich</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Remember</strong>: Always do this with your virtual environment activated!</p>
+<aside class="notes">
+<p>You’ll notice that I’m using <code>pip3</code> to install the package. That is because I have multiple versions of Python installed on my computer. Usually if you have multiple versions of Python (specifically Python 2 and 3 versions) then you might need to use <code>pip3</code> to install libraries. If you only have Python 3 installed on your computer, you can just use <code>pip</code>. You can check which version of Python you have installed by running the following command:</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="testing-the-installation" class="slide level2">
+<h2>Testing the Installation</h2>
+<p>To verify the installation worked:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb37-1"><a></a>python3</span>
+<span id="cb37-2"><a></a>&gt;&gt;&gt; import rich</span>
+<span id="cb37-3"><a></a>&gt;&gt;&gt; rich.__version__</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or check all installed libraries:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a></a><span class="ex">pip</span> list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="site-packages" class="slide level2">
+<h2><code>site-packages</code></h2>
+<p>You can also look in your virtual environment directory and see if there is a <code>site-packages</code> directory. This is where all the libraries you install with <code>pip</code> are stored. You can see that the <code>Rich</code> library is installed in the <code>site-packages</code> directory.</p>
+
+<img data-src="../assets/images/rich_installed.png" class="r-stretch quarto-figure-center"><p class="caption">Rich Installed</p></section>
 <section id="the-rich-library" class="slide level2">
 <h2>The Rich Library</h2>
-<p><code>Rich</code> is a popular Python library for beautiful terminal formatting. It has nearly 50,000 GitHub stars and is used by hundreds of thousands of projects.</p>
-<p>Let’s see what it can do!</p>
+<div class="columns">
+<div class="column r-fit-text" style="width:60%;">
+<p>Rich is Python Library built originally by <a href="https://www.willmcgugan.com/">Will McGugan</a> to add rich text and beautiful formatting in the terminal. We can see from the GitHub repository <a href="https://github.com/Textualize/rich" target="_blank">https://github.com/Textualize/rich</a> that it is a very popular library with almost 50,000 stars and used by almost 300,000 repositories on GitHub. We can see that there is currently 256 contributors and that the project started in 2019.</p>
+</div><div class="column r-fit-text" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/images/rich_history.png"></p>
+<figcaption>Rich History</figcaption>
+</figure>
+</div>
+</div></div>
 </section>
-<section id="your-first-rich-example" class="slide level2">
-<h2>Your First Rich Example</h2>
-<p>Create <code>rich_example.py</code>:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a><span class="im">from</span> rich <span class="im">import</span> <span class="bu">print</span></span>
-<span id="cb37-2"><a></a></span>
-<span id="cb37-3"><a></a><span class="bu">print</span>(<span class="st">"Hello, [bold magenta]World[/bold magenta]!"</span>, <span class="st">":vampire:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="rich-features" class="slide level2">
+<h2>Rich Features</h2>
+<div class="columns">
+<div class="column r-fit-text" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/textualize/rich/raw/master/imgs/features.png"></p>
+<figcaption>Rich Features</figcaption>
+</figure>
+</div>
+</div><div class="column r-fit-text" style="width:40%;">
+<p>We can start to get a sense of what the library can do by looking at the features listed on the GitHub repository but we can also read the documentation for the library to get a better sense of what it can do <a href="https://rich.readthedocs.io/en/stable/introduction.html" target="_blank">https://rich.readthedocs.io/en/stable/introduction.html</a>.</p>
+</div></div>
+</section>
+<section id="rich-documentation" class="slide level2">
+<h2>Rich Documentation</h2>
+<div class="r-fit-text">
+<p>This documentation is <strong>very</strong> detailed, but we can start with the Quickstart guidelines <a href="https://rich.readthedocs.io/en/stable/introduction.html#quick-start" target="_blank">https://rich.readthedocs.io/en/stable/introduction.html#quick-start</a> to get a sense of how to use the library.</p>
+<p>From the guidelines we can see how to import the library into our Python script. In your <code>is310-coding-assignments</code> directory, create a new folder called <code>python-libraries</code> and create a new file called <code>rich_example.py</code>. In this file, add the following code:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a><span class="im">from</span> rich <span class="im">import</span> <span class="bu">print</span></span>
+<span id="cb39-2"><a></a></span>
+<span id="cb39-3"><a></a><span class="bu">print</span>(<span class="st">"Hello, [bold magenta]World[/bold magenta]!"</span>, <span class="st">":vampire:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="rich-outputs" class="slide level2">
+<h2>Rich Outputs</h2>
+<div class="r-fit-text">
 <p>Run it:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a></a><span class="ex">python3</span> rich_example.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You’ll see formatted text with colors and emojis!</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a></a><span class="ex">python3</span> rich_example.py <span class="co"># or python3 python-libraries/rich_example.py if you are in the is310-coding-assignments directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see the following output in your terminal:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb41-1"><a></a>Hello, World! 🧛</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/images/rich_example.png"></p>
+<figcaption>Rich Example</figcaption>
+</figure>
+</div>
+<p>Notice that the word <code>world</code> is in bold and magenta and that there is a vampire emoji at the end of the sentence. This is the power of the <code>Rich</code> library.</p>
+</div>
 </section>
 <section id="rich-tables" class="slide level2">
 <h2>Rich Tables</h2>
+<div class="columns">
+<div class="column r-fit-text" style="width:50%;">
 <p>Rich has powerful classes like <code>Console</code> and <code>Table</code> for formatting:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
-<span id="cb39-2"><a></a><span class="im">from</span> rich.table <span class="im">import</span> Table</span>
-<span id="cb39-3"><a></a></span>
-<span id="cb39-4"><a></a>console <span class="op">=</span> Console()</span>
-<span id="cb39-5"><a></a>table <span class="op">=</span> Table(title<span class="op">=</span><span class="st">"Star Wars Movies"</span>)</span>
-<span id="cb39-6"><a></a>table.add_column(<span class="st">"Released"</span>, style<span class="op">=</span><span class="st">"cyan"</span>, no_wrap<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb39-7"><a></a>table.add_column(<span class="st">"Title"</span>, style<span class="op">=</span><span class="st">"magenta"</span>)</span>
-<span id="cb39-8"><a></a>table.add_row(<span class="st">"Dec 20, 2019"</span>, <span class="st">"Star Wars: The Rise of Skywalker"</span>, <span class="st">"$952,110,690"</span>)</span>
-<span id="cb39-9"><a></a></span>
-<span id="cb39-10"><a></a>console.<span class="bu">print</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
+<span id="cb42-2"><a></a><span class="im">from</span> rich.table <span class="im">import</span> Table</span>
+<span id="cb42-3"><a></a></span>
+<span id="cb42-4"><a></a>console <span class="op">=</span> Console()</span>
+<span id="cb42-5"><a></a></span>
+<span id="cb42-6"><a></a>table <span class="op">=</span> Table(title<span class="op">=</span><span class="st">"Star Wars Movies"</span>)</span>
+<span id="cb42-7"><a></a>table.add_column(<span class="st">"Released"</span>, style<span class="op">=</span><span class="st">"cyan"</span>, no_wrap<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb42-8"><a></a>table.add_column(<span class="st">"Title"</span>, style<span class="op">=</span><span class="st">"magenta"</span>)</span>
+<span id="cb42-9"><a></a>table.add_column(<span class="st">"Box Office"</span>, justify<span class="op">=</span><span class="st">"right"</span>)</span>
+<span id="cb42-10"><a></a>table.add_row(<span class="st">"Dec 20, 2019"</span>, <span class="st">"Star Wars: The Rise of Skywalker"</span>, <span class="st">"$952,110,690"</span>)</span>
+<span id="cb42-11"><a></a>table.add_row(<span class="st">"May 25, 2018"</span>, <span class="st">"Solo: A Star Wars Story"</span>, <span class="st">"$393,151,347"</span>)</span>
+<span id="cb42-12"><a></a>table.add_row(<span class="st">"Dec 15, 2017"</span>, <span class="st">"Star Wars Ep. VIII: The Last Jedi"</span>, <span class="st">"$1,332,539,889"</span>)</span>
+<span id="cb42-13"><a></a>table.add_row(<span class="st">"Dec 16, 2016"</span>, <span class="st">"Rogue One: A Star Wars Story"</span>, <span class="st">"$1,332,439,889"</span>)</span>
+<span id="cb42-14"><a></a></span>
+<span id="cb42-15"><a></a>console.<span class="bu">print</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column r-fit-text" style="width:50%;">
+<p>And you should see the following output in your terminal:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/images/rich_table.png"></p>
+<figcaption>Rich Table</figcaption>
+</figure>
+</div>
+</div></div>
+<aside class="notes">
+<p>As you can likely tell, both <code>Console</code> and <code>Table</code> are classes built into the <code>Rich</code> library that allow us to format our text in different ways. We can see that we are able to add a title to our table, add columns, and add rows to our table. We can also see that we are able to format our text in different ways, such as changing the color of the text, justifying the text, and wrapping the text.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="rich-classes" class="slide level2">
+<h2>Rich Classes</h2>
+<div class="columns">
+<div class="column r-fit-text" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://rich.readthedocs.io/en/stable/reference/console.html#rich.console.Console" target="_blank"><img data-src="../assets/images/rich_console.png"></a></p>
+<figcaption>Rich Console Class Documentation</figcaption>
+</figure>
+</div>
+</div><div class="column r-fit-text" style="width:50%;">
+<p>You’ll notice this documentation is somewhat difficult to read, but it does show us the different methods and attributes that are available to us in the <code>Console</code> class. We can also click the small green <code>source</code> button to see the source code for the class <a href="https://rich.readthedocs.io/en/stable/_modules/rich/console.html#Console" target="_blank">https://rich.readthedocs.io/en/stable/_modules/rich/console.html#Console</a>.</p>
+</div></div>
 </section>
 <section id="rich-with-data-structures" class="slide level2">
 <h2>Rich with Data Structures</h2>
+<div class="columns">
+<div class="column r-fit-text" style="width:50%;">
 <p>You can use Rich to format data from lists and dictionaries:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
-<span id="cb40-2"><a></a></span>
-<span id="cb40-3"><a></a>console <span class="op">=</span> Console()</span>
-<span id="cb40-4"><a></a>movies <span class="op">=</span> [</span>
-<span id="cb40-5"><a></a>    {<span class="st">"Released"</span>: <span class="st">"Dec 20, 2019"</span>, <span class="st">"Title"</span>: <span class="st">"Star Wars: The Rise of Skywalker"</span>},</span>
-<span id="cb40-6"><a></a>    {<span class="st">"Released"</span>: <span class="st">"May 25, 2018"</span>, <span class="st">"Title"</span>: <span class="st">"Solo: A Star Wars Story"</span>},</span>
-<span id="cb40-7"><a></a>]</span>
-<span id="cb40-8"><a></a></span>
-<span id="cb40-9"><a></a><span class="cf">for</span> movie <span class="kw">in</span> movies:</span>
-<span id="cb40-10"><a></a>    console.<span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">[bold cyan]Movie Info:[/bold cyan]"</span>)</span>
-<span id="cb40-11"><a></a>    <span class="cf">for</span> field, value <span class="kw">in</span> movie.items():</span>
-<span id="cb40-12"><a></a>        console.<span class="bu">print</span>(<span class="ss">f"[magenta]</span><span class="sc">{</span>field<span class="sc">}</span><span class="ss">[/magenta]: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
+<span id="cb43-2"><a></a><span class="im">from</span> rich.table <span class="im">import</span> Table</span>
+<span id="cb43-3"><a></a></span>
+<span id="cb43-4"><a></a><span class="co"># Create a Console instance to print formatted text</span></span>
+<span id="cb43-5"><a></a>console <span class="op">=</span> Console()</span>
+<span id="cb43-6"><a></a></span>
+<span id="cb43-7"><a></a><span class="co"># Initial movie data stored in a list of dictionaries</span></span>
+<span id="cb43-8"><a></a>movies <span class="op">=</span> [</span>
+<span id="cb43-9"><a></a>    {</span>
+<span id="cb43-10"><a></a>        <span class="st">"Released"</span>: <span class="st">"Dec 20, 2019"</span>,</span>
+<span id="cb43-11"><a></a>        <span class="st">"Title"</span>: <span class="st">"Star Wars: The Rise of Skywalker"</span>,</span>
+<span id="cb43-12"><a></a>        <span class="st">"Box Office"</span>: <span class="st">"$952,110,690"</span></span>
+<span id="cb43-13"><a></a>    },</span>
+<span id="cb43-14"><a></a>    {</span>
+<span id="cb43-15"><a></a>        <span class="st">"Released"</span>: <span class="st">"May 25, 2018"</span>,</span>
+<span id="cb43-16"><a></a>        <span class="st">"Title"</span>: <span class="st">"Solo: A Star Wars Story"</span>,</span>
+<span id="cb43-17"><a></a>        <span class="st">"Box Office"</span>: <span class="st">"$393,151,347"</span></span>
+<span id="cb43-18"><a></a>    },</span>
+<span id="cb43-19"><a></a>    {</span>
+<span id="cb43-20"><a></a>        <span class="st">"Released"</span>: <span class="st">"Dec 15, 2017"</span>,</span>
+<span id="cb43-21"><a></a>        <span class="st">"Title"</span>: <span class="st">"Star Wars Ep. VIII: The Last Jedi"</span>,</span>
+<span id="cb43-22"><a></a>        <span class="st">"Box Office"</span>: <span class="st">"$1,332,539,889"</span></span>
+<span id="cb43-23"><a></a>    },</span>
+<span id="cb43-24"><a></a>    {</span>
+<span id="cb43-25"><a></a>        <span class="st">"Released"</span>: <span class="st">"Dec 16, 2016"</span>,</span>
+<span id="cb43-26"><a></a>        <span class="st">"Title"</span>: <span class="st">"Rogue One: A Star Wars Story"</span>,</span>
+<span id="cb43-27"><a></a>        <span class="st">"Box Office"</span>: <span class="st">"$1,332,439,889"</span></span>
+<span id="cb43-28"><a></a>    }</span>
+<span id="cb43-29"><a></a>]</span>
+<span id="cb43-30"><a></a></span>
+<span id="cb43-31"><a></a><span class="co"># Loop through the list of movies</span></span>
+<span id="cb43-32"><a></a><span class="cf">for</span> movie <span class="kw">in</span> movies:</span>
+<span id="cb43-33"><a></a>    console.<span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">[bold cyan]Reviewing movie information:[/bold cyan]"</span>)</span>
+<span id="cb43-34"><a></a>    <span class="cf">for</span> field, value <span class="kw">in</span> movie.items():</span>
+<span id="cb43-35"><a></a>        console.<span class="bu">print</span>(<span class="ss">f"[magenta]</span><span class="sc">{</span>field<span class="sc">}</span><span class="ss">[/magenta]: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column r-fit-text" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/images/rich_movies.png"></p>
+<figcaption>Rich Movies</figcaption>
+</figure>
+</div>
+</div></div>
 <aside class="notes">
 <p>This shows how Rich integrates beautifully with Python data structures like lists and dictionaries.</p>
 <style type="text/css">
@@ -1566,30 +1812,10 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="homework-cli-data-entry-application" class="slide level2">
-<h2>Homework: CLI Data Entry Application</h2>
+<section id="homework-command-line-data-curation" class="slide level2">
+<h2>Homework: Command Line Data Curation</h2>
 <p>Now it’s time to put everything together!</p>
-<p>Create a Python script that:</p>
-<ol type="1">
-<li>Uses Rich to display sample data in a formatted way</li>
-<li>Takes user input to add new entries</li>
-<li>Confirms the data with the user</li>
-<li>Saves the data to a file</li>
-<li>Shows the file path where data was saved</li>
-</ol>
-<aside class="notes">
-<p>This homework integrates virtual environments, packages (Rich), classes, file I/O, and control flow into one practical project.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>Homework instructions available <a href="../materials/creating-curating-humanities-data/04-virtual-environments.html#homework-command-line-data-curation">here</a></p>
 
 
 </section></section>

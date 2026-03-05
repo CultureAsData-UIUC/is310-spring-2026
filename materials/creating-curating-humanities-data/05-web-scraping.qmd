@@ -1,7 +1,6 @@
 ---
 title: "Web Scraping with Python"
 toc: true
-draft: true
 ---
 
 ::: {.callout-note}
@@ -12,7 +11,7 @@ Now that we have learned how to work with Python modules and read and write file
 
 ## What Is Web Scraping and Why Is It Useful?
 
-![A diagram of web scraping.](https://images.squarespace-cdn.com/content/v1/59d9b2749f8dce3ebe4e676d/1566319595811-MFGFIVQGNNSY2W4TZ4AV/web-scraping.png?format=1500w)
+![A diagram of web scraping.](../../assets/images/web-scraping-diagram.png)
 
 So far when it comes to working with the web, you have been creating your own HTML pages and hosting them via GitHub. But we can also use Python to interact with the web in a different way: by scraping data from web pages. The data we extract is exactly the same as what you have been writing, so elements like headers, paragraphs, and links, etc.
 
@@ -86,7 +85,7 @@ Finally, you'll see that I often use `pip` or `pip3` when installing packages. T
 
 ---- 
 
-Now we can starting using these packages in our Python code. First, we need to create a new folder in our `is310-coding-assignments` called `web_scraping` and then create a new file called `first_web_scraping.py`. Then we can add the following code to our file:
+Now we can starting using these packages in our Python code. First, we need to create a new folder in our `is310-coding-assignments` called `web-scraping` and then create a new file called `first_web_scraping.py`. Then we can add the following code to our file:
 
 ```python
 import beautifulsoup4
@@ -142,7 +141,7 @@ There's actually a number of possible parsers you can use with `BeautifulSoup`. 
 
 I usually just use the built-in `html.parser` parser, but you can use the `lxml` parser if you want to. Next we'll learn what these parsers are doing and how to use them!
 
-### Beautiful Soup Basics
+### BeautifulSoup Basics
 
 In the `Quick Start` guide [https://beautiful-soup-4.readthedocs.io/en/latest/#quick-start](https://beautiful-soup-4.readthedocs.io/en/latest/#quick-start), we have an example of how to use the `BeautifulSoup` class to parse an HTML document. Let's try this example in our `first_web_scraping.py` file.
 
@@ -524,9 +523,9 @@ For those unfamiliar, fandom wikis are fan-created wikis that are often used to 
 
 ![](../../assets/images/wikipedia_wookiepedia.png)
 
-This page details some of the history and statistics of *Wookieepedia*, which started in 2005. You'll notice that it has over 150,000 articles and over 1,000,000 pages. This is a huge amount of information and according to the graph below, this wiki is far larger than the *Lord of the Rings* wiki.
+This page details some of the history and statistics of *Wookieepedia*, which started in 2005. You'll notice that it has over 150,000 articles and over 1,000,000 pages. This is a huge amount of information and this wiki is far larger than the *Lord of the Rings* wiki.
 
-![](https://i.redd.it/kiq4e7hmkeeb1.png)
+![](../../assets/images/largest_fandoms.png)
 
 Before we start scraping this fandom wiki though, we need to check for the terms of service or user policies of the website. So far I've only been able to find the following page on the wiki [https://lotr.fandom.com/wiki/LOTR:Current_policies](https://lotr.fandom.com/wiki/LOTR:Current_policies) which details the current policies of the wiki and that most of the content is under a `CC-BY-SA` license. There is a terms of service for Fandom wikis [https://www.fandom.com/terms-of-use](https://www.fandom.com/terms-of-use) but that also doesn't have clear information about scraping. So the final place we can check is the `robots.txt` file.
 
@@ -554,10 +553,47 @@ print(response.status_code)
 soup = BeautifulSoup(response.text, "html.parser")
 ```
 
-If you are getting an error, you might need to add the `timeout` parameter to the `get()` method. This parameter tells the `requests` library how long to wait for a response before timing out. For example, if you wanted to wait 5 seconds for a response, you would add `timeout=5` to the `get()` method.
+### Bot Protection and Cloudflare
+
+However, you might run into a problem. If you try to run the above code, you may get a **403 Forbidden** error instead of a 200 status code. Why would that be?
+
+**The answer: Bot Protection!**
+
+Many modern websites use automated bot detection services like **Cloudflare** to protect against unwanted scraping, DDoS attacks, and other malicious activity. Cloudflare detects requests that look like bots (like Python's `requests` library) and blocks them with a 403 error. When you visit the website in your browser, your browser identifies itself with a proper `User-Agent` header that makes Cloudflare think you're a real person. But when you use `requests.get()`, it sends a User-Agent like `python-requests/2.x.x`, which Cloudflare recognizes as a bot.
+
+This is an important lesson about web ethics and bot detection:
+
+- **Websites have the right to protect themselves** from unwanted scrapers and attacks
+- **Bot detection is a cat-and-mouse game** where websites implement protections and scrapers develop workarounds
+- **We should respect `robots.txt`** and the website's wishes, but also find ethical ways to access data we need for legitimate research
+
+To handle Cloudflare's bot protection ethically, we can use the `cloudscraper` library. You can read the documentation [here](https://github.com/VeNoMouS/cloudscraper), but generally the benefit of `cloudscraper` is that this library mimics a real browser more effectively, allowing us to scrape websites that have Cloudflare protection **while still respecting their `robots.txt` file and terms of service**.
+
+First, install `cloudscraper`:
+
+```bash
+pip install cloudscraper
+```
+
+Then, instead of using `requests.get()`, use `cloudscraper`:
 
 ```python
-response = requests.get("https://lotr.fandom.com/wiki/Main_Page", timeout=5)
+import cloudscraper
+
+# Create a scraper that handles Cloudflare bot protection
+scraper = cloudscraper.create_scraper()
+
+response = scraper.get("https://lotr.fandom.com/wiki/Main_Page")
+print(response.status_code)
+soup = BeautifulSoup(response.text, "html.parser")
+```
+
+The `cloudscraper` library automatically handles Cloudflare's JavaScript challenge, making requests that look like they're coming from a real browser. This is a much more reliable approach than trying to add headers manually to the `requests` library.
+
+If you are getting an error, you might need to add the `timeout` parameter to the `get()` method. This parameter tells the `cloudscraper` library how long to wait for a response before timing out. For example, if you wanted to wait 5 seconds for a response, you would add `timeout=5` to the `get()` method.
+
+```python
+response = scraper.get("https://lotr.fandom.com/wiki/Main_Page", timeout=5)
 ```
 
 You can also do a speed test like we read about in "The Website Obesity Crisis" article to see how long it takes to get a response from the website.
@@ -566,7 +602,7 @@ You can also do a speed test like we read about in "The Website Obesity Crisis" 
 import time
 
 start = time.time()
-response = requests.get("https://lotr.fandom.com/wiki/Main_Page")
+response = scraper.get("https://lotr.fandom.com/wiki/Main_Page")
 end = time.time()
 print(end - start)
 ```
@@ -584,7 +620,11 @@ First, we need to inspect the HTML of the page to see how the characters are str
 We can see that while each character is listed in a larger div with the class `category-page__member`, the character name is in a `a` tag with the class `category-page__member-link`. So we can use the `find_all()` method to get all the `a` tags with the class `category-page__member-link` and then use the `get_text()` method to get the text of each `a` tag.
 
 ```python
-response = requests.get("https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power")
+import cloudscraper
+
+scraper = cloudscraper.create_scraper()
+
+response = scraper.get("https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power")
 soup = BeautifulSoup(response.text, "html.parser")
 characters = soup.find_all('a', class_='category-page__member-link')
 
@@ -600,8 +640,11 @@ We can see that the first translation is into `Catallà`, which is Catalan, whic
 
 ```python
 import re
+import cloudscraper
 
-response = requests.get("https://lotr.fandom.com/wiki/Galadriel")
+scraper = cloudscraper.create_scraper()
+
+response = scraper.get("https://lotr.fandom.com/wiki/Galadriel")
 soup = BeautifulSoup(response.text, "html.parser")
 languages = soup.find_all('a', attrs={'data-tracking-label': re.compile(r'lang-')})
 for language in languages:
@@ -612,13 +655,25 @@ for language in languages:
 Now that we have the number of languages each character page has been translated into, we can start to think about how to structure this data and how to turn some of our logic into a function. We could create a list of dictionaries with the character name and the number of languages the character page has been translated into.
 
 ```python
-def get_character_languages(url):
-	response = requests.get(url)
-	soup = BeautifulSoup(response.text, "html.parser")
-	languages = soup.find_all('a', attrs={'data-tracking-label': re.compile(r'lang-')})
-	return [{"language": language.get('data-tracking-label'), "language_name": language.get_text()} for language in languages]
+import cloudscraper
+import csv
+import re
 
-response = requests.get("https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power")
+scraper = cloudscraper.create_scraper()
+
+def get_character_languages(url):
+	try:
+		response = scraper.get(url, timeout=10)
+		if response.status_code != 200:
+			return []
+		soup = BeautifulSoup(response.text, "html.parser")
+		languages = soup.find_all('a', attrs={'data-tracking-label': re.compile(r'lang-')})
+		return [{"language": language.get('data-tracking-label'), "language_name": language.get_text()} for language in languages]
+	except Exception as e:
+		print(f"Error getting languages from {url}: {e}")
+		return []
+
+response = scraper.get("https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power", timeout=10)
 
 soup = BeautifulSoup(response.text, "html.parser")
 canon_characters = soup.find_all('a', class_='category-page__member-link')
@@ -641,7 +696,7 @@ with open('lotr_canon_characters.csv', 'w') as file:
 Now we could do the same for the new characters page [https://lotr.fandom.com/wiki/Category:New_characters_in_The_Rings_of_Power](https://lotr.fandom.com/wiki/Category:New_characters_in_The_Rings_of_Power) and then compare the number of languages the canon characters have been translated into with the number of languages the new characters have been translated into. We could also use the `Rich` library from the last assignment to print out the data in a more readable format.
 
 ```python
-response = requests.get("https://lotr.fandom.com/wiki/Category:Characters_created_for_The_Rings_of_Power")
+response = scraper.get("https://lotr.fandom.com/wiki/Category:Characters_created_for_The_Rings_of_Power", timeout=10)
 
 soup = BeautifulSoup(response.text, "html.parser")
 new_characters = soup.find_all('a', class_='category-page__member-link')
@@ -682,37 +737,50 @@ We could even rewrite this code to be more DRY (that is the principle of Don't R
 
 ```python
 import re
-import requests
+import cloudscraper
 from bs4 import BeautifulSoup
 from rich.console import Console
 from rich.table import Table
 
 console = Console()
 
+# Create a cloudscraper instance to handle Cloudflare bot protection
+scraper = cloudscraper.create_scraper()
+
 def get_character_languages(url):
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, "html.parser")
-    languages = soup.find_all('a', attrs={'data-tracking-label': re.compile(r'lang-')})
-    return [{"language": language.get('data-tracking-label'), "language_name": language.get_text()} for language in languages]
+    try:
+        response = scraper.get(url, timeout=10)
+        if response.status_code != 200:
+            return []
+        soup = BeautifulSoup(response.text, "html.parser")
+        languages = soup.find_all('a', attrs={'data-tracking-label': re.compile(r'lang-')})
+        return [{"language": language.get('data-tracking-label'), "language_name": language.get_text()} for language in languages]
+    except Exception as e:
+        console.print(f"[red]✗ Error getting languages from {url}: {e}[/red]")
+        return []
 
 def fetch_characters(url, category):
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, "html.parser")
-    characters = soup.find_all('a', class_='category-page__member-link')
-    characters_data = []
+    try:
+        response = scraper.get(url, timeout=10)
+        soup = BeautifulSoup(response.text, "html.parser")
+        characters = soup.find_all('a', class_='category-page__member-link')
+        characters_data = []
 
-    for character in characters:
-        console.print(f"Processing {character.get_text()}...")
-        character_data = {
-            "character": character.get_text(),
-            "character_link": character.get('href'),
-            "category": category
-        }
-        character_data['languages'] = get_character_languages("https://lotr.fandom.com" + character_data['character_link'])
-        character_data['languages_count'] = len(character_data['languages'])
-        characters_data.append(character_data)
-    
-    return characters_data
+        for character in characters:
+            console.print(f"Processing {character.get_text()}...")
+            character_data = {
+                "character": character.get_text(),
+                "character_link": character.get('href'),
+                "category": category
+            }
+            character_data['languages'] = get_character_languages("https://lotr.fandom.com" + character_data['character_link'])
+            character_data['languages_count'] = len(character_data['languages'])
+            characters_data.append(character_data)
+
+        return characters_data
+    except Exception as e:
+        console.print(f"[red]✗ Error in fetch_characters: {e}[/red]")
+        return []
 
 # Fetch characters from the given URLs
 canon_characters_data = fetch_characters("https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power", "Canon")
@@ -738,15 +806,24 @@ console.print(table)
 
 Now in our full script we import all the libraries at the top, have two functions that get the character data and then fetch the characters, and then we combine and sort the characters by language count. We then display the sorted characters in a table using the `Rich` library. This is a much cleaner and more readable script that is easier to understand and work with.
 
-While we have seen how we can use `BeautifulSoup` and `requests` for web scraping, there are other Python libraries like `Selenium` [https://selenium-python.readthedocs.io/](https://selenium-python.readthedocs.io/) and `Scrapy` [https://scrapy.org/](https://scrapy.org/) that can be used for web scraping.
+## Beyond BeautifulSoup and Requests
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1709360753547/5a8f9a15-4d18-4802-89d0-007b120068cb.png?auto=compress,format&format=webp)
+While `BeautifulSoup`, `requests`, and `cloudscraper` work well for most web scraping tasks, you may encounter websites that require more sophisticated tools. Two important libraries to be aware of are:
 
-There are pros and cons to each library, but I mention them because if you are trying to scrape a more complex website that uses dynamic Javascript to render web pages, you might need to use either `Selenium` or `Scrapy`. `Selenium` is a library that allows you to control a web browser programmatically and can be used to scrape websites that use dynamic Javascript. `Scrapy` is a library that is specifically designed for web scraping and is a more advanced library that can be used to scrape websites at scale. As we've learned lots of websites are quite bloated, so it's always good to be aware of these other libraries.
+**Selenium** ([https://selenium-python.readthedocs.io/](https://selenium-python.readthedocs.io/)) is a browser automation tool that controls a real web browser programmatically. Use Selenium when you need to scrape websites that render content dynamically with JavaScript, since BeautifulSoup only parses static HTML.
+
+**Scrapy** ([https://scrapy.org/](https://scrapy.org/)) is a full-featured web scraping framework designed for large-scale, production-grade projects. It includes built-in support for managing requests, handling bot protection, following links, storing data, and more. Use Scrapy when you're building a sophisticated scraping pipeline that needs to handle many pages efficiently.
+
+**When to use each:**
+- **BeautifulSoup + requests/cloudscraper**: Static websites, quick scripts, learning web scraping (what we've done here)
+- **Selenium**: Websites requiring JavaScript execution or complex user interactions
+- **Scrapy**: Large-scale scraping projects with complex requirements
+
+Each approach has tradeoffs in complexity, speed, and resource use. For the tasks you'll encounter in this course, BeautifulSoup with error handling is typically the right choice.
 
 ## Fandom Wikis and Web Scraping Homework
 
-Now that you have learned the basics of web scraping, it's time to try it out for your next homework assignment. In your `is310-coding-assignments`, you should have already create a new directory called `web_scraping_assignments` and a new file called `first_web_scraping.py`. You should now create a new file called `fandom_wiki_scraping.py` in the `web_scraping_assignments` directory.
+Now that you have learned the basics of web scraping, it's time to try it out for your next homework assignment. In your `is310-coding-assignments`, you should have already create a new directory called `web-scraping` and a new file called `first_web_scraping.py`. You should now create a new file called `fandom_wiki_scraping.py` in the `web-scraping` directory.
 
 In this assignment, you are welcome to select **any** fandom wiki you are interested in and the goal is try scraping the wiki. You should complete the following tasks:
 
@@ -755,7 +832,7 @@ In this assignment, you are welcome to select **any** fandom wiki you are intere
 - [ ] Use the `requests` library to get the web page and the `BeautifulSoup` library to parse the HTML of the web page, and include this code in your `fandom_wiki_scraping.py` file.
 - [ ] Include the data you are scraping in an interoperable file format like a CSV or JSON file and include this data in your `web_scraping_assignments` directory.
 
-Once you have completed the assignment, you should **post a link to your folder** in our GitHub discussion [https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/9](https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/9).
+Once you have completed the assignment, you should **post a link to your folder** in our GitHub discussion [https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/6](https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/6).
 
 ---
 

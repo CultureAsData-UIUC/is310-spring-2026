@@ -429,6 +429,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Python Virtual Environments &amp; Packages</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../materials/creating-curating-humanities-data/05-web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Web Scraping with Python</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -579,7 +585,7 @@ Note
 <figcaption>Virtual Environment Activated</figcaption>
 </figure>
 </div>
-<p>You can see that it is activated by looking at the bottom left corner of your VS Code window. If you have not activated your virtual environment, you’ll notice that the status bar will say <code>Select Python Interpreter</code> and if you click it you’ll be able to select the virtual environment you want to use.</p>
+<p>If you have not activated your virtual environment, you’ll notice that the status bar will say <code>Select Python Interpreter</code> and if you click it you’ll be able to select the virtual environment you want to use.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://code.visualstudio.com/assets/docs/python/environments/no-interpreter-selected-statusbar.png" class="img-fluid figure-img"></p>
@@ -598,7 +604,7 @@ Note
 <section id="optional-creating-virtual-environments-in-the-terminal" class="level2">
 <h2 class="anchored" data-anchor-id="optional-creating-virtual-environments-in-the-terminal">OPTIONAL Creating Virtual Environments in the Terminal</h2>
 <p>To be honest, VS Code has gotten very good at creating virtual environments and I would recommend using that method. However, if you are interested in creating a virtual environment in the terminal, you can follow the instructions below. I’m mostly including this because I still work this way, so you’ll see me doing this in class.</p>
-<p>To create a virtual environment in the terminal, we’ll start by opening our terminal and then navigating to the directory where we want to create our virtual environment. I would recommend making the virtual environment in your project director, though another popular choice is to make a directory in your home directory to store all your virtual environments. You can do that with the commands below:</p>
+<p>To create a virtual environment in the terminal, we’ll start by opening our terminal and then navigating to the directory where we want to create our virtual environment. I would recommend making the virtual environment in your project directory, though another popular choice is to make a directory in your home directory to store all your virtual environments. You can do that with the commands below:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~  <span class="co"># This will take you to your home directory</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> .virtualenvs <span class="co"># This will create a directory called .virtualenvs</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> .virtualenvs <span class="co"># This will take you into the .virtualenvs directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -636,7 +642,7 @@ Note
 <p>Today, we will try installing the Python package <code>Rich</code> by running the following command:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install rich</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This command tells <code>pip</code> to install the <code>Rich</code> library. <strong>Remember you should only run this command once your virtual environment is activated!</strong></p>
-<p>Return to <code>rich</code>, unlike <code>Pathlib</code>, <code>rich</code> isn’t built into Python, which is why we need to install it. <code>pip</code> is a package manager for Python that allows you to install and manage Python packages. You can read more about it here <a href="https://pip.pypa.io/en/stable/">https://pip.pypa.io/en/stable/</a>.</p>
+<p>Unlike <code>Pathlib</code>, <code>rich</code> isn’t built into Python, which is why we need to install it. <code>pip</code> is a package manager for Python that allows you to install and manage Python packages. You can read more about it here <a href="https://pip.pypa.io/en/stable/">https://pip.pypa.io/en/stable/</a>.</p>
 <p>You’ll notice that I’m using <code>pip3</code> to install the package. That is because I have multiple versions of Python installed on my computer. Usually if you have multiple versions of Python (specifically Python 2 and 3 versions) then you might need to use <code>pip3</code> to install libraries. If you only have Python 3 installed on your computer, you can just use <code>pip</code>. You can check which version of Python you have installed by running the following command:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>However, you’ll want to make sure that you’re running this <strong>with your virtual environment activated</strong>.</p>
@@ -720,7 +726,7 @@ rich.__version__</code></pre>
 </figure>
 </div>
 <p>You’ll notice this documentation is somewhat difficult to read, but it does show us the different methods and attributes that are available to us in the <code>Console</code> class. We can also click the small green <code>source</code> button to see the source code for the class <a href="https://rich.readthedocs.io/en/stable/_modules/rich/console.html#Console">https://rich.readthedocs.io/en/stable/_modules/rich/console.html#Console</a>. While you won’t usually need to go so deep into a Python library’s code, it is helpful to know how to read it if you are getting errors or are unsure how to use a library.</p>
-<p>We can also use <code>Rich</code> with some of the more advanced data structures we have been working with.In your <code>rich_example.py</code> file, add the following code:</p>
+<p>We can also use <code>Rich</code> with some of the more advanced data structures we have been working with. In your <code>rich_example.py</code> file, add the following code:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.table <span class="im">import</span> Table</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>

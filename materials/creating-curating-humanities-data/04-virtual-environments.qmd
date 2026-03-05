@@ -71,7 +71,7 @@ You'll notice that VS Code organizes the virtual environments by the type of env
 
 ![Virtual Environment Activated](https://code.visualstudio.com/assets/docs/python/shared/environment-in-status-bar.png)
 
-You can see that it is activated by looking at the bottom left corner of your VS Code window. If you have not activated your virtual environment, you'll notice that the status bar will say `Select Python Interpreter` and if you click it you'll be able to select the virtual environment you want to use.
+If you have not activated your virtual environment, you'll notice that the status bar will say `Select Python Interpreter` and if you click it you'll be able to select the virtual environment you want to use.
 
 ![Select Python Interpreter](https://code.visualstudio.com/assets/docs/python/environments/no-interpreter-selected-statusbar.png)
 
@@ -83,7 +83,7 @@ Now when you go to open a new terminal in VS Code, you should see that your virt
 
 To be honest, VS Code has gotten very good at creating virtual environments and I would recommend using that method. However, if you are interested in creating a virtual environment in the terminal, you can follow the instructions below. I'm mostly including this because I still work this way, so you'll see me doing this in class.
 
-To create a virtual environment in the terminal, we'll start by opening our terminal and then navigating to the directory where we want to create our virtual environment. I would recommend making the virtual environment in your project director, though another popular choice is to make a directory in your home directory to store all your virtual environments. You can do that with the commands below:
+To create a virtual environment in the terminal, we'll start by opening our terminal and then navigating to the directory where we want to create our virtual environment. I would recommend making the virtual environment in your project directory, though another popular choice is to make a directory in your home directory to store all your virtual environments. You can do that with the commands below:
 
 ```sh
 cd ~  # This will take you to your home directory
@@ -165,7 +165,7 @@ pip3 install rich
 
 This command tells `pip` to install the `Rich` library. **Remember you should only run this command once your virtual environment is activated!**
 
-Return to `rich`, unlike `Pathlib`, `rich` isn't built into Python, which is why we need to install it. `pip` is a package manager for Python that allows you to install and manage Python packages. You can read more about it here [https://pip.pypa.io/en/stable/](https://pip.pypa.io/en/stable/).
+Unlike `Pathlib`, `rich` isn't built into Python, which is why we need to install it. `pip` is a package manager for Python that allows you to install and manage Python packages. You can read more about it here [https://pip.pypa.io/en/stable/](https://pip.pypa.io/en/stable/).
 
 You'll notice that I'm using `pip3` to install the package. That is because I have multiple versions of Python installed on my computer. Usually if you have multiple versions of Python (specifically Python 2 and 3 versions) then you might need to use `pip3` to install libraries. If you only have Python 3 installed on your computer, you can just use `pip`. You can check which version of Python you have installed by running the following command:
 
@@ -270,7 +270,7 @@ As you can likely tell, both `Console` and `Table` are classes built into the `R
 
 You'll notice this documentation is somewhat difficult to read, but it does show us the different methods and attributes that are available to us in the `Console` class. We can also click the small green `source` button to see the source code for the class [https://rich.readthedocs.io/en/stable/_modules/rich/console.html#Console](https://rich.readthedocs.io/en/stable/_modules/rich/console.html#Console). While you won't usually need to go so deep into a Python library's code, it is helpful to know how to read it if you are getting errors or are unsure how to use a library.
 
-We can also use `Rich` with some of the more advanced data structures we have been working with.In your `rich_example.py` file, add the following code:
+We can also use `Rich` with some of the more advanced data structures we have been working with. In your `rich_example.py` file, add the following code:
 
 ```python
 from rich.console import Console
