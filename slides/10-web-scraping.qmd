@@ -333,24 +333,6 @@ If we select the titles, we can see that they are nested in an `ol` tag and then
 One important thing to note is that if we just use `soup.find_all('li')`, we will get **all** the list items on the page, not just the titles of the Top 100 eBooks. This is because the `find_all()` method searches the whole document. So we need to be more specific in our search.
 :::
 
-## In-Class Exercise
-
-::: {.r-fit-text}
-In your `first_web_scraping.py` file, try to modify the code so that it only prints the titles of the `Top 100 EBooks yesterday` section.
-
-To do this, you'll need to:
-
-1. Access the correct tag for `Top 100 EBooks yesterday`
-2. Use `BeautifulSoup` to navigate to the correct `ol` tag
-3. Print just the title of each book
-
-I recommend taking a look at:
-- `find_next()` method
-- `get_text()` method
-
-However, you are welcome to solve this problem in any way you want!
-:::
-
 ## Requesting and Scraping Web Pages
 
 We are now officially scraping a web page 🥳!! But what if we wanted to scrape more than one? Saving each manually would get tiring really quickly!

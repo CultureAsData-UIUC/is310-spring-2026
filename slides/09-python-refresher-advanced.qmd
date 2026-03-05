@@ -1091,7 +1091,7 @@ Once you select `Venv`, you'll be prompted to select the Python interpreter you 
 
 Once you've created your virtual environment, you should see it in whatever folder you've opened in VS Code. If you do not open a folder and try to create a virtual environment, you will get an error saying that you need a "workspace" to create a virtual environment. You can create a workspace by opening a folder in VS Code.
 
-![Created Environment](../../assets/images/new_venv.png)
+![Created Environment](../assets/images/new_venv.png)
 
 ## Renaming Your Virtual Environment
 
