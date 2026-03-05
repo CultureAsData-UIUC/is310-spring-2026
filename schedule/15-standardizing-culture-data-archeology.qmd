@@ -7,6 +7,7 @@ date: 2023-03-10
 
 ## In-Class Agenda
 
+- [ ] Complete remainder of the Introduction to Web Scraping.
 - [ ] Discuss assigned readings
 
 ## Assigned Materials

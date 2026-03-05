@@ -2701,7 +2701,7 @@
     "href": "schedule/15-standardizing-culture-data-archeology.html",
     "title": "Standardizing Culture & Data Archeology",
     "section": "",
-    "text": "Discuss assigned readings",
+    "text": "Complete remainder of the Introduction to Web Scraping.\nDiscuss assigned readings",
     "crumbs": [
       "Schedule",
       "March",
@@ -2713,7 +2713,7 @@
     "href": "schedule/15-standardizing-culture-data-archeology.html#in-class-agenda",
     "title": "Standardizing Culture & Data Archeology",
     "section": "",
-    "text": "Discuss assigned readings",
+    "text": "Complete remainder of the Introduction to Web Scraping.\nDiscuss assigned readings",
     "crumbs": [
       "Schedule",
       "March",
@@ -3094,7 +3094,7 @@
     "href": "materials/creating-curating-humanities-data/05-web-scraping.html#fandom-wikis-and-web-scraping-homework",
     "title": "Web Scraping with Python",
     "section": "Fandom Wikis and Web Scraping Homework",
-    "text": "Fandom Wikis and Web Scraping Homework\nNow that you have learned the basics of web scraping, it’s time to try it out for your next homework assignment. In your is310-coding-assignments, you should have already create a new directory called web-scraping and a new file called first_web_scraping.py. You should now create a new file called fandom_wiki_scraping.py in the web-scraping directory.\nIn this assignment, you are welcome to select any fandom wiki you are interested in and the goal is try scraping the wiki. You should complete the following tasks:\n\nCheck the terms of service or user policies of the website. Ensure that you are allowed to scrape the website in the robots.txt file and include a link to the file in your README.md for the assignment.\nExplain your choice of fandom wiki and what you are interested in scraping from the wiki in your README.md for the assignment. You should explain why you think the data you are scraping might be of interest or useful to researchers.\nUse the requests library to get the web page and the BeautifulSoup library to parse the HTML of the web page, and include this code in your fandom_wiki_scraping.py file.\nInclude the data you are scraping in an interoperable file format like a CSV or JSON file and include this data in your web_scraping_assignments directory.\n\nOnce you have completed the assignment, you should post a link to your folder in our GitHub discussion https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/6.",
+    "text": "Fandom Wikis and Web Scraping Homework\nNow that you have learned the basics of web scraping, it’s time to try it out for your next homework assignment. In your is310-coding-assignments, you should have already create a new directory called web-scraping and a new file called first_web_scraping.py. You should now create a new file called fandom_wiki_scraping.py in the web-scraping directory.\nIn this assignment, you are welcome to select any fandom wiki you are interested in and the goal is try scraping the wiki. You should complete the following tasks:\n\nCheck the terms of service or user policies of the website. Ensure that you are allowed to scrape the website in the robots.txt file and include a link to the file in your README.md for the assignment.\nExplain your choice of fandom wiki and what you are interested in scraping from the wiki in your README.md for the assignment. You should explain why you think the data you are scraping might be of interest or useful to researchers.\nUse the requests library to get the web page and the BeautifulSoup library to parse the HTML of the web page, and include this code in your fandom_wiki_scraping.py file.\nInclude the data you are scraping in an interoperable file format like a CSV or JSON file and include this data in your web_scraping_assignments directory.\n\nOnce you have completed the assignment, you should post a link to your folder in our GitHub discussion https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/7.",
     "crumbs": [
       "Resources",
       "Collections & Curations",
