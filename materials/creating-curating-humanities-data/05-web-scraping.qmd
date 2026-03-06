@@ -829,7 +829,7 @@ In this assignment, you are welcome to select **any** fandom wiki you are intere
 
 - [ ] Check the terms of service or user policies of the website. Ensure that you are allowed to scrape the website in the `robots.txt` file and include a link to the file in your `README.md` for the assignment.
 - [ ] Explain your choice of fandom wiki and what you are interested in scraping from the wiki in your `README.md` for the assignment. **You should explain why you think the data you are scraping might be of interest or useful to researchers.**
-- [ ] Use the `requests` library to get the web page and the `BeautifulSoup` library to parse the HTML of the web page, and include this code in your `fandom_wiki_scraping.py` file.
+- [ ] Use the `cloudscraper` library to get the web page and the `BeautifulSoup` library to parse the HTML of the web page, and include this code in your `fandom_wiki_scraping.py` file.
 - [ ] Include the data you are scraping in an interoperable file format like a CSV or JSON file and include this data in your `web_scraping_assignments` directory.
 
 Once you have completed the assignment, you should **post a link to your folder** in our GitHub discussion [https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/7](https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/7).
