@@ -7,14 +7,14 @@ date: 2023-03-10
 
 ## In-Class Agenda
 
-- [ ] Complete remainder of the Introduction to Web Scraping.
-- [ ] Discuss assigned readings
+- [ ] Complete remainder of the [Introduction to Web Scraping](../slides/10-web-scraping.qmd#full-web-scraping-example){target="_blank"}. Code from Thursday available <a href="../assets/files/first_web_scraping.py" download>here</a>.
+- [ ] Discuss assigned readings. Slides available [here](../slides/11-standardizing-culture.qmd){target="_blank"}
 
 ## Assigned Materials
 
 - Krause, Eunice. “Data Biographies: Getting to Know Your Data.” *Global Investigative Journalism Network*, March 27, 2017. [https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/](https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/).
 - Lee, Benjamin. "Compounded Mediation: A Data Archaeology of the Newspaper Navigator Dataset." *Digital Humanities Quarterly* 015, no. 4 (December 7, 2021). [https://www.digitalhumanities.org/dhq/vol/15/4/000578/000578.html](https://www.digitalhumanities.org/dhq/vol/15/4/000578/000578.html).
-- Explore the *Newspaper Navigator Project* [https://news-navigator.labs.loc.gov/](https://news-navigator.labs.loc.gov/).
+- The *Newspaper Navigator Project* [https://news-navigator.labs.loc.gov/](https://news-navigator.labs.loc.gov/).
 
 ## Additional Materials
 
@@ -33,6 +33,7 @@ date: 2023-03-10
 
 ### Additional Links
 
+- Ben Lee's video demoing the site that used to exist [https://labs.loc.gov/static/labs/images/NN-demo.mp4](https://labs.loc.gov/static/labs/images/NN-demo.mp4)
 - For those interested here is the documented dataset for *Newspaper Naviagor*: Lee, Benjamin Charles Germain, Jaime Mears, Eileen Jakeway, Meghan Ferriter, Chris Adams, Nathan Yarasavage, Deborah Thomas, Kate Zwaard, and Daniel S. Weld. "The Newspaper Navigator Dataset: Extracting Headlines and Visual Content from 16 Million Historic Newspaper Pages in Chronicling America." In *Proceedings of the 29th ACM International Conference on Information & Knowledge Management*, 3055-62. Virtual Event Ireland: ACM, 2020. [https://doi.org/10.1145/3340531.3412767](https://doi.org/10.1145/3340531.3412767).
 - And here is the code for *Newspaper Navigator*: [https://github.com/LibraryOfCongress/newspaper-navigator](https://github.com/LibraryOfCongress/newspaper-navigator).
 - Link to map and timeline of *Chroncling America* newspapers [https://chroniclingamerica.loc.gov/newspapers/](https://chroniclingamerica.loc.gov/newspapers/) and [https://loc.maps.arcgis.com/apps/instant/media/index.html?appid=3c6a392554d545bdb1c083348ef56458&center=-97.5126;39.6376&level=3](https://loc.maps.arcgis.com/apps/instant/media/index.html?appid=3c6a392554d545bdb1c083348ef56458&center=-97.5126;39.6376&level=3).
