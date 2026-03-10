@@ -58,20 +58,20 @@
   <path d="M 250 165 L 320 165" class="arrow"/>
 
   <!-- Milestone 2: Initial Dataset (INDIVIDUAL) -->
-  <rect x="320" y="115" width="220" height="200" rx="8" class="milestone-box-individual"/>
+  <rect x="320" y="115" width="220" height="220" rx="8" class="milestone-box-individual"/>
   <rect x="340" y="130" width="180" height="25" fill="#e67e22" rx="3"/>
   <text x="430" y="150" text-anchor="middle" class="individual-label">INDIVIDUAL WORK</text>
 
   <text x="430" y="170" text-anchor="middle" class="milestone-title">Initial Dataset</text>
   <text x="430" y="190" text-anchor="middle" class="milestone-date">Mar 12 (Ext: Mar 24)</text>
-  <rect x="340" y="205" width="180" height="90" fill="#ffffff" stroke="#ecf0f1" stroke-width="1" rx="4"/>
+  <rect x="340" y="205" width="180" height="110" fill="#ffffff" stroke="#ecf0f1" stroke-width="1" rx="4"/>
   <text x="350" y="222" class="milestone-deliverables" font-weight="bold">Deliverables:</text>
   <text x="350" y="242" class="milestone-deliverables">• 50-100 item dataset</text>
   <text x="350" y="260" class="milestone-deliverables">• Documentation</text>
   <text x="350" y="278" class="milestone-deliverables">• Next steps plan</text>
-  <text x="350" y="300" class="code-note">+ Code used to assist</text>
-  <circle cx="455" cy="315" r="22" class="grade-badge"/>
-  <text x="455" y="322" text-anchor="middle" class="grade-text">15%</text>
+  <text x="350" y="298" class="code-note">+ Code used to assist</text>
+  <circle cx="455" cy="330" r="22" class="grade-badge"/>
+  <text x="455" y="337" text-anchor="middle" class="grade-text">15%</text>
 
   <!-- Arrow 2 -->
   <path d="M 540 165 L 610 165" class="arrow"/>
