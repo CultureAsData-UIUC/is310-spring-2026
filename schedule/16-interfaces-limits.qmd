@@ -7,6 +7,8 @@ date: 2026-03-12
 
 ## In-Class Agenda
 
+- Review [Command Line Data Curation Homework](../materials/creating-curating-humanities-data/04-virtual-environments.qmd#homework-command-line-data-curation)
+- Answer any questions for the web scraping assignment.
 - [ ] Start [introduction to APIs and cultural data](../materials/creating-curating-humanities-data/06-getting-data-apis.qmd).
 
 ## Additional Materials
@@ -16,4 +18,4 @@ date: 2026-03-12
 ### Individual
 
 - [ ] [Command Line Data Curation Homework](../materials/creating-curating-humanities-data/04-virtual-environments.qmd#homework-command-line-data-curation)
-- [ ] [Initial Dataset for Final Project](../assessments/03-semester-project.qmd#initial-dataset-submission). Extension available until March 16.
+- [ ] [Initial Dataset for Final Project](../assessments/03-semester-project.qmd#initial-dataset-submission). Extension available until March 24.

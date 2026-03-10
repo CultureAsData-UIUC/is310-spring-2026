@@ -5,6 +5,8 @@ toc: true
 
 The remainder of your grade will be determined through a semester-long group project. The goal of this project is to expose you to how we create and work with culture as data. As stated above, this project will be completed in groups, and you will be assessed both on your individual contributions and the group's final submission. The final project is modeled on the *Responsible Datasets in Context* Project (RDC) [https://www.responsible-datasets-in-context.com/](https://www.responsible-datasets-in-context.com/), which was created to help students "work with data responsibly." While we will be using these datasets to practice and learn how to programmatically work with data, they also provide an example of how best to curate and share data about complex cultural phenomena and objects.
 
+![Project Milestones Overview](../assets/images/semester-project-diagram.svg)
+
 As the authors of the project write in the mission statement:
 > "Data cannot be analyzed responsibly without deep knowledge of its social and historical context, provenance, and limitations. Anyone who works with data—from academic researchers to industry professionals—will know this claim to be true.
 
