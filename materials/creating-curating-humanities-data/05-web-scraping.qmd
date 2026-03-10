@@ -5,6 +5,8 @@ toc: true
 
 ::: {.callout-note}
 ⚡️ This lesson has been adapted from Melanie Walsh's chapter on Web Scraping in <i>Introduction to Cultural Analytics & Python</i> textbook <a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/04-Data-Collection/02-Web-Scraping-Part1.html">https://melaniewalsh.github.io/Intro-Cultural-Analytics/04-Data-Collection/02-Web-Scraping-Part1.html</a>. Many thanks to Melanie for sharing their materials!
+
+Also the materials from our in-class scraping are available to download. Here is our <a href="../../assets/files/first_web_scraping.py" download>`first_web_scraper.py`</a>; our <a href="../../assets/files/hp_scraper.py" download>`hp_scraper.py`</a>; and our <a href="../../assets/files/lotr_scraper.py"  download>`lotr_scraper.py`</a>.
 :::
 
 Now that we have learned how to work with Python modules and read and write files, we can start to think about how to get data from the web. This is a very important skill for a digital humanist, as many of the sources we might want to work with are online.

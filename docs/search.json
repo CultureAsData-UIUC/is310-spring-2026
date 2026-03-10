@@ -2015,7 +2015,7 @@
     "href": "materials/creating-curating-humanities-data/05-web-scraping.html",
     "title": "Web Scraping with Python",
     "section": "",
-    "text": "Note\n\n\n\n⚡️ This lesson has been adapted from Melanie Walsh’s chapter on Web Scraping in Introduction to Cultural Analytics & Python textbook https://melaniewalsh.github.io/Intro-Cultural-Analytics/04-Data-Collection/02-Web-Scraping-Part1.html. Many thanks to Melanie for sharing their materials!\nNow that we have learned how to work with Python modules and read and write files, we can start to think about how to get data from the web. This is a very important skill for a digital humanist, as many of the sources we might want to work with are online.",
+    "text": "Note\n\n\n\n⚡️ This lesson has been adapted from Melanie Walsh’s chapter on Web Scraping in Introduction to Cultural Analytics & Python textbook https://melaniewalsh.github.io/Intro-Cultural-Analytics/04-Data-Collection/02-Web-Scraping-Part1.html. Many thanks to Melanie for sharing their materials!\nAlso the materials from our in-class scraping are available to download. Here is our first_web_scraper.py; our hp_scraper.py; and our lotr_scraper.py.\nNow that we have learned how to work with Python modules and read and write files, we can start to think about how to get data from the web. This is a very important skill for a digital humanist, as many of the sources we might want to work with are online.",
     "crumbs": [
       "Resources",
       "Collections & Curations",
