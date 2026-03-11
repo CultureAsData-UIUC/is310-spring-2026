@@ -1,7 +1,6 @@
 ---
 title: "Getting Cultural Data From APIs"
 toc: true
-draft: true
 ---
 
 So far in class we have briefly mentioned APIs (for example, the Spotify API), but haven't yet discussed what they are or how to use them. This week we will start to work through the basics of using APIs to get data from the web.
@@ -147,7 +146,7 @@ We can even try out that initial book endpoint in the browser which should give 
 
 However, if we try to get characters or quotes in the browser, we will see the following:
 
-![Characters URL in Browser](../../assets/images/characters_url_browser.png)
+![Characters URL in Browser](../../assets/images/character_url_browser.png)
 
 Indeed, if we update our python code we can see the exact same thing.
 
@@ -450,7 +449,7 @@ If we scroll down, we can see that the item is part of the National Heritage Ins
 
 If we wanted to get this data programmatically, we could use the Europeana API, which provides access to the metadata for items in the collection.
 
-![Europeana APIs](https://campus.dariah.eu/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fcontent%2Fposts%2Fintroduction-to-europeana-apis%2Fimages%2Ff3fb534d0fee40b160ab2a8b80a0a19e.png&w=3840&q=75)
+![Europeana APIs](https://campus.dariah.eu/_next/image?url=%2Fassets%2Fcontent%2Fassets%2Fen%2Fresources%2Fhosted%2Fintroduction-to-europeana-apis%2Fapis.png&w=3840&q=75)
 
 To do this, we first need to get an API key from Europeana, which you can do by signing up for an account here [https://pro.europeana.eu/pages/get-api](https://pro.europeana.eu/pages/get-api). 
 
