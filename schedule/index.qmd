@@ -21,6 +21,8 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [February 24 - How do our choices shape whose culture becomes data? Data Feminism & Design Justice](11-data-feminism-design-justice.qmd) | [February 26 - How can we start creating culture as data? Ecosystems & Environments](12-ecosystems-environments.qmd) |
 | [March 3 - How do we ethically and legally work with culture as data? Terms & Traps](13-terms-traps.qmd) | [March 5 - How do we start scaling culture as data? Scrape On & Off](14-scrapes-structures.qmd) |
 | [March 10 - What is infrastructure and how does it shape culture as data? Standardizing Culture & Data Archeology](15-standardizing-culture-data-archeology.qmd) | [March 12 - How do we get culture as data? Interfaces & Limits](16-interfaces-limits.qmd) |
+|{::nomarkdown}<td colspan="2">March 17 & 19 - Spring Break</td>{:/}|
+| [March 24 - What do we mean when we “clean” culture as data? Cleaning & Curating](17-cleaning-curating.qmd) | [March 26 - How do we work at scale with culture at data? Patterns & Outliers](18-patterns-outliers.qmd) |
 
 ## Assignment Schedule
 
@@ -37,6 +39,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [Doing It Live Homework](../materials/introducing-humanities-computing/08-intro-web.qmd#assignment-doing-it-live) | [Due By Midnight CT on February 23](11-data-feminism-design-justice.qmd) |
 | [OPTIONAL Scripting Python Foundations](../materials/creating-curating-humanities-data/02-python-refresher-advanced.qmd#homework-scripting-python-foundations-optional-but-recommended) | [Due by Midnight CT on March 4](14-scrapes-structures.qmd) |
 | [Command Line Data Curation Homework](../materials/creating-curating-humanities-data/04-virtual-environments.qmd#homework-command-line-data-curation) | [Due By Midnight CT on March 11](16-interfaces-limits.qmd) | 
+| [Fandom Wikis and Web Scraping Homework](../materials/creating-curating-humanities-data/05-web-scraping.qmd#fandom-wikis-and-web-scraping-homework) | [Due By Midnight CT on March 23](17-cleaning-curating.qmd) |
 
 ### Group Assignments
 

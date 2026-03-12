@@ -1,8 +1,8 @@
 ---
-title: "Arguments & Algorithms"
+title: "Cleaning & Curating"
+subtitle: "What do we mean when we “clean” culture as data?"
 toc: true
-date: 2024-10-22
-draft: true
+date: 2026-03-24
 ---
 
 ## In-Class Agenda
@@ -13,30 +13,22 @@ draft: true
 
 ## Assigned Materials
 
-- Schmidt, Benjamin M. "Do Digital Humanists Need to Understand Algorithms?" In *Debates in the Digital Humanities 2016*, edited by Matthew K. Gold and Lauren F. Klein, 546-55. University of Minnesota Press, 2016. Use the JSTOR link for PDF & Hypothesis [https://doi.org/10.5749/j.ctt1cn6thb.51](https://doi.org/10.5749/j.ctt1cn6thb.51) or use the Manifold Platform link [https://dhdebates.gc.cuny.edu/read/untitled/section/557c453b-4abb-48ce-8c38-a77e24d3f0bd](https://dhdebates.gc.cuny.edu/read/untitled/section/557c453b-4abb-48ce-8c38-a77e24d3f0bd).
-- Mullen, Lincoln. "Isn't it obvious?" *lincolnmullen.com*, January 10, 2018. [https://lincolnmullen.com/blog/isnt-it-obvious/](https://lincolnmullen.com/blog/isnt-it-obvious/).
-- Lincoln, Matthew. "Confabulation in the humanities." *matthewlincoln.net*, March 21, 2015. [https://matthewlincoln.net/2015/03/21/confabulation-in-the-humanities.html](https://matthewlincoln.net/2015/03/21/confabulation-in-the-humanities.html).
+- Rawson, Katie, and Trevor Muñoz. “Against Cleaning.” In *Debates in the Digital Humanities 2019*, edited by Matthew K. Gold and Lauren F. Klein, 279–92. University of Minnesota Press, 2019. [https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/07154de9-4903-428e-9c61-7a92a6f22e51#ch23](https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/07154de9-4903-428e-9c61-7a92a6f22e51#ch23).
+- Posner, Miriam. “Humanities Data: A Necessary Contradiction – Miriam Posner’s Blog,” June 25, 2015. [https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/](https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/).
+- Cegłowski, Maciej. “Deep-Fried Data.” *Idle Words*, September 27, 2016. [https://idlewords.com/talks/deep_fried_data.htm](https://idlewords.com/talks/deep_fried_data.htm).
 
 ## Additional Materials
 
-- Koeser, Rebecca Sutton. "Trusting Others to 'Do the Math.'" *Interdisciplinary Science Reviews* 40, no. 4 (2015): 376-392. [https://doi.org/10.1080/03080188.2016.1165454](https://doi.org/10.1080/03080188.2016.1165454).
-- Weingart, Scott B. "Argument Clinic." *scottbot.net*, July 26, 2017. [https://scottbot.net/argument-clinic/](https://scottbot.net/argument-clinic/).
-- Thomas, Amber. *Shaping Ideas into Data Stories* [Speaker Series w/ Amber Thomas from The Pudding], 2020. [https://www.youtube.com/watch?v=J3Awc4HxDK0](https://www.youtube.com/watch?v=J3Awc4HxDK0).
+- Posner, Miriam. “How Did They Make That?” Miriam Posner’s Blog, August 29, 2013. [https://miriamposner.com/blog/how-did-they-make-that/](https://miriamposner.com/blog/how-did-they-make-that/).
+- - D’Ignazio, Catherine, and Lauren F. Klein. “On Rational, Scientific, Objective Viewpoints from Mythical, Imaginary, Impossible Standpoints.” In *Data Feminism*, 73–96. The MIT Press, 2020. [https://doi.org/10.7551/mitpress/11805.003.0005](https://doi.org/10.7551/mitpress/11805.003.0005).
 
 ### Additional Links
-
-- *The Syuzhet Package* by Matthew Jockers [https://cran.r-project.org/web/packages/syuzhet/vignettes/syuzhet-vignette.html](https://cran.r-project.org/web/packages/syuzhet/vignettes/syuzhet-vignette.html).
-- Annie Swafford "Problems with the Syuzhet Package." *Anglophile in Academia:  Annie Swafford's Blog (blog)*, March 2, 2015. [https://annieswafford.wordpress.com/2015/03/02/syuzhet/](https://annieswafford.wordpress.com/2015/03/02/syuzhet/).
-- Da, Nan Z. "The Computational Case against Computational Literary Studies." *Critical Inquiry* 45, no. 3 (March 2019): 601-39. [https://doi.org/10.1086/702594](https://doi.org/10.1086/702594).
-- Robertson, Stephen, and Lincoln Mullen. "Arguing with Digital History: Patterns of Historical Interpretation (Annotated Version)." *Journal of Social History* 54, no. 4 (2021): 1005-22. [https://doi.org/10.31835/ma.2021.01](https://doi.org/10.31835/ma.2021.01).
-- "Arguing with Digital History Working Group." Roy Rosenzweig Center for History and New Media, November 13, 2017. [https://doi.org/10.18665/sr.22532](https://doi.org/10.18665/sr.22532).
-- Mullen, Lincoln A. *America's Public Bible: A Commentary*. Stanford University Press, 2023. [https://americaspublicbible.supdigital.org](https://americaspublicbible.supdigital.org).
-- Ramsay, Stephen. *Reading Machines: Toward an Algorithmic Criticism*. University of Illinois Press, 2011. [https://www.jstor.org/stable/10.5406/j.ctt1xcmrr](https://www.jstor.org/stable/10.5406/j.ctt1xcmrr).
 
 ## Assignments
 
 ### Individual
 
 - [ ] [Fandom Wikis and Web Scraping Homework](../materials/creating-curating-humanities-data/05-web-scraping.qmd#fandom-wikis-and-web-scraping-homework)
+- [ ] [Final date to submit Initial Dataset](../assessments/03-semester-project.qmd#initial-dataset-submission)
 
 ### Group

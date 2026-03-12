@@ -839,12 +839,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>This library was first proposed in 2005 by six European heads of state who signed a letter asking the EU to support the development of a European Digital Library and it was initially released in 2008.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> It provides access to millions of digitized items from European museums, libraries, archives, and galleries, and is a great resource for researchers, students, and the general public. The library has undergone a transformation since its initial release, with the first few years focusing on encouraging heritage institutions to provide their digital material to the platform. The newer version, released in 2016, has more of a focus on encouraging reuse in different ways and curating the collection through exhibitions and collections.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../assets/images/europeana_library_collections.png" class="img-fluid figure-img"></p>
-<figcaption>Europeana Exhibitions</figcaption>
-</figure>
-</div>
 <p>Given the scale and funding for Europeana, there are number of APIs that have been developed for accessing data from the collections. For examples, James Morley has created a Europeana Colour Explorer <a href="https://culturepics.org/colour/#/">https://culturepics.org/colour/#/</a> that uses the Europeana API to explore the colors of items in the collection.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -859,7 +853,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Europeana Postcard</figcaption>
 </figure>
 </div>
-<p><em>Sofia Kretzulescu - 1852 - National Heritage Institute, Bucharest, Romania - CC BY-SA. https://www.europeana.eu/item/1190/INP_postcards_6415?utm_source=api&amp;utm_medium=api&amp;utm_campaign=bkV8GDrrp</em></p>
+<p><em>Sofia Kretzulescu - 1852 - National Heritage Institute, Bucharest, Romania - CC BY-SA. <a href="https://www.europeana.eu/item/1190/INP_postcards_6415?utm_source=api&amp;utm_medium=api&amp;utm_campaign=bkV8GDrrp" target="_blank">https://www.europeana.eu/item/1190/INP_postcards_6415?utm_source=api&amp;utm_medium=api&amp;utm_campaign=bkV8GDrrp</a></em></p>
 <p>If we scroll down, we can see that the item is part of the National Heritage Institute in Bucharest, Romania and that it is licensed under a Creative Commons Attribution-ShareAlike license. This means that we can use the item for free as long as we provide attribution to the creator and share any derivative works under the same license. We can also start to see some of the metadata available for the item, including the title, creator, date, and rights.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -905,114 +899,99 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>apikey.save(<span class="st">"EUROPEANA_API_KEY"</span>, <span class="st">"YOUR_API_KEY_HERE"</span>)</span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>europeana_api_key <span class="op">=</span> apikey.load(<span class="st">"EUROPEANA_API_KEY"</span>)</span>
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">'EUROPEANA_API_KEY'</span>] <span class="op">=</span> europeana_api_key</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 6%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>::: {.callout-note} ⚡️ If you are seeing errors in the terminal when running this code, please follow these steps. :::</td>
-</tr>
-<tr class="even">
-<td>If you try using the <code>pyeuropeana</code> library with the api key stored as an environment variable, you may see the following error:</td>
-</tr>
-<tr class="odd">
-<td><code>bash ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject</code></td>
-</tr>
-<tr class="even">
-<td>That is an issue with the <code>numpy</code> python library. To fix this, you can run the following command in your terminal:</td>
-</tr>
-<tr class="odd">
-<td><code>bash pip uninstall numpy</code></td>
-</tr>
-<tr class="even">
-<td>It will ask you if you want to uninstall <code>numpy</code>, to which you should say <code>y</code>. Then you can reinstall <code>numpy</code> with the following command:</td>
-</tr>
-<tr class="odd">
-<td><code>bash pip install "numpy==1.26.4"</code></td>
-</tr>
-<tr class="even">
-<td>You may also see the following error:</td>
-</tr>
-<tr class="odd">
-<td><code>bash from PIL import Image ModuleNotFoundError: No module named 'PIL'</code></td>
-</tr>
-<tr class="even">
-<td>This is because the <code>pyeuropeana</code> library uses the <code>Pillow</code> library, which is a fork of the <code>PIL</code> library. To fix this, you can install the <code>Pillow</code> library with the following command:</td>
-</tr>
-<tr class="odd">
-<td><code>bash pip install Pillow</code></td>
-</tr>
-<tr class="even">
-<td>If you have any additional errors, please reach out to the instructors for help.</td>
-</tr>
-</tbody>
-</table>
+<div id="errors-pyeuropeana" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Getting errors With <code>pyeuropeana</code>? Click for assistance
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>⚡️ If you are seeing errors in the terminal when running this code, please follow these steps.</p>
+<p>If you try using the <code>pyeuropeana</code> library with the api key stored as an environment variable, you may see the following error:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ValueError:</span> numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That is an issue with the <code>numpy</code> python library. To fix this, you can run the following command in your terminal:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> uninstall numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It will ask you if you want to uninstall <code>numpy</code>, to which you should say <code>y</code>. Then you can reinstall <code>numpy</code> with the following command:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">"numpy==1.26.4"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You may also see the following error:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">from</span> PIL import Image</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ModuleNotFoundError:</span> No module named <span class="st">'PIL'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is because the <code>pyeuropeana</code> library uses the <code>Pillow</code> library, which is a fork of the <code>PIL</code> library. To fix this, you can install the <code>Pillow</code> library with the following command:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install Pillow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you have any additional errors, please reach out to the instructors for help.</p>
+</div>
+</div>
+</div>
 <p>Now we can start exploring how to access data from the Europeana API using the <code>pyeuropeana</code> library. In particular, we are going to try out the <code>search</code> method, which allows us to search the Europeana collection for items that match a specific query.</p>
 <p>This is the example from the documentation:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyeuropeana.apis <span class="im">as</span> apis</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyeuropeana.utils <span class="im">as</span> utils</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use this function to search our collections</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> apis.search(</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>   query <span class="op">=</span> <span class="st">'*'</span>,</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>   qf <span class="op">=</span> <span class="st">'(skos_concept:"http://data.europeana.eu/concept/base/48" AND TYPE:IMAGE)'</span>,</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>   reusability <span class="op">=</span> <span class="st">'open AND permission'</span>,</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>   media <span class="op">=</span> <span class="va">True</span>,</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>   thumbnail <span class="op">=</span> <span class="va">True</span>,</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>   landingpage <span class="op">=</span> <span class="va">True</span>,</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>   colourpalette <span class="op">=</span> <span class="st">'#0000FF'</span>,</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>   theme <span class="op">=</span> <span class="st">'photography'</span>,</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>   sort <span class="op">=</span> <span class="st">'europeana_id'</span>,</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>   profile <span class="op">=</span> <span class="st">'rich'</span>,</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>   rows <span class="op">=</span> <span class="dv">1000</span>,</span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>   ) <span class="co"># this gives you full response metadata along with cultural heritage object metadata</span></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>   <span class="co"># use this utility function to transform a subset of the cultural heritage object metadata</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>   <span class="co"># into a readable Pandas DataFrame</span></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>dataframe <span class="op">=</span> utils.search2df(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyeuropeana.apis <span class="im">as</span> apis</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyeuropeana.utils <span class="im">as</span> utils</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use this function to search our collections</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> apis.search(</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>   query <span class="op">=</span> <span class="st">'*'</span>,</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>   qf <span class="op">=</span> <span class="st">'(skos_concept:"http://data.europeana.eu/concept/base/48" AND TYPE:IMAGE)'</span>,</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>   reusability <span class="op">=</span> <span class="st">'open AND permission'</span>,</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>   media <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>   thumbnail <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>   landingpage <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>   colourpalette <span class="op">=</span> <span class="st">'#0000FF'</span>,</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>   theme <span class="op">=</span> <span class="st">'photography'</span>,</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>   sort <span class="op">=</span> <span class="st">'europeana_id'</span>,</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>   profile <span class="op">=</span> <span class="st">'rich'</span>,</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>   rows <span class="op">=</span> <span class="dv">1000</span>,</span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>   ) <span class="co"># this gives you full response metadata along with cultural heritage object metadata</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>   <span class="co"># use this utility function to transform a subset of the cultural heritage object metadata</span></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>   <span class="co"># into a readable Pandas DataFrame</span></span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>dataframe <span class="op">=</span> utils.search2df(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>And we can see that there’s a number of attributes we can use to filter our search, including <code>query</code>, <code>qf</code>, <code>reusability</code>, <code>media</code>, <code>thumbnail</code>, <code>landingpage</code>, <code>colourpalette</code>, <code>theme</code>, <code>sort</code>, <code>profile</code>, and <code>rows</code>. We can also see that we can use the <code>utils.search2df</code> method to transform the data into a Pandas DataFrame.</p>
 <p>Let’s try a simpler example first though:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyeuropeana.apis <span class="im">as</span> apis</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> apis.search(query<span class="op">=</span><span class="st">"Galadriel"</span>)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyeuropeana.apis <span class="im">as</span> apis</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> apis.search(query<span class="op">=</span><span class="st">"Galadriel"</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Which should show the following output:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'apikey'</span>: <span class="st">'tondflanrino'</span>,</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a> <span class="st">'success'</span>: <span class="va">True</span>,</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a> <span class="st">'requestNumber'</span>: <span class="dv">999</span>,</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a> <span class="st">'itemsCount'</span>: <span class="dv">0</span>,</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a> <span class="st">'totalResults'</span>: <span class="dv">3</span>,</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a> <span class="st">'items'</span>: [{<span class="st">'completeness'</span>: <span class="dv">0</span>,</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>   <span class="st">'country'</span>: [<span class="st">'Italy'</span>],</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dataProvider'</span>: [<span class="st">'Internet Culturale'</span>],</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dcCreator'</span>: [<span class="st">'http://data.europeana.eu/agent/159584'</span>,</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Karunesh'</span>,</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Karunesh'</span>],</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dcCreatorLangAware'</span>: {<span class="st">'def'</span>: [<span class="st">'http://data.europeana.eu/agent/159584'</span>,</span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>     <span class="st">'Karunesh'</span>],</span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'en'</span>: [<span class="st">'Karunesh'</span>]},</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dcTitleLangAware'</span>: {<span class="st">'def'</span>: [<span class="st">'Galadriel'</span>],</span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'en'</span>: [<span class="st">'Galadriel'</span>],</span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'it'</span>: [<span class="st">'Galadriel'</span>]},</span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>   <span class="st">'edmConcept'</span>: [<span class="st">'http://data.europeana.eu/concept/soundgenres/Music'</span>],</span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>   <span class="st">'edmConceptLabel'</span>: [{<span class="st">'def'</span>: <span class="st">'Musik'</span>},</span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'def'</span>: <span class="st">'Music'</span>},</span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'def'</span>: <span class="st">'Musica'</span>},</span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'def'</span>: <span class="st">'Muzyka'</span>},</span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'def'</span>: <span class="st">'Musique'</span>},</span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'def'</span>: <span class="st">'Música'</span>}],</span>
-<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>   <span class="st">'edmConceptPrefLabelLangAware'</span>: {<span class="st">'de'</span>: [<span class="st">'Musik'</span>],</span>
-<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">'profile'</span>: <span class="va">None</span>,</span>
-<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">'rows'</span>: <span class="dv">12</span>,</span>
-<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">'cursor'</span>: <span class="st">'*'</span>,</span>
-<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">'callback'</span>: <span class="va">None</span>,</span>
-<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">'facet'</span>: <span class="va">None</span>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'apikey'</span>: <span class="st">'tondflanrino'</span>,</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a> <span class="st">'success'</span>: <span class="va">True</span>,</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a> <span class="st">'requestNumber'</span>: <span class="dv">999</span>,</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a> <span class="st">'itemsCount'</span>: <span class="dv">0</span>,</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a> <span class="st">'totalResults'</span>: <span class="dv">3</span>,</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a> <span class="st">'items'</span>: [{<span class="st">'completeness'</span>: <span class="dv">0</span>,</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>   <span class="st">'country'</span>: [<span class="st">'Italy'</span>],</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dataProvider'</span>: [<span class="st">'Internet Culturale'</span>],</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dcCreator'</span>: [<span class="st">'http://data.europeana.eu/agent/159584'</span>,</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Karunesh'</span>,</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Karunesh'</span>],</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dcCreatorLangAware'</span>: {<span class="st">'def'</span>: [<span class="st">'http://data.europeana.eu/agent/159584'</span>,</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>     <span class="st">'Karunesh'</span>],</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'en'</span>: [<span class="st">'Karunesh'</span>]},</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dcTitleLangAware'</span>: {<span class="st">'def'</span>: [<span class="st">'Galadriel'</span>],</span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'en'</span>: [<span class="st">'Galadriel'</span>],</span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'it'</span>: [<span class="st">'Galadriel'</span>]},</span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>   <span class="st">'edmConcept'</span>: [<span class="st">'http://data.europeana.eu/concept/soundgenres/Music'</span>],</span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>   <span class="st">'edmConceptLabel'</span>: [{<span class="st">'def'</span>: <span class="st">'Musik'</span>},</span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'def'</span>: <span class="st">'Music'</span>},</span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'def'</span>: <span class="st">'Musica'</span>},</span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'def'</span>: <span class="st">'Muzyka'</span>},</span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'def'</span>: <span class="st">'Musique'</span>},</span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>    {<span class="st">'def'</span>: <span class="st">'Música'</span>}],</span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>   <span class="st">'edmConceptPrefLabelLangAware'</span>: {<span class="st">'de'</span>: [<span class="st">'Musik'</span>],</span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">'profile'</span>: <span class="va">None</span>,</span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">'rows'</span>: <span class="dv">12</span>,</span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">'cursor'</span>: <span class="st">'*'</span>,</span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">'callback'</span>: <span class="va">None</span>,</span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">'facet'</span>: <span class="va">None</span>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We can also print out the <code>response.keys()</code> to see all the keys in the response. You’ll notice this api has a <code>totalResults</code> key, which tells us how many items match our query, and an <code>items</code> key, which contains a list of dictionaries, each of which contains information about an item in the collection.</p>
 <p>If we select one of the items, we can see that it has a number of keys, including <code>completeness</code>, <code>country</code>, <code>dataProvider</code>, <code>dcCreator</code>, <code>dcCreatorLangAware</code>, <code>dcTitleLangAware</code>, <code>edmConcept</code>, <code>edmConceptLabel</code>, <code>edmConceptPrefLabelLangAware</code>, and more. This data is similar to the data we saw on the Europeana website, and it includes information about the creator, title, and concept of the item.</p>
 <p>We can also see in the <code>Search API</code> documentation what keys we should expect for our initial search request <a href="https://europeana.atlassian.net/wiki/spaces/EF/pages/2385739812/Search+API+Documentation#Response">https://europeana.atlassian.net/wiki/spaces/EF/pages/2385739812/Search+API+Documentation#Response</a>, as well as what data should return for each item <a href="https://europeana.atlassian.net/wiki/spaces/EF/pages/2385739812/Search+API+Documentation#Metadata-Sets">https://europeana.atlassian.net/wiki/spaces/EF/pages/2385739812/Search+API+Documentation#Metadata-Sets</a>. For example, if we wanted to see the item in the browser we would just need to use the <code>guid</code> key.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>response[<span class="st">'items'</span>][<span class="dv">0</span>][<span class="st">'guid'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>response[<span class="st">'items'</span>][<span class="dv">0</span>][<span class="st">'guid'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We could also try out the <code>Entity API</code>, which allows us to get more information about a specific entity in the collection. According to the api’s documentation <a href="https://europeana.atlassian.net/wiki/spaces/EF/pages/2324561923/Entity+API+Documentation">https://europeana.atlassian.net/wiki/spaces/EF/pages/2324561923/Entity+API+Documentation</a>, the Europeana collection has these types of entities:</p>
 <ul>
 <li>a person (or “agent”), for instance Lili Boulanger or Claude Debussy;</li>
@@ -1022,62 +1001,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>In the <code>pyeuropeana</code> documentation, there’s a section of tutorials, including one for using the Entity API <a href="https://rd-europeana-python-api.readthedocs.io/en/stable/tutorials_source/entity_api_tutorial.html">https://rd-europeana-python-api.readthedocs.io/en/stable/tutorials_source/entity_api_tutorial.html</a>.</p>
 <p>According to this tutorial, we can use the <code>entity.suggest</code> method to get suggestions for a specific entity. For example, if we wanted to get suggestions for the entity <code>Galadriel</code>, we could use the following code:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> apis.entity.suggest(</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> <span class="st">'Galadriel'</span>,</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>   TYPE <span class="op">=</span> <span class="st">'agent'</span>,</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> apis.entity.suggest(</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> <span class="st">'Galadriel'</span>,</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>   TYPE <span class="op">=</span> <span class="st">'agent'</span>,</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>However, we’ll see there’s no results for this query. We could try a different entity, like <code>Tolkien</code>, and see if we get any results.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>response apis.entity.suggest(</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>   text <span class="op">=</span> <span class="st">'Tolkien'</span>,</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>   TYPE <span class="op">=</span> <span class="st">'agent'</span>,</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>response apis.entity.suggest(</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>   text <span class="op">=</span> <span class="st">'Tolkien'</span>,</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>   TYPE <span class="op">=</span> <span class="st">'agent'</span>,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This should give the following output:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">',</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="er"> 'ugc': [False],</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="er"> 'year': ['1989']}</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="er">{'@context': ['https://www.w3.org/ns/ldp.jsonld',</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="er">  'http://www.europeana.eu/schemas/context/entity.jsonld'],</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="er"> 'type': 'ResultPage',</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="er"> 'total': 3,</span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="er"> 'items': [{'id': 'http://data.europeana.eu/agent/60065',</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="er">   'type': 'Agent',</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="er">   'isShownBy': {'id': 'http://pbc.gda.pl/Content/20559/03.mp3',</span></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="er">    'type': 'WebResource',</span></span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">'source'</span>: <span class="st">'http://data.europeana.eu/item/0940417/_nnbqsf5'</span>,</span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">'thumbnail'</span>: <span class="st">'https://api.europeana.eu/api/v2/thumbnail-by-url.json?uri=http%3A</span><span class="sc">%2F%2F</span><span class="st">pbc.gda.pl</span><span class="sc">%2F</span><span class="st">Content</span><span class="sc">%2F</span><span class="st">20559</span><span class="sc">%2F</span><span class="st">03.mp3&amp;type=SOUND'</span>},</span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>   <span class="co">'prefLabel'</span>: {<span class="st">'en'</span>: <span class="st">'J. R. R. Tolkien'</span>},</span>
-<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>   <span class="co">'altLabel'</span>: {<span class="st">'en'</span>: [<span class="st">'J-R-R Tolkien'</span>,</span>
-<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>     <span class="st">'Tolkien'</span>,</span>
-<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>     <span class="st">'John Ronald Reuel Tolkien'</span>,</span>
-<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>     <span class="st">'John Tolkien'</span>,</span>
-<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>     <span class="st">'J.R.R Tolkien'</span>,</span>
-<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>     <span class="st">'J.R.R. Tolkien'</span>,</span>
-<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>     <span class="st">'John R. R. Tolkien'</span>]},</span>
-<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>   <span class="co">'dateOfBirth'</span>: <span class="st">'1892-01-03'</span>,</span>
-<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>   <span class="co">'dateOfDeath'</span>: <span class="st">'1973-09-02'</span>},</span>
-<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>  {<span class="st">'id'</span>: <span class="st">'http://data.europeana.eu/agent/60339'</span>,</span>
-<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>   <span class="st">'type'</span>: <span class="st">'Agent'</span>,</span>
-<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>   <span class="st">'prefLabel'</span>: {<span class="st">'en'</span>: <span class="st">'Christopher Tolkien'</span>},</span>
-<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>   <span class="st">'altLabel'</span>: {<span class="st">'en'</span>: [<span class="st">'Christopher John Reuel Tolkien'</span>,</span>
-<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>     <span class="st">'Christopher Reuel Tolkien'</span>,</span>
-<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dateOfDeath'</span>: <span class="st">'2020-01-16'</span>},</span>
-<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>  {<span class="st">'id'</span>: <span class="st">'http://data.europeana.eu/agent/79852'</span>,</span>
-<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>   <span class="st">'type'</span>: <span class="st">'Agent'</span>,</span>
-<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>   <span class="st">'prefLabel'</span>: {<span class="st">'en'</span>: <span class="st">'Tim Tolkien'</span>},</span>
-<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dateOfBirth'</span>: <span class="st">'1962-09-01'</span>}]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">',</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="er"> 'ugc': [False],</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="er"> 'year': ['1989']}</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="er">{'@context': ['https://www.w3.org/ns/ldp.jsonld',</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="er">  'http://www.europeana.eu/schemas/context/entity.jsonld'],</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="er"> 'type': 'ResultPage',</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="er"> 'total': 3,</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="er"> 'items': [{'id': 'http://data.europeana.eu/agent/60065',</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="er">   'type': 'Agent',</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="er">   'isShownBy': {'id': 'http://pbc.gda.pl/Content/20559/03.mp3',</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="er">    'type': 'WebResource',</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">'source'</span>: <span class="st">'http://data.europeana.eu/item/0940417/_nnbqsf5'</span>,</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">'thumbnail'</span>: <span class="st">'https://api.europeana.eu/api/v2/thumbnail-by-url.json?uri=http%3A</span><span class="sc">%2F%2F</span><span class="st">pbc.gda.pl</span><span class="sc">%2F</span><span class="st">Content</span><span class="sc">%2F</span><span class="st">20559</span><span class="sc">%2F</span><span class="st">03.mp3&amp;type=SOUND'</span>},</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>   <span class="co">'prefLabel'</span>: {<span class="st">'en'</span>: <span class="st">'J. R. R. Tolkien'</span>},</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>   <span class="co">'altLabel'</span>: {<span class="st">'en'</span>: [<span class="st">'J-R-R Tolkien'</span>,</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>     <span class="st">'Tolkien'</span>,</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>     <span class="st">'John Ronald Reuel Tolkien'</span>,</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>     <span class="st">'John Tolkien'</span>,</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>     <span class="st">'J.R.R Tolkien'</span>,</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>     <span class="st">'J.R.R. Tolkien'</span>,</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>     <span class="st">'John R. R. Tolkien'</span>]},</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>   <span class="co">'dateOfBirth'</span>: <span class="st">'1892-01-03'</span>,</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>   <span class="co">'dateOfDeath'</span>: <span class="st">'1973-09-02'</span>},</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  {<span class="st">'id'</span>: <span class="st">'http://data.europeana.eu/agent/60339'</span>,</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>   <span class="st">'type'</span>: <span class="st">'Agent'</span>,</span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>   <span class="st">'prefLabel'</span>: {<span class="st">'en'</span>: <span class="st">'Christopher Tolkien'</span>},</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>   <span class="st">'altLabel'</span>: {<span class="st">'en'</span>: [<span class="st">'Christopher John Reuel Tolkien'</span>,</span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>     <span class="st">'Christopher Reuel Tolkien'</span>,</span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dateOfDeath'</span>: <span class="st">'2020-01-16'</span>},</span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a>  {<span class="st">'id'</span>: <span class="st">'http://data.europeana.eu/agent/79852'</span>,</span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>   <span class="st">'type'</span>: <span class="st">'Agent'</span>,</span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>   <span class="st">'prefLabel'</span>: {<span class="st">'en'</span>: <span class="st">'Tim Tolkien'</span>},</span>
+<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>   <span class="st">'dateOfBirth'</span>: <span class="st">'1962-09-01'</span>}]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We could also look for concepts or places, like <code>Literature</code> or <code>London</code>, to see what results we get. However, to do that we need to change the <code>TYPE</code> parameter to <code>concept</code> or <code>place</code>.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>response_concept <span class="op">=</span> apis.entity.suggest(</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> <span class="st">'Literature'</span>,</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>   TYPE <span class="op">=</span> <span class="st">'concept'</span>,</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>response_place <span class="op">=</span> apis.entity.suggest(</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> <span class="st">'London'</span>,</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>   TYPE <span class="op">=</span> <span class="st">'place'</span>,</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>response_concept <span class="op">=</span> apis.entity.suggest(</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> <span class="st">'Literature'</span>,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>   TYPE <span class="op">=</span> <span class="st">'concept'</span>,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>response_place <span class="op">=</span> apis.entity.suggest(</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> <span class="st">'London'</span>,</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>   TYPE <span class="op">=</span> <span class="st">'place'</span>,</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now we can start to see how we can use the <code>pyeuropeana</code> library to access data from the Europeana collection and also the value of using both APIs and wrappers. Specifically, in this instance we didn’t need to spend a lot of time researching the API endpoints and how to make requests to the API, as the library abstracted this process for us. However, we did need to spend time understanding how to use the library and how to work with the data it returned. This is a common tradeoff when working with APIs and wrappers, and it’s important to consider the benefits and drawbacks of each approach when working with APIs.</p>
 </section>
 </section>
@@ -1096,11 +1075,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><label><input type="checkbox">Make a request to the API of your choice</label></li>
 <li><label><input type="checkbox">Print out the response</label></li>
 <li><label><input type="checkbox">And then, find related data about a specific item in the response in the Europeana collection</label></li>
-<li><label><input type="checkbox">Finally, print out the response for that item</label></li>
+<li><label><input type="checkbox">Finally, print out the response for that item. You are welcome to use <code>Rich</code> for making nicely formatted outputs.</label></li>
 </ul>
 <p>Once you have the data from both APIs, you should then store <strong>just the item data</strong> in either as a JSON file or as a CSV file (choice is yours) with the filename that includes the API you selected.</p>
 <p>Finally, push both your script and the data to your Github repository. <strong>Please remember to NOT include any private API keys!</strong> This is particular important with the Europeana api which will return your api key in the response, so make sure you filter that out before saving the data.</p>
-<p>Once you have completed the assignment, please post a link to your <code>api-getting-data</code> folder in this GitHub discussion <a href="https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/10">https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/10</a>. Remember to include a brief description of the API you selected and why you chose it in your <code>README.md</code> file and to not push up any private API keys, virtual environments, or other sensitive information.</p>
+<p>Once you have completed the assignment, please post a link to your <code>api-getting-data</code> folder in this GitHub discussion <a href="https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/8">https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/8</a>. Remember to include a brief description of the API you selected and why you chose it in your <code>README.md</code> file and to not push up any private API keys, virtual environments, or other sensitive information.</p>
 </section>
 <section id="additional-resources" class="level2">
 <h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
@@ -1114,7 +1093,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Lauren Klein and Dan Sinykin, “Intro to APIs,” <em>QTM340-Fall21</em>, <a href="https://github.com/laurenfklein/QTM340-Fall21/blob/main/notebooks/class7-accessing-apis.ipynb">https://github.com/laurenfklein/QTM340-Fall21/blob/main/notebooks/class7-accessing-apis.ipynb</a>.</li>
 <li>Melanie Walsh, “Intro to APIs,” <em>Intro to Cultural Analytics</em>, <a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/04-Data-Collection/05-What-Is-API.html">https://melaniewalsh.github.io/Intro-Cultural-Analytics/04-Data-Collection/05-What-Is-API.html</a>.</li>
 </ul>
-<hr>
 
 
 </section>

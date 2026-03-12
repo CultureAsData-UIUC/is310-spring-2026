@@ -113,10 +113,10 @@ website:
               href: schedule/15-standardizing-culture-data-archeology.qmd
             - text: "Mar 12: How do we get culture as data?"
               href: schedule/16-interfaces-limits.qmd
-        #     - text: "Oct 15: Curating vs. Cleaning"
-        #       href: schedule/15-curating-vs-cleaning.qmd
-        #     - text: "Oct 17: GETting Culture"
-        #       href: schedule/16-getting-culture.qmd
+            - text: "Mar 24: What do we mean when we “clean” culture as data?"
+              href: schedule/17-cleaning-curating.qmd
+            - text: "Mar 26: How do we work at scale with culture at data?"
+              href: schedule/18-patters-outliers.qmd
         #     - text: "Oct 22: Arguments & Algorithms"
         #       href: schedule/17-arguments-algorithms.qmd
         #     - text: "Oct 24: Notes & Points"
