@@ -12,8 +12,6 @@ date: 2026-03-26
 
 ## Assigned Materials
 
-- Underwood, Ted. “Seven Ways Humanists Are Using Computers to Understand Text.” *The Stone and the Shell* (blog), June 4, 2015. [https://tedunderwood.com/2015/06/04/seven-ways-humanists-are-using-computers-to-understand-text/](https://tedunderwood.com/2015/06/04/seven-ways-humanists-are-using-computers-to-understand-text/).
-
 ## Additional Materials
 
 - Broman, Karl W., and Kara H. Woo. "Data Organization in Spreadsheets." *American Statistician* 72, no. 1 (2018): 2-10. [https://doi.org/10.1080/00031305.2017.1375989](https://doi.org/10.1080/00031305.2017.1375989).

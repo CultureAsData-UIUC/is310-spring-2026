@@ -58,10 +58,10 @@ website:
               href: materials/creating-curating-humanities-data/05-web-scraping.qmd
             - text: "Getting Cultural Data From APIs"
               href: materials/creating-curating-humanities-data/06-getting-data-apis.qmd
-        # - section: "Interpretations & Communications"
-        #   contents:
-        #     - text: "(Re)Introduction to Jupyter Notebooks & Pandas"
-        #       href: materials/interpreting-communicating-humanities-data/01-intro-notebooks.qmd
+        - section: "Interpretations & Communications"
+          contents:
+            - text: "(Re)Introduction to Jupyter Notebooks & Pandas"
+              href: materials/interpreting-communicating-humanities-data/01-intro-notebooks.qmd
         #     - text: "EDA & Data Visualization"
         #       href: materials/interpreting-communicating-humanities-data/02-eda-data-viz.qmd
         #     - text: "Introduction to Structuring Data"

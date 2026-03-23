@@ -1,7 +1,6 @@
 ---
 title: "(Re)Introduction to Jupyter Notebooks & Pandas"
 toc: true
-draft: true
 ---
 
 So far in the course, when we've been writing Python code, we've either been using the Python interpreter in the terminal or saving a Python script. However, there's a third way to write Python code that's very popular - that is with Jupyter notebooks [https://jupyter.org/](https://jupyter.org/). While many of you are familiar with Jupyter notebooks, this lesson will serve as a refresher and introduction to some of the features of Jupyter notebooks, as well as how to use them with the Pandas library.

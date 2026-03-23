@@ -14,7 +14,7 @@ date: 2026-03-31
 
 - Mullen, Lincoln. "Isn't it obvious?" *lincolnmullen.com*, January 10, 2018. [https://lincolnmullen.com/blog/isnt-it-obvious/](https://lincolnmullen.com/blog/isnt-it-obvious/).
 - Lincoln, Matthew. "Confabulation in the humanities." *matthewlincoln.net*, March 21, 2015. [https://matthewlincoln.net/2015/03/21/confabulation-in-the-humanities.html](https://matthewlincoln.net/2015/03/21/confabulation-in-the-humanities.html).
-- Walsh, Melanie, and Maria Antoniak. “The Goodreads ‘Classics’: A Computational Study of Readers, Amazon, and Crowdsourced Amateur Criticism.” *Post45: Peer Reviewed*, April 21, 2021. [https://post45.org/2021/04/the-goodreads-classics-a-computational-study-of-readers-amazon-and-crowdsourced-amateur-criticism/](https://post45.org/2021/04/the-goodreads-classics-a-computational-study-of-readers-amazon-and-crowdsourced-amateur-criticism/).
+- Blinderman, Ilia. “Making Internet Things, Part 3: Storytelling.” *The Pudding*. [https://pudding.cool/process/how-to-make-dope-shit-part-3/](https://pudding.cool/process/how-to-make-dope-shit-part-3/).
 
 ## Additional Materials
 

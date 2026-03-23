@@ -15,6 +15,8 @@ date: 2026-04-09
 
 - Nguyen, Dong, et al. "How We Do Things with Words: Analyzing Text as Social and Cultural Data." *Frontiers in Artificial Intelligence* 3 (August 25, 2020): 62. [https://doi.org/10.3389/frai.2020.00062](https://doi.org/10.3389/frai.2020.00062).
 - Underwood, Ted. "Wordcounts Are Amazing." *The Stone and the Shell* (blog), February 20, 2013. [https://tedunderwood.com/2013/02/20/wordcounts-are-amazing/](https://tedunderwood.com/2013/02/20/wordcounts-are-amazing/).
+- Walsh, Melanie, and Maria Antoniak. “The Goodreads ‘Classics’: A Computational Study of Readers, Amazon, and Crowdsourced Amateur Criticism.” *Post45: Peer Reviewed*, April 21, 2021. [https://post45.org/2021/04/the-goodreads-classics-a-computational-study-of-readers-amazon-and-crowdsourced-amateur-criticism/](https://post45.org/2021/04/the-goodreads-classics-a-computational-study-of-readers-amazon-and-crowdsourced-amateur-criticism/).
+- Explore the interactive versions of the graphs [https://melaniewalsh.github.io/Goodreads-Classics/](https://melaniewalsh.github.io/Goodreads-Classics/).
 
 ## Assigned Materials
 
