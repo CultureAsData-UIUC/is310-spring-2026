@@ -3,7 +3,6 @@ title: "Texts & Tokens"
 subtitle: "How can computation augment culture as data?"
 toc: true
 date: 2026-04-09
-draft: true
 ---
 
 ## In-Class Agenda
@@ -16,3 +15,37 @@ draft: true
 
 - Nguyen, Dong, et al. "How We Do Things with Words: Analyzing Text as Social and Cultural Data." *Frontiers in Artificial Intelligence* 3 (August 25, 2020): 62. [https://doi.org/10.3389/frai.2020.00062](https://doi.org/10.3389/frai.2020.00062).
 - Underwood, Ted. "Wordcounts Are Amazing." *The Stone and the Shell* (blog), February 20, 2013. [https://tedunderwood.com/2013/02/20/wordcounts-are-amazing/](https://tedunderwood.com/2013/02/20/wordcounts-are-amazing/).
+
+## Assigned Materials
+
+- Schmidt, Benjamin M. "Do Digital Humanists Need to Understand Algorithms?" In *Debates in the Digital Humanities 2016*, edited by Matthew K. Gold and Lauren F. Klein, 546-55. University of Minnesota Press, 2016. Use the JSTOR link for PDF & Hypothesis [https://doi.org/10.5749/j.ctt1cn6thb.51](https://doi.org/10.5749/j.ctt1cn6thb.51) or use the Manifold Platform link [https://dhdebates.gc.cuny.edu/read/untitled/section/557c453b-4abb-48ce-8c38-a77e24d3f0bd](https://dhdebates.gc.cuny.edu/read/untitled/section/557c453b-4abb-48ce-8c38-a77e24d3f0bd).
+
+
+## Additional Materials
+
+- Koeser, Rebecca Sutton. "Trusting Others to 'Do the Math.'" *Interdisciplinary Science Reviews* 40, no. 4 (2015): 376-392. [https://doi.org/10.1080/03080188.2016.1165454](https://doi.org/10.1080/03080188.2016.1165454).
+
+- Schmidt, Ben. "Sapping Attention: When You Have a MALLET, Everything Looks like a Nail." *Sapping Attention* (blog), November 2, 2012. [http://sappingattention.blogspot.com/2012/11/when-you-have-mallet-everything-looks.html](http://sappingattention.blogspot.com/2012/11/when-you-have-mallet-everything-looks.html).
+
+### Additional Links
+
+![Casual Map](https://tedunderwood.files.wordpress.com/2015/05/casualmap1.jpg)
+
+![Structured vs unstructured data](http://intellspot.com/wp-content/uploads/2020/04/Structured-vs-unstructured-data-an-infographic-1024x724.png)
+
+![Text Analysis](https://miro.medium.com/max/1200/0*ewkxRItArykG27dU.png)
+
+![Bag of Words](https://sep.com/wp-content/uploads/2020/12/2020-07-bagofwords.jpg)
+
+![Word Embeddings 1](https://miro.medium.com/max/1400/1*Uf_qQ0zF8G8y9zUhndA08w.png)
+
+![Word Embeddings 2](https://miro.medium.com/max/1400/1*w4449DJGuXlay02gFt8APg.png)
+
+![Text Processing](https://cdn.sanity.io/images/oaglaatp/production/96c7b82d95f6bf6f626b48fb6f30904e84d7c11a-512x478.png?w=512&h=478&auto=format)
+
+![Supervised and unsupervised machine learning](https://www.researchgate.net/publication/325867536/figure/fig2/AS:639460102397952@1529470577174/Supervised-and-unsupervised-machine-learning.png)
+
+![Topic Models](https://yosinski.com/mlss12/media/slides/MLSS-2012-Blei-Probabilistic-Topic-Models_020.png)
+
+- *jsLDA* by David Mimno [https://mimno.infosci.cornell.edu/jsLDA/](https://mimno.infosci.cornell.edu/jsLDA/)
+- *Voyant Tools* [https://voyant-tools.org/](https://voyant-tools.org/)

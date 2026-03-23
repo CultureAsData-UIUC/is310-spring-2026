@@ -3,7 +3,6 @@ title: "Publics & Privacy"
 subtitle: "How can we preserve culture as data? "
 toc: true
 date: 2026-04-21
-draft: true
 ---
 
 ## In-Class Agenda TBD
@@ -12,7 +11,7 @@ draft: true
 
 - Explore and read the principles of *The Colored Conventions Project* [https://coloredconventions.org/](https://coloredconventions.org/)
 - Ding, Jennifer, Jan Diehm, and Michelle McGhee. "Can Data Die? Tracking the Lenna Image." *The Pudding*, October 2021. [https://pudding.cool/2021/10/lenna/](https://pudding.cool/2021/10/lenna/).
-- Cegłowski, Maciej. “Haunted By Data.” Idle Words, October 1, 2015. [https://idlewords.com/talks/haunted_by_data.htm](https://idlewords.com/talks/haunted_by_data.htm). 
+- Cegłowski, Maciej. “Haunted By Data.” *Idle Words*, October 1, 2015. [https://idlewords.com/talks/haunted_by_data.htm](https://idlewords.com/talks/haunted_by_data.htm). 
 
 ## Additional Materials
 

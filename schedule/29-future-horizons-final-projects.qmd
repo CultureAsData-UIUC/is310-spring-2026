@@ -3,7 +3,6 @@ title: "Presentations & Demonstrations"
 subtitle: "What are the horizons for culture as data?"
 toc: true
 date: 2026-05-05
-draft: true
 ---
 
 ## In-Class Agenda TBD

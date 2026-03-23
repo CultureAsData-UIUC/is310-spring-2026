@@ -3,7 +3,6 @@ title: "Sheets & Cards"
 subtitle: "How do we document culture as data?"
 toc: true
 date: 2026-04-23
-draft: true
 ---
 
 ## In-Class Agenda TBD

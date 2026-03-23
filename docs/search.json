@@ -2434,6 +2434,66 @@
     ]
   },
   {
+    "objectID": "schedule/19-arguments-plots.html",
+    "href": "schedule/19-arguments-plots.html",
+    "title": "How do we tell stories about culture with data?",
+    "section": "",
+    "text": "Review the GETing Culture Across APIs Homework.\nDiscuss the assigned readings",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 31: How do we tell stories about culture with data?"
+    ]
+  },
+  {
+    "objectID": "schedule/19-arguments-plots.html#in-class-agenda",
+    "href": "schedule/19-arguments-plots.html#in-class-agenda",
+    "title": "How do we tell stories about culture with data?",
+    "section": "",
+    "text": "Review the GETing Culture Across APIs Homework.\nDiscuss the assigned readings",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 31: How do we tell stories about culture with data?"
+    ]
+  },
+  {
+    "objectID": "schedule/19-arguments-plots.html#assigned-materials",
+    "href": "schedule/19-arguments-plots.html#assigned-materials",
+    "title": "How do we tell stories about culture with data?",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nMullen, Lincoln. “Isn’t it obvious?” lincolnmullen.com, January 10, 2018. https://lincolnmullen.com/blog/isnt-it-obvious/.\nLincoln, Matthew. “Confabulation in the humanities.” matthewlincoln.net, March 21, 2015. https://matthewlincoln.net/2015/03/21/confabulation-in-the-humanities.html.\nWalsh, Melanie, and Maria Antoniak. “The Goodreads ‘Classics’: A Computational Study of Readers, Amazon, and Crowdsourced Amateur Criticism.” Post45: Peer Reviewed, April 21, 2021. https://post45.org/2021/04/the-goodreads-classics-a-computational-study-of-readers-amazon-and-crowdsourced-amateur-criticism/.",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 31: How do we tell stories about culture with data?"
+    ]
+  },
+  {
+    "objectID": "schedule/19-arguments-plots.html#additional-materials",
+    "href": "schedule/19-arguments-plots.html#additional-materials",
+    "title": "How do we tell stories about culture with data?",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nDavis, Erin. “What physical traits are most tied to gender in literature? Eye roll: Women are all soft thighs and red lips.” The Pudding, July 2020. https://pudding.cool/2020/07/gendered-descriptions/.\nWu, Shirley. “An Interactive Visualization of Every Line in Hamilton.” The Pudding, March 2017. https://pudding.cool/2017/03/hamilton.html.\nWeingart, Scott B. “Argument Clinic.” scottbot.net, July 26, 2017. https://scottbot.net/argument-clinic/.\nThomas, Amber. Shaping Ideas into Data Stories [Speaker Series w/ Amber Thomas from The Pudding], 2020. https://www.youtube.com/watch?v=J3Awc4HxDK0.\nD’Ignazio, Catherine, and Lauren F. Klein. “Show Your Work.” In Data Feminism. The MIT Press, 2020. https://doi.org/10.7551/mitpress/11805.001.0001.",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 31: How do we tell stories about culture with data?"
+    ]
+  },
+  {
+    "objectID": "schedule/19-arguments-plots.html#assignments",
+    "href": "schedule/19-arguments-plots.html#assignments",
+    "title": "How do we tell stories about culture with data?",
+    "section": "Assignments",
+    "text": "Assignments\n\nIndividual\n\nComplete the GETing Culture Across APIs Homework by the next class.",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 31: How do we tell stories about culture with data?"
+    ]
+  },
+  {
     "objectID": "schedule/02-programming-and-processing.html",
     "href": "schedule/02-programming-and-processing.html",
     "title": "Programming and Processing",
@@ -2480,6 +2540,55 @@
       "January",
       "Jan 22: How Will We Work in this Course?"
     ]
+  },
+  {
+    "objectID": "schedule/28-future-directions-presentations-demonstrations.html",
+    "href": "schedule/28-future-directions-presentations-demonstrations.html",
+    "title": "Presentations & Demonstrations",
+    "section": "",
+    "text": "Demo Day for Final Projects"
+  },
+  {
+    "objectID": "schedule/28-future-directions-presentations-demonstrations.html#in-class-agenda-tbd",
+    "href": "schedule/28-future-directions-presentations-demonstrations.html#in-class-agenda-tbd",
+    "title": "Presentations & Demonstrations",
+    "section": "",
+    "text": "Demo Day for Final Projects"
+  },
+  {
+    "objectID": "schedule/28-future-directions-presentations-demonstrations.html#additional-materials",
+    "href": "schedule/28-future-directions-presentations-demonstrations.html#additional-materials",
+    "title": "Presentations & Demonstrations",
+    "section": "Additional Materials",
+    "text": "Additional Materials"
+  },
+  {
+    "objectID": "schedule/22-texts-tokens.html#assigned-materials",
+    "href": "schedule/22-texts-tokens.html#assigned-materials",
+    "title": "Texts & Tokens",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nUnderwood, Ted. “Seven Ways Humanists Are Using Computers to Understand Text.” The Stone and the Shell (blog), June 4, 2015. https://tedunderwood.com/2015/06/04/seven-ways-humanists-are-using-computers-to-understand-text/."
+  },
+  {
+    "objectID": "schedule/22-texts-tokens.html#additional-materials",
+    "href": "schedule/22-texts-tokens.html#additional-materials",
+    "title": "Texts & Tokens",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nNguyen, Dong, et al. “How We Do Things with Words: Analyzing Text as Social and Cultural Data.” Frontiers in Artificial Intelligence 3 (August 25, 2020): 62. https://doi.org/10.3389/frai.2020.00062.\nUnderwood, Ted. “Wordcounts Are Amazing.” The Stone and the Shell (blog), February 20, 2013. https://tedunderwood.com/2013/02/20/wordcounts-are-amazing/."
+  },
+  {
+    "objectID": "schedule/22-texts-tokens.html#assigned-materials-1",
+    "href": "schedule/22-texts-tokens.html#assigned-materials-1",
+    "title": "Texts & Tokens",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nSchmidt, Benjamin M. “Do Digital Humanists Need to Understand Algorithms?” In Debates in the Digital Humanities 2016, edited by Matthew K. Gold and Lauren F. Klein, 546-55. University of Minnesota Press, 2016. Use the JSTOR link for PDF & Hypothesis https://doi.org/10.5749/j.ctt1cn6thb.51 or use the Manifold Platform link https://dhdebates.gc.cuny.edu/read/untitled/section/557c453b-4abb-48ce-8c38-a77e24d3f0bd."
+  },
+  {
+    "objectID": "schedule/22-texts-tokens.html#additional-materials-1",
+    "href": "schedule/22-texts-tokens.html#additional-materials-1",
+    "title": "Texts & Tokens",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nKoeser, Rebecca Sutton. “Trusting Others to ‘Do the Math.’” Interdisciplinary Science Reviews 40, no. 4 (2015): 376-392. https://doi.org/10.1080/03080188.2016.1165454.\nSchmidt, Ben. “Sapping Attention: When You Have a MALLET, Everything Looks like a Nail.” Sapping Attention (blog), November 2, 2012. http://sappingattention.blogspot.com/2012/11/when-you-have-mallet-everything-looks.html.\n\n\nAdditional Links\n\n\n\nCasual Map\n\n\n\n\n\nStructured vs unstructured data\n\n\n\n\n\nText Analysis\n\n\n\n\n\nBag of Words\n\n\n\n\n\nWord Embeddings 1\n\n\n\n\n\nWord Embeddings 2\n\n\n\n\n\nText Processing\n\n\n\n\n\nSupervised and unsupervised machine learning\n\n\n\n\n\nTopic Models\n\n\n\njsLDA by David Mimno https://mimno.infosci.cornell.edu/jsLDA/\nVoyant Tools https://voyant-tools.org/"
   },
   {
     "objectID": "schedule/14-scrapes-structures.html",
@@ -2542,6 +2651,41 @@
     ]
   },
   {
+    "objectID": "schedule/24-speculations-classifications.html#assigned-materials",
+    "href": "schedule/24-speculations-classifications.html#assigned-materials",
+    "title": "Speculations & Classifications",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials"
+  },
+  {
+    "objectID": "schedule/24-speculations-classifications.html#additional-materials",
+    "href": "schedule/24-speculations-classifications.html#additional-materials",
+    "title": "Speculations & Classifications",
+    "section": "Additional Materials",
+    "text": "Additional Materials"
+  },
+  {
+    "objectID": "schedule/29-future-horizons-final-projects.html",
+    "href": "schedule/29-future-horizons-final-projects.html",
+    "title": "Presentations & Demonstrations",
+    "section": "",
+    "text": "Demo Day for Final Projects"
+  },
+  {
+    "objectID": "schedule/29-future-horizons-final-projects.html#in-class-agenda-tbd",
+    "href": "schedule/29-future-horizons-final-projects.html#in-class-agenda-tbd",
+    "title": "Presentations & Demonstrations",
+    "section": "",
+    "text": "Demo Day for Final Projects"
+  },
+  {
+    "objectID": "schedule/29-future-horizons-final-projects.html#additional-materials",
+    "href": "schedule/29-future-horizons-final-projects.html#additional-materials",
+    "title": "Presentations & Demonstrations",
+    "section": "Additional Materials",
+    "text": "Additional Materials"
+  },
+  {
     "objectID": "schedule/06-markup-and-markdown.html",
     "href": "schedule/06-markup-and-markdown.html",
     "title": "Markup & Markdown",
@@ -2599,6 +2743,54 @@
       "Schedule",
       "February",
       "Feb 5: What does it mean to work digitally?"
+    ]
+  },
+  {
+    "objectID": "schedule/20-scrolls-hovers.html",
+    "href": "schedule/20-scrolls-hovers.html",
+    "title": "How do we tell stories at scale?",
+    "section": "",
+    "text": "Start the introduction to advanced EDA & data visualization (To be posted)",
+    "crumbs": [
+      "Schedule",
+      "April",
+      "Apr 2: How do we tell stories at scale?"
+    ]
+  },
+  {
+    "objectID": "schedule/20-scrolls-hovers.html#in-class-agenda",
+    "href": "schedule/20-scrolls-hovers.html#in-class-agenda",
+    "title": "How do we tell stories at scale?",
+    "section": "",
+    "text": "Start the introduction to advanced EDA & data visualization (To be posted)",
+    "crumbs": [
+      "Schedule",
+      "April",
+      "Apr 2: How do we tell stories at scale?"
+    ]
+  },
+  {
+    "objectID": "schedule/20-scrolls-hovers.html#assigned-materials",
+    "href": "schedule/20-scrolls-hovers.html#assigned-materials",
+    "title": "How do we tell stories at scale?",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials",
+    "crumbs": [
+      "Schedule",
+      "April",
+      "Apr 2: How do we tell stories at scale?"
+    ]
+  },
+  {
+    "objectID": "schedule/20-scrolls-hovers.html#additional-materials",
+    "href": "schedule/20-scrolls-hovers.html#additional-materials",
+    "title": "How do we tell stories at scale?",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nSamora, Russell. “Life After Death on Wikipedia.” The Pudding, August 2018. https://pudding.cool/2018/08/wiki-death/.\nAnderson, Hanah, and Matt Daniels. “The Largest Analysis of Film Dialogue by Gender, Ever.” The Pudding, April 2016. https://pudding.cool/2017/03/film-dialogue/index.html.",
+    "crumbs": [
+      "Schedule",
+      "April",
+      "Apr 2: How do we tell stories at scale?"
     ]
   },
   {
@@ -2660,6 +2852,13 @@
       "January",
       "Jan 29: How can we work collaboratively and computationally?"
     ]
+  },
+  {
+    "objectID": "schedule/27-open-questions.html#additional-materials",
+    "href": "schedule/27-open-questions.html#additional-materials",
+    "title": "Open & Questions",
+    "section": "Additional Materials",
+    "text": "Additional Materials"
   },
   {
     "objectID": "schedule/09-archives-collections.html",
@@ -3128,6 +3327,34 @@
     ]
   },
   {
+    "objectID": "schedule/21-networks-names.html#assigned-materials",
+    "href": "schedule/21-networks-names.html#assigned-materials",
+    "title": "Networks & Names",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nAnderson, Bethany G., Mary Borgo Ton, and Kristen Allen Wilson. “Navigating Social Networks at the Margins: Women in Science Archives, Then and Now.” RBM: A Journal of Rare Books, Manuscripts, and Cultural Heritage 26, no. 2 (2025): 97. https://doi.org/10.5860/rbm.26.2.%2525p."
+  },
+  {
+    "objectID": "schedule/21-networks-names.html#assignments",
+    "href": "schedule/21-networks-names.html#assignments",
+    "title": "Networks & Names",
+    "section": "Assignments",
+    "text": "Assignments\n\nIndividual\n\n\nGroup"
+  },
+  {
+    "objectID": "schedule/25-publics-privacy.html#assigned-materials",
+    "href": "schedule/25-publics-privacy.html#assigned-materials",
+    "title": "Publics & Privacy",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nExplore and read the principles of The Colored Conventions Project https://coloredconventions.org/\nDing, Jennifer, Jan Diehm, and Michelle McGhee. “Can Data Die? Tracking the Lenna Image.” The Pudding, October 2021. https://pudding.cool/2021/10/lenna/.\nCegłowski, Maciej. “Haunted By Data.” Idle Words, October 1, 2015. https://idlewords.com/talks/haunted_by_data.htm."
+  },
+  {
+    "objectID": "schedule/25-publics-privacy.html#additional-materials",
+    "href": "schedule/25-publics-privacy.html#additional-materials",
+    "title": "Publics & Privacy",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nKlein, Lauren F., and Sandeep Soni. “How Words Lead to Justice.” Public Books, August 17, 2021. https://www.publicbooks.org/how-words-lead-to-justice/.\nNowviskie, Bethany. “Reconstitute the World.” Bethany Nowviskie, June 12, 2018. http://nowviskie.org/2018/reconstitute-the-world/.\nTarnoff, Ben. “The Data Is Ours!” Logic(s) Magazine, April 1, 2018. https://logicmag.io/scale/the-data-is-ours/.\nPosner, Miriam. “What’s Next: The Radical, Unrealized Potential of Digital Humanities.” In Debates in the Digital Humanities 2016, edited by Matthew K. Gold and Lauren F. Klein, 32–41. University of Minnesota Press, 2016. https://doi.org/10.5749/j.ctt1cn6thb.6."
+  },
+  {
     "objectID": "schedule/17-cleaning-curating.html",
     "href": "schedule/17-cleaning-curating.html",
     "title": "Cleaning & Curating",
@@ -3168,7 +3395,7 @@
     "href": "schedule/17-cleaning-curating.html#additional-materials",
     "title": "Cleaning & Curating",
     "section": "Additional Materials",
-    "text": "Additional Materials\n\nPosner, Miriam. “How Did They Make That?” Miriam Posner’s Blog, August 29, 2013. https://miriamposner.com/blog/how-did-they-make-that/.\n\nD’Ignazio, Catherine, and Lauren F. Klein. “On Rational, Scientific, Objective Viewpoints from Mythical, Imaginary, Impossible Standpoints.” In Data Feminism, 73–96. The MIT Press, 2020. https://doi.org/10.7551/mitpress/11805.003.0005.\n\n\n\nAdditional Links",
+    "text": "Additional Materials\n\nPosner, Miriam. “How Did They Make That?” Miriam Posner’s Blog, August 29, 2013. https://miriamposner.com/blog/how-did-they-make-that/.\nD’Ignazio, Catherine, and Lauren F. Klein. “On Rational, Scientific, Objective Viewpoints from Mythical, Imaginary, Impossible Standpoints.” In Data Feminism, 73–96. The MIT Press, 2020. https://doi.org/10.7551/mitpress/11805.003.0005.\n\n\nAdditional Links",
     "crumbs": [
       "Schedule",
       "March",
@@ -3188,6 +3415,20 @@
     ]
   },
   {
+    "objectID": "schedule/26-sheets-cards.html#assigned-materials",
+    "href": "schedule/26-sheets-cards.html#assigned-materials",
+    "title": "Sheets & Cards",
+    "section": "Assigned Materials",
+    "text": "Assigned Materials\n\nTuring Way Community. (2022). The Turing Way: A handbook for reproducible, ethical and collaborative research (1.0.2). Zenodo. DOI 10.5281/zenodo.3233853. Come to class with at least one question or idea from the book that you think might be relevant to your final project. https://book.the-turing-way.org/."
+  },
+  {
+    "objectID": "schedule/26-sheets-cards.html#additional-materials",
+    "href": "schedule/26-sheets-cards.html#additional-materials",
+    "title": "Sheets & Cards",
+    "section": "Additional Materials",
+    "text": "Additional Materials\n\nPosner, Miriam. “JavaScript Is for Girls.” Logic(s) Magazine, March 15, 2017. https://logicmag.io/intelligence/javascript-is-for-girls/.\nDombrowski, Quinn. “Minimizing Computing Maximizes Labor.” Digital Humanities Quarterly 016, no. 2 (June 25, 2022).\nKinnaman, Alex, and Corinne Guimont. “DH as Data: Establishing Greater Access through Sustainability.” Digital Humanities Quarterly 017, no. 3 (August 24, 2023). https://www.digitalhumanities.org/dhq/vol/17/3/000715/000715.html.\n\n\nAdditional Links\n\nCollections As Data Project https://collectionsasdata.github.io/\nPadilla, Thomas, Scates Kettler, Hannah, Varner, Stewart, & Shorish, Yasmeen.(2023).Vancouver Statement on Collections as Data.Zenodo. https://zenodo.org/records/8342171.\nClement, Tanya E., Douglas Reside, Brian Croxall, Julia Flanders, Neil Fraistat, Steve Jones, Matt Kirschenbaum, et al. “Collaborators’ Bill of Rights,” 2021. https://doi.org/10.17613/mvar-kj35."
+  },
+  {
     "objectID": "schedule/index.html",
     "href": "schedule/index.html",
     "title": "Schedule & Assignments Overview",
@@ -3203,7 +3444,7 @@
     "href": "schedule/index.html#weekly-schedule",
     "title": "Schedule & Assignments Overview",
     "section": "Weekly Schedule",
-    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 - How can we work collaboratively and computationally? Version & File Histories\n\n\nFebruary 3 - How and when did we first start representing culture as data? Histories of Culture & Computing\nFebruary 5 - What does it mean to work digitally? Markup & Markdown\n\n\nFebruary 10 - What are the historic legacies and politics of representing culture as data? Digital Objects & Obsolescence\nFebruary 12 - How has the web changed culture as data? Servers & Web Standards\n\n\nFebruary 17 - Who decides what culture becomes data? Archives & Collections\nFebruary 19 - How can we represent culture computationally? Scripts & Types\n\n\nFebruary 24 - How do our choices shape whose culture becomes data? Data Feminism & Design Justice\nFebruary 26 - How can we start creating culture as data? Ecosystems & Environments\n\n\nMarch 3 - How do we ethically and legally work with culture as data? Terms & Traps\nMarch 5 - How do we start scaling culture as data? Scrape On & Off\n\n\nMarch 10 - What is infrastructure and how does it shape culture as data? Standardizing Culture & Data Archeology\nMarch 12 - How do we get culture as data? Interfaces & Limits\n\n\n\n\n\n\nMarch 24 - What do we mean when we “clean” culture as data? Cleaning & Curating\nMarch 26 - How do we work at scale with culture at data? Patterns & Outliers",
+    "text": "Weekly Schedule\nThis overview gives a top level view of the topics for each of our meetings. You can either use the side navigation or click on a topic to jump to that section.\n\n\n\nTuesday Topics (Explorations)\nThursday Topics (Experimentations)\n\n\n\n\nJanuary 20 - Why Represent Culture As Data? Introducing Computing in the Humanities & Culture As Data\nJanuary 22 - How Will We Work in This Course? Programming & Processing\n\n\nJanuary 27 - What does it mean to work with culture as data responsibly, and how does this change across disciplines and industries? Responsible Computing of Culture & Contextualizing Social Knowledge\nJanuary 29 - How can we work collaboratively and computationally? Version & File Histories\n\n\nFebruary 3 - How and when did we first start representing culture as data? Histories of Culture & Computing\nFebruary 5 - What does it mean to work digitally? Markup & Markdown\n\n\nFebruary 10 - What are the historic legacies and politics of representing culture as data? Digital Objects & Obsolescence\nFebruary 12 - How has the web changed culture as data? Servers & Web Standards\n\n\nFebruary 17 - Who decides what culture becomes data? Archives & Collections\nFebruary 19 - How can we represent culture computationally? Scripts & Types\n\n\nFebruary 24 - How do our choices shape whose culture becomes data? Data Feminism & Design Justice\nFebruary 26 - How can we start creating culture as data? Ecosystems & Environments\n\n\nMarch 3 - How do we ethically and legally work with culture as data? Terms & Traps\nMarch 5 - How do we start scaling culture as data? Scrape On & Off\n\n\nMarch 10 - What is infrastructure and how does it shape culture as data? Standardizing Culture & Data Archeology\nMarch 12 - How do we get culture as data? Interfaces & Limits\n\n\nMarch 17 & 19 - Spring Break\n\n\n\nMarch 24 - What do we mean when we “clean” culture as data? Cleaning & Curating\nMarch 26 - How do we work at scale with culture at data? Patterns & Outliers\n\n\nMarch 31 - How do we tell stories about culture with data? Arguments & Plots\nApril 2 - How do we tell stories at scale? Scrolls & Hovers",
     "crumbs": [
       "Schedule",
       "Schedule Overview"
@@ -3393,28 +3634,48 @@
     "href": "schedule/18-patterns-outliers.html",
     "title": "Patterns & Outliers",
     "section": "",
-    "text": "Discuss any questions for API assignment\nStart to Notebooks and Pandas"
+    "text": "Discuss any questions for API assignment\nStart Introduction to Notebooks and Pandas (To be posted)",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 26: How do we work at scale with culture at data?"
+    ]
   },
   {
     "objectID": "schedule/18-patterns-outliers.html#in-class-agenda",
     "href": "schedule/18-patterns-outliers.html#in-class-agenda",
     "title": "Patterns & Outliers",
     "section": "",
-    "text": "Discuss any questions for API assignment\nStart to Notebooks and Pandas"
+    "text": "Discuss any questions for API assignment\nStart Introduction to Notebooks and Pandas (To be posted)",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 26: How do we work at scale with culture at data?"
+    ]
   },
   {
     "objectID": "schedule/18-patterns-outliers.html#assigned-materials",
     "href": "schedule/18-patterns-outliers.html#assigned-materials",
     "title": "Patterns & Outliers",
     "section": "Assigned Materials",
-    "text": "Assigned Materials\n\nUnderwood, Ted. “Seven Ways Humanists Are Using Computers to Understand Text.” The Stone and the Shell (blog), June 4, 2015. https://tedunderwood.com/2015/06/04/seven-ways-humanists-are-using-computers-to-understand-text/."
+    "text": "Assigned Materials\n\nUnderwood, Ted. “Seven Ways Humanists Are Using Computers to Understand Text.” The Stone and the Shell (blog), June 4, 2015. https://tedunderwood.com/2015/06/04/seven-ways-humanists-are-using-computers-to-understand-text/.",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 26: How do we work at scale with culture at data?"
+    ]
   },
   {
     "objectID": "schedule/18-patterns-outliers.html#additional-materials",
     "href": "schedule/18-patterns-outliers.html#additional-materials",
     "title": "Patterns & Outliers",
     "section": "Additional Materials",
-    "text": "Additional Materials\n\nBroman, Karl W., and Kara H. Woo. “Data Organization in Spreadsheets.” American Statistician 72, no. 1 (2018): 2-10. https://doi.org/10.1080/00031305.2017.1375989.\nGebru, Timnit, et al. “Datasheets for Datasets.” Communications of the ACM 64, no. 12 (November 19, 2021): 86-92. https://doi.org/10.1145/3458723."
+    "text": "Additional Materials\n\nBroman, Karl W., and Kara H. Woo. “Data Organization in Spreadsheets.” American Statistician 72, no. 1 (2018): 2-10. https://doi.org/10.1080/00031305.2017.1375989.\nGebru, Timnit, et al. “Datasheets for Datasets.” Communications of the ACM 64, no. 12 (November 19, 2021): 86-92. https://doi.org/10.1145/3458723.",
+    "crumbs": [
+      "Schedule",
+      "March",
+      "Mar 26: How do we work at scale with culture at data?"
+    ]
   },
   {
     "objectID": "schedule/11-data-feminism-design-justice.html",

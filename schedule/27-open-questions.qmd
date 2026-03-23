@@ -3,7 +3,6 @@ title: "Open & Questions"
 subtitle: "What don’t we know about culture as data?"
 toc: true
 date: 2026-04-28
-draft: true
 ---
 
 ## In-Class Agenda TBD

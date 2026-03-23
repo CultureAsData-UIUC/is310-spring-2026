@@ -116,13 +116,13 @@ website:
             - text: "Mar 24: What do we mean when we “clean” culture as data?"
               href: schedule/17-cleaning-curating.qmd
             - text: "Mar 26: How do we work at scale with culture at data?"
-              href: schedule/18-patters-outliers.qmd
-        #     - text: "Oct 22: Arguments & Algorithms"
-        #       href: schedule/17-arguments-algorithms.qmd
-        #     - text: "Oct 24: Notes & Points"
-        #       href: schedule/18-notes-and-points.qmd
-        #     - text: "Oct 29: Making A Point"
-        #       href: schedule/19-making-a-point.qmd
+              href: schedule/18-patterns-outliers.qmd
+            - text: "Mar 31: How do we tell stories about culture with data?"
+              href: schedule/19-arguments-plots.qmd
+        - section: "April"
+          contents:
+            - text: "Apr 2: How do we tell stories at scale?"
+              href: schedule/20-scrolls-hovers.qmd
         #     - text: "Oct 31: Patterns & Outliers"
         #       href: schedule/20-patterns-outliers.qmd
         # - section: "November"

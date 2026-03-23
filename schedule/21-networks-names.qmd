@@ -3,7 +3,6 @@ title: "Networks & Names"
 subtitle: "How do we build trust with culture as data?"
 toc: true
 date: 2026-04-07
-draft: true
 ---
 
 ## In-Class Agenda
@@ -11,3 +10,9 @@ draft: true
 ## Assigned Materials
 
 - Anderson, Bethany G., Mary Borgo Ton, and Kristen Allen Wilson. “Navigating Social Networks at the Margins: Women in Science Archives, Then and Now.” *RBM: A Journal of Rare Books, Manuscripts, and Cultural Heritage* 26, no. 2 (2025): 97. [https://doi.org/10.5860/rbm.26.2.%2525p](https://doi.org/10.5860/rbm.26.2.%2525p). 
+
+## Assignments
+
+### Individual
+
+### Group
