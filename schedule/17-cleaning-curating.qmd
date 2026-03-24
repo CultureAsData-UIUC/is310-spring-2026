@@ -7,8 +7,8 @@ date: 2026-03-24
 
 ## In-Class Agenda
 
-- [ ] Review the [Fandom Wikis and Web Scraping Homework](../materials/creating-curating-humanities-data/05-web-scraping.qmd#fandom-wikis-and-web-scraping-homework).
-- [ ] Finish the remainder of [introduction to APIs and cultural data](../materials/creating-curating-humanities-data/06-getting-data-apis.qmd).
+- [ ] Review the [Fandom Wikis and Web Scraping Homework](../materials/creating-curating-humanities-data/05-web-scraping.qmd#fandom-wikis-and-web-scraping-homework){target="_blank"}.
+- [ ] Finish the remainder of [introduction to APIs and cultural data](../slides/12-cultural-apis.qmd#nrh-lotr-structure){target="_blank"}.
 - [ ] Discuss the assigned readings
 
 ## Assigned Materials

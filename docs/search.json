@@ -6220,6 +6220,27 @@
     "text": "NRH-LOTR Structure\nAnd you can see how’s it making requests to the API by looking at the source code.\n\nLOTR Library Source"
   },
   {
+    "objectID": "slides/12-cultural-apis.html#fixing-the-source-code",
+    "href": "slides/12-cultural-apis.html#fixing-the-source-code",
+    "title": "GETting Cultural Data From APIs",
+    "section": "Fixing the Source Code",
+    "text": "Fixing the Source Code\nIn our class on Thursday, we ran into an issue with installing and using the nrh-lotr library, with this issue appearing in the terminal:"
+  },
+  {
+    "objectID": "slides/12-cultural-apis.html#what-went-wrong",
+    "href": "slides/12-cultural-apis.html#what-went-wrong",
+    "title": "GETting Cultural Data From APIs",
+    "section": "What Went Wrong?",
+    "text": "What Went Wrong?\nPydantic is a data validation library that checks whether the data you receive from an API matches the types you declared in your model. When the API returned a value for rottenTomatoesScore of 66.33333333 (a decimal), but the model was expecting an int (whole number), Pydantic rejected it. You can’t fit a float into an integer without losing information, so Pydantic threw a validation error."
+  },
+  {
+    "objectID": "slides/12-cultural-apis.html#the-fix",
+    "href": "slides/12-cultural-apis.html#the-fix",
+    "title": "GETting Cultural Data From APIs",
+    "section": "The Fix",
+    "text": "The Fix\nThe library developer assumed Rotten Tomatoes scores would be integers, but the actual API returns percentage scores with decimal values. The solution was simple: change the type annotation from int to float to allow decimal numbers:\nclass Movie(pydantic.BaseModel):\n    \"\"\"A LotR movie title.\"\"\"\n\n    id: str = pydantic.Field(None, alias=\"_id\")\n    name: str\n    runtimeInMinutes: int\n    budgetInMillions: int\n    boxOfficeRevenueInMillions: float # Changed from int to float\n    academyAwardNominations: int\n    academyAwardWins: int\n    rottenTomatoesScore: float  # Changed from int to float\n\nThis is a great example of why API wrappers are imperfect. The person who wrote nrh-lotr made assumptions about the data that didn’t match reality. This teaches us to:\n\nAlways read the actual API documentation carefully\nTest wrapper code against real data\nBe aware that library developers may have made incorrect assumptions about data types\nKnow that Pydantic validates your data to catch these mismatches early"
+  },
+  {
     "objectID": "slides/12-cultural-apis.html#using-nrh-lotr",
     "href": "slides/12-cultural-apis.html#using-nrh-lotr",
     "title": "GETting Cultural Data From APIs",

@@ -565,6 +565,43 @@ And you can see how's it making requests to the API by looking at the source cod
 
 ![LOTR Library Source](../assets/images/lotr_library_source.png)
 
+## Fixing the Source Code
+
+In our class on Thursday, we ran into an issue with installing and using the `nrh-lotr` library, with this issue appearing in the terminal:
+
+![](../assets/images/pydantic_error.png)
+
+## What Went Wrong?
+
+**Pydantic** is a data validation library that checks whether the data you receive from an API matches the types you declared in your model. When the API returned a value for `rottenTomatoesScore` of `66.33333333` (a decimal), but the model was expecting an `int` (whole number), Pydantic rejected it. You can't fit a float into an integer without losing information, so Pydantic threw a validation error.
+
+## The Fix
+
+The library developer assumed Rotten Tomatoes scores would be integers, but the actual API returns percentage scores with decimal values. The solution was simple: change the type annotation from `int` to `float` to allow decimal numbers:
+
+```python
+class Movie(pydantic.BaseModel):
+    """A LotR movie title."""
+
+    id: str = pydantic.Field(None, alias="_id")
+    name: str
+    runtimeInMinutes: int
+    budgetInMillions: int
+    boxOfficeRevenueInMillions: float # Changed from int to float
+    academyAwardNominations: int
+    academyAwardWins: int
+    rottenTomatoesScore: float  # Changed from int to float
+```
+
+::: {.notes}
+This is a great example of why **API wrappers are imperfect**. The person who wrote `nrh-lotr` made assumptions about the data that didn't match reality. This teaches us to:
+
+- Always read the actual API documentation carefully
+- Test wrapper code against real data
+- Be aware that library developers may have made incorrect assumptions about data types
+- Know that Pydantic validates your data to catch these mismatches early
+:::
+
 ## Using NRH-LOTR
 
 ```python
@@ -609,7 +646,7 @@ The newer version, released in 2016, has more of a focus on encouraging reuse in
 
 ## Europeana API Example
 
-[![Europeana Colour Explorer](https://roued.com/wp-content/uploads/Screenshot-2021-03-05-at-17.41.07.png)](https://culturepics.org/colour/#/){target="_blank"}
+[![Europeana Colour Explorer](../assets/images/europeana_color.jpeg)](https://culturepics.org/colour/#/){target="_blank"}
 
 ::: {.notes}
 Given the scale and funding for Europeana, there are number of APIs that have been developed for accessing data from the collections. For examples, James Morley has created a Europeana Colour Explorer [https://culturepics.org/colour/#/](https://culturepics.org/colour/#/) that uses the Europeana API to explore the colors of items in the collection.
