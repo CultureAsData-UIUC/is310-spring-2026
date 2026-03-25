@@ -526,6 +526,88 @@ os.environ['EUROPEANA_API_KEY'] = europeana_api_key
 
 ⚡️ If you are seeing errors in the terminal when running this code, please follow these steps.
 
+### Python Version Issues
+
+**Important:** As we learned in class, the `pyeuropeana` library requires `pandas==1.5.3`, which only works with Python 3.10 or earlier. If you're using Python 3.11 or later, you'll need to create a virtual environment with an older Python version.
+
+![Managing pyenv versions](https://files.realpython.com/media/pyenv-pyramid.d2f35a19ded9.png)
+
+**What is pyenv?** `pyenv` is a tool that lets you install and manage multiple versions of Python on your computer. Rather than having just one Python version installed globally, pyenv allows you to switch between different versions (like 3.9, 3.10, 3.11, etc.) for different projects. This is useful when different libraries require different Python versions. When you run `pyenv local 3.10.13`, you're telling pyenv to use Python 3.10.13 specifically in that folder and its subfolders—without affecting the Python version elsewhere on your system. If you want to learn more about it, I would highly recommend this *Real Python* post [https://realpython.com/intro-to-pyenv/](https://realpython.com/intro-to-pyenv/).
+
+#### For Mac/Linux users:
+
+First check if you have pyenv installed:
+```bash
+pyenv --version
+```
+
+If you don't have pyenv (you'll get "command not found"), install it first:
+
+```bash
+# Install pyenv using Homebrew
+brew install pyenv
+
+# Add pyenv to your shell (add this to ~/.zshrc or ~/.bash_profile depending on your shell)
+echo 'eval "$(pyenv init --path)"' >> ~/.zshrc
+# Then reload your shell:
+source ~/.zshrc
+```
+
+Now install Python 3.10 and create your virtual environment:
+
+```bash
+# Install Python 3.10 with pyenv
+pyenv install 3.10.13
+
+# Create a virtual environment with Python 3.10
+pyenv local 3.10.13
+python -m venv older-python-env
+
+# Activate it
+source older-python-env/bin/activate
+```
+
+#### For Windows users:
+
+Windows doesn't come with a built-in Python version manager like Mac does, but we can use **pyenv-win**, which is a native Windows port of pyenv.
+
+First check if you have pyenv-win installed by opening **PowerShell** and running:
+```powershell
+pyenv --version
+```
+
+If you don't have pyenv-win (you'll get "command not found"), install it using this PowerShell command:
+
+```powershell
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+```
+
+After installation completes, **close and reopen PowerShell**, then verify the installation:
+
+```powershell
+pyenv --version
+```
+
+Now install Python 3.10 and create your virtual environment:
+
+```powershell
+# Install Python 3.10
+pyenv install 3.10.13
+
+# Rehash pyenv (run this after installing a new Python version)
+pyenv rehash
+
+# Set Python 3.10 as the local version for this directory
+pyenv local 3.10.13
+
+# Create a virtual environment
+python -m venv older-python-env
+
+# Activate it
+older-python-env\Scripts\activate
+```
+
+### Dependency Errors
 
 If you try using the `pyeuropeana` library with the api key stored as an environment variable, you may see the following error:
 
@@ -533,32 +615,27 @@ If you try using the `pyeuropeana` library with the api key stored as an environ
 ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
 ```
 
-That is an issue with the `numpy` python library. To fix this, you can run the following command in your terminal:
+This indicates a numpy/pandas compatibility issue. To fix this, reinstall with compatible versions:
 
 ```bash
 pip uninstall numpy
-```
-
-It will ask you if you want to uninstall `numpy`, to which you should say `y`. Then you can reinstall `numpy` with the following command:
-
-```bash
 pip install "numpy==1.26.4"
 ```
 
-You may also see the following error:
+You may also see this error:
 
 ```bash
 from PIL import Image
 ModuleNotFoundError: No module named 'PIL'
 ```
 
-This is because the `pyeuropeana` library uses the `Pillow` library, which is a fork of the `PIL` library. To fix this, you can install the `Pillow` library with the following command:
+The `pyeuropeana` library uses the `Pillow` library (a fork of `PIL`). To fix this:
 
 ```bash
 pip install Pillow
 ```
 
-If you have any additional errors, please reach out to the instructors for help.
+If you have any other errors, please reach out to the instructors for help.
 
 :::
 
@@ -573,7 +650,7 @@ import pyeuropeana.utils as utils
 # use this function to search our collections
 result = apis.search(
    query = '*',
-   qf = '(skos_concept:"http://data.europeana.eu/concept/base/48" AND TYPE:IMAGE)',
+   qf = 'TYPE:IMAGE',
    reusability = 'open AND permission',
    media = True,
    thumbnail = True,
@@ -592,60 +669,49 @@ dataframe = utils.search2df(result)
 
 And we can see that there's a number of attributes we can use to filter our search, including `query`, `qf`, `reusability`, `media`, `thumbnail`, `landingpage`, `colourpalette`, `theme`, `sort`, `profile`, and `rows`. We can also see that we can use the `utils.search2df` method to transform the data into a Pandas DataFrame. 
 
-Let's try a simpler example first though:
+Let's try a simpler example first though. We can use the `utils.search2df()` function to convert the search results directly into a Pandas DataFrame, which makes it much easier to work with the data:
 
 ```python
 import pyeuropeana.apis as apis
+import pyeuropeana.utils as utils
 
-response = apis.search(query="Galadriel")
-print(response)
+response = apis.search(query="Alfred Book", rows=1000)
+dataframe = utils.search2df(response)
+print(f"Got {len(dataframe)} items")
+print(dataframe)
 ```
 
 Which should show the following output:
 
 ```python
-{'apikey': 'tondflanrino',
- 'success': True,
- 'requestNumber': 999,
- 'itemsCount': 0,
- 'totalResults': 3,
- 'items': [{'completeness': 0,
-   'country': ['Italy'],
-   'dataProvider': ['Internet Culturale'],
-   'dcCreator': ['http://data.europeana.eu/agent/159584',
-    'Karunesh',
-    'Karunesh'],
-   'dcCreatorLangAware': {'def': ['http://data.europeana.eu/agent/159584',
-     'Karunesh'],
-    'en': ['Karunesh']},
-   'dcTitleLangAware': {'def': ['Galadriel'],
-    'en': ['Galadriel'],
-    'it': ['Galadriel']},
-   'edmConcept': ['http://data.europeana.eu/concept/soundgenres/Music'],
-   'edmConceptLabel': [{'def': 'Musik'},
-    {'def': 'Music'},
-    {'def': 'Musica'},
-    {'def': 'Muzyka'},
-    {'def': 'Musique'},
-    {'def': 'Música'}],
-   'edmConceptPrefLabelLangAware': {'de': ['Musik'],
-...
-  'profile': None,
-  'rows': 12,
-  'cursor': '*',
-  'callback': None,
-  'facet': None}}
+Got 1000 items
+                                          europeana_id  ...                                         title_lang
+0           /993/item_RMA4VGQQDTKLG7ZHCK5UPDFPT3HVT7LH  ...  {'de': 'Postkarte Alfred Book, Riesenrad (2004)'}
+1           /993/item_O7EBNTVQTA7YLBW5DZ26NM5KIPVPPYKI  ...  {'de': 'Postkarte Alfred Book, Kinderwagen (19...
+2           /993/item_JV625HVMGOFHOQIC4UNLWYEWT4WBBZZB  ...     {'de': 'Postkarte Alfred Book, Blumenhorn (199...
+3           /993/item_4Q2TXOI63V2H3DJQ5Z3NOQUXIYAES5IE  ...     {'de': 'Postkarte Alfred Book, Hamtor (2002)'}
+4    /991/https___catalonica_bnc_cat_catalonicahub_...  ...                                   {'def': 'Tossa'}
+..                                                 ...  ...                                                ...
+995                              /983/_158590129840900  ...  {'fi': 'Kotiteollisuusnäyttely Ilmajoella vuon...
+996                              /983/_158590129832300  ...  {'fi': 'Loimaan naiskäsityökoulun näyttely kev...
+997                              /983/_158590129828000  ...  {'fi': 'Loimaan naiskäsityökoulun näyttely kev...
+998                              /983/_158590129819700  ...  {'fi': 'Kotiteollisuus O.Y. Pirtin myymälä tou...
+999                              /983/_158590129798700  ...  {'fi': 'Suomen käsityön ystävien osasto Pietar...
+
+[1000 rows x 16 columns]
 ```
 
-We can also print out the `response.keys()` to see all the keys in the response. You'll notice this api has a `totalResults` key, which tells us how many items match our query, and an `items` key, which contains a list of dictionaries, each of which contains information about an item in the collection.
+The `search2df()` utility function is much more convenient than working directly with the raw JSON response, as it automatically converts the response into a structured table format. The DataFrame includes columns for `europeana_id`, `title_lang`, and other metadata about each item in the collection.
 
-If we select one of the items, we can see that it has a number of keys, including `completeness`, `country`, `dataProvider`, `dcCreator`, `dcCreatorLangAware`, `dcTitleLangAware`, `edmConcept`, `edmConceptLabel`, `edmConceptPrefLabelLangAware`, and more. This data is similar to the data we saw on the Europeana website, and it includes information about the creator, title, and concept of the item.
+We can also access specific items from the response dictionary if we need the raw data. The response has a `totalResults` key, which tells us how many items match our query, and an `items` key, which contains a list of dictionaries with information about each item.
 
-We can also see in the `Search API` documentation what keys we should expect for our initial search request [https://europeana.atlassian.net/wiki/spaces/EF/pages/2385739812/Search+API+Documentation#Response](https://europeana.atlassian.net/wiki/spaces/EF/pages/2385739812/Search+API+Documentation#Response), as well as what data should return for each item [https://europeana.atlassian.net/wiki/spaces/EF/pages/2385739812/Search+API+Documentation#Metadata-Sets](https://europeana.atlassian.net/wiki/spaces/EF/pages/2385739812/Search+API+Documentation#Metadata-Sets). For example, if we wanted to see the item in the browser we would just need to use the `guid` key.
+If we wanted to see an item directly in the browser, we could use the `guid` key from the raw response:
 
 ```python
 response['items'][0]['guid']
 ```
+
+This will return a URL like `https://www.europeana.eu/item/2059218/data_sounds_IT_DDS0000009812000400?utm_source=api&utm_medium=api&utm_campaign=tondflanrino` that you can paste into your browser.
 
 We could also try out the `Entity API`, which allows us to get more information about a specific entity in the collection. According to the api's documentation [https://europeana.atlassian.net/wiki/spaces/EF/pages/2324561923/Entity+API+Documentation](https://europeana.atlassian.net/wiki/spaces/EF/pages/2324561923/Entity+API+Documentation), the Europeana collection has these types of entities:
 
@@ -659,75 +725,48 @@ In the `pyeuropeana` documentation, there's a section of tutorials, including on
 According to this tutorial, we can use the `entity.suggest` method to get suggestions for a specific entity. For example, if we wanted to get suggestions for the entity `Galadriel`, we could use the following code:
 
 ```python
+import pyeuropeana.apis as apis
+
 response = apis.entity.suggest(
 	text = 'Galadriel',
    TYPE = 'agent',
 )
-print(response)
+print('galadriel', response)
 ```
 
-However, we'll see there's no results for this query. We could try a different entity, like `Tolkien`, and see if we get any results.
+This will return a response with `'total': 0`, indicating there's no results for this query. We could try a different entity, like `Tolkien`, and see if we get any results:
 
 ```python
-response apis.entity.suggest(
+response = apis.entity.suggest(
    text = 'Tolkien',
    TYPE = 'agent',
 )
-print(response)
+print('tolkien', response)
 ```
 
-This should give the following output:
+This returns a response with 3 results, including J.R.R. Tolkien, Christopher Tolkien, and Tim Tolkien, along with their biographical information.
 
-```python
-',
- 'ugc': [False],
- 'year': ['1989']}
-{'@context': ['https://www.w3.org/ns/ldp.jsonld',
-  'http://www.europeana.eu/schemas/context/entity.jsonld'],
- 'type': 'ResultPage',
- 'total': 3,
- 'items': [{'id': 'http://data.europeana.eu/agent/60065',
-   'type': 'Agent',
-   'isShownBy': {'id': 'http://pbc.gda.pl/Content/20559/03.mp3',
-    'type': 'WebResource',
-    'source': 'http://data.europeana.eu/item/0940417/_nnbqsf5',
-    'thumbnail': 'https://api.europeana.eu/api/v2/thumbnail-by-url.json?uri=http%3A%2F%2Fpbc.gda.pl%2FContent%2F20559%2F03.mp3&type=SOUND'},
-   'prefLabel': {'en': 'J. R. R. Tolkien'},
-   'altLabel': {'en': ['J-R-R Tolkien',
-     'Tolkien',
-     'John Ronald Reuel Tolkien',
-     'John Tolkien',
-     'J.R.R Tolkien',
-     'J.R.R. Tolkien',
-     'John R. R. Tolkien']},
-   'dateOfBirth': '1892-01-03',
-   'dateOfDeath': '1973-09-02'},
-  {'id': 'http://data.europeana.eu/agent/60339',
-   'type': 'Agent',
-   'prefLabel': {'en': 'Christopher Tolkien'},
-   'altLabel': {'en': ['Christopher John Reuel Tolkien',
-     'Christopher Reuel Tolkien',
-...
-   'dateOfDeath': '2020-01-16'},
-  {'id': 'http://data.europeana.eu/agent/79852',
-   'type': 'Agent',
-   'prefLabel': {'en': 'Tim Tolkien'},
-   'dateOfBirth': '1962-09-01'}]}
-```
-
-We could also look for concepts or places, like `Literature` or `London`, to see what results we get. However, to do that we need to change the `TYPE` parameter to `concept` or `place`.
+We can also look for concepts or places. Let's try searching for `Literature` and `London`:
 
 ```python
 response_concept = apis.entity.suggest(
 	text = 'Literature',
    TYPE = 'concept',
 )
+print('literature', response_concept)
 
 response_place = apis.entity.suggest(
 	text = 'London',
    TYPE = 'place',
 )
+print('london', response_place)
 ```
+
+These calls will return:
+- **literature**: 2 results (Epic literature, Christian devotional literature)
+- **london**: 10 results (London, Greater London, City of Westminster, City of London, etc.)
+
+The entity.suggest method is useful for exploring what entities exist in the Europeana database before you search for items related to those entities. You can use `TYPE` values of `'agent'` (for people), `'concept'` (for topics), or `'place'` (for locations).
 
 Now we can start to see how we can use the `pyeuropeana` library to access data from the Europeana collection and also the value of using both APIs and wrappers. Specifically, in this instance we didn't need to spend a lot of time researching the API endpoints and how to make requests to the API, as the library abstracted this process for us. However, we did need to spend time understanding how to use the library and how to work with the data it returned. This is a common tradeoff when working with APIs and wrappers, and it's important to consider the benefits and drawbacks of each approach when working with APIs.
 
