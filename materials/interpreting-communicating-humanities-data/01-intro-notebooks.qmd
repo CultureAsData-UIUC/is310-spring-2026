@@ -518,7 +518,7 @@ parks_data_df[parks_data_df['state'] == 'IL']
 
 Now we'll see that this gives us zero values because this dataset is only for "the current 63 National Parks administered by the United States National Park Service (NPS), from 1979 to 2023."
 
-![](https://maps.wikimedia.org/img/osm-intl,3,37,-98,400x200@2x.png?lang=en&domain=en.wikipedia.org&title=List_of_national_parks_of_the_United_States&revid=1250158178&groups=_c64c3bcb96ed93168e4c8f95ce3e180dc7af7699)
+![](../../assets/images/parks_map.png)
 
 While we could've checked this map prior to filtering, we can also check the unique values in the `state` column to see what values exist.
 

@@ -1208,7 +1208,7 @@
 <h2>Filtering Data</h2>
 <p>Now we’ll see that this gives us zero values because this dataset is only for “the current 63 National Parks administered by the United States National Park Service (NPS), from 1979 to 2023.”</p>
 
-<img data-src="https://maps.wikimedia.org/img/osm-intl,3,37,-98,400x200@2x.png?lang=en&amp;domain=en.wikipedia.org&amp;title=List_of_national_parks_of_the_United_States&amp;revid=1250158178&amp;groups=_c64c3bcb96ed93168e4c8f95ce3e180dc7af7699" class="r-stretch"><p><em>How else could we have discovered this using Pandas?</em></p>
+<img data-src="../assets/images/parks_map.png" class="quarto-figure quarto-figure-center r-stretch"><p><em>How else could we have discovered this using Pandas?</em></p>
 <aside class="notes">
 <p>While we could’ve checked this map prior to filtering, we can also check the unique values in the <code>state</code> column to see what values exist.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>parks_data_df[<span class="st">'state'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
