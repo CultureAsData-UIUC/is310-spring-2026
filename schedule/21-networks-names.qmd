@@ -8,7 +8,7 @@ date: 2026-04-07
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings and visit from Prof. Ton
-- [ ] Continue work on the final group work assignment (../assessments/07-critical-computing-cultural-data.qmd)
+- [ ] Time permitting continue work on the final group work assignment [Critical Computing & Cultural Data](../assessments/07-critical-computing-cultural-data.qmd)
 
 ## Assigned Materials
 
