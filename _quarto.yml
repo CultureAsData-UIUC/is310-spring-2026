@@ -21,8 +21,6 @@ website:
         href: policies.qmd
       - text: "Resources"
         href: materials/introducing-humanities-computing/01-course-tools.qmd
-      # - text: "Joining Late?"
-      #   href: late-join.qmd
 
   sidebar:
     - id: materials
@@ -126,30 +124,26 @@ website:
           contents:
             - text: "Apr 2: How do we tell stories at scale?"
               href: schedule/20-scrolls-hovers.qmd
-        #     - text: "Oct 31: Patterns & Outliers"
-        #       href: schedule/20-patterns-outliers.qmd
-        # - section: "November"
-        #   contents:
-        #     - text: "Nov 5: Modeling Culture (Election Day)"
-        #       href: schedule/21-modeling-culture.qmd
-        #     - text: "Nov 7: Structuring Data"
-        #       href: schedule/22-structuring-data.qmd
-        #     - text: "Nov 12: Algorithmic Failures"
-        #       href: schedule/23-algorithmic-failures.qmd
-        #     - text: "Nov 14: Augmentation & AI"
-        #       href: schedule/24-augmentation-ai.qmd
-        #     - text: "Nov 19: Reproducibility & Responsibility"
-        #       href: schedule/25-reproducibility-responsibility.qmd
-        #     - text: "Nov 21: Preservation & Publics"
-        #       href: schedule/26-preservation-publics.qmd
-        # - section: "December"
-        #   contents:
-        #     - text: "Dec 3: I Dream of Data"
-        #       href: schedule/27-i-dream-of-data.qmd
-        #     - text: "Dec 5: Hauntings & Ghosts"
-        #       href: schedule/28-hauntings-ghosts.qmd
-        #     - text: "Dec 10: Future Horizons & Final Projects"
-        #       href: schedule/29-future-horizons-final-projects.qmd
+            - text: "Apr 7: How do we build trust with culture as data?"
+              href: schedule/21-networks-names.qmd
+            - text: "Apr 9: How can computation augment culture as data?"
+              href: schedule/22-texts-tokens.qmd
+            - text: "Apr 14: How are new technologies shaping culture as data?"
+              href: schedule/23-augmentation-ai.qmd
+            - text: "Apr 16: How can we responsibly use AI for culture as data?"
+              href: schedule/24-speculations-classifications.qmd
+            - text: "Apr 21: How can we preserve culture as data?"
+              href: schedule/25-publics-principles.qmd
+            - text: "Apr 23: How do we document culture as data?"
+              href: schedule/26-sheets-cards.qmd
+            - text: "Apr 28: What don’t we know about culture as data?"
+              href: schedule/27-questions-revisions.qmd
+            - text: "Apr 30: What are the future directions for culture as data?"
+              href: schedule/28-future-directions-presentations-demonstrations.qmd
+        - section: "May"
+          contents:
+            - text: "May 5: What are the horizons for culture as data?"
+              href: schedule/29-future-horizons-final-projects.qmd
 
     - id: assessments
       title: "Assessments"
@@ -167,6 +161,9 @@ website:
           href: assessments/05-github-style-guide.qmd
         - text: "Mass Digitization & Digital Libraries"
           href: assessments/06-collecting-digitizing-culture.qmd
+        - text: "Critical Computing & Cultural Data"
+          href: assessments/07-critical-computing-cultural-data.qmd
+
 
   page-footer:
     center: "IS310 Culture As Data - Spring 2026"

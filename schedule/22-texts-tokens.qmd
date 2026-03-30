@@ -7,6 +7,9 @@ date: 2026-04-09
 
 ## In-Class Agenda
 
+- [ ] Discuss the assigned readings
+- [ ] Start the introduction unstructured data (to be posted).
+
 ## Assigned Materials
 
 - Underwood, Ted. "Seven Ways Humanists Are Using Computers to Understand Text." *The Stone and the Shell* (blog), June 4, 2015. [https://tedunderwood.com/2015/06/04/seven-ways-humanists-are-using-computers-to-understand-text/](https://tedunderwood.com/2015/06/04/seven-ways-humanists-are-using-computers-to-understand-text/).

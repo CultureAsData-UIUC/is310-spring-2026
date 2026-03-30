@@ -25,7 +25,7 @@ We could store each of these in new variables but we also want to visualize this
 
 Rather than working with just the National Parks Data, we can also start to explore the remainder of the datasets from the *Responsible Datasets in Context Project*. For example, let's take a look at the "Top 500 Greatest Novels" dataset by Anna Preus and Aashna Sheth [https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html).
 
-First we need to create a new Jupyter notebook in our `pandas-eda` folder called `Top500NovelsEDA.ipynb` and then load in the data. How can we **read** data in Pandas?
+First we need to create a new Jupyter notebook in our `pandas-eda` folder called `Top500NovelsEDA.ipynb` and then load in the data. As a reminder, how can we **read** data in Pandas?
 
 ![](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExanV4dzd4NDFqZnVqcThvOXl4b2ppNGI0ZWJhbjIyNDNwODA5YWZxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NFA61GS9qKZ68/giphy.gif)
 
@@ -88,7 +88,7 @@ This overview is telling us that we have far more columns in this datasets, each
 
 In the last lesson, we covered how we could add null values to a DataFrame, but now we want to explore how we can work with them. Pandas has a lot of documentation for handling **missing data** that you can read here [https://pandas.pydata.org/docs/user_guide/missing_data.html](https://pandas.pydata.org/docs/user_guide/missing_data.html). For our purposes, we're mostly concerned with the `isna()` and `notna()` methods.
 
-While most of the columns have 500 non-null values, we can see that some of the columns have missing values. For example, `author_field_of_activity` has 329 non-null values, which means that there are 171 missing values. We can start to get a sense of what that column contains if we return to the dataset documentation, specifically the section "What's in the Data" [https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html?tab=data-essay#whats-in-the-data(https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html?tab=data-essay#whats-in-the-data)]. From there we can learn the following about this column:
+While most of the columns have 500 non-null values, we can see that some of the columns have missing values. For example, `author_field_of_activity` has 329 non-null values, which means that there are 171 missing values. We can start to get a sense of what that column contains if we return to the dataset documentation, specifically the section "What's in the Data" [https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html?tab=data-essay#whats-in-the-data](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html?tab=data-essay#whats-in-the-data). From there we can learn the following about this column:
 
 > AUTHOR_FIELD_OF_ACTIVITY: Author’s primary fields of activity, according to VIAF. VIAF includes data from multiple global partner institutions, but we only collect VIAF data associated with the Library of Congress (LOC).
 
@@ -412,9 +412,7 @@ combined_novels_nyt_df = novels_df.merge(nyt_bestsellers_df, how='left', on=['au
 
 Since we are working with datasets with significant documentation, we have a fairly good sense of what is in these datasets. However, often you will be working with datasets that are less documented, and so it is important to understand how to explore them. This process is often called *Exploratory Data Analysis*.
 
-![From Zoë Wilkinson Saldaña "Sentiment Analysis for Exploratory Data Analysis" https://programminghistorian.org/en/lessons/sentiment-analysis](../../assets/images/eda.png)
-
-*From Zoë Wilkinson Saldaña "Sentiment Analysis for Exploratory Data Analysis" https://programminghistorian.org/en/lessons/sentiment-analysis*
+[![From Zoë Wilkinson Saldaña "Sentiment Analysis for Exploratory Data Analysis" https://programminghistorian.org/en/lessons/sentiment-analysis](../../assets/images/eda.png)](https://programminghistorian.org/en/lessons/sentiment-analysis){target="_blank"}
 
 You've likely heard this term before, but let's historically contextualize this idea. The term *Exploratory Data Analysis* (EDA) was popularized by John W. Tukey, one of the most famous statisticians and mathematicians of the 20th century. Tukey was one of the first to formally define the concept of data analysis in 1962 paper titled "The Future of Data Analysis."
 

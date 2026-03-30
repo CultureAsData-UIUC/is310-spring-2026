@@ -7,6 +7,9 @@ date: 2026-04-07
 
 ## In-Class Agenda
 
+- [ ] Discuss the assigned readings and visit from Prof. Ton
+- [ ] Continue work on the final group work assignment (../assessments/07-critical-computing-cultural-data.qmd)
+
 ## Assigned Materials
 
 - Anderson, Bethany G., Mary Borgo Ton, and Kristen Allen Wilson. “Navigating Social Networks at the Margins: Women in Science Archives, Then and Now.” *RBM: A Journal of Rare Books, Manuscripts, and Cultural Heritage* 26, no. 2 (2025): 97. [https://doi.org/10.5860/rbm.26.2.%2525p](https://doi.org/10.5860/rbm.26.2.%2525p). 
