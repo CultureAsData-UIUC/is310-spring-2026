@@ -44,10 +44,10 @@ Why do some scholars think that digital history can never be new? What does this
 
 :::: {.columns .r-fit-text}
 ::: {.column width="50%"}
-![](https://lincolnmullen.com/blog/isnt-it-obvious/slide08a_hu_8b80381cb8bd9050.webp)
+![](../assets/images/lincoln_isnt_obvious1.webp)
 :::
 ::: {.column width="50%"}
-![](https://lincolnmullen.com/blog/isnt-it-obvious/slide08_hu_22d9bcbe17b9f8d2.webp)
+![](../assets/images/lincoln_isnt_obvious2.webp)
 :::
 ::::
 
