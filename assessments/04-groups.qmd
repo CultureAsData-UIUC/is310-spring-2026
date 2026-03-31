@@ -23,6 +23,7 @@ The groups are as follows:
        - Maya B.
        - Alex T.
        - Tiffany C.
+       - Ray L.
        
 
 2. **Group 2** GAMING
@@ -34,6 +35,7 @@ The groups are as follows:
        - Jesus V.
        - Andrew P.
        - Raymond L.
+       - Javier M.
 
 3. **Group 3** MUSIC & SOCIAL MEDIA
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-spring-2026-group-3)
