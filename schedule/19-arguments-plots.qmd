@@ -7,7 +7,7 @@ date: 2026-03-31
 
 ## In-Class Agenda
 
-- [ ] Discuss the assigned readings
+- [ ] Discuss the assigned readings. Slides available here: [Arguments & Plots](../slides/14-arguments-plots.qmd)
 - [ ] Start the final group work assignment on [Critical Computing & Cultural Data](../assessments/07-critical-computing-cultural-data.qmd)
 
 ## Assigned Materials
@@ -30,7 +30,6 @@ date: 2026-03-31
 ### Individual
 
 ### Group
-
 
 
 
