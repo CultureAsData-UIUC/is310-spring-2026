@@ -6,3 +6,6 @@
 .Ruserdata
 *.DS_Store
 /drafts
+
+/assets/files/combined_novels_cleaned.csv
+/assets/files/combined_novels_with_text.csv

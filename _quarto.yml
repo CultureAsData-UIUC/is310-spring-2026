@@ -63,8 +63,8 @@ website:
           contents:
             - text: "(Re)Introduction to Jupyter Notebooks & Pandas"
               href: materials/interpreting-communicating-humanities-data/01-intro-notebooks.qmd
-        #     - text: "EDA & Data Visualization"
-        #       href: materials/interpreting-communicating-humanities-data/02-eda-data-viz.qmd
+            - text: "EDA & Data Visualization"
+              href: materials/interpreting-communicating-humanities-data/02-eda-data-viz.qmd
         #     - text: "Introduction to Structuring Data"
         #       href: materials/interpreting-communicating-humanities-data/03-intro-structuring-data.qmd
         #     - text: "Exploring Computational Methods for Cultural Data"
