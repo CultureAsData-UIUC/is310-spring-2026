@@ -19,7 +19,13 @@ execute:
 import re
 import pandas as pd
 import altair as alt
-alt.renderers.enable('html')  # ← add this
+# Force Vega-Embed to load from CDN as a plain script, not via RequireJS
+alt.renderers.set_embed_options(
+    vega_version=alt.VEGA_VERSION,
+    vegalite_version=alt.VEGALITE_VERSION,
+    vegaembed_version=alt.VEGAEMBED_VERSION
+)
+
 
 combined_novels_nyt_df = pd.read_csv('../../assets/files/combined_novels_viz.csv')
 
