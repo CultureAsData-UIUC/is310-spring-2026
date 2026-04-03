@@ -9,7 +9,7 @@ date: 2026-04-07
 
 **REMOTE CLASS - Zoom link on Canvas**
 
-- [ ] Discuss the assigned readings and visit from Prof. Ton
+- [ ] Discuss the assigned readings and visit from Prof. Mary Ton. You can read more about Prof. Ton, [here](https://maryborgoton.com/){target="_blank"}
 - [ ] Time permitting continue work on the final group work assignment [Critical Computing & Cultural Data](../assessments/07-critical-computing-cultural-data.qmd)
 
 ## Assigned Materials
