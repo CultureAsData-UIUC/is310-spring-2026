@@ -7,6 +7,8 @@ date: 2026-04-07
 
 ## In-Class Agenda
 
+**REMOTE CLASS - Zoom link on Canvas**
+
 - [ ] Discuss the assigned readings and visit from Prof. Ton
 - [ ] Time permitting continue work on the final group work assignment [Critical Computing & Cultural Data](../assessments/07-critical-computing-cultural-data.qmd)
 
