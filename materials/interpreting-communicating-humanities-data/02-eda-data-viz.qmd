@@ -11,6 +11,11 @@ execute:
   message: false
 ---
 
+::: {.callout-note}
+
+Download the Jupyter notebook version from our class session on Thursday: <a href="../../assets/files/Top500NovelsEDA.ipynb" download target="_blank">Top500NovelsEDA.ipynb</a>
+:::
+
 ```{python}
 #| echo: false
 # ── Hidden setup cell — loads the pre-built viz dataset ──────────────────
