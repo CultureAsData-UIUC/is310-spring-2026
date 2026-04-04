@@ -609,6 +609,59 @@ end = time.time()
 print(end - start)
 ```
 
+::: {.callout-tip}
+## If `cloudscraper` Still Fails, Try the Site's Structured API Endpoint
+
+Since teaching the lesson, some fandom wikis are now blocking automated requests more aggressively, and `cloudscraper` may no longer work in every environment (you can thank AI bots for the aggressive shut down!).
+
+A web page URL like `https://lotr.fandom.com/wiki/Main_Page` returns the full rendered page intended for a browser. As you learned in our API lesson (available [here](06-getting-data-apis.qmd){target="_blank"}), an API endpoint like `https://lotr.fandom.com/api.php` returns a structured response designed for programmatic access.
+
+That said, you can still start with `cloudscraper` to see whether the page is accessible. If the page is blocked or returns Cloudflare bot protection text, switch to the API endpoint instead.
+
+For example, instead of scraping the rendered page URL directly:
+
+```python
+scraper = cloudscraper.create_scraper()
+response = scraper.get("https://lotr.fandom.com/wiki/Main_Page")
+```
+
+You can use the wiki API endpoint and ask for parsed article HTML:
+
+```python
+import requests
+from bs4 import BeautifulSoup
+
+response = requests.get(
+    "https://lotr.fandom.com/api.php",
+    params={
+        "action": "parse",
+        "page": "Main_Page",
+        "prop": "text",
+        "format": "json"
+    },
+    headers={"User-Agent": "Mozilla/5.0"},
+    timeout=5
+)
+
+parsed = response.json()
+html = parsed["parse"]["text"]["*"]
+soup = BeautifulSoup(html, "html.parser")
+print(soup.find("p").get_text())
+```
+
+This is still using `requests` and `BeautifulSoup`, but it is not scraping the browser page directly. In this case, the wiki API returns **JSON**. That JSON includes a field containing the page's parsed article content as an **HTML fragment**. So rather than scraping the whole browser page, we ask the API for just the content we want, extract the HTML fragment from the JSON response, and then use `BeautifulSoup` to parse it. When a site is blocking scraping, the API endpoint is usually the safer and more stable option.
+
+A good debugging habit is to always confirm that you got the expected page content:
+
+```python
+print(response.status_code)
+print(response.url)
+print(response.text[:500])
+```
+
+If the returned content contains phrases like `Just a moment...`, `Enable JavaScript and cookies`, or a Cloudflare challenge page, then your direct scraping request was blocked and you should switch to the API endpoint.
+:::
+
 Now since this wiki is huge, we need to narrow our focus to a particular goal or question. While there are literally thousands of pages on this wiki, we could start by scraping the character pages. In particular, there's been a new adaption of *The Lord of the Rings* by Amazon called *Rings of Power*, so we could start by scraping the character pages for the characters in the new adaption.
 
 ![](../../assets/images/rings_of_power.png)
@@ -634,6 +687,39 @@ for character in characters:
 	print(character.get_text())
 ```
 
+::: {.callout-note collapse="true"}
+## Same Code with API Endpoints Instead
+
+Notice that here we switch from `action=parse` to `action=query`. While `action=parse` returns the rendered HTML of a single page (which we then parse with BeautifulSoup), [`action=query`](https://www.mediawiki.org/wiki/API:Query) is a more general-purpose action for fetching structured data directly from the wiki's database. Instead of getting HTML to scrape, we get clean JSON — no BeautifulSoup needed. The [`list=categorymembers`](https://www.mediawiki.org/wiki/API:Categorymembers) parameter tells the API we want the list of pages in a given category, and `cmtype=page` filters out subcategories so we only get actual character pages.
+
+You can explore all available actions interactively by visiting the wiki's own API page at [https://lotr.fandom.com/api.php](https://lotr.fandom.com/api.php) — it acts as a live sandbox where you can test queries in your browser. The full reference for all MediaWiki API actions is at [https://www.mediawiki.org/wiki/API:Main_page](https://www.mediawiki.org/wiki/API:Main_page).
+
+```python
+import requests
+
+API_URL = "https://lotr.fandom.com/api.php"
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; LOTR-API-Test/1.0)"}
+
+params = {
+    "action": "query",
+    "list": "categorymembers",
+    "cmtitle": "Category:Canon_characters_in_The_Rings_of_Power",
+    "cmtype": "page",
+    "cmlimit": "max",
+    "format": "json",
+}
+
+response = requests.get(API_URL, params=params, headers=HEADERS, timeout=15)
+response.raise_for_status()
+
+data = response.json()
+characters = data.get("query", {}).get("categorymembers", [])
+
+for character in characters:
+    print(character["title"])
+```
+:::
+
 Now if we click on one of these character pages like [https://lotr.fandom.com/wiki/Galadriel](https://lotr.fandom.com/wiki/Galadriel), we can see that there's a lot of information about the character. We could try scraping this page as well. For now, let's focus on seeing how many languages each character page has been translated into. We can see this at the top of the character page.
 
 ![](../../assets/images/inspect_galadriel.png)
@@ -653,6 +739,36 @@ for language in languages:
 	print(language.get('data-tracking-label'))
 	print(language.get_text())
 ```
+
+::: {.callout-note collapse="true"}
+## Same Code with API Endpoints Instead
+
+Rather than parsing HTML for `data-tracking-label` attributes, we can use `action=query` with [`prop=langlinks`](https://www.mediawiki.org/wiki/API:Langlinks) to get language translations directly from the API as structured data. This is more reliable than regex on HTML — the API returns one entry per language, each with a `lang` code and the page title in that language. No BeautifulSoup or regex needed.
+
+```python
+import requests
+
+response = requests.get(
+    "https://lotr.fandom.com/api.php",
+    params={
+        "action": "query",
+        "titles": "Galadriel",
+        "prop": "langlinks",
+        "lllimit": "max",
+        "format": "json"
+    },
+    headers={"User-Agent": "Mozilla/5.0"},
+    timeout=5
+)
+data = response.json()
+pages = data.get("query", {}).get("pages", {})
+page = next(iter(pages.values()), {})
+languages = page.get("langlinks", [])
+for language in languages:
+    print(language["lang"])   # e.g. "ca" for Catalan
+    print(language["*"])      # page title in that language
+```
+:::
 
 Now that we have the number of languages each character page has been translated into, we can start to think about how to structure this data and how to turn some of our logic into a function. We could create a list of dictionaries with the character name and the number of languages the character page has been translated into.
 
@@ -695,6 +811,65 @@ with open('lotr_canon_characters.csv', 'w') as file:
 		writer.writerow([character['character'], character['character_link'], character['languages'], character['langauges_count']])
 ```
 
+::: {.callout-note collapse="true"}
+## Same Code with API Endpoints Instead
+
+`get_character_languages` now uses [`action=query`](https://www.mediawiki.org/wiki/API:Query) with [`prop=langlinks`](https://www.mediawiki.org/wiki/API:Langlinks) instead of fetching and parsing HTML. This gives us the translations as clean structured data without needing BeautifulSoup or regex. The category list also uses `action=query` with [`list=categorymembers`](https://www.mediawiki.org/wiki/API:Categorymembers) as before.
+
+```python
+import requests
+import csv
+
+API_URL = "https://lotr.fandom.com/api.php"
+HEADERS = {"User-Agent": "Mozilla/5.0"}
+
+def get_character_languages(page_title):
+    try:
+        response = requests.get(API_URL, params={
+            "action": "query",
+            "titles": page_title,
+            "prop": "langlinks",
+            "lllimit": "max",
+            "format": "json"
+        }, headers=HEADERS, timeout=10)
+        if response.status_code != 200:
+            return []
+        pages = response.json().get("query", {}).get("pages", {})
+        page = next(iter(pages.values()), {})
+        return [{"language": ll["lang"], "language_name": ll["*"]} for ll in page.get("langlinks", [])]
+    except Exception as e:
+        print(f"Error getting languages from {page_title}: {e}")
+        return []
+
+response = requests.get(API_URL, params={
+    "action": "query",
+    "list": "categorymembers",
+    "cmtitle": "Category:Canon_characters_in_The_Rings_of_Power",
+    "cmtype": "page",
+    "cmlimit": "max",
+    "format": "json"
+}, headers=HEADERS, timeout=10)
+
+canon_characters = response.json()["query"]["categorymembers"]
+canon_characters_data = []
+
+for character in canon_characters:
+    character_data = {
+        "character": character["title"],
+        "character_link": "/wiki/" + character["title"].replace(" ", "_")
+    }
+    character_data['languages'] = get_character_languages(character["title"])
+    character_data['langauges_count'] = len(character_data['languages'])
+    canon_characters_data.append(character_data)
+
+with open('lotr_canon_characters.csv', 'w') as file:
+    writer = csv.writer(file)
+    writer.writerow(['character', 'character_link', 'languages', 'languages_count'])
+    for character in canon_characters_data:
+        writer.writerow([character['character'], character['character_link'], character['languages'], character['langauges_count']])
+```
+:::
+
 Now we could do the same for the new characters page [https://lotr.fandom.com/wiki/Category:New_characters_in_The_Rings_of_Power](https://lotr.fandom.com/wiki/Category:New_characters_in_The_Rings_of_Power) and then compare the number of languages the canon characters have been translated into with the number of languages the new characters have been translated into. We could also use the `Rich` library from the last assignment to print out the data in a more readable format.
 
 ```python
@@ -734,6 +909,57 @@ for character in new_characters_data:
 
 console.print(table)
 ```
+
+::: {.callout-note collapse="true"}
+## Same Code with API Endpoints Instead
+
+```python
+response = requests.get(API_URL, params={
+    "action": "query",
+    "list": "categorymembers",
+    "cmtitle": "Category:Characters_created_for_The_Rings_of_Power",
+    "cmlimit": "max",
+    "format": "json"
+}, headers=HEADERS, timeout=10)
+
+new_characters = response.json()["query"]["categorymembers"]
+new_characters_data = []
+
+for character in new_characters:
+    character_data = {
+        "character": character["title"],
+        "character_link": "/wiki/" + character["title"].replace(" ", "_")
+    }
+    character_data['languages'] = get_character_languages(character["title"])
+    character_data['langauges_count'] = len(character_data['languages'])
+    new_characters_data.append(character_data)
+
+with open('lotr_new_characters.csv', 'w') as file:
+    writer = csv.writer(file)
+    writer.writerow(['character', 'character_link', 'languages', 'languages_count'])
+    for character in new_characters_data:
+        writer.writerow([character['character'], character['character_link'], character['languages'], character['langauges_count']])
+
+from rich.console import Console
+from rich.table import Table
+
+console = Console()
+
+table = Table(title="Translations of LOTR Canon Characters VS New Characters")
+table.add_column("Character", style="cyan")
+table.add_column("Language Count", style="magenta")
+
+for character in canon_characters_data:
+    table.add_row(character['character'], str(character['langauges_count']))
+
+for character in new_characters_data:
+    table.add_row(character['character'], str(character['langauges_count']))
+
+console.print(table)
+```
+
+Note: this callout assumes `API_URL`, `HEADERS`, and `get_character_languages` (using `prop=langlinks`) are defined as in the previous callout.
+:::
 
 We could even rewrite this code to be more DRY (that is the principle of Don't Repeat Yourself) by creating a function to get the character data and then using that function to get the canon and new character data.
 
@@ -804,6 +1030,89 @@ for character in sorted_characters:
 console.print(table)
 ```
 
+::: {.callout-note collapse="true"}
+## Same Code with API Endpoints Instead
+
+This version uses two different [`action=query`](https://www.mediawiki.org/wiki/API:Query) sub-requests: [`list=categorymembers`](https://www.mediawiki.org/wiki/API:Categorymembers) to fetch the list of characters from a category, and [`prop=langlinks`](https://www.mediawiki.org/wiki/API:Langlinks) to fetch language translations for each character page. Neither requires BeautifulSoup — all the data comes back as clean JSON.
+
+```python
+import requests
+from rich.console import Console
+from rich.table import Table
+
+console = Console()
+
+API_URL = "https://lotr.fandom.com/api.php"
+HEADERS = {"User-Agent": "Mozilla/5.0"}
+
+def get_character_languages(page_title):
+    try:
+        response = requests.get(API_URL, params={
+            "action": "query",
+            "titles": page_title,
+            "prop": "langlinks",
+            "lllimit": "max",
+            "format": "json"
+        }, headers=HEADERS, timeout=10)
+        if response.status_code != 200:
+            return []
+        pages = response.json().get("query", {}).get("pages", {})
+        page = next(iter(pages.values()), {})
+        return [{"language": ll["lang"], "language_name": ll["*"]} for ll in page.get("langlinks", [])]
+    except Exception as e:
+        console.print(f"[red]✗ Error getting languages from {page_title}: {e}[/red]")
+        return []
+
+def fetch_characters(category_title, category):
+    try:
+        response = requests.get(API_URL, params={
+            "action": "query",
+            "list": "categorymembers",
+            "cmtitle": category_title,
+            "cmtype": "page",
+            "cmlimit": "max",
+            "format": "json"
+        }, headers=HEADERS, timeout=10)
+        members = response.json()["query"]["categorymembers"]
+        characters_data = []
+
+        for member in members:
+            console.print(f"Processing {member['title']}...")
+            character_data = {
+                "character": member["title"],
+                "character_link": "/wiki/" + member["title"].replace(" ", "_"),
+                "category": category
+            }
+            character_data['languages'] = get_character_languages(member["title"])
+            character_data['languages_count'] = len(character_data['languages'])
+            characters_data.append(character_data)
+
+        return characters_data
+    except Exception as e:
+        console.print(f"[red]✗ Error in fetch_characters: {e}[/red]")
+        return []
+
+# Fetch characters from the given categories
+canon_characters_data = fetch_characters("Category:Canon_characters_in_The_Rings_of_Power", "Canon")
+new_characters_data = fetch_characters("Category:Characters_created_for_The_Rings_of_Power", "New")
+
+# Combine and sort characters by language count
+all_characters_data = canon_characters_data + new_characters_data
+sorted_characters = sorted(all_characters_data, key=lambda x: x['languages_count'], reverse=True)
+
+# Display the sorted characters in a table
+table = Table(title="Translations of LOTR Canon Characters VS New Characters")
+table.add_column("Character", style="cyan")
+table.add_column("Language Count", style="magenta")
+table.add_column("Category", style="green")
+
+for character in sorted_characters:
+    table.add_row(character['character'], str(character['languages_count']), character['category'])
+
+console.print(table)
+```
+:::
+
 ![](../../assets/images/lotr_characters_table.png)
 
 Now in our full script we import all the libraries at the top, have two functions that get the character data and then fetch the characters, and then we combine and sort the characters by language count. We then display the sorted characters in a table using the `Rich` library. This is a much cleaner and more readable script that is easier to understand and work with.
@@ -831,7 +1140,7 @@ In this assignment, you are welcome to select **any** fandom wiki you are intere
 
 - [ ] Check the terms of service or user policies of the website. Ensure that you are allowed to scrape the website in the `robots.txt` file and include a link to the file in your `README.md` for the assignment.
 - [ ] Explain your choice of fandom wiki and what you are interested in scraping from the wiki in your `README.md` for the assignment. **You should explain why you think the data you are scraping might be of interest or useful to researchers.**
-- [ ] Use the `cloudscraper` library to get the web page and the `BeautifulSoup` library to parse the HTML of the web page, and include this code in your `fandom_wiki_scraping.py` file.
+- [ ] Try using the `cloudscraper` library to get the web page and the `BeautifulSoup` library to parse the HTML of the web page, and include this code in your `fandom_wiki_scraping.py` file. If you are having errors with `cloudscraper`, please reach out to the instructors and they will help you use the API endpoints instead (though bonus points if you manage to implement that on your own!)
 - [ ] Include the data you are scraping in an interoperable file format like a CSV or JSON file and include this data in your `web_scraping_assignments` directory.
 
 Once you have completed the assignment, you should **post a link to your folder** in our GitHub discussion [https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/7](https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/7).

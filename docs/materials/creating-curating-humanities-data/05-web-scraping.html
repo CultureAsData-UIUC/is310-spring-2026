@@ -983,174 +983,508 @@ Note
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> scraper.get(<span class="st">"https://lotr.fandom.com/wiki/Main_Page"</span>)</span>
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
 <span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(end <span class="op">-</span> start)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If <code>cloudscraper</code> Still Fails, Try the Site’s Structured API Endpoint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since teaching the lesson, some fandom wikis are now blocking automated requests more aggressively, and <code>cloudscraper</code> may no longer work in every environment (you can thank AI bots for the aggressive shut down!).</p>
+<p>A web page URL like <code>https://lotr.fandom.com/wiki/Main_Page</code> returns the full rendered page intended for a browser. As you learned in our API lesson (available <a href="../../materials/creating-curating-humanities-data/06-getting-data-apis.html" target="_blank">here</a>), an API endpoint like <code>https://lotr.fandom.com/api.php</code> returns a structured response designed for programmatic access.</p>
+<p>That said, you can still start with <code>cloudscraper</code> to see whether the page is accessible. If the page is blocked or returns Cloudflare bot protection text, switch to the API endpoint instead.</p>
+<p>For example, instead of scraping the rendered page URL directly:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>scraper <span class="op">=</span> cloudscraper.create_scraper()</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> scraper.get(<span class="st">"https://lotr.fandom.com/wiki/Main_Page"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can use the wiki API endpoint and ask for parsed article HTML:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://lotr.fandom.com/api.php"</span>,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    params<span class="op">=</span>{</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"action"</span>: <span class="st">"parse"</span>,</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"page"</span>: <span class="st">"Main_Page"</span>,</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prop"</span>: <span class="st">"text"</span>,</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"format"</span>: <span class="st">"json"</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    headers<span class="op">=</span>{<span class="st">"User-Agent"</span>: <span class="st">"Mozilla/5.0"</span>},</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    timeout<span class="op">=</span><span class="dv">5</span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>parsed <span class="op">=</span> response.json()</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>html <span class="op">=</span> parsed[<span class="st">"parse"</span>][<span class="st">"text"</span>][<span class="st">"*"</span>]</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(html, <span class="st">"html.parser"</span>)</span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(soup.find(<span class="st">"p"</span>).get_text())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is still using <code>requests</code> and <code>BeautifulSoup</code>, but it is not scraping the browser page directly. In this case, the wiki API returns <strong>JSON</strong>. That JSON includes a field containing the page’s parsed article content as an <strong>HTML fragment</strong>. So rather than scraping the whole browser page, we ask the API for just the content we want, extract the HTML fragment from the JSON response, and then use <code>BeautifulSoup</code> to parse it. When a site is blocking scraping, the API endpoint is usually the safer and more stable option.</p>
+<p>A good debugging habit is to always confirm that you got the expected page content:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status_code)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.url)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text[:<span class="dv">500</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the returned content contains phrases like <code>Just a moment...</code>, <code>Enable JavaScript and cookies</code>, or a Cloudflare challenge page, then your direct scraping request was blocked and you should switch to the API endpoint.</p>
+</div>
+</div>
 <p>Now since this wiki is huge, we need to narrow our focus to a particular goal or question. While there are literally thousands of pages on this wiki, we could start by scraping the character pages. In particular, there’s been a new adaption of <em>The Lord of the Rings</em> by Amazon called <em>Rings of Power</em>, so we could start by scraping the character pages for the characters in the new adaption.</p>
 <p><img src="../../assets/images/rings_of_power.png" class="img-fluid"></p>
 <p>We can see there are two pages for characters: one for canon (that is existing) characters in the show and one for new characters. We could start by scraping the canon characters page <a href="https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power">https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power</a>.</p>
 <p>First, we need to inspect the HTML of the page to see how the characters are structured.</p>
 <p><img src="../../assets/images/inspect_rings_of_power.png" class="img-fluid"></p>
 <p>We can see that while each character is listed in a larger div with the class <code>category-page__member</code>, the character name is in a <code>a</code> tag with the class <code>category-page__member-link</code>. So we can use the <code>find_all()</code> method to get all the <code>a</code> tags with the class <code>category-page__member-link</code> and then use the <code>get_text()</code> method to get the text of each <code>a</code> tag.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cloudscraper</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>scraper <span class="op">=</span> cloudscraper.create_scraper()</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> scraper.get(<span class="st">"https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power"</span>)</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>characters <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, class_<span class="op">=</span><span class="st">'category-page__member-link'</span>)</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> characters:</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(character.get_text())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cloudscraper</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>scraper <span class="op">=</span> cloudscraper.create_scraper()</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> scraper.get(<span class="st">"https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power"</span>)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>characters <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, class_<span class="op">=</span><span class="st">'category-page__member-link'</span>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> characters:</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(character.get_text())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Same Code with API Endpoints Instead
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Notice that here we switch from <code>action=parse</code> to <code>action=query</code>. While <code>action=parse</code> returns the rendered HTML of a single page (which we then parse with BeautifulSoup), <a href="https://www.mediawiki.org/wiki/API:Query"><code>action=query</code></a> is a more general-purpose action for fetching structured data directly from the wiki’s database. Instead of getting HTML to scrape, we get clean JSON — no BeautifulSoup needed. The <a href="https://www.mediawiki.org/wiki/API:Categorymembers"><code>list=categorymembers</code></a> parameter tells the API we want the list of pages in a given category, and <code>cmtype=page</code> filters out subcategories so we only get actual character pages.</p>
+<p>You can explore all available actions interactively by visiting the wiki’s own API page at <a href="https://lotr.fandom.com/api.php">https://lotr.fandom.com/api.php</a> — it acts as a live sandbox where you can test queries in your browser. The full reference for all MediaWiki API actions is at <a href="https://www.mediawiki.org/wiki/API:Main_page">https://www.mediawiki.org/wiki/API:Main_page</a>.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>API_URL <span class="op">=</span> <span class="st">"https://lotr.fandom.com/api.php"</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>HEADERS <span class="op">=</span> {<span class="st">"User-Agent"</span>: <span class="st">"Mozilla/5.0 (compatible; LOTR-API-Test/1.0)"</span>}</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>params <span class="op">=</span> {</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"action"</span>: <span class="st">"query"</span>,</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"list"</span>: <span class="st">"categorymembers"</span>,</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cmtitle"</span>: <span class="st">"Category:Canon_characters_in_The_Rings_of_Power"</span>,</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cmtype"</span>: <span class="st">"page"</span>,</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cmlimit"</span>: <span class="st">"max"</span>,</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"format"</span>: <span class="st">"json"</span>,</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(API_URL, params<span class="op">=</span>params, headers<span class="op">=</span>HEADERS, timeout<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>response.raise_for_status()</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> response.json()</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>characters <span class="op">=</span> data.get(<span class="st">"query"</span>, {}).get(<span class="st">"categorymembers"</span>, [])</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> characters:</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(character[<span class="st">"title"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 <p>Now if we click on one of these character pages like <a href="https://lotr.fandom.com/wiki/Galadriel">https://lotr.fandom.com/wiki/Galadriel</a>, we can see that there’s a lot of information about the character. We could try scraping this page as well. For now, let’s focus on seeing how many languages each character page has been translated into. We can see this at the top of the character page.</p>
 <p><img src="../../assets/images/inspect_galadriel.png" class="img-fluid"></p>
 <p>We can see that the first translation is into <code>Catallà</code>, which is Catalan, which has a link with the attribute <code>data-tracking-label="lang-ca"</code>. We can use this structure to get the number of languages each character page has been translated into. To do this, we need to use something called <code>regex</code> or regular expressions. <code>regex</code> is a way to search for patterns in text and is a powerful tool for text processing. We can use the <code>re</code> library, which is part of the Python Standard Library, to use <code>regex</code>.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cloudscraper</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>scraper <span class="op">=</span> cloudscraper.create_scraper()</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> scraper.get(<span class="st">"https://lotr.fandom.com/wiki/Galadriel"</span>)</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>languages <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, attrs<span class="op">=</span>{<span class="st">'data-tracking-label'</span>: re.<span class="bu">compile</span>(<span class="vs">r'lang-'</span>)})</span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> language <span class="kw">in</span> languages:</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(language.get(<span class="st">'data-tracking-label'</span>))</span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(language.get_text())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cloudscraper</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>scraper <span class="op">=</span> cloudscraper.create_scraper()</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> scraper.get(<span class="st">"https://lotr.fandom.com/wiki/Galadriel"</span>)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>languages <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, attrs<span class="op">=</span>{<span class="st">'data-tracking-label'</span>: re.<span class="bu">compile</span>(<span class="vs">r'lang-'</span>)})</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> language <span class="kw">in</span> languages:</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(language.get(<span class="st">'data-tracking-label'</span>))</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(language.get_text())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Same Code with API Endpoints Instead
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Rather than parsing HTML for <code>data-tracking-label</code> attributes, we can use <code>action=query</code> with <a href="https://www.mediawiki.org/wiki/API:Langlinks"><code>prop=langlinks</code></a> to get language translations directly from the API as structured data. This is more reliable than regex on HTML — the API returns one entry per language, each with a <code>lang</code> code and the page title in that language. No BeautifulSoup or regex needed.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://lotr.fandom.com/api.php"</span>,</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    params<span class="op">=</span>{</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"action"</span>: <span class="st">"query"</span>,</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"titles"</span>: <span class="st">"Galadriel"</span>,</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prop"</span>: <span class="st">"langlinks"</span>,</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"lllimit"</span>: <span class="st">"max"</span>,</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"format"</span>: <span class="st">"json"</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    headers<span class="op">=</span>{<span class="st">"User-Agent"</span>: <span class="st">"Mozilla/5.0"</span>},</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>    timeout<span class="op">=</span><span class="dv">5</span></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> response.json()</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>pages <span class="op">=</span> data.get(<span class="st">"query"</span>, {}).get(<span class="st">"pages"</span>, {})</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>page <span class="op">=</span> <span class="bu">next</span>(<span class="bu">iter</span>(pages.values()), {})</span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>languages <span class="op">=</span> page.get(<span class="st">"langlinks"</span>, [])</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> language <span class="kw">in</span> languages:</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(language[<span class="st">"lang"</span>])   <span class="co"># e.g. "ca" for Catalan</span></span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(language[<span class="st">"*"</span>])      <span class="co"># page title in that language</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 <p>Now that we have the number of languages each character page has been translated into, we can start to think about how to structure this data and how to turn some of our logic into a function. We could create a list of dictionaries with the character name and the number of languages the character page has been translated into.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cloudscraper</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>scraper <span class="op">=</span> cloudscraper.create_scraper()</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_character_languages(url):</span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> scraper.get(url, timeout<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> []</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>        soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>        languages <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, attrs<span class="op">=</span>{<span class="st">'data-tracking-label'</span>: re.<span class="bu">compile</span>(<span class="vs">r'lang-'</span>)})</span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [{<span class="st">"language"</span>: language.get(<span class="st">'data-tracking-label'</span>), <span class="st">"language_name"</span>: language.get_text()} <span class="cf">for</span> language <span class="kw">in</span> languages]</span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Error getting languages from </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
-<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> scraper.get(<span class="st">"https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power"</span>, timeout<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
-<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>canon_characters <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, class_<span class="op">=</span><span class="st">'category-page__member-link'</span>)</span>
-<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>canon_characters_data <span class="op">=</span> []</span>
-<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> canon_characters:</span>
-<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a>    character_data <span class="op">=</span> {<span class="st">"character"</span>: character.get_text(), <span class="st">"character_link"</span>: character.get(<span class="st">'href'</span>)}</span>
-<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'languages'</span>] <span class="op">=</span> get_character_languages(<span class="st">"https://lotr.fandom.com"</span> <span class="op">+</span> character_data[<span class="st">'character_link'</span>])</span>
-<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'langauges_count'</span>] <span class="op">=</span> <span class="bu">len</span>(character_data[<span class="st">'languages'</span>])</span>
-<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a>    canon_characters_data.append(character_data)</span>
-<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'lotr_canon_characters.csv'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb38-33"><a href="#cb38-33" aria-hidden="true" tabindex="-1"></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>)</span>
-<span id="cb38-34"><a href="#cb38-34" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">'character'</span>, <span class="st">'character_link'</span>, <span class="st">'languages'</span>, <span class="st">'languages_count'</span>])</span>
-<span id="cb38-35"><a href="#cb38-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> character <span class="kw">in</span> canon_characters_data:</span>
-<span id="cb38-36"><a href="#cb38-36" aria-hidden="true" tabindex="-1"></a>        writer.writerow([character[<span class="st">'character'</span>], character[<span class="st">'character_link'</span>], character[<span class="st">'languages'</span>], character[<span class="st">'langauges_count'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cloudscraper</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>scraper <span class="op">=</span> cloudscraper.create_scraper()</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_character_languages(url):</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> scraper.get(url, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> []</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>        soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>        languages <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, attrs<span class="op">=</span>{<span class="st">'data-tracking-label'</span>: re.<span class="bu">compile</span>(<span class="vs">r'lang-'</span>)})</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [{<span class="st">"language"</span>: language.get(<span class="st">'data-tracking-label'</span>), <span class="st">"language_name"</span>: language.get_text()} <span class="cf">for</span> language <span class="kw">in</span> languages]</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Error getting languages from </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> scraper.get(<span class="st">"https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power"</span>, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>canon_characters <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, class_<span class="op">=</span><span class="st">'category-page__member-link'</span>)</span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>canon_characters_data <span class="op">=</span> []</span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> canon_characters:</span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a>    character_data <span class="op">=</span> {<span class="st">"character"</span>: character.get_text(), <span class="st">"character_link"</span>: character.get(<span class="st">'href'</span>)}</span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'languages'</span>] <span class="op">=</span> get_character_languages(<span class="st">"https://lotr.fandom.com"</span> <span class="op">+</span> character_data[<span class="st">'character_link'</span>])</span>
+<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'langauges_count'</span>] <span class="op">=</span> <span class="bu">len</span>(character_data[<span class="st">'languages'</span>])</span>
+<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>    canon_characters_data.append(character_data)</span>
+<span id="cb43-31"><a href="#cb43-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-32"><a href="#cb43-32" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'lotr_canon_characters.csv'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb43-33"><a href="#cb43-33" aria-hidden="true" tabindex="-1"></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>)</span>
+<span id="cb43-34"><a href="#cb43-34" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">'character'</span>, <span class="st">'character_link'</span>, <span class="st">'languages'</span>, <span class="st">'languages_count'</span>])</span>
+<span id="cb43-35"><a href="#cb43-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> character <span class="kw">in</span> canon_characters_data:</span>
+<span id="cb43-36"><a href="#cb43-36" aria-hidden="true" tabindex="-1"></a>        writer.writerow([character[<span class="st">'character'</span>], character[<span class="st">'character_link'</span>], character[<span class="st">'languages'</span>], character[<span class="st">'langauges_count'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Same Code with API Endpoints Instead
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>get_character_languages</code> now uses <a href="https://www.mediawiki.org/wiki/API:Query"><code>action=query</code></a> with <a href="https://www.mediawiki.org/wiki/API:Langlinks"><code>prop=langlinks</code></a> instead of fetching and parsing HTML. This gives us the translations as clean structured data without needing BeautifulSoup or regex. The category list also uses <code>action=query</code> with <a href="https://www.mediawiki.org/wiki/API:Categorymembers"><code>list=categorymembers</code></a> as before.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>API_URL <span class="op">=</span> <span class="st">"https://lotr.fandom.com/api.php"</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>HEADERS <span class="op">=</span> {<span class="st">"User-Agent"</span>: <span class="st">"Mozilla/5.0"</span>}</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_character_languages(page_title):</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.get(API_URL, params<span class="op">=</span>{</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">"action"</span>: <span class="st">"query"</span>,</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">"titles"</span>: page_title,</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">"prop"</span>: <span class="st">"langlinks"</span>,</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">"lllimit"</span>: <span class="st">"max"</span>,</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">"format"</span>: <span class="st">"json"</span></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>        }, headers<span class="op">=</span>HEADERS, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> []</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>        pages <span class="op">=</span> response.json().get(<span class="st">"query"</span>, {}).get(<span class="st">"pages"</span>, {})</span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>        page <span class="op">=</span> <span class="bu">next</span>(<span class="bu">iter</span>(pages.values()), {})</span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [{<span class="st">"language"</span>: ll[<span class="st">"lang"</span>], <span class="st">"language_name"</span>: ll[<span class="st">"*"</span>]} <span class="cf">for</span> ll <span class="kw">in</span> page.get(<span class="st">"langlinks"</span>, [])]</span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Error getting languages from </span><span class="sc">{</span>page_title<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(API_URL, params<span class="op">=</span>{</span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"action"</span>: <span class="st">"query"</span>,</span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"list"</span>: <span class="st">"categorymembers"</span>,</span>
+<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cmtitle"</span>: <span class="st">"Category:Canon_characters_in_The_Rings_of_Power"</span>,</span>
+<span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cmtype"</span>: <span class="st">"page"</span>,</span>
+<span id="cb44-30"><a href="#cb44-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cmlimit"</span>: <span class="st">"max"</span>,</span>
+<span id="cb44-31"><a href="#cb44-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"format"</span>: <span class="st">"json"</span></span>
+<span id="cb44-32"><a href="#cb44-32" aria-hidden="true" tabindex="-1"></a>}, headers<span class="op">=</span>HEADERS, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb44-33"><a href="#cb44-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-34"><a href="#cb44-34" aria-hidden="true" tabindex="-1"></a>canon_characters <span class="op">=</span> response.json()[<span class="st">"query"</span>][<span class="st">"categorymembers"</span>]</span>
+<span id="cb44-35"><a href="#cb44-35" aria-hidden="true" tabindex="-1"></a>canon_characters_data <span class="op">=</span> []</span>
+<span id="cb44-36"><a href="#cb44-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-37"><a href="#cb44-37" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> canon_characters:</span>
+<span id="cb44-38"><a href="#cb44-38" aria-hidden="true" tabindex="-1"></a>    character_data <span class="op">=</span> {</span>
+<span id="cb44-39"><a href="#cb44-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">"character"</span>: character[<span class="st">"title"</span>],</span>
+<span id="cb44-40"><a href="#cb44-40" aria-hidden="true" tabindex="-1"></a>        <span class="st">"character_link"</span>: <span class="st">"/wiki/"</span> <span class="op">+</span> character[<span class="st">"title"</span>].replace(<span class="st">" "</span>, <span class="st">"_"</span>)</span>
+<span id="cb44-41"><a href="#cb44-41" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb44-42"><a href="#cb44-42" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'languages'</span>] <span class="op">=</span> get_character_languages(character[<span class="st">"title"</span>])</span>
+<span id="cb44-43"><a href="#cb44-43" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'langauges_count'</span>] <span class="op">=</span> <span class="bu">len</span>(character_data[<span class="st">'languages'</span>])</span>
+<span id="cb44-44"><a href="#cb44-44" aria-hidden="true" tabindex="-1"></a>    canon_characters_data.append(character_data)</span>
+<span id="cb44-45"><a href="#cb44-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-46"><a href="#cb44-46" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'lotr_canon_characters.csv'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb44-47"><a href="#cb44-47" aria-hidden="true" tabindex="-1"></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>)</span>
+<span id="cb44-48"><a href="#cb44-48" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">'character'</span>, <span class="st">'character_link'</span>, <span class="st">'languages'</span>, <span class="st">'languages_count'</span>])</span>
+<span id="cb44-49"><a href="#cb44-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> character <span class="kw">in</span> canon_characters_data:</span>
+<span id="cb44-50"><a href="#cb44-50" aria-hidden="true" tabindex="-1"></a>        writer.writerow([character[<span class="st">'character'</span>], character[<span class="st">'character_link'</span>], character[<span class="st">'languages'</span>], character[<span class="st">'langauges_count'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 <p>Now we could do the same for the new characters page <a href="https://lotr.fandom.com/wiki/Category:New_characters_in_The_Rings_of_Power">https://lotr.fandom.com/wiki/Category:New_characters_in_The_Rings_of_Power</a> and then compare the number of languages the canon characters have been translated into with the number of languages the new characters have been translated into. We could also use the <code>Rich</code> library from the last assignment to print out the data in a more readable format.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> scraper.get(<span class="st">"https://lotr.fandom.com/wiki/Category:Characters_created_for_The_Rings_of_Power"</span>, timeout<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>new_characters <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, class_<span class="op">=</span><span class="st">'category-page__member-link'</span>)</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>new_characters_data <span class="op">=</span> []</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> new_characters:</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    character_data <span class="op">=</span> {<span class="st">"character"</span>: character.get_text(), <span class="st">"character_link"</span>: character.get(<span class="st">'href'</span>)}</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'languages'</span>] <span class="op">=</span> get_character_languages(<span class="st">"https://lotr.fandom.com"</span> <span class="op">+</span> character_data[<span class="st">'character_link'</span>])</span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'langauges_count'</span>] <span class="op">=</span> <span class="bu">len</span>(character_data[<span class="st">'languages'</span>])</span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>    new_characters_data.append(character_data)</span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'lotr_new_characters.csv'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>)</span>
-<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">'character'</span>, <span class="st">'character_link'</span>, <span class="st">'languages'</span>, <span class="st">'languages_count'</span>])</span>
-<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> character <span class="kw">in</span> new_characters_data:</span>
-<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>        writer.writerow([character[<span class="st">'character'</span>], character[<span class="st">'character_link'</span>], character[<span class="st">'languages'</span>], character[<span class="st">'langauges_count'</span>])</span>
-<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
-<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.table <span class="im">import</span> Table</span>
-<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>console <span class="op">=</span> Console()</span>
-<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> Table(title<span class="op">=</span><span class="st">"Translations of LOTR Canon Characters VS New Characters"</span>)</span>
-<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Character"</span>, style<span class="op">=</span><span class="st">"cyan"</span>)</span>
-<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Language Count"</span>, style<span class="op">=</span><span class="st">"magenta"</span>)</span>
-<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> canon_characters_data:</span>
-<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a>    table.add_row(character[<span class="st">'character'</span>], <span class="bu">str</span>(character[<span class="st">'langauges_count'</span>]))</span>
-<span id="cb39-31"><a href="#cb39-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-32"><a href="#cb39-32" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> new_characters_data:</span>
-<span id="cb39-33"><a href="#cb39-33" aria-hidden="true" tabindex="-1"></a>    table.add_row(character[<span class="st">'character'</span>], <span class="bu">str</span>(character[<span class="st">'langauges_count'</span>]))</span>
-<span id="cb39-34"><a href="#cb39-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-35"><a href="#cb39-35" aria-hidden="true" tabindex="-1"></a>console.<span class="bu">print</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> scraper.get(<span class="st">"https://lotr.fandom.com/wiki/Category:Characters_created_for_The_Rings_of_Power"</span>, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>new_characters <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, class_<span class="op">=</span><span class="st">'category-page__member-link'</span>)</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>new_characters_data <span class="op">=</span> []</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> new_characters:</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>    character_data <span class="op">=</span> {<span class="st">"character"</span>: character.get_text(), <span class="st">"character_link"</span>: character.get(<span class="st">'href'</span>)}</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'languages'</span>] <span class="op">=</span> get_character_languages(<span class="st">"https://lotr.fandom.com"</span> <span class="op">+</span> character_data[<span class="st">'character_link'</span>])</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'langauges_count'</span>] <span class="op">=</span> <span class="bu">len</span>(character_data[<span class="st">'languages'</span>])</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    new_characters_data.append(character_data)</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'lotr_new_characters.csv'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>)</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">'character'</span>, <span class="st">'character_link'</span>, <span class="st">'languages'</span>, <span class="st">'languages_count'</span>])</span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> character <span class="kw">in</span> new_characters_data:</span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>        writer.writerow([character[<span class="st">'character'</span>], character[<span class="st">'character_link'</span>], character[<span class="st">'languages'</span>], character[<span class="st">'langauges_count'</span>])</span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.table <span class="im">import</span> Table</span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>console <span class="op">=</span> Console()</span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> Table(title<span class="op">=</span><span class="st">"Translations of LOTR Canon Characters VS New Characters"</span>)</span>
+<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Character"</span>, style<span class="op">=</span><span class="st">"cyan"</span>)</span>
+<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Language Count"</span>, style<span class="op">=</span><span class="st">"magenta"</span>)</span>
+<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-29"><a href="#cb45-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> canon_characters_data:</span>
+<span id="cb45-30"><a href="#cb45-30" aria-hidden="true" tabindex="-1"></a>    table.add_row(character[<span class="st">'character'</span>], <span class="bu">str</span>(character[<span class="st">'langauges_count'</span>]))</span>
+<span id="cb45-31"><a href="#cb45-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-32"><a href="#cb45-32" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> new_characters_data:</span>
+<span id="cb45-33"><a href="#cb45-33" aria-hidden="true" tabindex="-1"></a>    table.add_row(character[<span class="st">'character'</span>], <span class="bu">str</span>(character[<span class="st">'langauges_count'</span>]))</span>
+<span id="cb45-34"><a href="#cb45-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-35"><a href="#cb45-35" aria-hidden="true" tabindex="-1"></a>console.<span class="bu">print</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Same Code with API Endpoints Instead
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(API_URL, params<span class="op">=</span>{</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"action"</span>: <span class="st">"query"</span>,</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"list"</span>: <span class="st">"categorymembers"</span>,</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cmtitle"</span>: <span class="st">"Category:Characters_created_for_The_Rings_of_Power"</span>,</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cmlimit"</span>: <span class="st">"max"</span>,</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"format"</span>: <span class="st">"json"</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>}, headers<span class="op">=</span>HEADERS, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>new_characters <span class="op">=</span> response.json()[<span class="st">"query"</span>][<span class="st">"categorymembers"</span>]</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>new_characters_data <span class="op">=</span> []</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> new_characters:</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    character_data <span class="op">=</span> {</span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"character"</span>: character[<span class="st">"title"</span>],</span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"character_link"</span>: <span class="st">"/wiki/"</span> <span class="op">+</span> character[<span class="st">"title"</span>].replace(<span class="st">" "</span>, <span class="st">"_"</span>)</span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'languages'</span>] <span class="op">=</span> get_character_languages(character[<span class="st">"title"</span>])</span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>    character_data[<span class="st">'langauges_count'</span>] <span class="op">=</span> <span class="bu">len</span>(character_data[<span class="st">'languages'</span>])</span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>    new_characters_data.append(character_data)</span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'lotr_new_characters.csv'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>)</span>
+<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">'character'</span>, <span class="st">'character_link'</span>, <span class="st">'languages'</span>, <span class="st">'languages_count'</span>])</span>
+<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> character <span class="kw">in</span> new_characters_data:</span>
+<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a>        writer.writerow([character[<span class="st">'character'</span>], character[<span class="st">'character_link'</span>], character[<span class="st">'languages'</span>], character[<span class="st">'langauges_count'</span>]])</span>
+<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
+<span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.table <span class="im">import</span> Table</span>
+<span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-30"><a href="#cb46-30" aria-hidden="true" tabindex="-1"></a>console <span class="op">=</span> Console()</span>
+<span id="cb46-31"><a href="#cb46-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-32"><a href="#cb46-32" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> Table(title<span class="op">=</span><span class="st">"Translations of LOTR Canon Characters VS New Characters"</span>)</span>
+<span id="cb46-33"><a href="#cb46-33" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Character"</span>, style<span class="op">=</span><span class="st">"cyan"</span>)</span>
+<span id="cb46-34"><a href="#cb46-34" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Language Count"</span>, style<span class="op">=</span><span class="st">"magenta"</span>)</span>
+<span id="cb46-35"><a href="#cb46-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-36"><a href="#cb46-36" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> canon_characters_data:</span>
+<span id="cb46-37"><a href="#cb46-37" aria-hidden="true" tabindex="-1"></a>    table.add_row(character[<span class="st">'character'</span>], <span class="bu">str</span>(character[<span class="st">'langauges_count'</span>]))</span>
+<span id="cb46-38"><a href="#cb46-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-39"><a href="#cb46-39" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> new_characters_data:</span>
+<span id="cb46-40"><a href="#cb46-40" aria-hidden="true" tabindex="-1"></a>    table.add_row(character[<span class="st">'character'</span>], <span class="bu">str</span>(character[<span class="st">'langauges_count'</span>]))</span>
+<span id="cb46-41"><a href="#cb46-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-42"><a href="#cb46-42" aria-hidden="true" tabindex="-1"></a>console.<span class="bu">print</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note: this callout assumes <code>API_URL</code>, <code>HEADERS</code>, and <code>get_character_languages</code> (using <code>prop=langlinks</code>) are defined as in the previous callout.</p>
+</div>
+</div>
+</div>
 <p>We could even rewrite this code to be more DRY (that is the principle of Don’t Repeat Yourself) by creating a function to get the character data and then using that function to get the canon and new character data.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cloudscraper</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.table <span class="im">import</span> Table</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>console <span class="op">=</span> Console()</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a cloudscraper instance to handle Cloudflare bot protection</span></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>scraper <span class="op">=</span> cloudscraper.create_scraper()</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_character_languages(url):</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> scraper.get(url, timeout<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> []</span>
-<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>        soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
-<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>        languages <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, attrs<span class="op">=</span>{<span class="st">'data-tracking-label'</span>: re.<span class="bu">compile</span>(<span class="vs">r'lang-'</span>)})</span>
-<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [{<span class="st">"language"</span>: language.get(<span class="st">'data-tracking-label'</span>), <span class="st">"language_name"</span>: language.get_text()} <span class="cf">for</span> language <span class="kw">in</span> languages]</span>
-<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
-<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>        console.<span class="bu">print</span>(<span class="ss">f"[red]✗ Error getting languages from </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">[/red]"</span>)</span>
-<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
-<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_characters(url, category):</span>
-<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> scraper.get(url, timeout<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>        soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
-<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>        characters <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, class_<span class="op">=</span><span class="st">'category-page__member-link'</span>)</span>
-<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>        characters_data <span class="op">=</span> []</span>
-<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> character <span class="kw">in</span> characters:</span>
-<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>            console.<span class="bu">print</span>(<span class="ss">f"Processing </span><span class="sc">{</span>character<span class="sc">.</span>get_text()<span class="sc">}</span><span class="ss">..."</span>)</span>
-<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>            character_data <span class="op">=</span> {</span>
-<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>                <span class="st">"character"</span>: character.get_text(),</span>
-<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a>                <span class="st">"character_link"</span>: character.get(<span class="st">'href'</span>),</span>
-<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a>                <span class="st">"category"</span>: category</span>
-<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a>            character_data[<span class="st">'languages'</span>] <span class="op">=</span> get_character_languages(<span class="st">"https://lotr.fandom.com"</span> <span class="op">+</span> character_data[<span class="st">'character_link'</span>])</span>
-<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a>            character_data[<span class="st">'languages_count'</span>] <span class="op">=</span> <span class="bu">len</span>(character_data[<span class="st">'languages'</span>])</span>
-<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a>            characters_data.append(character_data)</span>
-<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-42"><a href="#cb40-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> characters_data</span>
-<span id="cb40-43"><a href="#cb40-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
-<span id="cb40-44"><a href="#cb40-44" aria-hidden="true" tabindex="-1"></a>        console.<span class="bu">print</span>(<span class="ss">f"[red]✗ Error in fetch_characters: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">[/red]"</span>)</span>
-<span id="cb40-45"><a href="#cb40-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
-<span id="cb40-46"><a href="#cb40-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-47"><a href="#cb40-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch characters from the given URLs</span></span>
-<span id="cb40-48"><a href="#cb40-48" aria-hidden="true" tabindex="-1"></a>canon_characters_data <span class="op">=</span> fetch_characters(<span class="st">"https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power"</span>, <span class="st">"Canon"</span>)</span>
-<span id="cb40-49"><a href="#cb40-49" aria-hidden="true" tabindex="-1"></a>new_characters_data <span class="op">=</span> fetch_characters(<span class="st">"https://lotr.fandom.com/wiki/Category:Characters_created_for_The_Rings_of_Power"</span>, <span class="st">"New"</span>)</span>
-<span id="cb40-50"><a href="#cb40-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-51"><a href="#cb40-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine and sort characters by language count</span></span>
-<span id="cb40-52"><a href="#cb40-52" aria-hidden="true" tabindex="-1"></a>all_characters_data <span class="op">=</span> canon_characters_data <span class="op">+</span> new_characters_data</span>
-<span id="cb40-53"><a href="#cb40-53" aria-hidden="true" tabindex="-1"></a>sorted_characters <span class="op">=</span> <span class="bu">sorted</span>(all_characters_data, key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="st">'languages_count'</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb40-54"><a href="#cb40-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-55"><a href="#cb40-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sorted characters in a table</span></span>
-<span id="cb40-56"><a href="#cb40-56" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> Table(title<span class="op">=</span><span class="st">"Translations of LOTR Canon Characters VS New Characters"</span>)</span>
-<span id="cb40-57"><a href="#cb40-57" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Character"</span>, style<span class="op">=</span><span class="st">"cyan"</span>)</span>
-<span id="cb40-58"><a href="#cb40-58" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Language Count"</span>, style<span class="op">=</span><span class="st">"magenta"</span>)</span>
-<span id="cb40-59"><a href="#cb40-59" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Category"</span>, style<span class="op">=</span><span class="st">"green"</span>)</span>
-<span id="cb40-60"><a href="#cb40-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-61"><a href="#cb40-61" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> sorted_characters:</span>
-<span id="cb40-62"><a href="#cb40-62" aria-hidden="true" tabindex="-1"></a>    table.add_row(character[<span class="st">'character'</span>], <span class="bu">str</span>(character[<span class="st">'languages_count'</span>]), character[<span class="st">'category'</span>])</span>
-<span id="cb40-63"><a href="#cb40-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-64"><a href="#cb40-64" aria-hidden="true" tabindex="-1"></a>console.<span class="bu">print</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cloudscraper</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.table <span class="im">import</span> Table</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>console <span class="op">=</span> Console()</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a cloudscraper instance to handle Cloudflare bot protection</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>scraper <span class="op">=</span> cloudscraper.create_scraper()</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_character_languages(url):</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> scraper.get(url, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> []</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>        soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>        languages <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, attrs<span class="op">=</span>{<span class="st">'data-tracking-label'</span>: re.<span class="bu">compile</span>(<span class="vs">r'lang-'</span>)})</span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [{<span class="st">"language"</span>: language.get(<span class="st">'data-tracking-label'</span>), <span class="st">"language_name"</span>: language.get_text()} <span class="cf">for</span> language <span class="kw">in</span> languages]</span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a>        console.<span class="bu">print</span>(<span class="ss">f"[red]✗ Error getting languages from </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">[/red]"</span>)</span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_characters(url, category):</span>
+<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> scraper.get(url, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a>        soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">"html.parser"</span>)</span>
+<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a>        characters <span class="op">=</span> soup.find_all(<span class="st">'a'</span>, class_<span class="op">=</span><span class="st">'category-page__member-link'</span>)</span>
+<span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a>        characters_data <span class="op">=</span> []</span>
+<span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> character <span class="kw">in</span> characters:</span>
+<span id="cb47-32"><a href="#cb47-32" aria-hidden="true" tabindex="-1"></a>            console.<span class="bu">print</span>(<span class="ss">f"Processing </span><span class="sc">{</span>character<span class="sc">.</span>get_text()<span class="sc">}</span><span class="ss">..."</span>)</span>
+<span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a>            character_data <span class="op">=</span> {</span>
+<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a>                <span class="st">"character"</span>: character.get_text(),</span>
+<span id="cb47-35"><a href="#cb47-35" aria-hidden="true" tabindex="-1"></a>                <span class="st">"character_link"</span>: character.get(<span class="st">'href'</span>),</span>
+<span id="cb47-36"><a href="#cb47-36" aria-hidden="true" tabindex="-1"></a>                <span class="st">"category"</span>: category</span>
+<span id="cb47-37"><a href="#cb47-37" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb47-38"><a href="#cb47-38" aria-hidden="true" tabindex="-1"></a>            character_data[<span class="st">'languages'</span>] <span class="op">=</span> get_character_languages(<span class="st">"https://lotr.fandom.com"</span> <span class="op">+</span> character_data[<span class="st">'character_link'</span>])</span>
+<span id="cb47-39"><a href="#cb47-39" aria-hidden="true" tabindex="-1"></a>            character_data[<span class="st">'languages_count'</span>] <span class="op">=</span> <span class="bu">len</span>(character_data[<span class="st">'languages'</span>])</span>
+<span id="cb47-40"><a href="#cb47-40" aria-hidden="true" tabindex="-1"></a>            characters_data.append(character_data)</span>
+<span id="cb47-41"><a href="#cb47-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-42"><a href="#cb47-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> characters_data</span>
+<span id="cb47-43"><a href="#cb47-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb47-44"><a href="#cb47-44" aria-hidden="true" tabindex="-1"></a>        console.<span class="bu">print</span>(<span class="ss">f"[red]✗ Error in fetch_characters: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">[/red]"</span>)</span>
+<span id="cb47-45"><a href="#cb47-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb47-46"><a href="#cb47-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-47"><a href="#cb47-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch characters from the given URLs</span></span>
+<span id="cb47-48"><a href="#cb47-48" aria-hidden="true" tabindex="-1"></a>canon_characters_data <span class="op">=</span> fetch_characters(<span class="st">"https://lotr.fandom.com/wiki/Category:Canon_characters_in_The_Rings_of_Power"</span>, <span class="st">"Canon"</span>)</span>
+<span id="cb47-49"><a href="#cb47-49" aria-hidden="true" tabindex="-1"></a>new_characters_data <span class="op">=</span> fetch_characters(<span class="st">"https://lotr.fandom.com/wiki/Category:Characters_created_for_The_Rings_of_Power"</span>, <span class="st">"New"</span>)</span>
+<span id="cb47-50"><a href="#cb47-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-51"><a href="#cb47-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine and sort characters by language count</span></span>
+<span id="cb47-52"><a href="#cb47-52" aria-hidden="true" tabindex="-1"></a>all_characters_data <span class="op">=</span> canon_characters_data <span class="op">+</span> new_characters_data</span>
+<span id="cb47-53"><a href="#cb47-53" aria-hidden="true" tabindex="-1"></a>sorted_characters <span class="op">=</span> <span class="bu">sorted</span>(all_characters_data, key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="st">'languages_count'</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb47-54"><a href="#cb47-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-55"><a href="#cb47-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sorted characters in a table</span></span>
+<span id="cb47-56"><a href="#cb47-56" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> Table(title<span class="op">=</span><span class="st">"Translations of LOTR Canon Characters VS New Characters"</span>)</span>
+<span id="cb47-57"><a href="#cb47-57" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Character"</span>, style<span class="op">=</span><span class="st">"cyan"</span>)</span>
+<span id="cb47-58"><a href="#cb47-58" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Language Count"</span>, style<span class="op">=</span><span class="st">"magenta"</span>)</span>
+<span id="cb47-59"><a href="#cb47-59" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Category"</span>, style<span class="op">=</span><span class="st">"green"</span>)</span>
+<span id="cb47-60"><a href="#cb47-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-61"><a href="#cb47-61" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> sorted_characters:</span>
+<span id="cb47-62"><a href="#cb47-62" aria-hidden="true" tabindex="-1"></a>    table.add_row(character[<span class="st">'character'</span>], <span class="bu">str</span>(character[<span class="st">'languages_count'</span>]), character[<span class="st">'category'</span>])</span>
+<span id="cb47-63"><a href="#cb47-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-64"><a href="#cb47-64" aria-hidden="true" tabindex="-1"></a>console.<span class="bu">print</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Same Code with API Endpoints Instead
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This version uses two different <a href="https://www.mediawiki.org/wiki/API:Query"><code>action=query</code></a> sub-requests: <a href="https://www.mediawiki.org/wiki/API:Categorymembers"><code>list=categorymembers</code></a> to fetch the list of characters from a category, and <a href="https://www.mediawiki.org/wiki/API:Langlinks"><code>prop=langlinks</code></a> to fetch language translations for each character page. Neither requires BeautifulSoup — all the data comes back as clean JSON.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.console <span class="im">import</span> Console</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rich.table <span class="im">import</span> Table</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>console <span class="op">=</span> Console()</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>API_URL <span class="op">=</span> <span class="st">"https://lotr.fandom.com/api.php"</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>HEADERS <span class="op">=</span> {<span class="st">"User-Agent"</span>: <span class="st">"Mozilla/5.0"</span>}</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_character_languages(page_title):</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.get(API_URL, params<span class="op">=</span>{</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">"action"</span>: <span class="st">"query"</span>,</span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">"titles"</span>: page_title,</span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>            <span class="st">"prop"</span>: <span class="st">"langlinks"</span>,</span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>            <span class="st">"lllimit"</span>: <span class="st">"max"</span>,</span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a>            <span class="st">"format"</span>: <span class="st">"json"</span></span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>        }, headers<span class="op">=</span>HEADERS, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> response.status_code <span class="op">!=</span> <span class="dv">200</span>:</span>
+<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> []</span>
+<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a>        pages <span class="op">=</span> response.json().get(<span class="st">"query"</span>, {}).get(<span class="st">"pages"</span>, {})</span>
+<span id="cb48-22"><a href="#cb48-22" aria-hidden="true" tabindex="-1"></a>        page <span class="op">=</span> <span class="bu">next</span>(<span class="bu">iter</span>(pages.values()), {})</span>
+<span id="cb48-23"><a href="#cb48-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [{<span class="st">"language"</span>: ll[<span class="st">"lang"</span>], <span class="st">"language_name"</span>: ll[<span class="st">"*"</span>]} <span class="cf">for</span> ll <span class="kw">in</span> page.get(<span class="st">"langlinks"</span>, [])]</span>
+<span id="cb48-24"><a href="#cb48-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb48-25"><a href="#cb48-25" aria-hidden="true" tabindex="-1"></a>        console.<span class="bu">print</span>(<span class="ss">f"[red]✗ Error getting languages from </span><span class="sc">{</span>page_title<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">[/red]"</span>)</span>
+<span id="cb48-26"><a href="#cb48-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb48-27"><a href="#cb48-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-28"><a href="#cb48-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_characters(category_title, category):</span>
+<span id="cb48-29"><a href="#cb48-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb48-30"><a href="#cb48-30" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.get(API_URL, params<span class="op">=</span>{</span>
+<span id="cb48-31"><a href="#cb48-31" aria-hidden="true" tabindex="-1"></a>            <span class="st">"action"</span>: <span class="st">"query"</span>,</span>
+<span id="cb48-32"><a href="#cb48-32" aria-hidden="true" tabindex="-1"></a>            <span class="st">"list"</span>: <span class="st">"categorymembers"</span>,</span>
+<span id="cb48-33"><a href="#cb48-33" aria-hidden="true" tabindex="-1"></a>            <span class="st">"cmtitle"</span>: category_title,</span>
+<span id="cb48-34"><a href="#cb48-34" aria-hidden="true" tabindex="-1"></a>            <span class="st">"cmtype"</span>: <span class="st">"page"</span>,</span>
+<span id="cb48-35"><a href="#cb48-35" aria-hidden="true" tabindex="-1"></a>            <span class="st">"cmlimit"</span>: <span class="st">"max"</span>,</span>
+<span id="cb48-36"><a href="#cb48-36" aria-hidden="true" tabindex="-1"></a>            <span class="st">"format"</span>: <span class="st">"json"</span></span>
+<span id="cb48-37"><a href="#cb48-37" aria-hidden="true" tabindex="-1"></a>        }, headers<span class="op">=</span>HEADERS, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb48-38"><a href="#cb48-38" aria-hidden="true" tabindex="-1"></a>        members <span class="op">=</span> response.json()[<span class="st">"query"</span>][<span class="st">"categorymembers"</span>]</span>
+<span id="cb48-39"><a href="#cb48-39" aria-hidden="true" tabindex="-1"></a>        characters_data <span class="op">=</span> []</span>
+<span id="cb48-40"><a href="#cb48-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-41"><a href="#cb48-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> member <span class="kw">in</span> members:</span>
+<span id="cb48-42"><a href="#cb48-42" aria-hidden="true" tabindex="-1"></a>            console.<span class="bu">print</span>(<span class="ss">f"Processing </span><span class="sc">{</span>member[<span class="st">'title'</span>]<span class="sc">}</span><span class="ss">..."</span>)</span>
+<span id="cb48-43"><a href="#cb48-43" aria-hidden="true" tabindex="-1"></a>            character_data <span class="op">=</span> {</span>
+<span id="cb48-44"><a href="#cb48-44" aria-hidden="true" tabindex="-1"></a>                <span class="st">"character"</span>: member[<span class="st">"title"</span>],</span>
+<span id="cb48-45"><a href="#cb48-45" aria-hidden="true" tabindex="-1"></a>                <span class="st">"character_link"</span>: <span class="st">"/wiki/"</span> <span class="op">+</span> member[<span class="st">"title"</span>].replace(<span class="st">" "</span>, <span class="st">"_"</span>),</span>
+<span id="cb48-46"><a href="#cb48-46" aria-hidden="true" tabindex="-1"></a>                <span class="st">"category"</span>: category</span>
+<span id="cb48-47"><a href="#cb48-47" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb48-48"><a href="#cb48-48" aria-hidden="true" tabindex="-1"></a>            character_data[<span class="st">'languages'</span>] <span class="op">=</span> get_character_languages(member[<span class="st">"title"</span>])</span>
+<span id="cb48-49"><a href="#cb48-49" aria-hidden="true" tabindex="-1"></a>            character_data[<span class="st">'languages_count'</span>] <span class="op">=</span> <span class="bu">len</span>(character_data[<span class="st">'languages'</span>])</span>
+<span id="cb48-50"><a href="#cb48-50" aria-hidden="true" tabindex="-1"></a>            characters_data.append(character_data)</span>
+<span id="cb48-51"><a href="#cb48-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-52"><a href="#cb48-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> characters_data</span>
+<span id="cb48-53"><a href="#cb48-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb48-54"><a href="#cb48-54" aria-hidden="true" tabindex="-1"></a>        console.<span class="bu">print</span>(<span class="ss">f"[red]✗ Error in fetch_characters: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">[/red]"</span>)</span>
+<span id="cb48-55"><a href="#cb48-55" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb48-56"><a href="#cb48-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-57"><a href="#cb48-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch characters from the given categories</span></span>
+<span id="cb48-58"><a href="#cb48-58" aria-hidden="true" tabindex="-1"></a>canon_characters_data <span class="op">=</span> fetch_characters(<span class="st">"Category:Canon_characters_in_The_Rings_of_Power"</span>, <span class="st">"Canon"</span>)</span>
+<span id="cb48-59"><a href="#cb48-59" aria-hidden="true" tabindex="-1"></a>new_characters_data <span class="op">=</span> fetch_characters(<span class="st">"Category:Characters_created_for_The_Rings_of_Power"</span>, <span class="st">"New"</span>)</span>
+<span id="cb48-60"><a href="#cb48-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-61"><a href="#cb48-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine and sort characters by language count</span></span>
+<span id="cb48-62"><a href="#cb48-62" aria-hidden="true" tabindex="-1"></a>all_characters_data <span class="op">=</span> canon_characters_data <span class="op">+</span> new_characters_data</span>
+<span id="cb48-63"><a href="#cb48-63" aria-hidden="true" tabindex="-1"></a>sorted_characters <span class="op">=</span> <span class="bu">sorted</span>(all_characters_data, key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="st">'languages_count'</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb48-64"><a href="#cb48-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-65"><a href="#cb48-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the sorted characters in a table</span></span>
+<span id="cb48-66"><a href="#cb48-66" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> Table(title<span class="op">=</span><span class="st">"Translations of LOTR Canon Characters VS New Characters"</span>)</span>
+<span id="cb48-67"><a href="#cb48-67" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Character"</span>, style<span class="op">=</span><span class="st">"cyan"</span>)</span>
+<span id="cb48-68"><a href="#cb48-68" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Language Count"</span>, style<span class="op">=</span><span class="st">"magenta"</span>)</span>
+<span id="cb48-69"><a href="#cb48-69" aria-hidden="true" tabindex="-1"></a>table.add_column(<span class="st">"Category"</span>, style<span class="op">=</span><span class="st">"green"</span>)</span>
+<span id="cb48-70"><a href="#cb48-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-71"><a href="#cb48-71" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> sorted_characters:</span>
+<span id="cb48-72"><a href="#cb48-72" aria-hidden="true" tabindex="-1"></a>    table.add_row(character[<span class="st">'character'</span>], <span class="bu">str</span>(character[<span class="st">'languages_count'</span>]), character[<span class="st">'category'</span>])</span>
+<span id="cb48-73"><a href="#cb48-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-74"><a href="#cb48-74" aria-hidden="true" tabindex="-1"></a>console.<span class="bu">print</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 <p><img src="../../assets/images/lotr_characters_table.png" class="img-fluid"></p>
 <p>Now in our full script we import all the libraries at the top, have two functions that get the character data and then fetch the characters, and then we combine and sort the characters by language count. We then display the sorted characters in a table using the <code>Rich</code> library. This is a much cleaner and more readable script that is easier to understand and work with.</p>
 </section>
@@ -1170,7 +1504,7 @@ Note
 <ul class="task-list">
 <li><label><input type="checkbox">Check the terms of service or user policies of the website. Ensure that you are allowed to scrape the website in the <code>robots.txt</code> file and include a link to the file in your <code>README.md</code> for the assignment.</label></li>
 <li><label><input type="checkbox">Explain your choice of fandom wiki and what you are interested in scraping from the wiki in your <code>README.md</code> for the assignment. <strong>You should explain why you think the data you are scraping might be of interest or useful to researchers.</strong></label></li>
-<li><label><input type="checkbox">Use the <code>cloudscraper</code> library to get the web page and the <code>BeautifulSoup</code> library to parse the HTML of the web page, and include this code in your <code>fandom_wiki_scraping.py</code> file.</label></li>
+<li><label><input type="checkbox">Try using the <code>cloudscraper</code> library to get the web page and the <code>BeautifulSoup</code> library to parse the HTML of the web page, and include this code in your <code>fandom_wiki_scraping.py</code> file. If you are having errors with <code>cloudscraper</code>, please reach out to the instructors and they will help you use the API endpoints instead (though bonus points if you manage to implement that on your own!)</label></li>
 <li><label><input type="checkbox">Include the data you are scraping in an interoperable file format like a CSV or JSON file and include this data in your <code>web_scraping_assignments</code> directory.</label></li>
 </ul>
 <p>Once you have completed the assignment, you should <strong>post a link to your folder</strong> in our GitHub discussion <a href="https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/7">https://github.com/CultureAsData-UIUC/is310-spring-2026/discussions/7</a>.</p>
