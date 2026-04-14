@@ -7,7 +7,7 @@ date: 2026-04-14
 
 ## In-Class Agenda
 
-- [ ] Discuss the assigned readings
+- [ ] Discuss the assigned readings. Slides available [here](../slides/16-augmentation-ai.qmd){target="_blank"}
 - [ ] Presentations from the final group work assignment [Critical Computing & Cultural Data](../assessments/07-critical-computing-cultural-data.qmd)
 
 ## Assigned Materials
