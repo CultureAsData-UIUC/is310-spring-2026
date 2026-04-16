@@ -1,5 +1,5 @@
 ---
-title: "Presentations & Demonstrations"
+title: "Horizons & Reflections"
 subtitle: "What are the horizons for culture as data?"
 toc: true
 date: 2026-05-05
@@ -7,6 +7,6 @@ date: 2026-05-05
 
 ## In-Class Agenda TBD
 
-- [ ] Demo Day for Final Projects
+- Work on final projects and discuss post-semester project plans
 
 ## Additional Materials

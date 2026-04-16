@@ -1,12 +1,13 @@
 ---
-title: "Speculations & Classifications"
-subtitle: "How can we responsibly use AI for culture as data?"
+title: "Critical & Computational"
+subtitle: "What does it mean to use computation critically for culture as data?"
 toc: true
 date: 2026-04-16
 ---
 
 ## In-Class Agenda
 
+- Discuss updates to final project assignment and reworking of syllabus
 - [ ] Remaining presentations from the final group work assignment [Critical Computing & Cultural Data](../assessments/07-critical-computing-cultural-data.qmd)
 
 ## Assigned Materials

@@ -4,7 +4,6 @@ toc: true
 format: html
 jupyter: python3
 syntax-highlighting: github
-draft: true
 ---
 
 In the last lesson, we used Pandas string methods to do some initial exploration of the novel texts in our combined dataset — counting characters, searching for patterns, and comparing pronoun frequencies across genres. These methods are fast and useful, but they treat text as a raw sequence of characters rather than as language.
@@ -466,24 +465,6 @@ None of these choices are wrong — they are tradeoffs. The question is whether 
 ## A Note on Gazetteers and Rules-Based NER
 One way to improve NER for literary texts is to supplement spaCy's statistical model with a **gazetteer** — a pre-compiled list of known entities. For example, if we had a list of character names for each novel, we could add those to spaCy as rules so it always recognizes them correctly. You can read more about this approach in William Mattingly's textbook <http://ner.pythonhumanities.com/02_rules_based_ner.html> and the spaCy documentation on the `EntityRuler` <https://spacy.io/api/entityruler>.
 :::
-
----
-
-## Structuring Unstructured Data Homework
-
-Now that you've learned the pipeline from raw text → tokens → entities → networks, this assignment asks you to apply and extend these methods to our novels corpus. Create a new Jupyter Notebook in your `is310-coding-assignments` repository in a folder called `text-analysis`.
-
-Your notebook should work with the combined novels dataset and accomplish the following:
-
-1. **Tokenization exploration** — Compare at least two tokenization strategies (e.g., split vs. NLTK's `word_tokenize`) on a subset of novels. Visualize the differences using Altair and write a short interpretation of what you notice.
-
-2. **NER and entity analysis** — Apply spaCy's NER to at least 10 novels of your choice. Create an entities DataFrame and use Altair to visualize some pattern you find interesting in the extracted entities. Consider: which entity types are most common? Are there genre differences? Are there any obvious errors in spaCy's output, and what might cause them?
-
-3. **Network analysis** — Build a co-occurrence network from your entity data and calculate at least one centrality measure. Visualize the network and write a 2–3 sentence interpretation of what the structure reveals — and what limitations you see in the approach.
-
-As before, your notebook should be clearly organized with Markdown headers, and should include prose interpreting each step, not just code. There are no right or wrong answers — what matters is that you are thinking critically about the choices involved at each step.
-
-Once complete, push your code to GitHub and post a link in the GitHub discussion [https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/12](https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/12).
 
 ---
 

@@ -2,10 +2,12 @@
 title: "Questions & Revisions"
 subtitle: "What don’t we know about culture as data?"
 toc: true
-date: 2026-04-28
+date: 2026-04-23
 ---
 
 ## In-Class Agenda TBD
+
+- Work on remaining outstanding homework assignments and final projects
 
 
 ## Additional Materials

@@ -65,8 +65,8 @@ website:
               href: materials/interpreting-communicating-humanities-data/01-intro-notebooks.qmd
             - text: "EDA & Data Visualization"
               href: materials/interpreting-communicating-humanities-data/02-eda-data-viz.qmd
-        #     - text: "Introduction to Structuring Data"
-        #       href: materials/interpreting-communicating-humanities-data/03-intro-structuring-data.qmd
+            - text: "Introduction to Structuring Data"
+              href: materials/interpreting-communicating-humanities-data/03-structuring-data.qmd
         #     - text: "Exploring Computational Methods for Cultural Data"
         #       href: materials/interpreting-communicating-humanities-data/04-advanced-computational-methods.qmd
 
@@ -130,16 +130,16 @@ website:
               href: schedule/22-texts-tokens.qmd
             - text: "Apr 14: How are new technologies shaping culture as data?"
               href: schedule/23-augmentation-ai.qmd
-            - text: "Apr 16: How can we responsibly use AI for culture as data?"
-              href: schedule/24-speculations-classifications.qmd
-            - text: "Apr 21: How can we preserve culture as data?"
-              href: schedule/25-publics-principles.qmd
-            - text: "Apr 23: How do we document culture as data?"
-              href: schedule/26-sheets-cards.qmd
-            - text: "Apr 28: What don’t we know about culture as data?"
-              href: schedule/27-questions-revisions.qmd
-            - text: "Apr 30: What are the future directions for culture as data?"
-              href: schedule/28-future-directions-presentations-demonstrations.qmd
+            - text: "Apr 16: What does it mean to use computation critically for culture as data?"
+              href: schedule/24-critical-computational.qmd
+            - text: "Apr 21: How can we responsibly use AI for culture as data?"
+              href: schedule/25-speculations-classifications.qmd
+            - text: "Apr 23: What don’t we know about culture as data?"
+              href: schedule/26-questions-revisions.qmd
+            - text: "Apr 28: How can we preserve culture as data?"
+              href: schedule/27-publics-principles.qmd
+            - text: "Apr 30: How do we document culture as data?"
+              href: schedule/28-sheets-cards.qmd
         - section: "May"
           contents:
             - text: "May 5: What are the horizons for culture as data?"

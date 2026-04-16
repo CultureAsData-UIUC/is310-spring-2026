@@ -25,9 +25,9 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [March 24 - What do we mean when we “clean” culture as data? Cleaning & Curating](17-cleaning-curating.qmd) | [March 26 - How do we work at scale with culture at data? Patterns & Outliers](18-patterns-outliers.qmd) |
 | [March 31 - How do we tell stories about culture with data? Arguments & Plots](19-arguments-plots.qmd) | [April 2 - How do we tell stories at scale? Scrolls & Hovers](20-scrolls-hovers.qmd) |
 | [April 7 - How do we build trust with culture as data? Networks & Names](21-networks-names.qmd) | [April 9 - How can computation augment culture as data? Texts & Tokens](22-texts-tokens.qmd) |
-| [April 14 - How are new technologies shaping culture as data? Augmentation & AI](23-augmentation-ai.qmd) | [April 16 - How can we responsibly use AI for culture as data? Speculations & Classifications](24-speculations-classifications.qmd) |
-| [April 21 - How can we preserve culture as data? Publics & Principles](25-publics-principles.qmd) | [April 23 - How do we document culture as data? Sheets & Cards](26-sheets-cards.qmd) |
-| [April 28 - What don’t we know about culture as data? Questions & Revisions](27-questions-revisions.qmd.qmd) | [April 30 - What are the future directions for culture as data? Presentations & Demonstrations](28-future-directions-presentations-demonstrations.qmd) | [May 5 - What are the horizons for culture as data? Presentations & Demonstrations](29-future-horizons-final-projects.qmd) |
+| [April 14 - How are new technologies shaping culture as data? Augmentation & AI](23-augmentation-ai.qmd) | [April 16 - What does it mean to use computation critically for culture as data? Critical & Computational](24-critical-computational.qmd) |
+| [April 21 - How can we responsibly use AI for culture as data? Speculations & Classifications](25-speculations-classifications.qmd) | [April 23 - What don’t we know about culture as data? Questions & Revisions](26-questions-revisions.qmd) |
+| [April 28 - How can we preserve culture as data? Publics & Principles](27-publics-principles.qmd) | [April 30 - How do we document culture as data? Sheets & Cards](28-sheets-cards.qmd) | [May 5 - What are the horizons for culture as data? Horizons & Reflections](29-future-horizons-final-projects.qmd) | |
 
 ## Assignment Schedule
 
@@ -46,6 +46,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [Command Line Data Curation Homework](../materials/creating-curating-humanities-data/04-virtual-environments.qmd#homework-command-line-data-curation) | [Due By Midnight CT on March 11](16-interfaces-limits.qmd) | 
 | [Fandom Wikis and Web Scraping Homework](../materials/creating-curating-humanities-data/05-web-scraping.qmd#fandom-wikis-and-web-scraping-homework) | [Due By Midnight CT on March 23](17-cleaning-curating.qmd) |
 | [GETting Culture Across APIs Homework](../materials/creating-curating-humanities-data/06-getting-data-apis.html#getting-culture-across-apis-homework) | [Due By Midnight CT on April 1](20-scrolls-hovers.qmd) |
+| [Exploring and Visualizing Culture Homework](../materials/interpreting-communicating-humanities-data/02-eda-data-viz.qmd#exploring-and-visualizing-culture-homework) | [Due By Midnight CT on April 23](26-questions-revisions.qmd) |
 
 ### Group Assignments
 
@@ -53,3 +54,4 @@ This overview gives a top level view of the topics for each of our meetings. You
 | -----------------: | --------------: |
 |[Collective & Individual Topic Selection](../assessments/03-semester-project.qmd#collective-individual-topic-selection) | [Due February 5 with Optional Extension Until February 12](06-markup-and-markdown.qmd) |
 |[Mass Digitization & Digital Libraries Group Assignment](../assessments/06-collecting-digitizing-culture.qmd) | Due February 10 & 12 In-Class Presentations |
+| [Critical Computing & Cultural Data](../assessments/07-critical-computing-cultural-data.qmd) | Due April 14 & 16 In-Class Presentations |

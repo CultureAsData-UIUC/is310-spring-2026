@@ -1,0 +1,17 @@
+---
+title: "Speculations & Classifications"
+subtitle: "How can we responsibly use AI for culture as data?"
+toc: true
+date: 2026-04-21
+---
+
+## In-Class Agenda
+
+- [ ] Start final lesson on using LLMs and basic text analysis methods (to be posted)
+
+## Assigned Materials
+
+
+## Additional Materials
+
+
