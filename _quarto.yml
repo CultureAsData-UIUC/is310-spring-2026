@@ -67,8 +67,8 @@ website:
               href: materials/interpreting-communicating-humanities-data/02-eda-data-viz.qmd
             - text: "Introduction to Structuring Data"
               href: materials/interpreting-communicating-humanities-data/03-structuring-data.qmd
-        #     - text: "Exploring Computational Methods for Cultural Data"
-        #       href: materials/interpreting-communicating-humanities-data/04-advanced-computational-methods.qmd
+            - text: "Exploring Computational Methods for Cultural Data"
+              href: materials/interpreting-communicating-humanities-data/04-advanced-computational-methods.qmd
 
     - id: schedule
       title: "Course Schedule"
