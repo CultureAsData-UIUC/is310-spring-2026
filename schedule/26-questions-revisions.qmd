@@ -5,9 +5,11 @@ toc: true
 date: 2026-04-23
 ---
 
-## In-Class Agenda TBD
+## In-Class Agenda
 
-- Work on remaining outstanding homework assignments and final projects
+- Complete remainder of the advanced computational methods lesson, available [here](../materials/interpreting-communicating-humanities-data/04-advanced-computational-methods.qmd).
+- Review [exploring and visualizing culture homework assignment](../materials/interpreting-communicating-humanities-data/02-eda-data-viz.qmd#exploring-and-visualizing-culture-homework).
+- Discuss questions and revisions for final project proposals.
 
 
 ## Additional Materials
