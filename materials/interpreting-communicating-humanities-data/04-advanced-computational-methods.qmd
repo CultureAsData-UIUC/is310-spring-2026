@@ -8,6 +8,12 @@ jupyter: python3
 syntax-highlighting: github
 ---
 
+::: {.callout-note}
+## Notebook from Class Available To Download
+
+If you want to review our in-class code, you can download the Jupyter notebook by clicking here <a href="../../assets/files/AdvancedComputationalMethods.ipynb" download>AdvancedComputationalMethods.ipynb</a>.
+:::
+
 ## Reviewing Entities and Genre: Extracting Signals from Unstructured Text
 
 In the last lesson, we built a pipeline for structuring unstructured text: tokenizing our novels, extracting characters via named entities with `spaCy`, and turning those entities into a co-occurrence network. We could've looked at all entities for instance:
