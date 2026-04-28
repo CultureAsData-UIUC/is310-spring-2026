@@ -203,12 +203,16 @@ Why does Christen open her article with the Slashdot story about the Aboriginal 
 
 ## Why do we need alternatives to how data is managed and shared?
 
+:::: {.columns}
+::: {.column width="50%" .r-fit-text}
 - What are some of the tradeoffs between privacy and openness in data management?
 - What are the problems with valuing openness and public domain as default?
 - What are some of the ways we can ensure communities have a say in how their data is managed and shared?
-
+:::
+::: {.column width="50%"}
 ![](https://book.the-turing-way.org/build/data-privacy-5503c4c076473b788c26527a18cb2b01.png)
-
+:::
+::::
 ::: {.notes}
 - **Mukurtu**: protocols *with* community — circulation governed by existing social systems
 - **CCP**: collective work *by* community + allies — data practice mirrors movement form
@@ -238,7 +242,9 @@ Why does Christen open her article with the Slashdot story about the Aboriginal 
 
 ## Documentation as a lamp in the dark forest
 
+::: {.r-fit-text}
 [![](https://book.the-turing-way.org/build/documentation-29caa6a2eb193153d2c1d3f3337bfede.jpg)](https://book.the-turing-way.org/reproducible-research/rdm/rdm-metadata/){target="_blank"}
+:::
 
 ::: {.notes}
 - Documentation feels boring — it isn't. It's the difference between a project that lives and one that dies on a hard drive
@@ -271,6 +277,7 @@ Why does Christen open her article with the Slashdot story about the Aboriginal 
 
 ## Digital publishing: Some considerations for your final projects!
 
+::: {.r-fit-text}
 No universal answers, but every project answers each of these implicitly, so make it explicit:
 
 - **Audience** — Who is your audience? Scholars, general public, a specific community? Different audiences need different framings!
@@ -278,7 +285,8 @@ No universal answers, but every project answers each of these implicitly, so mak
 - **Interactivity** — How interactive are your materials? When do multimedia and interactive visualizations help, and when are they decoration?
 - **Sustainability** — How sustainable is your project? Who maintains this in 5 years?
 - **Politics/Ethics** — How does your project engage with communities? Do you have informed consent? Are you considering privacy and future use?
-- 
+- **Transparency** — How transparent is your project? Do you provide clear documentation, data sources, and methodologies?
+:::
 ::: {.notes}
 - Connect back: Mukurtu's TK Labels, CCP's principles, Forsén's request to retire — each is an answer to one of these questions
 :::
@@ -294,3 +302,10 @@ Let's revisit [the GitHub Guidelines](../assessments/05-github-style-guide.qmd){
 - The README is where your ethics live in code
 - Last prompt before we wrap: pick one of the five considerations. What's the hardest one for your project? Why?
 :::
+
+## Remaining Classes
+
+- All coding assignments must be submitted by next Tuesday.
+- Please consult with the instructors about your final dataset to ensure it is feasible and within the scope of the course.
+- Please work on finalizing your group principles and cleaning up your group repository
+- All group projects will be downloaded **May 15**!
