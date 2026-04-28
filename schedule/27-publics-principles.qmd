@@ -5,7 +5,9 @@ toc: true
 date: 2026-04-28
 ---
 
-## In-Class Agenda TBD
+## In-Class Agenda 
+
+- Discuss readings, slides available [here](../slides/18-publics-principles.qmd){target="_blank"}
 
 ## Assigned Materials
 
